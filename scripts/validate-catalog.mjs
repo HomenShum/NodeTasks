@@ -11,6 +11,9 @@ const extracted = await readJson("catalog/extracted-tasks.json");
 const ranked = await readJson("catalog/ranked-tasks.json");
 const hierarchy = await readJson("catalog/hierarchy.json");
 const tagIndex = await readJson("catalog/tag-index.json");
+const savedViews = await readJson("catalog/saved-views.json");
+const taskBundles = await readJson("catalog/task-bundles.json");
+const provenanceIndex = await readJson("catalog/provenance-index.json");
 const adapters = await readJson("catalog/benchmark-proxy-adapters.json");
 const sources = await readJson("catalog/source-files.json");
 const index = await readJson("catalog/task-index.json");
@@ -21,6 +24,9 @@ assert(Array.isArray(allTasks.tasks), "all tasks array exists");
 assert(Array.isArray(extracted.tasks), "extracted tasks array exists");
 assert(Array.isArray(ranked.tasks), "ranked tasks array exists");
 assert(Array.isArray(tagIndex.tags), "tag index array exists");
+assert(Array.isArray(savedViews.views), "saved views array exists");
+assert(Array.isArray(taskBundles.bundles), "task bundles array exists");
+assert(provenanceIndex.counts?.tasks === allTasks.tasks.length, "provenance index task count matches");
 assert(Array.isArray(adapters.adapters), "adapters array exists");
 assert(Array.isArray(sources.files), "source files array exists");
 assert(index.summary.liveInteractionTasks === live.tasks.length, "task index live count matches");
@@ -29,7 +35,11 @@ assert(index.summary.searchableTasks === allTasks.tasks.length, "task index sear
 assert(ranked.tasks.length === allTasks.tasks.length, "ranked tasks count matches all tasks");
 assert(hierarchy.hierarchy?.counts?.tasks === allTasks.tasks.length, "hierarchy task count matches");
 assert(tagIndex.tags.length > 0, "tag index is populated");
+assert(savedViews.views.length > 0, "saved views are populated");
+assert(taskBundles.bundles.length > 0, "task bundles are populated");
 assert(index.summary.benchmarkProxyAdapters === adapters.adapters.length, "task index adapter count matches");
+assert(index.summary.savedViews === savedViews.views.length, "task index saved view count matches");
+assert(index.summary.taskBundles === taskBundles.bundles.length, "task index bundle count matches");
 assert(searchRecords.length === allTasks.tasks.length, "search index count matches all tasks");
 
 const taskIds = new Set();
@@ -48,9 +58,29 @@ for (const task of allTasks.tasks) {
   assert(typeof task.rank.difficultyTier === "string", `task has difficulty tier: ${task.id}`);
   assert(typeof task.rank.costTier === "string", `task has cost tier: ${task.id}`);
   assert(Array.isArray(task.rank.topTags), `task has ranked tags: ${task.id}`);
+  assert(task.curation && typeof task.curation.summary === "string", `task has curation summary: ${task.id}`);
+  assert(Array.isArray(task.curation.recommendedFor), `task has curation audiences: ${task.id}`);
+  assert(task.provenance && typeof task.provenance.verifierType === "string", `task has provenance verifier: ${task.id}`);
+  assert(typeof task.provenance.scoreStatus === "string", `task has provenance score status: ${task.id}`);
+  assert(Array.isArray(task.provenance.suiteLineage), `task has suite lineage: ${task.id}`);
   for (const sourceRef of task.sourceRefs ?? []) {
     assert(existsSync(join(root, sourceRef)), `sourceRef exists for ${task.id}: ${sourceRef}`);
   }
+}
+
+for (const view of savedViews.views) {
+  assert(typeof view.id === "string" && view.id.length > 1, `saved view id valid: ${view.id}`);
+  assert(typeof view.title === "string" && view.title.length > 1, `saved view title valid: ${view.id}`);
+  assert(Number.isFinite(view.count), `saved view count valid: ${view.id}`);
+  assert(Array.isArray(view.sampleTaskIds), `saved view sample ids valid: ${view.id}`);
+  for (const id of view.sampleTaskIds) assert(taskIds.has(id), `saved view task exists: ${view.id}/${id}`);
+}
+
+for (const bundle of taskBundles.bundles) {
+  assert(typeof bundle.id === "string" && bundle.id.length > 1, `bundle id valid: ${bundle.id}`);
+  assert(Array.isArray(bundle.taskIds), `bundle task ids valid: ${bundle.id}`);
+  assert(bundle.taskIds.length === bundle.taskCount, `bundle task count matches: ${bundle.id}`);
+  for (const id of bundle.taskIds) assert(taskIds.has(id), `bundle task exists: ${bundle.id}/${id}`);
 }
 
 const adapterIds = new Set();

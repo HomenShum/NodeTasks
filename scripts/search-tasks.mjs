@@ -13,6 +13,7 @@ const options = {
   id: "",
   domain: "",
   tag: "",
+  view: "",
   maxDifficulty: "",
   maxCost: "",
   sort: "relevance"
@@ -41,6 +42,8 @@ for (let i = 0; i < args.length; i += 1) {
     options.domain = args[++i] ?? "";
   } else if (arg === "--tag") {
     options.tag = args[++i] ?? "";
+  } else if (arg === "--view") {
+    options.view = args[++i] ?? "";
   } else if (arg === "--max-difficulty") {
     options.maxDifficulty = args[++i] ?? "";
   } else if (arg === "--max-cost") {
@@ -53,10 +56,23 @@ for (let i = 0; i < args.length; i += 1) {
 }
 
 const records = await readJsonl("catalog/search-index.jsonl");
-const query = terms.join(" ").trim();
+const savedViews = await readJson("catalog/saved-views.json").catch(() => ({ views: [] }));
+const activeView = options.view ? savedViews.views?.find((view) => view.id === options.view) : undefined;
+if (options.view && !activeView) {
+  console.error(`Unknown saved view: ${options.view}`);
+  process.exit(1);
+}
+const viewFilters = activeView?.filters ?? {};
+const query = terms.join(" ").trim() || activeView?.query || "";
+if (activeView?.sort && options.sort === "relevance") options.sort = activeView.sort;
 const queryTerms = tokenize(query);
 
 let ranked = records
+  .filter((record) => !viewFilters.domain || record.rank?.domain === viewFilters.domain)
+  .filter((record) => !viewFilters.kind || asArray(viewFilters.kind).includes(record.kind))
+  .filter((record) => !viewFilters.maxDifficulty || difficultyRank(record.rank?.difficultyTier) <= difficultyRank(viewFilters.maxDifficulty))
+  .filter((record) => !viewFilters.maxCostRank || Number(record.rank?.costRank ?? 99) <= Number(viewFilters.maxCostRank))
+  .filter((record) => !viewFilters.tag || (record.rank?.topTags ?? record.tags ?? []).some((tag) => tag.toLowerCase().includes(String(viewFilters.tag).toLowerCase())))
   .filter((record) => !options.kind || record.kind === options.kind)
   .filter((record) => !options.family || record.family === options.family)
   .filter((record) => !options.surface || record.surface === options.surface)
@@ -79,6 +95,10 @@ if (options.json) {
 async function readJsonl(path) {
   const text = await readFile(join(root, path), "utf8");
   return text.split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+}
+
+async function readJson(path) {
+  return JSON.parse(await readFile(join(root, path), "utf8"));
 }
 
 function score(record, terms, phrase) {
@@ -142,6 +162,10 @@ function difficultyRank(value) {
   return { intro: 1, intermediate: 2, advanced: 3, expert: 4 }[String(value).toLowerCase()] ?? 99;
 }
 
+function asArray(value) {
+  return Array.isArray(value) ? value : [value].filter(Boolean);
+}
+
 function printHelp() {
   console.log(`NodeTasks search
 
@@ -159,6 +183,7 @@ Options:
   --id <id>           Exact id lookup.
   --domain <domain>   Filter by inferred domain.
   --tag <tag>         Filter by ranked tag substring.
+  --view <id>         Apply a saved view from catalog/saved-views.json.
   --max-difficulty <intro|intermediate|advanced|expert>
   --max-cost <1-5>    Filter by cost rank.
   --sort <mode>       relevance, difficulty, difficulty-desc, steps, cost, domain.

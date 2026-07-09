@@ -18,6 +18,51 @@
     "sourceRefs": { "type": "array", "items": { "type": "string" } },
     "timeoutMs": { "type": "integer", "minimum": 1000 },
     "officialScoreClaim": { "type": "boolean" },
-    "risk": { "type": "string" }
+    "risk": { "type": "string" },
+    "rank": {
+      "type": "object",
+      "properties": {
+        "domain": { "type": "string" },
+        "subdomain": { "type": "string" },
+        "domainPath": { "type": "array", "items": { "type": "string" } },
+        "estimatedSteps": { "type": "number" },
+        "stepTier": { "type": "string" },
+        "costTier": { "type": "string" },
+        "costRank": { "type": "number" },
+        "estimatedCostUsd": { "type": ["number", "null"] },
+        "costBasis": { "type": "string" },
+        "difficultyScore": { "type": "number" },
+        "difficultyTier": { "type": "string" },
+        "difficultyReasons": { "type": "array", "items": { "type": "string" } },
+        "topTags": { "type": "array", "items": { "type": "string" } },
+        "personaFit": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "curation": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" },
+        "whyItMatters": { "type": "string" },
+        "firstRun": { "type": "string" },
+        "caution": { "type": "string" },
+        "scoreBoundary": { "type": "string" },
+        "recommendedFor": { "type": "array", "items": { "type": "string" } },
+        "quality": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "suiteLineage": { "type": "array", "items": { "type": "string" } },
+        "primarySuite": { "type": "string" },
+        "verifierType": { "type": "string" },
+        "scoreStatus": { "type": "string" },
+        "productPathCompletion": { "type": "string" },
+        "officialSemanticScore": { "type": "string" },
+        "sourceCount": { "type": "number" },
+        "sourceKinds": { "type": "array", "items": { "type": "string" } },
+        "receiptExpectations": { "type": "array", "items": { "type": "string" } }
+      }
+    }
   }
 }

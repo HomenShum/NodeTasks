@@ -16,6 +16,9 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CATALOG = ROOT / "catalog" / "all-tasks.json"
 DEFAULT_HIERARCHY = ROOT / "catalog" / "hierarchy.json"
+DEFAULT_SAVED_VIEWS = ROOT / "catalog" / "saved-views.json"
+DEFAULT_TASK_BUNDLES = ROOT / "catalog" / "task-bundles.json"
+DEFAULT_PROVENANCE = ROOT / "catalog" / "provenance-index.json"
 
 PERSONAS = {
     "Benchmark maintainer": {
@@ -104,6 +107,15 @@ def load_catalog(catalog_path: str) -> tuple[list[dict[str, Any]], dict[str, Any
 
 
 @st.cache_data(show_spinner=False)
+def load_json_sidecar(path: str) -> dict[str, Any]:
+    sidecar = Path(path)
+    if not sidecar.exists():
+        return {}
+    with sidecar.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+@st.cache_data(show_spinner=False)
 def build_frame(tasks: list[dict[str, Any]]) -> pd.DataFrame:
     rows = []
     for task in tasks:
@@ -130,6 +142,12 @@ def build_frame(tasks: list[dict[str, Any]]) -> pd.DataFrame:
                 "top_tags": ", ".join(rank.get("topTags", [])),
                 "source_refs": ", ".join(task.get("sourceRefs", [])[:4]),
                 "command": task.get("command", ""),
+                "curation_summary": task.get("curation", {}).get("summary", ""),
+                "why_it_matters": task.get("curation", {}).get("whyItMatters", ""),
+                "verifier_type": task.get("provenance", {}).get("verifierType", ""),
+                "score_status": task.get("provenance", {}).get("scoreStatus", ""),
+                "primary_suite": task.get("provenance", {}).get("primarySuite", ""),
+                "source_count": task.get("provenance", {}).get("sourceCount", 0),
                 "sort_score": rank.get("sortScore", 0),
                 "text": searchable_text(task),
             }
@@ -145,6 +163,11 @@ def searchable_text(task: dict[str, Any]) -> str:
         task.get("surface", ""),
         task.get("title", ""),
         task.get("goal", ""),
+        task.get("curation", {}).get("summary", ""),
+        task.get("curation", {}).get("whyItMatters", ""),
+        task.get("provenance", {}).get("verifierType", ""),
+        task.get("provenance", {}).get("scoreStatus", ""),
+        task.get("provenance", {}).get("primarySuite", ""),
         task.get("status", ""),
         task.get("command", ""),
         " ".join(task.get("tags", [])),
@@ -233,17 +256,35 @@ def task_by_id(tasks: list[dict[str, Any]], task_id: str) -> dict[str, Any] | No
     return None
 
 
-def call_nodeagent(endpoint: str, question: str, context: list[dict[str, Any]], persona: str) -> str | None:
+def call_nodeagent(endpoint: str, question: str, context: list[dict[str, Any]], persona: str, view: str) -> str | None:
     if not endpoint:
         return None
-    body = json.dumps({"question": question, "persona": persona, "context": context}).encode("utf-8")
+    body = json.dumps(
+        {
+            "schema": "nodetasks-nodeagent-bridge-v1",
+            "mode": "catalog_qa",
+            "question": question,
+            "message": question,
+            "persona": persona,
+            "savedView": view,
+            "catalogContext": context,
+            "context": context,
+            "responseContract": {
+                "answerField": "answer",
+                "mustCiteTaskIds": True,
+                "mustPreserveScoreBoundary": True,
+            },
+        }
+    ).encode("utf-8")
     request = urllib.request.Request(endpoint, data=body, headers={"Content-Type": "application/json"}, method="POST")
     try:
         with urllib.request.urlopen(request, timeout=20) as response:
             payload = json.loads(response.read().decode("utf-8"))
     except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
         return f"NodeAgent endpoint was configured but did not return a usable response: {exc}"
-    return payload.get("answer") or payload.get("text") or json.dumps(payload, indent=2)
+    if isinstance(payload.get("message"), dict):
+        return payload["message"].get("content")
+    return payload.get("answer") or payload.get("text") or payload.get("finalText") or json.dumps(payload, indent=2)
 
 
 def local_nodeagent_answer(question: str, rows: pd.DataFrame, persona: str) -> str:
@@ -261,6 +302,7 @@ def local_nodeagent_answer(question: str, rows: pd.DataFrame, persona: str) -> s
         "",
         f"Best ranked match: `{first['id']}` - {first['title']}",
         f"Domain: {first['domain']} > {first['subdomain']}; difficulty {first['difficulty']} ({int(first['difficulty_score'])}); {int(first['steps'])} estimated steps; cost tier `{first['cost_tier']}`.",
+        f"Provenance: `{first['verifier_type']}`; score status `{first['score_status']}`; primary suite `{first['primary_suite']}`.",
         "",
         f"Lowest-cost starting point: `{cheapest['id']}` ({cheapest['cost_tier']}).",
         f"Easiest starting point: `{easiest['id']}` ({easiest['difficulty']}, {int(easiest['steps'])} steps).",
@@ -302,12 +344,24 @@ def render_task_card(task: dict[str, Any]) -> None:
     cols[3].metric("Domain", rank.get("domain", ""))
     cols[4].metric("Kind", task.get("kind", ""))
     st.write(task.get("goal", ""))
+    curation = task.get("curation", {})
+    if curation:
+        st.markdown(f"**Why it matters:** {curation.get('whyItMatters', '')}")
+        st.markdown(f"**First run:** {curation.get('firstRun', '')}")
+        st.caption(curation.get("scoreBoundary", ""))
     if task.get("command"):
         st.code(task["command"], language="bash")
     if rank.get("topTags"):
         st.markdown(" ".join(f"<span class='nt-chip'>{tag}</span>" for tag in rank["topTags"]), unsafe_allow_html=True)
     with st.expander("Source refs and metadata", expanded=False):
-        st.json({"sourceRefs": task.get("sourceRefs", []), "metadata": task.get("metadata", {}), "rank": rank})
+        st.json({"sourceRefs": task.get("sourceRefs", []), "metadata": task.get("metadata", {}), "rank": rank, "curation": curation, "provenance": task.get("provenance", {})})
+
+
+def saved_view_by_id(saved_views: list[dict[str, Any]], view_id: str) -> dict[str, Any] | None:
+    for view in saved_views:
+        if view.get("id") == view_id:
+            return view
+    return None
 
 
 def query_param(name: str, default: str = "") -> str:
@@ -324,6 +378,11 @@ def query_param_list(name: str) -> list[str]:
 
 catalog_path = os.environ.get("NODETASKS_CATALOG", str(DEFAULT_CATALOG))
 tasks, hierarchy = load_catalog(catalog_path)
+saved_views_payload = load_json_sidecar(str(DEFAULT_SAVED_VIEWS))
+task_bundles_payload = load_json_sidecar(str(DEFAULT_TASK_BUNDLES))
+provenance_payload = load_json_sidecar(str(DEFAULT_PROVENANCE))
+saved_views = saved_views_payload.get("views", [])
+task_bundles = task_bundles_payload.get("bundles", [])
 frame = build_frame(tasks)
 
 st.title("NodeTasks")
@@ -334,9 +393,14 @@ with st.sidebar:
     persona_options = ["Any", *PERSONAS.keys()]
     default_persona = query_param("persona", "Any")
     persona = st.selectbox("Persona", persona_options, index=persona_options.index(default_persona) if default_persona in persona_options else 0)
-    default_query = query_param("q", PERSONAS.get(persona, {}).get("query", ""))
+    saved_view_options = ["None", *[view["id"] for view in saved_views]]
+    default_view = query_param("view", "None")
+    saved_view = st.selectbox("Saved view", saved_view_options, index=saved_view_options.index(default_view) if default_view in saved_view_options else 0)
+    active_view = saved_view_by_id(saved_views, saved_view) if saved_view != "None" else None
+    view_filters = active_view.get("filters", {}) if active_view else {}
+    default_query = query_param("q", active_view.get("query", PERSONAS.get(persona, {}).get("query", "")) if active_view else PERSONAS.get(persona, {}).get("query", ""))
     query = st.text_input("Search", value=default_query, placeholder="nodeagent graph spreadsheetbench")
-    default_sort_mode = query_param("sort", PERSONAS.get(persona, {}).get("sort", "relevance"))
+    default_sort_mode = query_param("sort", active_view.get("sort", PERSONAS.get(persona, {}).get("sort", "relevance")) if active_view else PERSONAS.get(persona, {}).get("sort", "relevance"))
     sort_labels = list(SORT_OPTIONS.keys())
     sort_values = list(SORT_OPTIONS.values())
     default_sort_index = sort_values.index(default_sort_mode) if default_sort_mode in sort_values else 0
@@ -346,11 +410,14 @@ with st.sidebar:
     kind_options = sorted(frame["kind"].dropna().unique())
     difficulty_options = ["intro", "intermediate", "advanced", "expert"]
     cost_options = sorted(frame["cost_tier"].dropna().unique())
-    domains = st.multiselect("Domain", domain_options, default=[item for item in query_param_list("domain") if item in domain_options])
-    kinds = st.multiselect("Kind", kind_options, default=[item for item in query_param_list("kind") if item in kind_options])
-    difficulty = st.multiselect("Difficulty", difficulty_options, default=[item for item in query_param_list("difficulty") if item in difficulty_options])
+    view_domain_default = [view_filters["domain"]] if view_filters.get("domain") in domain_options and not query_param_list("domain") else []
+    view_kind_default = [item for item in view_filters.get("kind", []) if item in kind_options] if not query_param_list("kind") else []
+    view_difficulty_default = [item for item in difficulty_options if view_filters.get("maxDifficulty") and DIFFICULTY_ORDER[item] <= DIFFICULTY_ORDER.get(view_filters["maxDifficulty"], 99)] if not query_param_list("difficulty") else []
+    domains = st.multiselect("Domain", domain_options, default=[item for item in query_param_list("domain") if item in domain_options] or view_domain_default)
+    kinds = st.multiselect("Kind", kind_options, default=[item for item in query_param_list("kind") if item in kind_options] or view_kind_default)
+    difficulty = st.multiselect("Difficulty", difficulty_options, default=[item for item in query_param_list("difficulty") if item in difficulty_options] or view_difficulty_default)
     cost_tiers = st.multiselect("Cost tier", cost_options, default=[item for item in query_param_list("cost") if item in cost_options])
-    tag_query = st.text_input("Tag contains", value=query_param("tag", ""))
+    tag_query = st.text_input("Tag contains", value=query_param("tag", view_filters.get("tag", "")))
     limit = st.slider("Rows", min_value=10, max_value=500, value=100, step=10)
     endpoint = st.text_input("NodeAgent endpoint", value=os.environ.get("NODEAGENT_ENDPOINT", ""), help="Optional POST endpoint. Empty uses local catalog mode.")
 
@@ -364,7 +431,7 @@ metric_cols[2].metric("Domains", frame["domain"].nunique())
 metric_cols[3].metric("Kinds", frame["kind"].nunique())
 metric_cols[4].metric("Cost tiers", frame["cost_tier"].nunique())
 
-tab_search, tab_hierarchy, tab_agent, tab_personas = st.tabs(["Search", "Hierarchy", "NodeAgent", "Persona tests"])
+tab_search, tab_hierarchy, tab_bundles, tab_provenance, tab_agent, tab_personas = st.tabs(["Search", "Hierarchy", "Saved views", "Provenance", "NodeAgent", "Persona tests"])
 
 with tab_search:
     st.subheader("Ranked task table")
@@ -380,6 +447,8 @@ with tab_search:
                 "difficulty_score",
                 "steps",
                 "cost_tier",
+                "verifier_type",
+                "score_status",
                 "top_tags",
             ]
         ],
@@ -416,9 +485,73 @@ with tab_hierarchy:
     else:
         st.info("No hierarchy file was found. Run npm run build:catalog.")
 
+with tab_bundles:
+    st.subheader("Saved views and shareable bundles")
+    if saved_views:
+        st.dataframe(
+            pd.DataFrame(
+                [
+                    {
+                        "id": view.get("id"),
+                        "title": view.get("title"),
+                        "persona": view.get("persona"),
+                        "count": view.get("count"),
+                        "sort": view.get("sort"),
+                        "query": view.get("query"),
+                    }
+                    for view in saved_views
+                ]
+            ),
+            use_container_width=True,
+            hide_index=True,
+        )
+    for bundle in task_bundles:
+        with st.expander(f"{bundle.get('title')} ({bundle.get('taskCount')} tasks)", expanded=bundle.get("id") == saved_view):
+            st.write(bundle.get("description", ""))
+            st.caption(f"Persona: {bundle.get('persona')} | estimated steps: {bundle.get('estimatedStepTotal')} | max difficulty score: {bundle.get('maxDifficultyScore')}")
+            st.dataframe(pd.DataFrame(bundle.get("tasks", [])), use_container_width=True, hide_index=True)
+            st.download_button(
+                f"Download {bundle.get('id')} bundle",
+                data=json.dumps(bundle, indent=2),
+                file_name=f"{bundle.get('id')}.json",
+                mime="application/json",
+            )
+
+with tab_provenance:
+    st.subheader("Provenance and score boundaries")
+    st.caption("Every task keeps product-path proof separate from official semantic benchmark scoring.")
+    pcols = st.columns(3)
+    pcols[0].metric("Verifier types", provenance_payload.get("counts", {}).get("verifierTypes", 0))
+    pcols[1].metric("Score statuses", provenance_payload.get("counts", {}).get("scoreStatuses", 0))
+    pcols[2].metric("Primary suites", provenance_payload.get("counts", {}).get("primarySuites", 0))
+    st.write("Verifier types")
+    st.dataframe(pd.DataFrame(sorted(provenance_payload.get("verifierTypes", {}).items(), key=lambda item: item[1], reverse=True), columns=["verifier_type", "tasks"]), use_container_width=True, hide_index=True)
+    st.write("Score statuses")
+    st.dataframe(pd.DataFrame(sorted(provenance_payload.get("scoreStatuses", {}).items(), key=lambda item: item[1], reverse=True), columns=["score_status", "tasks"]), use_container_width=True, hide_index=True)
+    st.write("Sample tasks by verifier")
+    for verifier_type, samples in provenance_payload.get("samplesByVerifierType", {}).items():
+        with st.expander(f"{verifier_type} ({len(samples)} samples)", expanded=False):
+            st.dataframe(pd.DataFrame(samples), use_container_width=True, hide_index=True)
+
 with tab_agent:
     st.subheader("Ask NodeAgent")
     st.caption("Uses NODEAGENT_ENDPOINT when configured; otherwise answers deterministically from the ranked catalog.")
+    with st.expander("Bridge contract", expanded=False):
+        st.code(
+            json.dumps(
+                {
+                    "schema": "nodetasks-nodeagent-bridge-v1",
+                    "mode": "catalog_qa",
+                    "question": "Which tasks should I run first?",
+                    "persona": persona,
+                    "savedView": saved_view,
+                    "catalogContext": "top filtered rows",
+                    "responseContract": {"answerField": "answer", "mustCiteTaskIds": True, "mustPreserveScoreBoundary": True},
+                },
+                indent=2,
+            ),
+            language="json",
+        )
     ask_preview = query_param("ask", query or "What should I run first?")
     with st.expander("NodeAgent answer preview for current filters", expanded=True):
         st.markdown(local_nodeagent_answer(ask_preview, ranked, persona))
@@ -431,7 +564,7 @@ with tab_agent:
     if prompt:
         st.session_state.chat.append({"role": "user", "content": prompt})
         context = shown.head(12).to_dict(orient="records")
-        external = call_nodeagent(endpoint, prompt, context, persona)
+        external = call_nodeagent(endpoint, prompt, context, persona, saved_view)
         answer = external or local_nodeagent_answer(prompt, ranked, persona)
         st.session_state.chat.append({"role": "assistant", "content": answer})
         st.rerun()

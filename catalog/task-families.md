@@ -1,6 +1,6 @@
 # NodeTasks Catalog
 
-Generated: 2026-07-09T01:11:24.202Z
+Generated: 2026-07-09T01:35:42.882Z
 
 ## Summary
 
@@ -9,6 +9,8 @@ Generated: 2026-07-09T01:11:24.202Z
 - Extracted tasks: 9097
 - Benchmark proxy adapters: 4
 - External local proxy tasks: 3
+- Saved views: 8
+- Task bundles: 8
 - Source files: 1236
 
 ## Domains
@@ -129,6 +131,50 @@ Generated: 2026-07-09T01:11:24.202Z
 | workstreambench | 1 |
 | workstreambench-prod-proxy-task | 5 |
 
+## Saved Views
+
+| View | Persona | Tasks | Sort | Query |
+| --- | --- | ---: | --- | --- |
+| first-hour | New contributor | 2256 | difficulty | nodeagent graph source test intro |
+| cheap-spreadsheetbench-models | Model evaluator | 4952 | cost | spreadsheetbench model-attempt |
+| browser-proof-surfaces | Product QA | 211 | difficulty | browser chat trace graph notebook upload room |
+| finance-evidence-work | Finance analyst | 632 | domain | finance spreadsheet accounting bankertoolbench evidence xbrl |
+| proofloop-governance-gates | Benchmark maintainer | 0 | difficulty | proofloop benchmark official scorer verifier gate doctrine |
+| nodeagent-runtime-spine | Agent engineer | 457 | difficulty | nodeagent frame trace runtime model tool receipt |
+| collaboration-interiors | Product QA | 151 | difficulty | graph chat notebook trace multi-user command-palette upload |
+| official-score-boundaries | Benchmark maintainer | 6821 | difficulty-desc | official score claim scorer verifier proxy product path |
+
+## Shareable Task Bundles
+
+| Bundle | Persona | Tasks | Estimated steps | Max difficulty score |
+| --- | --- | ---: | ---: | ---: |
+| first-hour | New contributor | 60 | 60 | 7 |
+| cheap-spreadsheetbench-models | Model evaluator | 60 | 540 | 59 |
+| browser-proof-surfaces | Product QA | 60 | 240 | 28 |
+| finance-evidence-work | Finance analyst | 60 | 61 | 12 |
+| proofloop-governance-gates | Benchmark maintainer | 0 | 0 | 0 |
+| nodeagent-runtime-spine | Agent engineer | 60 | 60 | 7 |
+| collaboration-interiors | Product QA | 60 | 60 | 11 |
+| official-score-boundaries | Benchmark maintainer | 60 | 546 | 77 |
+
+## Provenance
+
+| Verifier type | Tasks |
+| --- | ---: |
+| model-proxy-receipt | 5416 |
+| browser-proof | 1608 |
+| source-reference | 1236 |
+| deterministic-test | 738 |
+| verifier-receipt | 63 |
+| rubric-scenario | 61 |
+| catalog-derived | 12 |
+| proxy-adapter-contract | 6 |
+
+| Score status | Tasks |
+| --- | ---: |
+| official-boundary-blocked | 6770 |
+| no-official-score-claim | 2370 |
+
 ## Benchmark Proxy Adapters
 
 | Adapter | Source | Scoring | Live command |
@@ -163,10 +209,13 @@ Generated: 2026-07-09T01:11:24.202Z
 
 ## Search Surfaces
 
-- `catalog/all-tasks.json`: normalized task objects with rank metadata.
+- `catalog/all-tasks.json`: normalized task objects with rank, curation, and provenance metadata.
 - `catalog/ranked-tasks.json`: same task set sorted by domain, difficulty, cost, and steps.
 - `catalog/hierarchy.json`: domain > difficulty > cost hierarchy.
 - `catalog/tag-index.json`: ranked tags with domain, kind, difficulty, and cost counts.
+- `catalog/saved-views.json`: reusable search views for common personas.
+- `catalog/task-bundles.json`: shareable ranked bundles from the saved views.
+- `catalog/provenance-index.json`: verifier type, source kind, suite lineage, and score-boundary rollups.
 - `catalog/search-index.jsonl`: one searchable JSON record per task.
 - `catalog/task-browser.html`: local browser search UI.
 - `npm run search -- <query>`: CLI search.

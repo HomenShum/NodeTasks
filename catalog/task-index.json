@@ -1,6 +1,6 @@
 {
   "schema": "nodetasks-index-v1",
-  "generatedAt": "2026-07-09T01:11:24.202Z",
+  "generatedAt": "2026-07-09T01:35:42.882Z",
   "summary": {
     "liveInteractionTasks": 43,
     "extractedTasks": 9097,
@@ -8,6 +8,9 @@
     "benchmarkProxyAdapters": 4,
     "externalLocalProxyTasks": 3,
     "sourceFiles": 1236,
+    "savedViews": 8,
+    "taskBundles": 8,
+    "provenanceVerifierTypes": 8,
     "sourceBytes": 22808765
   },
   "families": {
@@ -159,6 +162,9 @@
     "catalog/ranked-tasks.json",
     "catalog/hierarchy.json",
     "catalog/tag-index.json",
+    "catalog/saved-views.json",
+    "catalog/task-bundles.json",
+    "catalog/provenance-index.json",
     "catalog/live-interaction-tasks.json",
     "catalog/extracted-tasks.json",
     "catalog/benchmark-proxy-adapters.json",

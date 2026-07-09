@@ -2,6 +2,8 @@
 
 NodeTasks is a public task corpus and benchmark-proxy adapter bundle extracted from NodeRoom. It is meant to make live browser tasks, benchmark proxy adapters, proof receipts, rubrics, benchmark-suite scaffolds, and source-backed test tasks discoverable outside the main application repo.
 
+![NodeTasks Streamlit explorer showing ranked search, saved views, provenance, and NodeAgent catalog Q&A](assets/nodetasks-streamlit-explorer.gif)
+
 This repo is a curated source snapshot, not a claim of official benchmark scores. External benchmark adapters separate:
 
 - `productPathCompletion`: whether a product UI path ran with visible proof artifacts.
@@ -31,12 +33,18 @@ catalog/
   benchmark-proxy-adapters.json
   extracted-tasks.json
   live-interaction-tasks.json
+  provenance-index.json
+  ranked-tasks.json
+  saved-views.json
   search-index.jsonl
   search-index.js
   task-browser.html
+  task-bundles.json
   source-files.json
   task-index.json
   task-families.md
+assets/
+  nodetasks-streamlit-explorer.gif
 schemas/
   node-task.schema.json
 scripts/
@@ -67,6 +75,9 @@ The generated corpus currently exposes `9,140` searchable tasks:
 - `1,030` extracted unit/browser test cases.
 - QA features, scenarios, rubrics, suites, adapters, local proxy tasks, and source-reference records.
 - Rank metadata for domain, subdomain, estimated steps, cost tier, difficulty tier, persona fit, and top tags.
+- Per-task curation fields: summary, why it matters, first run, caution, recommended personas, and score-boundary language.
+- Per-task provenance fields: suite lineage, verifier type, score status, receipt expectations, and source kinds.
+- `8` saved views and `8` shareable task bundles for common user roles.
 
 Use the CLI:
 
@@ -76,6 +87,8 @@ npm run search -- spreadsheetbench --kind model-attempt --limit 10
 npm run search -- trace notebook --limit 10
 npm run search -- --family spreadsheetbench-v1-full-912 --kind benchmark-target --limit 10
 npm run search -- graph --domain "Collaboration & Room UX" --sort difficulty
+npm run search -- --view cheap-spreadsheetbench-models --limit 5
+npm run search -- --view browser-proof-surfaces --limit 5
 ```
 
 Or open the local browser search UI:
@@ -99,10 +112,20 @@ The Streamlit app supports:
 
 - Search and sort by relevance, domain hierarchy, difficulty, steps, and cost.
 - Filters for domain, task kind, difficulty tier, cost tier, and tags.
+- Saved views and downloadable task bundles for onboarding, model evals, browser proof, finance/evidence work, governance gates, NodeAgent runtime, and collaboration interiors.
+- Provenance rollups by verifier type, source kind, primary suite, and score-boundary status.
 - Persona lenses for benchmark maintainers, model evaluators, product QA, finance analysts, and new contributors.
-- A NodeAgent chat panel. Set `NODEAGENT_ENDPOINT` to a POST endpoint for a real NodeAgent bridge, or leave it empty to use the deterministic local catalog-agent mode with cited task ids.
+- A NodeAgent chat panel. Set `NODEAGENT_ENDPOINT` to a POST endpoint that follows `docs/NODEAGENT_BRIDGE.md`, or leave it empty to use deterministic local catalog-agent mode with cited task ids.
 
 Persona smoke results are tracked in `docs/PERSONA_SMOKE_RESULTS.md`.
+
+Useful local URLs:
+
+```text
+http://127.0.0.1:8502/?view=cheap-spreadsheetbench-models&persona=Model%20evaluator
+http://127.0.0.1:8502/?view=browser-proof-surfaces&persona=Product%20QA
+http://127.0.0.1:8502/?view=proofloop-governance-gates&persona=Benchmark%20maintainer
+```
 
 ## Refresh The Catalog
 
@@ -110,6 +133,7 @@ Persona smoke results are tracked in `docs/PERSONA_SMOKE_RESULTS.md`.
 npm run build:catalog
 npm run search -- nodeagent graph --limit 5
 npm run validate
+python -m py_compile apps\nodetasks_streamlit.py
 ```
 
 ## Task Philosophy
