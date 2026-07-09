@@ -2,6 +2,8 @@
 
 NodeTasks is a public task corpus and benchmark-proxy adapter bundle extracted from NodeRoom. It is meant to make live browser tasks, benchmark proxy adapters, proof receipts, rubrics, benchmark-suite scaffolds, and source-backed test tasks discoverable outside the main application repo.
 
+Storyboard first: the README clip is governed by [`docs/FEATURE_PROOF_STORYBOARD.md`](docs/FEATURE_PROOF_STORYBOARD.md). It must prove ranked search, saved bundles, provenance, and NodeAgent catalog Q&A before it is treated as a publishable proof asset.
+
 ![NodeTasks Streamlit explorer showing ranked search, saved views, provenance, and NodeAgent catalog Q&A](assets/nodetasks-streamlit-explorer.gif)
 
 This repo is a curated source snapshot, not a claim of official benchmark scores. External benchmark adapters separate:
