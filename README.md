@@ -136,6 +136,7 @@ npm run build:catalog
 npm run search -- nodeagent graph --limit 5
 npm run validate
 python -m py_compile apps\nodetasks_streamlit.py
+npm run clip:capture
 ```
 
 ## Task Philosophy

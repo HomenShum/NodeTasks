@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build:catalog": "node scripts/build-catalog.mjs",
+    "clip:capture": "node scripts/capture-storyboard.mjs",
     "search": "node scripts/search-tasks.mjs",
     "streamlit": "python -m streamlit run apps/nodetasks_streamlit.py",
     "validate": "node scripts/validate-catalog.mjs"
@@ -22,5 +23,8 @@
     "proofloop",
     "noderoom",
     "nodeagent"
-  ]
+  ],
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
 }
