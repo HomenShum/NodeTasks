@@ -1,0 +1,1294 @@
+{
+  "schema": "nodetasks-live-interaction-catalog-v1",
+  "generatedAt": "2026-07-09T00:34:02.616Z",
+  "tasks": [
+    {
+      "id": "noderoom.graph.nodeagent.review-gaps.v1",
+      "family": "graph-nodeagent",
+      "surface": "NodeRoom",
+      "route": "#upscalex",
+      "persona": "host",
+      "goal": "Ask NodeAgent to find review blockers from the entity graph.",
+      "setup": [
+        "Open seeded UpScaleX room.",
+        "Open work surface graph through the graph-tab DOM contract."
+      ],
+      "steps": [
+        "Wait for knowledge graph.",
+        "Wait for graph-nodeagent-panel.",
+        "Submit review-gaps prompt."
+      ],
+      "assertions": [
+        "Graph panel renders.",
+        "NodeAgent request is accepted.",
+        "Room trace or public chat can carry the workpaper."
+      ],
+      "artifacts": [
+        "browser screenshot",
+        "chat message",
+        "trace receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/live-room-scenario.spec.ts",
+        "upstream/noderoom/tests/commandPalette.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "agent-ui-integration"
+    },
+    {
+      "id": "noderoom.graph.nodeagent.evidence.v1",
+      "family": "graph-nodeagent",
+      "surface": "NodeRoom",
+      "route": "#upscalex",
+      "persona": "host",
+      "goal": "Ask NodeAgent for source-backed evidence around a selected graph node.",
+      "setup": [
+        "Open graph.",
+        "Select a company node when present."
+      ],
+      "steps": [
+        "Submit evidence prompt.",
+        "Inspect returned status."
+      ],
+      "assertions": [
+        "needs_review is not treated as source-backed.",
+        "Selected node context is included."
+      ],
+      "artifacts": [
+        "trace receipt",
+        "graph screenshot"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/live-room-scenario.spec.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "provenance"
+    },
+    {
+      "id": "noderoom.graph.people-clusters.v1",
+      "family": "graph-nodeagent",
+      "surface": "NodeRoom",
+      "route": "#upscalex",
+      "persona": "host",
+      "goal": "Trace person-to-company relationships and connected project or achievement clusters.",
+      "setup": [
+        "Open entity graph.",
+        "Focus person/company node."
+      ],
+      "steps": [
+        "Search or select a person.",
+        "Expand neighborhood.",
+        "Ask NodeAgent who researched the company."
+      ],
+      "assertions": [
+        "People nodes remain connected to companies.",
+        "Projects/achievements remain visible when present."
+      ],
+      "artifacts": [
+        "graph screenshot",
+        "tool trace"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/proofloopExternalAdapterTasks.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "relationship-navigation"
+    },
+    {
+      "id": "streamlit.nodegraph.chat.evidence.v1",
+      "family": "streamlit-nodegraph",
+      "surface": "Streamlit",
+      "route": "http://127.0.0.1:8501/?focus=company:cardionova",
+      "persona": "analyst",
+      "goal": "Use the Streamlit quick prompt to ask NodeAgent for evidence.",
+      "setup": [
+        "Start nodeagent_server.mjs.",
+        "Start Streamlit app."
+      ],
+      "steps": [
+        "Click Evidence.",
+        "Wait for assistant reply.",
+        "Open tool trace expander."
+      ],
+      "assertions": [
+        "Assistant reply mentions NodeAgent.",
+        "Tool trace exists.",
+        "Graph iframe remains rendered."
+      ],
+      "artifacts": [
+        "browser screenshot",
+        "tool trace"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/browser-scenario.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "external-demo"
+    },
+    {
+      "id": "streamlit.nodegraph.chat.typed-at-mention.v1",
+      "family": "streamlit-nodegraph",
+      "surface": "Streamlit",
+      "route": "http://127.0.0.1:8501/?focus=company:cardionova",
+      "persona": "analyst",
+      "goal": "Type an @nodeagent chat prompt in Streamlit and receive a second turn.",
+      "setup": [
+        "Start bridge.",
+        "Start Streamlit."
+      ],
+      "steps": [
+        "Type @nodeagent who researched this company?",
+        "Press Enter.",
+        "Wait for reply."
+      ],
+      "assertions": [
+        "Message persists in session state.",
+        "Assistant reply uses graph bridge.",
+        "No Streamlit exception is shown."
+      ],
+      "artifacts": [
+        "browser screenshot",
+        "chat transcript"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/browser-scenario.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "external-demo"
+    },
+    {
+      "id": "noderoom.chat.public-nodeagent.company-research.v1",
+      "family": "public-chat",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Ask public NodeAgent to research a company row from chat.",
+      "setup": [
+        "Open demo room.",
+        "Ensure public chat is selected."
+      ],
+      "steps": [
+        "Send @nodeagent company research prompt.",
+        "Wait for streaming/status.",
+        "Inspect final message."
+      ],
+      "assertions": [
+        "User message visible.",
+        "Agent stream/job status visible.",
+        "Final response appears in public chat."
+      ],
+      "artifacts": [
+        "chat transcript",
+        "node trace",
+        "cost ledger"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/live-room-scenario.spec.ts",
+        "upstream/noderoom/tests/chatReasoningFrames.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-agent"
+    },
+    {
+      "id": "noderoom.chat.public-nodeagent.runway-gaps.v1",
+      "family": "public-chat",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Ask public NodeAgent to identify runway or evidence gaps.",
+      "setup": [
+        "Open demo room.",
+        "Select public chat."
+      ],
+      "steps": [
+        "Send @nodeagent runway gaps.",
+        "Wait for progress.",
+        "Open trace."
+      ],
+      "assertions": [
+        "Gaps are called out as review items.",
+        "No backend mutation bypass is required."
+      ],
+      "artifacts": [
+        "chat transcript",
+        "trace receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/chatReasoningFrames.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-agent"
+    },
+    {
+      "id": "noderoom.trace.open-filter-group.v1",
+      "family": "trace-surface",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Open trace, filter by event kind, and group runs.",
+      "setup": [
+        "Open room with trace events."
+      ],
+      "steps": [
+        "Open Run trace.",
+        "Toggle group by run.",
+        "Filter an event kind."
+      ],
+      "assertions": [
+        "Trace list remains bounded.",
+        "Grouped row expands on demand."
+      ],
+      "artifacts": [
+        "trace screenshot",
+        "trace JSON"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/cellHistoryUi.test.tsx",
+        "upstream/noderoom/tests/runTrace.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "trace-observability"
+    },
+    {
+      "id": "noderoom.proposals.accept-reject.v1",
+      "family": "proposal-review",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Review pending agent proposals without direct mutation bypass.",
+      "setup": [
+        "Seed proposal or run NodeAgent in review mode."
+      ],
+      "steps": [
+        "Open review queue.",
+        "Accept one proposal.",
+        "Reject one proposal."
+      ],
+      "assertions": [
+        "Accepted proposal mutates through review path.",
+        "Rejected proposal remains auditable.",
+        "Trace receipt records decision."
+      ],
+      "artifacts": [
+        "proposal receipt",
+        "trace receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/proofloopPipeline.test.ts",
+        "upstream/noderoom/tests/agentJobsSource.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "human-approval"
+    },
+    {
+      "id": "noderoom.sheet.edit-evidence-export.v1",
+      "family": "spreadsheet",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Edit a spreadsheet cell, inspect evidence, and export XLSX.",
+      "setup": [
+        "Open demo room.",
+        "Open Q3 variance sheet."
+      ],
+      "steps": [
+        "Double-click a cell.",
+        "Edit value.",
+        "Open evidence popover.",
+        "Export XLSX."
+      ],
+      "assertions": [
+        "Cell edit persists.",
+        "Evidence popover is visible.",
+        "Export action completes."
+      ],
+      "artifacts": [
+        "xlsx file",
+        "browser screenshot"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/evidencePopover.test.tsx",
+        "upstream/noderoom/tests/sheetVirtualization.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "spreadsheet-workflow"
+    },
+    {
+      "id": "noderoom.sheet.generic-company-research.v1",
+      "family": "spreadsheet",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Drive the generic company research grid through pending/enriched statuses.",
+      "setup": [
+        "Open Company research sheet."
+      ],
+      "steps": [
+        "Ask NodeAgent to enrich pending rows.",
+        "Wait for visible status changes."
+      ],
+      "assertions": [
+        "Statuses update through store actions.",
+        "Evidence/source cells are present."
+      ],
+      "artifacts": [
+        "node trace",
+        "sheet screenshot"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/workflowEvals.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "spreadsheet-agent"
+    },
+    {
+      "id": "noderoom.notebook.agent-outline.v1",
+      "family": "notebook",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Ask NodeAgent to create or update a notebook outline.",
+      "setup": [
+        "Open notebook artifact."
+      ],
+      "steps": [
+        "Submit outline prompt.",
+        "Inspect block/citation metadata."
+      ],
+      "assertions": [
+        "Notebook writes are versioned.",
+        "Private/public access constraints are preserved."
+      ],
+      "artifacts": [
+        "notebook screenshot",
+        "trace receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/notebookAgentOutline.test.ts",
+        "upstream/noderoom/tests/notebookPaper.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "notebook-agent"
+    },
+    {
+      "id": "noderoom.notebook.block-edit.v1",
+      "family": "notebook",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Apply a governed single-block notebook edit.",
+      "setup": [
+        "Open notebook.",
+        "Select block."
+      ],
+      "steps": [
+        "Run block edit.",
+        "Inspect diff/history."
+      ],
+      "assertions": [
+        "CAS hash protects stale writes.",
+        "Human prose is annotated instead of blindly replaced."
+      ],
+      "artifacts": [
+        "diff receipt",
+        "trace receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/notebookAgentOutline.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "notebook-governance"
+    },
+    {
+      "id": "noderoom.upload.csv-xlsx-pdf.v1",
+      "family": "upload",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Upload CSV/XLSX/text/PDF inputs and verify artifacts appear.",
+      "setup": [
+        "Open binder upload affordance."
+      ],
+      "steps": [
+        "Upload supported files.",
+        "Open created artifacts."
+      ],
+      "assertions": [
+        "Artifact appears in binder.",
+        "Parsed content is accessible.",
+        "No partial upload after failure."
+      ],
+      "artifacts": [
+        "artifact manifest",
+        "browser screenshot"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/leftRailUpload.test.tsx",
+        "upstream/noderoom/tests/uploadedArtifact.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "import"
+    },
+    {
+      "id": "noderoom.upload.bad-file-rollback.v1",
+      "family": "upload",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Reject an oversized or invalid file without partial commit.",
+      "setup": [
+        "Prepare mixed valid/invalid upload batch."
+      ],
+      "steps": [
+        "Drop files.",
+        "Wait for error state."
+      ],
+      "assertions": [
+        "Bad file named.",
+        "Spinner clears.",
+        "No partial artifact commit."
+      ],
+      "artifacts": [
+        "error screenshot"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/leftRailUpload.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "import-safety"
+    },
+    {
+      "id": "noderoom.multiuser.lock-cas-draft.v1",
+      "family": "multi-user",
+      "surface": "NodeRoom",
+      "route": "live room",
+      "persona": "host+guest",
+      "goal": "Prove managed locks, CAS, drafts, and cleanup across actors.",
+      "setup": [
+        "Open two clients.",
+        "Join same room as host and guest."
+      ],
+      "steps": [
+        "Actor A locks cell.",
+        "Actor B attempts stale edit.",
+        "Release lock.",
+        "Merge draft."
+      ],
+      "assertions": [
+        "CAS conflict is safe.",
+        "Draft path is visible.",
+        "Release cleanup completes."
+      ],
+      "artifacts": [
+        "multiuser proof JSON",
+        "trace receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/multiUserCoordinationProof.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "collaboration"
+    },
+    {
+      "id": "noderoom.audit.bundle-export.v1",
+      "family": "audit-export",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Export signed evidence bundle with visibility boundaries.",
+      "setup": [
+        "Open seeded room."
+      ],
+      "steps": [
+        "Run export.",
+        "Inspect manifest."
+      ],
+      "assertions": [
+        "Private artifacts do not leak.",
+        "Manifest hash is stable.",
+        "Bad proof token creates nothing."
+      ],
+      "artifacts": [
+        "bundle manifest",
+        "csv",
+        "hash"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/auditBundle.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "privacy-export"
+    },
+    {
+      "id": "noderoom.roomhome.work-lanes.v1",
+      "family": "room-home",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Verify room home work lanes and open artifact routing.",
+      "setup": [
+        "Open room home."
+      ],
+      "steps": [
+        "Open work lane.",
+        "Navigate to artifact."
+      ],
+      "assertions": [
+        "Lane counts render.",
+        "Artifact opens without losing room state."
+      ],
+      "artifacts": [
+        "browser screenshot"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/roomHomeWorkLanes.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "navigation"
+    },
+    {
+      "id": "noderoom.command-palette.open-graph-trace.v1",
+      "family": "command-palette",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Use command palette to open graph and trace surfaces.",
+      "setup": [
+        "Open workspace."
+      ],
+      "steps": [
+        "Summon palette.",
+        "Run Open Graph.",
+        "Run Open Trace."
+      ],
+      "assertions": [
+        "Graph and trace open through DOM-level contracts.",
+        "Listeners clean up after repeated use."
+      ],
+      "artifacts": [
+        "browser screenshot"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/commandPalette.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "navigation"
+    },
+    {
+      "id": "noderoom.voice.chat-composer.v1",
+      "family": "voice",
+      "surface": "NodeRoom",
+      "route": "?demo=1",
+      "persona": "host",
+      "goal": "Verify voice/chat composer provider path where available.",
+      "setup": [
+        "Open chat composer."
+      ],
+      "steps": [
+        "Toggle voice control.",
+        "Submit transcribed prompt when provider exists."
+      ],
+      "assertions": [
+        "Provider failures are honest.",
+        "Composer remains usable."
+      ],
+      "artifacts": [
+        "browser screenshot",
+        "voice receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/tests/chatVoiceComposer.test.tsx",
+        "upstream/noderoom/tests/chatVoiceComposerProviderMic.test.tsx"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "voice"
+    },
+    {
+      "id": "adapter.finch.local-story.v1",
+      "family": "benchmark-proxy",
+      "surface": "ProofLoop",
+      "route": "/#story",
+      "persona": "emulated-user",
+      "goal": "Run Finch local product-path proxy without claiming official score.",
+      "setup": [
+        "Load local task.",
+        "Start browser scenario."
+      ],
+      "steps": [
+        "Open story route.",
+        "Edit Q3 revenue C2.",
+        "Send story prompt."
+      ],
+      "assertions": [
+        "Computed D2 = C2 - B2 = 3,250.",
+        "officialScoreClaim is false."
+      ],
+      "artifacts": [
+        "browser-proof.json",
+        "local-task-manifest.json",
+        "visual-proof.png"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/finch/adapter.json",
+        "upstream/noderoom/proofloop/benchmarks/common/local-tasks.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "external-benchmark-proxy"
+    },
+    {
+      "id": "adapter.finauditing.local-story.v1",
+      "family": "benchmark-proxy",
+      "surface": "ProofLoop",
+      "route": "/#story",
+      "persona": "emulated-user",
+      "goal": "Run FinAuditing local risk/misstatement review proxy.",
+      "setup": [
+        "Load local task.",
+        "Start browser scenario."
+      ],
+      "steps": [
+        "Open story route.",
+        "Edit visible spreadsheet.",
+        "Send audit prompt."
+      ],
+      "assertions": [
+        "Visible computed proof.",
+        "No official score claim."
+      ],
+      "artifacts": [
+        "browser-proof.json",
+        "visual-proof.png"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/finauditing/adapter.json",
+        "upstream/noderoom/proofloop/benchmarks/common/local-tasks.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "external-benchmark-proxy"
+    },
+    {
+      "id": "adapter.workstreambench.local-story.v1",
+      "family": "benchmark-proxy",
+      "surface": "ProofLoop",
+      "route": "/#story",
+      "persona": "emulated-user",
+      "goal": "Run WorkstreamBench local spreadsheet-workstream proxy.",
+      "setup": [
+        "Load local task."
+      ],
+      "steps": [
+        "Open story route.",
+        "Run spreadsheet workstream prompt."
+      ],
+      "assertions": [
+        "Edited input remains intact.",
+        "D2 recomputes."
+      ],
+      "artifacts": [
+        "browser-proof.json",
+        "visual-proof.png"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/workstreambench/adapter.json",
+        "upstream/noderoom/proofloop/benchmarks/common/local-tasks.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "external-benchmark-proxy"
+    },
+    {
+      "id": "adapter.finch.live-room.v1",
+      "family": "benchmark-proxy-live",
+      "surface": "ProofLoop",
+      "route": "fresh live room",
+      "persona": "emulated-user",
+      "goal": "Run Finch proxy through fresh live room public @nodeagent.",
+      "setup": [
+        "Create fresh room.",
+        "Upload proxy inputs."
+      ],
+      "steps": [
+        "Send public @nodeagent prompt.",
+        "Wait for completion phrase or final answer."
+      ],
+      "assertions": [
+        "Fresh room created.",
+        "Inputs uploaded through UI.",
+        "Visible stream/status evidence captured."
+      ],
+      "artifacts": [
+        "live-user-contract.json",
+        "node-trace-v2.json",
+        "node-eval.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/live-room-scenario.spec.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "external-benchmark-proxy"
+    },
+    {
+      "id": "adapter.finauditing.live-room.v1",
+      "family": "benchmark-proxy-live",
+      "surface": "ProofLoop",
+      "route": "fresh live room",
+      "persona": "emulated-user",
+      "goal": "Run FinAuditing proxy through fresh live room public @nodeagent.",
+      "setup": [
+        "Create fresh room.",
+        "Upload risk/source inputs."
+      ],
+      "steps": [
+        "Send public @nodeagent prompt.",
+        "Capture visual proof."
+      ],
+      "assertions": [
+        "Official score remains blocked unless verifier accepts artifacts."
+      ],
+      "artifacts": [
+        "live-user-contract.json",
+        "verifier-receipt.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/live-room-scenario.spec.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "external-benchmark-proxy"
+    },
+    {
+      "id": "adapter.workstreambench.live-room.v1",
+      "family": "benchmark-proxy-live",
+      "surface": "ProofLoop",
+      "route": "fresh live room",
+      "persona": "emulated-user",
+      "goal": "Run WorkstreamBench proxy through fresh live room public @nodeagent.",
+      "setup": [
+        "Create fresh room.",
+        "Upload spreadsheet inputs."
+      ],
+      "steps": [
+        "Invoke @nodeagent.",
+        "Inspect sheet and trace."
+      ],
+      "assertions": [
+        "Product path completion is separate from official semantic score."
+      ],
+      "artifacts": [
+        "scorecard.md",
+        "cost-ledger.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/common/live-room-scenario.spec.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "external-benchmark-proxy"
+    },
+    {
+      "id": "adapter.bankertoolbench.live-suite.v1",
+      "family": "benchmark-proxy-live",
+      "surface": "ProofLoop",
+      "route": "BankerToolBench live room",
+      "persona": "emulated-banker",
+      "goal": "Run BankerToolBench live suite through NodeRoom browser path.",
+      "setup": [
+        "Stage BankerToolBench task.",
+        "Open live browser suite."
+      ],
+      "steps": [
+        "Seed inputs through UI.",
+        "Produce expected deliverables.",
+        "Run proof check."
+      ],
+      "assertions": [
+        "XLSX/PPTX/DOCX/PDF artifacts expected.",
+        "Reopen proof exists."
+      ],
+      "artifacts": [
+        "live-user-contract.json",
+        "exported-files-reopen-proof.json",
+        "official-scorer-receipt.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/benchmarks/bankertoolbench/adapter.json",
+        "upstream/noderoom/tests/bankerToolBenchRunner.test.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "finance-deliverables"
+    },
+    {
+      "id": "gate.prod-browser-adapters.ledger.v1",
+      "family": "benchmark-gate",
+      "surface": "NodeRoom eval",
+      "route": "script",
+      "persona": "maintainer",
+      "goal": "Build ledger of prod browser adapter contracts.",
+      "setup": [
+        "Run adapter ledger script."
+      ],
+      "steps": [
+        "Render markdown.",
+        "Inspect missing browser scenarios."
+      ],
+      "assertions": [
+        "Adapters tracked count is recorded.",
+        "Blocked adapter families are explicit."
+      ],
+      "artifacts": [
+        "proofloop-prod-browser-adapters.json",
+        "PROOFLOOP_PROD_BROWSER_ADAPTERS.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/scripts/proofloop-prod-browser-adapters.ts",
+        "upstream/noderoom/tests/proofloopProdBrowserAdapters.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "governance"
+    },
+    {
+      "id": "gate.prod-proxy-matrix.v1",
+      "family": "benchmark-gate",
+      "surface": "NodeRoom eval",
+      "route": "script",
+      "persona": "maintainer",
+      "goal": "Build prod proxy benchmark matrix across models and task targets.",
+      "setup": [
+        "Run matrix script."
+      ],
+      "steps": [
+        "Inspect runnable/blocked/all-task winner fields."
+      ],
+      "assertions": [
+        "No full all-task winner is claimed from adapter-only smoke.",
+        "Task denominator is preserved."
+      ],
+      "artifacts": [
+        "proofloop-prod-proxy-benchmark-matrix.json",
+        "PROOFLOOP_PROD_PROXY_BENCHMARK_MATRIX.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/scripts/proofloop-prod-proxy-benchmark-matrix.ts",
+        "upstream/noderoom/tests/proofloopProdProxyBenchmarkMatrix.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "governance"
+    },
+    {
+      "id": "gate.prod-proxy-longrun.v1",
+      "family": "benchmark-gate",
+      "surface": "NodeRoom eval",
+      "route": "script",
+      "persona": "maintainer",
+      "goal": "Plan long-run prod proxy queue.",
+      "setup": [
+        "Run long-run planner."
+      ],
+      "steps": [
+        "Inspect queue, budget, and blocked lanes."
+      ],
+      "assertions": [
+        "Every model-task attempt is planned.",
+        "Blocked adapter families remain visible."
+      ],
+      "artifacts": [
+        "longrun state",
+        "queue JSON",
+        "dashboard"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/scripts/proofloop-prod-proxy-longrun.ts",
+        "upstream/noderoom/tests/proofloopProdProxyLongRun.test.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "governance"
+    },
+    {
+      "id": "proofloop.proximitty.intake.v1",
+      "family": "proofloop-suite",
+      "surface": "ProofLoop",
+      "route": "proximitty-underwriting-pr0",
+      "persona": "underwriting-demo-user",
+      "goal": "Run Proximitty intake scenario with synthetic underwriting data.",
+      "setup": [
+        "Load synthetic dataset."
+      ],
+      "steps": [
+        "Run intake spec.",
+        "Write scorecard and verifier receipt."
+      ],
+      "assertions": [
+        "Synthetic-only disclaimer preserved.",
+        "Required artifacts exist."
+      ],
+      "artifacts": [
+        "scorecard.md",
+        "verifier-receipt.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/scenarios/proximitty-intake.spec.ts",
+        "upstream/noderoom/proofloop/suites/proximitty-underwriting-pr0.json"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "synthetic-underwriting"
+    },
+    {
+      "id": "proofloop.proximitty.risk-research.v1",
+      "family": "proofloop-suite",
+      "surface": "ProofLoop",
+      "route": "proximitty-underwriting-pr0",
+      "persona": "underwriting-demo-user",
+      "goal": "Run Proximitty risk research scenario.",
+      "setup": [
+        "Load source pack and risk notes."
+      ],
+      "steps": [
+        "Run risk research spec."
+      ],
+      "assertions": [
+        "Evidence rubric applies.",
+        "No real financial decision claim."
+      ],
+      "artifacts": [
+        "node-trace-v2.json",
+        "node-eval.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/scenarios/proximitty-risk-research.spec.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "synthetic-underwriting"
+    },
+    {
+      "id": "proofloop.proximitty.packet.v1",
+      "family": "proofloop-suite",
+      "surface": "ProofLoop",
+      "route": "proximitty-underwriting-pr0",
+      "persona": "underwriting-demo-user",
+      "goal": "Generate underwriting packet proof artifacts.",
+      "setup": [
+        "Load synthetic company profile."
+      ],
+      "steps": [
+        "Run underwriting packet spec.",
+        "Generate clips if enabled."
+      ],
+      "assertions": [
+        "Packet artifacts are present.",
+        "Verifier receipt records local-only status."
+      ],
+      "artifacts": [
+        "clips",
+        "scorecard.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/scenarios/proximitty-underwriting-packet.spec.ts"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "synthetic-underwriting"
+    },
+    {
+      "id": "proofloop.accounting.variance-analysis.v1",
+      "family": "proofloop-accounting",
+      "surface": "ProofLoop",
+      "route": "accounting",
+      "persona": "accountant",
+      "goal": "Run accounting variance-analysis scenario.",
+      "setup": [
+        "Seed accounting datasets."
+      ],
+      "steps": [
+        "Run variance-analysis YAML scenario."
+      ],
+      "assertions": [
+        "Accounting rubric applies.",
+        "Dataset registry resolves."
+      ],
+      "artifacts": [
+        "scorecard.md",
+        "node-eval.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/accounting/scenarios/variance-analysis.yaml",
+        "upstream/noderoom/proofloop/accounting/rubrics/accounting-rubric.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "accounting"
+    },
+    {
+      "id": "proofloop.accounting.spreadsheet-reconciliation.v1",
+      "family": "proofloop-accounting",
+      "surface": "ProofLoop",
+      "route": "accounting",
+      "persona": "accountant",
+      "goal": "Run spreadsheet reconciliation scenario.",
+      "setup": [
+        "Seed reconciliation dataset."
+      ],
+      "steps": [
+        "Run scenario.",
+        "Inspect proof receipt."
+      ],
+      "assertions": [
+        "Reconciliation output matches rubric.",
+        "Inputs remain traceable."
+      ],
+      "artifacts": [
+        "scorecard.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/accounting/scenarios/spreadsheet-reconciliation.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "accounting"
+    },
+    {
+      "id": "proofloop.accounting.invoice-extraction.v1",
+      "family": "proofloop-accounting",
+      "surface": "ProofLoop",
+      "route": "accounting",
+      "persona": "accountant",
+      "goal": "Run invoice extraction scenario.",
+      "setup": [
+        "Seed invoice dataset."
+      ],
+      "steps": [
+        "Run invoice extraction YAML scenario."
+      ],
+      "assertions": [
+        "Extracted fields are grounded.",
+        "Rubric result is recorded."
+      ],
+      "artifacts": [
+        "node-eval.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/accounting/scenarios/invoice-extraction.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "accounting"
+    },
+    {
+      "id": "proofloop.accounting.financial-statement-qa.v1",
+      "family": "proofloop-accounting",
+      "surface": "ProofLoop",
+      "route": "accounting",
+      "persona": "accountant",
+      "goal": "Run financial statement QA scenario.",
+      "setup": [
+        "Seed financial statement dataset."
+      ],
+      "steps": [
+        "Run QA scenario."
+      ],
+      "assertions": [
+        "Question answer cites statement evidence."
+      ],
+      "artifacts": [
+        "scorecard.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/accounting/scenarios/financial-statement-qa.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "accounting"
+    },
+    {
+      "id": "proofloop.notion.warm-intro.v1",
+      "family": "proofloop-notion",
+      "surface": "ProofLoop",
+      "route": "notion",
+      "persona": "sales-ops",
+      "goal": "Run Notion warm-intro scenario.",
+      "setup": [
+        "Seed Notion-like datasets."
+      ],
+      "steps": [
+        "Run warm intro scenario."
+      ],
+      "assertions": [
+        "Lead and meeting context are used.",
+        "Sales rubric applies."
+      ],
+      "artifacts": [
+        "scorecard.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/notion/scenarios/01-warm-intro.yaml",
+        "upstream/noderoom/proofloop/notion/rubrics/sales-agent-rubric.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "notion-workflow"
+    },
+    {
+      "id": "proofloop.notion.follow-up.v1",
+      "family": "proofloop-notion",
+      "surface": "ProofLoop",
+      "route": "notion",
+      "persona": "sales-ops",
+      "goal": "Run Notion follow-up scenario.",
+      "setup": [
+        "Seed pipeline and notes."
+      ],
+      "steps": [
+        "Run follow-up spec."
+      ],
+      "assertions": [
+        "Follow-up action is grounded in meeting notes."
+      ],
+      "artifacts": [
+        "scorecard.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/notion/scenarios/02-follow-up.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "notion-workflow"
+    },
+    {
+      "id": "proofloop.notion.pipeline.v1",
+      "family": "proofloop-notion",
+      "surface": "ProofLoop",
+      "route": "notion",
+      "persona": "sales-ops",
+      "goal": "Run automated pipeline scenario.",
+      "setup": [
+        "Seed pipeline dataset."
+      ],
+      "steps": [
+        "Run automated pipeline spec."
+      ],
+      "assertions": [
+        "Pipeline transitions are auditable."
+      ],
+      "artifacts": [
+        "node-trace-v2.json"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/notion/scenarios/03-automated-pipeline.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "notion-workflow"
+    },
+    {
+      "id": "proofloop.notion.meeting-prep.v1",
+      "family": "proofloop-notion",
+      "surface": "ProofLoop",
+      "route": "notion",
+      "persona": "sales-ops",
+      "goal": "Run meeting prep scenario.",
+      "setup": [
+        "Seed meetings and discovery notes."
+      ],
+      "steps": [
+        "Run meeting prep spec."
+      ],
+      "assertions": [
+        "Prep output cites relevant records."
+      ],
+      "artifacts": [
+        "scorecard.md"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/notion/scenarios/04-meeting-prep.yaml"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "notion-workflow"
+    },
+    {
+      "id": "dataset.sec-xbrl.fixture-qa.v1",
+      "family": "dataset",
+      "surface": "ProofLoop",
+      "route": "sec-xbrl",
+      "persona": "financial-qa",
+      "goal": "Run SEC/XBRL fixture task against benchmark manifest.",
+      "setup": [
+        "Load SEC/XBRL fixtures."
+      ],
+      "steps": [
+        "Run scorer or audit task."
+      ],
+      "assertions": [
+        "Fixture ids resolve.",
+        "Benchmark manifest is intact."
+      ],
+      "artifacts": [
+        "benchmark receipt"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/proofloop/datasets/sec-xbrl/benchmark.json",
+        "upstream/noderoom/proofloop/datasets/sec-xbrl/fixtures.json"
+      ],
+      "timeoutMs": 600000,
+      "officialScoreClaim": false,
+      "risk": "financial-data"
+    },
+    {
+      "id": "noderl.anti-reward-hacking-doctrine.v1",
+      "family": "doctrine",
+      "surface": "Noderl",
+      "route": "spec",
+      "persona": "maintainer",
+      "goal": "Validate that certification and exploration loops stay separate.",
+      "setup": [
+        "Read doctrine spec."
+      ],
+      "steps": [
+        "Inspect scaffold proposal acceptance rule.",
+        "Check verifier weakening guard."
+      ],
+      "assertions": [
+        "Repair loop cannot grade its own homework.",
+        "Promoted regressions use tracked ledger."
+      ],
+      "artifacts": [
+        "doctrine review"
+      ],
+      "sourceRefs": [
+        "upstream/noderoom/noderl/spec/anti-reward-hacking-doctrine.md",
+        "upstream/noderoom/proofloop/regressions/promoted-regressions.json"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "governance"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "proofloop-free-openrouter-nodeagent-gauge-v1",
+  "generatedAt": "2026-07-06T02:30:32.660Z",
+  "source": "https://openrouter.ai/api/v1/models?output_modalities=text",
+  "harnessVersion": "nodeagent-tool-loop-free-model-gauge-v1",
+  "officialBenchmarkScoreClaim": false,
+  "summary": {
+    "total": 6,
+    "passed": 3,
+    "failed": 3,
+    "skipped": 0,
+    "estimatedCostUsd": 0
+  },
+  "rows": [
+    {
+      "modelId": "cohere/north-mini-code:free",
+      "name": "Cohere: North Mini Code (free)",
+      "status": "passed",
+      "resolvedModel": "cohere/north-mini-code:free",
+      "supportsTools": true,
+      "contextLength": 256000,
+      "inputTokens": 137,
+      "outputTokens": 110,
+      "estimatedCostUsd": 0,
+      "durationMs": 1393
+    },
+    {
+      "modelId": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "status": "passed",
+      "resolvedModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "supportsTools": true,
+      "contextLength": 1000000,
+      "inputTokens": 434,
+      "outputTokens": 78,
+      "estimatedCostUsd": 0,
+      "durationMs": 4570
+    },
+    {
+      "modelId": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "status": "passed",
+      "resolvedModel": "nvidia/nemotron-3-super-120b-a12b:free",
+      "supportsTools": true,
+      "contextLength": 1000000,
+      "inputTokens": 434,
+      "outputTokens": 75,
+      "estimatedCostUsd": 0,
+      "durationMs": 1128
+    },
+    {
+      "modelId": "qwen/qwen3-coder:free",
+      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "status": "failed",
+      "supportsTools": true,
+      "contextLength": 1048576,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "estimatedCostUsd": 0,
+      "durationMs": 58974,
+      "error": "Failed after 3 attempts. Last error: Provider returned error"
+    },
+    {
+      "modelId": "google/gemma-4-26b-a4b-it:free",
+      "name": "Google: Gemma 4 26B A4B  (free)",
+      "status": "failed",
+      "supportsTools": true,
+      "contextLength": 262144,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "estimatedCostUsd": 0,
+      "durationMs": 6477,
+      "error": "Failed after 3 attempts. Last error: Provider returned error"
+    },
+    {
+      "modelId": "qwen/qwen3-next-80b-a3b-instruct:free",
+      "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "status": "failed",
+      "supportsTools": true,
+      "contextLength": 262144,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "estimatedCostUsd": 0,
+      "durationMs": 53933,
+      "error": "Failed after 3 attempts. Last error: Provider returned error"
+    }
+  ]
+}

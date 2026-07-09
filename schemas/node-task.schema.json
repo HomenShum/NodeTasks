@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/HomenShum/NodeTasks/schemas/node-task.schema.json",
+  "title": "NodeTask",
+  "type": "object",
+  "required": ["id", "family", "surface", "goal", "steps", "assertions", "artifacts", "sourceRefs"],
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "family": { "type": "string" },
+    "surface": { "type": "string" },
+    "route": { "type": "string" },
+    "persona": { "type": "string" },
+    "goal": { "type": "string" },
+    "setup": { "type": "array", "items": { "type": "string" } },
+    "steps": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "assertions": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "artifacts": { "type": "array", "items": { "type": "string" } },
+    "sourceRefs": { "type": "array", "items": { "type": "string" } },
+    "timeoutMs": { "type": "integer", "minimum": 1000 },
+    "officialScoreClaim": { "type": "boolean" },
+    "risk": { "type": "string" }
+  }
+}

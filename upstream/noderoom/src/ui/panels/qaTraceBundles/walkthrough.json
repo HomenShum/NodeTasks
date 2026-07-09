@@ -1,0 +1,190 @@
+{
+  "id": "qa-walkthrough",
+  "kind": "qa",
+  "title": "QA · Room walkthrough capture",
+  "subtitle": "Per-step screenshots + frame-Δ (flicker signal) from a Playwright drive of the live app",
+  "ts": "Jun 17, 1:30 AM",
+  "source": {
+    "tool": "Playwright",
+    "version": "qa-trace/capture-flow.ts",
+    "env": "chromium · 1280×800"
+  },
+  "verdict": {
+    "label": "8 steps captured",
+    "tone": "ok"
+  },
+  "steps": [
+    {
+      "idx": 1,
+      "label": "Land in the diligence room",
+      "status": "ok",
+      "group": "Navigate",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-1.png"
+        }
+      ]
+    },
+    {
+      "idx": 2,
+      "label": "Open Company research",
+      "status": "ok",
+      "group": "Navigate",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-2.png",
+          "box": {
+            "x": 0.1611,
+            "y": 0.0844,
+            "w": 0.1327,
+            "h": 0.035
+          }
+        },
+        {
+          "kind": "ssim",
+          "diffRatio": 0
+        }
+      ]
+    },
+    {
+      "idx": 3,
+      "label": "Open Diligence memo",
+      "status": "ok",
+      "group": "Navigate",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-3.png",
+          "box": {
+            "x": 0.2961,
+            "y": 0.0844,
+            "w": 0.1197,
+            "h": 0.035
+          }
+        },
+        {
+          "kind": "ssim",
+          "diffRatio": 0.0493
+        }
+      ]
+    },
+    {
+      "idx": 4,
+      "label": "Open the Trace tab",
+      "status": "ok",
+      "group": "Trace",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-4.png",
+          "box": {
+            "x": 0.5478,
+            "y": 0.0844,
+            "w": 0.0577,
+            "h": 0.035
+          }
+        },
+        {
+          "kind": "ssim",
+          "diffRatio": 0.0618
+        }
+      ]
+    },
+    {
+      "idx": 5,
+      "label": "Select the QA record",
+      "status": "ok",
+      "group": "Trace",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-5.png",
+          "box": {
+            "x": 0.0148,
+            "y": 0.2671,
+            "w": 0.1867,
+            "h": 0.1234
+          }
+        },
+        {
+          "kind": "ssim",
+          "diffRatio": 0.0639
+        }
+      ]
+    },
+    {
+      "idx": 6,
+      "label": "Open Steps",
+      "status": "ok",
+      "group": "Trace",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-6.png",
+          "box": {
+            "x": 0.283,
+            "y": 0.206,
+            "w": 0.0431,
+            "h": 0.0362
+          }
+        },
+        {
+          "kind": "ssim",
+          "diffRatio": 0.0254
+        }
+      ]
+    },
+    {
+      "idx": 7,
+      "label": "Private lane",
+      "status": "ok",
+      "group": "Copilot",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-7.png",
+          "box": {
+            "x": 0.9234,
+            "y": 0.0881,
+            "w": 0.0555,
+            "h": 0.0325
+          }
+        },
+        {
+          "kind": "ssim",
+          "diffRatio": 0.0383
+        }
+      ]
+    },
+    {
+      "idx": 8,
+      "label": "Coach mode",
+      "status": "ok",
+      "group": "Copilot",
+      "attachments": [
+        {
+          "kind": "screenshot",
+          "url": "/qa-trace/walkthrough/step-8.png",
+          "box": {
+            "x": 0.7863,
+            "y": 0.1462,
+            "w": 0.0537,
+            "h": 0.03
+          }
+        },
+        {
+          "kind": "ssim",
+          "diffRatio": 0.0478
+        }
+      ]
+    }
+  ],
+  "raw": {
+    "base": "http://localhost:5301",
+    "viewport": "1280x800",
+    "stepCount": 8,
+    "note": "frame-Δ = changed-pixel ratio vs the previous frame"
+  }
+}

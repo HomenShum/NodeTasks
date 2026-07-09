@@ -1,0 +1,24 @@
+{
+  "name": "nodetasks",
+  "version": "0.1.0",
+  "description": "Public task and benchmark proxy corpus extracted from NodeRoom.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HomenShum/NodeTasks.git"
+  },
+  "scripts": {
+    "build:catalog": "node scripts/build-catalog.mjs",
+    "validate": "node scripts/validate-catalog.mjs"
+  },
+  "keywords": [
+    "benchmarks",
+    "agent-evals",
+    "browser-tasks",
+    "proofloop",
+    "noderoom",
+    "nodeagent"
+  ]
+}

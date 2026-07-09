@@ -1,0 +1,77 @@
+{
+  "schema": "nodetasks-index-v1",
+  "generatedAt": "2026-07-09T00:34:02.616Z",
+  "summary": {
+    "liveInteractionTasks": 43,
+    "benchmarkProxyAdapters": 4,
+    "externalLocalProxyTasks": 3,
+    "sourceFiles": 1236,
+    "sourceBytes": 22808765
+  },
+  "families": {
+    "graph-nodeagent": 3,
+    "streamlit-nodegraph": 2,
+    "public-chat": 2,
+    "trace-surface": 1,
+    "proposal-review": 1,
+    "spreadsheet": 2,
+    "notebook": 2,
+    "upload": 2,
+    "multi-user": 1,
+    "audit-export": 1,
+    "room-home": 1,
+    "command-palette": 1,
+    "voice": 1,
+    "benchmark-proxy": 3,
+    "benchmark-proxy-live": 4,
+    "benchmark-gate": 3,
+    "proofloop-suite": 3,
+    "proofloop-accounting": 4,
+    "proofloop-notion": 4,
+    "dataset": 1,
+    "doctrine": 1
+  },
+  "surfaces": {
+    "NodeRoom": 18,
+    "Streamlit": 2,
+    "ProofLoop": 19,
+    "NodeRoom eval": 3,
+    "Noderl": 1
+  },
+  "adapters": [
+    {
+      "id": "bankertoolbench",
+      "sourceName": "BankerToolBench",
+      "scoringMode": "hybrid",
+      "liveUserCommand": "npm run proofloop -- run bankertoolbench --prod --user-emulation strict --cockpit",
+      "officialScoreClaim": false
+    },
+    {
+      "id": "finauditing",
+      "sourceName": "FinAuditing",
+      "scoringMode": "hybrid",
+      "liveUserCommand": "npm run benchmark:proofloop:external-adapter-live-room -- --id finauditing --prod --user-emulation strict --cockpit",
+      "officialScoreClaim": false
+    },
+    {
+      "id": "finch",
+      "sourceName": "Finch / FinWorkBench",
+      "scoringMode": "hybrid",
+      "liveUserCommand": "npm run benchmark:proofloop:external-adapter-live-room -- --id finch --prod --user-emulation strict --cockpit",
+      "officialScoreClaim": false
+    },
+    {
+      "id": "workstreambench",
+      "sourceName": "WorkstreamBench",
+      "scoringMode": "hybrid",
+      "liveUserCommand": "npm run benchmark:proofloop:external-adapter-live-room -- --id workstreambench --prod --user-emulation strict --cockpit",
+      "officialScoreClaim": false
+    }
+  ],
+  "catalogs": [
+    "catalog/live-interaction-tasks.json",
+    "catalog/benchmark-proxy-adapters.json",
+    "catalog/source-files.json",
+    "catalog/task-families.md"
+  ]
+}

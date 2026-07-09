@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-07-08T21:36:21.182Z",
+  "summary": {
+    "tracks": 5,
+    "completeTracks": 2,
+    "partialTracks": 3,
+    "missingTracks": 0,
+    "totalOfficialExpectedTasks": 1739,
+    "totalStagedTasks": 1739,
+    "totalDeterministicRunTasks": 1321,
+    "totalModelRunCases": 106,
+    "totalModelRunAttempts": 118,
+    "strictFullCoverageReady": false
+  },
+  "policy": [
+    "Do not collapse sampled N=5 evidence into a full official benchmark claim.",
+    "A task is staged only when the agent-visible manifest is separated from evaluator gold and scorer metadata.",
+    "A task is model-run only when candidate artifacts are emitted from an agent workspace before evaluator access opens.",
+    "Full official coverage requires every published task for the named benchmark track, not only a verified subset or fixture.",
+    "NodeRoom multi-user conflict tasks are an internal benchmark family; they complement SpreadsheetBench/BankerToolBench but do not replace them."
+  ],
+  "tracks": [
+    {
+      "id": "spreadsheetbench-v1-full-912",
+      "title": "SpreadsheetBench V1 full benchmark",
+      "benchmark": "SpreadsheetBench",
+      "officialExpectedTasks": 912,
+      "officialSourceUrls": [
+        "https://github.com/RUCKBReasoning/SpreadsheetBench",
+        "https://huggingface.co/datasets/KAKA22/SpreadsheetBench"
+      ],
+      "localScope": "full public 912-task bundle staged and scored with deterministic copy-input baseline",
+      "scannedTasks": 912,
+      "stagedTasks": 912,
+      "skippedTasks": 0,
+      "deterministicRunTasks": 912,
+      "modelRunCases": 0,
+      "modelRunAttempts": 0,
+      "passRate": 0.104167,
+      "allOfficialTasksStaged": true,
+      "allOfficialTasksRunWithModel": false,
+      "status": "partial",
+      "evidence": [
+        "docs/eval/spreadsheetbench-v1-912-stage.json",
+        "docs/eval/spreadsheetbench-v1-912-copy-input-baseline.json",
+        "docs/eval/official-benchmark-readiness.json"
+      ],
+      "blockers": [
+        "Run all 912 tasks through the model runner or an approved chunked official-policy runner before claiming a model score."
+      ]
+    },
+    {
+      "id": "spreadsheetbench-v1-verified-400",
+      "title": "SpreadsheetBench Verified 400 subset",
+      "benchmark": "SpreadsheetBench",
+      "officialExpectedTasks": 400,
+      "officialSourceUrls": [
+        "https://github.com/RUCKBReasoning/SpreadsheetBench",
+        "https://shortcut.ai/blog/posts/spreadsheetbench-verified"
+      ],
+      "localScope": "verified-400 expert annotated subset",
+      "scannedTasks": 400,
+      "stagedTasks": 400,
+      "skippedTasks": 0,
+      "deterministicRunTasks": 400,
+      "modelRunCases": 3,
+      "modelRunAttempts": 15,
+      "passRate": 1,
+      "allOfficialTasksStaged": true,
+      "allOfficialTasksRunWithModel": false,
+      "status": "partial",
+      "evidence": [
+        "docs/eval/spreadsheetbench-v1-full-stage-smoke.json",
+        "docs/eval/spreadsheetbench-v1-copy-input-full-smoke.json",
+        "docs/eval/spreadsheetbench-v1-model-edit-plan-3task-n5-live-smoke.json"
+      ],
+      "blockers": [
+        "397 verified task(s) still need model-run evidence; current N=5 smoke covers 3/400 cases.",
+        "Full verified-score promotion still needs official scoring parity, not only local workbook scoring."
+      ]
+    },
+    {
+      "id": "spreadsheetbench-v2-full-321",
+      "title": "SpreadsheetBench 2 full workflow benchmark",
+      "benchmark": "SpreadsheetBench 2",
+      "officialExpectedTasks": 321,
+      "officialSourceUrls": [
+        "https://spreadsheetbench.github.io/",
+        "https://huggingface.co/datasets/KAKA22/SpreadsheetBench-v2"
+      ],
+      "localScope": "full public 321-task bundle staged with evaluator isolation",
+      "scannedTasks": 321,
+      "stagedTasks": 321,
+      "skippedTasks": 0,
+      "deterministicRunTasks": 3,
+      "modelRunCases": 3,
+      "modelRunAttempts": 3,
+      "passRate": 0,
+      "allOfficialTasksStaged": true,
+      "allOfficialTasksRunWithModel": false,
+      "status": "partial",
+      "evidence": [
+        "docs/eval/spreadsheetbench-v2-full-ingest.json",
+        "docs/eval/spreadsheetbench-v2-full-stage.json",
+        "docs/eval/spreadsheetbench-v2-stage-smoke.json",
+        "docs/eval/spreadsheetbench-v2-run-smoke.json",
+        "docs/eval/spreadsheetbench-chart-visual-probe.json"
+      ],
+      "blockers": [
+        "Run every staged V2 task through the model runner, static workbook scorer, and rendered/VLM chart grader where applicable."
+      ]
+    },
+    {
+      "id": "bankertoolbench-full-100",
+      "title": "BankerToolBench full investment-banking benchmark",
+      "benchmark": "BankerToolBench",
+      "officialExpectedTasks": 100,
+      "officialSourceUrls": [
+        "https://github.com/Handshake-AI-Research/bankertoolbench",
+        "https://huggingface.co/datasets/handshake-ai-research/bankertoolbench"
+      ],
+      "localScope": "full official 100-task clean generic-only full-suite receipt",
+      "scannedTasks": 100,
+      "stagedTasks": 100,
+      "skippedTasks": 0,
+      "deterministicRunTasks": 0,
+      "modelRunCases": 100,
+      "modelRunAttempts": 100,
+      "passRate": 0,
+      "allOfficialTasksStaged": true,
+      "allOfficialTasksRunWithModel": true,
+      "status": "complete",
+      "evidence": [
+        "docs/eval/fresh-room/FR-020/fullsuite-gate-receipt.json",
+        "docs/eval/btb-clean-capability-full100-parallel-v3-gpt41mini.json",
+        "docs/eval/bankertoolbench-stage-smoke.json",
+        "docs/eval/bankertoolbench-run-positive-smoke.json",
+        "docs/eval/bankertoolbench-official-contract.json"
+      ],
+      "blockers": []
+    },
+    {
+      "id": "noderoom-multi-user-conflict",
+      "title": "NodeRoom multi-user conflict suite",
+      "benchmark": "NodeRoom",
+      "officialExpectedTasks": 6,
+      "officialSourceUrls": [
+        "evals/multiUserCoordinationProof.ts"
+      ],
+      "localScope": "internal deterministic conflict suite",
+      "scannedTasks": 6,
+      "stagedTasks": 6,
+      "skippedTasks": 0,
+      "deterministicRunTasks": 6,
+      "modelRunCases": 0,
+      "modelRunAttempts": 0,
+      "passRate": 1,
+      "allOfficialTasksStaged": true,
+      "allOfficialTasksRunWithModel": true,
+      "status": "complete",
+      "evidence": [
+        "docs/eval/multi-user-coordination-proof.json",
+        "evals/multiUserCoordinationProof.ts"
+      ],
+      "blockers": []
+    }
+  ]
+}

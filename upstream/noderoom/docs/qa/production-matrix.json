@@ -1,0 +1,857 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-06-20",
+  "sourceOfTruth": "Append new product or runtime guarantees to features[] and rerun npm run qa:matrix.",
+  "releaseRule": "A feature is production-ready only when deterministic tests, live/backend smoke where applicable, traceability, privacy boundaries, and documented failure behavior are all present.",
+  "features": [
+    {
+      "id": "startup_diligence_flagship_demo",
+      "area": "Startup diligence demo",
+      "claim": "The flagship public demo shows the June 2026 startup-banking target: three users, CardioNova intake, five-company diligence, concurrent agent lanes, runway/milestone chart work, no-clobber review, private banker lane, and draft-only downstream handoff.",
+      "status": "yellow",
+      "productionGate": "README links the startup media, the walkthrough scripts match the latest target, Gemini judges the recaptured clips, the Convex contract eval records core invariants, and the provider-produced eval proves model-generated CellPayload/final copy flowing through the same job/proposal/trace contract.",
+      "deterministicChecks": [
+        "npm run typecheck -- --pretty false",
+        "npx tsc --noEmit --project convex/tsconfig.json --pretty false"
+      ],
+      "liveChecks": [
+        "npm run walkthroughs -- startup-diligence-live-join",
+        "npm run walkthroughs:render -- startup-diligence-live-join",
+        "npm run walkthroughs -- startup-diligence-war-room",
+        "npm run walkthroughs:render -- startup-diligence-war-room",
+        "npm run media:gemini-judge -- --only startup-diligence --include-ignored",
+        "npm run eval:startup-diligence:live",
+        "npm run eval:startup-diligence:provider",
+        "missing: provider-produced startup eval N=5/p95 route stability run"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/demo/STARTUP_DILIGENCE_DEMO_PLAN.md" },
+        { "type": "doc", "ref": "docs/demo/STARTUP_DILIGENCE_PROOF_LEDGER.md" },
+        { "type": "eval", "ref": "docs/eval/startup-diligence-war-room-live.json" },
+        { "type": "eval", "ref": "docs/eval/startup-diligence-war-room-live-results.json" },
+        { "type": "eval", "ref": "docs/eval/startup-diligence-provider-results.json" },
+        { "type": "script", "ref": "scripts/startup-diligence-provider-eval.ts" },
+        { "type": "media", "ref": "docs/walkthroughs/startup-diligence-war-room.gif" },
+        { "type": "media", "ref": "docs/walkthroughs/startup-diligence-live-join.gif" },
+        { "type": "code", "ref": "scripts/walkthroughs/specs.ts" },
+        { "type": "code", "ref": "scripts/walkthroughs/capture.ts" },
+        { "type": "code", "ref": "src/ui/Chat.tsx" }
+      ],
+      "nextReview": "Repeat the provider-produced startup diligence eval N=5 and promote only if p95 latency, route/path fingerprint drift, and pass rate meet the live collaboration SLO; optional media polish can clear the remaining P2 transition, trace-density, and privacy-state notes."
+    },
+    {
+      "id": "files_and_spreadsheets",
+      "area": "Files + spreadsheet",
+      "claim": "Users can upload/view files and work with parsed spreadsheets in the same room.",
+      "status": "yellow",
+      "productionGate": "Parser fixtures, provider parser adapter tests, live file preview smoke, and Convex raw-file canonicalization.",
+      "deterministicChecks": [
+        "tests/spreadsheetParser.test.ts",
+        "tests/providerParserAdapter.test.ts",
+        "tests/artifactRefs.test.ts"
+      ],
+      "liveChecks": [
+        "npm run provider-parser:smoke",
+        "manual browser: click file in left rail and return to Spreadsheet tab"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/spreadsheetParser.test.ts" },
+        { "type": "test", "ref": "tests/providerParserAdapter.test.ts" },
+        { "type": "doc", "ref": "docs/PROFESSIONAL_SPREADSHEET_WORKFLOWS.md" }
+      ],
+      "nextReview": "Add live Convex File Storage upload/download E2E once deployment auth is finalized."
+    },
+    {
+      "id": "public_private_chat_agent",
+      "area": "Public/private chat + agent",
+      "claim": "Public chat, private chat, public room agent, and private agent route messages to the right scope.",
+      "status": "yellow",
+      "productionGate": "Scope separation tests, room member proof, and browser smoke for public/private panels.",
+      "deterministicChecks": [
+        "tests/roomEngine.test.ts",
+        "tests/agentRuntime.test.ts",
+        "tests/workflowEvals.test.ts"
+      ],
+      "liveChecks": [
+        "manual browser: public chat and private NodeAgent panels visible and usable"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/roomEngine.test.ts" },
+        { "type": "test", "ref": "tests/agentRuntime.test.ts" },
+        { "type": "doc", "ref": "docs/AGENT_RUNTIME.md" }
+      ],
+      "nextReview": "Add browser E2E for public/private routing, optimistic send failure/retry, and stable clientMsgId bubble keys."
+    },
+    {
+      "id": "trace_proposals_auto_accept",
+      "area": "Trace + proposals",
+      "claim": "Room trace supports approve/reject, host accept-all, and host-gated auto-accept with remembered consent.",
+      "status": "green",
+      "productionGate": "Host-only controls, proposal resolution tests, UI consent modal, and no silent direct-write bypass.",
+      "deterministicChecks": [
+        "tests/roomEngine.test.ts"
+      ],
+      "liveChecks": [
+        "manual browser: turn auto-allow on, confirm modal, run collaboration, accept all proposals"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/roomEngine.test.ts" },
+        { "type": "code", "ref": "src/ui/RoomShell.tsx" },
+        { "type": "code", "ref": "src/ui/panels/Artifact.tsx" }
+      ],
+      "nextReview": "Add audit assertion that accept-all records every accepted proposal id."
+    },
+    {
+      "id": "research_operation_workflows",
+      "area": "Research + ops workflows",
+      "claim": "GTM, finance, parser, wiki, and cross-file operation workflows are covered by deterministic professional evals and live provider smoke.",
+      "status": "yellow",
+      "productionGate": "Deterministic workflow evals pass, provider parser smoke is green, and model routes are ladder-gated before interactive promotion.",
+      "deterministicChecks": [
+        "tests/researchHarness.test.ts",
+        "tests/workflowEvals.test.ts",
+        "tests/professionalWorkflows.test.ts"
+      ],
+      "liveChecks": [
+        "npm run provider-parser:smoke",
+        "npm run ladder:real -- <model-id>",
+        "npm run benchmark:free"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/professionalWorkflows.test.ts" },
+        { "type": "eval", "ref": "evals/professionalWorkflows.ts" },
+        { "type": "doc", "ref": "docs/eval/live-provider-agent-ladder-2026-06-08.md" }
+      ],
+      "nextReview": "Add dedicated live GTM and finance provider jobs with row-level trace assertions."
+    },
+    {
+      "id": "notes_spreadsheet_agent",
+      "area": "Notes + spreadsheet agent",
+      "claim": "The agent can read spreadsheets, write notes/wiki updates, reconcile cells, and keep cross-artifact evidence links.",
+      "status": "green",
+      "productionGate": "Cross-file RoomTools test, grounded wiki write test, and CAS conflict checks.",
+      "deterministicChecks": [
+        "tests/workflowEvals.test.ts",
+        "tests/spreadsheetIndex.test.ts",
+        "tests/wikiSkill.test.ts"
+      ],
+      "liveChecks": [
+        "manual browser: run collaboration and inspect note/wiki/spreadsheet trace"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/workflowEvals.test.ts" },
+        { "type": "test", "ref": "tests/wikiSkill.test.ts" },
+        { "type": "doc", "ref": "docs/AGENT_WIKI.md" }
+      ],
+      "nextReview": "Add LLM-generated wiki update eval with private-data leakage checks."
+    },
+    {
+      "id": "wall_postits",
+      "area": "Wall",
+      "claim": "Users can create and delete post-its through versioned room operations.",
+      "status": "green",
+      "productionGate": "Create/delete operation tests and browser smoke for Wall tab.",
+      "deterministicChecks": [
+        "tests/roomEngine.test.ts",
+        "tests/convexWallCrud.test.ts"
+      ],
+      "liveChecks": [
+        "manual browser: Wall tab Post-it add/delete"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/roomEngine.test.ts" },
+        { "type": "test", "ref": "tests/convexWallCrud.test.ts" },
+        { "type": "code", "ref": "src/ui/panels/Artifact.tsx" }
+      ],
+      "nextReview": "Add multi-user wall edit conflict browser test."
+    },
+    {
+      "id": "multi_user_online",
+      "area": "Multi-user production paths",
+      "claim": "Deterministic no-clobber, idempotency, lock TTL, and local SLO gates are proven; the full multi-user production path remains yellow until broader live browser gates, deployed load proof, and conflict coverage are green.",
+      "status": "yellow",
+      "productionGate": "Room auth proof, Convex codegen/typecheck, duplicate-operation idempotency, load/concurrency smoke, and deployment observability.",
+      "deterministicChecks": [
+        "tests/roomEngine.test.ts",
+        "tests/agentReliability.test.ts",
+        "tests/idempotencyRuntime.test.ts",
+        "tests/lockTtl.test.ts",
+        "npm run slo:gate"
+      ],
+      "liveChecks": [
+        "npx convex codegen --typecheck disable",
+        "npx convex dev --once"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/idempotencyRuntime.test.ts" },
+        { "type": "test", "ref": "tests/lockTtl.test.ts" },
+        { "type": "eval", "ref": "docs/eval/slo-gate.json" },
+        { "type": "script", "ref": "scripts/slo-gate.ts" },
+        { "type": "doc", "ref": "docs/ARCHITECTURE.md" }
+      ],
+      "nextReview": "Add deployed browser/session load test and production SLO dashboard; keep deterministic slo:gate in prod:gate as the local regression floor."
+    },
+    {
+      "id": "long_running_free_auto",
+      "area": "Long-running /free jobs",
+      "claim": "Free-auto provider work can run as sliced jobs that checkpoint before platform limits and resume from durable state.",
+      "status": "yellow",
+      "productionGate": "Forced multi-slice test, crash-after-checkpoint resume, duplicate stale lease rejection, and live /free smoke.",
+      "deterministicChecks": [
+        "tests/agentJobsSource.test.ts",
+        "tests/agentJobsRuntime.test.ts",
+        "tests/providerEgressPolicy.test.ts",
+        "tests/agentReliability.test.ts",
+        "tests/gatewayAndJournal.test.ts"
+      ],
+      "liveChecks": [
+        "npm run free-job:smoke",
+        "npm run ladder:free",
+        "npm run ladder:real -- openrouter/free-auto --rung-timeout-ms=540000 --reserve-ms=30000"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/agentJobsSource.test.ts" },
+        { "type": "test", "ref": "tests/agentJobsRuntime.test.ts" },
+        { "type": "test", "ref": "tests/providerEgressPolicy.test.ts" },
+        { "type": "test", "ref": "tests/gatewayAndJournal.test.ts" },
+        { "type": "doc", "ref": "docs/LONG_RUNNING_AGENTS.md" },
+        { "type": "doc", "ref": "docs/eval/free-auto-ladder.md" }
+      ],
+      "nextReview": "Add per-tool abort propagation, provider request idempotency keys where supported, model health/quarantine, and real forced multi-slice Convex job-runner tests."
+    },
+    {
+      "id": "provider_parser",
+      "area": "Provider parser",
+      "claim": "Provider file/cache ids stay separate from Convex raw file ids while extraction writes page/bbox/source-storage evidence-bearing CellPayloads.",
+      "status": "green",
+      "productionGate": "Adapter separation tests, live provider smoke, redacted errors, and artifact evidence checks.",
+      "deterministicChecks": [
+        "tests/providerParserAdapter.test.ts",
+        "tests/providerParserLive.test.ts",
+        "tests/documentParserPlan.test.ts"
+      ],
+      "liveChecks": [
+        "npm run provider-parser:smoke"
+      ],
+      "evidence": [
+        { "type": "test", "ref": "tests/providerParserAdapter.test.ts" },
+        { "type": "test", "ref": "tests/providerParserLive.test.ts" },
+        { "type": "doc", "ref": "docs/STACK.md" }
+      ],
+      "nextReview": "Add production provider Files API binary upload actions for PDFs/images/decks and local LiteParse/OCR worker fixtures."
+    },
+    {
+      "id": "qa_matrix_continuity",
+      "area": "QA system",
+      "claim": "The QA matrix, README cockpit, and visual graphs are generated from one appendable source of truth.",
+      "status": "green",
+      "productionGate": "Matrix schema tests plus qa:matrix --check as a docs-sync drift gate, not a quality gate.",
+      "deterministicChecks": [
+        "tests/qaMatrix.test.ts",
+        "tests/presenceClaims.test.ts",
+        "tests/convexWallCrud.test.ts"
+      ],
+      "liveChecks": [
+        "npm run qa:matrix:check"
+      ],
+      "evidence": [
+        { "type": "data", "ref": "docs/qa/production-matrix.json" },
+        { "type": "script", "ref": "scripts/qa-matrix.ts" },
+        { "type": "test", "ref": "tests/qaMatrix.test.ts" }
+      ],
+      "nextReview": "Require each new user-facing feature PR to append or update one matrix row."
+    },
+    {
+      "id": "browser_e2e_dogfood",
+      "area": "Browser E2E dogfood",
+      "claim": "The real React UI is verified against production-preview memory mode for local UX flows, and live Convex multi-context coverage now exists for public chat fan-out, private chat isolation, wall CRUD fan-out, durable job controls, realtime presence, same-cell CAS, semantic rebase, and server-owned agent-intent conflict/proposal proof. This supports scoped coediting primitive parity, not literal Google Sheets/Figma product parity.",
+      "status": "yellow",
+      "productionGate": "Playwright or equivalent real-browser specs for two-context cell edits, optimistic chat failure/retry, public/private leak checks, wall CRUD, job controls, and proposal conflict feedback.",
+      "deterministicChecks": [
+        "tests/qaMatrix.test.ts"
+      ],
+      "liveChecks": [
+        "npm run test:product:memory",
+        "npm run test:product:live",
+        "e2e/privacy-job-wall-proposal.spec.ts: same-client public/private leak, wall CRUD, memory job controls, and proposal conflict feedback",
+        "e2e/realtime-presence.spec.ts: live two-context spreadsheet presence remains non-blocking while another user edits",
+        "e2e/semantic-rebase.backend.spec.ts: live host-reviewed stale agent-intent proposal approval",
+        "e2e/live-broad-convex.spec.ts: live public/private chat isolation, wall CRUD fan-out, job cancel/retry controls, and agent-intent proposal rejection",
+        "missing: reload/retry/load edges, private artifact/export leakage, provider-backed normal-agent intent in strict-review mode, broader browser/device coverage, and expanded scoped coediting primitive coverage"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/audit/E2E_DOGFOOD_DESIGN.md" },
+        { "type": "doc", "ref": "docs/audit/QA_FINDINGS.md" },
+        { "type": "test", "ref": "e2e/chat.spec.ts" },
+        { "type": "test", "ref": "e2e/excel-grid.spec.ts" },
+        { "type": "test", "ref": "e2e/privacy-job-wall-proposal.spec.ts" },
+        { "type": "test", "ref": "e2e/realtime-presence.spec.ts" },
+        { "type": "test", "ref": "e2e/semantic-rebase.backend.spec.ts" },
+        { "type": "test", "ref": "e2e/live-broad-convex.spec.ts" },
+        { "type": "test", "ref": "tests/presenceClaims.test.ts" },
+        { "type": "test", "ref": "tests/convexRoomToolsPresence.test.ts" },
+        { "type": "test", "ref": "tests/convexSemanticRebase.test.ts" },
+        { "type": "test", "ref": "tests/convexWallCrud.test.ts" },
+        { "type": "test", "ref": "e2e/responsive-qa.spec.ts" },
+        { "type": "test", "ref": "e2e/work-surface-split.spec.ts" },
+        { "type": "doc", "ref": "docs/eval/MEDIA_JUDGE.md" }
+      ],
+      "nextReview": "Keep yellow until reload/retry/load edges, private artifact/export leakage, provider-backed normal-agent intent in strict-review mode, and broader browser/device coverage are green."
+    },
+    {
+      "id": "professional_workroom_shell",
+      "area": "Professional workroom shell",
+      "claim": "The desktop shell follows Room/Deal Binder -> Work Surface -> Copilot, with proofs, sources, and gold comparisons opening on the center stage instead of competing side or bottom panels.",
+      "status": "yellow",
+      "productionGate": "Browser layout E2E proves wide desktop binder, center work surface, right Copilot, compact overlays, no overflow, no lost spreadsheet affordances, plus live/Convex proof and UI scorecard evidence.",
+      "deterministicChecks": [
+        "e2e/responsive-qa.spec.ts",
+        "e2e/work-surface-split.spec.ts"
+      ],
+      "liveChecks": [
+        "missing: Playwright shell spec against local app and live Convex room",
+        "missing: UI scorecard walkthrough evidence for the June 2026 target, with deterministic design lint and VLM/media review separated"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/TARGET_2026_06.md" },
+        { "type": "doc", "ref": "docs/ARCHITECTURE.md" },
+        { "type": "test", "ref": "e2e/responsive-qa.spec.ts" },
+        { "type": "test", "ref": "e2e/work-surface-split.spec.ts" },
+        { "type": "code", "ref": "src/ui/RoomShell.tsx" },
+        { "type": "code", "ref": "src/ui/LeftRail.tsx" },
+        { "type": "code", "ref": "src/ui/panels/Artifact.tsx" }
+      ],
+      "nextReview": "Add live/Convex shell smoke, richer binder proof/policy click-throughs, status drilldown tests, and UI scorecard evidence before promoting the workroom shell to green."
+    },
+    {
+      "id": "design_quality_substrate",
+      "area": "Design Quality substrate",
+      "claim": "NodeRoom separates product correctness from UI/UX quality by writing functional-gate, media-score, reference-comparison, accessibility, responsiveness, and virality evidence into a local-first design-quality scorecard and memory ledger.",
+      "status": "yellow",
+      "productionGate": "Scorecard generation must preserve pass/fail functional gates, label Gemini/VLM output as media evidence, write versioned JSON/Markdown/MDX outputs, and keep professional reference comparisons auditable.",
+      "deterministicChecks": [
+        "npm test -- --run tests/designQuality.test.ts",
+        "npm run qa:ui:scorecard"
+      ],
+      "liveChecks": [
+        "npm run qa:ui:capture: fresh Playwright screenshots, DOM snapshots, performance, deterministic accessibility, and source-tree freshness evidence recorded",
+        "npm run qa:ui:perf and npm run qa:ui:a11y: read current browser.latest.json only when source-tree hash, app target, and freshness validation pass; otherwise collect fresh browser evidence",
+        "docs/eval/design-quality/latest.json: post-gate scorecard recorded after prod:gate and test:product:live on the same commit"
+      ],
+      "evidence": [
+        { "type": "code", "ref": "src/eval/designQuality.ts" },
+        { "type": "script", "ref": "scripts/design-quality.ts" },
+        { "type": "test", "ref": "tests/designQuality.test.ts" },
+        { "type": "doc", "ref": "docs/eval/design-quality/README.md" },
+        { "type": "data", "ref": "docs/eval/design-quality/reference-library.json" }
+      ],
+      "nextReview": "Promote only after a same-runtime-source run records functional gates passed, current browser capture attached, performance passed, accessibility passed, and Gemini/VLM output preserved as media evidence rather than product correctness."
+    },
+    {
+      "id": "signal_tape_status_strip",
+      "area": "Signal tape + status strip",
+      "claim": "The bottom UI separates configurable ambient Signal Tape from the authoritative non-scrolling Status Strip for commit, conflict, eval, sync, cost, and runtime truth.",
+      "status": "yellow",
+      "productionGate": "DOM/browser tests prove two distinct bottom rows, pause/reduced-motion/filter behavior, click-to-open related artifact, no unauthorized private data in the tape, and precise non-scrolling status events.",
+      "deterministicChecks": [
+        "e2e/responsive-qa.spec.ts",
+        "tests/signalStatus.test.ts"
+      ],
+      "liveChecks": [
+        "missing: live/browser smoke for room, source, agent, risk, eval, and cost status events"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/TARGET_2026_06.md" },
+        { "type": "doc", "ref": "docs/GAPS_NOT_DONE.md" },
+        { "type": "code", "ref": "src/ui/RoomShell.tsx" },
+        { "type": "test", "ref": "e2e/responsive-qa.spec.ts" },
+        { "type": "test", "ref": "tests/signalStatus.test.ts" }
+      ],
+      "nextReview": "Add dedicated browser status-event tests for commit, conflict, job, eval, cost, pause/filter controls, and click-through artifact drilldown."
+    },
+    {
+      "id": "intake_preflight_scheduler",
+      "area": "Intake preflight scheduler",
+      "claim": "Every user message is classified as command, steering patch, parallel subagent, wait, clarification, note, cancel, or priority change; the deterministic harness computes PlanPreview and owns scheduling authority.",
+      "status": "yellow",
+      "productionGate": "Unit/runtime evals prove affected-set expansion, partial scheduling, intent claims, short commit leases, dedupe, cost authorization, privacy/formula checks, and that the LLM recommends while the harness schedules before live provider spend.",
+      "deterministicChecks": [
+        "tests/chatIntakeRuntime.test.ts",
+        "tests/intakePreflightScheduler.test.ts",
+        "e2e/intake-plan-preview.spec.ts"
+      ],
+      "liveChecks": [
+        "npm run eval:chat-intake:live -- --managed-locks",
+        "missing: browser plan-preview routing badges smoke"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/TARGET_2026_06.md" },
+        { "type": "doc", "ref": "docs/NODEAGENT_ARCHITECTURE.md" },
+        { "type": "code", "ref": "src/nodeagent/core/intakePreflight.ts" },
+        { "type": "code", "ref": "src/ui/IntakePlanPreview.tsx" },
+        { "type": "test", "ref": "tests/intakePreflightScheduler.test.ts" },
+        { "type": "e2e", "ref": "e2e/intake-plan-preview.spec.ts" },
+        { "type": "eval", "ref": "evals/chatIntakeRuntime.ts" }
+      ],
+      "nextReview": "Use the same PlanPreview envelope when submitted messages create /ask and /free jobs, record the chosen schedule in agentJobs, and add live backend proof before promoting to green."
+    },
+    {
+      "id": "workbook_runtime_adapter",
+      "area": "Workbook runtime adapter",
+      "claim": "The spreadsheet work surface has an explicit workbook-runtime adapter path for command/mutation/operation separation, formula dependency expansion, worker/headless validation, and spreadsheet-native overlays.",
+      "status": "yellow",
+      "productionGate": "A POC loads the Q3 sheet into a candidate runtime, captures local mutations into Convex CAS ops, replays remote patches, preserves focus/selection, renders evidence/human/agent overlays, and runs headless formula/gold validation.",
+      "deterministicChecks": [
+        "tests/spreadsheetParser.test.ts",
+        "tests/numberFormat.test.ts",
+        "e2e/excel-grid.spec.ts",
+        "missing: tests/workbookRuntimeAdapter.test.ts"
+      ],
+      "liveChecks": [
+        "npx playwright test e2e/excel-grid.spec.ts",
+        "missing: workbook-runtime POC"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/TARGET_2026_06.md" },
+        { "type": "doc", "ref": "docs/architecture/MVP_WORKBOOK_STACK.md" },
+        { "type": "doc", "ref": "docs/UI_EXCEL_PAPER.md" },
+        { "type": "test", "ref": "e2e/excel-grid.spec.ts" }
+      ],
+      "nextReview": "Run the workbook-runtime POC before treating a workbook runtime as more than an architecture option."
+    },
+    {
+      "id": "public_gold_demo",
+      "area": "Public gold demo",
+      "claim": "The public demo tracks public-document finance and no-clobber proof rows with source URLs, expected answers, validators, and stable fingerprints.",
+      "status": "yellow",
+      "productionGate": "Manifest check, public fixture downloader/cache hash, LiteParse/provider extraction, formula/citation/page or bbox validators, CellPayload evidence, and trace read/write-set validators all pass.",
+      "deterministicChecks": [
+        "npm run demo:public-gold:check"
+      ],
+      "liveChecks": [
+        "missing: public fixture downloader plus live parser/provider eval"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/TARGET_2026_06.md" },
+        { "type": "doc", "ref": "docs/demo/PUBLIC_GOLD_DEMO.md" },
+        { "type": "data", "ref": "docs/demo/public-gold-demo-manifest.json" },
+        { "type": "script", "ref": "scripts/validate-public-gold-demo.ts" }
+      ],
+      "nextReview": "Do not call the public proof board a live parser proof until public fixtures are downloaded, extracted, and scored against the same manifest."
+    },
+    {
+      "id": "finance_model_gold_pack",
+      "area": "Finance model gold pack",
+      "claim": "Private banker-model evals are tracked as model plus NodeRoom harness proof across solve, guide, collaborate, reconstruction, export, formula, value, citation, no-clobber, and trace dimensions.",
+      "status": "yellow",
+      "productionGate": "Current solve batch stays fresh; guide zero-write, collaborate human-agent injection, withheld-data reconstruction, XLSX export/reopen, formula AST/value tie-out, citation coverage, and trace completeness lanes are added.",
+      "deterministicChecks": [
+        "tests/financeModelRuntime.test.ts",
+        "tests/financeModelReliability.test.ts",
+        "tests/financeModelLive.test.ts",
+        "npm run proofs:staleness"
+      ],
+      "liveChecks": [
+        "missing: Guide/Collaborate/Reconstruction/export live lanes"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/TARGET_2026_06.md" },
+        { "type": "doc", "ref": "docs/eval/FINANCE_MODEL_EVAL.md" },
+        { "type": "data", "ref": "docs/eval/finance-model-live.json" },
+        { "type": "eval", "ref": "evals/financeModelLive.ts" }
+      ],
+      "nextReview": "Keep Solve measured, not best-run; add Guide/Collaborate/Reconstruction/export before claiming full banker work-product coverage."
+    },
+    {
+      "id": "noderoombench_reporting_trust",
+      "area": "NodeRoomBench + eval trust",
+      "claim": "NodeRoomBench-style results report final artifact, formula, format/usability, collaboration trajectory, privacy, cost, latency, model route, harness, tool policy, budget, and evaluator instead of raw model-only scores.",
+      "status": "yellow",
+      "productionGate": "Eval store records required metadata; eval:diff catches regressions, removed cases, model swaps, and check redefinitions; external benchmark adapters run benchmark-faithful mode without hidden gold access, evaluator edits, public answer lookup, or hardcoded cases.",
+      "deterministicChecks": [
+        "tests/evalTrustPolicy.test.ts",
+        "tests/evalStore.test.ts",
+        "tests/benchmarkHarness.test.ts",
+        "tests/financeModelReliability.test.ts",
+        "tests/spreadsheetBenchAdapter.test.ts",
+        "tests/spreadsheetBenchStage.test.ts",
+        "tests/spreadsheetBenchRunner.test.ts",
+        "tests/spreadsheetBenchScorer.test.ts"
+      ],
+      "liveChecks": [
+        "npm run eval:diff",
+        "npm run benchmark:free",
+        "missing: external benchmark runner contamination tests and official scoring smoke"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/TARGET_2026_06.md" },
+        { "type": "doc", "ref": "docs/AGENT_EVAL.md" },
+        { "type": "test", "ref": "tests/evalTrustPolicy.test.ts" },
+        { "type": "test", "ref": "tests/benchmarkHarness.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchAdapter.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchStage.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchRunner.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchScorer.test.ts" }
+      ],
+      "nextReview": "Add a NodeRoomBench package outline with cases, artifacts, gold, runners, validators, allowed/disallowed harness policy, and runner-level contamination checks."
+    },
+    {
+      "id": "official_benchmark_readiness",
+      "area": "Official benchmark readiness",
+      "claim": "NodeRoom can only claim BankerToolBench or SpreadsheetBench progress after a benchmark-faithful adapter ingests official tasks, isolates gold, runs the harness, captures trajectory/cost/retries, and emits official deliverables or scores.",
+      "status": "red",
+      "productionGate": "Readiness report exists; strict mode passes only when BankerToolBench and SpreadsheetBench adapters/runs are implemented without hidden-gold access, answer lookup, benchmark hardcoding, or evaluator mutation.",
+      "deterministicChecks": [
+        "tests/officialBenchmarkReadiness.test.ts",
+        "tests/bankerToolBenchAdapter.test.ts",
+        "tests/bankerToolBenchStage.test.ts",
+        "tests/bankerToolBenchRunner.test.ts",
+        "tests/benchmarkContamination.test.ts",
+        "tests/spreadsheetBenchAdapter.test.ts",
+        "tests/spreadsheetBenchStage.test.ts",
+        "tests/spreadsheetBenchRunner.test.ts",
+        "tests/spreadsheetBenchScorer.test.ts",
+        "tests/spreadsheetBenchChartScorer.test.ts",
+        "tests/agentWorkspaceSandbox.test.ts",
+        "npm run benchmark:agent-sandbox -- --json-out docs/eval/agent-workspace-sandbox-smoke.json",
+        "npm run benchmark:official:readiness"
+      ],
+      "liveChecks": [
+        "missing: npm run benchmark:official:readiness -- --strict",
+        "missing: official BankerToolBench Harbor/Docker smoke",
+        "npm run benchmark:bankertoolbench:stage -- --root .tmp/official-benchmarks/btb-fixture --output-root .tmp/official-benchmarks/staged-btb --limit 1 --clean --json-out docs/eval/bankertoolbench-stage-smoke.json",
+        "npm run benchmark:bankertoolbench:run -- --stage-root .tmp/official-benchmarks/staged-btb --output-root .tmp/official-benchmarks/run-btb --mode copy-input-baseline --limit 1 --clean --json-out docs/eval/bankertoolbench-run-smoke.json",
+        "npm run benchmark:spreadsheetbench:run -- --stage-root .tmp/official-benchmarks/staged-edit --output-root .tmp/official-benchmarks/run-model-edit --mode model-edit-plan --model gpt-5.4-nano --limit 1 --clean --json-out docs/eval/spreadsheetbench-model-edit-plan-live-smoke.json",
+        "npm run benchmark:spreadsheetbench:run -- --stage-root .tmp/official-benchmarks/staged-v1 --output-root .tmp/official-benchmarks/run-v1-model-edit --mode model-edit-plan --model gpt-5.4-nano --limit 1 --clean --json-out docs/eval/spreadsheetbench-v1-model-edit-plan-live-smoke.json",
+        "npm run benchmark:spreadsheetbench:run -- --stage-root .tmp/official-benchmarks/staged-v1 --output-root .tmp/official-benchmarks/run-v1-model-edit-n5 --mode model-edit-plan --model gpt-5.4-nano --limit 1 --repeats 5 --clean --json-out docs/eval/spreadsheetbench-v1-model-edit-plan-n5-live-smoke.json",
+        "npm run benchmark:spreadsheetbench:run -- --stage-root .tmp/official-benchmarks/staged-v1 --output-root .tmp/official-benchmarks/run-v1-model-edit-retry --mode model-edit-plan --model gpt-5.4-nano --limit 1 --retry-failed 2 --retry-score-failures --clean --json-out docs/eval/spreadsheetbench-v1-model-edit-plan-retry-live-smoke.json",
+        "npm run benchmark:contamination -- --root .tmp/official-benchmarks/staged-v1 --strict --json-out docs/eval/spreadsheetbench-v1-stage-contamination-smoke.json",
+        "npm run benchmark:contamination -- --root .tmp/official-benchmarks/run-v1-model-edit-n5 --strict --json-out docs/eval/spreadsheetbench-v1-run-n5-contamination-smoke.json",
+        "npm run benchmark:contamination -- --root .tmp/official-benchmarks/run-v1-model-edit-retry --strict --json-out docs/eval/spreadsheetbench-v1-run-retry-contamination-smoke.json",
+        "npm run benchmark:contamination -- --root .tmp/official-benchmarks/staged-v2 --strict --json-out docs/eval/spreadsheetbench-v2-stage-contamination-smoke.json",
+        "npm run benchmark:contamination -- --root .tmp/official-benchmarks/run-v2 --strict --json-out docs/eval/spreadsheetbench-v2-run-contamination-smoke.json",
+        "npm run benchmark:contamination -- --root .tmp/official-benchmarks/staged-btb --strict --json-out docs/eval/bankertoolbench-stage-contamination-smoke.json",
+        "npm run benchmark:contamination -- --root .tmp/official-benchmarks/run-btb --strict --json-out docs/eval/bankertoolbench-run-contamination-smoke.json",
+        "missing: official SpreadsheetBench V1/V2 full-bundle runner smoke"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/eval/OFFICIAL_BENCHMARK_READINESS.md" },
+        { "type": "data", "ref": "docs/eval/official-benchmark-readiness.json" },
+        { "type": "data", "ref": "docs/eval/bankertoolbench-ingest-smoke.json" },
+        { "type": "data", "ref": "docs/eval/bankertoolbench-stage-smoke.json" },
+        { "type": "data", "ref": "docs/eval/bankertoolbench-run-smoke.json" },
+        { "type": "data", "ref": "docs/eval/bankertoolbench-run-contamination-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-ingest-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v2-ingest-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-stage-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v2-stage-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-run-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v2-run-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-edit-plan-stage-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-edit-plan-run-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-model-edit-plan-live-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-model-edit-plan-live-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-model-edit-plan-n5-live-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-model-edit-plan-retry-live-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-stage-contamination-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-run-n5-contamination-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-run-retry-contamination-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v2-stage-contamination-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v2-run-contamination-smoke.json" },
+        { "type": "data", "ref": "docs/eval/agent-workspace-sandbox-smoke.json" },
+        { "type": "data", "ref": "docs/eval/bankertoolbench-stage-contamination-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v1-score-smoke.json" },
+        { "type": "data", "ref": "docs/eval/spreadsheetbench-v2-score-smoke.json" },
+        { "type": "script", "ref": "scripts/official-benchmark-readiness.ts" },
+        { "type": "script", "ref": "scripts/bankertoolbench-ingest.ts" },
+        { "type": "script", "ref": "scripts/bankertoolbench-stage.ts" },
+        { "type": "script", "ref": "scripts/bankertoolbench-run.ts" },
+        { "type": "script", "ref": "scripts/benchmark-contamination-check.ts" },
+        { "type": "script", "ref": "scripts/spreadsheetbench-ingest.ts" },
+        { "type": "script", "ref": "scripts/spreadsheetbench-stage.ts" },
+        { "type": "script", "ref": "scripts/spreadsheetbench-run.ts" },
+        { "type": "script", "ref": "scripts/spreadsheetbench-score.ts" },
+        { "type": "code", "ref": "src/eval/bankerToolBenchAdapter.ts" },
+        { "type": "code", "ref": "src/eval/bankerToolBenchStage.ts" },
+        { "type": "code", "ref": "src/eval/bankerToolBenchRunner.ts" },
+        { "type": "code", "ref": "src/eval/benchmarkContamination.ts" },
+        { "type": "code", "ref": "src/eval/spreadsheetBenchAdapter.ts" },
+        { "type": "code", "ref": "src/eval/spreadsheetBenchStage.ts" },
+        { "type": "code", "ref": "src/eval/spreadsheetBenchRunner.ts" },
+        { "type": "code", "ref": "src/eval/spreadsheetBenchScorer.ts" },
+        { "type": "code", "ref": "src/eval/spreadsheetBenchChartScorer.ts" },
+        { "type": "code", "ref": "src/eval/agentWorkspaceSandbox.ts" },
+        { "type": "test", "ref": "tests/officialBenchmarkReadiness.test.ts" },
+        { "type": "test", "ref": "tests/bankerToolBenchAdapter.test.ts" },
+        { "type": "test", "ref": "tests/bankerToolBenchStage.test.ts" },
+        { "type": "test", "ref": "tests/bankerToolBenchRunner.test.ts" },
+        { "type": "test", "ref": "tests/benchmarkContamination.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchAdapter.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchStage.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchRunner.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchScorer.test.ts" },
+        { "type": "test", "ref": "tests/spreadsheetBenchChartScorer.test.ts" },
+        { "type": "test", "ref": "tests/agentWorkspaceSandbox.test.ts" }
+      ],
+      "nextReview": "Next official slice: run model-edit-plan across larger official SpreadsheetBench bundles, harden structured edit-plan generation until retries recover real tasks, add rendered/VLM SpreadsheetBench V2 chart grading beyond the static XLSX chart-package scorer now wired into score/run reports, upgrade the Node permission subprocess proof to Docker/Harbor isolation when the daemon is available, wire BTB MCP financial tools, and replace the BTB local exact-package/exact-or-workbook-semantic smoke with Harbor/Docker plus Gandalf verifier import without exposing rubric/canary/golden files to the agent."
+    },
+    {
+      "id": "unified_nodeagent_jobs",
+      "area": "Unified NodeAgent jobs",
+      "claim": "Every mutating or long-running NodeAgent request uses a durable agentJobs root with request envelope, operation accounting, leases, and links to runs/steps; private read-only advise remains a one-call private reply.",
+      "status": "yellow",
+      "productionGate": "Interactive /ask and /free both create or reuse agentJobs, artifact writes emit receipts, job details are browser-visible, notebook graph mutations enqueue embeddings, and live browser/backend smoke proves linked runs/steps.",
+      "deterministicChecks": [
+        "tests/agentJobsSource.test.ts",
+        "tests/agentJobsRuntime.test.ts",
+        "tests/gatewayAndJournal.test.ts",
+        "npx convex codegen",
+        "npx tsc --noEmit --project convex\\tsconfig.json --pretty false"
+      ],
+      "liveChecks": [
+        "npm run free-job:smoke",
+        "browser: run /ask and confirm linked job row plus latest run/attempt details"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/NODEAGENT_ARCHITECTURE.md" },
+        { "type": "schema", "ref": "convex/schema.ts" },
+        { "type": "mutation", "ref": "convex/agentJobs.ts" },
+        { "type": "action", "ref": "convex/agent.ts" },
+        { "type": "test", "ref": "tests/agentJobsSource.test.ts" },
+        { "type": "test", "ref": "tests/agentJobsRuntime.test.ts" },
+        { "type": "test", "ref": "tests/gatewayAndJournal.test.ts" }
+      ],
+      "nextReview": "Add browser assertion for the job detail drilldown, live workflow retry/cancel smoke, and stale-receipt replay tests."
+    },
+    {
+      "id": "okf_retrieval_evidence_memos",
+      "area": "OKF retrieval + evidence memos",
+      "claim": "NodeAgent retrieval uses Convex/OKF-native candidates first, diversifies into an inspectable slate, and emits evidence memos before answer/write decisions; external vector DBs and ClickHouse remain measured later adapters.",
+      "status": "green",
+      "productionGate": "OKF parser/retrieval tests prove candidate slates, literal source resolution, evidence sufficiency, and memo actions; persistent Convex OKF tables/outbox, provider-capable embeddings, vector indexes, live RoomTools port wiring, retrieval events, and Trace Lens UI are covered by runtime/source gates.",
+      "deterministicChecks": [
+        "tests/okfRetrieval.test.ts",
+        "tests/convexOkfRuntime.test.ts",
+        "tests/agentJobsSource.test.ts",
+        "npx convex codegen",
+        "npx tsc --noEmit --project convex\\tsconfig.json --pretty false",
+        "npm run eval:retrieval",
+        "npm run qa:matrix:check"
+      ],
+      "liveChecks": [
+        "npm test -- --run tests/convexOkfRuntime.test.ts tests/agentJobsSource.test.ts",
+        "browser: Trace Lens appears when OKF telemetry exists",
+        "optional: provider embedding smoke with OPENAI_API_KEY or GOOGLE_GENERATIVE_AI_API_KEY"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/okf/README.md" },
+        { "type": "code", "ref": "src/nodeagent/retrieval/candidateSlate.ts" },
+        { "type": "code", "ref": "src/nodeagent/retrieval/retrievalLoop.ts" },
+        { "type": "test", "ref": "tests/okfRetrieval.test.ts" },
+        { "type": "test", "ref": "tests/convexOkfRuntime.test.ts" },
+        { "type": "convex", "ref": "convex/okf.ts" },
+        { "type": "convex", "ref": "convex/okfIndexer.ts" },
+        { "type": "convex", "ref": "convex/okfEmbeddingProvider.ts" },
+        { "type": "code", "ref": "convex/convexRoomTools.ts" },
+        { "type": "code", "ref": "src/ui/artifacts/BankerCoachPanel.tsx" }
+      ],
+      "nextReview": "Add warehouse/ClickHouse export only if Convex retrievalEvents retention is insufficient, and expand Trace Lens from compact debug card to richer graph visualizer after browser E2E demand is proven."
+    },
+    {
+      "id": "agent_improvement_loop",
+      "area": "Agent improvement loop",
+      "claim": "Live traces, workflow feedback, eval gates, UI media review, and Codex handoff artifacts continuously fuel README evidence.",
+      "status": "yellow",
+      "productionGate": "Deterministic loop passes, live provider/Convex/UI media lanes run when keys are present, and failures generate a handoff before chart promotion.",
+      "deterministicChecks": [
+        "npm run agent:improve",
+        "tests/professionalWorkflows.test.ts",
+        "tests/workflowEvals.test.ts"
+      ],
+      "liveChecks": [
+        "npm run agent:improve -- --live",
+        "npm run agent:improve -- --full-live",
+        "npm run agent:improve -- --ui-media=docs/eval/ui-recordings/<recording-or-screenshot>"
+      ],
+      "evidence": [
+        { "type": "script", "ref": "scripts/agent-improvement-loop.ts" },
+        { "type": "script", "ref": "scripts/gemini-ui-review.ts" },
+        { "type": "doc", "ref": "docs/eval/agent-improvement-loop.md" },
+        { "type": "data", "ref": "docs/eval/agent-improvement-loop/gemini-ui-review.json" },
+        { "type": "media", "ref": "docs/eval/ui-recordings/live-ui-walkthrough-20260608.mp4" }
+      ],
+      "nextReview": "Rerun the full-live loop under the v3 benchmark with provider, free-auto ladder, Convex, and media lanes current; promote only after repeated clean runs without skipped required lanes."
+    },
+    {
+      "id": "demo_media_evidence_quality",
+      "area": "Demo/media evidence quality",
+      "claim": "README walkthrough GIFs, workflow previews, and narrated episodes are judged as product evidence, not just attractive demos.",
+      "status": "yellow",
+      "productionGate": "Gemini 3.5 Flash batch-judges every GIF/MP4 after capture/render refresh; P0 defects block publishing and P1 defects stay visible until fixed.",
+      "deterministicChecks": [
+        "npm run media:gemini-judge -- --dry-run --all"
+      ],
+      "liveChecks": [
+        "npm run media:gemini-judge -- --all"
+      ],
+      "evidence": [
+        { "type": "script", "ref": "scripts/gemini-demo-media-judge.ts" },
+        { "type": "doc", "ref": "docs/eval/MEDIA_JUDGE.md" },
+        { "type": "data", "ref": "docs/eval/gemini-media-judges/latest.json" }
+      ],
+      "nextReview": "P0 blockers and P1 defects block publishing; the current P2 media defects remain tracked polish. Rerun the batch judge after capture/render refresh and promote only when no P0/P1 defects remain."
+    },
+    {
+      "id": "audience_fluency_content",
+      "area": "Audience fluency content",
+      "claim": "README, video, and interview proof artifacts translate NodeRoom features into researched high-trust professional workflow scenes instead of generic AI demos.",
+      "status": "yellow",
+      "productionGate": "Audience context YAML, scenario brief, trust-signal checklist, deterministic content-fluency gate, rendered audience-specific episode, and video/content judge evidence with current media defects tracked.",
+      "deterministicChecks": [
+        "npm run content:fluency:check"
+      ],
+      "liveChecks": [
+        "npx tsx scripts/walkthroughs/judge-video.ts noderoom-live-collab-v1",
+        "npm run media:gemini-judge -- --all"
+      ],
+      "evidence": [
+        { "type": "doc", "ref": "docs/skills/audience-fluency/SKILL.md" },
+        { "type": "data", "ref": "episodes/_audiences/family-office.yaml" },
+        { "type": "doc", "ref": "episodes/_audiences/README.md" },
+        { "type": "doc", "ref": "episodes/private-investment-room-v1/brief.md" },
+        { "type": "doc", "ref": "episodes/noderoom-live-collab-v1/report.md" }
+      ],
+      "nextReview": "Keep P0 blockers and P1 defects blocking; track the current P2 polish separately, then run a content-fluency/trust-signal review before promoting this row to green."
+    }
+  ],
+  "modelLadder": {
+    "source": [
+      "docs/eval/live-provider-agent-ladder-2026-06-08.md",
+      "docs/eval/free-auto-router-ladder.json"
+    ],
+    "gate": "Interactive collaboration routes must pass L1-L4 for lock/CAS/draft safety.",
+    "routes": [
+      {
+        "modelRoute": "gemini-3.5-flash",
+        "provider": "Gemini",
+        "l1": "PASS",
+        "l2": "PASS",
+        "l3": "PASS",
+        "l4": "PASS",
+        "recommendedUse": "eligible for interactive collaboration promotion after repeated runs"
+      },
+      {
+        "modelRoute": "gpt-5.4-mini",
+        "provider": "OpenAI",
+        "l1": "PASS",
+        "l2": "PASS",
+        "l3": "FAIL",
+        "l4": "PASS",
+        "recommendedUse": "parser/read-only/background until conflict rung passes"
+      },
+      {
+        "modelRoute": "claude-haiku-4-5",
+        "provider": "Anthropic",
+        "l1": "PASS",
+        "l2": "PASS",
+        "l3": "PASS",
+        "l4": "FAIL",
+        "recommendedUse": "parser/read-only/background until blocked-range rung passes"
+      },
+      {
+        "modelRoute": "openai/gpt-4o-mini",
+        "provider": "OpenRouter",
+        "l1": "PASS",
+        "l2": "PASS",
+        "l3": "PASS",
+        "l4": "FAIL",
+        "recommendedUse": "parser/read-only/background until blocked-range rung passes"
+      },
+      {
+        "modelRoute": "openrouter/free-auto",
+        "provider": "OpenRouter free-auto router",
+        "l1": "PASS",
+        "l2": "FAIL",
+        "l3": "PASS",
+        "l4": "TIMEOUT",
+        "recommendedUse": "opt-in /free only; hit step budget on L2 despite correct value/provenance and timed out L4"
+      },
+      {
+        "modelRoute": "openrouter/free-auto top-5 candidates",
+        "provider": "OpenRouter router-expanded ladder",
+        "l1": "PASS",
+        "l2": "PASS",
+        "l3": "PASS",
+        "l4": "TIMEOUT",
+        "recommendedUse": "not promotable; summarizes routed top free candidates, see concrete rows"
+      },
+      {
+        "modelRoute": "nvidia/nemotron-3-super-120b-a12b:free",
+        "provider": "OpenRouter free candidate",
+        "l1": "PASS",
+        "l2": "PASS",
+        "l3": "PASS",
+        "l4": "TIMEOUT",
+        "recommendedUse": "best free candidate for /free; not interactive because L4 times out"
+      },
+      {
+        "modelRoute": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "provider": "OpenRouter free candidate",
+        "l1": "FAIL",
+        "l2": "FAIL",
+        "l3": "FAIL",
+        "l4": "FAIL",
+        "recommendedUse": "do not route; invalid JSON in live ladder"
+      },
+      {
+        "modelRoute": "qwen/qwen3-coder:free",
+        "provider": "OpenRouter free candidate",
+        "l1": "FAIL",
+        "l2": "FAIL",
+        "l3": "FAIL",
+        "l4": "FAIL",
+        "recommendedUse": "do not route; provider retry errors in live ladder"
+      },
+      {
+        "modelRoute": "openrouter/owl-alpha",
+        "provider": "OpenRouter free candidate",
+        "l1": "FAIL",
+        "l2": "FAIL",
+        "l3": "PASS",
+        "l4": "FAIL",
+        "recommendedUse": "not safe; mutates during read and misses required draft"
+      },
+      {
+        "modelRoute": "qwen/qwen3-next-80b-a3b-instruct:free",
+        "provider": "OpenRouter free candidate",
+        "l1": "FAIL",
+        "l2": "FAIL",
+        "l3": "FAIL",
+        "l4": "FAIL",
+        "recommendedUse": "do not route; provider retry errors in live ladder"
+      },
+      {
+        "modelRoute": "gpt-5.4-nano",
+        "provider": "OpenAI",
+        "l1": "PASS",
+        "l2": "FAIL",
+        "l3": "FAIL",
+        "l4": "FAIL",
+        "recommendedUse": "research benchmark winner candidate only when collaboration safety is not required"
+      },
+      {
+        "modelRoute": "gpt-5.4",
+        "provider": "OpenAI",
+        "l1": "PASS",
+        "l2": "FAIL",
+        "l3": "PASS",
+        "l4": "PASS",
+        "recommendedUse": "requires rerun because L2 time-budget failure blocks promotion"
+      }
+    ]
+  },
+  "readme": {
+    "maxFeatureRows": 24,
+    "summaryTitle": "Production QA cockpit"
+  }
+}

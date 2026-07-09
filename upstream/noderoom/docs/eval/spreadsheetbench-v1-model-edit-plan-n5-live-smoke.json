@@ -1,0 +1,564 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-06-13T13:43:08.679Z",
+  "stageRoot": "staged-v1",
+  "outputRoot": "run-v1-model-edit-n5",
+  "mode": "model-edit-plan",
+  "taskCount": 5,
+  "passCount": 5,
+  "averageOverall": 1,
+  "caseCount": 1,
+  "caseRunCount": 5,
+  "casePassCount": 5,
+  "casePassRate": 1,
+  "repeatCount": 5,
+  "attemptCount": 5,
+  "passRate": 1,
+  "retryPolicy": {
+    "maxRetries": 0,
+    "retryOn": [
+      "candidate_generation",
+      "scoring"
+    ],
+    "stopOnPass": true
+  },
+  "retryStats": {
+    "retriedCaseRunCount": 0,
+    "retryAttemptCount": 0,
+    "passedAfterRetryCount": 0,
+    "exhaustedCaseRunCount": 0
+  },
+  "stats": {
+    "latencyMs": {
+      "p50": 2502,
+      "p95": 4593,
+      "max": 4593
+    },
+    "failureCounts": {}
+  },
+  "harness": {
+    "toolPolicy": "agent_dir_only_until_candidate",
+    "evaluatorAccess": "after_candidate_emit_only",
+    "budget": {
+      "modelCalls": 5,
+      "inputTokens": 46000,
+      "outputTokens": 1113,
+      "providerCostUsd": 0.01059125
+    }
+  },
+  "warnings": [],
+  "caseRuns": [
+    {
+      "taskId": "13-1",
+      "taskDir": "tasks/13-1",
+      "repeatIndex": 1,
+      "attempts": [
+        1
+      ],
+      "finalAttemptIndex": 1,
+      "pass": true,
+      "stopReason": "passed",
+      "bestOverall": 1
+    },
+    {
+      "taskId": "13-1",
+      "taskDir": "tasks/13-1",
+      "repeatIndex": 2,
+      "attempts": [
+        2
+      ],
+      "finalAttemptIndex": 2,
+      "pass": true,
+      "stopReason": "passed",
+      "bestOverall": 1
+    },
+    {
+      "taskId": "13-1",
+      "taskDir": "tasks/13-1",
+      "repeatIndex": 3,
+      "attempts": [
+        3
+      ],
+      "finalAttemptIndex": 3,
+      "pass": true,
+      "stopReason": "passed",
+      "bestOverall": 1
+    },
+    {
+      "taskId": "13-1",
+      "taskDir": "tasks/13-1",
+      "repeatIndex": 4,
+      "attempts": [
+        4
+      ],
+      "finalAttemptIndex": 4,
+      "pass": true,
+      "stopReason": "passed",
+      "bestOverall": 1
+    },
+    {
+      "taskId": "13-1",
+      "taskDir": "tasks/13-1",
+      "repeatIndex": 5,
+      "attempts": [
+        5
+      ],
+      "finalAttemptIndex": 5,
+      "pass": true,
+      "stopReason": "passed",
+      "bestOverall": 1
+    }
+  ],
+  "results": [
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 1,
+      "repeatIndex": 1,
+      "tryIndex": 1,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-01/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T13:43:08.679Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 120,
+          "formulaCells": 0,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "styleLayoutItems": 0,
+          "styleLayoutMatches": 0,
+          "mismatches": 0,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 1,
+          "formula": null,
+          "style": null,
+          "chartPackage": null,
+          "overall": 1
+        },
+        "pass": true,
+        "warnings": [],
+        "mismatches": []
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 9200,
+          "outputTokens": 182
+        },
+        "costUsd": 0.0020675
+      },
+      "timingsMs": {
+        "modelPlanning": 2358,
+        "candidateGeneration": 2466,
+        "scoring": 36,
+        "total": 2502
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-01/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-01/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "0 cell mismatch(es)"
+        }
+      ]
+    },
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 2,
+      "repeatIndex": 2,
+      "tryIndex": 1,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-02/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T13:43:08.679Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 120,
+          "formulaCells": 0,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "styleLayoutItems": 0,
+          "styleLayoutMatches": 0,
+          "mismatches": 0,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 1,
+          "formula": null,
+          "style": null,
+          "chartPackage": null,
+          "overall": 1
+        },
+        "pass": true,
+        "warnings": [],
+        "mismatches": []
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 9200,
+          "outputTokens": 398
+        },
+        "costUsd": 0.0023375
+      },
+      "timingsMs": {
+        "modelPlanning": 4513,
+        "candidateGeneration": 4568,
+        "scoring": 24,
+        "total": 4593
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-02/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-02/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "0 cell mismatch(es)"
+        }
+      ]
+    },
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 3,
+      "repeatIndex": 3,
+      "tryIndex": 1,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-03/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T13:43:08.679Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 120,
+          "formulaCells": 0,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "styleLayoutItems": 0,
+          "styleLayoutMatches": 0,
+          "mismatches": 0,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 1,
+          "formula": null,
+          "style": null,
+          "chartPackage": null,
+          "overall": 1
+        },
+        "pass": true,
+        "warnings": [],
+        "mismatches": []
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 9200,
+          "outputTokens": 182
+        },
+        "costUsd": 0.0020675
+      },
+      "timingsMs": {
+        "modelPlanning": 1915,
+        "candidateGeneration": 1956,
+        "scoring": 38,
+        "total": 1996
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-03/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-03/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "0 cell mismatch(es)"
+        }
+      ]
+    },
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 4,
+      "repeatIndex": 4,
+      "tryIndex": 1,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-04/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T13:43:08.679Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 120,
+          "formulaCells": 0,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "styleLayoutItems": 0,
+          "styleLayoutMatches": 0,
+          "mismatches": 0,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 1,
+          "formula": null,
+          "style": null,
+          "chartPackage": null,
+          "overall": 1
+        },
+        "pass": true,
+        "warnings": [],
+        "mismatches": []
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 9200,
+          "outputTokens": 226
+        },
+        "costUsd": 0.0021225
+      },
+      "timingsMs": {
+        "modelPlanning": 2494,
+        "candidateGeneration": 2537,
+        "scoring": 18,
+        "total": 2556
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-04/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-04/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "0 cell mismatch(es)"
+        }
+      ]
+    },
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 5,
+      "repeatIndex": 5,
+      "tryIndex": 1,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-05/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T13:43:08.679Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 120,
+          "formulaCells": 0,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "styleLayoutItems": 0,
+          "styleLayoutMatches": 0,
+          "mismatches": 0,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 1,
+          "formula": null,
+          "style": null,
+          "chartPackage": null,
+          "overall": 1
+        },
+        "pass": true,
+        "warnings": [],
+        "mismatches": []
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 9200,
+          "outputTokens": 125
+        },
+        "costUsd": 0.00199625
+      },
+      "timingsMs": {
+        "modelPlanning": 1448,
+        "candidateGeneration": 1483,
+        "scoring": 17,
+        "total": 1501
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-05/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-05/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "0 cell mismatch(es)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-06-24T03:07:07.268Z",
+  "suite": "all",
+  "routeSet": "supported",
+  "routes": [
+    "cohere/north-mini-code:free",
+    "deepseek/deepseek-v4-flash",
+    "ibm-granite/granite-4.1-8b",
+    "z-ai/glm-4.7-flash",
+    "inclusionai/ring-2.6-1t",
+    "xiaomi/mimo-v2.5",
+    "stepfun/step-3.7-flash",
+    "moonshotai/kimi-k2.7-code",
+    "minimax/minimax-m3",
+    "deepseek/deepseek-v4-pro",
+    "google/gemini-3.1-flash-lite",
+    "qwen/qwen3.7-plus",
+    "nvidia/nemotron-3-ultra-550b-a55b",
+    "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "google/gemma-4-26b-a4b-it:free",
+    "openai/gpt-oss-120b:free",
+    "poolside/laguna-xs.2:free",
+    "poolside/laguna-m.1:free",
+    "openrouter/free-auto",
+    "gemini-3.5-flash"
+  ],
+  "scenarios": [
+    {
+      "id": "company_research_v3",
+      "suite": "research",
+      "label": "Company research v3 composite synthesis",
+      "gate": "fetch_row_sources -> model-authored synthesis -> write_row; 9 deterministic/judge checks",
+      "source": "scripts/benchmark/run.ts"
+    },
+    {
+      "id": "collaboration_l1_read",
+      "suite": "collaboration",
+      "label": "L1 read-only no mutation",
+      "gate": "read exact target and produce no writes",
+      "source": "evals/ladder.ts"
+    },
+    {
+      "id": "collaboration_l2_cas_edit",
+      "suite": "collaboration",
+      "label": "L2 single-cell CAS edit",
+      "gate": "claim exact cell, read current version, write with CAS, release",
+      "source": "evals/ladder.ts"
+    },
+    {
+      "id": "collaboration_l3_conflict",
+      "suite": "collaboration",
+      "label": "L3 conflict recovery",
+      "gate": "observe conflict, re-read, retry without clobbering a human edit",
+      "source": "evals/ladder.ts"
+    },
+    {
+      "id": "collaboration_l4_blocked_draft",
+      "suite": "collaboration",
+      "label": "L4 blocked range drafts instead of forcing",
+      "gate": "denied lock becomes a draft with the target operation; no direct write while locked",
+      "source": "evals/ladder.ts"
+    },
+    {
+      "id": "collaboration_l5_large_range",
+      "suite": "collaboration",
+      "label": "L5 large range without full snapshot",
+      "gate": "600-row sheet: load only the narrow window (no full-sheet read, bounded context), touch only the target cell",
+      "source": "evals/ladder.ts"
+    },
+    {
+      "id": "collaboration_l6_long_horizon",
+      "suite": "collaboration",
+      "label": "L6 long horizon under compaction + conflicts",
+      "gate": "5 targets with 3 injected human conflicts and compacted context; fresh read provenance for every edit, no lock shortcut",
+      "source": "evals/ladder.ts"
+    },
+    {
+      "id": "collaboration_l7_resume",
+      "suite": "collaboration",
+      "label": "L7 resume after slice death",
+      "gate": "slice 1 dies mid-task (real exhaustion + handoff); a COLD slice 2 finishes only the remaining targets — completed work untouched, a human's between-slice revision left standing",
+      "source": "evals/ladder.ts"
+    }
+  ],
+  "commands": [
+    {
+      "id": "research_v3",
+      "suite": "research",
+      "description": "Run the v3 company-research synthesis benchmark across selected routes.",
+      "command": "tsx",
+      "args": [
+        "scripts/benchmark/run.ts",
+        "cohere/north-mini-code:free,deepseek/deepseek-v4-flash,ibm-granite/granite-4.1-8b,z-ai/glm-4.7-flash,inclusionai/ring-2.6-1t,xiaomi/mimo-v2.5,stepfun/step-3.7-flash,moonshotai/kimi-k2.7-code,minimax/minimax-m3,deepseek/deepseek-v4-pro,google/gemini-3.1-flash-lite,qwen/qwen3.7-plus,nvidia/nemotron-3-ultra-550b-a55b,nvidia/nemotron-3-ultra-550b-a55b:free,nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-26b-a4b-it:free,openai/gpt-oss-120b:free,poolside/laguna-xs.2:free,poolside/laguna-m.1:free,openrouter/free-auto",
+        "--no-merge",
+        "--companies=3",
+        "--model-timeout-ms=240000",
+        "--model-reserve-ms=10000",
+        "--row-hard-timeout-ms=270000"
+      ],
+      "writes": [
+        "docs/eval/results.json",
+        "docs/eval/traces/benchmark/"
+      ],
+      "routes": [
+        "cohere/north-mini-code:free",
+        "deepseek/deepseek-v4-flash",
+        "ibm-granite/granite-4.1-8b",
+        "z-ai/glm-4.7-flash",
+        "inclusionai/ring-2.6-1t",
+        "xiaomi/mimo-v2.5",
+        "stepfun/step-3.7-flash",
+        "moonshotai/kimi-k2.7-code",
+        "minimax/minimax-m3",
+        "deepseek/deepseek-v4-pro",
+        "google/gemini-3.1-flash-lite",
+        "qwen/qwen3.7-plus",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "openai/gpt-oss-120b:free",
+        "poolside/laguna-xs.2:free",
+        "poolside/laguna-m.1:free",
+        "openrouter/free-auto"
+      ]
+    },
+    {
+      "id": "collaboration_l1_l7",
+      "suite": "collaboration",
+      "description": "Run the live L1-L7 collaboration ladder (lock/CAS/draft + scale, long-horizon, and resume-after-slice-death) across selected routes.",
+      "command": "tsx",
+      "args": [
+        "evals/ladder.ts",
+        "--real",
+        "cohere/north-mini-code:free,deepseek/deepseek-v4-flash,ibm-granite/granite-4.1-8b,z-ai/glm-4.7-flash,inclusionai/ring-2.6-1t,xiaomi/mimo-v2.5,stepfun/step-3.7-flash,moonshotai/kimi-k2.7-code,minimax/minimax-m3,deepseek/deepseek-v4-pro,qwen/qwen3.7-plus,nvidia/nemotron-3-ultra-550b-a55b,nvidia/nemotron-3-ultra-550b-a55b:free,nvidia/nemotron-3-super-120b-a12b:free,openrouter/free-auto,gemini-3.5-flash",
+        "--levels=1-7",
+        "--rung-timeout-ms=540000",
+        "--reserve-ms=30000",
+        "--json-out",
+        "docs/eval/model-ladder-supported.json"
+      ],
+      "writes": [
+        "docs/eval/model-ladder-supported.json"
+      ],
+      "routes": [
+        "cohere/north-mini-code:free",
+        "deepseek/deepseek-v4-flash",
+        "ibm-granite/granite-4.1-8b",
+        "z-ai/glm-4.7-flash",
+        "inclusionai/ring-2.6-1t",
+        "xiaomi/mimo-v2.5",
+        "stepfun/step-3.7-flash",
+        "moonshotai/kimi-k2.7-code",
+        "minimax/minimax-m3",
+        "deepseek/deepseek-v4-pro",
+        "qwen/qwen3.7-plus",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openrouter/free-auto",
+        "gemini-3.5-flash"
+      ]
+    }
+  ]
+}

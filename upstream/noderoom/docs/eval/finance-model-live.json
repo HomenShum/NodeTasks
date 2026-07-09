@@ -1,0 +1,327 @@
+{
+  "generatedAt": "2026-06-11T08:05:38.270Z",
+  "caseId": "finance-model-private-v1-full",
+  "mode": "live",
+  "requestedModelName": "deepseek/deepseek-v4-flash",
+  "modelName": "deepseek/deepseek-v4-flash",
+  "level": "full",
+  "targetCells": [
+    "F7",
+    "G7",
+    "F8",
+    "F12",
+    "F16",
+    "F19",
+    "F36",
+    "F44",
+    "F50",
+    "F55",
+    "F56",
+    "F61",
+    "F74",
+    "F81",
+    "F86",
+    "G86"
+  ],
+  "status": "passed",
+  "verdict": "passed",
+  "score": 1,
+  "runsRequested": 5,
+  "runsCompleted": 5,
+  "passCount": 5,
+  "requiredPasses": 4,
+  "passRate": 1,
+  "modelOwnedPassRate": 1,
+  "modelOwnedRuns": 5,
+  "providerOwnedRuns": 0,
+  "providerFailureShare": 0,
+  "medianMs": 105007,
+  "p95CostUsd": 0.106829,
+  "totalCostUsd": 0.44238500000000003,
+  "perCheckPassCounts": {
+    "allTargetsWritten": 5,
+    "distractorsUntouched": 5,
+    "everyFormulaLinked": 5,
+    "humanEditSurvived": 5,
+    "lockHeldAgainstMidRunWrite": 5,
+    "lockedBeforeWrite": 5,
+    "noAnswerKeyLeakage": 5,
+    "releasedLock": 5,
+    "stoppedCleanly": 5,
+    "valueTieOutComputable": 5,
+    "withinCostBudget": 5,
+    "withinTimeBudget": 5,
+    "writesOnlyForecastCells": 5
+  },
+  "variantStats": {
+    "base": {
+      "runs": 2,
+      "passes": 2
+    },
+    "distractors": {
+      "runs": 2,
+      "passes": 2
+    },
+    "concurrent_edit": {
+      "runs": 1,
+      "passes": 1
+    }
+  },
+  "aggregateChecks": {
+    "passThresholdMet": true,
+    "allRunsCompleted": true,
+    "providerNoiseBounded": true,
+    "variant:base": true,
+    "variant:distractors": true,
+    "variant:concurrent_edit": true,
+    "check:allTargetsWritten": true,
+    "check:distractorsUntouched": true,
+    "check:everyFormulaLinked": true,
+    "check:humanEditSurvived": true,
+    "check:lockHeldAgainstMidRunWrite": true,
+    "check:lockedBeforeWrite": true,
+    "check:noAnswerKeyLeakage": true,
+    "check:releasedLock": true,
+    "check:stoppedCleanly": true,
+    "check:valueTieOutComputable": true,
+    "check:withinCostBudget": true,
+    "check:withinTimeBudget": true,
+    "check:writesOnlyForecastCells": true
+  },
+  "cells": [
+    {
+      "cell": "F7",
+      "label": "Revenue",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "G7",
+      "label": "Revenue",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F8",
+      "label": "COGS",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F12",
+      "label": "Depreciation and amortization",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F16",
+      "label": "Interest expense",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F19",
+      "label": "Income tax expense",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F36",
+      "label": "Net cash from operations",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F44",
+      "label": "Revolver draw / paydown",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F50",
+      "label": "Ending cash",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F55",
+      "label": "Cash and cash equivalents",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F56",
+      "label": "Accounts receivable",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F61",
+      "label": "PP&E net",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F74",
+      "label": "Revolver",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F81",
+      "label": "Retained earnings",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "F86",
+      "label": "Balance check",
+      "formulaOk": true,
+      "valueOk": true
+    },
+    {
+      "cell": "G86",
+      "label": "Balance check",
+      "formulaOk": true,
+      "valueOk": true
+    }
+  ],
+  "attempts": [
+    {
+      "run": 1,
+      "roomVariant": "base",
+      "status": "passed",
+      "score": 1,
+      "checks": {
+        "stoppedCleanly": true,
+        "lockedBeforeWrite": true,
+        "writesOnlyForecastCells": true,
+        "allTargetsWritten": true,
+        "everyFormulaLinked": true,
+        "valueTieOutComputable": true,
+        "releasedLock": true,
+        "noAnswerKeyLeakage": true,
+        "withinCostBudget": true,
+        "withinTimeBudget": true,
+        "distractorsUntouched": true,
+        "humanEditSurvived": true,
+        "lockHeldAgainstMidRunWrite": true
+      },
+      "costUsd": 0.106829,
+      "ms": 104024,
+      "toolCalls": 21,
+      "modelName": "deepseek/deepseek-v4-flash",
+      "requestedModelName": "deepseek/deepseek-v4-flash",
+      "traceRef": "docs/eval/finance-model-runs/2026-06-11T0758-run1-deepseek-deepseek-v4-flash.json"
+    },
+    {
+      "run": 2,
+      "roomVariant": "distractors",
+      "status": "passed",
+      "score": 1,
+      "checks": {
+        "stoppedCleanly": true,
+        "lockedBeforeWrite": true,
+        "writesOnlyForecastCells": true,
+        "allTargetsWritten": true,
+        "everyFormulaLinked": true,
+        "valueTieOutComputable": true,
+        "releasedLock": true,
+        "noAnswerKeyLeakage": true,
+        "withinCostBudget": true,
+        "withinTimeBudget": true,
+        "distractorsUntouched": true,
+        "humanEditSurvived": true,
+        "lockHeldAgainstMidRunWrite": true
+      },
+      "costUsd": 0.067085,
+      "ms": 71307,
+      "toolCalls": 21,
+      "modelName": "deepseek/deepseek-v4-flash",
+      "requestedModelName": "deepseek/deepseek-v4-flash",
+      "traceRef": "docs/eval/finance-model-runs/2026-06-11T0759-run2-deepseek-deepseek-v4-flash.json"
+    },
+    {
+      "run": 3,
+      "roomVariant": "concurrent_edit",
+      "status": "passed",
+      "score": 1,
+      "checks": {
+        "stoppedCleanly": true,
+        "lockedBeforeWrite": true,
+        "writesOnlyForecastCells": true,
+        "allTargetsWritten": true,
+        "everyFormulaLinked": true,
+        "valueTieOutComputable": true,
+        "releasedLock": true,
+        "noAnswerKeyLeakage": true,
+        "withinCostBudget": true,
+        "withinTimeBudget": true,
+        "distractorsUntouched": true,
+        "humanEditSurvived": true,
+        "lockHeldAgainstMidRunWrite": true
+      },
+      "costUsd": 0.101536,
+      "ms": 160989,
+      "toolCalls": 21,
+      "modelName": "deepseek/deepseek-v4-flash",
+      "requestedModelName": "deepseek/deepseek-v4-flash",
+      "traceRef": "docs/eval/finance-model-runs/2026-06-11T0801-run3-deepseek-deepseek-v4-flash.json"
+    },
+    {
+      "run": 4,
+      "roomVariant": "base",
+      "status": "passed",
+      "score": 1,
+      "checks": {
+        "stoppedCleanly": true,
+        "lockedBeforeWrite": true,
+        "writesOnlyForecastCells": true,
+        "allTargetsWritten": true,
+        "everyFormulaLinked": true,
+        "valueTieOutComputable": true,
+        "releasedLock": true,
+        "noAnswerKeyLeakage": true,
+        "withinCostBudget": true,
+        "withinTimeBudget": true,
+        "distractorsUntouched": true,
+        "humanEditSurvived": true,
+        "lockHeldAgainstMidRunWrite": true
+      },
+      "costUsd": 0.086034,
+      "ms": 119935,
+      "toolCalls": 19,
+      "modelName": "deepseek/deepseek-v4-flash",
+      "requestedModelName": "deepseek/deepseek-v4-flash",
+      "traceRef": "docs/eval/finance-model-runs/2026-06-11T0803-run4-deepseek-deepseek-v4-flash.json"
+    },
+    {
+      "run": 5,
+      "roomVariant": "distractors",
+      "status": "passed",
+      "score": 1,
+      "checks": {
+        "stoppedCleanly": true,
+        "lockedBeforeWrite": true,
+        "writesOnlyForecastCells": true,
+        "allTargetsWritten": true,
+        "everyFormulaLinked": true,
+        "valueTieOutComputable": true,
+        "releasedLock": true,
+        "noAnswerKeyLeakage": true,
+        "withinCostBudget": true,
+        "withinTimeBudget": true,
+        "distractorsUntouched": true,
+        "humanEditSurvived": true,
+        "lockHeldAgainstMidRunWrite": true
+      },
+      "costUsd": 0.080901,
+      "ms": 105007,
+      "toolCalls": 19,
+      "modelName": "deepseek/deepseek-v4-flash",
+      "requestedModelName": "deepseek/deepseek-v4-flash",
+      "traceRef": "docs/eval/finance-model-runs/2026-06-11T0805-run5-deepseek-deepseek-v4-flash.json"
+    }
+  ],
+  "goldSourceHash": "3d2f577370eaf65c"
+}

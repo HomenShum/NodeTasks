@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-06-17",
+  "demoTarget": "Startup Diligence War Room",
+  "sourceReview": "D:/VSCode Projects/noderoom/6-14-2026-deep-review.txt",
+  "currentEvidenceLevel": "provider-produced-convex-contract-proven-plus-deterministic-media",
+  "claim": "NodeRoom can present a startup-banking diligence room where multiple users coordinate account intake, source-backed research, runway/milestone work, no-clobber review, private banker judgment, and draft-only downstream handoff.",
+  "latestCapture": {
+    "capturedAt": "2026-06-14T23:28:41.080Z",
+    "baseUrl": "http://127.0.0.1:5178",
+    "liveJoinSegments": 13,
+    "warRoomSegments": 19,
+    "rendered": true,
+    "mediaJudgeRunId": "live-join:20260614T233419Z;war-room:20260617T2015Z",
+    "mediaJudgeModel": "gemini-3.5-flash",
+    "verdict": "publish",
+    "scores": {
+      "startup-diligence-live-join": "10.9/16",
+      "startup-diligence-war-room": "10.4/16"
+    },
+    "remainingDefects": [
+      {
+        "severity": "P2",
+        "asset": "docs/walkthroughs/startup-diligence-live-join.mp4",
+        "finding": "The transition between user perspectives is rapid; acceptable for publish, but next polish should add a subtle transition or longer pause."
+      }
+    ]
+  },
+  "latestWarRoomMediaJudge": {
+    "judgedAt": "2026-06-17T18:54:58.389Z",
+    "mediaJudgeRunId": "20260617T2015Z",
+    "mediaJudgeModel": "gemini-3.5-flash",
+    "asset": "docs/walkthroughs/startup-diligence-war-room.mp4",
+    "verdict": "publish",
+    "score": "10.4/16",
+    "remainingDefects": [
+      "none reported"
+    ]
+  },
+  "media": [
+    {
+      "id": "startup-diligence-live-join",
+      "path": "docs/walkthroughs/startup-diligence-live-join.mp4",
+      "mode": "live-convex-browser",
+      "proves": [
+        "fresh Startup Banking Diligence War Room creation",
+        "room-code join path",
+        "three-user room choreography",
+        "shared startup-diligence chat asks"
+      ],
+      "doesNotYetProve": [
+        "live provider research/tool calls",
+        "live CellPayload writes from the provider path",
+        "live runway chart artifact generation"
+      ]
+    },
+    {
+      "id": "startup-diligence-war-room",
+      "path": "docs/walkthroughs/startup-diligence-war-room.mp4",
+      "mode": "deterministic-memory-ui",
+      "proves": [
+        "startup-specific multi-agent workbench UI",
+        "CardioNova intake and five-company batch story",
+        "research/finance/review lanes streaming concurrently",
+        "no-clobber, private-lane, and draft-handoff affordances"
+      ],
+      "doesNotYetProve": [
+        "nondeterministic live-provider completion",
+        "Convex agentJobs row for the entire startup package",
+        "provider route N=5/p95 score for this workflow"
+      ]
+    }
+  ],
+  "requiredChecks": [
+    {
+      "id": "account_upsert",
+      "status": "convex-contract-proven",
+      "evidenceRequired": "Browser state plus trace row showing CardioNova/five-company re-import updates existing rows instead of duplicating.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#account_upsert"
+    },
+    {
+      "id": "cited_cellpayloads",
+      "status": "provider-produced-convex-contract-proven",
+      "evidenceRequired": "CellPayload objects include source refs, confidence/freshness, and reviewed/needs_review state.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#cited_cellpayloads"
+    },
+    {
+      "id": "human_edit_preserved",
+      "status": "convex-contract-proven",
+      "evidenceRequired": "A user edits an affected cell during agent work; stale write becomes proposal/draft instead of overwrite.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#human_edit_preserved"
+    },
+    {
+      "id": "concurrent_lanes",
+      "status": "convex-contract-proven",
+      "evidenceRequired": "Distinct lane ids, statuses, receipts, and final sealed handoff in agentJobs/agentOperationEvents.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#concurrent_lanes"
+    },
+    {
+      "id": "private_boundary",
+      "status": "convex-contract-proven",
+      "evidenceRequired": "Second user cannot read private banker concerns until explicit promotion.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#private_boundary"
+    },
+    {
+      "id": "runway_milestone_chart",
+      "status": "deterministic-helper-and-artifact-proven",
+      "evidenceRequired": "Runway chart artifact generated from deterministic math with sourced assumptions.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#runway_milestone_chart"
+    },
+    {
+      "id": "downstream_draft_only",
+      "status": "helper-proven-no-side-effects",
+      "evidenceRequired": "Gmail/Notion/Slack/Linear/LinkedIn/CRM actions produce approval-gated drafts only; no OAuth side effects.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#downstream_draft_only"
+    },
+    {
+      "id": "route_trace_cost_runtime",
+      "status": "provider-produced-route-trace-proven",
+      "evidenceRequired": "agent run/job rows record model/resolved model, route, latency, token/cost, and stop reason.",
+      "lastVerifiedAt": "2026-06-15T07:42:04.120Z",
+      "lastEvidenceRef": "docs/eval/startup-diligence-provider-results.json#route_trace_cost_runtime"
+    }
+  ],
+  "nextAcceptanceGate": [
+    "repeat the provider-produced startup diligence eval N=5 and promote only if p95 latency, path fingerprint drift, and pass rate meet the live collaboration SLO"
+  ],
+  "latestLiveEval": {
+    "generatedAt": "2026-06-15T07:42:04.120Z",
+    "mode": "provider-produced-convex-contract",
+    "command": "npm run eval:startup-diligence:provider",
+    "resultPath": "docs/eval/startup-diligence-provider-results.json",
+    "pass": true,
+    "checksPassed": 9,
+    "checksFailed": 0,
+    "providerProducedContent": true,
+    "note": "Provider-generated CellPayload/final copy flowed through the same Convex job/proposal/trace contract."
+  },
+  "latestProviderEval": {
+    "generatedAt": "2026-06-15T07:42:04.120Z",
+    "mode": "provider-produced-convex-contract",
+    "command": "npm run eval:startup-diligence:provider",
+    "resultPath": "docs/eval/startup-diligence-provider-results.json",
+    "pass": true,
+    "checksPassed": 9,
+    "checksFailed": 0,
+    "providerProducedContent": true,
+    "note": "Provider-generated CellPayload/final copy flowed through the same Convex job/proposal/trace contract."
+  }
+}

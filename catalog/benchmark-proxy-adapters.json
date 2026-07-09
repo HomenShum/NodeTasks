@@ -1,0 +1,178 @@
+{
+  "schema": "nodetasks-benchmark-proxy-adapters-v1",
+  "generatedAt": "2026-07-09T00:34:02.616Z",
+  "adapters": [
+    {
+      "schema": 1,
+      "id": "bankertoolbench",
+      "source": {
+        "name": "BankerToolBench",
+        "kind": "local_live_browser_suite",
+        "repoPath": "e2e/benchmark-ui-bankertoolbench.spec.ts"
+      },
+      "taskLoader": "scripts/bankertoolbench-stage.ts",
+      "seedInputsThroughUi": true,
+      "browserScenario": "e2e/benchmark-ui-bankertoolbench.spec.ts",
+      "verifierCommand": "npm run benchmark:bankertoolbench:proof",
+      "expectedArtifacts": [
+        "live-user-contract.json",
+        "node-trace-v2.json",
+        "node-eval.json",
+        "scorecard.md",
+        "cost-ledger.json",
+        "verifier-receipt.json",
+        "official-scorer-receipt.json",
+        "cockpit-snapshot.json",
+        "exported-files-reopen-proof.json"
+      ],
+      "scoringMode": "hybrid",
+      "scoreFields": [
+        "productPathCompletion",
+        "officialSemanticScore"
+      ],
+      "liveUserCommand": "npm run proofloop -- run bankertoolbench --prod --user-emulation strict --cockpit",
+      "sourcePath": "upstream/noderoom/proofloop/benchmarks/bankertoolbench/adapter.json",
+      "officialScoreClaim": false,
+      "localProxyOnlyUntilVerifier": true
+    },
+    {
+      "schema": 1,
+      "id": "finauditing",
+      "source": {
+        "name": "FinAuditing",
+        "paper": "https://arxiv.org/abs/2510.08886",
+        "repository": "https://github.com/The-FinAI/FinAuditing",
+        "dataset": "https://huggingface.co/collections/TheFinAI/finauditing",
+        "contest": "https://open-finance-lab.github.io/SecureFinAI_Contest_2026/",
+        "tasks": [
+          "FinSM",
+          "FinRE",
+          "FinMR"
+        ]
+      },
+      "taskLoader": "proofloop/benchmarks/finauditing/load-tasks.ts",
+      "seedInputsThroughUi": true,
+      "browserScenario": "proofloop/benchmarks/finauditing/browser-scenario.spec.ts",
+      "verifierCommand": "npm run benchmark:proofloop:adapter-blockers -- --id finauditing --strict",
+      "expectedArtifacts": [
+        "live-user-contract.json",
+        "node-trace-v2.json",
+        "node-eval.json",
+        "scorecard.md",
+        "cost-ledger.json",
+        "verifier-receipt.json",
+        "official-scorer-receipt.json",
+        "visual-proof",
+        "exported-files-reopen-proof.json"
+      ],
+      "scoringMode": "hybrid",
+      "scoreFields": [
+        "productPathCompletion",
+        "officialSemanticScore"
+      ],
+      "liveUserCommand": "npm run benchmark:proofloop:external-adapter-live-room -- --id finauditing --prod --user-emulation strict --cockpit",
+      "sourcePath": "upstream/noderoom/proofloop/benchmarks/finauditing/adapter.json",
+      "officialScoreClaim": false,
+      "localProxyOnlyUntilVerifier": true
+    },
+    {
+      "schema": 1,
+      "id": "finch",
+      "source": {
+        "name": "Finch / FinWorkBench",
+        "paper": "https://arxiv.org/abs/2512.13168",
+        "repository": "https://github.com/FinWorkBench/Finch",
+        "dataset": "https://huggingface.co/datasets/FinWorkBench/Finch"
+      },
+      "taskLoader": "proofloop/benchmarks/finch/load-tasks.ts",
+      "seedInputsThroughUi": true,
+      "browserScenario": "proofloop/benchmarks/finch/browser-scenario.spec.ts",
+      "verifierCommand": "npm run benchmark:proofloop:adapter-blockers -- --id finch --strict",
+      "expectedArtifacts": [
+        "live-user-contract.json",
+        "node-trace-v2.json",
+        "node-eval.json",
+        "scorecard.md",
+        "cost-ledger.json",
+        "verifier-receipt.json",
+        "official-scorer-receipt.json",
+        "visual-proof",
+        "exported-files-reopen-proof.json"
+      ],
+      "scoringMode": "hybrid",
+      "scoreFields": [
+        "productPathCompletion",
+        "officialSemanticScore"
+      ],
+      "liveUserCommand": "npm run benchmark:proofloop:external-adapter-live-room -- --id finch --prod --user-emulation strict --cockpit",
+      "sourcePath": "upstream/noderoom/proofloop/benchmarks/finch/adapter.json",
+      "officialScoreClaim": false,
+      "localProxyOnlyUntilVerifier": true
+    },
+    {
+      "schema": 1,
+      "id": "workstreambench",
+      "source": {
+        "name": "WorkstreamBench",
+        "paper": "https://arxiv.org/html/2605.22664v1",
+        "domain": "end-to-end finance spreadsheet workstreams"
+      },
+      "taskLoader": "proofloop/benchmarks/workstreambench/load-tasks.ts",
+      "seedInputsThroughUi": true,
+      "browserScenario": "proofloop/benchmarks/workstreambench/browser-scenario.spec.ts",
+      "verifierCommand": "npm run benchmark:proofloop:adapter-blockers -- --id workstreambench --strict",
+      "expectedArtifacts": [
+        "live-user-contract.json",
+        "node-trace-v2.json",
+        "node-eval.json",
+        "scorecard.md",
+        "cost-ledger.json",
+        "verifier-receipt.json",
+        "official-scorer-receipt.json",
+        "visual-proof",
+        "exported-files-reopen-proof.json"
+      ],
+      "scoringMode": "hybrid",
+      "scoreFields": [
+        "productPathCompletion",
+        "officialSemanticScore"
+      ],
+      "liveUserCommand": "npm run benchmark:proofloop:external-adapter-live-room -- --id workstreambench --prod --user-emulation strict --cockpit",
+      "sourcePath": "upstream/noderoom/proofloop/benchmarks/workstreambench/adapter.json",
+      "officialScoreClaim": false,
+      "localProxyOnlyUntilVerifier": true
+    }
+  ],
+  "externalLocalTasks": [
+    {
+      "adapterId": "finch",
+      "taskId": "finch-local-financial-evidence-qa",
+      "title": "Financial evidence QA through NodeRoom story workflow",
+      "workflowId": "noderoom-story-revenue-variance",
+      "benchmarkMapping": "Maps Finch financial question answering onto NodeRoom's live spreadsheet/story proof path.",
+      "userPrompt": "Recompute the revenue variance and ground the answer in the visible spreadsheet evidence.",
+      "officialScoreClaim": false,
+      "sourcePath": "upstream/noderoom/proofloop/benchmarks/common/local-tasks.ts"
+    },
+    {
+      "adapterId": "finauditing",
+      "taskId": "finauditing-local-risk-and-misstatement-review",
+      "title": "Audit-style evidence review through NodeRoom story workflow",
+      "workflowId": "noderoom-story-revenue-variance",
+      "benchmarkMapping": "Maps FinAuditing source-grounded review onto a live UI task with visible evidence and final answer gates.",
+      "userPrompt": "Check the revenue change, identify evidence that supports it, and preserve the human-entered C2 value.",
+      "officialScoreClaim": false,
+      "sourcePath": "upstream/noderoom/proofloop/benchmarks/common/local-tasks.ts"
+    },
+    {
+      "adapterId": "workstreambench",
+      "taskId": "workstreambench-local-spreadsheet-workstream",
+      "title": "Spreadsheet workstream execution through NodeRoom story workflow",
+      "workflowId": "noderoom-story-revenue-variance",
+      "benchmarkMapping": "Maps WorkstreamBench end-to-end spreadsheet workstreams onto the local live browser story proof.",
+      "userPrompt": "Run the visible spreadsheet workstream, recompute D2, and confirm the edited input remains intact.",
+      "officialScoreClaim": false,
+      "sourcePath": "upstream/noderoom/proofloop/benchmarks/common/local-tasks.ts"
+    }
+  ]
+}

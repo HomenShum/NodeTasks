@@ -1,0 +1,378 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-07-08T21:36:38.196Z",
+  "policy": [
+    "Product-path completion is useful proof: real UI, visible progress, artifacts, verifier receipts, trace, memory, and browser evidence.",
+    "Official semantic score is only claimed when the benchmark's official scorer/verifier result is imported.",
+    "Docker/Harbor isolation can block official score promotion; it must not block product-path Proof Loop runs.",
+    "External benchmark adapters can prove local app-agnostic product paths before official score promotion; the two claims must stay separate.",
+    "Proof Loop may not call a lane external-blocked until setup, research, scaffold, doctor, resume, model, and harness receipts exist."
+  ],
+  "summary": {
+    "total": 9,
+    "productPathProven": 7,
+    "productPathReadyToRun": 2,
+    "externalAdaptersRegistered": 0,
+    "officialScoresClaimed": 1,
+    "officialScoresNotApplicable": 4,
+    "officialScoresBlockedOrNotClaimed": 4
+  },
+  "entries": [
+    {
+      "id": "spreadsheetbench",
+      "name": "SpreadsheetBench",
+      "family": "official_style",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "proven",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "docs/eval/spreadsheetbench-live-room-proof.json"
+        ],
+        "command": "npm run benchmark:spreadsheetbench:proof",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "needs_scaffold_or_run",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "docs/eval/official-benchmark-task-coverage.json",
+          "docs/eval/official-benchmark-readiness.json",
+          ".proofloop/lanes/spreadsheetbench-v1/blocker-analysis.json",
+          ".proofloop/lanes/spreadsheetbench-v2/blocker-analysis.json"
+        ],
+        "command": "npm run proofloop -- solve-blockers --goal official-scores",
+        "blockers": [
+          "Run all 912 tasks through the model runner or an approved chunked official-policy runner before claiming a model score.",
+          "397 verified task(s) still need model-run evidence; current N=5 smoke covers 3/400 cases.",
+          "Full verified-score promotion still needs official scoring parity, not only local workbook scoring.",
+          "Run every staged V2 task through the model runner, static workbook scorer, and rendered/VLM chart grader where applicable."
+        ]
+      },
+      "notes": [
+        "Workbook product proof is separate from full official task coverage."
+      ]
+    },
+    {
+      "id": "openrouter-convex",
+      "name": "OpenRouter on Convex",
+      "family": "model_route_harness",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "proven",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "docs/eval/openrouter-convex-benchmark.json"
+        ],
+        "command": "npm run benchmark:openrouter-convex -- --strict",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "not_applicable",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "docs/eval/openrouter-convex-benchmark.json"
+        ],
+        "command": "npm run benchmark:openrouter-convex",
+        "blockers": [
+          "Model-route harness; not a public official benchmark score lane."
+        ]
+      },
+      "notes": [
+        "Route eligibility should depend on the Convex harness, not Docker/Harbor official-runner availability."
+      ]
+    },
+    {
+      "id": "proximitty-underwriting-pr0",
+      "name": "Proximitty underwriting PR0",
+      "family": "product_suite",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "proven",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          ".proofloop/runs/latest/run-result.json",
+          ".proofloop/runs/2026-07-02T20-31-20"
+        ],
+        "command": "npm run proofloop:proximitty",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "not_applicable",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "proofloop/suites/proximitty-underwriting-pr0.json"
+        ],
+        "blockers": [
+          "Synthetic underwriting suite; do not label as an official finance benchmark score."
+        ]
+      },
+      "notes": [
+        "Evaluation-only underwriting demo; not a real lending or credit decision."
+      ]
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting proof-loop",
+      "family": "product_suite",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "ready_to_run",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "proofloop/accounting/proofloop.accounting.config.json",
+          "proofloop/accounting/benchmarks/benchmark-registry.json"
+        ],
+        "command": "npm run proofloop:accounting",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "not_applicable",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "proofloop/accounting/benchmarks/benchmark-registry.json"
+        ],
+        "blockers": [
+          "Accounting suite pins external benchmark families, but local proof-loop runs are product-path evidence."
+        ]
+      },
+      "notes": [
+        "Pinned benchmark families include Finch, BizFinBench, FinTMMBench, QuantEval, and FATURA."
+      ]
+    },
+    {
+      "id": "notion-sdr-bdr",
+      "name": "Notion SDR/BDR proof-loop",
+      "family": "product_suite",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "ready_to_run",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "proofloop/notion/proofloop.notion.config.json"
+        ],
+        "command": "npm run proofloop:notion",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "not_applicable",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "proofloop/notion/proofloop.notion.config.json"
+        ],
+        "blockers": [
+          "Product workflow benchmark, not an official public benchmark score."
+        ]
+      },
+      "notes": [
+        "Sales workflow suite used for proof-loop mechanics and memory learning."
+      ]
+    },
+    {
+      "id": "bankertoolbench",
+      "name": "BankerToolBench",
+      "family": "external_adapter",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "proven",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "proofloop/benchmarks/bankertoolbench/adapter.json",
+          "docs/eval/bankertoolbench-live-room-proof.json"
+        ],
+        "command": "npm run proofloop -- run bankertoolbench --prod --user-emulation strict --cockpit",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "proven",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "docs/eval/fresh-room/FR-020/fullsuite-gate-receipt.json",
+          "docs/eval/btb-clean-capability-full100-parallel-v3-gpt41mini.json",
+          "docs/eval/bankertoolbench-official-contract.json"
+        ],
+        "command": "npm run benchmark:bankertoolbench:proof",
+        "blockers": [],
+        "metrics": {
+          "expectedCount": 100,
+          "executedTaskCount": 100,
+          "cleanScoredTaskCount": 100,
+          "meanCleanReward": 0.251875,
+          "passThreshold": 1,
+          "passCount": 0,
+          "passRate": 0,
+          "claim": "All 100/100 BankerToolBench tasks executed and officially scored, generic-only (no answer-key writers). Aggregate mean reward 0.2519; pass-rate 0.0000 (reward >= 1). This proves full-suite COMPLETION + SCORING, not a 100% pass rate."
+        }
+      },
+      "notes": [
+        "BankerToolBench full-suite official scoring is imported: completion/scoring is proven separately from pass rate."
+      ]
+    },
+    {
+      "id": "finch",
+      "name": "Finch / FinWorkBench",
+      "family": "external_adapter",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "proven",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "proofloop/benchmarks/finch/adapter.json",
+          "docs/eval/proofloop-external-adapter-live-room-runs/finch.json",
+          "docs/eval/proofloop-external-adapter-runs/finch.json",
+          "docs/eval/proofloop-adapter-blockers/finch.json"
+        ],
+        "command": "npm run benchmark:proofloop:external-adapter-live-room -- --id finch --prod --user-emulation strict --cockpit",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "needs_scaffold_or_run",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "proofloop/benchmarks/finch/adapter.json",
+          "docs/eval/proofloop-adapter-blockers/finch.json",
+          "docs/eval/proofloop-official-scores/finch.json",
+          "docs/eval/proofloop-official-task-bundles/finch.json",
+          "docs/eval/proofloop-official-outputs/finch.json",
+          "docs/eval/proofloop-official-task-bundles/finch.json",
+          ".tmp/official-benchmarks/proofloop-official-outputs/finch/model-output-manifest.json",
+          ".tmp/official-benchmarks/proofloop-official-outputs/finch",
+          ".proofloop/lanes/finch/blocker-analysis.json"
+        ],
+        "command": "npm run benchmark:proofloop:adapter-blockers -- --id finch --strict",
+        "blockers": [
+          "missing official scorer remains before external-blocked can be claimed",
+          "missing judge credentials remains before official score can be claimed",
+          "finch: official scorer receipt docs/eval/proofloop-official-scores/finch.json is blocked_external; scored receipt is still required before claiming score.",
+          "finch: official task bundle lock docs/eval/proofloop-official-task-bundles/finch.json is staged and NodeRoom model-output artifacts are complete in docs/eval/proofloop-official-outputs/finch.json; upstream content_parts rendering and an accepted Azure judge/scorer receipt are still required before claiming an official score. Cheaper OpenRouter proxy judges are product-gate evidence only unless accepted upstream.",
+          "next: complete upstream Finch content_parts rendering, run/import the accepted Finch Azure scorer or judge output, use npm run benchmark:proofloop:harness-economics for proxy triage, then npm run benchmark:proofloop:adapter-blockers -- --id finch --strict"
+        ],
+        "metrics": {
+          "missingImplementationFiles": 0,
+          "localAdapterTasks": 1,
+          "liveRoomProductProof": true,
+          "storyRouteProductProof": true,
+          "liveRoomBaseUrl": "https://noderoom.live",
+          "localAdapterOnly": true,
+          "officialScoreClaim": false,
+          "officialSourceUrls": 3,
+          "resumeCommands": 7,
+          "officialOutputManifestComplete": true
+        }
+      },
+      "notes": [
+        "Fresh live-room Proof Loop adapter proof passed; official score is still blocked on upstream scorer import."
+      ]
+    },
+    {
+      "id": "finauditing",
+      "name": "FinAuditing",
+      "family": "external_adapter",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "proven",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "proofloop/benchmarks/finauditing/adapter.json",
+          "docs/eval/proofloop-external-adapter-live-room-runs/finauditing.json",
+          "docs/eval/proofloop-external-adapter-runs/finauditing.json",
+          "docs/eval/proofloop-adapter-blockers/finauditing.json"
+        ],
+        "command": "npm run benchmark:proofloop:external-adapter-live-room -- --id finauditing --prod --user-emulation strict --cockpit",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "needs_scaffold_or_run",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "proofloop/benchmarks/finauditing/adapter.json",
+          "docs/eval/proofloop-adapter-blockers/finauditing.json",
+          "docs/eval/proofloop-official-scores/finauditing.json",
+          "docs/eval/proofloop-official-task-bundles/finauditing.json",
+          "docs/eval/proofloop-official-outputs/finauditing.json",
+          "docs/eval/proofloop-official-task-bundles/finauditing.json",
+          ".tmp/official-benchmarks/proofloop-official-outputs/finauditing/FinSM.predictions.jsonl",
+          ".tmp/official-benchmarks/proofloop-official-outputs/finauditing/FinRE.predictions.jsonl",
+          ".tmp/official-benchmarks/proofloop-official-outputs/finauditing/FinMR.predictions.jsonl",
+          ".tmp/official-benchmarks/proofloop-official-outputs/finauditing/manifest.json",
+          ".tmp/official-benchmarks/proofloop-official-outputs/finauditing",
+          ".proofloop/lanes/finauditing/blocker-analysis.json"
+        ],
+        "command": "npm run benchmark:proofloop:adapter-blockers -- --id finauditing --strict",
+        "blockers": [
+          "missing official scorer remains before external-blocked can be claimed",
+          "missing judge credentials remains before official score can be claimed",
+          "finauditing: official scorer receipt docs/eval/proofloop-official-scores/finauditing.json is blocked_external; scored receipt is still required before claiming score.",
+          "next: run/import FinAuditing scorer output with an accepted FinMR judge path, use npm run benchmark:proofloop:harness-economics for proxy triage, then npm run benchmark:proofloop:adapter-blockers -- --id finauditing --strict"
+        ],
+        "metrics": {
+          "missingImplementationFiles": 0,
+          "localAdapterTasks": 1,
+          "liveRoomProductProof": true,
+          "storyRouteProductProof": true,
+          "liveRoomBaseUrl": "https://noderoom.live",
+          "localAdapterOnly": true,
+          "officialScoreClaim": false,
+          "officialSourceUrls": 4,
+          "resumeCommands": 7,
+          "officialOutputManifestComplete": true
+        }
+      },
+      "notes": [
+        "Fresh live-room Proof Loop adapter proof passed; official score is still blocked on upstream scorer import."
+      ]
+    },
+    {
+      "id": "workstreambench",
+      "name": "WorkstreamBench",
+      "family": "external_adapter",
+      "liveUserContract": "required",
+      "productPathCompletion": {
+        "status": "proven",
+        "scoreType": "product_path_completion",
+        "evidence": [
+          "proofloop/benchmarks/workstreambench/adapter.json",
+          "docs/eval/proofloop-external-adapter-live-room-runs/workstreambench.json",
+          "docs/eval/proofloop-external-adapter-runs/workstreambench.json",
+          "docs/eval/proofloop-adapter-blockers/workstreambench.json"
+        ],
+        "command": "npm run benchmark:proofloop:external-adapter-live-room -- --id workstreambench --prod --user-emulation strict --cockpit",
+        "blockers": []
+      },
+      "officialSemanticScore": {
+        "status": "blocked",
+        "scoreType": "official_semantic_score",
+        "evidence": [
+          "proofloop/benchmarks/workstreambench/adapter.json",
+          "docs/eval/proofloop-adapter-blockers/workstreambench.json",
+          "docs/eval/proofloop-official-scores/workstreambench.json",
+          ".proofloop/lanes/workstreambench/blocker-analysis.json"
+        ],
+        "command": "npm run benchmark:proofloop:adapter-blockers -- --id workstreambench --strict",
+        "blockers": [
+          "missing official scorer remains before official score can be claimed",
+          "missing task bundle remains before official score can be claimed",
+          "no public upstream release remains before official score can be claimed",
+          "workstreambench: official scorer receipt docs/eval/proofloop-official-scores/workstreambench.json is blocked_external; scored receipt is still required before claiming score.",
+          "workstreambench: no public official task bundle lock docs/eval/proofloop-official-task-bundles/workstreambench.json is staged because no public official bundle/scorer/rubric URL was found.",
+          "next: obtain the official WorkstreamBench task bundle and scorer/rubric from an upstream release or authors, lock it in docs/eval/proofloop-official-task-bundles/workstreambench.json, use npm run benchmark:proofloop:harness-economics for proxy triage, import a scored receipt, then npm run benchmark:proofloop:adapter-blockers -- --id workstreambench --strict"
+        ],
+        "metrics": {
+          "missingImplementationFiles": 0,
+          "localAdapterTasks": 1,
+          "liveRoomProductProof": true,
+          "storyRouteProductProof": true,
+          "liveRoomBaseUrl": "https://noderoom.live",
+          "localAdapterOnly": true,
+          "officialScoreClaim": false,
+          "officialSourceUrls": 1,
+          "resumeCommands": 7,
+          "officialOutputManifestComplete": false
+        }
+      },
+      "notes": [
+        "Fresh live-room Proof Loop adapter proof passed; official score is still blocked on upstream scorer import."
+      ]
+    }
+  ]
+}

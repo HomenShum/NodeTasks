@@ -1,0 +1,746 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-06-13T11:48:18.594Z",
+  "stageRoot": "staged-v1",
+  "outputRoot": "run-v1-model-edit-retry",
+  "mode": "model-edit-plan",
+  "taskCount": 3,
+  "passCount": 0,
+  "averageOverall": 0.375,
+  "caseCount": 1,
+  "caseRunCount": 1,
+  "casePassCount": 0,
+  "casePassRate": 0,
+  "repeatCount": 1,
+  "attemptCount": 3,
+  "passRate": 0,
+  "retryPolicy": {
+    "maxRetries": 2,
+    "retryOn": [
+      "candidate_generation",
+      "scoring",
+      "score_failure"
+    ],
+    "stopOnPass": true
+  },
+  "retryStats": {
+    "retriedCaseRunCount": 1,
+    "retryAttemptCount": 2,
+    "passedAfterRetryCount": 0,
+    "exhaustedCaseRunCount": 1
+  },
+  "stats": {
+    "latencyMs": {
+      "p50": 6791,
+      "p95": 11033,
+      "max": 11033
+    },
+    "failureCounts": {}
+  },
+  "harness": {
+    "toolPolicy": "agent_dir_only_until_candidate",
+    "evaluatorAccess": "after_candidate_emit_only",
+    "budget": {
+      "modelCalls": 3,
+      "inputTokens": 25413,
+      "outputTokens": 3550,
+      "providerCostUsd": 0.0095201
+    }
+  },
+  "warnings": [],
+  "caseRuns": [
+    {
+      "taskId": "13-1",
+      "taskDir": "tasks/13-1",
+      "repeatIndex": 1,
+      "attempts": [
+        1,
+        2,
+        3
+      ],
+      "finalAttemptIndex": 3,
+      "pass": false,
+      "stopReason": "retry_exhausted",
+      "bestOverall": 0.616667
+    }
+  ],
+  "results": [
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 1,
+      "repeatIndex": 1,
+      "tryIndex": 1,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-01/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T11:48:18.594Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 62,
+          "formulaCells": 10,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "mismatches": 68,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 0.516667,
+          "formula": 0,
+          "style": null,
+          "overall": 0.2583335
+        },
+        "pass": false,
+        "warnings": [
+          "mismatch list capped at 20/68"
+        ],
+        "mismatches": [
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C3",
+            "expected": "REAS",
+            "actual": "REF"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D3",
+            "expected": "115",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D3",
+            "actual": "=SUMIFS(RANGES!$E:$E,RANGES!$B:$B,$B3,RANGES!$D:$D,$C3)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C4",
+            "expected": "REAS",
+            "actual": "REF"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D4",
+            "expected": "420",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D4",
+            "actual": "=SUMIFS(RANGES!$E:$E,RANGES!$B:$B,$B4,RANGES!$D:$D,$C4)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B5",
+            "expected": "2024-02-22T00:00:00.000Z",
+            "actual": "2024-03-03T00:00:00.000Z"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C5",
+            "expected": "RETER",
+            "actual": "REF"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D5",
+            "expected": "340",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D5",
+            "actual": "=SUMIFS(RANGES!$E:$E,RANGES!$B:$B,$B5,RANGES!$D:$D,$C5)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B6",
+            "expected": "2024-03-03T00:00:00.000Z",
+            "actual": "2024-04-03T00:00:00.000Z"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C6",
+            "expected": "REAS",
+            "actual": "REF"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D6",
+            "expected": "225",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D6",
+            "actual": "=SUMIFS(RANGES!$E:$E,RANGES!$B:$B,$B6,RANGES!$D:$D,$C6)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B7",
+            "expected": "2024-03-03T00:00:00.000Z",
+            "actual": "2024-05-03T00:00:00.000Z"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C7",
+            "expected": "RETER",
+            "actual": "REF"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D7",
+            "expected": "470",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D7",
+            "actual": "=SUMIFS(RANGES!$E:$E,RANGES!$B:$B,$B7,RANGES!$D:$D,$C7)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B8",
+            "expected": "2024-04-03T00:00:00.000Z",
+            "actual": "2024-02-03T00:00:00.000Z"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C8",
+            "expected": "RETER",
+            "actual": "REF"
+          }
+        ]
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 8471,
+          "outputTokens": 824
+        },
+        "costUsd": 0.0027242
+      },
+      "timingsMs": {
+        "modelPlanning": 6230,
+        "candidateGeneration": 6336,
+        "scoring": 37,
+        "total": 6374
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-01/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-01/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "68 mismatch(es)"
+        }
+      ]
+    },
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 2,
+      "repeatIndex": 1,
+      "tryIndex": 2,
+      "retryOfAttemptIndex": 1,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-02/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T11:48:18.594Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 60,
+          "formulaCells": 22,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "mismatches": 82,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 0.5,
+          "formula": 0,
+          "style": null,
+          "overall": 0.25
+        },
+        "pass": false,
+        "warnings": [
+          "mismatch list capped at 20/82"
+        ],
+        "mismatches": [
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B3",
+            "expected": "2024-02-03T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "B3",
+            "actual": "=SORT(UNIQUE(FILTER(RANGES!B3:B55,(RANGES!C3:C55=\"REAS\")+(RANGES!C3:C55=\"RETER\"))),1,1)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C3",
+            "expected": "REAS",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "C3",
+            "actual": "=UNIQUE(FILTER(RANGES!D3:D55,(RANGES!C3:C55=\"REAS\")+(RANGES!C3:C55=\"RETER\")))"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D3",
+            "expected": "115",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D3",
+            "actual": "=SUMIFs(RANGES!E3:E55,RANGES!B3:B55,B3,RANGES!D3:D55,C3)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B4",
+            "expected": "2024-02-22T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "B4",
+            "actual": "=SORT(UNIQUE(FILTER(RANGES!B3:B55,(RANGES!C3:C55=\"REAS\")+(RANGES!C3:C55=\"RETER\"))),1,1)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C4",
+            "expected": "REAS",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "C4",
+            "actual": "=UNIQUE(FILTER(RANGES!D3:D55,(RANGES!C3:C55=\"REAS\")+(RANGES!C3:C55=\"RETER\")))"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D4",
+            "expected": "420",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D4",
+            "actual": "=SUMIFs(RANGES!E3:E55,RANGES!B3:B55,B4,RANGES!D3:D55,C4)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B5",
+            "expected": "2024-02-22T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "B5",
+            "actual": "=SORT(UNIQUE(FILTER(RANGES!B3:B55,(RANGES!C3:C55=\"REAS\")+(RANGES!C3:C55=\"RETER\"))),1,1)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C5",
+            "expected": "RETER",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "C5",
+            "actual": "=UNIQUE(FILTER(RANGES!D3:D55,(RANGES!C3:C55=\"REAS\")+(RANGES!C3:C55=\"RETER\")))"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D5",
+            "expected": "340",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "D5",
+            "actual": "=SUMIFs(RANGES!E3:E55,RANGES!B3:B55,B5,RANGES!D3:D55,C5)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B6",
+            "expected": "2024-03-03T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "formula",
+            "sheet": "LISTS",
+            "cell": "B6",
+            "actual": "=SORT(UNIQUE(FILTER(RANGES!B3:B55,(RANGES!C3:C55=\"REAS\")+(RANGES!C3:C55=\"RETER\"))),1,1)"
+          }
+        ]
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 8471,
+          "outputTokens": 1039
+        },
+        "costUsd": 0.00299295
+      },
+      "timingsMs": {
+        "modelPlanning": 6716,
+        "candidateGeneration": 6758,
+        "scoring": 32,
+        "total": 6791
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-02/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-02/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "82 mismatch(es)"
+        }
+      ]
+    },
+    {
+      "taskId": "13-1",
+      "track": "spreadsheetbench-v1",
+      "mode": "model-edit-plan",
+      "attemptIndex": 3,
+      "repeatIndex": 1,
+      "tryIndex": 3,
+      "retryOfAttemptIndex": 2,
+      "taskDir": "tasks/13-1",
+      "agentManifest": "tasks/13-1/agent/task.json",
+      "evaluatorManifest": "tasks/13-1/evaluator/evaluator.json",
+      "candidateWorkbook": "13-1/attempt-03/candidate-01-1_13-1_init.xlsx",
+      "score": {
+        "schema": 1,
+        "generatedAt": "2026-06-13T11:48:18.594Z",
+        "taskId": "13-1",
+        "candidateWorkbook": "candidate-01-1_13-1_init.xlsx",
+        "goldWorkbook": "01-1_13-1_golden.xlsx",
+        "answerPosition": "A3:D32",
+        "ranges": [
+          "'LISTS'!A3:D32"
+        ],
+        "totals": {
+          "comparedCells": 120,
+          "valueMatches": 74,
+          "formulaCells": 0,
+          "formulaMatches": 0,
+          "styleCells": 0,
+          "styleMatches": 0,
+          "mismatches": 46,
+          "missingSheets": 0
+        },
+        "scores": {
+          "value": 0.616667,
+          "formula": null,
+          "style": null,
+          "overall": 0.616667
+        },
+        "pass": false,
+        "warnings": [
+          "mismatch list capped at 20/46"
+        ],
+        "mismatches": [
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C7",
+            "expected": "RETER",
+            "actual": "REAS"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D7",
+            "expected": "470",
+            "actual": "235"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B8",
+            "expected": "2024-04-03T00:00:00.000Z",
+            "actual": "2024-03-03T00:00:00.000Z"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D8",
+            "expected": "140",
+            "actual": "470"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B9",
+            "expected": "2024-05-03T00:00:00.000Z",
+            "actual": "2024-04-03T00:00:00.000Z"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D9",
+            "expected": "150",
+            "actual": "140"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D10",
+            "expected": "1860",
+            "actual": "SUM(D3:D9)"
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B15",
+            "expected": "2024-02-22T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C15",
+            "expected": "REAS",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D15",
+            "expected": "1545",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B16",
+            "expected": "2024-02-22T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C16",
+            "expected": "RETER",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D16",
+            "expected": "950",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B17",
+            "expected": "2024-03-03T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C17",
+            "expected": "REAS",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D17",
+            "expected": "771",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B18",
+            "expected": "2024-03-03T00:00:00.000Z",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "C18",
+            "expected": "REEPS",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "D18",
+            "expected": "274",
+            "actual": ""
+          },
+          {
+            "kind": "value",
+            "sheet": "LISTS",
+            "cell": "B19",
+            "expected": "2024-03-03T00:00:00.000Z",
+            "actual": ""
+          }
+        ]
+      },
+      "model": {
+        "name": "gpt-5.4-nano",
+        "calls": 1,
+        "usage": {
+          "inputTokens": 8471,
+          "outputTokens": 1687
+        },
+        "costUsd": 0.00380295
+      },
+      "timingsMs": {
+        "modelPlanning": 10941,
+        "candidateGeneration": 10996,
+        "scoring": 37,
+        "total": 11033
+      },
+      "trajectory": [
+        {
+          "step": "read_agent_manifest",
+          "detail": "tasks/13-1/agent/task.json"
+        },
+        {
+          "step": "prepare_agent_workspace",
+          "detail": "13-1/attempt-03/agent-workspace/agent-workspace-manifest.json"
+        },
+        {
+          "step": "snapshot_agent_workbook",
+          "detail": "2 sheet(s), 302 cell(s)"
+        },
+        {
+          "step": "call_model_for_edit_plan",
+          "detail": "gpt-5.4-nano"
+        },
+        {
+          "step": "emit_candidate_workbook",
+          "detail": "13-1/attempt-03/candidate-01-1_13-1_init.xlsx"
+        },
+        {
+          "step": "read_evaluator_manifest",
+          "detail": "tasks/13-1/evaluator/evaluator.json"
+        },
+        {
+          "step": "score_candidate",
+          "detail": "46 mismatch(es)"
+        }
+      ]
+    }
+  ]
+}

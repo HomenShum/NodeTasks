@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.tmp/
+.proofloop/
+runs/
+test-results/
+playwright-report/
+*.log
+*.local
+.env
+.env.*
+!upstream/noderoom/.env.example

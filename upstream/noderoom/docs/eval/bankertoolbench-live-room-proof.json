@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "taskId": "0fc7bc3c-a111-4222-8333-444455556666",
+  "harborTaskId": "btb-0fc7bc3c",
+  "generatedAt": "2026-07-02T15:51:20.843Z",
+  "baseUrl": "https://noderoom.live",
+  "roomUrl": "https://noderoom.live/?room=NRJNGW6LELB&name=Host",
+  "memoryMode": false,
+  "expectedExtensions": [
+    ".xlsx",
+    ".xlsm",
+    ".pptx",
+    ".docx",
+    ".pdf"
+  ],
+  "visibleExtensions": [
+    ".xlsx",
+    ".xlsm",
+    ".pptx",
+    ".docx",
+    ".pdf"
+  ],
+  "downloadedFiles": [
+    {
+      "kind": "workbook",
+      "filename": "btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.xlsx",
+      "path": "docs\\eval\\fresh-room\\FR-020\\tasks\\0fc7bc3c-a111-4222-8333-444455556666\\evidence\\btb-xlsx-btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.xlsx",
+      "extension": ".xlsx",
+      "bytes": 6876,
+      "magic": "PK\\x03\\x04",
+      "reopened": true,
+      "reopenDetail": "ZIP package contains xl/workbook.xml; recovered from Convex room artifact j970rd4143e87y6ta5qjw754bs89stje",
+      "contentQualityDetail": "placeholder/caveat content scan passed (589 chars)"
+    },
+    {
+      "kind": "workbook",
+      "filename": "btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.xlsm",
+      "path": "docs\\eval\\fresh-room\\FR-020\\tasks\\0fc7bc3c-a111-4222-8333-444455556666\\evidence\\btb-xlsm-btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.xlsm",
+      "extension": ".xlsm",
+      "bytes": 6876,
+      "magic": "PK\\x03\\x04",
+      "reopened": true,
+      "reopenDetail": "ZIP package contains xl/workbook.xml; recovered from Convex room artifact j976y89bse30j0az5fr4cyv2y189rvwd",
+      "contentQualityDetail": "placeholder/caveat content scan passed (589 chars)"
+    },
+    {
+      "kind": "presentation",
+      "filename": "btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.pptx",
+      "path": "docs\\eval\\fresh-room\\FR-020\\tasks\\0fc7bc3c-a111-4222-8333-444455556666\\evidence\\btb-pptx-btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.pptx",
+      "extension": ".pptx",
+      "bytes": 6208,
+      "magic": "PK\\x03\\x04",
+      "reopened": true,
+      "reopenDetail": "ZIP package contains ppt/presentation.xml; recovered from Convex room artifact j9710bybscezm8ej6k5shqb90d89s2ts",
+      "contentQualityDetail": "placeholder/caveat content scan passed (563 chars)"
+    },
+    {
+      "kind": "document",
+      "filename": "btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.docx",
+      "path": "docs\\eval\\fresh-room\\FR-020\\tasks\\0fc7bc3c-a111-4222-8333-444455556666\\evidence\\btb-docx-btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.docx",
+      "extension": ".docx",
+      "bytes": 2179,
+      "magic": "PK\\x03\\x04",
+      "reopened": true,
+      "reopenDetail": "ZIP package contains word/document.xml; recovered from Convex room artifact j977q5sa93edwbgar6gn4t74qh89szjj",
+      "contentQualityDetail": "placeholder/caveat content scan passed (544 chars)"
+    },
+    {
+      "kind": "pdf",
+      "filename": "btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.pdf",
+      "path": "docs\\eval\\fresh-room\\FR-020\\tasks\\0fc7bc3c-a111-4222-8333-444455556666\\evidence\\btb-pdf-btb-0fc7bc3c-bankertoolbench-btb-0fc7bc3c-deliverable-package.pdf",
+      "extension": ".pdf",
+      "bytes": 1168,
+      "magic": "%PDF",
+      "reopened": true,
+      "reopenDetail": "PDF header reopened; recovered from Convex room artifact j97550q8cg1ya9q1fg6vb07ttx89rtqp",
+      "contentQualityDetail": "placeholder/caveat content scan passed (1814 chars)"
+    }
+  ],
+  "packageManifestPath": "docs\\eval\\fresh-room\\FR-020\\tasks\\0fc7bc3c-a111-4222-8333-444455556666\\evidence\\package-manifest.json",
+  "verifierCommand": "npm run benchmark:bankertoolbench:proof",
+  "verifierOutputTail": "\n> noderoom@0.1.1 benchmark:bankertoolbench:proof\n> tsx scripts/bankertoolbench-proof-check.ts\n\nBankerToolBench proof check passed: stage=1/1 weightedRubric=6 run=0/1 pass positive=1/1 pass candidateBeforeEvaluator=true leaks=0/2+0/3+0/4\n",
+  "screenshot": "docs\\eval\\fresh-room\\FR-020\\tasks\\0fc7bc3c-a111-4222-8333-444455556666\\evidence\\bankertoolbench-live-room.png",
+  "passed": true,
+  "gatesProven": [
+    "fresh_room_join",
+    "official_fixture_upload",
+    "public_nodeagent_invocation",
+    "visible_streaming_progress",
+    "focus_mode_enabled",
+    "focus_box_or_attention_overlay",
+    "agent_terminal_quality_gate",
+    "deliverable_export_download",
+    "artifact_reopen_validation",
+    "artifact_placeholder_scan",
+    "official_scorer_handoff",
+    "trace_video_artifacts",
+    "no_memory_mode_shortcut"
+  ]
+}
