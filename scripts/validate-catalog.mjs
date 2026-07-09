@@ -8,6 +8,9 @@ const problems = [];
 const live = await readJson("catalog/live-interaction-tasks.json");
 const allTasks = await readJson("catalog/all-tasks.json");
 const extracted = await readJson("catalog/extracted-tasks.json");
+const ranked = await readJson("catalog/ranked-tasks.json");
+const hierarchy = await readJson("catalog/hierarchy.json");
+const tagIndex = await readJson("catalog/tag-index.json");
 const adapters = await readJson("catalog/benchmark-proxy-adapters.json");
 const sources = await readJson("catalog/source-files.json");
 const index = await readJson("catalog/task-index.json");
@@ -16,11 +19,16 @@ const searchRecords = await readJsonl("catalog/search-index.jsonl");
 assert(Array.isArray(live.tasks), "live tasks array exists");
 assert(Array.isArray(allTasks.tasks), "all tasks array exists");
 assert(Array.isArray(extracted.tasks), "extracted tasks array exists");
+assert(Array.isArray(ranked.tasks), "ranked tasks array exists");
+assert(Array.isArray(tagIndex.tags), "tag index array exists");
 assert(Array.isArray(adapters.adapters), "adapters array exists");
 assert(Array.isArray(sources.files), "source files array exists");
 assert(index.summary.liveInteractionTasks === live.tasks.length, "task index live count matches");
 assert(index.summary.extractedTasks === extracted.tasks.length, "task index extracted count matches");
 assert(index.summary.searchableTasks === allTasks.tasks.length, "task index searchable count matches");
+assert(ranked.tasks.length === allTasks.tasks.length, "ranked tasks count matches all tasks");
+assert(hierarchy.hierarchy?.counts?.tasks === allTasks.tasks.length, "hierarchy task count matches");
+assert(tagIndex.tags.length > 0, "tag index is populated");
 assert(index.summary.benchmarkProxyAdapters === adapters.adapters.length, "task index adapter count matches");
 assert(searchRecords.length === allTasks.tasks.length, "search index count matches all tasks");
 
@@ -33,6 +41,13 @@ for (const task of allTasks.tasks) {
   assert(typeof task.kind === "string" && task.kind.length > 1, `task has kind: ${task.id}`);
   assert(typeof task.title === "string" && task.title.length > 1, `task has title: ${task.id}`);
   assert(typeof task.goal === "string" && task.goal.length > 1, `task has goal: ${task.id}`);
+  assert(task.rank && typeof task.rank === "object", `task has rank: ${task.id}`);
+  assert(typeof task.rank.domain === "string" && task.rank.domain.length > 1, `task has rank domain: ${task.id}`);
+  assert(Number.isFinite(task.rank.estimatedSteps), `task has estimated steps: ${task.id}`);
+  assert(Number.isFinite(task.rank.difficultyScore), `task has difficulty score: ${task.id}`);
+  assert(typeof task.rank.difficultyTier === "string", `task has difficulty tier: ${task.id}`);
+  assert(typeof task.rank.costTier === "string", `task has cost tier: ${task.id}`);
+  assert(Array.isArray(task.rank.topTags), `task has ranked tags: ${task.id}`);
   for (const sourceRef of task.sourceRefs ?? []) {
     assert(existsSync(join(root, sourceRef)), `sourceRef exists for ${task.id}: ${sourceRef}`);
   }

@@ -1,6 +1,6 @@
 # NodeTasks Catalog
 
-Generated: 2026-07-09T00:54:58.637Z
+Generated: 2026-07-09T01:11:24.202Z
 
 ## Summary
 
@@ -10,6 +10,35 @@ Generated: 2026-07-09T00:54:58.637Z
 - Benchmark proxy adapters: 4
 - External local proxy tasks: 3
 - Source files: 1236
+
+## Domains
+
+| Domain | Tasks |
+| --- | ---: |
+| Spreadsheet & Office Automation | 6434 |
+| Banking & Finance | 760 |
+| Audit, Risk & Compliance | 139 |
+| Agent Runtime & NodeAgent | 585 |
+| Collaboration & Room UX | 1222 |
+
+## Difficulty Tiers
+
+| Difficulty | Tasks |
+| --- | ---: |
+| intro | 1986 |
+| intermediate | 272 |
+| advanced | 6498 |
+| expert | 384 |
+
+## Cost Tiers
+
+| Cost | Tasks |
+| --- | ---: |
+| external-variable | 1468 |
+| free-static | 2115 |
+| local-runtime | 141 |
+| provider-low | 1354 |
+| provider-medium | 4062 |
 
 ## Task Kinds
 
@@ -134,10 +163,14 @@ Generated: 2026-07-09T00:54:58.637Z
 
 ## Search Surfaces
 
-- `catalog/all-tasks.json`: normalized task objects.
+- `catalog/all-tasks.json`: normalized task objects with rank metadata.
+- `catalog/ranked-tasks.json`: same task set sorted by domain, difficulty, cost, and steps.
+- `catalog/hierarchy.json`: domain > difficulty > cost hierarchy.
+- `catalog/tag-index.json`: ranked tags with domain, kind, difficulty, and cost counts.
 - `catalog/search-index.jsonl`: one searchable JSON record per task.
 - `catalog/task-browser.html`: local browser search UI.
 - `npm run search -- <query>`: CLI search.
+- `npm run streamlit`: interactive Streamlit explorer and NodeAgent catalog chat.
 
 ## Contract
 

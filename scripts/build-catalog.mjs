@@ -53,12 +53,57 @@ const liveTasks = [
   task("noderl.anti-reward-hacking-doctrine.v1", "doctrine", "Noderl", "spec", "maintainer", "Validate that certification and exploration loops stay separate.", ["Read doctrine spec."], ["Inspect scaffold proposal acceptance rule.", "Check verifier weakening guard."], ["Repair loop cannot grade its own homework.", "Promoted regressions use tracked ledger."], ["doctrine review"], ["upstream/noderoom/noderl/spec/anti-reward-hacking-doctrine.md", "upstream/noderoom/proofloop/regressions/promoted-regressions.json"], "governance")
 ];
 
+const KIND_BASE_STEPS = {
+  "source-reference": 1,
+  "unit-test-case": 2,
+  "rubric": 2,
+  "scenario": 3,
+  "suite": 3,
+  "browser-test-case": 4,
+  "local-proxy-task": 5,
+  "benchmark-target": 5,
+  "model-attempt": 6,
+  "qa-feature": 6,
+  "benchmark-adapter": 7,
+  "benchmark-family": 8,
+  "curated-live": 8
+};
+
+const KIND_DIFFICULTY_WEIGHT = {
+  "source-reference": 1,
+  "unit-test-case": 2,
+  "rubric": 2,
+  "scenario": 3,
+  "suite": 3,
+  "browser-test-case": 4,
+  "local-proxy-task": 4,
+  "benchmark-target": 5,
+  "model-attempt": 6,
+  "qa-feature": 5,
+  "benchmark-adapter": 6,
+  "benchmark-family": 7,
+  "curated-live": 6
+};
+
+const DOMAIN_ORDER = [
+  "Spreadsheet & Office Automation",
+  "Banking & Finance",
+  "Audit, Risk & Compliance",
+  "Agent Runtime & NodeAgent",
+  "Collaboration & Room UX",
+  "ProofLoop Governance",
+  "Data, Documents & Retrieval",
+  "Source & Infrastructure"
+];
+
 await mkdir(catalogDir, { recursive: true });
 const adapters = await loadAdapters();
 const localTasks = await loadExternalLocalTasks();
 const sourceFiles = await listSourceFiles();
 const extractedTasks = await buildExtractedTasks(sourceFiles, adapters, localTasks);
-const searchableTasks = [...liveTasks.map(normalizeLiveTask), ...extractedTasks];
+const searchableTasks = rankTasks([...liveTasks.map(normalizeLiveTask), ...extractedTasks]);
+const hierarchy = buildTaskHierarchy(searchableTasks);
+const tagIndex = buildTagIndex(searchableTasks);
 const searchRecords = searchableTasks.map(toSearchRecord);
 const taskIndex = {
   schema: "nodetasks-index-v1",
@@ -74,6 +119,9 @@ const taskIndex = {
   },
   families: countBy(searchableTasks, (task) => task.family),
   kinds: countBy(searchableTasks, (task) => task.kind),
+  domains: countBy(searchableTasks, (task) => task.rank.domain),
+  difficultyTiers: countBy(searchableTasks, (task) => task.rank.difficultyTier),
+  costTiers: countBy(searchableTasks, (task) => task.rank.costTier),
   surfaces: countBy(searchableTasks, (task) => task.surface),
   adapters: adapters.map((adapter) => ({
     id: adapter.id,
@@ -84,6 +132,9 @@ const taskIndex = {
   })),
   catalogs: [
     "catalog/all-tasks.json",
+    "catalog/ranked-tasks.json",
+    "catalog/hierarchy.json",
+    "catalog/tag-index.json",
     "catalog/live-interaction-tasks.json",
     "catalog/extracted-tasks.json",
     "catalog/benchmark-proxy-adapters.json",
@@ -95,6 +146,9 @@ const taskIndex = {
 };
 
 await writeJson("catalog/all-tasks.json", { schema: "nodetasks-all-tasks-v1", generatedAt: taskIndex.generatedAt, tasks: searchableTasks });
+await writeJson("catalog/ranked-tasks.json", { schema: "nodetasks-ranked-tasks-v1", generatedAt: taskIndex.generatedAt, tasks: searchableTasks });
+await writeJson("catalog/hierarchy.json", { schema: "nodetasks-hierarchy-v1", generatedAt: taskIndex.generatedAt, hierarchy });
+await writeJson("catalog/tag-index.json", { schema: "nodetasks-tag-index-v1", generatedAt: taskIndex.generatedAt, tags: tagIndex });
 await writeJson("catalog/live-interaction-tasks.json", { schema: "nodetasks-live-interaction-catalog-v1", generatedAt: taskIndex.generatedAt, tasks: liveTasks });
 await writeJson("catalog/extracted-tasks.json", { schema: "nodetasks-extracted-task-catalog-v1", generatedAt: taskIndex.generatedAt, tasks: extractedTasks });
 await writeJson("catalog/benchmark-proxy-adapters.json", { schema: "nodetasks-benchmark-proxy-adapters-v1", generatedAt: taskIndex.generatedAt, adapters, externalLocalTasks: localTasks });
@@ -197,6 +251,11 @@ async function extractProdProxyMatrixTasks() {
   const matrix = JSON.parse(await readFile(sourcePath, "utf8"));
   const sourceRef = rel(sourcePath);
   const models = Array.isArray(matrix.models) ? matrix.models : [];
+  const modelCostById = new Map((matrix.modelSummaries ?? []).map((summary) => {
+    const denominator = Math.max(1, Number(summary.prodAdapterSmokeTotal ?? summary.prodAdapterSmokePassed ?? 1));
+    const value = Number(summary.estimatedCostUsdAtOpenRouterList ?? summary.measuredCostUsd);
+    return [summary.modelId, Number.isFinite(value) ? value / denominator : null];
+  }));
   const tasks = [];
   for (const family of matrix.families ?? []) {
     for (const target of family.tasks ?? []) {
@@ -250,6 +309,7 @@ async function extractProdProxyMatrixTasks() {
             modelId,
             familyId,
             taskId: targetId,
+            estimatedCostUsd: modelCostById.get(modelId),
             attemptSource: "derived from proofloop-prod-proxy-benchmark-matrix.models x families.tasks",
             officialScoreClaim: false
           }
@@ -492,6 +552,18 @@ function renderFamiliesMarkdown(index, adapters, localTasks, tasks) {
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([kind, count]) => `| ${kind} | ${count} |`)
     .join("\n");
+  const domainRows = Object.entries(index.domains)
+    .sort(([a], [b]) => domainRank(a) - domainRank(b))
+    .map(([domain, count]) => `| ${domain} | ${count} |`)
+    .join("\n");
+  const difficultyRows = Object.entries(index.difficultyTiers)
+    .sort(([a], [b]) => difficultyTierRank(a) - difficultyTierRank(b))
+    .map(([tier, count]) => `| ${tier} | ${count} |`)
+    .join("\n");
+  const costRows = Object.entries(index.costTiers)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([tier, count]) => `| ${tier} | ${count} |`)
+    .join("\n");
   const adapterRows = adapters
     .map((adapter) => `| ${adapter.id} | ${adapter.source?.name ?? ""} | ${adapter.scoringMode} | ${adapter.liveUserCommand ?? ""} |`)
     .join("\n");
@@ -499,7 +571,7 @@ function renderFamiliesMarkdown(index, adapters, localTasks, tasks) {
     .map((task) => `| ${task.adapterId} | ${task.taskId} | ${task.title} | false |`)
     .join("\n");
   const examples = tasks.slice(0, 12).map((task) => `- \`${task.id}\`: ${task.goal}`).join("\n");
-  return `# NodeTasks Catalog\n\nGenerated: ${index.generatedAt}\n\n## Summary\n\n- Searchable tasks: ${index.summary.searchableTasks}\n- Curated live interaction tasks: ${index.summary.liveInteractionTasks}\n- Extracted tasks: ${index.summary.extractedTasks}\n- Benchmark proxy adapters: ${index.summary.benchmarkProxyAdapters}\n- External local proxy tasks: ${index.summary.externalLocalProxyTasks}\n- Source files: ${index.summary.sourceFiles}\n\n## Task Kinds\n\n| Kind | Tasks |\n| --- | ---: |\n${kindRows}\n\n## Task Families\n\n| Family | Tasks |\n| --- | ---: |\n${familyRows}\n\n## Benchmark Proxy Adapters\n\n| Adapter | Source | Scoring | Live command |\n| --- | --- | --- | --- |\n${adapterRows}\n\n## External Local Proxy Tasks\n\n| Adapter | Task | Title | Official score claim |\n| --- | --- | --- | --- |\n${localRows}\n\n## Example Curated Live Tasks\n\n${examples}\n\n## Search Surfaces\n\n- \`catalog/all-tasks.json\`: normalized task objects.\n- \`catalog/search-index.jsonl\`: one searchable JSON record per task.\n- \`catalog/task-browser.html\`: local browser search UI.\n- \`npm run search -- <query>\`: CLI search.\n\n## Contract\n\nEvery task should preserve product-path proof separately from official benchmark scoring. A proxy task can pass its product UI proof while still recording \`officialScoreClaim: false\` until an upstream verifier accepts the artifacts.\n`;
+  return `# NodeTasks Catalog\n\nGenerated: ${index.generatedAt}\n\n## Summary\n\n- Searchable tasks: ${index.summary.searchableTasks}\n- Curated live interaction tasks: ${index.summary.liveInteractionTasks}\n- Extracted tasks: ${index.summary.extractedTasks}\n- Benchmark proxy adapters: ${index.summary.benchmarkProxyAdapters}\n- External local proxy tasks: ${index.summary.externalLocalProxyTasks}\n- Source files: ${index.summary.sourceFiles}\n\n## Domains\n\n| Domain | Tasks |\n| --- | ---: |\n${domainRows}\n\n## Difficulty Tiers\n\n| Difficulty | Tasks |\n| --- | ---: |\n${difficultyRows}\n\n## Cost Tiers\n\n| Cost | Tasks |\n| --- | ---: |\n${costRows}\n\n## Task Kinds\n\n| Kind | Tasks |\n| --- | ---: |\n${kindRows}\n\n## Task Families\n\n| Family | Tasks |\n| --- | ---: |\n${familyRows}\n\n## Benchmark Proxy Adapters\n\n| Adapter | Source | Scoring | Live command |\n| --- | --- | --- | --- |\n${adapterRows}\n\n## External Local Proxy Tasks\n\n| Adapter | Task | Title | Official score claim |\n| --- | --- | --- | --- |\n${localRows}\n\n## Example Curated Live Tasks\n\n${examples}\n\n## Search Surfaces\n\n- \`catalog/all-tasks.json\`: normalized task objects with rank metadata.\n- \`catalog/ranked-tasks.json\`: same task set sorted by domain, difficulty, cost, and steps.\n- \`catalog/hierarchy.json\`: domain > difficulty > cost hierarchy.\n- \`catalog/tag-index.json\`: ranked tags with domain, kind, difficulty, and cost counts.\n- \`catalog/search-index.jsonl\`: one searchable JSON record per task.\n- \`catalog/task-browser.html\`: local browser search UI.\n- \`npm run search -- <query>\`: CLI search.\n- \`npm run streamlit\`: interactive Streamlit explorer and NodeAgent catalog chat.\n\n## Contract\n\nEvery task should preserve product-path proof separately from official benchmark scoring. A proxy task can pass its product UI proof while still recording \`officialScoreClaim: false\` until an upstream verifier accepts the artifacts.\n`;
 }
 
 function searchTask(input) {
@@ -522,6 +594,266 @@ function searchTask(input) {
     tags: [...new Set(compact(input.tags ?? []))],
     metadata: input.metadata ?? {},
     officialScoreClaim: false
+  };
+}
+
+function rankTasks(tasks) {
+  return tasks.map((task) => {
+    const domain = inferDomain(task);
+    const steps = estimateSteps(task);
+    const cost = estimateCost(task);
+    const difficulty = estimateDifficulty(task, steps, cost.rank);
+    const topTags = rankTags(task, domain);
+    const domainRank = DOMAIN_ORDER.indexOf(domain.domain) >= 0 ? DOMAIN_ORDER.indexOf(domain.domain) + 1 : DOMAIN_ORDER.length + 1;
+    const kindRank = KIND_DIFFICULTY_WEIGHT[task.kind] ?? 4;
+    return {
+      ...task,
+      rank: {
+        domain: domain.domain,
+        subdomain: domain.subdomain,
+        domainPath: [domain.domain, domain.subdomain].filter(Boolean),
+        domainRank,
+        estimatedSteps: steps,
+        stepTier: tierSteps(steps),
+        costTier: cost.tier,
+        costRank: cost.rank,
+        estimatedCostUsd: cost.estimatedUsd,
+        costBasis: cost.basis,
+        difficultyScore: difficulty.score,
+        difficultyTier: difficulty.tier,
+        difficultyReasons: difficulty.reasons,
+        kindRank,
+        topTags,
+        personaFit: inferPersonaFit(task, domain, difficulty.tier),
+        sortScore: domainRank * 1000000 + difficulty.score * 1000 + cost.rank * 100 + steps
+      }
+    };
+  }).sort((a, b) => a.rank.sortScore - b.rank.sortScore || a.id.localeCompare(b.id));
+}
+
+function inferDomain(task) {
+  const text = searchableText(task).toLowerCase();
+  if (hasAny(text, ["spreadsheetbench", "spreadsheet", "workbook", "excel", "xlsx", "sheet", "formula", "vba", "csv"])) {
+    return { domain: "Spreadsheet & Office Automation", subdomain: task.family.includes("spreadsheetbench") ? task.family : "spreadsheet-workflows" };
+  }
+  if (hasAny(text, ["bankertoolbench", "banker", "finch", "finance", "credit", "underwriting", "proximitty", "sec-xbrl", "xbrl", "runway", "revenue", "q3 variance"])) {
+    return { domain: "Banking & Finance", subdomain: task.family };
+  }
+  if (hasAny(text, ["finauditing", "audit", "risk", "compliance", "misstatement", "evidence", "privacy", "governance"])) {
+    return { domain: "Audit, Risk & Compliance", subdomain: task.family };
+  }
+  if (hasAny(text, ["nodeagent", "agent", "model-attempt", "model ", "frame", "trace", "tool", "retrieval", "provider", "llm"])) {
+    return { domain: "Agent Runtime & NodeAgent", subdomain: task.family };
+  }
+  if (hasAny(text, ["chat", "room", "multi-user", "presence", "notebook", "graph", "voice", "upload", "command-palette", "left rail", "public", "private"])) {
+    return { domain: "Collaboration & Room UX", subdomain: task.family };
+  }
+  if (hasAny(text, ["proofloop", "noderl", "regression", "doctrine", "benchmark", "gate", "qa-feature", "scorer", "verifier"])) {
+    return { domain: "ProofLoop Governance", subdomain: task.family };
+  }
+  if (hasAny(text, ["dataset", "document", "pdf", "source", "citation", "capture", "parser", "embedding"])) {
+    return { domain: "Data, Documents & Retrieval", subdomain: task.family };
+  }
+  return { domain: "Source & Infrastructure", subdomain: task.family };
+}
+
+function estimateSteps(task) {
+  const explicit = [
+    ...(task.setup ?? []),
+    ...(task.steps ?? []),
+    ...(task.assertions ?? []),
+    ...(task.artifacts ?? [])
+  ].filter(Boolean).length;
+  let steps = Math.max(explicit, KIND_BASE_STEPS[task.kind] ?? 3);
+  if (task.command) steps += 1;
+  if (task.route && String(task.route).includes("http")) steps += 1;
+  if (task.metadata?.blockers?.length) steps += 1;
+  if (task.kind === "model-attempt" && task.metadata?.modelId) steps += 1;
+  return Math.min(24, Math.max(1, steps));
+}
+
+function estimateCost(task) {
+  const explicit = Number(task.metadata?.estimatedCostUsd);
+  if (Number.isFinite(explicit) && explicit > 0) {
+    return costFromUsd(explicit, "matrix model cost hint");
+  }
+  const text = searchableText(task).toLowerCase();
+  if (task.kind === "source-reference" || task.kind === "unit-test-case" || task.kind === "rubric" || task.kind === "scenario" || task.kind === "suite") {
+    return { tier: "free-static", rank: 1, estimatedUsd: 0, basis: "static catalog/test asset" };
+  }
+  if (hasAny(text, ["prod", "live", "provider", "openrouter", "openai", "anthropic", "gemini", "model-attempt"])) {
+    return { tier: task.kind === "model-attempt" ? "provider-variable" : "external-variable", rank: task.kind === "model-attempt" ? 4 : 5, estimatedUsd: null, basis: "requires provider, deployment, or external scorer" };
+  }
+  if (hasAny(text, ["browser", "playwright", "streamlit", "localhost"])) {
+    return { tier: "local-runtime", rank: 2, estimatedUsd: 0, basis: "local browser/runtime only" };
+  }
+  return { tier: "free-static", rank: 1, estimatedUsd: 0, basis: "static catalog asset" };
+}
+
+function costFromUsd(value, basis) {
+  if (value <= 0.02) return { tier: "provider-low", rank: 3, estimatedUsd: roundUsd(value), basis };
+  if (value <= 0.12) return { tier: "provider-medium", rank: 4, estimatedUsd: roundUsd(value), basis };
+  return { tier: "provider-high", rank: 5, estimatedUsd: roundUsd(value), basis };
+}
+
+function estimateDifficulty(task, steps, costRank) {
+  const text = searchableText(task).toLowerCase();
+  const reasons = [];
+  let score = steps * 2 + (KIND_DIFFICULTY_WEIGHT[task.kind] ?? 4) * 3 + costRank * 2;
+  if (hasAny(text, ["prod", "live", "deployment", "external", "official", "scorer"])) {
+    score += 8;
+    reasons.push("external or production dependency");
+  }
+  if (task.kind === "model-attempt") {
+    score += 6;
+    reasons.push("model routing and cost tracking");
+  }
+  if (task.kind === "benchmark-target" || task.kind === "benchmark-family") {
+    score += 5;
+    reasons.push("benchmark harness coordination");
+  }
+  if (task.metadata?.blockers?.length) {
+    score += Math.min(10, task.metadata.blockers.length * 2);
+    reasons.push("recorded blocker(s)");
+  }
+  if ((task.sourceRefs ?? []).length >= 4) {
+    score += 3;
+    reasons.push("multi-file evidence trail");
+  }
+  if (hasAny(text, ["privacy", "approval", "cas", "lock", "reconciliation", "underwriting", "audit"])) {
+    score += 4;
+    reasons.push("governed workflow");
+  }
+  const tier = score < 22 ? "intro" : score < 42 ? "intermediate" : score < 64 ? "advanced" : "expert";
+  return { score, tier, reasons: reasons.length ? reasons : ["inferred from kind and step count"] };
+}
+
+function tierSteps(steps) {
+  if (steps <= 2) return "1-2";
+  if (steps <= 5) return "3-5";
+  if (steps <= 9) return "6-9";
+  return "10+";
+}
+
+function rankTags(task, domain) {
+  const weighted = new Map();
+  const add = (tag, weight) => {
+    if (!tag) return;
+    const key = String(tag).trim();
+    if (!key) return;
+    weighted.set(key, (weighted.get(key) ?? 0) + weight);
+  };
+  add(domain.domain, 8);
+  add(domain.subdomain, 6);
+  add(task.kind, 5);
+  add(task.family, 4);
+  add(task.surface, 3);
+  for (const tag of task.tags ?? []) add(tag, 2);
+  for (const ref of task.sourceRefs ?? []) {
+    const parts = ref.split("/");
+    add(parts[2], 1);
+    add(parts[3], 1);
+  }
+  return [...weighted.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 10)
+    .map(([tag]) => tag);
+}
+
+function inferPersonaFit(task, domain, difficultyTier) {
+  const fits = new Set();
+  const text = searchableText(task).toLowerCase();
+  if (domain.domain === "Spreadsheet & Office Automation") fits.add("spreadsheet builder");
+  if (domain.domain === "Banking & Finance") fits.add("finance analyst");
+  if (domain.domain === "Audit, Risk & Compliance") fits.add("risk reviewer");
+  if (domain.domain === "Agent Runtime & NodeAgent") fits.add("agent engineer");
+  if (domain.domain === "Collaboration & Room UX") fits.add("product QA");
+  if (domain.domain === "ProofLoop Governance") fits.add("benchmark maintainer");
+  if (task.kind === "model-attempt") fits.add("model evaluator");
+  if (task.kind.includes("test")) fits.add("test engineer");
+  if (task.kind === "source-reference") fits.add("repo explorer");
+  if (hasAny(text, ["streamlit", "browser", "ui", "graph"])) fits.add("demo builder");
+  if (difficultyTier === "intro") fits.add("new contributor");
+  return [...fits];
+}
+
+function buildTaskHierarchy(tasks) {
+  const domains = [];
+  const byDomain = groupBy(tasks, (task) => task.rank.domain);
+  for (const [domain, domainTasks] of Object.entries(byDomain).sort(([a], [b]) => domainRank(a) - domainRank(b))) {
+    const difficultyGroups = [];
+    const byDifficulty = groupBy(domainTasks, (task) => task.rank.difficultyTier);
+    for (const tier of ["intro", "intermediate", "advanced", "expert"]) {
+      const tierTasks = byDifficulty[tier] ?? [];
+      if (!tierTasks.length) continue;
+      const costGroups = [];
+      const byCost = groupBy(tierTasks, (task) => task.rank.costTier);
+      for (const [costTier, costTasks] of Object.entries(byCost).sort(([, a], [, b]) => (a[0]?.rank.costRank ?? 0) - (b[0]?.rank.costRank ?? 0))) {
+        costGroups.push({
+          costTier,
+          count: costTasks.length,
+          families: countBy(costTasks, (task) => task.family),
+          tasks: costTasks.slice(0, 200).map(compactTask)
+        });
+      }
+      difficultyGroups.push({ difficultyTier: tier, count: tierTasks.length, costGroups });
+    }
+    domains.push({
+      domain,
+      count: domainTasks.length,
+      subdomains: countBy(domainTasks, (task) => task.rank.subdomain),
+      difficultyGroups
+    });
+  }
+  return {
+    counts: {
+      domains: domains.length,
+      tasks: tasks.length,
+      difficultyTiers: countBy(tasks, (task) => task.rank.difficultyTier),
+      costTiers: countBy(tasks, (task) => task.rank.costTier)
+    },
+    domains
+  };
+}
+
+function buildTagIndex(tasks) {
+  const tags = new Map();
+  for (const task of tasks) {
+    for (const tag of [...(task.rank.topTags ?? []), ...(task.tags ?? [])]) {
+      const key = String(tag).trim();
+      if (!key) continue;
+      const entry = tags.get(key) ?? {
+        tag: key,
+        count: 0,
+        domains: {},
+        kinds: {},
+        difficultyTiers: {},
+        costTiers: {},
+        sampleTaskIds: []
+      };
+      entry.count += 1;
+      entry.domains[task.rank.domain] = (entry.domains[task.rank.domain] ?? 0) + 1;
+      entry.kinds[task.kind] = (entry.kinds[task.kind] ?? 0) + 1;
+      entry.difficultyTiers[task.rank.difficultyTier] = (entry.difficultyTiers[task.rank.difficultyTier] ?? 0) + 1;
+      entry.costTiers[task.rank.costTier] = (entry.costTiers[task.rank.costTier] ?? 0) + 1;
+      if (entry.sampleTaskIds.length < 100) entry.sampleTaskIds.push(task.id);
+      tags.set(key, entry);
+    }
+  }
+  return [...tags.values()].sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+}
+
+function compactTask(task) {
+  return {
+    id: task.id,
+    title: task.title,
+    kind: task.kind,
+    family: task.family,
+    steps: task.rank.estimatedSteps,
+    costTier: task.rank.costTier,
+    difficultyTier: task.rank.difficultyTier,
+    difficultyScore: task.rank.difficultyScore,
+    topTags: task.rank.topTags.slice(0, 6)
   };
 }
 
@@ -556,6 +888,7 @@ function toSearchRecord(task) {
     command: task.command,
     sourceRefs: task.sourceRefs,
     tags: task.tags,
+    rank: task.rank,
     officialScoreClaim: false,
     text: searchable
   };
@@ -639,6 +972,53 @@ function compact(items) {
     .flat()
     .filter((item) => item !== undefined && item !== null && String(item).trim())
     .map((item) => String(item).trim());
+}
+
+function searchableText(task) {
+  return [
+    task.id,
+    task.kind,
+    task.family,
+    task.surface,
+    task.title,
+    task.goal,
+    task.persona,
+    task.route,
+    task.command,
+    task.status,
+    ...(task.setup ?? []),
+    ...(task.steps ?? []),
+    ...(task.assertions ?? []),
+    ...(task.artifacts ?? []),
+    ...(task.sourceRefs ?? []),
+    ...(task.tags ?? []),
+    JSON.stringify(task.metadata ?? {})
+  ].filter(Boolean).join(" ");
+}
+
+function hasAny(text, needles) {
+  return needles.some((needle) => text.includes(needle));
+}
+
+function groupBy(items, keyOf) {
+  return items.reduce((acc, item) => {
+    const key = keyOf(item) || "uncategorized";
+    (acc[key] ??= []).push(item);
+    return acc;
+  }, {});
+}
+
+function domainRank(domain) {
+  const index = DOMAIN_ORDER.indexOf(domain);
+  return index >= 0 ? index + 1 : DOMAIN_ORDER.length + 1;
+}
+
+function difficultyTierRank(tier) {
+  return { intro: 1, intermediate: 2, advanced: 3, expert: 4 }[tier] ?? 99;
+}
+
+function roundUsd(value) {
+  return Math.round(value * 1000000) / 1000000;
 }
 
 function renderTaskBrowserHtml(generatedAt) {

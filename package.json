@@ -12,6 +12,7 @@
   "scripts": {
     "build:catalog": "node scripts/build-catalog.mjs",
     "search": "node scripts/search-tasks.mjs",
+    "streamlit": "python -m streamlit run apps/nodetasks_streamlit.py",
     "validate": "node scripts/validate-catalog.mjs"
   },
   "keywords": [

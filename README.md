@@ -66,6 +66,7 @@ The generated corpus currently exposes `9,140` searchable tasks:
 - `5,416` model-attempt tasks derived from matrix models x task targets.
 - `1,030` extracted unit/browser test cases.
 - QA features, scenarios, rubrics, suites, adapters, local proxy tasks, and source-reference records.
+- Rank metadata for domain, subdomain, estimated steps, cost tier, difficulty tier, persona fit, and top tags.
 
 Use the CLI:
 
@@ -74,6 +75,7 @@ npm run search -- graph nodeagent --limit 5
 npm run search -- spreadsheetbench --kind model-attempt --limit 10
 npm run search -- trace notebook --limit 10
 npm run search -- --family spreadsheetbench-v1-full-912 --kind benchmark-target --limit 10
+npm run search -- graph --domain "Collaboration & Room UX" --sort difficulty
 ```
 
 Or open the local browser search UI:
@@ -83,6 +85,24 @@ catalog/task-browser.html
 ```
 
 The browser UI is static and uses `catalog/search-index.js`; no backend is required.
+
+## Streamlit Explorer
+
+Run the interactive explorer:
+
+```bash
+pip install -r requirements.txt
+npm run streamlit
+```
+
+The Streamlit app supports:
+
+- Search and sort by relevance, domain hierarchy, difficulty, steps, and cost.
+- Filters for domain, task kind, difficulty tier, cost tier, and tags.
+- Persona lenses for benchmark maintainers, model evaluators, product QA, finance analysts, and new contributors.
+- A NodeAgent chat panel. Set `NODEAGENT_ENDPOINT` to a POST endpoint for a real NodeAgent bridge, or leave it empty to use the deterministic local catalog-agent mode with cited task ids.
+
+Persona smoke results are tracked in `docs/PERSONA_SMOKE_RESULTS.md`.
 
 ## Refresh The Catalog
 

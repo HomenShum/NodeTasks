@@ -1,6 +1,8 @@
 node_modules/
+__pycache__/
 dist/
 .tmp/
+.serena/
 .proofloop/
 runs/
 test-results/
