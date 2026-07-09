@@ -69,9 +69,9 @@ This repository preserves the benchmark/task corpus and the source support those
 
 ## Search The Tasks
 
-The generated corpus currently exposes `9,140` searchable tasks:
+The generated corpus currently exposes `9,155` searchable tasks:
 
-- `43` curated live interaction tasks.
+- `58` curated live interaction tasks.
 - `1,354` benchmark target tasks from the prod proxy matrix.
 - `5,416` model-attempt tasks derived from matrix models x task targets.
 - `1,030` extracted unit/browser test cases.
@@ -79,7 +79,7 @@ The generated corpus currently exposes `9,140` searchable tasks:
 - Rank metadata for domain, subdomain, estimated steps, cost tier, difficulty tier, persona fit, and top tags.
 - Per-task curation fields: summary, why it matters, first run, caution, recommended personas, and score-boundary language.
 - Per-task provenance fields: suite lineage, verifier type, score status, receipt expectations, and source kinds.
-- `8` saved views and `8` shareable task bundles for common user roles.
+- `9` saved views and `9` shareable task bundles for common user roles.
 
 Use the CLI:
 
@@ -114,7 +114,7 @@ The Streamlit app supports:
 
 - Search and sort by relevance, domain hierarchy, difficulty, steps, and cost.
 - Filters for domain, task kind, difficulty tier, cost tier, and tags.
-- Saved views and downloadable task bundles for onboarding, model evals, browser proof, finance/evidence work, governance gates, NodeAgent runtime, and collaboration interiors.
+- Saved views and downloadable task bundles for onboarding, model evals, browser proof, finance/evidence work, governance gates, NodeAgent runtime, public Node repo proofs, and collaboration interiors.
 - Provenance rollups by verifier type, source kind, primary suite, and score-boundary status.
 - Persona lenses for benchmark maintainers, model evaluators, product QA, finance analysts, and new contributors.
 - A NodeAgent chat panel. Set `NODEAGENT_ENDPOINT` to a POST endpoint that follows `docs/NODEAGENT_BRIDGE.md`, or leave it empty to use deterministic local catalog-agent mode with cited task ids.

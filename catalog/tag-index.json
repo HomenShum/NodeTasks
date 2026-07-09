@@ -1,6 +1,6 @@
 {
   "schema": "nodetasks-tag-index-v1",
-  "generatedAt": "2026-07-09T01:35:42.882Z",
+  "generatedAt": "2026-07-09T02:48:01.246Z",
   "tags": [
     {
       "tag": "playwright_prod_browser",
@@ -3002,9 +3002,9 @@
     },
     {
       "tag": "Collaboration & Room UX",
-      "count": 1222,
+      "count": 1223,
       "domains": {
-        "Collaboration & Room UX": 1222
+        "Collaboration & Room UX": 1223
       },
       "kinds": {
         "source-reference": 730,
@@ -3014,20 +3014,20 @@
         "browser-test-case": 105,
         "qa-feature": 2,
         "benchmark-adapter": 1,
-        "curated-live": 6,
+        "curated-live": 7,
         "benchmark-target": 1,
         "benchmark-family": 2
       },
       "difficultyTiers": {
         "intro": 1041,
         "intermediate": 156,
-        "advanced": 23,
+        "advanced": 24,
         "expert": 2
       },
       "costTiers": {
         "free-static": 1105,
         "local-runtime": 92,
-        "external-variable": 25
+        "external-variable": 26
       },
       "sampleTaskIds": [
         "source.convex-alwayson-ts",
@@ -4014,9 +4014,9 @@
     },
     {
       "tag": "Agent Runtime & NodeAgent",
-      "count": 585,
+      "count": 595,
       "domains": {
-        "Agent Runtime & NodeAgent": 585
+        "Agent Runtime & NodeAgent": 595
       },
       "kinds": {
         "source-reference": 274,
@@ -4024,7 +4024,7 @@
         "unit-test-case": 203,
         "browser-test-case": 32,
         "qa-feature": 4,
-        "curated-live": 10,
+        "curated-live": 20,
         "model-attempt": 48,
         "benchmark-target": 11,
         "benchmark-family": 2
@@ -4032,13 +4032,13 @@
       "difficultyTiers": {
         "intro": 461,
         "intermediate": 40,
-        "advanced": 82,
-        "expert": 2
+        "advanced": 91,
+        "expert": 3
       },
       "costTiers": {
         "free-static": 478,
         "local-runtime": 23,
-        "external-variable": 36,
+        "external-variable": 46,
         "provider-low": 12,
         "provider-medium": 36
       },
@@ -5780,16 +5780,16 @@
     },
     {
       "tag": "Audit, Risk & Compliance",
-      "count": 139,
+      "count": 143,
       "domains": {
-        "Audit, Risk & Compliance": 139
+        "Audit, Risk & Compliance": 143
       },
       "kinds": {
         "source-reference": 21,
         "unit-test-case": 87,
         "browser-test-case": 6,
         "qa-feature": 7,
-        "curated-live": 11,
+        "curated-live": 15,
         "benchmark-target": 1,
         "benchmark-adapter": 1,
         "model-attempt": 4,
@@ -5798,13 +5798,13 @@
       "difficultyTiers": {
         "intro": 100,
         "intermediate": 14,
-        "advanced": 24,
-        "expert": 1
+        "advanced": 26,
+        "expert": 3
       },
       "costTiers": {
         "free-static": 108,
         "local-runtime": 6,
-        "external-variable": 21,
+        "external-variable": 25,
         "provider-low": 1,
         "provider-medium": 3
       },
@@ -6034,6 +6034,129 @@
         "testcase.tests-bankertoolbenchlivesuitegate-test-ts.2-c-counts-failed-tasks-and-names-them",
         "testcase.tests-bankertoolbenchlivesuitegate-test-ts.3-d-a-task-passing-in-any-run-is-proven-re-run-repair-counts",
         "testcase.tests-bankertoolbenchlivesuitegate-test-ts.3-d-a-task-passing-in-any-run-is-proven-re-run-repair-counts"
+      ]
+    },
+    {
+      "tag": "curated",
+      "count": 116,
+      "domains": {
+        "Spreadsheet & Office Automation": 18,
+        "Banking & Finance": 14,
+        "Audit, Risk & Compliance": 30,
+        "Agent Runtime & NodeAgent": 40,
+        "Collaboration & Room UX": 14
+      },
+      "kinds": {
+        "curated-live": 116
+      },
+      "difficultyTiers": {
+        "advanced": 110,
+        "expert": 6
+      },
+      "costTiers": {
+        "external-variable": 116
+      },
+      "sampleTaskIds": [
+        "adapter.workstreambench.live-room.v1",
+        "adapter.workstreambench.live-room.v1",
+        "adapter.workstreambench.local-story.v1",
+        "adapter.workstreambench.local-story.v1",
+        "noderoom.sheet.generic-company-research.v1",
+        "noderoom.sheet.generic-company-research.v1",
+        "noderoom.upload.csv-xlsx-pdf.v1",
+        "noderoom.upload.csv-xlsx-pdf.v1",
+        "proofloop.accounting.spreadsheet-reconciliation.v1",
+        "proofloop.accounting.spreadsheet-reconciliation.v1",
+        "adapter.bankertoolbench.live-suite.v1",
+        "adapter.bankertoolbench.live-suite.v1",
+        "adapter.finauditing.local-story.v1",
+        "adapter.finauditing.local-story.v1",
+        "noderoom.audit.bundle-export.v1",
+        "noderoom.audit.bundle-export.v1",
+        "noderoom.sheet.edit-evidence-export.v1",
+        "noderoom.sheet.edit-evidence-export.v1",
+        "noderoom.chat.public-nodeagent.runway-gaps.v1",
+        "noderoom.chat.public-nodeagent.runway-gaps.v1",
+        "dataset.sec-xbrl.fixture-qa.v1",
+        "dataset.sec-xbrl.fixture-qa.v1",
+        "proofloop.proximitty.intake.v1",
+        "proofloop.proximitty.intake.v1",
+        "proofloop.proximitty.packet.v1",
+        "proofloop.proximitty.packet.v1",
+        "proofloop.proximitty.risk-research.v1",
+        "proofloop.proximitty.risk-research.v1",
+        "adapter.finch.live-room.v1",
+        "adapter.finch.live-room.v1",
+        "adapter.finch.local-story.v1",
+        "adapter.finch.local-story.v1",
+        "noderl.anti-reward-hacking-doctrine.v1",
+        "noderl.anti-reward-hacking-doctrine.v1",
+        "noderoom.graph.nodeagent.evidence.v1",
+        "noderoom.graph.nodeagent.evidence.v1",
+        "proofloop.accounting.financial-statement-qa.v1",
+        "proofloop.accounting.financial-statement-qa.v1",
+        "adapter.finauditing.live-room.v1",
+        "adapter.finauditing.live-room.v1",
+        "gate.prod-browser-adapters.ledger.v1",
+        "gate.prod-browser-adapters.ledger.v1",
+        "gate.prod-proxy-longrun.v1",
+        "gate.prod-proxy-longrun.v1",
+        "gate.prod-proxy-matrix.v1",
+        "gate.prod-proxy-matrix.v1",
+        "noderoom.notebook.block-edit.v1",
+        "noderoom.notebook.block-edit.v1",
+        "proofloop.notion.pipeline.v1",
+        "proofloop.notion.pipeline.v1",
+        "noderoom.proposals.accept-reject.v1",
+        "noderoom.proposals.accept-reject.v1",
+        "nodeseo.search-console-boundary.v1",
+        "nodeseo.search-console-boundary.v1",
+        "streamlit.nodegraph.chat.evidence.v1",
+        "streamlit.nodegraph.chat.evidence.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "noderl.reward-memory-export.v1",
+        "noderl.reward-memory-export.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeseo.storyboard.audit.v1",
+        "noderoom.command-palette.open-graph-trace.v1",
+        "noderoom.command-palette.open-graph-trace.v1",
+        "noderoom.trace.open-filter-group.v1",
+        "noderoom.trace.open-filter-group.v1",
+        "noderoom.voice.chat-composer.v1",
+        "noderoom.voice.chat-composer.v1",
+        "proofloop.notion.warm-intro.v1",
+        "proofloop.notion.warm-intro.v1",
+        "noderoom.graph.people-clusters.v1",
+        "noderoom.graph.people-clusters.v1",
+        "noderoom.notebook.agent-outline.v1",
+        "noderoom.notebook.agent-outline.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "noderl.episode-storyboard.v1",
+        "noderl.episode-storyboard.v1",
+        "noderoom.chat.public-nodeagent.company-research.v1",
+        "noderoom.chat.public-nodeagent.company-research.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "streamlit.nodegraph.chat.typed-at-mention.v1",
+        "streamlit.nodegraph.chat.typed-at-mention.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "noderoom.graph.nodeagent.review-gaps.v1",
+        "noderoom.graph.nodeagent.review-gaps.v1",
+        "noderoom.multiuser.lock-cas-draft.v1",
+        "noderoom.multiuser.lock-cas-draft.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodeseo.visual-qa-journey.v1"
       ]
     },
     {
@@ -6904,114 +7027,6 @@
       ]
     },
     {
-      "tag": "curated",
-      "count": 86,
-      "domains": {
-        "Spreadsheet & Office Automation": 18,
-        "Banking & Finance": 14,
-        "Audit, Risk & Compliance": 22,
-        "Agent Runtime & NodeAgent": 20,
-        "Collaboration & Room UX": 12
-      },
-      "kinds": {
-        "curated-live": 86
-      },
-      "difficultyTiers": {
-        "advanced": 86
-      },
-      "costTiers": {
-        "external-variable": 86
-      },
-      "sampleTaskIds": [
-        "adapter.workstreambench.live-room.v1",
-        "adapter.workstreambench.live-room.v1",
-        "adapter.workstreambench.local-story.v1",
-        "adapter.workstreambench.local-story.v1",
-        "noderoom.sheet.generic-company-research.v1",
-        "noderoom.sheet.generic-company-research.v1",
-        "noderoom.upload.csv-xlsx-pdf.v1",
-        "noderoom.upload.csv-xlsx-pdf.v1",
-        "proofloop.accounting.spreadsheet-reconciliation.v1",
-        "proofloop.accounting.spreadsheet-reconciliation.v1",
-        "adapter.bankertoolbench.live-suite.v1",
-        "adapter.bankertoolbench.live-suite.v1",
-        "adapter.finauditing.local-story.v1",
-        "adapter.finauditing.local-story.v1",
-        "noderoom.audit.bundle-export.v1",
-        "noderoom.audit.bundle-export.v1",
-        "noderoom.sheet.edit-evidence-export.v1",
-        "noderoom.sheet.edit-evidence-export.v1",
-        "noderoom.chat.public-nodeagent.runway-gaps.v1",
-        "noderoom.chat.public-nodeagent.runway-gaps.v1",
-        "dataset.sec-xbrl.fixture-qa.v1",
-        "dataset.sec-xbrl.fixture-qa.v1",
-        "proofloop.proximitty.intake.v1",
-        "proofloop.proximitty.intake.v1",
-        "proofloop.proximitty.packet.v1",
-        "proofloop.proximitty.packet.v1",
-        "proofloop.proximitty.risk-research.v1",
-        "proofloop.proximitty.risk-research.v1",
-        "adapter.finch.live-room.v1",
-        "adapter.finch.live-room.v1",
-        "adapter.finch.local-story.v1",
-        "adapter.finch.local-story.v1",
-        "noderl.anti-reward-hacking-doctrine.v1",
-        "noderl.anti-reward-hacking-doctrine.v1",
-        "noderoom.graph.nodeagent.evidence.v1",
-        "noderoom.graph.nodeagent.evidence.v1",
-        "proofloop.accounting.financial-statement-qa.v1",
-        "proofloop.accounting.financial-statement-qa.v1",
-        "adapter.finauditing.live-room.v1",
-        "adapter.finauditing.live-room.v1",
-        "gate.prod-browser-adapters.ledger.v1",
-        "gate.prod-browser-adapters.ledger.v1",
-        "gate.prod-proxy-longrun.v1",
-        "gate.prod-proxy-longrun.v1",
-        "gate.prod-proxy-matrix.v1",
-        "gate.prod-proxy-matrix.v1",
-        "noderoom.notebook.block-edit.v1",
-        "noderoom.notebook.block-edit.v1",
-        "proofloop.notion.pipeline.v1",
-        "proofloop.notion.pipeline.v1",
-        "noderoom.proposals.accept-reject.v1",
-        "noderoom.proposals.accept-reject.v1",
-        "streamlit.nodegraph.chat.evidence.v1",
-        "streamlit.nodegraph.chat.evidence.v1",
-        "noderoom.command-palette.open-graph-trace.v1",
-        "noderoom.command-palette.open-graph-trace.v1",
-        "noderoom.trace.open-filter-group.v1",
-        "noderoom.trace.open-filter-group.v1",
-        "noderoom.voice.chat-composer.v1",
-        "noderoom.voice.chat-composer.v1",
-        "proofloop.notion.warm-intro.v1",
-        "proofloop.notion.warm-intro.v1",
-        "noderoom.graph.people-clusters.v1",
-        "noderoom.graph.people-clusters.v1",
-        "noderoom.notebook.agent-outline.v1",
-        "noderoom.notebook.agent-outline.v1",
-        "noderoom.chat.public-nodeagent.company-research.v1",
-        "noderoom.chat.public-nodeagent.company-research.v1",
-        "streamlit.nodegraph.chat.typed-at-mention.v1",
-        "streamlit.nodegraph.chat.typed-at-mention.v1",
-        "noderoom.graph.nodeagent.review-gaps.v1",
-        "noderoom.graph.nodeagent.review-gaps.v1",
-        "noderoom.multiuser.lock-cas-draft.v1",
-        "noderoom.multiuser.lock-cas-draft.v1",
-        "noderoom.roomhome.work-lanes.v1",
-        "noderoom.roomhome.work-lanes.v1",
-        "noderoom.upload.bad-file-rollback.v1",
-        "noderoom.upload.bad-file-rollback.v1",
-        "proofloop.accounting.invoice-extraction.v1",
-        "proofloop.accounting.invoice-extraction.v1",
-        "proofloop.accounting.variance-analysis.v1",
-        "proofloop.accounting.variance-analysis.v1",
-        "proofloop.notion.follow-up.v1",
-        "proofloop.notion.follow-up.v1",
-        "proofloop.notion.meeting-prep.v1",
-        "proofloop.notion.meeting-prep.v1"
-      ]
-    },
-    {
       "tag": "convex",
       "count": 81,
       "domains": {
@@ -7856,6 +7871,87 @@
       ]
     },
     {
+      "tag": "curated-live",
+      "count": 58,
+      "domains": {
+        "Spreadsheet & Office Automation": 9,
+        "Banking & Finance": 7,
+        "Audit, Risk & Compliance": 15,
+        "Agent Runtime & NodeAgent": 20,
+        "Collaboration & Room UX": 7
+      },
+      "kinds": {
+        "curated-live": 58
+      },
+      "difficultyTiers": {
+        "advanced": 55,
+        "expert": 3
+      },
+      "costTiers": {
+        "external-variable": 58
+      },
+      "sampleTaskIds": [
+        "adapter.workstreambench.live-room.v1",
+        "adapter.workstreambench.local-story.v1",
+        "noderoom.sheet.generic-company-research.v1",
+        "noderoom.upload.csv-xlsx-pdf.v1",
+        "proofloop.accounting.spreadsheet-reconciliation.v1",
+        "adapter.bankertoolbench.live-suite.v1",
+        "adapter.finauditing.local-story.v1",
+        "noderoom.audit.bundle-export.v1",
+        "noderoom.sheet.edit-evidence-export.v1",
+        "noderoom.chat.public-nodeagent.runway-gaps.v1",
+        "dataset.sec-xbrl.fixture-qa.v1",
+        "proofloop.proximitty.intake.v1",
+        "proofloop.proximitty.packet.v1",
+        "proofloop.proximitty.risk-research.v1",
+        "adapter.finch.live-room.v1",
+        "adapter.finch.local-story.v1",
+        "noderl.anti-reward-hacking-doctrine.v1",
+        "noderoom.graph.nodeagent.evidence.v1",
+        "proofloop.accounting.financial-statement-qa.v1",
+        "adapter.finauditing.live-room.v1",
+        "gate.prod-browser-adapters.ledger.v1",
+        "gate.prod-proxy-longrun.v1",
+        "gate.prod-proxy-matrix.v1",
+        "noderoom.notebook.block-edit.v1",
+        "proofloop.notion.pipeline.v1",
+        "noderoom.proposals.accept-reject.v1",
+        "nodeseo.search-console-boundary.v1",
+        "streamlit.nodegraph.chat.evidence.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "noderl.reward-memory-export.v1",
+        "nodeseo.storyboard.audit.v1",
+        "noderoom.command-palette.open-graph-trace.v1",
+        "noderoom.trace.open-filter-group.v1",
+        "noderoom.voice.chat-composer.v1",
+        "proofloop.notion.warm-intro.v1",
+        "noderoom.graph.people-clusters.v1",
+        "noderoom.notebook.agent-outline.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "noderl.episode-storyboard.v1",
+        "noderoom.chat.public-nodeagent.company-research.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "streamlit.nodegraph.chat.typed-at-mention.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "noderoom.graph.nodeagent.review-gaps.v1",
+        "noderoom.multiuser.lock-cas-draft.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "noderoom.roomhome.work-lanes.v1",
+        "noderoom.upload.bad-file-rollback.v1",
+        "proofloop.accounting.invoice-extraction.v1",
+        "proofloop.accounting.variance-analysis.v1",
+        "proofloop.notion.follow-up.v1",
+        "proofloop.notion.meeting-prep.v1",
+        "nodemem.storyboard.receipt.v1"
+      ]
+    },
+    {
       "tag": "notion",
       "count": 58,
       "domains": {
@@ -8162,6 +8258,72 @@
       ]
     },
     {
+      "tag": "public-node-repo",
+      "count": 45,
+      "domains": {
+        "Audit, Risk & Compliance": 12,
+        "Agent Runtime & NodeAgent": 30,
+        "Collaboration & Room UX": 3
+      },
+      "kinds": {
+        "curated-live": 45
+      },
+      "difficultyTiers": {
+        "advanced": 36,
+        "expert": 9
+      },
+      "costTiers": {
+        "external-variable": 45
+      },
+      "sampleTaskIds": [
+        "nodeseo.search-console-boundary.v1",
+        "nodeseo.search-console-boundary.v1",
+        "nodeseo.search-console-boundary.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "noderl.reward-memory-export.v1",
+        "noderl.reward-memory-export.v1",
+        "noderl.reward-memory-export.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "noderl.episode-storyboard.v1",
+        "noderl.episode-storyboard.v1",
+        "noderl.episode-storyboard.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodemem.storyboard.receipt.v1"
+      ]
+    },
+    {
       "tag": "scaffoldProposal.test.ts",
       "count": 44,
       "domains": {
@@ -8224,71 +8386,6 @@
         "testcase.tests-scaffoldproposal-test-ts.7-returns-empty-for-safe-scaffold-changes",
         "testcase.tests-scaffoldproposal-test-ts.8-rejects-proposals-that-touch-immutable-files",
         "testcase.tests-scaffoldproposal-test-ts.9-rejects-proposals-that-lower-minscore"
-      ]
-    },
-    {
-      "tag": "curated-live",
-      "count": 43,
-      "domains": {
-        "Spreadsheet & Office Automation": 9,
-        "Banking & Finance": 7,
-        "Audit, Risk & Compliance": 11,
-        "Agent Runtime & NodeAgent": 10,
-        "Collaboration & Room UX": 6
-      },
-      "kinds": {
-        "curated-live": 43
-      },
-      "difficultyTiers": {
-        "advanced": 43
-      },
-      "costTiers": {
-        "external-variable": 43
-      },
-      "sampleTaskIds": [
-        "adapter.workstreambench.live-room.v1",
-        "adapter.workstreambench.local-story.v1",
-        "noderoom.sheet.generic-company-research.v1",
-        "noderoom.upload.csv-xlsx-pdf.v1",
-        "proofloop.accounting.spreadsheet-reconciliation.v1",
-        "adapter.bankertoolbench.live-suite.v1",
-        "adapter.finauditing.local-story.v1",
-        "noderoom.audit.bundle-export.v1",
-        "noderoom.sheet.edit-evidence-export.v1",
-        "noderoom.chat.public-nodeagent.runway-gaps.v1",
-        "dataset.sec-xbrl.fixture-qa.v1",
-        "proofloop.proximitty.intake.v1",
-        "proofloop.proximitty.packet.v1",
-        "proofloop.proximitty.risk-research.v1",
-        "adapter.finch.live-room.v1",
-        "adapter.finch.local-story.v1",
-        "noderl.anti-reward-hacking-doctrine.v1",
-        "noderoom.graph.nodeagent.evidence.v1",
-        "proofloop.accounting.financial-statement-qa.v1",
-        "adapter.finauditing.live-room.v1",
-        "gate.prod-browser-adapters.ledger.v1",
-        "gate.prod-proxy-longrun.v1",
-        "gate.prod-proxy-matrix.v1",
-        "noderoom.notebook.block-edit.v1",
-        "proofloop.notion.pipeline.v1",
-        "noderoom.proposals.accept-reject.v1",
-        "streamlit.nodegraph.chat.evidence.v1",
-        "noderoom.command-palette.open-graph-trace.v1",
-        "noderoom.trace.open-filter-group.v1",
-        "noderoom.voice.chat-composer.v1",
-        "proofloop.notion.warm-intro.v1",
-        "noderoom.graph.people-clusters.v1",
-        "noderoom.notebook.agent-outline.v1",
-        "noderoom.chat.public-nodeagent.company-research.v1",
-        "streamlit.nodegraph.chat.typed-at-mention.v1",
-        "noderoom.graph.nodeagent.review-gaps.v1",
-        "noderoom.multiuser.lock-cas-draft.v1",
-        "noderoom.roomhome.work-lanes.v1",
-        "noderoom.upload.bad-file-rollback.v1",
-        "proofloop.accounting.invoice-extraction.v1",
-        "proofloop.accounting.variance-analysis.v1",
-        "proofloop.notion.follow-up.v1",
-        "proofloop.notion.meeting-prep.v1"
       ]
     },
     {
@@ -10708,6 +10805,78 @@
         "testcase.tests-commandpalette-test-tsx.7-adversarial-scale-a-200-artifact-room-renders-at-most-12-rows-plus-an-accurate-n-more-line",
         "testcase.tests-commandpalette-test-tsx.8-adversarial-inputs-hostile-artifact-titles-render-as-inert-text-and-regex-metachar-queries-don-t-crash-the-filter",
         "testcase.tests-commandpalette-test-tsx.9-sustained-use-20-open-close-cycles-reuse-one-window-listener-and-unmount-removes-everything-it-added"
+      ]
+    },
+    {
+      "tag": "github.com",
+      "count": 15,
+      "domains": {
+        "Audit, Risk & Compliance": 4,
+        "Agent Runtime & NodeAgent": 10,
+        "Collaboration & Room UX": 1
+      },
+      "kinds": {
+        "curated-live": 15
+      },
+      "difficultyTiers": {
+        "advanced": 12,
+        "expert": 3
+      },
+      "costTiers": {
+        "external-variable": 15
+      },
+      "sampleTaskIds": [
+        "nodeseo.search-console-boundary.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "noderl.reward-memory-export.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "noderl.episode-storyboard.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.storyboard.receipt.v1"
+      ]
+    },
+    {
+      "tag": "HomenShum",
+      "count": 15,
+      "domains": {
+        "Audit, Risk & Compliance": 4,
+        "Agent Runtime & NodeAgent": 10,
+        "Collaboration & Room UX": 1
+      },
+      "kinds": {
+        "curated-live": 15
+      },
+      "difficultyTiers": {
+        "advanced": 12,
+        "expert": 3
+      },
+      "costTiers": {
+        "external-variable": 15
+      },
+      "sampleTaskIds": [
+        "nodeseo.search-console-boundary.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "noderl.reward-memory-export.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "noderl.episode-storyboard.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.storyboard.receipt.v1"
       ]
     },
     {
@@ -51930,6 +52099,34 @@
       ]
     },
     {
+      "tag": "demo builder",
+      "count": 8,
+      "domains": {
+        "Agent Runtime & NodeAgent": 6,
+        "Collaboration & Room UX": 2
+      },
+      "kinds": {
+        "curated-live": 8
+      },
+      "difficultyTiers": {
+        "advanced": 6,
+        "expert": 2
+      },
+      "costTiers": {
+        "external-variable": 8
+      },
+      "sampleTaskIds": [
+        "nodeagent.chat-ui-adoption.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodemem.storyboard.receipt.v1"
+      ]
+    },
+    {
       "tag": "governance",
       "count": 8,
       "domains": {
@@ -53744,6 +53941,30 @@
       ]
     },
     {
+      "tag": "agent engineer",
+      "count": 6,
+      "domains": {
+        "Agent Runtime & NodeAgent": 6
+      },
+      "kinds": {
+        "curated-live": 6
+      },
+      "difficultyTiers": {
+        "advanced": 6
+      },
+      "costTiers": {
+        "external-variable": 6
+      },
+      "sampleTaskIds": [
+        "nodeagent.frame-spine.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeagent.storyboard.capture.v1"
+      ]
+    },
+    {
       "tag": "auditBundle.test.ts",
       "count": 6,
       "domains": {
@@ -55161,6 +55382,30 @@
       ]
     },
     {
+      "tag": "NodeAgent",
+      "count": 6,
+      "domains": {
+        "Agent Runtime & NodeAgent": 6
+      },
+      "kinds": {
+        "curated-live": 6
+      },
+      "difficultyTiers": {
+        "advanced": 6
+      },
+      "costTiers": {
+        "external-variable": 6
+      },
+      "sampleTaskIds": [
+        "nodeagent.chat-ui-adoption.v1",
+        "nodeagent.chat-ui-adoption.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodeagent.storyboard.capture.v1"
+      ]
+    },
+    {
       "tag": "NodeRoom eval",
       "count": 6,
       "domains": {
@@ -55208,6 +55453,56 @@
         "local-proxy.workstreambench.workstreambench-local-spreadsheet-workstream",
         "local-proxy.finauditing.finauditing-local-risk-and-misstatement-review",
         "local-proxy.finauditing.finauditing-local-risk-and-misstatement-review"
+      ]
+    },
+    {
+      "tag": "NodeSEO",
+      "count": 6,
+      "domains": {
+        "Audit, Risk & Compliance": 4,
+        "Agent Runtime & NodeAgent": 2
+      },
+      "kinds": {
+        "curated-live": 6
+      },
+      "difficultyTiers": {
+        "advanced": 4,
+        "expert": 2
+      },
+      "costTiers": {
+        "external-variable": 6
+      },
+      "sampleTaskIds": [
+        "nodeseo.search-console-boundary.v1",
+        "nodeseo.search-console-boundary.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodeseo.visual-qa-journey.v1"
+      ]
+    },
+    {
+      "tag": "NodeTrace",
+      "count": 6,
+      "domains": {
+        "Agent Runtime & NodeAgent": 6
+      },
+      "kinds": {
+        "curated-live": 6
+      },
+      "difficultyTiers": {
+        "advanced": 6
+      },
+      "costTiers": {
+        "external-variable": 6
+      },
+      "sampleTaskIds": [
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodetrace.trace-coach.sqlite.v1"
       ]
     },
     {
@@ -59582,6 +59877,29 @@
       ]
     },
     {
+      "tag": "growth engineer",
+      "count": 4,
+      "domains": {
+        "Audit, Risk & Compliance": 4
+      },
+      "kinds": {
+        "curated-live": 4
+      },
+      "difficultyTiers": {
+        "advanced": 2,
+        "expert": 2
+      },
+      "costTiers": {
+        "external-variable": 4
+      },
+      "sampleTaskIds": [
+        "nodeseo.search-console-boundary.v1",
+        "nodeseo.search-console-boundary.v1",
+        "nodeseo.storyboard.audit.v1",
+        "nodeseo.storyboard.audit.v1"
+      ]
+    },
+    {
       "tag": "leftRailUpload.test.tsx",
       "count": 4,
       "domains": {
@@ -61656,6 +61974,53 @@
       ]
     },
     {
+      "tag": "NodeMem",
+      "count": 4,
+      "domains": {
+        "Agent Runtime & NodeAgent": 2,
+        "Collaboration & Room UX": 2
+      },
+      "kinds": {
+        "curated-live": 4
+      },
+      "difficultyTiers": {
+        "advanced": 4
+      },
+      "costTiers": {
+        "external-variable": 4
+      },
+      "sampleTaskIds": [
+        "nodemem.passive-memory.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodemem.storyboard.receipt.v1"
+      ]
+    },
+    {
+      "tag": "NodeRL",
+      "count": 4,
+      "domains": {
+        "Audit, Risk & Compliance": 2,
+        "Agent Runtime & NodeAgent": 2
+      },
+      "kinds": {
+        "curated-live": 4
+      },
+      "difficultyTiers": {
+        "expert": 2,
+        "advanced": 2
+      },
+      "costTiers": {
+        "external-variable": 4
+      },
+      "sampleTaskIds": [
+        "noderl.reward-memory-export.v1",
+        "noderl.reward-memory-export.v1",
+        "noderl.episode-storyboard.v1",
+        "noderl.episode-storyboard.v1"
+      ]
+    },
+    {
       "tag": "notificationWorkflowsDomain.test.ts",
       "count": 4,
       "domains": {
@@ -61987,6 +62352,29 @@
         "benchmark-family.accounting-live-proofloop",
         "benchmark-family.notion-live-proofloop",
         "benchmark-family.notion-live-proofloop"
+      ]
+    },
+    {
+      "tag": "repo explorer",
+      "count": 4,
+      "domains": {
+        "Audit, Risk & Compliance": 2,
+        "Agent Runtime & NodeAgent": 2
+      },
+      "kinds": {
+        "curated-live": 4
+      },
+      "difficultyTiers": {
+        "advanced": 4
+      },
+      "costTiers": {
+        "external-variable": 4
+      },
+      "sampleTaskIds": [
+        "nodetrace.nodegraph-causality.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodetrace.trace-coach.sqlite.v1"
       ]
     },
     {
@@ -63194,6 +63582,26 @@
       "sampleTaskIds": [
         "scenario-file.proofloop-rubrics-behavioral-yaml",
         "scenario-file.proofloop-rubrics-behavioral-yaml"
+      ]
+    },
+    {
+      "tag": "benchmark maintainer",
+      "count": 2,
+      "domains": {
+        "Agent Runtime & NodeAgent": 2
+      },
+      "kinds": {
+        "curated-live": 2
+      },
+      "difficultyTiers": {
+        "advanced": 2
+      },
+      "costTiers": {
+        "external-variable": 2
+      },
+      "sampleTaskIds": [
+        "noderl.episode-storyboard.v1",
+        "noderl.episode-storyboard.v1"
       ]
     },
     {
@@ -68166,6 +68574,26 @@
       ]
     },
     {
+      "tag": "model evaluator",
+      "count": 2,
+      "domains": {
+        "Audit, Risk & Compliance": 2
+      },
+      "kinds": {
+        "curated-live": 2
+      },
+      "difficultyTiers": {
+        "expert": 2
+      },
+      "costTiers": {
+        "external-variable": 2
+      },
+      "sampleTaskIds": [
+        "noderl.reward-memory-export.v1",
+        "noderl.reward-memory-export.v1"
+      ]
+    },
+    {
       "tag": "motion-passive-video.spec.ts",
       "count": 2,
       "domains": {
@@ -68353,6 +68781,26 @@
       ]
     },
     {
+      "tag": "NodeMem + NodeGraph",
+      "count": 2,
+      "domains": {
+        "Agent Runtime & NodeAgent": 2
+      },
+      "kinds": {
+        "curated-live": 2
+      },
+      "difficultyTiers": {
+        "expert": 2
+      },
+      "costTiers": {
+        "external-variable": 2
+      },
+      "sampleTaskIds": [
+        "nodemem.nodegraph-clusters.v1",
+        "nodemem.nodegraph-clusters.v1"
+      ]
+    },
+    {
       "tag": "nodemem-firstuser.spec.ts",
       "count": 2,
       "domains": {
@@ -68453,6 +68901,26 @@
       "sampleTaskIds": [
         "qa-feature.noderoombench-reporting-trust",
         "qa-feature.noderoombench-reporting-trust"
+      ]
+    },
+    {
+      "tag": "NodeTrace + NodeGraph",
+      "count": 2,
+      "domains": {
+        "Audit, Risk & Compliance": 2
+      },
+      "kinds": {
+        "curated-live": 2
+      },
+      "difficultyTiers": {
+        "advanced": 2
+      },
+      "costTiers": {
+        "external-variable": 2
+      },
+      "sampleTaskIds": [
+        "nodetrace.nodegraph-causality.v1",
+        "nodetrace.nodegraph-causality.v1"
       ]
     },
     {
@@ -68784,6 +69252,26 @@
       "sampleTaskIds": [
         "noderoom.audit.bundle-export.v1",
         "noderoom.audit.bundle-export.v1"
+      ]
+    },
+    {
+      "tag": "product QA",
+      "count": 2,
+      "domains": {
+        "Agent Runtime & NodeAgent": 2
+      },
+      "kinds": {
+        "curated-live": 2
+      },
+      "difficultyTiers": {
+        "advanced": 2
+      },
+      "costTiers": {
+        "external-variable": 2
+      },
+      "sampleTaskIds": [
+        "nodeseo.visual-qa-journey.v1",
+        "nodeseo.visual-qa-journey.v1"
       ]
     },
     {
@@ -69853,6 +70341,26 @@
       "sampleTaskIds": [
         "qa-feature.startup-diligence-flagship-demo",
         "qa-feature.startup-diligence-flagship-demo"
+      ]
+    },
+    {
+      "tag": "test engineer",
+      "count": 2,
+      "domains": {
+        "Agent Runtime & NodeAgent": 2
+      },
+      "kinds": {
+        "curated-live": 2
+      },
+      "difficultyTiers": {
+        "advanced": 2
+      },
+      "costTiers": {
+        "external-variable": 2
+      },
+      "sampleTaskIds": [
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.capture-plan.smoke.v1"
       ]
     },
     {

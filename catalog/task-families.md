@@ -1,16 +1,16 @@
 # NodeTasks Catalog
 
-Generated: 2026-07-09T01:35:42.882Z
+Generated: 2026-07-09T02:48:01.246Z
 
 ## Summary
 
-- Searchable tasks: 9140
-- Curated live interaction tasks: 43
+- Searchable tasks: 9155
+- Curated live interaction tasks: 58
 - Extracted tasks: 9097
 - Benchmark proxy adapters: 4
 - External local proxy tasks: 3
-- Saved views: 8
-- Task bundles: 8
+- Saved views: 9
+- Task bundles: 9
 - Source files: 1236
 
 ## Domains
@@ -19,9 +19,9 @@ Generated: 2026-07-09T01:35:42.882Z
 | --- | ---: |
 | Spreadsheet & Office Automation | 6434 |
 | Banking & Finance | 760 |
-| Audit, Risk & Compliance | 139 |
-| Agent Runtime & NodeAgent | 585 |
-| Collaboration & Room UX | 1222 |
+| Audit, Risk & Compliance | 143 |
+| Agent Runtime & NodeAgent | 595 |
+| Collaboration & Room UX | 1223 |
 
 ## Difficulty Tiers
 
@@ -29,14 +29,14 @@ Generated: 2026-07-09T01:35:42.882Z
 | --- | ---: |
 | intro | 1986 |
 | intermediate | 272 |
-| advanced | 6498 |
-| expert | 384 |
+| advanced | 6510 |
+| expert | 387 |
 
 ## Cost Tiers
 
 | Cost | Tasks |
 | --- | ---: |
-| external-variable | 1468 |
+| external-variable | 1483 |
 | free-static | 2115 |
 | local-runtime | 141 |
 | provider-low | 1354 |
@@ -50,7 +50,7 @@ Generated: 2026-07-09T01:35:42.882Z
 | benchmark-family | 11 |
 | benchmark-target | 1354 |
 | browser-test-case | 168 |
-| curated-live | 43 |
+| curated-live | 58 |
 | local-proxy-task | 3 |
 | model-attempt | 5416 |
 | qa-feature | 26 |
@@ -110,6 +110,7 @@ Generated: 2026-07-09T01:35:42.882Z
 | proximitty | 1 |
 | proximitty-underwriting-pr0 | 20 |
 | public-chat | 2 |
+| public-node-repo | 15 |
 | qa-production-matrix | 26 |
 | room-home | 1 |
 | rubric | 6 |
@@ -137,10 +138,11 @@ Generated: 2026-07-09T01:35:42.882Z
 | --- | --- | ---: | --- | --- |
 | first-hour | New contributor | 2256 | difficulty | nodeagent graph source test intro |
 | cheap-spreadsheetbench-models | Model evaluator | 4952 | cost | spreadsheetbench model-attempt |
-| browser-proof-surfaces | Product QA | 211 | difficulty | browser chat trace graph notebook upload room |
+| browser-proof-surfaces | Product QA | 221 | difficulty | browser chat trace graph notebook upload room |
 | finance-evidence-work | Finance analyst | 632 | domain | finance spreadsheet accounting bankertoolbench evidence xbrl |
 | proofloop-governance-gates | Benchmark maintainer | 0 | difficulty | proofloop benchmark official scorer verifier gate doctrine |
-| nodeagent-runtime-spine | Agent engineer | 457 | difficulty | nodeagent frame trace runtime model tool receipt |
+| nodeagent-runtime-spine | Agent engineer | 466 | difficulty | nodeagent frame trace runtime model tool receipt |
+| public-node-repo-proofs | Repo maintainer | 15 | difficulty | NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke |
 | collaboration-interiors | Product QA | 151 | difficulty | graph chat notebook trace multi-user command-palette upload |
 | official-score-boundaries | Benchmark maintainer | 6821 | difficulty-desc | official score claim scorer verifier proxy product path |
 
@@ -154,6 +156,7 @@ Generated: 2026-07-09T01:35:42.882Z
 | finance-evidence-work | Finance analyst | 60 | 61 | 12 |
 | proofloop-governance-gates | Benchmark maintainer | 0 | 0 | 0 |
 | nodeagent-runtime-spine | Agent engineer | 60 | 60 | 7 |
+| public-node-repo-proofs | Repo maintainer | 15 | 177 | 64 |
 | collaboration-interiors | Product QA | 60 | 60 | 11 |
 | official-score-boundaries | Benchmark maintainer | 60 | 546 | 77 |
 
@@ -162,18 +165,18 @@ Generated: 2026-07-09T01:35:42.882Z
 | Verifier type | Tasks |
 | --- | ---: |
 | model-proxy-receipt | 5416 |
-| browser-proof | 1608 |
+| browser-proof | 1613 |
 | source-reference | 1236 |
 | deterministic-test | 738 |
-| verifier-receipt | 63 |
+| verifier-receipt | 70 |
 | rubric-scenario | 61 |
-| catalog-derived | 12 |
+| catalog-derived | 15 |
 | proxy-adapter-contract | 6 |
 
 | Score status | Tasks |
 | --- | ---: |
-| official-boundary-blocked | 6770 |
-| no-official-score-claim | 2370 |
+| official-boundary-blocked | 6772 |
+| no-official-score-claim | 2383 |
 
 ## Benchmark Proxy Adapters
 
@@ -194,18 +197,18 @@ Generated: 2026-07-09T01:35:42.882Z
 
 ## Example Curated Live Tasks
 
-- `noderoom.graph.nodeagent.review-gaps.v1`: Ask NodeAgent to find review blockers from the entity graph.
-- `noderoom.graph.nodeagent.evidence.v1`: Ask NodeAgent for source-backed evidence around a selected graph node.
-- `noderoom.graph.people-clusters.v1`: Trace person-to-company relationships and connected project or achievement clusters.
-- `streamlit.nodegraph.chat.evidence.v1`: Use the Streamlit quick prompt to ask NodeAgent for evidence.
-- `streamlit.nodegraph.chat.typed-at-mention.v1`: Type an @nodeagent chat prompt in Streamlit and receive a second turn.
-- `noderoom.chat.public-nodeagent.company-research.v1`: Ask public NodeAgent to research a company row from chat.
-- `noderoom.chat.public-nodeagent.runway-gaps.v1`: Ask public NodeAgent to identify runway or evidence gaps.
-- `noderoom.trace.open-filter-group.v1`: Open trace, filter by event kind, and group runs.
-- `noderoom.proposals.accept-reject.v1`: Review pending agent proposals without direct mutation bypass.
-- `noderoom.sheet.edit-evidence-export.v1`: Edit a spreadsheet cell, inspect evidence, and export XLSX.
-- `noderoom.sheet.generic-company-research.v1`: Drive the generic company research grid through pending/enriched statuses.
-- `noderoom.notebook.agent-outline.v1`: Ask NodeAgent to create or update a notebook outline.
+- `nodeagent.storyboard.capture.v1`: Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.
+- `nodeagent.frame-spine.smoke.v1`: Verify the portable NodeAgent frame spine without provider keys.
+- `nodeagent.chat-ui-adoption.v1`: Prove the assistant-ui chat scaffold keeps NodeAgent tool surfaces visible.
+- `nodemem.passive-memory.smoke.v1`: Verify NodeMem passive scan, dedupe, dismissal learning, and policy gates.
+- `nodemem.storyboard.receipt.v1`: Validate the NodeMem README media as an explicit storyboard proof receipt.
+- `nodemem.nodegraph-clusters.v1`: Design the NodeGraph memory-cluster view for NodeMem suggestions and dismissals.
+- `nodetrace.storyboard.capture.v1`: Regenerate the NodeTrace walkthrough media from storyboard-governed screenshots.
+- `nodetrace.capture-plan.smoke.v1`: Run the standalone NodeTrace capture-plan smoke without requiring a sibling NodeRoom checkout.
+- `nodetrace.trace-coach.sqlite.v1`: Generate the NodeTrace Trace Coach SQLite proof from live NodeRoom source or embedded snapshots.
+- `nodetrace.nodegraph-causality.v1`: Use NodeGraph to show trace causality across UI surface, runtime event, proof card, source file, screenshot, and receipt.
+- `noderl.episode-storyboard.v1`: Create a public NodeRL episode storyboard from trace to reward to memory to repair to export.
+- `noderl.reward-memory-export.v1`: Verify NodeRL reward, memory, and dataset-export boundaries for one benchmark-style task.
 
 ## Search Surfaces
 

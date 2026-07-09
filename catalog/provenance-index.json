@@ -1,25 +1,25 @@
 {
   "schema": "nodetasks-provenance-index-v1",
-  "generatedAt": "2026-07-09T01:35:42.882Z",
+  "generatedAt": "2026-07-09T02:48:01.246Z",
   "counts": {
-    "tasks": 9140,
+    "tasks": 9155,
     "verifierTypes": 8,
     "scoreStatuses": 2,
-    "primarySuites": 49
+    "primarySuites": 50
   },
   "verifierTypes": {
     "source-reference": 1236,
     "rubric-scenario": 61,
     "deterministic-test": 738,
-    "verifier-receipt": 63,
-    "browser-proof": 1608,
+    "verifier-receipt": 70,
+    "browser-proof": 1613,
     "proxy-adapter-contract": 6,
-    "catalog-derived": 12,
+    "catalog-derived": 15,
     "model-proxy-receipt": 5416
   },
   "scoreStatuses": {
-    "no-official-score-claim": 2370,
-    "official-boundary-blocked": 6770
+    "no-official-score-claim": 2383,
+    "official-boundary-blocked": 6772
   },
   "primarySuites": {
     "noderoom/convex": 80,
@@ -52,6 +52,7 @@
     "proofloop/benchmarks/proximitty": 2,
     "bankertoolbench": 1,
     "proofloop/notion": 60,
+    "public-node-repo": 15,
     "proofloop/storybook": 1,
     "proofloop/live-browser-proof.spec.ts": 2,
     "chat": 9,
@@ -73,9 +74,9 @@
     "internal": 1
   },
   "sourceKinds": {
-    "source": 810,
+    "source": 819,
     "json": 6987,
-    "docs": 86,
+    "docs": 100,
     "asset": 80,
     "test": 1350,
     "yaml": 44
@@ -3197,6 +3198,28 @@
         ]
       },
       {
+        "id": "nodeseo.search-console-boundary.v1",
+        "title": "Generate a Search Console report without scraping rankings or simulating clicks.",
+        "kind": "curated-live",
+        "family": "public-node-repo",
+        "domain": "Audit, Risk & Compliance",
+        "subdomain": "public-node-repo",
+        "steps": 11,
+        "costTier": "external-variable",
+        "difficultyTier": "advanced",
+        "difficultyScore": 58,
+        "verifierType": "catalog-derived",
+        "scoreStatus": "no-official-score-claim",
+        "topTags": [
+          "public-node-repo",
+          "Audit, Risk & Compliance",
+          "curated-live",
+          "NodeSEO",
+          "curated",
+          "github.com"
+        ]
+      },
+      {
         "id": "qa-feature.long-running-free-auto",
         "title": "Long-running /free jobs",
         "kind": "qa-feature",
@@ -3216,6 +3239,50 @@
           "NodeRoom QA",
           "qa",
           "long_running_free_auto"
+        ]
+      },
+      {
+        "id": "nodeagent.chat-ui-adoption.v1",
+        "title": "Prove the assistant-ui chat scaffold keeps NodeAgent tool surfaces visible.",
+        "kind": "curated-live",
+        "family": "public-node-repo",
+        "domain": "Agent Runtime & NodeAgent",
+        "subdomain": "public-node-repo",
+        "steps": 11,
+        "costTier": "external-variable",
+        "difficultyTier": "advanced",
+        "difficultyScore": 58,
+        "verifierType": "catalog-derived",
+        "scoreStatus": "no-official-score-claim",
+        "topTags": [
+          "public-node-repo",
+          "Agent Runtime & NodeAgent",
+          "curated-live",
+          "NodeAgent",
+          "curated",
+          "demo builder"
+        ]
+      },
+      {
+        "id": "nodemem.passive-memory.smoke.v1",
+        "title": "Verify NodeMem passive scan, dedupe, dismissal learning, and policy gates.",
+        "kind": "curated-live",
+        "family": "public-node-repo",
+        "domain": "Agent Runtime & NodeAgent",
+        "subdomain": "public-node-repo",
+        "steps": 12,
+        "costTier": "external-variable",
+        "difficultyTier": "advanced",
+        "difficultyScore": 60,
+        "verifierType": "catalog-derived",
+        "scoreStatus": "no-official-score-claim",
+        "topTags": [
+          "public-node-repo",
+          "Agent Runtime & NodeAgent",
+          "curated-live",
+          "NodeMem",
+          "agent engineer",
+          "curated"
         ]
       },
       {

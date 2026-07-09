@@ -64,7 +64,7 @@ for (const task of allTasks.tasks) {
   assert(typeof task.provenance.scoreStatus === "string", `task has provenance score status: ${task.id}`);
   assert(Array.isArray(task.provenance.suiteLineage), `task has suite lineage: ${task.id}`);
   for (const sourceRef of task.sourceRefs ?? []) {
-    assert(existsSync(join(root, sourceRef)), `sourceRef exists for ${task.id}: ${sourceRef}`);
+    assert(isExternalRef(sourceRef) || existsSync(join(root, sourceRef)), `sourceRef exists for ${task.id}: ${sourceRef}`);
   }
 }
 
@@ -123,4 +123,8 @@ async function readJsonl(path) {
 
 function assert(condition, message) {
   if (!condition) problems.push(message);
+}
+
+function isExternalRef(value) {
+  return /^https?:\/\//i.test(String(value ?? ""));
 }

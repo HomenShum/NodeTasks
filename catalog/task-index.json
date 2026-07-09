@@ -1,15 +1,15 @@
 {
   "schema": "nodetasks-index-v1",
-  "generatedAt": "2026-07-09T01:35:42.882Z",
+  "generatedAt": "2026-07-09T02:48:01.246Z",
   "summary": {
-    "liveInteractionTasks": 43,
+    "liveInteractionTasks": 58,
     "extractedTasks": 9097,
-    "searchableTasks": 9140,
+    "searchableTasks": 9155,
     "benchmarkProxyAdapters": 4,
     "externalLocalProxyTasks": 3,
     "sourceFiles": 1236,
-    "savedViews": 8,
-    "taskBundles": 8,
+    "savedViews": 9,
+    "taskBundles": 9,
     "provenanceVerifierTypes": 8,
     "sourceBytes": 22808765
   },
@@ -67,6 +67,7 @@
     "benchmark-gate": 3,
     "proofloop-notion": 4,
     "proposal-review": 1,
+    "public-node-repo": 15,
     "streamlit-nodegraph": 2,
     "notion-suite": 17,
     "live-browser-proof.spec.ts": 1,
@@ -88,7 +89,7 @@
     "browser-test-case": 168,
     "local-proxy-task": 3,
     "qa-feature": 26,
-    "curated-live": 43,
+    "curated-live": 58,
     "model-attempt": 5416,
     "benchmark-target": 1354,
     "benchmark-family": 11,
@@ -99,20 +100,20 @@
   "domains": {
     "Spreadsheet & Office Automation": 6434,
     "Banking & Finance": 760,
-    "Audit, Risk & Compliance": 139,
-    "Agent Runtime & NodeAgent": 585,
-    "Collaboration & Room UX": 1222
+    "Audit, Risk & Compliance": 143,
+    "Agent Runtime & NodeAgent": 595,
+    "Collaboration & Room UX": 1223
   },
   "difficultyTiers": {
     "intro": 1986,
     "intermediate": 272,
-    "advanced": 6498,
-    "expert": 384
+    "advanced": 6510,
+    "expert": 387
   },
   "costTiers": {
     "free-static": 2115,
     "local-runtime": 141,
-    "external-variable": 1468,
+    "external-variable": 1483,
     "provider-low": 1354,
     "provider-medium": 4062
   },
@@ -125,7 +126,14 @@
     "NodeRoom": 18,
     "Noderl": 1,
     "NodeRoom eval": 3,
-    "Streamlit": 2
+    "NodeSEO": 3,
+    "Streamlit": 2,
+    "NodeTrace + NodeGraph": 1,
+    "NodeRL": 2,
+    "NodeAgent": 3,
+    "NodeTrace": 3,
+    "NodeMem": 2,
+    "NodeMem + NodeGraph": 1
   },
   "adapters": [
     {

@@ -1,6 +1,6 @@
 {
   "schema": "nodetasks-saved-views-v1",
-  "generatedAt": "2026-07-09T01:35:42.882Z",
+  "generatedAt": "2026-07-09T02:48:01.246Z",
   "views": [
     {
       "id": "first-hour",
@@ -1353,7 +1353,7 @@
         ],
         "maxCostRank": 5
       },
-      "count": 211,
+      "count": 221,
       "sampleTaskIds": [
         "testcase.e2e-always-on-landing-spec-ts.1-open-room-rooms-expositio-pulse-mounts-the-public-room-page-back-subscribe-opens-the-modal",
         "testcase.e2e-always-on-room-spec-ts.0-frame-five-tabs-proof-footer-read-only-hint-and-no-ops-tab-without-ops-1",
@@ -2699,7 +2699,7 @@
       "filters": {
         "domain": "Agent Runtime & NodeAgent"
       },
-      "count": 457,
+      "count": 466,
       "sampleTaskIds": [
         "source.convex-convexroomtools-ts",
         "source.convex-runtrace-ts",
@@ -3351,6 +3351,367 @@
             "Source",
             "source",
             "ts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "public-node-repo-proofs",
+      "title": "Public Node repo proofs",
+      "persona": "Repo maintainer",
+      "description": "Cross-repo proof tasks for NodeAgent, NodeMem, NodeTrace, NodeRL, NodeSEO, and NodeGraph integrations.",
+      "query": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+      "sort": "difficulty",
+      "filters": {
+        "tag": "public-node-repo"
+      },
+      "count": 15,
+      "sampleTaskIds": [
+        "nodeagent.chat-ui-adoption.v1",
+        "noderl.episode-storyboard.v1",
+        "nodeseo.search-console-boundary.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodeagent.frame-spine.smoke.v1",
+        "nodemem.passive-memory.smoke.v1",
+        "nodetrace.nodegraph-causality.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodetrace.trace-coach.sqlite.v1",
+        "nodeagent.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.visual-qa-journey.v1",
+        "nodemem.nodegraph-clusters.v1",
+        "noderl.reward-memory-export.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "sampleTasks": [
+        {
+          "id": "nodeagent.chat-ui-adoption.v1",
+          "title": "Prove the assistant-ui chat scaffold keeps NodeAgent tool surfaces visible.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 11,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 58,
+          "verifierType": "catalog-derived",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeAgent",
+            "curated",
+            "demo builder"
+          ]
+        },
+        {
+          "id": "noderl.episode-storyboard.v1",
+          "title": "Create a public NodeRL episode storyboard from trace to reward to memory to repair to export.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 11,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 58,
+          "verifierType": "verifier-receipt",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeRL",
+            "benchmark maintainer",
+            "curated"
+          ]
+        },
+        {
+          "id": "nodeseo.search-console-boundary.v1",
+          "title": "Generate a Search Console report without scraping rankings or simulating clicks.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Audit, Risk & Compliance",
+          "subdomain": "public-node-repo",
+          "steps": 11,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 58,
+          "verifierType": "catalog-derived",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Audit, Risk & Compliance",
+            "curated-live",
+            "NodeSEO",
+            "curated",
+            "github.com"
+          ]
+        },
+        {
+          "id": "nodetrace.capture-plan.smoke.v1",
+          "title": "Run the standalone NodeTrace capture-plan smoke without requiring a sibling NodeRoom checkout.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 11,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 58,
+          "verifierType": "verifier-receipt",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeTrace",
+            "curated",
+            "github.com"
+          ]
+        },
+        {
+          "id": "nodeagent.frame-spine.smoke.v1",
+          "title": "Verify the portable NodeAgent frame spine without provider keys.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 60,
+          "verifierType": "verifier-receipt",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeAgent",
+            "agent engineer",
+            "curated"
+          ]
+        },
+        {
+          "id": "nodemem.passive-memory.smoke.v1",
+          "title": "Verify NodeMem passive scan, dedupe, dismissal learning, and policy gates.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 60,
+          "verifierType": "catalog-derived",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeMem",
+            "agent engineer",
+            "curated"
+          ]
+        },
+        {
+          "id": "nodetrace.nodegraph-causality.v1",
+          "title": "Use NodeGraph to show trace causality across UI surface, runtime event, proof card, source file, screenshot, and receipt.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Audit, Risk & Compliance",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 60,
+          "verifierType": "browser-proof",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Audit, Risk & Compliance",
+            "curated-live",
+            "NodeTrace + NodeGraph",
+            "curated",
+            "github.com"
+          ]
+        },
+        {
+          "id": "nodetrace.storyboard.capture.v1",
+          "title": "Regenerate the NodeTrace walkthrough media from storyboard-governed screenshots.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 60,
+          "verifierType": "browser-proof",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeTrace",
+            "curated",
+            "demo builder"
+          ]
+        },
+        {
+          "id": "nodetrace.trace-coach.sqlite.v1",
+          "title": "Generate the NodeTrace Trace Coach SQLite proof from live NodeRoom source or embedded snapshots.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 60,
+          "verifierType": "browser-proof",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeTrace",
+            "curated",
+            "github.com"
+          ]
+        },
+        {
+          "id": "nodeagent.storyboard.capture.v1",
+          "title": "Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 13,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 62,
+          "verifierType": "verifier-receipt",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeAgent",
+            "agent engineer",
+            "curated"
+          ]
+        },
+        {
+          "id": "nodemem.storyboard.receipt.v1",
+          "title": "Validate the NodeMem README media as an explicit storyboard proof receipt.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Collaboration & Room UX",
+          "subdomain": "public-node-repo",
+          "steps": 11,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 62,
+          "verifierType": "verifier-receipt",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Collaboration & Room UX",
+            "curated-live",
+            "NodeMem",
+            "curated",
+            "demo builder"
+          ]
+        },
+        {
+          "id": "nodeseo.visual-qa-journey.v1",
+          "title": "Capture a landing/search-origin journey and pass review media to Gemini visual QA.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 13,
+          "costTier": "external-variable",
+          "difficultyTier": "advanced",
+          "difficultyScore": 62,
+          "verifierType": "browser-proof",
+          "scoreStatus": "official-boundary-blocked",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeSEO",
+            "curated",
+            "github.com"
+          ]
+        },
+        {
+          "id": "nodemem.nodegraph-clusters.v1",
+          "title": "Design the NodeGraph memory-cluster view for NodeMem suggestions and dismissals.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Agent Runtime & NodeAgent",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "expert",
+          "difficultyScore": 64,
+          "verifierType": "browser-proof",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Agent Runtime & NodeAgent",
+            "curated-live",
+            "NodeMem + NodeGraph",
+            "curated",
+            "demo builder"
+          ]
+        },
+        {
+          "id": "noderl.reward-memory-export.v1",
+          "title": "Verify NodeRL reward, memory, and dataset-export boundaries for one benchmark-style task.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Audit, Risk & Compliance",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "expert",
+          "difficultyScore": 64,
+          "verifierType": "verifier-receipt",
+          "scoreStatus": "official-boundary-blocked",
+          "topTags": [
+            "public-node-repo",
+            "Audit, Risk & Compliance",
+            "curated-live",
+            "NodeRL",
+            "curated",
+            "github.com"
+          ]
+        },
+        {
+          "id": "nodeseo.storyboard.audit.v1",
+          "title": "Run the NodeSEO static audit under the storyboard proof contract.",
+          "kind": "curated-live",
+          "family": "public-node-repo",
+          "domain": "Audit, Risk & Compliance",
+          "subdomain": "public-node-repo",
+          "steps": 12,
+          "costTier": "external-variable",
+          "difficultyTier": "expert",
+          "difficultyScore": 64,
+          "verifierType": "verifier-receipt",
+          "scoreStatus": "no-official-score-claim",
+          "topTags": [
+            "public-node-repo",
+            "Audit, Risk & Compliance",
+            "curated-live",
+            "NodeSEO",
+            "curated",
+            "github.com"
           ]
         }
       ]

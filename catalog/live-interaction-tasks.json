@@ -1,7 +1,513 @@
 {
   "schema": "nodetasks-live-interaction-catalog-v1",
-  "generatedAt": "2026-07-09T01:35:42.882Z",
+  "generatedAt": "2026-07-09T02:48:01.246Z",
   "tasks": [
+    {
+      "id": "nodeagent.storyboard.capture.v1",
+      "family": "public-node-repo",
+      "surface": "NodeAgent",
+      "route": "https://github.com/HomenShum/NodeAgent",
+      "persona": "agent engineer",
+      "goal": "Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.",
+      "setup": [
+        "Clone NodeAgent.",
+        "Install dependencies.",
+        "Open docs/FEATURE_PROOF_STORYBOARD.md."
+      ],
+      "steps": [
+        "Run npm run clip:capture.",
+        "Run nodeagent frame/local-dashboard smokes.",
+        "Inspect README media and docs/eval receipts."
+      ],
+      "assertions": [
+        "README GIF and MP4 exist.",
+        "Storyboard names the proof contract.",
+        "Frame and dashboard smoke receipts pass."
+      ],
+      "artifacts": [
+        "docs/walkthroughs/nodeagent-local-dashboard-walkthrough.gif",
+        "docs/eval/nodeagent-frame-smoke.json",
+        "docs/eval/nodeagent-local-dashboard-scaffold-smoke.json"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodeagent.frame-spine.smoke.v1",
+      "family": "public-node-repo",
+      "surface": "NodeAgent",
+      "route": "https://github.com/HomenShum/NodeAgent",
+      "persona": "agent engineer",
+      "goal": "Verify the portable NodeAgent frame spine without provider keys.",
+      "setup": [
+        "Clone NodeAgent.",
+        "Use deterministic demo inputs."
+      ],
+      "steps": [
+        "Run npm run nodeagent:frame:smoke.",
+        "Run npm run nodeagent:durable:smoke.",
+        "Run npm run nodeagent:sqlite:smoke."
+      ],
+      "assertions": [
+        "Frame status is completed.",
+        "Durable adapter path remains provider-neutral.",
+        "SQLite path writes a local receipt."
+      ],
+      "artifacts": [
+        "docs/eval/nodeagent-frame-smoke.json",
+        "docs/eval/nodeagent-durable-smoke.json",
+        "docs/eval/nodeagent-sqlite-smoke.json"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeAgent/blob/main/README.md"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodeagent.chat-ui-adoption.v1",
+      "family": "public-node-repo",
+      "surface": "NodeAgent",
+      "route": "https://github.com/HomenShum/NodeAgent",
+      "persona": "demo builder",
+      "goal": "Prove the assistant-ui chat scaffold keeps NodeAgent tool surfaces visible.",
+      "setup": [
+        "Clone NodeAgent.",
+        "Inspect docs/CHAT_UI_ADOPTION.md."
+      ],
+      "steps": [
+        "Run npm run nodeagent:chat-ui:smoke.",
+        "Open the generated chat scaffold guidance.",
+        "Confirm no-key local adapter path is described."
+      ],
+      "assertions": [
+        "Chat scaffold smoke passes.",
+        "Tool UI surfaces remain visible.",
+        "Runtime adapters stay injectable."
+      ],
+      "artifacts": [
+        "docs/eval/nodeagent-chat-ui-scaffold-smoke.json",
+        "docs/CHAT_UI_ADOPTION.md"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeAgent/blob/main/docs/CHAT_UI_ADOPTION.md"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodemem.passive-memory.smoke.v1",
+      "family": "public-node-repo",
+      "surface": "NodeMem",
+      "route": "https://github.com/HomenShum/NodeMem",
+      "persona": "agent engineer",
+      "goal": "Verify NodeMem passive scan, dedupe, dismissal learning, and policy gates.",
+      "setup": [
+        "Clone NodeMem.",
+        "Use deterministic demo activity."
+      ],
+      "steps": [
+        "Run npm run nodemem:smoke.",
+        "Run npm run nodemem:in-memory:smoke.",
+        "Inspect dismissal and policy assertions."
+      ],
+      "assertions": [
+        "No job auto-executes from passive scan.",
+        "Duplicate entity is suppressed.",
+        "Dismissed entity is suppressed.",
+        "Policy off suppresses suggestions."
+      ],
+      "artifacts": [
+        "docs/eval/nodemem-smoke.json",
+        "docs/eval/nodemem-in-memory-smoke.json"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeMem/blob/main/scripts/nodemem-smoke.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodemem.storyboard.receipt.v1",
+      "family": "public-node-repo",
+      "surface": "NodeMem",
+      "route": "https://github.com/HomenShum/NodeMem",
+      "persona": "demo builder",
+      "goal": "Validate the NodeMem README media as an explicit storyboard proof receipt.",
+      "setup": [
+        "Clone NodeMem.",
+        "Open docs/FEATURE_PROOF_STORYBOARD.md."
+      ],
+      "steps": [
+        "Run npm run clip:capture.",
+        "Inspect docs/eval/nodemem-storyboard-proof.json.",
+        "Compare README caption to the proof contract."
+      ],
+      "assertions": [
+        "GIF checksum and byte size are recorded.",
+        "Storyboard includes passive scan, suggestion, approval, dismissal, storage.",
+        "README links to NodeRoom with canonical casing."
+      ],
+      "artifacts": [
+        "assets/noderoom-review-approve.gif",
+        "docs/eval/nodemem-storyboard-proof.json"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodemem.nodegraph-clusters.v1",
+      "family": "public-node-repo",
+      "surface": "NodeMem + NodeGraph",
+      "route": "https://github.com/HomenShum/NodeMem",
+      "persona": "demo builder",
+      "goal": "Design the NodeGraph memory-cluster view for NodeMem suggestions and dismissals.",
+      "setup": [
+        "Load NodeMem suggestion/dismissal fixtures.",
+        "Load NodeGraph semantic graph primitives."
+      ],
+      "steps": [
+        "Map entity, mention, suggestion, approval, dismissal, policy, and job nodes.",
+        "Select an entity cluster.",
+        "Ask NodeAgent why the suggestion is noteworthy."
+      ],
+      "assertions": [
+        "Relevant connections are highlighted.",
+        "Dismissal and approval state are visible.",
+        "The graph does not imply an automatic job ran."
+      ],
+      "artifacts": [
+        "graph screenshot",
+        "NodeAgent tool trace",
+        "memory policy receipt"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeGraph/blob/main/docs/semantic-entity-graph-research.md",
+        "https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodetrace.storyboard.capture.v1",
+      "family": "public-node-repo",
+      "surface": "NodeTrace",
+      "route": "https://github.com/HomenShum/NodeTrace",
+      "persona": "demo builder",
+      "goal": "Regenerate the NodeTrace walkthrough media from storyboard-governed screenshots.",
+      "setup": [
+        "Clone NodeTrace.",
+        "Install dependencies.",
+        "Open docs/FEATURE_PROOF_STORYBOARD.md."
+      ],
+      "steps": [
+        "Run npm run clip:capture.",
+        "Inspect README GIF/MP4.",
+        "Confirm Trace Lens story beats are visible."
+      ],
+      "assertions": [
+        "Walkthrough GIF and MP4 regenerate.",
+        "Storyboard covers no-key install, tagged surfaces, Trace Lens, proof/runtime split, Builder safety.",
+        "README uses canonical NodeTrace GitHub shorthand."
+      ],
+      "artifacts": [
+        "docs/walkthroughs/nodetrace-walkthrough.gif",
+        "docs/walkthroughs/nodetrace-walkthrough.mp4"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodetrace.capture-plan.smoke.v1",
+      "family": "public-node-repo",
+      "surface": "NodeTrace",
+      "route": "https://github.com/HomenShum/NodeTrace",
+      "persona": "test engineer",
+      "goal": "Run the standalone NodeTrace capture-plan smoke without requiring a sibling NodeRoom checkout.",
+      "setup": [
+        "Clone NodeTrace.",
+        "Install dependencies."
+      ],
+      "steps": [
+        "Run npm run capture:plan:smoke.",
+        "Inspect generated disposable fixture receipt.",
+        "Run npm run smoke for CLI and MCP validation."
+      ],
+      "assertions": [
+        "Capture dry run passes with one fixture step.",
+        "CLI smoke passes.",
+        "MCP validate_capture_plan returns ok."
+      ],
+      "artifacts": [
+        "docs/eval/nodetrace-capture-plan-smoke.json",
+        "docs/eval/nodetrace-cli-smoke.json"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs",
+        "https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodetrace.trace-coach.sqlite.v1",
+      "family": "public-node-repo",
+      "surface": "NodeTrace",
+      "route": "https://github.com/HomenShum/NodeTrace",
+      "persona": "repo explorer",
+      "goal": "Generate the NodeTrace Trace Coach SQLite proof from live NodeRoom source or embedded snapshots.",
+      "setup": [
+        "Clone NodeTrace.",
+        "Optionally place a sibling NodeRoom checkout."
+      ],
+      "steps": [
+        "Run npm run trace-coach:sqlite.",
+        "Open public/nodetrace-state.json.",
+        "Inspect minimap and trace-coach screenshots."
+      ],
+      "assertions": [
+        "Script works in snapshot mode without a sibling checkout.",
+        "Six codebase steps are written.",
+        "Source/UI capture metadata remains explicit."
+      ],
+      "artifacts": [
+        "docs/eval/nodetrace-trace-coach-sqlite.json",
+        "public/nodetrace-state.json",
+        "docs/eval/nodetrace-trace-coach-sqlite.png"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeTrace/blob/main/scripts/trace-coach-sqlite.mjs",
+        "https://github.com/HomenShum/NodeTrace/blob/main/examples/trace-coach-sqlite/README.md"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodetrace.nodegraph-causality.v1",
+      "family": "public-node-repo",
+      "surface": "NodeTrace + NodeGraph",
+      "route": "https://github.com/HomenShum/NodeTrace",
+      "persona": "repo explorer",
+      "goal": "Use NodeGraph to show trace causality across UI surface, runtime event, proof card, source file, screenshot, and receipt.",
+      "setup": [
+        "Load NodeTrace trace-coach state.",
+        "Load NodeGraph graph primitives."
+      ],
+      "steps": [
+        "Build nodes from surface ids, trace ids, proof cards, events, source files, screenshots, and receipts.",
+        "Select a UI surface.",
+        "Expand one-hop and two-hop neighborhoods."
+      ],
+      "assertions": [
+        "Surface-to-trace relationship is visible.",
+        "Proof/runtime regions remain separate.",
+        "Source file and screenshot evidence can be inspected."
+      ],
+      "artifacts": [
+        "graph JSON",
+        "graph screenshot",
+        "trace receipt"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeGraph/blob/main/docs/semantic-entity-graph-research.md",
+        "https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "noderl.episode-storyboard.v1",
+      "family": "public-node-repo",
+      "surface": "NodeRL",
+      "route": "https://github.com/HomenShum/NodeRL",
+      "persona": "benchmark maintainer",
+      "goal": "Create a public NodeRL episode storyboard from trace to reward to memory to repair to export.",
+      "setup": [
+        "Clone NodeRL.",
+        "Pick one proven example episode."
+      ],
+      "steps": [
+        "Document the episode goal, action, observation, evaluation, reward, memory, repair, and dataset export.",
+        "Bind each stage to a receipt or spec file."
+      ],
+      "assertions": [
+        "Certification and exploration loops remain separated.",
+        "Reward is not self-graded by the proposing agent.",
+        "Exported dataset lineage is explicit."
+      ],
+      "artifacts": [
+        "episode storyboard",
+        "proof receipt",
+        "reward spec"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeRL/blob/main/README.md",
+        "https://github.com/HomenShum/NodeRL/blob/main/spec/reward-design.md"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "noderl.reward-memory-export.v1",
+      "family": "public-node-repo",
+      "surface": "NodeRL",
+      "route": "https://github.com/HomenShum/NodeRL",
+      "persona": "model evaluator",
+      "goal": "Verify NodeRL reward, memory, and dataset-export boundaries for one benchmark-style task.",
+      "setup": [
+        "Clone NodeRL.",
+        "Select a trace/eval example."
+      ],
+      "steps": [
+        "Run or inspect the eval receipt.",
+        "Trace how reward fields are derived.",
+        "Confirm memory/export records do not include answer keys or self-promoted scores."
+      ],
+      "assertions": [
+        "Visual judge/test/verifier signals are separated.",
+        "Memory records are provenance-backed.",
+        "Dataset export remains auditably derived."
+      ],
+      "artifacts": [
+        "reward JSON",
+        "memory record",
+        "dataset export manifest"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeRL/blob/main/spec/proof-receipt-contract.md",
+        "https://github.com/HomenShum/NodeRL/blob/main/spec/anti-reward-hacking-doctrine.md"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodeseo.storyboard.audit.v1",
+      "family": "public-node-repo",
+      "surface": "NodeSEO",
+      "route": "https://github.com/HomenShum/NodeSEO",
+      "persona": "growth engineer",
+      "goal": "Run the NodeSEO static audit under the storyboard proof contract.",
+      "setup": [
+        "Clone NodeSEO.",
+        "Open docs/FEATURE_PROOF_STORYBOARD.md.",
+        "Use the example site config."
+      ],
+      "steps": [
+        "Run npm run validate.",
+        "Inspect SEO_AUDIT.md and seo-audit.latest.json.",
+        "Confirm private route noindex and static SEO checks are separated."
+      ],
+      "assertions": [
+        "Static audit passes.",
+        "Generated receipts identify pass/warn/fail counts.",
+        "No ranking success is claimed from static checks alone."
+      ],
+      "artifacts": [
+        "docs/reports/SEO_AUDIT.md",
+        "docs/reports/seo-audit.latest.json"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodeseo.search-console-boundary.v1",
+      "family": "public-node-repo",
+      "surface": "NodeSEO",
+      "route": "https://github.com/HomenShum/NodeSEO",
+      "persona": "growth engineer",
+      "goal": "Generate a Search Console report without scraping rankings or simulating clicks.",
+      "setup": [
+        "Clone NodeSEO.",
+        "Provide Search Console credentials when available."
+      ],
+      "steps": [
+        "Run npm run search-console with a site URL.",
+        "Inspect the JSON and Markdown report.",
+        "Compare query/page evidence to visual QA output."
+      ],
+      "assertions": [
+        "Search Console is treated as query-performance source of truth.",
+        "Credential absence is labeled honestly.",
+        "No fake click or ranking scrape workflow is introduced."
+      ],
+      "artifacts": [
+        "docs/reports/search-console.latest.json",
+        "docs/reports/SEARCH_CONSOLE_REPORT.md"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeSEO/blob/main/README.md",
+        "https://github.com/HomenShum/NodeSEO/blob/main/src/search-console-report.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
+    {
+      "id": "nodeseo.visual-qa-journey.v1",
+      "family": "public-node-repo",
+      "surface": "NodeSEO",
+      "route": "https://github.com/HomenShum/NodeSEO",
+      "persona": "product QA",
+      "goal": "Capture a landing/search-origin journey and pass review media to Gemini visual QA.",
+      "setup": [
+        "Clone NodeSEO.",
+        "Install Playwright Chromium.",
+        "Configure target URL and optional Gemini key."
+      ],
+      "steps": [
+        "Run Playwright journey or Chrome CDP capture.",
+        "Convert frames to video.",
+        "Run judge-video when credentials exist."
+      ],
+      "assertions": [
+        "Journey artifact exists.",
+        "Video review is compressed.",
+        "Gemini output is labeled visual QA, not official SEO proof."
+      ],
+      "artifacts": [
+        "artifacts/chrome-cdp-search.review.mp4",
+        "visual QA report",
+        "Playwright trace"
+      ],
+      "sourceRefs": [
+        "https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeSEO/blob/main/src/judge-video-gemini.ts"
+      ],
+      "timeoutMs": 60000,
+      "officialScoreClaim": false,
+      "risk": "public-node-repo"
+    },
     {
       "id": "noderoom.graph.nodeagent.review-gaps.v1",
       "family": "graph-nodeagent",
