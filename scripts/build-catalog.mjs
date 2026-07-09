@@ -57,18 +57,24 @@ await mkdir(catalogDir, { recursive: true });
 const adapters = await loadAdapters();
 const localTasks = await loadExternalLocalTasks();
 const sourceFiles = await listSourceFiles();
+const extractedTasks = await buildExtractedTasks(sourceFiles, adapters, localTasks);
+const searchableTasks = [...liveTasks.map(normalizeLiveTask), ...extractedTasks];
+const searchRecords = searchableTasks.map(toSearchRecord);
 const taskIndex = {
   schema: "nodetasks-index-v1",
   generatedAt: new Date().toISOString(),
   summary: {
     liveInteractionTasks: liveTasks.length,
+    extractedTasks: extractedTasks.length,
+    searchableTasks: searchableTasks.length,
     benchmarkProxyAdapters: adapters.length,
     externalLocalProxyTasks: localTasks.length,
     sourceFiles: sourceFiles.length,
     sourceBytes: sourceFiles.reduce((sum, file) => sum + file.bytes, 0)
   },
-  families: countBy(liveTasks, (task) => task.family),
-  surfaces: countBy(liveTasks, (task) => task.surface),
+  families: countBy(searchableTasks, (task) => task.family),
+  kinds: countBy(searchableTasks, (task) => task.kind),
+  surfaces: countBy(searchableTasks, (task) => task.surface),
   adapters: adapters.map((adapter) => ({
     id: adapter.id,
     sourceName: adapter.source?.name,
@@ -77,20 +83,29 @@ const taskIndex = {
     officialScoreClaim: false
   })),
   catalogs: [
+    "catalog/all-tasks.json",
     "catalog/live-interaction-tasks.json",
+    "catalog/extracted-tasks.json",
     "catalog/benchmark-proxy-adapters.json",
     "catalog/source-files.json",
+    "catalog/search-index.jsonl",
+    "catalog/task-browser.html",
     "catalog/task-families.md"
   ]
 };
 
+await writeJson("catalog/all-tasks.json", { schema: "nodetasks-all-tasks-v1", generatedAt: taskIndex.generatedAt, tasks: searchableTasks });
 await writeJson("catalog/live-interaction-tasks.json", { schema: "nodetasks-live-interaction-catalog-v1", generatedAt: taskIndex.generatedAt, tasks: liveTasks });
+await writeJson("catalog/extracted-tasks.json", { schema: "nodetasks-extracted-task-catalog-v1", generatedAt: taskIndex.generatedAt, tasks: extractedTasks });
 await writeJson("catalog/benchmark-proxy-adapters.json", { schema: "nodetasks-benchmark-proxy-adapters-v1", generatedAt: taskIndex.generatedAt, adapters, externalLocalTasks: localTasks });
 await writeJson("catalog/source-files.json", { schema: "nodetasks-source-files-v1", generatedAt: taskIndex.generatedAt, files: sourceFiles });
+await writeText("catalog/search-index.jsonl", `${searchRecords.map((record) => JSON.stringify(record)).join("\n")}\n`);
+await writeText("catalog/search-index.js", `window.NODETASKS_SEARCH_INDEX = ${JSON.stringify(searchRecords)};\n`);
+await writeText("catalog/task-browser.html", renderTaskBrowserHtml(taskIndex.generatedAt));
 await writeJson("catalog/task-index.json", taskIndex);
 await writeText("catalog/task-families.md", renderFamiliesMarkdown(taskIndex, adapters, localTasks, liveTasks));
 
-console.log(`NodeTasks catalog: ${liveTasks.length} live tasks, ${adapters.length} adapters, ${sourceFiles.length} files`);
+console.log(`NodeTasks catalog: ${searchableTasks.length} searchable tasks (${liveTasks.length} curated, ${extractedTasks.length} extracted), ${adapters.length} adapters, ${sourceFiles.length} files`);
 
 function task(id, family, surface, route, persona, goal, setup, steps, assertions, artifacts, sourceRefs, risk, officialScoreClaim = false) {
   return {
@@ -109,6 +124,273 @@ function task(id, family, surface, route, persona, goal, setup, steps, assertion
     officialScoreClaim,
     risk
   };
+}
+
+function normalizeLiveTask(item) {
+  return {
+    id: item.id,
+    kind: "curated-live",
+    family: item.family,
+    surface: item.surface,
+    title: item.goal,
+    goal: item.goal,
+    persona: item.persona,
+    route: item.route,
+    setup: item.setup,
+    steps: item.steps,
+    assertions: item.assertions,
+    artifacts: item.artifacts,
+    sourceRefs: item.sourceRefs ?? [],
+    tags: compact(["curated", item.risk, item.family, item.surface, item.persona]),
+    timeoutMs: item.timeoutMs,
+    officialScoreClaim: false
+  };
+}
+
+async function buildExtractedTasks(sourceFiles, adapters, localTasks) {
+  const tasks = [];
+  tasks.push(...buildAdapterSearchTasks(adapters, localTasks));
+  tasks.push(...await extractProdProxyMatrixTasks());
+  tasks.push(...await extractFullSweepFamilyTasks());
+  tasks.push(...await extractQaFeatureTasks());
+  tasks.push(...await extractTestCaseTasks(sourceFiles));
+  tasks.push(...await extractScenarioFileTasks(sourceFiles));
+  tasks.push(...buildSourceReferenceTasks(sourceFiles));
+  return dedupeTasks(tasks).sort((a, b) => a.id.localeCompare(b.id));
+}
+
+function buildAdapterSearchTasks(adapters, localTasks) {
+  const tasks = [];
+  for (const adapter of adapters) {
+    tasks.push(searchTask({
+      id: `adapter.${slug(adapter.id)}`,
+      kind: "benchmark-adapter",
+      family: "benchmark-adapter",
+      surface: "ProofLoop",
+      title: `${adapter.source?.name ?? adapter.id} benchmark proxy adapter`,
+      goal: `Run the ${adapter.id} proxy adapter through NodeRoom product-path proof without claiming an official benchmark score.`,
+      command: adapter.liveUserCommand,
+      status: adapter.scoringMode,
+      sourceRefs: [adapter.sourcePath],
+      tags: compact([adapter.id, adapter.source?.name, adapter.scoringMode, "proxy", "adapter"])
+    }));
+  }
+  for (const localTask of localTasks) {
+    tasks.push(searchTask({
+      id: `local-proxy.${slug(localTask.adapterId)}.${slug(localTask.taskId)}`,
+      kind: "local-proxy-task",
+      family: localTask.adapterId,
+      surface: "ProofLoop",
+      title: localTask.title,
+      goal: localTask.userPrompt,
+      status: localTask.workflowId,
+      sourceRefs: [localTask.sourcePath],
+      tags: compact([localTask.adapterId, localTask.taskId, localTask.workflowId, localTask.benchmarkMapping])
+    }));
+  }
+  return tasks;
+}
+
+async function extractProdProxyMatrixTasks() {
+  const sourcePath = join(upstreamRoot, "docs", "eval", "proofloop-prod-proxy-benchmark-matrix.json");
+  if (!existsSync(sourcePath)) return [];
+  const matrix = JSON.parse(await readFile(sourcePath, "utf8"));
+  const sourceRef = rel(sourcePath);
+  const models = Array.isArray(matrix.models) ? matrix.models : [];
+  const tasks = [];
+  for (const family of matrix.families ?? []) {
+    for (const target of family.tasks ?? []) {
+      const familyId = target.familyId ?? family.id;
+      const targetId = String(target.taskId ?? "task");
+      const evidenceRefs = existingEvidenceRefs(target.evidence ?? []);
+      tasks.push(searchTask({
+        id: `benchmark-target.${slug(familyId)}.${slug(targetId)}`,
+        kind: "benchmark-target",
+        family: familyId,
+        surface: "ProofLoop",
+        title: `${family.title ?? familyId}: ${targetId}`,
+        goal: target.title ?? `Run ${targetId} through ${family.title ?? familyId}.`,
+        command: target.runner?.command,
+        route: matrix.baseUrl,
+        status: target.status,
+        sourceRefs: [sourceRef, ...evidenceRefs],
+        tags: compact([
+          "prod-proxy-matrix",
+          familyId,
+          targetId,
+          target.status,
+          target.runner?.kind,
+          target.prodLiveBrowserPassed ? "prod-live-passed" : "prod-live-pending",
+          target.localLiveBrowserOnly ? "local-live-only" : undefined
+        ]),
+        metadata: {
+          familyId,
+          taskId: targetId,
+          prodLiveBrowserPassed: Boolean(target.prodLiveBrowserPassed),
+          localLiveBrowserOnly: Boolean(target.localLiveBrowserOnly),
+          runner: target.runner?.kind,
+          blockers: target.blockers ?? []
+        }
+      }));
+
+      for (const modelId of models) {
+        tasks.push(searchTask({
+          id: `model-attempt.${slug(modelId)}.${slug(familyId)}.${slug(targetId)}`,
+          kind: "model-attempt",
+          family: familyId,
+          surface: "ProofLoop",
+          title: `${modelId} on ${family.title ?? familyId} / ${targetId}`,
+          goal: `Run model ${modelId} on benchmark target ${targetId}: ${target.title ?? family.title ?? familyId}.`,
+          command: target.runner?.command,
+          route: matrix.baseUrl,
+          status: target.status,
+          sourceRefs: [sourceRef, ...evidenceRefs],
+          tags: compact(["prod-proxy-model-matrix", modelId, familyId, targetId, target.status, target.runner?.kind]),
+          metadata: {
+            modelId,
+            familyId,
+            taskId: targetId,
+            attemptSource: "derived from proofloop-prod-proxy-benchmark-matrix.models x families.tasks",
+            officialScoreClaim: false
+          }
+        }));
+      }
+    }
+  }
+  return tasks;
+}
+
+async function extractFullSweepFamilyTasks() {
+  const sourcePath = join(upstreamRoot, "docs", "eval", "proofloop-full-proxy-benchmark-sweep.json");
+  if (!existsSync(sourcePath)) return [];
+  const sweep = JSON.parse(await readFile(sourcePath, "utf8"));
+  const sourceRef = rel(sourcePath);
+  return (sweep.families ?? []).map((family) => searchTask({
+    id: `benchmark-family.${slug(family.id)}`,
+    kind: "benchmark-family",
+    family: family.family ?? "benchmark-family",
+    surface: "ProofLoop",
+    title: family.title ?? family.id,
+    goal: `${family.title ?? family.id}: ${family.taskTargetCount ?? family.taskCount ?? "unknown"} tracked target(s). ${family.status ?? ""}`.trim(),
+    command: Array.isArray(family.runnableCommands) ? family.runnableCommands.join(" && ") : undefined,
+    status: family.status,
+    sourceRefs: [sourceRef, ...existingEvidenceRefs(family.evidence ?? [])],
+    tags: compact(["full-proxy-sweep", family.id, family.family, family.status]),
+    metadata: {
+      taskTargetCount: family.taskTargetCount,
+      stagedTaskCount: family.stagedTaskCount,
+      prodLiveBrowserVerifiedTaskCount: family.prodLiveBrowserVerifiedTaskCount,
+      localLiveBrowserVerifiedTaskCount: family.localLiveBrowserVerifiedTaskCount,
+      officialScoredTaskCount: family.officialScoredTaskCount,
+      blockers: family.blockers ?? []
+    }
+  }));
+}
+
+async function extractQaFeatureTasks() {
+  const sourcePath = join(upstreamRoot, "docs", "qa", "production-matrix.json");
+  if (!existsSync(sourcePath)) return [];
+  const matrix = JSON.parse(await readFile(sourcePath, "utf8"));
+  const sourceRef = rel(sourcePath);
+  return (matrix.features ?? []).map((feature) => {
+    const evidenceRefs = (feature.evidence ?? [])
+      .map((entry) => typeof entry === "string" ? entry : entry.ref)
+      .filter(Boolean)
+      .flatMap((ref) => existingEvidenceRefs([ref]));
+    return searchTask({
+      id: `qa-feature.${slug(feature.id ?? feature.area ?? feature.claim)}`,
+      kind: "qa-feature",
+      family: "qa-production-matrix",
+      surface: "NodeRoom QA",
+      title: feature.area ?? feature.id,
+      goal: feature.claim ?? feature.productionGate ?? feature.id,
+      status: feature.status,
+      sourceRefs: [sourceRef, ...evidenceRefs],
+      tags: compact(["qa", "production-matrix", feature.id, feature.area, feature.status]),
+      setup: feature.deterministicChecks ?? [],
+      steps: feature.liveChecks ?? [],
+      assertions: compact([feature.productionGate, feature.nextReview]),
+      metadata: {
+        deterministicChecks: feature.deterministicChecks ?? [],
+        liveChecks: feature.liveChecks ?? [],
+        nextReview: feature.nextReview
+      }
+    });
+  });
+}
+
+async function extractTestCaseTasks(sourceFiles) {
+  const candidates = sourceFiles.filter((file) =>
+    /\.(test|spec)\.(ts|tsx|js|mjs)$/.test(file.path) ||
+    file.path.includes("/e2e/") ||
+    file.path.includes("/proofloop/benchmarks/")
+  );
+  const tasks = [];
+  for (const file of candidates) {
+    if (!["ts", "tsx", "js", "mjs"].includes(file.ext)) continue;
+    const absolute = join(root, file.path);
+    const text = await readFile(absolute, "utf8");
+    const re = /\b(?:test|it)\s*(?:\.\s*(?:skip|only|fixme|slow))?\s*\(\s*(['"`])((?:\\.|(?!\1)[\s\S]){1,260})\1/g;
+    let match;
+    let index = 0;
+    while ((match = re.exec(text))) {
+      const title = cleanInline(match[2]);
+      if (!title || title.length < 3) continue;
+      const line = lineNumberAt(text, match.index);
+      tasks.push(searchTask({
+        id: `testcase.${slug(file.path.replace(/^upstream\/noderoom\//, ""))}.${index}-${slug(title)}`,
+        kind: file.path.includes("/e2e/") || file.path.includes("/proofloop/benchmarks/") ? "browser-test-case" : "unit-test-case",
+        family: inferFamilyFromPath(file.path),
+        surface: file.path.includes("/e2e/") || file.path.includes("/proofloop/benchmarks/") ? "Browser" : "NodeRoom test",
+        title,
+        goal: `Run or preserve test case "${title}" from ${file.path}:${line}.`,
+        sourceRefs: [file.path],
+        tags: compact(["test-case", file.category, file.ext, inferFamilyFromPath(file.path), `line-${line}`]),
+        metadata: { line, bytes: file.bytes, sha256: file.sha256 }
+      }));
+      index += 1;
+    }
+  }
+  return tasks;
+}
+
+async function extractScenarioFileTasks(sourceFiles) {
+  const candidates = sourceFiles.filter((file) =>
+    file.path.includes("/proofloop/") &&
+    (file.path.includes("/scenarios/") || file.path.includes("/suites/") || file.path.includes("/rubrics/")) &&
+    ["yaml", "yml", "json", "md"].includes(file.ext)
+  );
+  const tasks = [];
+  for (const file of candidates) {
+    const text = await readFile(join(root, file.path), "utf8");
+    const label = firstConfigLabel(text) ?? file.path.split("/").pop();
+    tasks.push(searchTask({
+      id: `scenario-file.${slug(file.path.replace(/^upstream\/noderoom\//, ""))}`,
+      kind: file.path.includes("/rubrics/") ? "rubric" : file.path.includes("/suites/") ? "suite" : "scenario",
+      family: inferFamilyFromPath(file.path),
+      surface: "ProofLoop",
+      title: label,
+      goal: `Use ${label} from ${file.path} as a proof-loop task/rubric source.`,
+      sourceRefs: [file.path],
+      tags: compact(["proofloop", file.category, file.ext, inferFamilyFromPath(file.path), label]),
+      metadata: { bytes: file.bytes, sha256: file.sha256 }
+    }));
+  }
+  return tasks;
+}
+
+function buildSourceReferenceTasks(sourceFiles) {
+  return sourceFiles.map((file) => searchTask({
+    id: `source.${slug(file.path.replace(/^upstream\/noderoom\//, ""))}`,
+    kind: "source-reference",
+    family: file.category,
+    surface: "Source",
+    title: file.path.replace(/^upstream\/noderoom\//, ""),
+    goal: `Reference source file ${file.path} while researching or assembling a NodeTasks benchmark task.`,
+    sourceRefs: [file.path],
+    tags: compact(["source", file.category, file.ext]),
+    metadata: { bytes: file.bytes, ext: file.ext, sha256: file.sha256 }
+  }));
 }
 
 async function loadAdapters() {
@@ -206,6 +488,10 @@ function renderFamiliesMarkdown(index, adapters, localTasks, tasks) {
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([family, count]) => `| ${family} | ${count} |`)
     .join("\n");
+  const kindRows = Object.entries(index.kinds)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([kind, count]) => `| ${kind} | ${count} |`)
+    .join("\n");
   const adapterRows = adapters
     .map((adapter) => `| ${adapter.id} | ${adapter.source?.name ?? ""} | ${adapter.scoringMode} | ${adapter.liveUserCommand ?? ""} |`)
     .join("\n");
@@ -213,7 +499,253 @@ function renderFamiliesMarkdown(index, adapters, localTasks, tasks) {
     .map((task) => `| ${task.adapterId} | ${task.taskId} | ${task.title} | false |`)
     .join("\n");
   const examples = tasks.slice(0, 12).map((task) => `- \`${task.id}\`: ${task.goal}`).join("\n");
-  return `# NodeTasks Catalog\n\nGenerated: ${index.generatedAt}\n\n## Summary\n\n- Live interaction tasks: ${index.summary.liveInteractionTasks}\n- Benchmark proxy adapters: ${index.summary.benchmarkProxyAdapters}\n- External local proxy tasks: ${index.summary.externalLocalProxyTasks}\n- Source files: ${index.summary.sourceFiles}\n\n## Task Families\n\n| Family | Tasks |\n| --- | ---: |\n${familyRows}\n\n## Benchmark Proxy Adapters\n\n| Adapter | Source | Scoring | Live command |\n| --- | --- | --- | --- |\n${adapterRows}\n\n## External Local Proxy Tasks\n\n| Adapter | Task | Title | Official score claim |\n| --- | --- | --- | --- |\n${localRows}\n\n## Example Live Tasks\n\n${examples}\n\n## Contract\n\nEvery task should preserve product-path proof separately from official benchmark scoring. A proxy task can pass its product UI proof while still recording \`officialScoreClaim: false\` until an upstream verifier accepts the artifacts.\n`;
+  return `# NodeTasks Catalog\n\nGenerated: ${index.generatedAt}\n\n## Summary\n\n- Searchable tasks: ${index.summary.searchableTasks}\n- Curated live interaction tasks: ${index.summary.liveInteractionTasks}\n- Extracted tasks: ${index.summary.extractedTasks}\n- Benchmark proxy adapters: ${index.summary.benchmarkProxyAdapters}\n- External local proxy tasks: ${index.summary.externalLocalProxyTasks}\n- Source files: ${index.summary.sourceFiles}\n\n## Task Kinds\n\n| Kind | Tasks |\n| --- | ---: |\n${kindRows}\n\n## Task Families\n\n| Family | Tasks |\n| --- | ---: |\n${familyRows}\n\n## Benchmark Proxy Adapters\n\n| Adapter | Source | Scoring | Live command |\n| --- | --- | --- | --- |\n${adapterRows}\n\n## External Local Proxy Tasks\n\n| Adapter | Task | Title | Official score claim |\n| --- | --- | --- | --- |\n${localRows}\n\n## Example Curated Live Tasks\n\n${examples}\n\n## Search Surfaces\n\n- \`catalog/all-tasks.json\`: normalized task objects.\n- \`catalog/search-index.jsonl\`: one searchable JSON record per task.\n- \`catalog/task-browser.html\`: local browser search UI.\n- \`npm run search -- <query>\`: CLI search.\n\n## Contract\n\nEvery task should preserve product-path proof separately from official benchmark scoring. A proxy task can pass its product UI proof while still recording \`officialScoreClaim: false\` until an upstream verifier accepts the artifacts.\n`;
+}
+
+function searchTask(input) {
+  return {
+    id: input.id,
+    kind: input.kind,
+    family: input.family ?? "uncategorized",
+    surface: input.surface ?? "Unknown",
+    title: input.title ?? input.goal ?? input.id,
+    goal: input.goal ?? input.title ?? input.id,
+    persona: input.persona,
+    route: input.route,
+    setup: input.setup ?? [],
+    steps: input.steps ?? [],
+    assertions: input.assertions ?? [],
+    artifacts: input.artifacts ?? [],
+    command: input.command,
+    status: input.status,
+    sourceRefs: [...new Set((input.sourceRefs ?? []).filter(Boolean))],
+    tags: [...new Set(compact(input.tags ?? []))],
+    metadata: input.metadata ?? {},
+    officialScoreClaim: false
+  };
+}
+
+function toSearchRecord(task) {
+  const searchable = [
+    task.id,
+    task.kind,
+    task.family,
+    task.surface,
+    task.title,
+    task.goal,
+    task.persona,
+    task.route,
+    task.command,
+    task.status,
+    ...(task.setup ?? []),
+    ...(task.steps ?? []),
+    ...(task.assertions ?? []),
+    ...(task.artifacts ?? []),
+    ...(task.sourceRefs ?? []),
+    ...(task.tags ?? []),
+    JSON.stringify(task.metadata ?? {})
+  ].filter(Boolean).join(" ");
+  return {
+    id: task.id,
+    kind: task.kind,
+    family: task.family,
+    surface: task.surface,
+    title: task.title,
+    goal: task.goal,
+    status: task.status,
+    command: task.command,
+    sourceRefs: task.sourceRefs,
+    tags: task.tags,
+    officialScoreClaim: false,
+    text: searchable
+  };
+}
+
+function dedupeTasks(tasks) {
+  const seen = new Map();
+  for (const item of tasks) {
+    if (!item.id || seen.has(item.id)) continue;
+    seen.set(item.id, item);
+  }
+  return [...seen.values()];
+}
+
+function existingEvidenceRefs(refs) {
+  const out = [];
+  for (const ref of refs) {
+    if (typeof ref !== "string" || !ref.trim()) continue;
+    const normalized = ref.replace(/\\/g, "/");
+    const candidates = normalized.startsWith("upstream/")
+      ? [join(root, normalized)]
+      : [join(upstreamRoot, normalized), join(root, normalized)];
+    const found = candidates.find((candidate) => existsSync(candidate));
+    if (found) out.push(rel(found));
+  }
+  return [...new Set(out)];
+}
+
+function inferFamilyFromPath(path) {
+  const normalized = path.replace(/\\/g, "/");
+  const benchmark = normalized.match(/proofloop\/benchmarks\/([^/]+)/);
+  if (benchmark) return benchmark[1];
+  const proofloop = normalized.match(/proofloop\/([^/]+)/);
+  if (proofloop) return proofloop[1];
+  if (normalized.includes("spreadsheet")) return "spreadsheet";
+  if (normalized.includes("banker") || normalized.includes("btb")) return "bankertoolbench";
+  if (normalized.includes("nodeagent") || normalized.includes("agent")) return "nodeagent";
+  if (normalized.includes("trace")) return "trace";
+  if (normalized.includes("notebook")) return "notebook";
+  if (normalized.includes("graph")) return "graph";
+  if (normalized.includes("chat")) return "chat";
+  if (normalized.includes("voice")) return "voice";
+  if (normalized.includes("/e2e/")) return "e2e";
+  if (normalized.includes("/tests/")) return "unit";
+  return categorize(normalized);
+}
+
+function firstConfigLabel(text) {
+  const match = text.match(/^\s*(?:id|name|title|scenario|description):\s*["']?(.+?)["']?\s*$/m);
+  return match ? cleanInline(match[1]) : undefined;
+}
+
+function cleanInline(value) {
+  return String(value)
+    .replace(/\\n/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\$\{[^}]+\}/g, "")
+    .trim()
+    .slice(0, 240);
+}
+
+function lineNumberAt(text, index) {
+  let line = 1;
+  for (let i = 0; i < index; i += 1) {
+    if (text.charCodeAt(i) === 10) line += 1;
+  }
+  return line;
+}
+
+function slug(value) {
+  const out = String(value ?? "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 140);
+  return out || "item";
+}
+
+function compact(items) {
+  return items
+    .flat()
+    .filter((item) => item !== undefined && item !== null && String(item).trim())
+    .map((item) => String(item).trim());
+}
+
+function renderTaskBrowserHtml(generatedAt) {
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NodeTasks Search</title>
+  <script src="./search-index.js"></script>
+  <style>
+    :root { color-scheme: dark; --bg: #090b0d; --panel: #101418; --line: #252b31; --text: #edf2f7; --muted: #8f9aa6; --accent: #f28b68; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--text); }
+    .shell { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+    aside { border-right: 1px solid var(--line); padding: 18px; background: #0b0e11; position: sticky; top: 0; height: 100vh; overflow: auto; }
+    main { padding: 18px 22px 48px; }
+    h1 { margin: 0 0 6px; font-size: 18px; }
+    .meta { color: var(--muted); font-size: 12px; line-height: 1.5; }
+    input, select { width: 100%; margin-top: 12px; border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 8px; padding: 10px 11px; font-size: 14px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    button { border: 1px solid var(--line); background: #111820; color: var(--text); border-radius: 999px; padding: 5px 9px; cursor: pointer; font-size: 12px; }
+    button:hover { border-color: var(--accent); }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; color: var(--muted); font-size: 13px; }
+    .result { border-top: 1px solid var(--line); padding: 14px 0; }
+    .result h2 { margin: 0 0 6px; font-size: 15px; }
+    .result p { margin: 4px 0; color: #c9d2dc; line-height: 1.45; }
+    .row { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; color: var(--muted); font-size: 12px; }
+    code { color: #9dc3ff; background: #111820; border: 1px solid var(--line); padding: 1px 5px; border-radius: 5px; }
+    .tag { color: #ffba9f; }
+    @media (max-width: 820px) { .shell { grid-template-columns: 1fr; } aside { position: relative; height: auto; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <h1>NodeTasks</h1>
+      <div class="meta">Generated ${generatedAt}<br><span id="count"></span></div>
+      <input id="query" placeholder="Search graph, nodeagent, spreadsheetbench, trace..." autofocus />
+      <select id="kind"><option value="">All kinds</option></select>
+      <select id="family"><option value="">All families</option></select>
+      <div class="chips" id="quick"></div>
+    </aside>
+    <main>
+      <div class="bar"><span id="summary"></span><span>Open locally or serve this folder; no backend needed.</span></div>
+      <div id="results"></div>
+    </main>
+  </div>
+  <script>
+    const records = window.NODETASKS_SEARCH_INDEX || [];
+    const q = document.getElementById("query");
+    const kind = document.getElementById("kind");
+    const family = document.getElementById("family");
+    const results = document.getElementById("results");
+    const summary = document.getElementById("summary");
+    document.getElementById("count").textContent = records.length.toLocaleString() + " searchable tasks";
+    for (const value of [...new Set(records.map(r => r.kind).filter(Boolean))].sort()) kind.append(new Option(value, value));
+    for (const value of [...new Set(records.map(r => r.family).filter(Boolean))].sort()) family.append(new Option(value, value));
+    for (const value of ["nodeagent", "graph", "spreadsheetbench", "bankertoolbench", "trace", "notebook", "streamlit", "model-attempt"]) {
+      const b = document.createElement("button");
+      b.textContent = value;
+      b.onclick = () => { q.value = value; render(); };
+      document.getElementById("quick").append(b);
+    }
+    function score(record, terms) {
+      if (!terms.length) return 1;
+      const hay = (record.text || "").toLowerCase();
+      let total = 0;
+      for (const term of terms) {
+        if (record.id.toLowerCase().includes(term)) total += 8;
+        if ((record.title || "").toLowerCase().includes(term)) total += 6;
+        if ((record.goal || "").toLowerCase().includes(term)) total += 4;
+        if (hay.includes(term)) total += 1;
+      }
+      return total;
+    }
+    function render() {
+      const terms = q.value.toLowerCase().split(/\\s+/).filter(Boolean);
+      const kindValue = kind.value;
+      const familyValue = family.value;
+      const ranked = records
+        .filter(r => !kindValue || r.kind === kindValue)
+        .filter(r => !familyValue || r.family === familyValue)
+        .map(r => ({ r, s: score(r, terms) }))
+        .filter(x => x.s > 0)
+        .sort((a, b) => b.s - a.s || a.r.id.localeCompare(b.r.id))
+        .slice(0, 200);
+      summary.textContent = ranked.length.toLocaleString() + " shown";
+      results.innerHTML = ranked.map(({ r, s }) => '<article class="result">' +
+        '<div class="row"><code>' + escapeHtml(r.id) + '</code><span>' + escapeHtml(r.kind) + '</span><span>' + escapeHtml(r.family) + '</span><span>score ' + s + '</span></div>' +
+        '<h2>' + escapeHtml(r.title || r.id) + '</h2>' +
+        '<p>' + escapeHtml(r.goal || '') + '</p>' +
+        '<div class="row">' + (r.tags || []).slice(0, 8).map(t => '<span class="tag">' + escapeHtml(t) + '</span>').join(' ') + '</div>' +
+        '<div class="row">' + (r.sourceRefs || []).slice(0, 4).map(x => '<code>' + escapeHtml(x) + '</code>').join(' ') + '</div>' +
+      '</article>').join('');
+    }
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+    }
+    q.addEventListener("input", render);
+    kind.addEventListener("change", render);
+    family.addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>
+`;
 }
 
 async function writeJson(path, value) {

@@ -6,24 +6,33 @@ const root = process.cwd();
 const problems = [];
 
 const live = await readJson("catalog/live-interaction-tasks.json");
+const allTasks = await readJson("catalog/all-tasks.json");
+const extracted = await readJson("catalog/extracted-tasks.json");
 const adapters = await readJson("catalog/benchmark-proxy-adapters.json");
 const sources = await readJson("catalog/source-files.json");
 const index = await readJson("catalog/task-index.json");
+const searchRecords = await readJsonl("catalog/search-index.jsonl");
 
 assert(Array.isArray(live.tasks), "live tasks array exists");
+assert(Array.isArray(allTasks.tasks), "all tasks array exists");
+assert(Array.isArray(extracted.tasks), "extracted tasks array exists");
 assert(Array.isArray(adapters.adapters), "adapters array exists");
 assert(Array.isArray(sources.files), "source files array exists");
 assert(index.summary.liveInteractionTasks === live.tasks.length, "task index live count matches");
+assert(index.summary.extractedTasks === extracted.tasks.length, "task index extracted count matches");
+assert(index.summary.searchableTasks === allTasks.tasks.length, "task index searchable count matches");
 assert(index.summary.benchmarkProxyAdapters === adapters.adapters.length, "task index adapter count matches");
+assert(searchRecords.length === allTasks.tasks.length, "search index count matches all tasks");
 
 const taskIds = new Set();
-for (const task of live.tasks) {
+for (const task of allTasks.tasks) {
   assert(typeof task.id === "string" && task.id.length > 3, `task id valid: ${task.id}`);
   assert(!taskIds.has(task.id), `task id unique: ${task.id}`);
   taskIds.add(task.id);
   assert(task.officialScoreClaim === false, `task does not claim official score: ${task.id}`);
-  assert(Array.isArray(task.steps) && task.steps.length > 0, `task has steps: ${task.id}`);
-  assert(Array.isArray(task.assertions) && task.assertions.length > 0, `task has assertions: ${task.id}`);
+  assert(typeof task.kind === "string" && task.kind.length > 1, `task has kind: ${task.id}`);
+  assert(typeof task.title === "string" && task.title.length > 1, `task has title: ${task.id}`);
+  assert(typeof task.goal === "string" && task.goal.length > 1, `task has goal: ${task.id}`);
   for (const sourceRef of task.sourceRefs ?? []) {
     assert(existsSync(join(root, sourceRef)), `sourceRef exists for ${task.id}: ${sourceRef}`);
   }
@@ -56,10 +65,15 @@ if (problems.length) {
   process.exit(1);
 }
 
-console.log(`NodeTasks catalog valid: ${live.tasks.length} tasks, ${adapters.adapters.length} adapters, ${sources.files.length} source files`);
+console.log(`NodeTasks catalog valid: ${allTasks.tasks.length} searchable tasks (${live.tasks.length} curated, ${extracted.tasks.length} extracted), ${adapters.adapters.length} adapters, ${sources.files.length} source files`);
 
 async function readJson(path) {
   return JSON.parse(await readFile(join(root, path), "utf8"));
+}
+
+async function readJsonl(path) {
+  const text = await readFile(join(root, path), "utf8");
+  return text.split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 }
 
 function assert(condition, message) {
