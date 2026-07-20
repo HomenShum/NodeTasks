@@ -11,6 +11,8 @@ This repo is a curated source snapshot, not a claim of official benchmark scores
 - `productPathCompletion`: whether a product UI path ran with visible proof artifacts.
 - `officialSemanticScore`: an official benchmark score only when an upstream verifier is available and explicitly recorded.
 
+The root [`nodekit.yaml`](nodekit.yaml) registers NodeTasks as an evaluation corpus under the flat `nodekit.repo/v1` contract. There is intentionally no `nodeagent.yaml`: the repository supplies deterministic task data and proof, not a product-agent runtime.
+
 ## What Is Included
 
 - Benchmark proxy adapters from `proofloop/benchmarks`.
@@ -48,10 +50,14 @@ catalog/
 assets/
   nodetasks-streamlit-explorer.gif
 schemas/
+  corpus-receipt.schema.json
   node-task.schema.json
 scripts/
   build-catalog.mjs
+  doctor.mjs
   validate-catalog.mjs
+proof/
+  corpus-receipt.json
 upstream/noderoom/
   convex/
   examples/
@@ -66,6 +72,24 @@ upstream/noderoom/
 ## Runnability Note
 
 This repository preserves the benchmark/task corpus and the source support those files reference. Live production tasks still require an actual NodeRoom deployment, provider credentials, and any upstream benchmark datasets or official scorers that are intentionally not vendored here.
+
+The vendored tree is provenance and a migration source only. It does not transfer ownership of NodeRoom or NodeAgent contracts to NodeTasks. See [`docs/UPSTREAM_PROVENANCE.md`](docs/UPSTREAM_PROVENANCE.md) for the enforced boundary and the known missing upstream revision.
+
+## Deterministic corpus proof
+
+All NodeKit lifecycle commands are finite and require no key or external account:
+
+```bash
+npm run doctor
+npm run check
+npm run proof
+```
+
+`npm run proof` validates the committed receipt at [`proof/corpus-receipt.json`](proof/corpus-receipt.json). The `nodetasks.corpus-receipt/v1` receipt records corpus counts, SHA-256 hashes for the public catalog artifacts and schemas, an independent aggregate hash of the vendored NodeRoom tree, and any drift from the historical source index. It also records zero task, adapter, and local-proxy official-score claims. Product-path completion remains separate from any upstream official semantic score.
+
+The current receipt is intentionally **not** a clean pass. It reports `catalog-valid-with-known-source-index-drift`, `catalogValid: true`, `sourceIndexValid: false`, `passed: false`, and `releaseReady: false` with 16 mismatches and deterministic samples. Accordingly, `npm run proof` and `npm run check` exit nonzero. Fixing that gate requires a separately reviewed resnapshot/catalog rebuild; this registration does not bless or hide the pre-existing drift.
+
+After an intentional catalog refresh, run `npm run validate` to regenerate the deterministic receipt, inspect the diff, and then run `npm run check`.
 
 ## Search The Tasks
 
@@ -135,6 +159,7 @@ http://127.0.0.1:8502/?view=proofloop-governance-gates&persona=Benchmark%20maint
 npm run build:catalog
 npm run search -- nodeagent graph --limit 5
 npm run validate
+npm run check
 python -m py_compile apps\nodetasks_streamlit.py
 npm run clip:capture
 ```

@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/HomenShum/NodeTasks/schemas/corpus-receipt.schema.json",
+  "title": "NodeTasks corpus receipt",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "repository",
+    "status",
+    "catalogValid",
+    "sourceIndexValid",
+    "passed",
+    "releaseReady",
+    "hashAlgorithm",
+    "counts",
+    "officialScoreBoundary",
+    "sourceIndexDrift",
+    "vendoredSource",
+    "contentHashes",
+    "corpusHash"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "nodetasks.corpus-receipt/v1" },
+    "repository": { "const": "HomenShum/NodeTasks" },
+    "status": {
+      "enum": [
+        "valid",
+        "catalog-invalid",
+        "catalog-valid-with-known-source-index-drift"
+      ]
+    },
+    "catalogValid": { "type": "boolean" },
+    "sourceIndexValid": { "type": "boolean" },
+    "passed": { "type": "boolean" },
+    "releaseReady": { "type": "boolean" },
+    "hashAlgorithm": { "const": "sha256" },
+    "counts": {
+      "type": "object",
+      "required": [
+        "searchableTasks",
+        "liveInteractionTasks",
+        "extractedTasks",
+        "rankedTasks",
+        "searchRecords",
+        "benchmarkProxyAdapters",
+        "externalLocalProxyTasks",
+        "sourceFiles",
+        "sourceBytes",
+        "savedViews",
+        "taskBundles",
+        "tags",
+        "sourceIndexContentMismatches"
+      ],
+      "properties": {
+        "searchableTasks": { "type": "integer", "minimum": 0 },
+        "liveInteractionTasks": { "type": "integer", "minimum": 0 },
+        "extractedTasks": { "type": "integer", "minimum": 0 },
+        "rankedTasks": { "type": "integer", "minimum": 0 },
+        "searchRecords": { "type": "integer", "minimum": 0 },
+        "benchmarkProxyAdapters": { "type": "integer", "minimum": 0 },
+        "externalLocalProxyTasks": { "type": "integer", "minimum": 0 },
+        "sourceFiles": { "type": "integer", "minimum": 0 },
+        "sourceBytes": { "type": "integer", "minimum": 0 },
+        "savedViews": { "type": "integer", "minimum": 0 },
+        "taskBundles": { "type": "integer", "minimum": 0 },
+        "tags": { "type": "integer", "minimum": 0 },
+        "sourceIndexContentMismatches": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "officialScoreBoundary": {
+      "type": "object",
+      "required": [
+        "officialScoreClaim",
+        "tasksClaimingOfficialScore",
+        "adaptersClaimingOfficialScore",
+        "localProxyTasksClaimingOfficialScore",
+        "officialSemanticScoreStatus",
+        "productPathCompletionIsOfficialScore",
+        "statement"
+      ],
+      "properties": {
+        "officialScoreClaim": { "const": false },
+        "tasksClaimingOfficialScore": { "const": 0 },
+        "adaptersClaimingOfficialScore": { "const": 0 },
+        "localProxyTasksClaimingOfficialScore": { "const": 0 },
+        "officialSemanticScoreStatus": { "const": "not-claimed" },
+        "productPathCompletionIsOfficialScore": { "const": false },
+        "statement": {
+          "const": "This receipt validates corpus structure and content only. It is not an official benchmark score or leaderboard result."
+        }
+      },
+      "additionalProperties": false
+    },
+    "sourceIndexDrift": {
+      "type": "object",
+      "required": ["mismatchCount", "sampleLimit", "samples"],
+      "properties": {
+        "mismatchCount": { "type": "integer", "minimum": 0 },
+        "sampleLimit": { "const": 10 },
+        "samples": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "indexedBytes",
+              "actualBytes",
+              "indexedSha256",
+              "actualSha256"
+            ],
+            "properties": {
+              "path": { "type": "string", "minLength": 1 },
+              "indexedBytes": { "type": "integer", "minimum": 0 },
+              "actualBytes": { "type": "integer", "minimum": 0 },
+              "indexedSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+              "actualSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "vendoredSource": {
+      "type": "object",
+      "required": ["root", "aggregateFormat", "sha256"],
+      "properties": {
+        "root": { "const": "upstream/noderoom" },
+        "aggregateFormat": {
+          "const": "sha256(JSON.stringify([{path,bytes,sha256},...])) with records sorted by path"
+        },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "contentHashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "bytes", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "corpusHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false
+}
