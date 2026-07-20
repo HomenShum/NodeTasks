@@ -222,6 +222,16 @@ export async function validateCatalog(root = process.cwd()) {
     productPathCompletionIsOfficialScore: false,
     statement: "This receipt validates corpus structure and content only. It is not an official benchmark score or leaderboard result.",
   };
+  const semanticBoundary = {
+    definition: "sha256(JSON.stringify(tasks.map(({id,officialScoreClaim,provenance}) => ({id,officialScoreClaim,provenance})))) in catalog order",
+    sha256: sha256(Buffer.from(JSON.stringify(
+      allTasks.tasks.map(({ id, officialScoreClaim, provenance }) => ({
+        id,
+        officialScoreClaim,
+        provenance,
+      })),
+    ))),
+  };
   const catalogValid = problems.length === 0;
   const sourceIndexValid = sourceIndexContentMismatches === 0;
   const passed = catalogValid && sourceIndexValid;
@@ -240,6 +250,7 @@ export async function validateCatalog(root = process.cwd()) {
     hashAlgorithm: "sha256",
     counts,
     officialScoreBoundary,
+    semanticBoundary,
     sourceIndexDrift: {
       mismatchCount: sourceIndexContentMismatches,
       sampleLimit: 10,

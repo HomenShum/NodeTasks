@@ -87,9 +87,11 @@ npm run proof
 
 `npm run proof` validates the committed receipt at [`proof/corpus-receipt.json`](proof/corpus-receipt.json). The `nodetasks.corpus-receipt/v1` receipt records corpus counts, SHA-256 hashes for the public catalog artifacts and schemas, an independent aggregate hash of the vendored NodeRoom tree, and any drift from the historical source index. It also records zero task, adapter, and local-proxy official-score claims. Product-path completion remains separate from any upstream official semantic score.
 
-The current receipt is intentionally **not** a clean pass. It reports `catalog-valid-with-known-source-index-drift`, `catalogValid: true`, `sourceIndexValid: false`, `passed: false`, and `releaseReady: false` with 16 mismatches and deterministic samples. Accordingly, `npm run proof` and `npm run check` exit nonzero. Fixing that gate requires a separately reviewed resnapshot/catalog rebuild; this registration does not bless or hide the pre-existing drift.
+The current receipt is a clean deterministic pass: `status: valid`, `catalogValid: true`, `sourceIndexValid: true`, `passed: true`, and `releaseReady: true`. Registration found and repaired 16 historical line-ending metadata mismatches through the existing catalog generator without changing vendored content, task IDs/order, score claims, or provenance. The receipt includes a semantic-boundary hash over those protected fields.
 
 After an intentional catalog refresh, run `npm run validate` to regenerate the deterministic receipt, inspect the diff, and then run `npm run check`.
+
+Set `NODETASKS_GENERATED_AT` to the current canonical ISO timestamp when a derived-only repair must preserve the catalog generation identity. The build rejects non-canonical timestamp overrides.
 
 ## Search The Tasks
 

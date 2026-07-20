@@ -1,11 +1,11 @@
 {
   "schemaVersion": "nodetasks.corpus-receipt/v1",
   "repository": "HomenShum/NodeTasks",
-  "status": "catalog-valid-with-known-source-index-drift",
+  "status": "valid",
   "catalogValid": true,
-  "sourceIndexValid": false,
-  "passed": false,
-  "releaseReady": false,
+  "sourceIndexValid": true,
+  "passed": true,
+  "releaseReady": true,
   "hashAlgorithm": "sha256",
   "counts": {
     "searchableTasks": 9155,
@@ -20,7 +20,7 @@
     "savedViews": 9,
     "taskBundles": 9,
     "tags": 2428,
-    "sourceIndexContentMismatches": 16
+    "sourceIndexContentMismatches": 0
   },
   "officialScoreBoundary": {
     "officialScoreClaim": false,
@@ -31,81 +31,14 @@
     "productPathCompletionIsOfficialScore": false,
     "statement": "This receipt validates corpus structure and content only. It is not an official benchmark score or leaderboard result."
   },
+  "semanticBoundary": {
+    "definition": "sha256(JSON.stringify(tasks.map(({id,officialScoreClaim,provenance}) => ({id,officialScoreClaim,provenance})))) in catalog order",
+    "sha256": "c6f046baeb7cd5fa6bac7ea0695922696e23e66aaa7c52a3ccc03daf4f3a35b3"
+  },
   "sourceIndexDrift": {
-    "mismatchCount": 16,
+    "mismatchCount": 0,
     "sampleLimit": 10,
-    "samples": [
-      {
-        "path": "upstream/noderoom/convex/agentStepJournal.ts",
-        "indexedBytes": 1516,
-        "actualBytes": 1465,
-        "indexedSha256": "5ec732b99ccadd655d6af37818a3261600f7f01acb5cca324ecf99700b12019f",
-        "actualSha256": "e76bc0d77f6e5e2c6a49f84bc52731b6a4cf73c6ab705b2cfaba60470ba4eaaf"
-      },
-      {
-        "path": "upstream/noderoom/convex/agentStepJournalClient.ts",
-        "indexedBytes": 1470,
-        "actualBytes": 1429,
-        "indexedSha256": "89639b0c05eb8b61fe642e1c43e084ad05045897900e408a9c7cbee0cf403428",
-        "actualSha256": "099c9731b42cad88d5d24ec3a7c69e1911a6b475cf0a05383321fa95bf095222"
-      },
-      {
-        "path": "upstream/noderoom/convex/agentSteps.ts",
-        "indexedBytes": 4743,
-        "actualBytes": 4663,
-        "indexedSha256": "36b5690b2cf59b4215a59de61f50ee41a59886a46275b856a27a023d35ca914c",
-        "actualSha256": "5a715bedc5d7e0f54a6dcdfb6fe28cd2695f7fcc4ba78d099d1529521b96482e"
-      },
-      {
-        "path": "upstream/noderoom/convex/embeddingRunner.ts",
-        "indexedBytes": 1726,
-        "actualBytes": 1686,
-        "indexedSha256": "3294bcf6a55b44760b6957ef8aadf346cd5abbdd430b99f712593e35144159ba",
-        "actualSha256": "184aab788defc24e7301db8e2c0b7b20db507d4471bc20d0f5c617c1c08daa25"
-      },
-      {
-        "path": "upstream/noderoom/convex/embeddings.ts",
-        "indexedBytes": 8999,
-        "actualBytes": 8784,
-        "indexedSha256": "9b1927420fe10cf21613ae97210f5e0881fe34cd511701dc93a11d1fb89b213d",
-        "actualSha256": "a9298cbe065040f7bc90390ece9d9f4659d0a147629210051e62c849dc862c27"
-      },
-      {
-        "path": "upstream/noderoom/convex/locks.ts",
-        "indexedBytes": 8090,
-        "actualBytes": 7919,
-        "indexedSha256": "d03c58ffc60dcfb94d284ceb2050721473720de0a3b42b0bbe395d66d869517d",
-        "actualSha256": "a17c72dbd8e155d054f52e21c1d0ccde67aa86e49bfadd7a2184752fddb42911"
-      },
-      {
-        "path": "upstream/noderoom/convex/notebookGraph.ts",
-        "indexedBytes": 16080,
-        "actualBytes": 15726,
-        "indexedSha256": "27f7c8a10c5eac3b86b96e3983099096a224e0fa77abf675e8b2acaa143cc374",
-        "actualSha256": "3ba7d36cc115b3741554751950cb8a4fe6b2e9b11e4679955d2c00672e068e8f"
-      },
-      {
-        "path": "upstream/noderoom/docs/source-texts/noderl-loop-engineering-source.txt",
-        "indexedBytes": 24402,
-        "actualBytes": 24398,
-        "indexedSha256": "b3f5ecf26eb05ad9c16b6bdbd15517efde494c87af520602ccd33b32434712f5",
-        "actualSha256": "63273535f1e295293bc73b8116b0a2b115499dfcc5cc2a9a7f702e2f0368121b"
-      },
-      {
-        "path": "upstream/noderoom/scripts/qa-matrix.ts",
-        "indexedBytes": 17086,
-        "actualBytes": 16782,
-        "indexedSha256": "d62f59f64d7bf6b9feac76076dfa133ad140d54a86d2f842493ce477f8880970",
-        "actualSha256": "accb42ca82ff8e421290fe7da2ccea268339be0fde4a4ab5813e6e17a505937a"
-      },
-      {
-        "path": "upstream/noderoom/src/eval/architectureBudget.ts",
-        "indexedBytes": 5874,
-        "actualBytes": 5724,
-        "indexedSha256": "88281dedd71cc07a3def495f093277aa9c0c01635e688e1e8cbc802e78231e6f",
-        "actualSha256": "098c84f7c5c464ba6f820b0e95f92d759e80f7a2d437dedcf80cb961967bd0a6"
-      }
-    ]
+    "samples": []
   },
   "vendoredSource": {
     "root": "upstream/noderoom",
@@ -116,7 +49,7 @@
     {
       "path": "catalog/all-tasks.json",
       "bytes": 38692903,
-      "sha256": "eb4b43b3da9db8286c6f47d72849ccc3d036db879a0ed03f795174b8c57ebb45"
+      "sha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e"
     },
     {
       "path": "catalog/benchmark-proxy-adapters.json",
@@ -126,7 +59,7 @@
     {
       "path": "catalog/extracted-tasks.json",
       "bytes": 14047684,
-      "sha256": "b12b679ae73c7e3e0d3b1c708da6eb7c363f70300d1ac2ba2bf84269a2a101e0"
+      "sha256": "e3f207b5f41d99861b8c4d484da9b5d3af7df3eccac579f84ab4d1c7ea72c0c5"
     },
     {
       "path": "catalog/hierarchy.json",
@@ -146,7 +79,7 @@
     {
       "path": "catalog/ranked-tasks.json",
       "bytes": 38692906,
-      "sha256": "e60de4fd21276269f22a076e85473fd33662aa491e9e58430289f1617597f9c2"
+      "sha256": "d9d3d85ed8580c4fa9922a4ab0f2161f9cc909c28b89a357ae04e869bd23eb31"
     },
     {
       "path": "catalog/saved-views.json",
@@ -156,17 +89,17 @@
     {
       "path": "catalog/search-index.js",
       "bytes": 36080059,
-      "sha256": "222e2e1fa8f2c45e7d71201f6357eeb8109e2104bb77f8b7ad8b3c42203f6d34"
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
     },
     {
       "path": "catalog/search-index.jsonl",
       "bytes": 36080024,
-      "sha256": "157f48f0e2a04631f0811e24d56d99b7f397c14b91ba769b46d5e85cf3472379"
+      "sha256": "a287b78bf47a2a031fd60541fa11d2b9c87a50a328fe17d8b86943b14ac5ca29"
     },
     {
       "path": "catalog/source-files.json",
       "bytes": 292951,
-      "sha256": "cf8850550cea4a378b8805edd1c1db0daf61be887f2277032cda53837ead5096"
+      "sha256": "5e5bd59a4df35deb4efc5ca10b8fb80a214aedb7d95e0f6b572bea075557ca5b"
     },
     {
       "path": "catalog/tag-index.json",
@@ -191,12 +124,12 @@
     {
       "path": "catalog/task-index.json",
       "bytes": 4895,
-      "sha256": "15858b41650abadecbe424f44c13f0d493cea4128254583438f8d31fabb8d70e"
+      "sha256": "f749cd1a2d6ab4eeba4331ca9c38144800f9779d15acca420b478fa48daefd4c"
     },
     {
       "path": "schemas/corpus-receipt.schema.json",
-      "bytes": 5309,
-      "sha256": "a12231c9f08176d96cb64fd5068b2ab03a57f9a7b6c2b444572b92557b839d9b"
+      "bytes": 5754,
+      "sha256": "14be6e5873e23b55de90a8644fcaa1d55170680d54c4c9e90cb43d64b6d943dc"
     },
     {
       "path": "schemas/node-task.schema.json",
@@ -204,5 +137,5 @@
       "sha256": "a0e45f5f498587625d93720b64f6088bfe45fbbbf65fd02ae59c38ff17e17141"
     }
   ],
-  "corpusHash": "f4d897e12e80fdb782b7f6b9367b5882643e021bfa6f85334eb015a6c4565f3d"
+  "corpusHash": "7aa41b0fec4c32820ce3449a0624558c5ad56e6c0a377a3c958ff4e32f9bc797"
 }

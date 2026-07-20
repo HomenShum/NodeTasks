@@ -17,24 +17,29 @@ test("catalog validation reproduces the committed corpus receipt", async () => {
   const { problems, receipt } = await validateCatalog(root);
   assert.deepEqual(problems, []);
   assert.equal(receipt.schemaVersion, RECEIPT_SCHEMA_VERSION);
-  assert.equal(receipt.status, "catalog-valid-with-known-source-index-drift");
+  assert.equal(receipt.status, "valid");
   assert.equal(receipt.catalogValid, true);
-  assert.equal(receipt.sourceIndexValid, false);
-  assert.equal(receipt.passed, false);
-  assert.equal(receipt.releaseReady, false);
+  assert.equal(receipt.sourceIndexValid, true);
+  assert.equal(receipt.passed, true);
+  assert.equal(receipt.releaseReady, true);
   assert.equal(receipt.officialScoreBoundary.officialScoreClaim, false);
   assert.equal(receipt.officialScoreBoundary.tasksClaimingOfficialScore, 0);
   assert.equal(receipt.officialScoreBoundary.adaptersClaimingOfficialScore, 0);
   assert.equal(receipt.officialScoreBoundary.localProxyTasksClaimingOfficialScore, 0);
   assert.equal(receipt.officialScoreBoundary.productPathCompletionIsOfficialScore, false);
+  assert.equal(
+    receipt.semanticBoundary.sha256,
+    "c6f046baeb7cd5fa6bac7ea0695922696e23e66aaa7c52a3ccc03daf4f3a35b3",
+    "task IDs/order, official-score flags, and provenance must remain unchanged",
+  );
   assert.match(receipt.vendoredSource.sha256, /^[a-f0-9]{64}$/);
-  assert.ok(receipt.counts.sourceIndexContentMismatches > 0);
+  assert.equal(receipt.counts.sourceIndexContentMismatches, 0);
   assert.equal(
     receipt.sourceIndexDrift.mismatchCount,
     receipt.counts.sourceIndexContentMismatches,
   );
   assert.equal(receipt.sourceIndexDrift.sampleLimit, 10);
-  assert.equal(receipt.sourceIndexDrift.samples.length, 10);
+  assert.equal(receipt.sourceIndexDrift.samples.length, 0);
   assert.deepEqual(
     receipt.sourceIndexDrift.samples.map((sample) => sample.path),
     [...receipt.sourceIndexDrift.samples.map((sample) => sample.path)].sort(),

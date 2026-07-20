@@ -4,7 +4,7 @@
 
 The exact upstream NodeRoom commit was not recorded when the snapshot was created. This repository does not invent that missing revision. `catalog/source-files.json` preserves the historical per-file metadata. `npm run proof` independently hashes the current vendored files into a deterministic aggregate and records how many historical metadata entries differ, so existing drift remains visible without silently rebuilding the generated catalog.
 
-The current receipt reports `catalog-valid-with-known-source-index-drift`, `passed: false`, and `releaseReady: false` because 16 historical source-index entries differ from the vendored files. `npm run proof` and `npm run check` intentionally exit nonzero until a dedicated resnapshot rebuilds and reviews the catalog.
+The NodeKit registration found 16 historical metadata entries produced from pre-commit CRLF or mixed-line-ending worktree bytes. The committed vendored blobs had already been normalized to LF and had never changed after the initial corpus commit. The derived index was regenerated with the prior `generatedAt` preserved; only source byte/hash projections changed. No vendored content, task identity/order, score claim, or provenance field changed, and the current receipt is a clean pass.
 
 ## Ownership rules
 

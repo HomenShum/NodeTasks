@@ -14,6 +14,7 @@
     "hashAlgorithm",
     "counts",
     "officialScoreBoundary",
+    "semanticBoundary",
     "sourceIndexDrift",
     "vendoredSource",
     "contentHashes",
@@ -89,6 +90,17 @@
         "statement": {
           "const": "This receipt validates corpus structure and content only. It is not an official benchmark score or leaderboard result."
         }
+      },
+      "additionalProperties": false
+    },
+    "semanticBoundary": {
+      "type": "object",
+      "required": ["definition", "sha256"],
+      "properties": {
+        "definition": {
+          "const": "sha256(JSON.stringify(tasks.map(({id,officialScoreClaim,provenance}) => ({id,officialScoreClaim,provenance})))) in catalog order"
+        },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
       },
       "additionalProperties": false
     },
