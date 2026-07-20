@@ -5,7 +5,8 @@ support: active
 role: evaluation-corpus
 commandProfile: protocol
 
-canonicalFor: []
+canonicalFor:
+  - nodetasks.corpus-receipt
 
 consumes:
   - nodeplatform.repo-contract
