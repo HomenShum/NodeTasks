@@ -6,6 +6,7 @@ import { dirname, extname, join, relative } from "node:path";
 const root = process.cwd();
 const upstreamRoot = join(root, "upstream", "noderoom");
 const catalogDir = join(root, "catalog");
+const generatedAt = resolveGeneratedAt();
 
 const liveTasks = [
   task("nodeagent.storyboard.capture.v1", "public-node-repo", "NodeAgent", "https://github.com/HomenShum/NodeAgent", "agent engineer", "Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.", ["Clone NodeAgent.", "Install dependencies.", "Open docs/FEATURE_PROOF_STORYBOARD.md."], ["Run npm run clip:capture.", "Run nodeagent frame/local-dashboard smokes.", "Inspect README media and docs/eval receipts."], ["README GIF and MP4 exist.", "Storyboard names the proof contract.", "Frame and dashboard smoke receipts pass."], ["docs/walkthroughs/nodeagent-local-dashboard-walkthrough.gif", "docs/eval/nodeagent-frame-smoke.json", "docs/eval/nodeagent-local-dashboard-scaffold-smoke.json"], ["https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md", "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"], "public-node-repo"),
@@ -209,7 +210,7 @@ const provenanceIndex = buildProvenanceIndex(searchableTasks);
 const searchRecords = searchableTasks.map(toSearchRecord);
 const taskIndex = {
   schema: "nodetasks-index-v1",
-  generatedAt: new Date().toISOString(),
+  generatedAt,
   summary: {
     liveInteractionTasks: liveTasks.length,
     extractedTasks: extractedTasks.length,
@@ -1502,4 +1503,13 @@ async function writeText(path, value) {
 
 function rel(path) {
   return relative(root, path).replace(/\\/g, "/");
+}
+
+function resolveGeneratedAt() {
+  const override = process.env.NODETASKS_GENERATED_AT?.trim();
+  if (!override) return new Date().toISOString();
+  if (new Date(override).toISOString() !== override) {
+    throw new Error("NODETASKS_GENERATED_AT must be a canonical ISO timestamp");
+  }
+  return override;
 }

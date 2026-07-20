@@ -11,10 +11,17 @@
   },
   "scripts": {
     "build:catalog": "node scripts/build-catalog.mjs",
+    "check": "npm run doctor && npm test && npm run proof",
     "clip:capture": "node scripts/capture-storyboard.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "proof": "node scripts/validate-catalog.mjs --check-receipt",
     "search": "node scripts/search-tasks.mjs",
     "streamlit": "python -m streamlit run apps/nodetasks_streamlit.py",
-    "validate": "node scripts/validate-catalog.mjs"
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-catalog.mjs --write-receipt"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "keywords": [
     "benchmarks",

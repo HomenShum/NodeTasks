@@ -81,24 +81,24 @@
     },
     {
       "path": "upstream/noderoom/convex/agentStepJournal.ts",
-      "bytes": 1516,
+      "bytes": 1465,
       "ext": "ts",
       "category": "other",
-      "sha256": "5ec732b99ccadd655d6af37818a3261600f7f01acb5cca324ecf99700b12019f"
+      "sha256": "e76bc0d77f6e5e2c6a49f84bc52731b6a4cf73c6ab705b2cfaba60470ba4eaaf"
     },
     {
       "path": "upstream/noderoom/convex/agentStepJournalClient.ts",
-      "bytes": 1470,
+      "bytes": 1429,
       "ext": "ts",
       "category": "other",
-      "sha256": "89639b0c05eb8b61fe642e1c43e084ad05045897900e408a9c7cbee0cf403428"
+      "sha256": "099c9731b42cad88d5d24ec3a7c69e1911a6b475cf0a05383321fa95bf095222"
     },
     {
       "path": "upstream/noderoom/convex/agentSteps.ts",
-      "bytes": 4743,
+      "bytes": 4663,
       "ext": "ts",
       "category": "other",
-      "sha256": "36b5690b2cf59b4215a59de61f50ee41a59886a46275b856a27a023d35ca914c"
+      "sha256": "5a715bedc5d7e0f54a6dcdfb6fe28cd2695f7fcc4ba78d099d1529521b96482e"
     },
     {
       "path": "upstream/noderoom/convex/agentWorkflows.ts",
@@ -235,17 +235,17 @@
     },
     {
       "path": "upstream/noderoom/convex/embeddingRunner.ts",
-      "bytes": 1726,
+      "bytes": 1686,
       "ext": "ts",
       "category": "other",
-      "sha256": "3294bcf6a55b44760b6957ef8aadf346cd5abbdd430b99f712593e35144159ba"
+      "sha256": "184aab788defc24e7301db8e2c0b7b20db507d4471bc20d0f5c617c1c08daa25"
     },
     {
       "path": "upstream/noderoom/convex/embeddings.ts",
-      "bytes": 8999,
+      "bytes": 8784,
       "ext": "ts",
       "category": "other",
-      "sha256": "9b1927420fe10cf21613ae97210f5e0881fe34cd511701dc93a11d1fb89b213d"
+      "sha256": "a9298cbe065040f7bc90390ece9d9f4659d0a147629210051e62c849dc862c27"
     },
     {
       "path": "upstream/noderoom/convex/evalLedgerIngest.ts",
@@ -312,10 +312,10 @@
     },
     {
       "path": "upstream/noderoom/convex/locks.ts",
-      "bytes": 8090,
+      "bytes": 7919,
       "ext": "ts",
       "category": "other",
-      "sha256": "d03c58ffc60dcfb94d284ceb2050721473720de0a3b42b0bbe395d66d869517d"
+      "sha256": "a17c72dbd8e155d054f52e21c1d0ccde67aa86e49bfadd7a2184752fddb42911"
     },
     {
       "path": "upstream/noderoom/convex/loopAttempts.ts",
@@ -389,10 +389,10 @@
     },
     {
       "path": "upstream/noderoom/convex/notebookGraph.ts",
-      "bytes": 16080,
+      "bytes": 15726,
       "ext": "ts",
       "category": "other",
-      "sha256": "27f7c8a10c5eac3b86b96e3983099096a224e0fa77abf675e8b2acaa143cc374"
+      "sha256": "3ba7d36cc115b3741554751950cb8a4fe6b2e9b11e4679955d2c00672e068e8f"
     },
     {
       "path": "upstream/noderoom/convex/notebookProcessing.ts",
@@ -1999,10 +1999,10 @@
     },
     {
       "path": "upstream/noderoom/docs/source-texts/noderl-loop-engineering-source.txt",
-      "bytes": 24402,
+      "bytes": 24398,
       "ext": "txt",
       "category": "doc",
-      "sha256": "b3f5ecf26eb05ad9c16b6bdbd15517efde494c87af520602ccd33b32434712f5"
+      "sha256": "63273535f1e295293bc73b8116b0a2b115499dfcc5cc2a9a7f702e2f0368121b"
     },
     {
       "path": "upstream/noderoom/e2e/always-on-landing.spec.ts",
@@ -3896,10 +3896,10 @@
     },
     {
       "path": "upstream/noderoom/scripts/qa-matrix.ts",
-      "bytes": 17086,
+      "bytes": 16782,
       "ext": "ts",
       "category": "script",
-      "sha256": "d62f59f64d7bf6b9feac76076dfa133ad140d54a86d2f842493ce477f8880970"
+      "sha256": "accb42ca82ff8e421290fe7da2ccea268339be0fde4a4ab5813e6e17a505937a"
     },
     {
       "path": "upstream/noderoom/scripts/render-workflow-preview.ts",
@@ -4428,10 +4428,10 @@
     },
     {
       "path": "upstream/noderoom/src/eval/architectureBudget.ts",
-      "bytes": 5874,
+      "bytes": 5724,
       "ext": "ts",
       "category": "other",
-      "sha256": "88281dedd71cc07a3def495f093277aa9c0c01635e688e1e8cbc802e78231e6f"
+      "sha256": "098c84f7c5c464ba6f820b0e95f92d759e80f7a2d437dedcf80cb961967bd0a6"
     },
     {
       "path": "upstream/noderoom/src/eval/bankerToolBenchAdapter.ts",
@@ -4519,10 +4519,10 @@
     },
     {
       "path": "upstream/noderoom/src/eval/convexBoundaryPolicy.ts",
-      "bytes": 11289,
+      "bytes": 11002,
       "ext": "ts",
       "category": "other",
-      "sha256": "0819196d953f746dcbbb41922263769edf776814ec111bdae504212d7ef930b4"
+      "sha256": "92b6a3cb69cd078dcc5ef77db061b32aff0c893c1b0e73c684819313c3181973"
     },
     {
       "path": "upstream/noderoom/src/eval/convexDeployVerify.ts",
@@ -4554,10 +4554,10 @@
     },
     {
       "path": "upstream/noderoom/src/eval/evalTrustPolicy.ts",
-      "bytes": 3350,
+      "bytes": 3266,
       "ext": "ts",
       "category": "other",
-      "sha256": "994ec3b9a8767c1917104acfe226121dfc302ccba315ebe103aa156e748ad6df"
+      "sha256": "c59be4b8a2b69142a386790a0e68df565231dba9777211cc86a5d24f5a03dc85"
     },
     {
       "path": "upstream/noderoom/src/eval/freshRoomProofReceipts.ts",
@@ -4575,10 +4575,10 @@
     },
     {
       "path": "upstream/noderoom/src/eval/improvementArtifacts.ts",
-      "bytes": 5587,
+      "bytes": 5418,
       "ext": "ts",
       "category": "other",
-      "sha256": "42de2b27619d36b29bae4408b0efc7c975781c3b338b17683a6624e28d46094e"
+      "sha256": "381b263d1f9f7a28c44a9eb1041f0eae43ce65b9356a5833e0d3607486c34d0c"
     },
     {
       "path": "upstream/noderoom/src/eval/officialBenchmarkReadiness.ts",
@@ -5366,10 +5366,10 @@
     },
     {
       "path": "upstream/noderoom/src/nodeagent/core/journal.ts",
-      "bytes": 3205,
+      "bytes": 3142,
       "ext": "ts",
       "category": "other",
-      "sha256": "af0e70fb2c1688c44bceffd5a1d168a6bb09c5198dd057d9db9ff598408b7ae8"
+      "sha256": "1816dff35caf8811a85bb1829f7df3244689de6cc082569b8058d0f2cc1469cf"
     },
     {
       "path": "upstream/noderoom/src/nodeagent/core/memory.ts",
@@ -6122,10 +6122,10 @@
     },
     {
       "path": "upstream/noderoom/src/nodeagent/skills/finance/creditRatios.ts",
-      "bytes": 11400,
+      "bytes": 11215,
       "ext": "ts",
       "category": "other",
-      "sha256": "7fc3a69ba667e08ef278e5f7aae2216ff2acaf145792363a9a61205adecbaf43"
+      "sha256": "cf87020d855f7385035fcf32468bea26747b604bd671ed861c84dfa64111b528"
     },
     {
       "path": "upstream/noderoom/src/nodeagent/skills/finance/milestonePlanner.ts",
@@ -7886,10 +7886,10 @@
     },
     {
       "path": "upstream/noderoom/tests/creditRatios.test.ts",
-      "bytes": 6394,
+      "bytes": 6279,
       "ext": "ts",
       "category": "test",
-      "sha256": "e81c55f1edff42aee6eeca0acdd374d8a1919bb54409170d4305cdae6de75cb7"
+      "sha256": "68e74b1dd8a6c0e004186a9c1a991b08c40b618913c18b5934139c2da2878ef3"
     },
     {
       "path": "upstream/noderoom/tests/elementVersions.test.ts",
