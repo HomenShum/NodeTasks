@@ -64,7 +64,14 @@ test("NodeKit registration stays corpus-only", async () => {
   const manifest = await readFile(resolve(root, "nodekit.yaml"), "utf8");
   assert.match(manifest, /^schemaVersion:\s*nodekit\.repo\/v1\s*$/m);
   assert.match(manifest, /^commandProfile:\s*protocol\s*$/m);
-  assert.match(manifest, /^canonicalFor:\s*\[\]\s*$/m);
+  assert.match(
+    manifest,
+    /^canonicalFor:\s*\r?\n\s+-\s+nodetasks\.corpus-receipt\s*\r?\n\s*\r?\nconsumes:/m,
+  );
+  assert.doesNotMatch(
+    manifest,
+    /^canonicalFor:[\s\S]*?^\s+-\s+nodeagent\./m,
+  );
   assert.equal(existsSync(resolve(root, "nodeagent.yaml")), false);
 
   const declarationModes = [...manifest.matchAll(/^\s+mode:\s*(\S+)\s*$/gm)]

@@ -37,9 +37,11 @@ const checks = [
     detail: "nodeagent.yaml must remain absent",
   },
   {
-    id: "no-canonical-runtime-ownership",
-    passed: /^canonicalFor:\s*\[\]\s*$/m.test(manifest),
-    detail: "vendored runtime contracts are provenance only",
+    id: "corpus-receipt-only-ownership",
+    passed:
+      /^canonicalFor:\s*\r?\n\s+-\s+nodetasks\.corpus-receipt\s*\r?\n\s*\r?\nconsumes:/m.test(manifest) &&
+      !/^canonicalFor:[\s\S]*?^\s+-\s+nodeagent\./m.test(manifest),
+    detail: "NodeTasks owns its corpus receipt; vendored runtime contracts remain provenance only",
   },
 ];
 
