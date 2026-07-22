@@ -1,0 +1,53 @@
+schemaVersion: nodekit.repo/v1
+repository: HomenShum/NodeTasks
+lifecycle: preview
+support: active
+role: evaluation-corpus
+commandProfile: protocol
+canonicalFor: [nodetasks.corpus-receipt]
+consumes:
+  - nodeplatform.repo-contract
+  - nodeagent.agent-run
+  - nodeagent.provider-pi
+  - nodeagent.trace-workpaper
+commands:
+  doctor: { script: validate, mode: finite }
+  check: { script: validate, mode: finite }
+  proof: { script: validate, mode: finite }
+noKey:
+  status: certified
+  command: npm run validate
+  externalAccountsRequired: 0
+  disclosure: Catalog validation is deterministic; optional source refresh and browser capture are separate.
+environment:
+  contractVersion: nodeplatform.env/v1
+  status: not-applicable
+proof:
+  command: npm run validate
+  receiptSchema: nodetasks.corpus-receipt/v1
+contractDeclarations:
+  - concept: nodeagent.agent-run
+    signature: agent-run-result
+    path: upstream/noderoom/src/eval/proofloopAgentAdapters.ts
+    mode: migration-copy
+    origin: nodeagent.agent-run
+    reason: Frozen upstream corpus fixture; not an active runtime authority.
+  - concept: nodeagent.provider-pi
+    signature: agent-model-adapter
+    path: upstream/noderoom/src/nodeagent/models/piAiAdapter.ts
+    mode: migration-copy
+    origin: nodeagent.provider-pi
+    reason: Frozen upstream corpus fixture; not an active provider implementation.
+  - concept: nodeagent.trace-workpaper
+    signature: trace-schema
+    path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+    mode: migration-copy
+    origin: nodeagent.trace-workpaper
+    reason: Frozen upstream corpus fixture retained for benchmark reproduction.
+  - concept: nodeagent.trace-workpaper
+    signature: trace-tool-receipt
+    path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+    mode: migration-copy
+    origin: nodeagent.trace-workpaper
+    reason: Frozen upstream corpus fixture retained for benchmark reproduction.
+architectureExceptions: []
