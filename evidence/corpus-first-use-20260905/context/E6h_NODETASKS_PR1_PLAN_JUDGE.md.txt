@@ -1,0 +1,23 @@
+# NodeTasks PR1 independent plan judgment
+
+Mode: Builder. **APPROVED for the unchanged source export and first-use baseline, with the execution constraints below.** A developer needs to find a useful public task, understand its scoring limits, download its bundle and reproduce a local answer. The proposed journey tests that job and keeps failure evidence intact. This is a static plan review, not implementation or product acceptance.
+
+**Re your request:** make each repo usable and ready for handoff through planner-worker-judge. This reviews the existing NodeTasks receipt producer and the smallest metadata/path repair plan before running it.
+
+12/12 bounded review checks pass. All 30 packet artifacts and eight directly reread PR1 source blobs match their bindings. Actual primary HEAD/ref/index-entry/status/worktree guards match the reviewed packet. PR1 remains `8e9b6495ba3bf716549825d05f48faaefc73dcfb`; primary PR2 is untouched. No source export, dependency installation, application or provider call occurred.
+
+The proposed metadata scope is correct: preserve NodeTasks ownership of its independent corpus receipt, add the three registered NodeAgent consumers, and classify four frozen signatures as `migration-copy` with existing origins. Correct the corresponding stale prose/tests and explicit owned-port handoff. No registry, package, catalog, vendor, schema or UI rewrite is warranted by this evidence.
+
+The validator defect is concrete: its assertion helper collects errors, then lines 168–179 still perform the source read. A prefix match does not prevent traversal or followed links. A failing exit code therefore cannot prove safety. Keep this single indexed-source read as the repair owner, conditional on a harmless baseline reproduction.
+
+Required execution constraints:
+
+1. **Isolate app environment.** Source lines 379/422 inherit `NODETASKS_CATALOG` and `NODEAGENT_ENDPOINT`; line 567 can POST the submitted chat. Exclude the endpoint variable and fix/exclude the catalog variable in the child environment without reading their current values. Verify an empty rendered endpoint before asking a question. Preserve parent configuration and keep application egress local.
+2. **Use only an owned harmless sentinel.** Place it outside the allowed source subtree but within the new scratch root. Verify its resolved location before creation. A read observer must show the original read and zero forbidden reads after correction. Probe traversal, existing blocked-name rules and a supported link/reparse case. Unsupported link creation stays untested.
+3. **Stop before unsafe reads.** Enforce canonical relative paths and physical regular-file containment before existence/content reads. Cover parent links and Windows path forms, retaining the public-source exclusions. Reuse existing Node APIs. Frozen input guards bound this proof; they do not claim protection against a hostile concurrent filesystem swap.
+4. **Keep baseline truth.** Run unchanged doctor/tests/proof and current NodeKit checker first, retaining the expected three missing-consumer errors. Do not regenerate receipt/catalog bytes to turn a failed baseline green. Modify copied fixture bytes only, preserving every failure.
+5. **Bind the actual consumer.** Record archive/extracted bytes, dependency versions, launcher/registry inputs, exact selected tasks, top-N semantics, real downloaded/reopened JSON and cited local answer. Declare finite burst/sustained budgets. Capture six widths, keyboard and enlarged text; any UI repair needs a separate genuine labelled before boundary.
+
+The receipt remains unsigned corpus integrity evidence: it hashes catalog/schema bytes and indexed source bytes, not the app, installed dependencies, Git identity, executed JSON Schema validation or an official score. `doctor` and NodeKit conformance have distinct claims. Do not certify endpoint-mode behavior from this local-only journey. All full grades and human acceptance remain unresolved.
+
+Root may start the exact PR1 unchanged export/baseline with these constraints. Implementation remains conditional on the frozen actual failure and the accepted small owner list. [Structured verdict](E6h_NODETASKS_PR1_PLAN_JUDGE.json), [source/packet bindings](E6h-nodetasks-pr1-plan-judge/manifest.json), and [original plan](E6h_NODETASKS_PR1_REVIEW_PLAN.md).

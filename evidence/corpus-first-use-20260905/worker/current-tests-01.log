@@ -1,0 +1,180 @@
+
+> nodetasks@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: catalog validation reproduces the committed corpus receipt
+ok 1 - catalog validation reproduces the committed corpus receipt
+  ---
+  duration_ms: 2252.6882
+  type: 'test'
+  ...
+# Subtest: NodeKit registration stays corpus-only
+not ok 2 - NodeKit registration stays corpus-only
+  ---
+  duration_ms: 1.3435
+  type: 'test'
+  location: 'D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\test\\corpus-validation.test.mjs:69:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input was expected to not match the regular expression /^canonicalFor:[\s\S]*?^\s+-\s+nodeagent\./m. Input:
+    
+    'schemaVersion: nodekit.repo/v1\n' +
+      'repository: HomenShum/NodeTasks\n' +
+      'lifecycle: preview\n' +
+      'support: active\n' +
+      'role: evaluation-corpus\n' +
+      'commandProfile: protocol\n' +
+      '\n' +
+      'canonicalFor:\n' +
+      '  - nodetasks.corpus-receipt\n' +
+      '\n' +
+      'consumes:\n' +
+      '  - nodeplatform.repo-contract\n' +
+      '  - nodeagent.agent-run\n' +
+      '  - nodeagent.provider-pi\n' +
+      '  - nodeagent.trace-workpaper\n' +
+      '\n' +
+      'commands:\n' +
+      '  doctor: { script: doctor, mode: finite }\n' +
+      '  check: { script: check, mode: finite }\n' +
+      '  proof: { script: proof, mode: finite }\n' +
+      '\n' +
+      'noKey:\n' +
+      '  status: certified\n' +
+      '  command: npm run proof\n' +
+      '  externalAccountsRequired: 0\n' +
+      '  disclosure: Corpus validation is deterministic and requires no model provider, deployment, benchmark account, or official scorer.\n' +
+      '\n' +
+      'environment:\n' +
+      '  contractVersion: nodeplatform.env/v1\n' +
+      '  status: not-applicable\n' +
+      '\n' +
+      'proof:\n' +
+      '  command: npm run proof\n' +
+      '  receiptSchema: nodetasks.corpus-receipt/v1\n' +
+      '\n' +
+      'contractDeclarations:\n' +
+      '  - concept: nodeagent.agent-run\n' +
+      '    signature: agent-run-result\n' +
+      '    path: upstream/noderoom/src/eval/proofloopAgentAdapters.ts\n' +
+      '    mode: migration-copy\n' +
+      '    origin: nodeagent.agent-run\n' +
+      '    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.\n' +
+      '  - concept: nodeagent.provider-pi\n' +
+      '    signature: agent-model-adapter\n' +
+      '    path: upstream/noderoom/src/nodeagent/models/piAiAdapter.ts\n' +
+      '    mode: migration-copy\n' +
+      '    origin: nodeagent.provider-pi\n' +
+      '    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.\n' +
+      '  - concept: nodeagent.trace-workpaper\n' +
+      '    signature: trace-schema\n' +
+      '    path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts\n' +
+      '    mode: migration-copy\n' +
+      '    origin: nodeagent.trace-workpaper\n' +
+      '    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.\n' +
+      '  - concept: nodeagent.trace-workpaper\n' +
+      '    signature: trace-tool-receipt\n' +
+      '    path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts\n' +
+      '    mode: migration-copy\n' +
+      '    origin: nodeagent.trace-workpaper\n' +
+      '    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.\n' +
+      '\n' +
+      'architectureExceptions: []\n'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    schemaVersion: nodekit.repo/v1
+    repository: HomenShum/NodeTasks
+    lifecycle: preview
+    support: active
+    role: evaluation-corpus
+    commandProfile: protocol
+    
+    canonicalFor:
+      - nodetasks.corpus-receipt
+    
+    consumes:
+      - nodeplatform.repo-contract
+      - nodeagent.agent-run
+      - nodeagent.provider-pi
+      - nodeagent.trace-workpaper
+    
+    commands:
+      doctor: { script: doctor, mode: finite }
+      check: { script: check, mode: finite }
+      proof: { script: proof, mode: finite }
+    
+    noKey:
+      status: certified
+      command: npm run proof
+      externalAccountsRequired: 0
+      disclosure: Corpus validation is deterministic and requires no model provider, deployment, benchmark account, or official scorer.
+    
+    environment:
+      contractVersion: nodeplatform.env/v1
+      status: not-applicable
+    
+    proof:
+      command: npm run proof
+      receiptSchema: nodetasks.corpus-receipt/v1
+    
+    contractDeclarations:
+      - concept: nodeagent.agent-run
+        signature: agent-run-result
+        path: upstream/noderoom/src/eval/proofloopAgentAdapters.ts
+        mode: migration-copy
+        origin: nodeagent.agent-run
+        reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+      - concept: nodeagent.provider-pi
+        signature: agent-model-adapter
+        path: upstream/noderoom/src/nodeagent/models/piAiAdapter.ts
+        mode: migration-copy
+        origin: nodeagent.provider-pi
+        reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+      - concept: nodeagent.trace-workpaper
+        signature: trace-schema
+        path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+        mode: migration-copy
+        origin: nodeagent.trace-workpaper
+        reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+      - concept: nodeagent.trace-workpaper
+        signature: trace-tool-receipt
+        path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+        mode: migration-copy
+        origin: nodeagent.trace-workpaper
+        reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+    
+    architectureExceptions: []
+    
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/ProjectRecovery/nodetasks-current-consumer-20260905/test/corpus-validation.test.mjs:77:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: a maintainer rejects unsafe source entries before reading any owned sentinel
+ok 3 - a maintainer rejects unsafe source entries before reading any owned sentinel
+  ---
+  duration_ms: 31672.0442
+  type: 'test'
+  ...
+# Parent link/junction created and tested
+# Subtest: a reviewer preserves the good receipt through stale, malformed and drifting inputs, then concurrent and sustained reads
+ok 4 - a reviewer preserves the good receipt through stale, malformed and drifting inputs, then concurrent and sustained reads
+  ---
+  duration_ms: 51402.3316
+  type: 'test'
+  ...
+# 4 concurrent +3 later frozen reads; controlled pre-read drift rejected. No hostile filesystem-swap guarantee.
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 85445.7658

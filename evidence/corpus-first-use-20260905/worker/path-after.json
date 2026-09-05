@@ -1,0 +1,48 @@
+{
+  "at": "2026-09-05T17:13:11.759Z",
+  "status": "FORBIDDEN_READS_PREVENTED_ON_REPAIRED_VALIDATOR",
+  "source": "D:/ProjectRecovery/nodetasks-current-consumer-20260905",
+  "fixture": "D:\\ProjectRecovery\\nodetasks-path-fixture-20260905",
+  "validatorSha256": "84c16236957f1c249a85d70ef6ec314a064001117c6846d1e92463fbcfdb070f",
+  "results": [
+    {
+      "label": "traversal",
+      "indexedPath": "upstream/noderoom/../../fixture-sentinel.txt",
+      "actualSentinelReads": 0,
+      "reads": [],
+      "problems": [
+        "source path is canonical public vendored provenance: upstream/noderoom/../../fixture-sentinel.txt"
+      ],
+      "catalogPassed": false,
+      "sourceIndexValid": false
+    },
+    {
+      "label": "blockedName",
+      "indexedPath": "upstream/noderoom/secret-fixture.txt",
+      "actualSentinelReads": 0,
+      "reads": [],
+      "problems": [
+        "source path is canonical public vendored provenance: upstream/noderoom/secret-fixture.txt"
+      ],
+      "catalogPassed": false,
+      "sourceIndexValid": false
+    },
+    {
+      "label": "parentLink",
+      "indexedPath": "upstream/noderoom/linked-parent/regular.txt",
+      "actualSentinelReads": 0,
+      "reads": [],
+      "problems": [
+        "source file is a contained regular file: upstream/noderoom/linked-parent/regular.txt (link or nonregular source path)"
+      ],
+      "catalogPassed": false,
+      "sourceIndexValid": false
+    }
+  ],
+  "parentJunctionSupported": true,
+  "parentJunctionError": null,
+  "protectedSourceUnchanged": true,
+  "protectedSourceFiles": 1272,
+  "fixtureIndexRestored": true,
+  "scope": "The three retained known harmless sentinels were replayed against the current validator. Original fixture index restored exactly; sentinel/link bytes remain unchanged. No outside/private file was read. The wrapper calls the original filesystem read unchanged; exit status is not used as a proxy for read safety. No hostile concurrent filesystem-swap guarantee."
+}

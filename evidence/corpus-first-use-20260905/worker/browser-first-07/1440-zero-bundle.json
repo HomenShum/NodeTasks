@@ -1,0 +1,15 @@
+{
+  "id": "proofloop-governance-gates",
+  "title": "ProofLoop governance gates",
+  "persona": "Benchmark maintainer",
+  "description": "Benchmark gates, verifier boundaries, scaffold doctrine, and anti-reward-hacking checks.",
+  "sort": "difficulty",
+  "query": "proofloop benchmark official scorer verifier gate doctrine",
+  "taskCount": 0,
+  "estimatedStepTotal": 0,
+  "maxDifficultyScore": 0,
+  "costTiers": {},
+  "domains": {},
+  "taskIds": [],
+  "tasks": []
+}

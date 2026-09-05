@@ -1,0 +1,1472 @@
+{
+  "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-headerNoPadding",
+      "label": "",
+      "text": "keyboard_double_arrow_left",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Persona",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Saved view",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "testId": "stTextInputField",
+      "label": "Search",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Sort",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Domain",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Kind",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Difficulty",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Cost tier",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "testId": "stTextInputField",
+      "label": "Tag contains",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "testId": null,
+      "label": "Rows",
+      "text": "",
+      "type": "range",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Help for NodeAgent endpoint",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "testId": "stTextInputField",
+      "label": "NodeAgent endpoint",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-header",
+      "label": "",
+      "text": "Deploy",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stMainMenuButton",
+      "label": "Main menu",
+      "text": "",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "DIV",
+      "role": "tab",
+      "testId": "stTab",
+      "label": null,
+      "text": "Search",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "DIV",
+      "role": "tab",
+      "testId": "stTab",
+      "label": null,
+      "text": "Hierarchy",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "DIV",
+      "role": "tab",
+      "testId": "stTab",
+      "label": null,
+      "text": "Saved views",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "DIV",
+      "role": "tab",
+      "testId": "stTab",
+      "label": null,
+      "text": "Provenance",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "DIV",
+      "role": "tab",
+      "testId": "stTab",
+      "label": null,
+      "text": "NodeAgent",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "DIV",
+      "role": "tab",
+      "testId": "stTab",
+      "label": null,
+      "text": "Persona tests",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "INPUT",
+      "role": "combobox",
+      "testId": null,
+      "label": "Inspect task",
+      "text": "",
+      "type": "text",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": null,
+      "label": "Open",
+      "text": "",
+      "type": "button",
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download filtered JSON",
+      "type": null,
+      "visible": true
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download first-hour bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download cheap-spreadsheetbench-models bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download browser-proof-surfaces bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download finance-evidence-work bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download proofloop-governance-gates bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download nodeagent-runtime-spine bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download public-node-repo-proofs bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download collaboration-interiors bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-secondary",
+      "label": "",
+      "text": "Download official-score-boundaries bundle",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Copy to clipboard",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stChatInputSubmitButton",
+      "label": "Send message",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Show/hide columns",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Download as CSV",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Search",
+      "text": "",
+      "type": null,
+      "visible": false
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "testId": "stBaseButton-elementToolbar",
+      "label": "Fullscreen",
+      "text": "",
+      "type": null,
+      "visible": false
+    }
+  ]
+}

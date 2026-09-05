@@ -1,0 +1,20 @@
+{
+  "startedAt": "2026-09-05T17:14:44.888059+00:00",
+  "finishedAt": "2026-09-05T17:14:45.789162+00:00",
+  "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+  "argv": [
+    "C:/nvm4w/nodejs/node.exe",
+    "D:/VSCode Projects/node-platform/.worktrees/project-consolidation-20260904/src/cli.mjs",
+    "repo",
+    "check",
+    "--repo-root",
+    "D:/ProjectRecovery/nodetasks-current-consumer-20260905",
+    "--json"
+  ],
+  "timeoutSeconds": 30,
+  "timedOut": false,
+  "exitCode": 0,
+  "seconds": 0.9059999999590218,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "nodekit-current-check.log"
+}

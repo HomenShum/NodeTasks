@@ -1,0 +1,19 @@
+from pathlib import Path
+import datetime,json,os,subprocess,sys,time
+out=Path(__file__).parent
+root=Path('D:/ProjectRecovery/nodetasks-current-consumer-20260905')
+label=sys.argv[1];budget=int(sys.argv[2]);args=sys.argv[3:]
+env=os.environ.copy()
+for name in list(env):
+    if name in ['NODETASKS_CATALOG','NODEAGENT_ENDPOINT'] or name.startswith(('OPENAI_','OPENROUTER_','ANTHROPIC_','CONVEX_','VITE_')):env.pop(name,None)
+start=time.monotonic();at=datetime.datetime.now(datetime.timezone.utc).isoformat();timed=False
+with (out/(label+'.log')).open('xb') as log:
+    child=subprocess.Popen(args,cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NO_WINDOW)
+    try:code=child.wait(timeout=budget)
+    except subprocess.TimeoutExpired:
+        timed=True
+        subprocess.run(['taskkill','/PID',str(child.pid),'/T','/F'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,creationflags=subprocess.CREATE_NO_WINDOW)
+        code=child.wait()
+receipt={'startedAt':at,'finishedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'cwd':str(root),'argv':args,'timeoutSeconds':budget,'timedOut':timed,'exitCode':code,'seconds':time.monotonic()-start,'environment':'Remove endpoint/catalog/provider overrides by name from child only; no values inspected','log':label+'.log'}
+(out/(label+'.command.json')).write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(receipt));sys.exit(0 if code==0 and not timed else 1)

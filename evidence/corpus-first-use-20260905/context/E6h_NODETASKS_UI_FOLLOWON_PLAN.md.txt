@@ -1,0 +1,15 @@
+# NodeTasks bounded UI follow-on proposal
+
+An evaluator needs the file they download to match the snapshot they chose, and must be able to read its task counts. The current first-use proof completes after settling, but rapid native edits can download earlier rows. This plan remains unimplemented pending parent review.
+
+The six actual 3px boundaries are in `E6h-nodetasks-ui-findings-before-label-correction/`: `metric-summary-{390,1440}`, `metric-task-{390,1440}` and `download-ready-{390,1440}`. All six PNGs were viewed; each overlay restored exact DOM. Original above-region labels overlapped adjacent copy and are retained separately. Current application SHA-256 is `0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1`.
+
+CHANGE A changes only the existing metric foreground style. The owned dark background currently inherits rgb(49,51,63) text against rgb(15,20,25); summary and selected-task cards are affected. Preserve their counts, dimensions, background and delta meaning.
+
+CHANGE B changes only the existing filtered export owner. Four ordinary input-blur/download attempts returned 15 prior rows while the app was running; the eventual filter had zero rows. The download widget owns bytes prepared in the previous Python run. Streamlit documents this race and recommends a preparation step; `on_click="ignore"` alone does not stop another widget's pending rerun. [Official download behavior](https://docs.streamlit.io/develop/api-reference/widgets/st.download_button).
+
+Use a Prepare filtered JSON action that receives the submitted input values, renders the actual prepared row count and filter/Rows context, then offers Download prepared JSON with the unchanged literal JSON bytes. Use the existing native preparation-button pattern and no extra persistence layer. A later completed filter rerun removes the prepared action. A download during a pending edit is explicitly the earlier prepared snapshot; never imply it represents uncommitted inputs. Verify the native sequence and exact file data, rather than claiming the race is solved from a disabled flag alone.
+
+Owners: `apps/nodetasks_streamlit.py`, the existing first-use proof, `HANDOFF.md`, and new bounded evidence. Required proof: burst input/prepare/download, zero results and recovery, repeated exports and sustained history, six widths, keyboard/200% text, computed contrast and actual pixels. No new dependency/API, catalog regeneration, source payload change, provider call or benchmark execution.
+
+The static HTML selected-result overflow (270px at320,200px at390) is a separate inherited finding. Whole-product grades remain null.

@@ -1,0 +1,128 @@
+from pathlib import Path
+import datetime, difflib, hashlib, json, re, subprocess, tarfile
+
+P = Path(__file__).resolve().parent
+R = Path('D:/ProjectRecovery/nodetasks-current-consumer-20260905')
+T = R / 'evidence/corpus-first-use-20260905'
+O = P / 'E6h-nodetasks-first-use-judge'
+O.mkdir(exist_ok=True)
+sha = lambda b: hashlib.sha256(b).hexdigest()
+blob = lambda b: hashlib.sha1(f'blob {len(b)}\0'.encode() + b).hexdigest()
+def read(p): return json.loads(p.read_text(encoding='utf-8-sig'))
+def dump(name, value):
+    (O/name).write_text(json.dumps(value, ensure_ascii=False, indent=2)+'\n', encoding='utf-8', newline='\n')
+def bind(p, name):
+    b=p.read_bytes()
+    return dict(path=name, bytes=len(b), sha256=sha(b), gitBlobSha1=blob(b))
+checks=[]
+def check(name, ok, detail):
+    checks.append(dict(name=name, passed=bool(ok), detail=detail))
+
+receipt=read(P/'E6h_NODETASKS_FIRST_USE_REPAIR_RECEIPT.json')
+freeze=read(T/'worker/source-freeze.json')
+manifest=read(T/'manifest.json')
+check('receipt identity', sha((P/'E6h_NODETASKS_FIRST_USE_REPAIR_RECEIPT.json').read_bytes())=='d6b4056ec5739b6191f2bc3639c62a3cdffc3bac591bca923f473a0fc4486470', receipt['sourceDigest'])
+check('source freeze and manifest identity', sha((T/'worker/source-freeze.json').read_bytes())==receipt['sourceFreezeSha256'] and sha((T/'manifest.json').read_bytes())==receipt['manifestSha256'], [receipt['sourceFreezeSha256'],receipt['manifestSha256']])
+source=[bind(R/x['path'],x['path']) for x in freeze['source']]
+digest=sha(json.dumps(source, sort_keys=True, ensure_ascii=False,separators=(',',':')).encode())
+check('all nine authored raw SHA and Git blobs', source==freeze['source']==receipt['source'] and digest==receipt['sourceDigest'],digest)
+check('nine authored files are LF and no Git export',all(b'\r' not in (R/x['path']).read_bytes() for x in source) and not (R/'.git').exists(),9)
+protected=[bind(R/x['path'],x['path']) for x in freeze['protected']]
+check('1272 protected source files exact',protected==freeze['protected'] and len(protected)==1272,len(protected))
+dump('source-current-bindings.json',dict(source=source,protected=protected,sourceDigest=digest))
+
+archive=Path('D:/ProjectRecovery/nodetasks-current-consumer-20260905-source.tar.gz')
+archive_rows=[]; changed=[]; diffs=[]
+with tarfile.open(archive,'r:gz') as tf:
+    for member in tf.getmembers():
+        if not member.isfile(): continue
+        b=tf.extractfile(member).read()
+        rel=member.name.split('/',1)[1]
+        if not rel: continue
+        archive_rows.append(dict(path=rel,bytes=len(b),sha256=sha(b),gitBlobSha1=blob(b),mode=('100755' if member.mode & 0o111 else '100644')))
+        current=(R/rel).read_bytes()
+        if current!=b: changed.append(rel)
+        if rel in {x['path'] for x in source}:
+            before=O/'source-before'/(rel+'.txt'); before.parent.mkdir(parents=True,exist_ok=True); before.write_bytes(b)
+            diffs.extend(difflib.unified_diff(b.decode('utf-8').splitlines(True),current.decode('utf-8').splitlines(True),'before/'+rel,'candidate/'+rel))
+for x in source:
+    if x['path'] not in {a['path'] for a in archive_rows}:
+        diffs.extend(difflib.unified_diff([], (R/x['path']).read_text(encoding='utf-8').splitlines(True),'before/'+x['path'],'candidate/'+x['path']))
+export=read(P/'E6h-nodetasks-source-export-01/source-export.json')
+check('immutable PR1 archive and all1279 source entries',sha(archive.read_bytes())=='bdfd468b591583546358d198d3b456f6acd3419f1dcfa93d1204af11c1cdc453' and sorted(archive_rows,key=lambda x:x['path'])==sorted(export['bindings'],key=lambda x:x['path']),len(archive_rows))
+check('only seven original paths changed plus two new authored',sorted(changed)==sorted(freeze['changedExistingPaths']) and len(changed)==7,changed)
+(O/'actual-source.diff.txt').write_text(''.join(diffs),encoding='utf-8',newline='\n')
+
+payload=[bind(T/x['path'],x['path']) for x in manifest['payloads']]
+raw=[]
+for x in manifest['rawCopies']:
+    origin=P/x['origin']
+    same=origin.read_bytes()==(T/x['path']).read_bytes()
+    raw.append(dict(path=x['path'],origin=x['origin'],exact=same))
+check('all625 manifest payloads exact raw SHA and Git blob',payload==manifest['payloads'] and len(payload)==625,sum(x['bytes'] for x in payload))
+check('all623 original-to-portable raw copies exact',len(raw)==623 and all(x['exact'] for x in raw),len(raw))
+check('portable directory has no unlisted payload',set(x['path'] for x in payload)|{'manifest.json'}=={x.relative_to(T).as_posix() for x in T.rglob('*') if x.is_file()},len(payload)+1)
+check('packet has byte-preserving local gitattributes', (T/'.gitattributes').read_bytes()==b'* -text\n', 'Root text=auto eol=lf remains unchanged. No index exists; actual future Git-filter and committed-byte checks remain required.')
+dump('portable-bindings.json',dict(manifestSha256=sha((T/'manifest.json').read_bytes()),payload=payload,rawCopies=raw))
+
+runtime=read(T/'worker/installed-bindings.json')
+venv=Path('D:/ProjectRecovery/nodetasks-current-consumer-20260905-python')
+runtimepaths={'node.exe':Path('C:/nvm4w/nodejs/node.exe'),'chrome.exe':Path('C:/Users/hshum/AppData/Local/ms-playwright/chromium-1228/chrome-win64/chrome.exe'),'chrome-headless-shell.exe':Path('C:/Users/hshum/AppData/Local/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-win64/chrome-headless-shell.exe')}
+current_runtime=[]
+for x in runtime['bindings']:
+    kind,rel=x['path'].split('/',1)
+    target=(R/rel if kind=='consumer' else venv/rel if kind=='python' else runtimepaths[rel])
+    current_runtime.append(bind(target,x['path']))
+check('90 selected installed metadata/runtime identities exact',current_runtime==runtime['bindings'] and len(current_runtime)==90,runtime['limitations'])
+dump('installed-current-bindings.json',current_runtime)
+
+browser=read(T/'worker/browser-first-07/report.json'); browser_root=T/'worker/browser-first-07'
+check('ten actual browser source inputs exact',all(sha((R/x['path']).read_bytes())==x['sha256'] for x in browser['inputs']),browser['inputs'])
+tasks={x['id']:x for x in read(R/'catalog/all-tasks.json')['tasks']}
+bundles={x['id']:x for x in read(R/'catalog/task-bundles.json')['bundles']}
+downloads=[]; captures=[]; answers=[]
+for cell in browser['cells']:
+    saved={}
+    for x in cell['downloads']:
+        f=browser_root/(x['name']+'.json');b=f.read_bytes();d=json.loads(b);saved[x['name']]=d
+        ok=sha(b)==x['sha256'] and len(b)==x['bytes']
+        if 'bundle' in x['name']:
+            ok=ok and d==bundles[d['id']]
+            count=d['taskCount']
+        else:
+            count=len(d)
+            for row in d:
+                task=tasks[row['id']]
+                ok=ok and row['title']==task['title'] and row['score_status']==task['provenance']['scoreStatus'] and row['source_refs']==', '.join(task['sourceRefs'][:4])
+        downloads.append(dict(name=x['name'],sha256=sha(b),bytes=len(b),count=count,actualContentMatchesCatalog=ok))
+    w=cell['width']; initial=saved[f'{w}-filtered-initial']
+    check(f'actual download content/order/repeat/reload at {w}',len(initial)==15 and saved[f'{w}-filtered-top10']==initial[:10] and saved[f'{w}-filtered-repeat']==initial[:10] and saved[f'{w}-reloaded']==initial and saved[f'{w}-no-result']==[],w)
+    for x in cell['captures']:
+        png=browser_root/(x['name']+'.png');html=browser_root/(x['name']+'.html');dom=read(browser_root/(x['name']+'.json'))
+        captures.append(dict(name=x['name'],pngSha256=sha(png.read_bytes()),htmlSha256=sha(html.read_bytes()),bound=sha(png.read_bytes())==x['pngSha256'] and sha(html.read_bytes())==x['htmlSha256'],horizontalOverflow=dom['horizontalOverflow']))
+    for a in cell['answers']:
+        answers.append(dict(width=w,question=a['question'],catalogCitationIds=[row['id'] for row in initial[:5]],exactIdsAllPresent=all(row['id'] in a['answer'] for row in initial[:5]),scoreBoundary='no-official-score-claim' in a['answer']))
+check('37 actual JSON files reopened and content checked',len(downloads)==37 and all(x['actualContentMatchesCatalog'] for x in downloads),len(downloads))
+check('66 current captured PNG/HTML exact',len(captures)==66 and all(x['bound'] for x in captures),len(captures))
+check('nine local answer traces retain catalog citation IDs/score boundary',len(answers)==9 and all(x['exactIdsAllPresent'] and x['scoreBoundary'] for x in answers),9)
+check('six observed cells honest status and isolation signals',browser['status']=='OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS' and [x['width'] for x in browser['cells']]==[320,390,768,1024,1440,1920] and all(x['status']=='OBSERVED' and x['renderedEndpointEmpty'] and not x['console'] and not x['pageErrors'] for x in browser['cells']) and not browser['errors'] and not browser['externalRequests'], 'Observed local flow only; not UI, production, provider, or benchmark certification.')
+dump('actual-download-and-browser-readback.json',dict(downloads=downloads,captures=captures,answers=answers))
+
+before=read(P/'E6h-nodetasks-path-baseline-01.json');after=read(T/'worker/path-after.json')
+check('three unsafe sentinel reads transition from1 to0 with invalid source status',len(before['results'])==len(after['results'])==3 and all(x['actualSentinelReads']==1 for x in before['results']) and all(x['actualSentinelReads']==0 and not x['catalogPassed'] and not x['sourceIndexValid'] for x in after['results']),after['results'])
+links=[]
+for x in receipt['links']:
+    target=(R/x['document']).parent/x['target']
+    links.append(dict(**x,actualExists=target.is_file()))
+check('17 published current links resolve',len(links)==17 and all(x['actualExists'] for x in links),17)
+dump('links.json',links)
+
+primary=Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/NodeTasks')
+commands={'head':['rev-parse','HEAD'],'refs':['for-each-ref','--format=%(refname) %(objectname)'],'indexEntries':['ls-files','--stage','-z'],'status':['status','--porcelain=v1','-z'],'worktrees':['worktree','list','--porcelain']}
+guards={}
+for name,argv in commands.items():
+    b=subprocess.check_output(['git','--no-optional-locks',*argv],cwd=primary,timeout=20)
+    (O/(name+'.raw.txt')).write_bytes(b);guards[name]=sha(b)
+check('original primary HEAD refs serializedindex status worktrees unchanged',guards==freeze['primaryGuardUnchanged'],guards)
+dump('read-only-checks.json',dict(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),checks=checks,passed=sum(x['passed'] for x in checks),total=len(checks),sourceDigest=digest))
+print(json.dumps(dict(passed=sum(x['passed'] for x in checks),total=len(checks),failures=[x for x in checks if not x['passed']]),ensure_ascii=False))

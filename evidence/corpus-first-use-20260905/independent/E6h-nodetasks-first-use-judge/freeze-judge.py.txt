@@ -1,0 +1,94 @@
+from pathlib import Path
+import datetime, hashlib, json, re, subprocess
+
+P=Path(__file__).resolve().parent
+R=Path('D:/ProjectRecovery/nodetasks-current-consumer-20260905')
+T=R/'evidence/corpus-first-use-20260905'
+O=P/'E6h-nodetasks-first-use-judge'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def dump(p,d):p.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
+def copy(src,rel):
+ d=O/rel;d.parent.mkdir(parents=True,exist_ok=True);d.write_bytes(src.read_bytes())
+ return {'source':str(src),'path':rel,'bytes':d.stat().st_size,'sha256':sha(d.read_bytes())}
+receipt=read(P/'E6h_NODETASKS_FIRST_USE_REPAIR_RECEIPT.json');m=read(T/'manifest.json');f=read(T/'worker/source-freeze.json')
+raw=read(O/'read-only-checks.json');assert raw['passed']==raw['total']==26
+copies=[]
+for x in f['source']:copies.append(copy(R/x['path'],'source-current/'+x['path']+'.txt'))
+for rel in ['worker/current-check-01.log','worker/current-check-02.log','worker/nodekit-current-check.log','worker/nodekit-current-check.command.json','worker/doctor-owner-addendum.json','worker/path-after.json','worker/path-after-probe.mjs','worker/run-command.py','worker/browser-first-07/report.json','worker/browser-first-07.command.json','worker/installed-bindings.json','worker/nodekit-current-input-guard.json','README.md']:
+ copies.append(copy(T/rel,'reviewed-raw/'+rel+('.txt' if Path(rel).suffix in ['.mjs','.py','.md'] else '')))
+viewed=[]
+for rel in ['worker/browser-first-07/390-task-provenance.png','worker/browser-first-07/1440-local-answer.png','worker/browser-first-07/320-static-selected.png','worker/browser-first-07/390-text200.png','worker/browser-first-07/1440-entry.png','worker/browser-first-07/390-static-selected.png','worker/browser-first-07/390-no-result-state.png','worker/browser-first-07/390-keyboard.png','ui-before-original/native-pending-1440-1/after-click.png','ui-before-original/native-pending-1440-1/settled.png']:
+ item=copy(T/rel,'viewed/'+rel);item['inspectedActualPixels']=True;viewed.append(item)
+
+stale=[];ui=read(T/'ui-before-original/report.json')
+for cell in ui['cells']:
+ for a in cell['attempts']:
+  folder=T/f"ui-before-original/native-pending-{cell['width']}-{a['attempt']}"
+  b=(folder/'download.json').read_bytes();data=json.loads(b)
+  after=read(folder/'after-click.json');settled=read(folder/'settled.json')
+  item={'width':cell['width'],'attempt':a['attempt'],'sha256':sha(b),'actualDownloadedRows':len(data),'expectedSettledRows':a['expectedSettledRows'],'observedStateAtDownload':after['state'],'settledState':settled['state'],'searchAtDownload':after['search'],'eventualFilteredZero':any(x['text']=='Filtered0' for x in settled['metrics'])}
+  assert sha(b)==a['sha256'] and len(data)==15 and item['expectedSettledRows']==0 and after['state']=='running' and settled['state']=='notRunning' and item['eventualFilteredZero']
+  stale.append(item);copies.append(copy(folder/'download.json',f"stale-downloads/{cell['width']}-{a['attempt']}.json"))
+dump(O/'actual-stale-download-readback.json',stale)
+
+k=read(T/'baseline/nodekit-launcher-inputs.json');kr=Path(k['root'])
+ks=[]
+for x in k['files']:
+ b=(kr/x['path']).read_bytes();ks.append({'path':x['path'],'bytes':len(b),'sha256':sha(b),'exact':sha(b)==x['sha256'] and len(b)==x['bytes']})
+assert len(ks)==1098 and all(x['exact'] for x in ks)
+dump(O/'nodekit-current-inputs.json',{'root':str(kr),'baselineCommit':k['commit'],'registryEquivalentTo':k['canonicalRegistryEquivalentTo'],'files':ks,'actualCommandReceipt':'reviewed-raw/worker/nodekit-current-check.command.json'})
+
+active=[x for x in m['payloads'] if Path(x['path']).suffix in ['.html','.mjs','.py','.yaml']]
+assert len(active)==158
+dump(O/'publication-blocked-names.json',{'blocked':True,'count':len(active),'paths':[{'path':x['path'],'suggestedPath':x['path']+'.txt','sha256':x['sha256']} for x in active],'currentTestExclusion':'node --test test/*.test.mjs','reason':'Historical evidence must not be discoverable as tests, imported as source, interpreted as configuration or opened as an executable page. Preserve original bytes under inert filenames. The packet root .gitattributes remains intentionally active.'})
+
+failures=[]
+for i in range(1,7):
+ b=read(T/f'worker/browser-first-0{i}/report.json')
+ failures.append({'run':i,'status':b.get('status'),'failures':[{'width':c['width'],'firstLine':c['error'].splitlines()[0]} for c in b.get('cells',[]) if c.get('error')],'reportSha256':sha((T/f'worker/browser-first-0{i}/report.json').read_bytes())})
+dump(O/'historical-failures.json',failures)
+dump(O/'collector-boundary.json',{'initialRead':'One combined raw read included the 1272-row source inventory and was truncated; subsequent named readbacks and exact hashing cover the inputs. No content was sanitized.','failedCheck':'The first archive comparison omitted the mode key carried by original export bindings. All1279 path/content hashes matched; equality failed due to record shape. Initial script, report and log are retained. Corrected comparison derives 100644/100755 from tar modes and all26 checks pass.','noProductReruns':True})
+
+closing={}
+for key,rows,root in [('source',f['source'],R),('protected',f['protected'],R),('portable',m['payloads'],T)]:
+ closing[key]={'count':len(rows),'allRawExact':all(sha((root/x['path']).read_bytes())==x['sha256'] and (root/x['path']).stat().st_size==x['bytes'] for x in rows)}
+assert all(x['allRawExact'] for x in closing.values())
+assert sha((T/'manifest.json').read_bytes())==receipt['manifestSha256']
+assert not (R/'.git').exists()
+primary=Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/NodeTasks')
+cmds={'head':['rev-parse','HEAD'],'refs':['for-each-ref','--format=%(refname) %(objectname)'],'indexEntries':['ls-files','--stage','-z'],'status':['status','--porcelain=v1','-z'],'worktrees':['worktree','list','--porcelain']}
+guards={n:sha(subprocess.check_output(['git','--no-optional-locks',*a],cwd=primary,timeout=20)) for n,a in cmds.items()}
+assert guards==f['primaryGuardUnchanged']
+dump(O/'closing-guards.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'bindings':closing,'primary':guards,'manifestSha256':receipt['manifestSha256'],'noGitConsumer':True,'frozenSourceReleasedForMetadataOnly':True})
+dump(O/'reviewed-artifact-copies.json',{'raw':copies,'viewed':viewed})
+copy(P/'E6h-collect-nodetasks-first-use-judge.py','collector.py.txt')
+copy(P/'E6h-freeze-nodetasks-first-use-judge.py','freeze-judge.py.txt')
+copy(P/'E6h-nodetasks-first-use-judge-collector.log','collector-final.log')
+files=[{'path':x.relative_to(O).as_posix(),'bytes':x.stat().st_size,'sha256':sha(x.read_bytes())} for x in sorted(O.rglob('*')) if x.is_file() and x.name!='artifact-manifest.json']
+dump(O/'artifact-manifest.json',{'schema':'bounded-independent-review-artifacts/v1','files':files,'excludes':['artifact-manifest.json self','external final judge MD/JSON'],'sourceDigest':receipt['sourceDigest']})
+manifesthash=sha((O/'artifact-manifest.json').read_bytes())
+report={'schema':'nodetasks-first-use-independent-judge/v1','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'mode':'Builder / independent nonauthor judge','sourceVerdict':'APPROVED_SCOPED_SOURCE_AND_OBSERVED_LOCAL_CONSUMER','publicationVerdict':'BLOCKED_INERT_HISTORICAL_FILENAMES','fullProductVerdict':'NOT_CERTIFIED_UI_FINDINGS_OPEN','reviewerContextReuse':'Reviewer reused context from independent plan/baseline and other portfolio reviews; did not implement this source or proof. No fresh reviewer context was available.','root':str(R),'sourceCommit':receipt['baseCommit'],'sourceTree':receipt['baseTree'],'noGit':True,'candidateSourceDigest':receipt['sourceDigest'],'receiptSha256':sha((P/'E6h_NODETASKS_FIRST_USE_REPAIR_RECEIPT.json').read_bytes()),'sourceFreezeSha256':receipt['sourceFreezeSha256'],'portableManifestSha256':receipt['manifestSha256'],'checked':{'namedRawChecks':26,'passed':26,'authored':9,'changedOriginal':7,'protectedOriginal':1272,'originalArchiveEntries':1279,'payloads':625,'rawCopies':623,'selectedInstalledBindings':90,'nodekitLauncherBindings':1098,'reopenedSettledDownloads':37,'reopenedStaleDownloads':4,'capturedPNGBindings':66,'actualPNGsViewed':10,'localAnswersRead':9,'currentLinks':17},'sourceFindings':[],'publicationBlockers':[{'id':'E6H-PUB-01','count':158,'breakdown':{'historicalMjs':7,'historicalPython':1,'historicalHtml':149,'historicalNodekitYaml':1},'evidence':'publication-blocked-names.json','minimumRepair':'Preserve original packet/freeze and all bytes; suffix these historical files .txt; update copy map, manifest, current links/readme only. Keep actual packet .gitattributes. Refreeze then bounded byte/link check; no runtime rerun needed.'}],'gitPublicationLimits':['No .git/index/commit exists in exported consumer. Nine authored files are LF and packet * -text is present. Future staging must prove raw Git-filter equality and include ignored raw logs explicitly; this judgment does not certify a hypothetical index.','Exact original PR1 archive and primary PR2 HEAD/refs/serialized index/status/worktrees remain preserved. No history rewrite or merge approval inferred.'],'observedUiHolds':['Four native pending-update exports contain15 prior rows for eventual0; source unchanged and settled-only proof does not repair or erase this.','Actual metric cards have dark foreground on dark background; selected text also ellipsizes.','Actual static selected-result phone page clips horizontally; DOM overflow270px at320,200px at390.','200% root text retains download focus/action and row count but does not prove native zoom, readable whole-page content or exact DOM restoration.','Representative provenance JSON appears pale on white; no contrast measurement or additional UI fix is certified.'],'freshConsumerLimits':['Observed Windows Node22.22.2 / Streamlit1.63.0 / pandas3.0.5 and selected Chromium149.0.7827.55 identities; requirements are minimum versions, not a Python lock.','Automated proof requires new folder and two owned loopback ports, separate Chromium provisioning, explicit isolated Python. Cleanup uses Windows taskkill; no Linux/macOS process-lifecycle proof.','Local child endpoint/catalog overrides removed; actual rendered endpoint empty and browser egress blocked. No provider, upstream task/benchmark, production or official score execution.','Doctor is a local shape check; actual source-bound NodeKit CLI verifies registered ownership separately.','Validator guards indexed source content reads; frozen inputs required, no atomic hostile-filesystem-swap guarantee. Original unsigned receipt certifies catalog/content only, not UI, executable schemas, installed packages or official scores.'],'runtimeReplayByJudge':False,'fullGrades':None,'artifactManifest':str(O/'artifact-manifest.json'),'artifactManifestSha256':manifesthash,'artifactCount':len(files),'closingGuards':closing,'sourceFreezeClosed':True,'nextAction':'Root may perform only the named inert-publication correction after preserving old packet. UI follow-on remains separately unimplemented.'}
+dump(P/'E6h_NODETASKS_FIRST_USE_FINAL_JUDGE.json',report)
+md=f'''# NodeTasks independent source and publication judgment
+
+**Re your request:** make each repository usable and ready for developer/user handoff with independent judgment and actual UI evidence — the bounded source repair is approved; portable publication is held for historical filenames. The application still has observed UI failures.
+
+An evaluator needs to inspect a public task and download its chosen data without silently reading an unintended local file. The repaired validator rejects invalid names, Windows aliases, links/junctions, nonregular leaves and paths outside the physical vendored boundary before content reads. Three preserved sentinel cases move from one forbidden read each to zero and return invalid catalog/source status. Normal good receipt bytes are unchanged. This is a frozen-input guarantee, not an atomic defense against a hostile filesystem swap.
+
+The exact nine-file source digest is `{receipt['sourceDigest']}` on PR1 `{receipt['baseCommit']}` / tree `{receipt['baseTree']}`. Independent raw checks pass **26/26**: seven original modifications,1,272 protected originals, all1,279 original archive entries,625 payloads/623 original raw copies,90 selected installed identities and17 current links. Separately rechecked all1,098 NodeKit launcher/source/runtime inputs against the preserved baseline. The actual normal check log passes five scenarios, doctor and unchanged receipt; registered NodeKit conformance passes. No source, test, dependency, browser or app command was rerun by this judge.
+
+The doctor change removes only a negative regex that crossed from ownership into consumes. The positive conjunct still requires exactly `nodetasks.corpus-receipt`; actual CLI scenarios reject both added and replaced NodeAgent owners. Four signatures remain migration copies with their existing origins. Tests exercise actual safe sentinel read observation, missing/stale receipts, malformed/duplicate catalog records, controlled drift, four concurrent plus three later reads, and recovery. They do not run vendored tasks or a provider.
+
+Reopened all **37 settled JSON downloads** and checked content/IDs/source and score fields, ordering, Rows limits, duplicates, bundle identity and reload. Nine recorded local answers retain the selected catalog citations and score boundary. Bound all66 current PNG/HTML pairs and inspected10 actual PNGs. Also reopened all four stale downloads: each contains15 previous rows while the current edit runs; the same state later has0. Actual pixels confirm poor metric contrast and clipped static results at320/390. The six-width report remains **OBSERVED**, never a visual or full-product pass. Root text enlargement is not native zoom. The local catalog answers are not model execution or official scoring.
+
+**Publication blocker E6H-PUB-01:**158 historical files remain active-looking:7 `.mjs`,1 `.py`,149 `.html`,1 `nodekit.yaml`. This includes `worker/source-before/test/corpus-validation.test.mjs`. Today's explicit `test/*.test.mjs` excludes it, but wider test discovery, import, config discovery or opening saved pages can execute historical evidence. The exact list is [publication-blocked-names.json](E6h-nodetasks-first-use-judge/publication-blocked-names.json). Preserve old packet bytes, append `.txt` to those names, and update map/manifest/current references only. Keep the packet's real `* -text` attributes active. A bounded byte/link re-review is sufficient; no runtime matrix repeat is requested.
+
+Fresh setup is observed on Windows with Node22.22.2, Streamlit1.63.0, pandas3.0.5 and Chromium149.0.7827.55. Python ranges are not locked. The proof owns two loopback ports and requires isolated Python plus Chromium installation; Windows `taskkill` cleanup has no Linux/macOS proof. Manual launch inherits caller environment, so the documented empty-endpoint check matters. No Git directory, staged tree, commit, provider call, deployment or full grade exists for this exported consumer. Nine source files are LF and portable `* -text` exists; future actual Git-filter/index/committed-byte verification and explicit inclusion of ignored logs remain required.
+
+The original primary HEAD, refs, serialized index entries, status and worktrees match preserved custody. Closing checks confirm9 source/1,272 protected/625 payload bytes unchanged. Reviewer context was reused; the reviewer authored neither source nor worker proof. One collector comparison initially omitted the archived mode field; its failure/script/log are retained and the corrected mode-aware comparison passes. Truncated exploratory reads were followed by named reads and full required binding checks; no evidence was sanitized.
+
+Source freeze is closed. Root may perform the named publication-only correction. UI repair stays separate. Full grades are null. The bounded judge artifact manifest is `{manifesthash}` ({len(files)} files); [structured judgment](E6h_NODETASKS_FIRST_USE_FINAL_JUDGE.json) contains exact bindings and limits.
+'''
+(P/'E6h_NODETASKS_FIRST_USE_FINAL_JUDGE.md').write_text(md,encoding='utf-8',newline='\n')
+print(json.dumps({'sourceVerdict':report['sourceVerdict'],'publicationVerdict':report['publicationVerdict'],'sourceDigest':receipt['sourceDigest'],'judgeJsonSha256':sha((P/'E6h_NODETASKS_FIRST_USE_FINAL_JUDGE.json').read_bytes()),'artifactManifestSha256':manifesthash,'artifactCount':len(files)}))

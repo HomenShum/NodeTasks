@@ -1,0 +1,70 @@
+
+> nodetasks@0.1.0 check
+> npm run doctor && npm test && npm run proof
+
+
+> nodetasks@0.1.0 doctor
+> node scripts/doctor.mjs
+
+{
+  "schemaVersion": "nodetasks.doctor/v1",
+  "passed": false,
+  "externalAccountsRequired": 0,
+  "checks": [
+    {
+      "id": "node-version",
+      "passed": true,
+      "detail": "22.22.2"
+    },
+    {
+      "id": "required:catalog/all-tasks.json",
+      "passed": true,
+      "detail": "catalog/all-tasks.json"
+    },
+    {
+      "id": "required:catalog/source-files.json",
+      "passed": true,
+      "detail": "catalog/source-files.json"
+    },
+    {
+      "id": "required:catalog/task-index.json",
+      "passed": true,
+      "detail": "catalog/task-index.json"
+    },
+    {
+      "id": "required:docs/UPSTREAM_PROVENANCE.md",
+      "passed": true,
+      "detail": "docs/UPSTREAM_PROVENANCE.md"
+    },
+    {
+      "id": "required:proof/corpus-receipt.json",
+      "passed": true,
+      "detail": "proof/corpus-receipt.json"
+    },
+    {
+      "id": "required:schemas/corpus-receipt.schema.json",
+      "passed": true,
+      "detail": "schemas/corpus-receipt.schema.json"
+    },
+    {
+      "id": "required:scripts/validate-catalog.mjs",
+      "passed": true,
+      "detail": "scripts/validate-catalog.mjs"
+    },
+    {
+      "id": "flat-nodekit-manifest",
+      "passed": true,
+      "detail": "nodekit.repo/v1"
+    },
+    {
+      "id": "no-product-agent-manifest",
+      "passed": true,
+      "detail": "nodeagent.yaml must remain absent"
+    },
+    {
+      "id": "corpus-receipt-only-ownership",
+      "passed": false,
+      "detail": "NodeTasks owns its corpus receipt; vendored runtime contracts remain provenance only"
+    }
+  ]
+}

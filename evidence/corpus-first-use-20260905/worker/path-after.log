@@ -1,0 +1,1 @@
+{"status":"FORBIDDEN_READS_PREVENTED_ON_REPAIRED_VALIDATOR","cases":[{"label":"traversal","actualSentinelReads":0,"catalogPassed":false},{"label":"blockedName","actualSentinelReads":0,"catalogPassed":false},{"label":"parentLink","actualSentinelReads":0,"catalogPassed":false}],"parentJunctionSupported":true,"protectedSourceUnchanged":true,"protectedSourceFiles":1272}

@@ -1,0 +1,234 @@
+{
+  "at": "2026-09-05T18:07:02.672317+00:00",
+  "checks": [
+    {
+      "name": "receipt identity",
+      "passed": true,
+      "detail": "ca8eb92aafca9646c2125de074f49c32d887f1c2437c4ca93ab670560b725680"
+    },
+    {
+      "name": "source freeze and manifest identity",
+      "passed": true,
+      "detail": [
+        "479dc26bd3dd5a0f99b1ce9ec3da251fcc190fb1a38e7d08c5e94ad6c9fbae89",
+        "893b22e30380a7f990c4c9c7f42b7037fd742e31bbb0bb7307d1e258cbd31a68"
+      ]
+    },
+    {
+      "name": "all nine authored raw SHA and Git blobs",
+      "passed": true,
+      "detail": "ca8eb92aafca9646c2125de074f49c32d887f1c2437c4ca93ab670560b725680"
+    },
+    {
+      "name": "nine authored files are LF and no Git export",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "1272 protected source files exact",
+      "passed": true,
+      "detail": 1272
+    },
+    {
+      "name": "immutable PR1 archive and all1279 source entries",
+      "passed": false,
+      "detail": 1279
+    },
+    {
+      "name": "only seven original paths changed plus two new authored",
+      "passed": true,
+      "detail": [
+        "README.md",
+        "docs/NODEAGENT_BRIDGE.md",
+        "docs/UPSTREAM_PROVENANCE.md",
+        "nodekit.yaml",
+        "scripts/doctor.mjs",
+        "scripts/validate-catalog.mjs",
+        "test/corpus-validation.test.mjs"
+      ]
+    },
+    {
+      "name": "all625 manifest payloads exact raw SHA and Git blob",
+      "passed": true,
+      "detail": 99572321
+    },
+    {
+      "name": "all623 original-to-portable raw copies exact",
+      "passed": true,
+      "detail": 623
+    },
+    {
+      "name": "portable directory has no unlisted payload",
+      "passed": true,
+      "detail": 626
+    },
+    {
+      "name": "packet has byte-preserving local gitattributes",
+      "passed": true,
+      "detail": "Root text=auto eol=lf remains unchanged. No index exists; actual future Git-filter and committed-byte checks remain required."
+    },
+    {
+      "name": "90 selected installed metadata/runtime identities exact",
+      "passed": true,
+      "detail": [
+        "Final installed metadata and named runtime bytes captured; no whole-environment before/after hash claim",
+        "Python requirements are minimum ranges, not a lock",
+        "No model endpoint or upstream task execution"
+      ]
+    },
+    {
+      "name": "ten actual browser source inputs exact",
+      "passed": true,
+      "detail": [
+        {
+          "path": "apps/nodetasks_streamlit.py",
+          "sha256": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1"
+        },
+        {
+          "path": "catalog/all-tasks.json",
+          "sha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e"
+        },
+        {
+          "path": "catalog/saved-views.json",
+          "sha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14"
+        },
+        {
+          "path": "catalog/task-bundles.json",
+          "sha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b"
+        },
+        {
+          "path": "catalog/provenance-index.json",
+          "sha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2"
+        },
+        {
+          "path": "catalog/hierarchy.json",
+          "sha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8"
+        },
+        {
+          "path": "catalog/task-browser.html",
+          "sha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1"
+        },
+        {
+          "path": "catalog/search-index.js",
+          "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+        },
+        {
+          "path": "proof/corpus-receipt.json",
+          "sha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357"
+        },
+        {
+          "path": "scripts/verify-first-use.mjs",
+          "sha256": "e7c5501d102d5714fae074fa6d27009e4afd90f167140777e8f3156e3150f5a1"
+        }
+      ]
+    },
+    {
+      "name": "actual download content/order/repeat/reload at 320",
+      "passed": true,
+      "detail": 320
+    },
+    {
+      "name": "actual download content/order/repeat/reload at 390",
+      "passed": true,
+      "detail": 390
+    },
+    {
+      "name": "actual download content/order/repeat/reload at 768",
+      "passed": true,
+      "detail": 768
+    },
+    {
+      "name": "actual download content/order/repeat/reload at 1024",
+      "passed": true,
+      "detail": 1024
+    },
+    {
+      "name": "actual download content/order/repeat/reload at 1440",
+      "passed": true,
+      "detail": 1440
+    },
+    {
+      "name": "actual download content/order/repeat/reload at 1920",
+      "passed": true,
+      "detail": 1920
+    },
+    {
+      "name": "37 actual JSON files reopened and content checked",
+      "passed": true,
+      "detail": 37
+    },
+    {
+      "name": "66 current captured PNG/HTML exact",
+      "passed": true,
+      "detail": 66
+    },
+    {
+      "name": "nine local answer traces retain catalog citation IDs/score boundary",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "six observed cells honest status and isolation signals",
+      "passed": true,
+      "detail": "Observed local flow only; not UI, production, provider, or benchmark certification."
+    },
+    {
+      "name": "three unsafe sentinel reads transition from1 to0 with invalid source status",
+      "passed": true,
+      "detail": [
+        {
+          "label": "traversal",
+          "indexedPath": "upstream/noderoom/../../fixture-sentinel.txt",
+          "actualSentinelReads": 0,
+          "reads": [],
+          "problems": [
+            "source path is canonical public vendored provenance: upstream/noderoom/../../fixture-sentinel.txt"
+          ],
+          "catalogPassed": false,
+          "sourceIndexValid": false
+        },
+        {
+          "label": "blockedName",
+          "indexedPath": "upstream/noderoom/secret-fixture.txt",
+          "actualSentinelReads": 0,
+          "reads": [],
+          "problems": [
+            "source path is canonical public vendored provenance: upstream/noderoom/secret-fixture.txt"
+          ],
+          "catalogPassed": false,
+          "sourceIndexValid": false
+        },
+        {
+          "label": "parentLink",
+          "indexedPath": "upstream/noderoom/linked-parent/regular.txt",
+          "actualSentinelReads": 0,
+          "reads": [],
+          "problems": [
+            "source file is a contained regular file: upstream/noderoom/linked-parent/regular.txt (link or nonregular source path)"
+          ],
+          "catalogPassed": false,
+          "sourceIndexValid": false
+        }
+      ]
+    },
+    {
+      "name": "17 published current links resolve",
+      "passed": true,
+      "detail": 17
+    },
+    {
+      "name": "original primary HEAD refs serializedindex status worktrees unchanged",
+      "passed": true,
+      "detail": {
+        "head": "20797dc23ed3b44ea65355441c774cf7ca2da32e17ebb6c9d3b91eb263e650d6",
+        "refs": "6eaf413e01a067ad01d1f2b8079aafbb4525496abd7e95050ce1a164607e55c5",
+        "indexEntries": "a48a2a4577c67134f8c7b68da92a11afa43f59cdaa0b848a41223c4b6c2c31bf",
+        "status": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "worktrees": "b8ff4d572220fefefc4d2425f3bc9b9262ba6eddc9911cb7da04b0df70d565e4"
+      }
+    }
+  ],
+  "passed": 25,
+  "total": 26,
+  "sourceDigest": "ca8eb92aafca9646c2125de074f49c32d887f1c2437c4ca93ab670560b725680"
+}

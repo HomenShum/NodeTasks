@@ -1,0 +1,35 @@
+import { spawn, spawnSync } from 'node:child_process';
+import { createWriteStream } from 'node:fs';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root='D:/ProjectRecovery/nodetasks-current-consumer-20260905';
+const output=path.join(path.dirname(fileURLToPath(import.meta.url)),'entry-observation');await mkdir(output);
+const {chromium}=createRequire(path.join(root,'package.json'))('playwright');
+const env={...process.env};delete env.NODEAGENT_ENDPOINT;delete env.NODETASKS_CATALOG;env.PYTHONDONTWRITEBYTECODE='1';
+const base='http://127.0.0.1:54531';
+const args=['-m','streamlit','run','apps/nodetasks_streamlit.py','--server.address','127.0.0.1','--server.port','54531','--server.headless','true','--server.fileWatcherType','none','--browser.gatherUsageStats','false'];
+const server=spawn('D:/ProjectRecovery/nodetasks-current-consumer-20260905-python/Scripts/python.exe',args,{cwd:root,env,windowsHide:true,stdio:['ignore','pipe','pipe']});
+const log=createWriteStream(path.join(output,'server.log'));server.stdout.pipe(log);server.stderr.pipe(log);
+const report={startedAt:new Date().toISOString(),base,args,cells:[],sourceSha256:createHash('sha256').update(await readFile(path.join(root,'apps/nodetasks_streamlit.py'))).digest('hex')};let browser;
+try{
+  const deadline=Date.now()+30000;
+  while(true){if(server.exitCode!==null)throw Error('Owned server exited');try{if((await fetch(base+'/_stcore/health',{signal:AbortSignal.timeout(1000)})).ok)break;}catch{}if(Date.now()>deadline)throw Error('Owned server deadline');await new Promise(r=>setTimeout(r,100));}
+  browser=await chromium.launch({headless:true});
+  for(const width of [1440,390]){
+    const context=await browser.newContext({viewport:{width,height:900}});
+    const external=[];await context.route('**/*',route=>{const u=new URL(route.request().url());if(u.origin===base||['data:','blob:'].includes(u.protocol))return route.continue();external.push(u.origin+u.pathname);return route.abort('blockedbyclient');});
+    const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+    await page.goto(base+'/?view=public-node-repo-proofs',{waitUntil:'domcontentloaded'});
+    await page.getByText('9,155',{exact:true}).waitFor({timeout:30000});
+    await page.screenshot({path:path.join(output,`entry-${width}.png`),caret:'initial'});
+    await writeFile(path.join(output,`entry-${width}.html`),await page.content());
+    const dom=await page.evaluate(()=>({body:document.body.innerText,controls:[...document.querySelectorAll('input,button,[role="combobox"],[role="tab"]')].map(e=>({tag:e.tagName,role:e.getAttribute('role'),testId:e.getAttribute('data-testid'),label:e.getAttribute('aria-label'),text:e.textContent?.slice(0,80),type:e.getAttribute('type'),visible:!!(e.getBoundingClientRect().width&&e.getBoundingClientRect().height)}))}));
+    await writeFile(path.join(output,`entry-${width}.json`),JSON.stringify(dom,null,2));report.cells.push({width,errors,external});await context.close();
+  }
+  report.status='OBSERVED';
+}catch(e){report.status='FAILED';report.error=String(e);}
+finally{if(browser)await browser.close();if(server.exitCode===null)spawnSync('taskkill',['/PID',String(server.pid),'/T','/F'],{windowsHide:true});await new Promise(r=>server.exitCode!==null?r():server.once('exit',r));await new Promise(r=>log.end(r));report.finishedAt=new Date().toISOString();await writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));}
+console.log(JSON.stringify(report));process.exitCode=report.status==='OBSERVED'?0:1;

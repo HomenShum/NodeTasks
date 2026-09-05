@@ -1,0 +1,68 @@
+[
+  {
+    "run": 1,
+    "status": "FAILED",
+    "failures": [
+      {
+        "width": 320,
+        "firstLine": "TimeoutError: locator.press: Timeout 30000ms exceeded."
+      }
+    ],
+    "reportSha256": "4f29fa6d597aafefcd4ecdd475321e7c6d930dc3e59f5f741d65ba1b519afb7c"
+  },
+  {
+    "run": 2,
+    "status": "FAILED",
+    "failures": [
+      {
+        "width": 320,
+        "firstLine": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "reportSha256": "b3cd33c09f79d9a21fc80e8f0099d14b71be51a5af8cb3f033da20c07bfc17e4"
+  },
+  {
+    "run": 3,
+    "status": "FAILED",
+    "failures": [
+      {
+        "width": 320,
+        "firstLine": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:"
+      }
+    ],
+    "reportSha256": "df232582eb5b90874cd55838c4d4058f4d5c0944a9469a6df58f3ca8e39b1155"
+  },
+  {
+    "run": 4,
+    "status": "FAILED",
+    "failures": [
+      {
+        "width": 320,
+        "firstLine": "AssertionError [ERR_ASSERTION]: text enlargement must not change application DOM"
+      }
+    ],
+    "reportSha256": "2fa52a8473a791e966066e14305e78265e46583a79c3fb496f9fde0bf4244c74"
+  },
+  {
+    "run": 5,
+    "status": "FAILED",
+    "failures": [
+      {
+        "width": 320,
+        "firstLine": "TimeoutError: locator.getAttribute: Timeout 30000ms exceeded."
+      }
+    ],
+    "reportSha256": "b2dca5bbc7b1fb3e14981b058bba095f3232936f32de617217ecdd1191670633"
+  },
+  {
+    "run": 6,
+    "status": "FAILED",
+    "failures": [
+      {
+        "width": 390,
+        "firstLine": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded."
+      }
+    ],
+    "reportSha256": "ad9742cdf956e2fea3c71677bb0cc31b35f788ddd57bf613d3c8fa5980132a12"
+  }
+]

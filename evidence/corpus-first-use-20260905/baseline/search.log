@@ -1,0 +1,42 @@
+
+> nodetasks@0.1.0 search
+> node scripts/search-tasks.mjs --view public-node-repo-proofs --limit 5
+
+NodeTasks search: NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke
+5 result(s)
+
+[97] nodeagent.storyboard.capture.v1
+  curated-live | public-node-repo | NodeAgent
+  Agent Runtime & NodeAgent > public-node-repo | advanced (62) | 13 steps | external-variable
+  Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.
+  source: https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs
+  tags: curated, public-node-repo, public-node-repo, NodeAgent, agent engineer
+
+[82] nodetrace.capture-plan.smoke.v1
+  curated-live | public-node-repo | NodeTrace
+  Agent Runtime & NodeAgent > public-node-repo | advanced (58) | 11 steps | external-variable
+  Run the standalone NodeTrace capture-plan smoke without requiring a sibling NodeRoom checkout.
+  source: https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs
+  tags: curated, public-node-repo, public-node-repo, NodeTrace, test engineer
+
+[71] nodemem.storyboard.receipt.v1
+  curated-live | public-node-repo | NodeMem
+  Collaboration & Room UX > public-node-repo | advanced (62) | 11 steps | external-variable
+  Validate the NodeMem README media as an explicit storyboard proof receipt.
+  source: https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs
+  tags: curated, public-node-repo, public-node-repo, NodeMem, demo builder
+
+[70] nodetrace.storyboard.capture.v1
+  curated-live | public-node-repo | NodeTrace
+  Agent Runtime & NodeAgent > public-node-repo | advanced (60) | 12 steps | external-variable
+  Regenerate the NodeTrace walkthrough media from storyboard-governed screenshots.
+  source: https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs
+  tags: curated, public-node-repo, public-node-repo, NodeTrace, demo builder
+
+[70] nodeseo.storyboard.audit.v1
+  curated-live | public-node-repo | NodeSEO
+  Audit, Risk & Compliance > public-node-repo | expert (64) | 12 steps | external-variable
+  Run the NodeSEO static audit under the storyboard proof contract.
+  source: https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts
+  tags: curated, public-node-repo, public-node-repo, NodeSEO, growth engineer
+

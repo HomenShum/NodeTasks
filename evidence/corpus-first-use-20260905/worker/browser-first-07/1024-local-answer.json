@@ -1,0 +1,81 @@
+{
+  "url": "http://127.0.0.1:54532/?view=public-node-repo-proofs",
+  "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n10\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nAsk NodeAgent\n\nUses NODEAGENT_ENDPOINT when configured; otherwise answers deterministically from the ranked catalog.\n\nkeyboard_arrow_right\n\nBridge contract\n\nkeyboard_arrow_down\n\nNodeAgent answer preview for current filters\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts\nface\n\nWhich public Node repo task can I inspect?\n\nsmart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts",
+  "viewport": {
+    "width": 1024,
+    "height": 900
+  },
+  "horizontalOverflow": 0,
+  "focus": {
+    "tag": "TEXTAREA",
+    "text": "",
+    "label": "Ask about tasks, ranks, costs, domains, or what a persona should run first"
+  },
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Filtered15",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Domains5",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kinds13",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Cost tiers5",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Difficultyadvanced62",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Steps13",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Costexternal-variable",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "DomainAgent Runtime & NodeAgent",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kindcurated-live",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Verifier types8",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Score statuses2",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Primary suites50",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    }
+  ]
+}

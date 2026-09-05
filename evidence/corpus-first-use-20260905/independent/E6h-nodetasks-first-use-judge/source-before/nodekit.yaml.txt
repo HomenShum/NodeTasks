@@ -1,0 +1,59 @@
+schemaVersion: nodekit.repo/v1
+repository: HomenShum/NodeTasks
+lifecycle: preview
+support: active
+role: evaluation-corpus
+commandProfile: protocol
+
+canonicalFor:
+  - nodetasks.corpus-receipt
+
+consumes:
+  - nodeplatform.repo-contract
+
+commands:
+  doctor: { script: doctor, mode: finite }
+  check: { script: check, mode: finite }
+  proof: { script: proof, mode: finite }
+
+noKey:
+  status: certified
+  command: npm run proof
+  externalAccountsRequired: 0
+  disclosure: Corpus validation is deterministic and requires no model provider, deployment, benchmark account, or official scorer.
+
+environment:
+  contractVersion: nodeplatform.env/v1
+  status: not-applicable
+
+proof:
+  command: npm run proof
+  receiptSchema: nodetasks.corpus-receipt/v1
+
+contractDeclarations:
+  - concept: nodeagent.agent-run
+    signature: agent-run-result
+    path: upstream/noderoom/src/eval/proofloopAgentAdapters.ts
+    mode: migration-source
+    origin: nodeagent.agent-run
+    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+  - concept: nodeagent.provider-pi
+    signature: agent-model-adapter
+    path: upstream/noderoom/src/nodeagent/models/piAiAdapter.ts
+    mode: migration-source
+    origin: nodeagent.provider-pi
+    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+  - concept: nodeagent.trace-workpaper
+    signature: trace-schema
+    path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+    mode: migration-source
+    origin: nodeagent.trace-workpaper
+    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+  - concept: nodeagent.trace-workpaper
+    signature: trace-tool-receipt
+    path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+    mode: migration-source
+    origin: nodeagent.trace-workpaper
+    reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+
+architectureExceptions: []

@@ -1,0 +1,110 @@
+{
+  "schema": "nodetasks-local-first-use/v1",
+  "startedAt": "2026-09-05T17:21:34.905Z",
+  "inputs": [
+    {
+      "path": "apps/nodetasks_streamlit.py",
+      "sha256": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1"
+    },
+    {
+      "path": "catalog/all-tasks.json",
+      "sha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e"
+    },
+    {
+      "path": "catalog/saved-views.json",
+      "sha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14"
+    },
+    {
+      "path": "catalog/task-bundles.json",
+      "sha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b"
+    },
+    {
+      "path": "catalog/provenance-index.json",
+      "sha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2"
+    },
+    {
+      "path": "catalog/hierarchy.json",
+      "sha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "sha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1"
+    },
+    {
+      "path": "catalog/search-index.js",
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "sha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "sha256": "921b1779175e3a590a259d612605f0db43d1c61455990ed9f7549b24fa897694"
+    }
+  ],
+  "cells": [
+    {
+      "width": 320,
+      "captures": [
+        {
+          "name": "320-entry",
+          "pngSha256": "0439ac9347cf4296a7b1183961b9ace19d8a96bac422ec6e198ae221a6d50dba",
+          "htmlSha256": "bcb2c60c06bff00c9d54a21953347cd49b6e2c789d9e849bba02bea650fcbc72",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-empty-endpoint",
+          "pngSha256": "5219860079ce148011e2a63502a07f57ff7bd96b4098e1d449272a1eff13434f",
+          "htmlSha256": "a14a3c6788427d569d1d34fe4f7263be73b096a5d1e168d8cdf1e00c9bb2d99d",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-task-provenance",
+          "pngSha256": "ce7b4b1270766c43042e0460f74743f26bb613adf87be043db7225802ea5d861",
+          "htmlSha256": "f196ce832d83928d3ef12079e7c176d58ddf22fdcb8ab84bd7da56271627a2b3",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-failure",
+          "pngSha256": "a21bfaf70e09f65947f1dbbde8051b0661005ccbf9693247e12035f900c3ad0b",
+          "htmlSha256": "dc1408b23b2492a85dea17c9b6428e0649d50d79d296f6fae1b8c4dd290b02c8",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "320-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "status": "FAILED",
+      "error": "TimeoutError: locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('slider', { name: 'Rows', exact: true })\u001b[22m\n"
+    }
+  ],
+  "externalRequests": [],
+  "errors": [],
+  "limits": [
+    "Local catalog mode only; no benchmark/model execution",
+    "Six fixed widths, finite download/chat budgets; no whole-product grade",
+    "200% root text enlargement is browser-only, not native zoom",
+    "Filtered JSON exports the Rows-limited shown table, not every matching row",
+    "Static browser and Streamlit are separate surfaces"
+  ],
+  "status": "FAILED",
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-05T17:22:13.418Z"
+}

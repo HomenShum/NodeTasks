@@ -1,0 +1,846 @@
+{
+  "downloads": [
+    {
+      "name": "320-filtered-initial",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "320-filtered-top10",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "320-filtered-repeat",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "320-public-bundle",
+      "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+      "bytes": 11729,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "320-no-result",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "bytes": 4,
+      "count": 0,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "320-reloaded",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "390-filtered-initial",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "390-filtered-top10",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "390-filtered-repeat",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "390-public-bundle",
+      "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+      "bytes": 11729,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "390-no-result",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "bytes": 4,
+      "count": 0,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "390-reloaded",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "768-filtered-initial",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "768-filtered-top10",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "768-filtered-repeat",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "768-public-bundle",
+      "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+      "bytes": 11729,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "768-no-result",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "bytes": 4,
+      "count": 0,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "768-reloaded",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1024-filtered-initial",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1024-filtered-top10",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1024-filtered-repeat",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1024-public-bundle",
+      "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+      "bytes": 11729,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1024-no-result",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "bytes": 4,
+      "count": 0,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1024-reloaded",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1440-filtered-initial",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1440-filtered-top10",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1440-filtered-repeat",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1440-public-bundle",
+      "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+      "bytes": 11729,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1440-zero-bundle",
+      "sha256": "a311ca99d9ece631d777b8aa1e5ebb0af7c54ffa17b2356f7c8f58f4805cc633",
+      "bytes": 464,
+      "count": 0,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1440-no-result",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "bytes": 4,
+      "count": 0,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1440-reloaded",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1920-filtered-initial",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1920-filtered-top10",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1920-filtered-repeat",
+      "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+      "bytes": 24854,
+      "count": 10,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1920-public-bundle",
+      "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+      "bytes": 11729,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1920-no-result",
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "bytes": 4,
+      "count": 0,
+      "actualContentMatchesCatalog": true
+    },
+    {
+      "name": "1920-reloaded",
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+      "bytes": 36765,
+      "count": 15,
+      "actualContentMatchesCatalog": true
+    }
+  ],
+  "captures": [
+    {
+      "name": "320-entry",
+      "pngSha256": "0439ac9347cf4296a7b1183961b9ace19d8a96bac422ec6e198ae221a6d50dba",
+      "htmlSha256": "1d036d7c3c1eb0edb3aa074c4c2d8912cea9960b9ae955d2aec5799f2520ff1f",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-empty-endpoint",
+      "pngSha256": "5219860079ce148011e2a63502a07f57ff7bd96b4098e1d449272a1eff13434f",
+      "htmlSha256": "22bf27987239cd235ad761a25e6297f17fa69c0107add72602d4c8bd12fd1db1",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-task-provenance",
+      "pngSha256": "ce7b4b1270766c43042e0460f74743f26bb613adf87be043db7225802ea5d861",
+      "htmlSha256": "1f59d67a838f5ed6ab7db9a237d0678f3bb8475776dc1985c74ab4121f4feca5",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-bundle",
+      "pngSha256": "40ca5bb23824e36607317262090943552ee87687e458fe4d791d6af20d9f7fc6",
+      "htmlSha256": "148b2247c4b99a1be677b197bc1a3bb50526ae398746b0a621b4fb8808153bac",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-score-boundary",
+      "pngSha256": "b664e2c1e9d132225b531e84667d9746f2040e23e16f18093c84a5e9608d1931",
+      "htmlSha256": "66f182668f56ddec543d4cd506a6f0fc1f31134ba14f58285c0eb188e225002c",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-local-answer",
+      "pngSha256": "6e5c0178b87e38caad4edbf29372d8310247e018729e01825dd95585830b30a3",
+      "htmlSha256": "b49388a8de9a553eb327af6804049c0508283f799e7cd0dd6c2c686dc534b00f",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-no-result-state",
+      "pngSha256": "b090e630f7ad80b5099aa60756545effed2f0036e5dbc9b4cec9b54b6f4f006b",
+      "htmlSha256": "5bcfab06cc707d78d832830da81b98eb1f4f4d11279a0d490bdb91cebbc670e5",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-keyboard",
+      "pngSha256": "3720b895ceba81710fc65abb2d3880249fbcdf151ef5b2733718648b366adcb9",
+      "htmlSha256": "374d9117e30fb981920f4ff450d0a0cb741b1c5c0bd16b54c63cf4e2f815fa7a",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-text200",
+      "pngSha256": "6748c9afed311c2d47d76af1e2107b3bcb4dfba702dd0bb2ba4870df3ba5ca95",
+      "htmlSha256": "4f8af00845731cabfe15b9ce726449d6cde338f8dd58497757e0d15fab4c5cca",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "320-static-selected",
+      "pngSha256": "d94acab7ca2e165e472d24b39c780c464b3000b97df78d903c746ea64ac8698b",
+      "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+      "bound": true,
+      "horizontalOverflow": 270
+    },
+    {
+      "name": "320-static-no-result",
+      "pngSha256": "340c18d67b646a23fae10da4003f9c8630ed6d6036ca9a34f0769f3ca50f89d3",
+      "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-entry",
+      "pngSha256": "9fff5b4239b35fb42bd122fc5541b148f9ecab0517e5ffe4af8a33222bd476eb",
+      "htmlSha256": "bb0134532667d64983fd89ad94a8df4729f72f66b7d1b0ae2e67d0559be1b40c",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-empty-endpoint",
+      "pngSha256": "bef75e92faf7ef57595f5ed4bf7ee2b89493ce49b568cd632e0f673e15b37b79",
+      "htmlSha256": "02e2a3afc1cabd671404f08a78e012cf99ed72abefaff680558fd4f4fd89ef6a",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-task-provenance",
+      "pngSha256": "daa8f596d3aac677ad23f3943e59e8130af15ce145937ea6ffe3e9ed2c6e1a72",
+      "htmlSha256": "00a11a21024775f0b8e035fcc432faf88f53e9704a76d7d4b9ab86d40765b8e7",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-bundle",
+      "pngSha256": "3d729e342a75a7ea9949e6cd7a08fc47d60c123e134c35997d8b35551bb968f5",
+      "htmlSha256": "98c6157e0b6d2e3cc40a03e4deb4f8ee524f3a2bd5ce9bb5448f821a999e4773",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-score-boundary",
+      "pngSha256": "d353c5e43738ab8e2ebb36c1aeecf3da17a551ec75f185cb94946c6fa715f065",
+      "htmlSha256": "ef2521550947b7acb8b3d6b1075592875cbcef3cf42268d394a02460d2886ccd",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-local-answer",
+      "pngSha256": "250948978614c21c725e9331254f5a7499fe189002d052bbbc2b5a4ccf17c275",
+      "htmlSha256": "9e691a2095a43dd0d7afd75beb96d712d4f6d8d3195e62fcc8b4d57d75673b44",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-no-result-state",
+      "pngSha256": "27c838fac11707872c57e3dc9213ebf1edd980db04841237d3a6eb432e1be813",
+      "htmlSha256": "ceef54bbd5111ff8217f8cbd92552ff6ca8ce5c4b7ee7f6e05abec67d8ed239d",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-keyboard",
+      "pngSha256": "550ef489dba39286ed9a878a7af21457bfcf503fc22c90a9672af00913602101",
+      "htmlSha256": "7b1ce56d8df4f897523dd3f90ff473233999476710c2af7f49594046b5d13cbe",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-text200",
+      "pngSha256": "905dd18fc47218f7dcca15e45b985b82fe6b898c7ed983c9a447e42d77c75edd",
+      "htmlSha256": "5ca1b45639ef4d13bb5d3fea6bba5a852d1504defefc6ae9928a45cda58f382d",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "390-static-selected",
+      "pngSha256": "2f3fab59602424dab0d2c30c375ef34dc60ed8a3fbacd2564cdc42a40556a8f7",
+      "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+      "bound": true,
+      "horizontalOverflow": 200
+    },
+    {
+      "name": "390-static-no-result",
+      "pngSha256": "5645a2275d3952eacd5ee50d75196148670cb93f918365624e75f2af6d3e9a5f",
+      "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-entry",
+      "pngSha256": "2e83128710d47fe404bf3f2c59f902ebac5c426562ffc39811dc3cc7bf31777f",
+      "htmlSha256": "63041731e0ecd2ff2b1481641f370f90e8b50de1f7136730f8189caf99d94e0a",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-empty-endpoint",
+      "pngSha256": "d55a86e983dd1955cb5f5301bf3b9fbc59c5ea676d57766899db865b18fb510b",
+      "htmlSha256": "2440e5d8edb00ca834f080c28c20f25581fda587e6df9b70c9b8ccfab604a3c4",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-task-provenance",
+      "pngSha256": "04f1f8ce78e9b53822f813798b265ab4ba57f20d7e0592ddba2a06f56e67af8d",
+      "htmlSha256": "0197297bddfa04ec9ea2c60420ace486097ace845efa3fba77fe2b149f0c2cab",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-bundle",
+      "pngSha256": "b2546e36482d18fc7bab94d964fadf6dea881962f60f9b6b05dd05197ad9f59b",
+      "htmlSha256": "d1d92439e8f91010804a05d714ce79748493747f177225cbfb8e111da32cf128",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-score-boundary",
+      "pngSha256": "0e891c6c8a6cf4c91033b01c6f7034cfd948230c3d9cb39539379c2a9e44498c",
+      "htmlSha256": "100836116c4bb3ac108027b8ab4d7a23b011cf49bc50a0eb764da6273a387a5d",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-local-answer",
+      "pngSha256": "e8f6e8b1b7052f3a0771bf2a33ef5dc64ccb9b281a3f463c634cf3ef532a75b7",
+      "htmlSha256": "5ab4c4a889245d527dfbb6e68e259a3b62d3760d8e7b73e20cb95d5ebea6cb5d",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-no-result-state",
+      "pngSha256": "ed31c2e18ee608d26314a826933f38171f975577bb6e4fa6e60bf5b926ac83d5",
+      "htmlSha256": "e6c73c8735920195c157006a43530265a8b7d2d71429d9a182c99cb1096efbe3",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-keyboard",
+      "pngSha256": "6be0f7af08d86f7de4b7bac40dec3e5cc9a962b9d47a14b19e9c415ebdc5f468",
+      "htmlSha256": "306a39c0ae1b46581a039773110f8c5fefce4b66686ad3b526979e0ccd27610b",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-text200",
+      "pngSha256": "f6452a3d689c0661fc078646e9ea53cc650297f184d3486817ee125665b66464",
+      "htmlSha256": "6ed22b2d958ac0e31632134e7344b3c6884cce026e26350920b974148cb3fd2c",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-static-selected",
+      "pngSha256": "79b197df5ac9daae49263dcaf7b66e18d843ef5a1b9472b617ad23326ea26231",
+      "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "768-static-no-result",
+      "pngSha256": "1361034c52515ab97bb6cb62942b64020a1bcc16f3240a251cabb07cd71f8a23",
+      "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-entry",
+      "pngSha256": "a84f59961cb7e9082b1965289af059f8de7aad6507fc2de88cc06ad05b391517",
+      "htmlSha256": "1152e072a2c21efb2e926d36f45fa26f57f8d48736d16175f6cf11c7b83d381f",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-empty-endpoint",
+      "pngSha256": "7671292fe5058695fd10a102a6c650865150db2c849901a943575460133b79c1",
+      "htmlSha256": "1152e072a2c21efb2e926d36f45fa26f57f8d48736d16175f6cf11c7b83d381f",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-task-provenance",
+      "pngSha256": "04fca61666b830432e0f9e4519db85104920ff5049e68cdb1fa5a267f8ea3c88",
+      "htmlSha256": "153beecccf02f249f4eb8b3b128e6799c9b22e803263e01696bbf9cb1db5b4cc",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-bundle",
+      "pngSha256": "7a009d1d8c79b8713c11f2494820ff61501688806ef37a15ab1942c6b0db2148",
+      "htmlSha256": "e872a756493d79eefc300f59e7d4d0ae2a5db851b86d37c8fc7c33d550e225c5",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-score-boundary",
+      "pngSha256": "c55d0cc5a7a2f611af3f87045e3755a3c8f0a2ffe474b59cd79236fbcab84ee1",
+      "htmlSha256": "800ad86a56c86a6a299176a56a526d796a86f1a61edda23bc2ff277f63bbfafb",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-local-answer",
+      "pngSha256": "0b9fc693906e2a9b4ef254637d7b4c5439be6fde5ef3dd62d7cc3a320c07e89f",
+      "htmlSha256": "cc58e5ef4a14b054ec142ebdc77a14b6b7cea3983a91429db8347adc305e17ea",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-no-result-state",
+      "pngSha256": "630db9ac8043f3db50d1f8c1d97e6f9c0389d14ed283a749db4bc5a1f6ad06dc",
+      "htmlSha256": "bd06f47a55f62b994862805ba88cb7d04a7ef6e4cf29a8698d424324bdc86226",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-keyboard",
+      "pngSha256": "817bef50c4414bd3819ed943aa2254dd0e0dd144169e6979f785b8ae364785aa",
+      "htmlSha256": "fdb880bc6a29fa5e629b284a5eb66d2020adef68eceb09e74acdeccab77b39a9",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-text200",
+      "pngSha256": "338179795e2bca42ec9014feec19fa68f9e4212e6b6ca8706ce53517b9adbe72",
+      "htmlSha256": "ca952935673b5cac3800ec202c1221ab6f8553101eb191b5b36333fafec87077",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-static-selected",
+      "pngSha256": "09b8c463f9bc9685e8df3f65dc6dd8132d6e7591509bfea580a1f9f154231bb9",
+      "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1024-static-no-result",
+      "pngSha256": "de59940e9a9871ffd7699d3d912e278642e33c2e973e148f21f24d296ae8720b",
+      "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-entry",
+      "pngSha256": "a0ccc46c3b49288b3239d959ba17af293ac7cc94ff23001bb3221f62f50aa231",
+      "htmlSha256": "138bfdd89e00b831183dddf38cfd6b226bdbca7e2c134e26565b1f3d33eaa0f0",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-empty-endpoint",
+      "pngSha256": "cc60f025a57e7c11433be0bbdf4f51b5d3ef4d0832c77121e68295dd4f544b41",
+      "htmlSha256": "138bfdd89e00b831183dddf38cfd6b226bdbca7e2c134e26565b1f3d33eaa0f0",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-task-provenance",
+      "pngSha256": "ef497e63db7c15463fc14554dbaac602bfb57fb59b34d2e5f7af90ef37ead9d6",
+      "htmlSha256": "d281cdadf744794f28a0996a90bee0006133eee56feb38c4b3856fc939bdf312",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-bundle",
+      "pngSha256": "68c207535d44869276d66f368f44eda70662d3611e5851dabda0f42b09402171",
+      "htmlSha256": "b7f01d272078a817812bf383ace1a7fd5b7769aa2a674fad1891c2882abd7f59",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-score-boundary",
+      "pngSha256": "69fc0afef85f8a006437253c50d6e47334f6ad9275cd9ecd6881ce41e1d400b8",
+      "htmlSha256": "05c600da04854a9b82e67204f731b1e7b07552fdbd13e6101e537a8ff46e6f9a",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-local-answer",
+      "pngSha256": "bec6f564758e920959d6a5bde379fa5dd25a87efc80cea64a31a4de44d5a0c09",
+      "htmlSha256": "ebe4a0d3016fbdba1c76e8e98b1a001ce2a3c3030f6fbe1c662c1c9559fce0c9",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-no-result-state",
+      "pngSha256": "d6567f7ea6c4d9aff5bf4130b68b512b585af39cdbce5a2dfb7c7a8f70c5df52",
+      "htmlSha256": "7f9892874c7132a2570466b56c6a1020682d45045df3f3d5d113a9637016a001",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-keyboard",
+      "pngSha256": "116fe1e22ae31572d85ce8635fde01845fa1d5c9291af503864110893294e756",
+      "htmlSha256": "55d028c016549f177953a9386783f8a7937b49fe240ea391dd91a6f7719b67a7",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-text200",
+      "pngSha256": "8b44f8ba827e0086ead0594b5471fd6b997281c8e141ecacc22e98e2ed2c6de6",
+      "htmlSha256": "0c4647f8c961dc1a459ae1c73ab9fc3bfe4dcbb1830d39c965b80ca3273498c2",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-static-selected",
+      "pngSha256": "9bc4b4f1904f082738b88372967b9f286f7e6aad7d59e42ca18eeb8abb93a441",
+      "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1440-static-no-result",
+      "pngSha256": "babddb07ac053a89a389783b46b44a2bcd69746503164e0dce4a386d99fc3316",
+      "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-entry",
+      "pngSha256": "807696079fbfae632cf1ac9fce05b1b29ad749923b228c569ffe5ce93e2a571b",
+      "htmlSha256": "ba77a1408f272744b2686fe1ca8c395c962076d71e3dd3aae6304c226f0e138d",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-empty-endpoint",
+      "pngSha256": "190dc7119956956604f96720a3d93756adc387e372b0eb1f6e0de52d89f9fd9f",
+      "htmlSha256": "ba77a1408f272744b2686fe1ca8c395c962076d71e3dd3aae6304c226f0e138d",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-task-provenance",
+      "pngSha256": "399841b57d709265316011a24a15fbb1f9b880e340adf0e12a4118af3b650893",
+      "htmlSha256": "5584a98ffa16d93a9d2f0768cefc80d5f7ff334ece94b95d108a91e6d5bb2a5a",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-bundle",
+      "pngSha256": "8ee141a662962460f722eaa238a2d307a95a0ffaa7fd4a968b7e2a5a43e07789",
+      "htmlSha256": "c7f4344b26ce7a898a8c15f5a29b27c2c6e06c654aa534b1f77b536ed608ada7",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-score-boundary",
+      "pngSha256": "deb270affadb27008c1a2fef154ce56d5c581d279a0dd4a4e8d54e59416c6ab8",
+      "htmlSha256": "9ec92ab1fbbf0c091cbf387b2319a51b80fdc4154ae3e5221fabce490f82dee8",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-local-answer",
+      "pngSha256": "d10a84bfdf4222a70c3857c56fc7a3a6e96cf7708a10cb6296213a24d227702f",
+      "htmlSha256": "629f833ecd426a4c8fa5bd76a1aebc42313dc21f1585a32fbeece8da7611487f",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-no-result-state",
+      "pngSha256": "4d1aff77a635262230d5b0bdf070ca4baa92b7dbd79e3c27b82d4331a7c72b08",
+      "htmlSha256": "5f74c8c7dc00a6e547e369e3a18d0b5f5113b6dc183e9be436f7338f7a9bedb0",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-keyboard",
+      "pngSha256": "8f0d9727395e24f8cc20734f4a3d7de8edd44783907f90407664f78e3a2142a0",
+      "htmlSha256": "c09758b444444d660abf5a9ec2281054d51614202dee15f532d0b154cb49dbfd",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-text200",
+      "pngSha256": "57733dec44e172ab55da1aadc40013b6e8facf218ce76679eca48c976fd95392",
+      "htmlSha256": "2ce234c9c0e56fae34f07f6222ca1266d91b924f3759bc7c51fd08cb4439f6b8",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-static-selected",
+      "pngSha256": "e8ebe554ff988aac8efbb278cb0bb969b9d2c2dfa66bbc6dfd7786414e24f78d",
+      "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+      "bound": true,
+      "horizontalOverflow": 0
+    },
+    {
+      "name": "1920-static-no-result",
+      "pngSha256": "52a07b070fd4d7134b33ffbbab413a044a47c1cd4661a3209a8519540217488c",
+      "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+      "bound": true,
+      "horizontalOverflow": 0
+    }
+  ],
+  "answers": [
+    {
+      "width": 320,
+      "question": "Which public Node repo task can I inspect?",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 390,
+      "question": "Which public Node repo task can I inspect?",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 768,
+      "question": "Which public Node repo task can I inspect?",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 1024,
+      "question": "Which public Node repo task can I inspect?",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 1440,
+      "question": "Which public Node repo task can I inspect?",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 1440,
+      "question": "Show the source evidence again",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 1440,
+      "question": "Keep official scores separate",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 1440,
+      "question": "Recheck the first task",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    },
+    {
+      "width": 1920,
+      "question": "Which public Node repo task can I inspect?",
+      "catalogCitationIds": [
+        "nodeagent.storyboard.capture.v1",
+        "nodetrace.capture-plan.smoke.v1",
+        "nodetrace.storyboard.capture.v1",
+        "nodemem.storyboard.receipt.v1",
+        "nodeseo.storyboard.audit.v1"
+      ],
+      "exactIdsAllPresent": true,
+      "scoreBoundary": true
+    }
+  ]
+}

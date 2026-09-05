@@ -1,0 +1,81 @@
+{
+  "url": "http://127.0.0.1:54532/?view=public-node-repo-proofs",
+  "body": "keyboard_double_arrow_left\nFilters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nkeyboard_double_arrow_right\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+  "viewport": {
+    "width": 390,
+    "height": 900
+  },
+  "horizontalOverflow": 0,
+  "focus": {
+    "tag": "BODY",
+    "text": "\n    You need to enable JavaScript to run this app.\n    keyboard_double_arrow_leftFiltersPersonaSaved viewSearchSortDoma",
+    "label": null
+  },
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Filtered15",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Domains5",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kinds13",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Cost tiers5",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Difficultyadvanced62",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Steps13",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Costexternal-variable",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "DomainAgent Runtime & NodeAgent",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kindcurated-live",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Verifier types8",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Score statuses2",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Primary suites50",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    }
+  ]
+}

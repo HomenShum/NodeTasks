@@ -1,0 +1,13 @@
+{
+  "status": "SOURCE_EXPORT_TREE_LABEL_CORRECTION",
+  "originalReceipt": "source-export.json",
+  "originalReceiptSha256": "4ff9859dea46a9c997207ce463f77f3d6bac0d43ca2c2f33d427cff226ec5076",
+  "originalTreeField": "8e9b6495ba3bf716549825d05f48faaefc73dcfb",
+  "actualGitTree": "47bfab14eec7149a288a0ccd09be857fbfe70c2f",
+  "commit": "8e9b6495ba3bf716549825d05f48faaefc73dcfb",
+  "rawCommit": "immutable-commit.json",
+  "rawCommitSha256": "49ac4e2b60255cbc613ff1c68dd3d66e0581e8b18a2bf5d61493e6089d00d389",
+  "reason": "The recursive tree API response repeated the requested commit identifier; use the immutable commit object tree identity. Original response and receipt retained. All extracted blob bindings are unchanged.",
+  "sourceReexported": false,
+  "testsRerun": false
+}

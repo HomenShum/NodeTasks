@@ -1,0 +1,276 @@
+{
+  "schema": "nodetasks-local-first-use/v1",
+  "startedAt": "2026-09-05T17:34:54.078Z",
+  "inputs": [
+    {
+      "path": "apps/nodetasks_streamlit.py",
+      "sha256": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1"
+    },
+    {
+      "path": "catalog/all-tasks.json",
+      "sha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e"
+    },
+    {
+      "path": "catalog/saved-views.json",
+      "sha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14"
+    },
+    {
+      "path": "catalog/task-bundles.json",
+      "sha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b"
+    },
+    {
+      "path": "catalog/provenance-index.json",
+      "sha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2"
+    },
+    {
+      "path": "catalog/hierarchy.json",
+      "sha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "sha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1"
+    },
+    {
+      "path": "catalog/search-index.js",
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "sha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "sha256": "e9739c3c547e05240193afc7a285c6c733125ed0c2d92aae546ec3966c01e8c2"
+    }
+  ],
+  "cells": [
+    {
+      "width": 320,
+      "captures": [
+        {
+          "name": "320-entry",
+          "pngSha256": "0439ac9347cf4296a7b1183961b9ace19d8a96bac422ec6e198ae221a6d50dba",
+          "htmlSha256": "fd866ae72d22e772aeeb6e65d165dfeee19fd0f2f0352129b9a4d235bc73080f",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-empty-endpoint",
+          "pngSha256": "5219860079ce148011e2a63502a07f57ff7bd96b4098e1d449272a1eff13434f",
+          "htmlSha256": "f2a226969c14489907427e72d7611ac3958be608615e009fb978bd2d12df1822",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-task-provenance",
+          "pngSha256": "0093cba41ceb49c72ac438097a4332a7b334c816b34ef8a554585c0ee9b64b28",
+          "htmlSha256": "957ccc0679b4e9144ab861265d475b42ee6354df62d35cec60a2e03bafa82bad",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-bundle",
+          "pngSha256": "40ca5bb23824e36607317262090943552ee87687e458fe4d791d6af20d9f7fc6",
+          "htmlSha256": "07f9844547eca2875778fcb31c020c4a6cc0911b51b3e7b2d4e3c1780a1320ba",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-score-boundary",
+          "pngSha256": "2b23b5d318e813bf1d22c66c6ba110ba258ef94fab751c6b69dad82ae9b2a1b2",
+          "htmlSha256": "6f371b9fa55e252d2e55f9ff2dfda305b11f49ce9b2bfbaad8c07fec6d746cd1",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-local-answer",
+          "pngSha256": "7f7bce49088bfef341c757cfec5088cb6c45018eee2e4a517084c08229db724e",
+          "htmlSha256": "49283bf6fb31d9dd07b64401f1e17646f947da499014456105b60deca6622fbe",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-no-result-state",
+          "pngSha256": "fdd6ab2e4a29949b1af1ae40a0657ac6ff4f6444237e249c7683a026b3def1ee",
+          "htmlSha256": "074f7db29edf5a2116013ffe463808864e8a4b5edc0341474983f9f72c1d2927",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-keyboard",
+          "pngSha256": "3720b895ceba81710fc65abb2d3880249fbcdf151ef5b2733718648b366adcb9",
+          "htmlSha256": "fca00599be9861ede8ef755fb085cb37ee1f6e9c781371baabad5ce9cc4640e8",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-text200",
+          "pngSha256": "6748c9afed311c2d47d76af1e2107b3bcb4dfba702dd0bb2ba4870df3ba5ca95",
+          "htmlSha256": "4b081f157ec57e3ff88fd6e316ebb05225b9ba1c6c19b215dcf78636ef4888b5",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-static-selected",
+          "pngSha256": "d94acab7ca2e165e472d24b39c780c464b3000b97df78d903c746ea64ac8698b",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 270
+        },
+        {
+          "name": "320-static-no-result",
+          "pngSha256": "340c18d67b646a23fae10da4003f9c8630ed6d6036ca9a34f0769f3ca50f89d3",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "320-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "320-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "320-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "320-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "320-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "320-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Download filtered JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    },
+    {
+      "width": 390,
+      "captures": [
+        {
+          "name": "390-entry",
+          "pngSha256": "dab153320b5538a106b6cfdb283aad42854dbf4a961ef4f037faa49b62f82a92",
+          "htmlSha256": "a3fb24f591aa8d1303a5c38f9c2b8df21f54fca30cda2b80d0be501fffbfb6c0",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-empty-endpoint",
+          "pngSha256": "bef75e92faf7ef57595f5ed4bf7ee2b89493ce49b568cd632e0f673e15b37b79",
+          "htmlSha256": "e22191fe26b9ecd28a46b305494b8c249e684620f75598f3217da669c312b7f2",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-task-provenance",
+          "pngSha256": "daa8f596d3aac677ad23f3943e59e8130af15ce145937ea6ffe3e9ed2c6e1a72",
+          "htmlSha256": "c0723af64dbb9481bab0ffd6ed29d6e60cdb64d2d8a70f945de821309c2bbdce",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-failure",
+          "pngSha256": "1381567bff95680b8506c9a16733bf4186d584df7cbaec86fc6cf7662ecfebf2",
+          "htmlSha256": "07f875cfa85fbccf65900ede7be27379bd999ae88287f84ac4e4550cc1415d43",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "390-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "status": "FAILED",
+      "error": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded."
+    }
+  ],
+  "externalRequests": [],
+  "errors": [],
+  "limits": [
+    "Local catalog mode only; no benchmark/model execution",
+    "Six fixed widths, finite download/chat budgets; no whole-product grade",
+    "200% root text enlargement is browser-only, not native zoom",
+    "Filtered JSON exports the Rows-limited shown table, not every matching row",
+    "Static browser and Streamlit are separate surfaces"
+  ],
+  "status": "FAILED",
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-05T17:36:13.387Z"
+}

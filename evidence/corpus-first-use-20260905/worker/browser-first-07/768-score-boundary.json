@@ -1,0 +1,81 @@
+{
+  "url": "http://127.0.0.1:54532/?view=public-node-repo-proofs",
+  "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n10\n\n10\n\n500\n\nNodeAgent endpoint\n\nkeyboard_double_arrow_right\nStop\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nProvenance and score boundaries\n\nEvery task keeps product-path proof separate from official semantic benchmark scoring.\n\nVerifier types\n\n8\n\nScore statuses\n\n2\n\nPrimary suites\n\n50\n\nVerifier types\n\nScore statuses\n\nSample tasks by verifier\n\nkeyboard_arrow_right\n\nsource-reference (25 samples)\n\nkeyboard_arrow_right\n\nrubric-scenario (25 samples)\n\nkeyboard_arrow_right\n\ndeterministic-test (25 samples)\n\nkeyboard_arrow_right\n\nverifier-receipt (25 samples)\n\nkeyboard_arrow_right\n\nbrowser-proof (25 samples)\n\nkeyboard_arrow_right\n\nproxy-adapter-contract (6 samples)\n\nkeyboard_arrow_right\n\ncatalog-derived (15 samples)\n\nkeyboard_arrow_right\n\nmodel-proxy-receipt (25 samples)",
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "horizontalOverflow": 0,
+  "focus": {
+    "tag": "DIV",
+    "text": "Provenance",
+    "label": null
+  },
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Filtered15",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Domains5",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kinds13",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Cost tiers5",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Difficultyadvanced62",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Steps13",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Costexternal-variable",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "DomainAgent Runtime & NodeAgent",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kindcurated-live",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Verifier types8",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Score statuses2",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Primary suites50",
+      "foreground": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-09-05T17:46:31.583106+00:00",
+  "finishedAt": "2026-09-05T17:47:22.645025+00:00",
+  "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+  "argv": [
+    "C:/nvm4w/nodejs/node.exe",
+    "C:/Users/hshum/.codex/worktrees/5dba/nodebench-ai/docs/plans/portfolio-recovery-20260904/E6h-nodetasks-ui-findings-before.mjs"
+  ],
+  "timeoutSeconds": 300,
+  "timedOut": false,
+  "exitCode": 0,
+  "seconds": 51.063000000081956,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "ui-findings-before.log"
+}

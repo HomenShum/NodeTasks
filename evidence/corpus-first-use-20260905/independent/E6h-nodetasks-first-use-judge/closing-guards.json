@@ -1,0 +1,27 @@
+{
+  "at": "2026-09-05T18:11:29.776783+00:00",
+  "bindings": {
+    "source": {
+      "count": 9,
+      "allRawExact": true
+    },
+    "protected": {
+      "count": 1272,
+      "allRawExact": true
+    },
+    "portable": {
+      "count": 625,
+      "allRawExact": true
+    }
+  },
+  "primary": {
+    "head": "20797dc23ed3b44ea65355441c774cf7ca2da32e17ebb6c9d3b91eb263e650d6",
+    "refs": "6eaf413e01a067ad01d1f2b8079aafbb4525496abd7e95050ce1a164607e55c5",
+    "indexEntries": "a48a2a4577c67134f8c7b68da92a11afa43f59cdaa0b848a41223c4b6c2c31bf",
+    "status": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "worktrees": "b8ff4d572220fefefc4d2425f3bc9b9262ba6eddc9911cb7da04b0df70d565e4"
+  },
+  "manifestSha256": "893b22e30380a7f990c4c9c7f42b7037fd742e31bbb0bb7307d1e258cbd31a68",
+  "noGitConsumer": true,
+  "frozenSourceReleasedForMetadataOnly": true
+}

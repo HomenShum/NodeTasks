@@ -1,0 +1,155 @@
+{
+  "schema": "portfolio-plan-judge/v1",
+  "at": "2026-09-05T16:18:21.085829+00:00",
+  "mode": "Builder",
+  "verdict": "APPROVED_UNCHANGED_SOURCE_EXPORT_AND_BASELINE_WITH_EXECUTION_AMENDMENTS",
+  "reviewer": "Independent nonauthor; reused reviewer context",
+  "requestTrace": "Make repositories ready for developer/user handoff using planner-worker-judge; review the exact NodeTasks metadata/path plan before first-use execution.",
+  "planSha256": "5d043287147c7817b224ce4e0e9a167b5d19dad96f630ff0c5c61c8e86e5d081",
+  "source": {
+    "NodeTasksPR1": "8e9b6495ba3bf716549825d05f48faaefc73dcfb",
+    "NodeTasksMain": "6d4feacac8ca6287e0ffe406088ac46180d24fee",
+    "NodeTasksPrimaryPR2": "0a8ba3b7bb0fc8d295166362a4fd64f136ed9030",
+    "NodeKitCanonical": "a2d2e8ce36cc3e87a6a8133469dd55d8b7580588",
+    "NodeKitReviewedCandidate": "8cec22e4e554d6c93ca87ff2e72ea39ba39f4b85",
+    "NodeKitRelevantRegistryFilesEqual": {
+      "ownership.yaml": true,
+      "repositories.yaml": true,
+      "architecture.yaml": true,
+      "schemas/nodekit.schema.json": true,
+      "src/lib/repo-check.mjs": true
+    }
+  },
+  "checksPassed": 12,
+  "checks": [
+    {
+      "id": "plan-packet-exact",
+      "pass": true,
+      "evidence": "30/30 packet artifacts and Markdown hash"
+    },
+    {
+      "id": "pr1-primary-source-exact",
+      "pass": true,
+      "evidence": "Eight primary PR1 Git blobs compared with retained copies"
+    },
+    {
+      "id": "repository-custody",
+      "pass": true,
+      "evidence": "Actual primary HEAD, refs, index-entry stream, clean status and worktree metadata hashes match reviewed guards; index field is entry serialization, not raw index bytes"
+    },
+    {
+      "id": "single-owned-concept",
+      "pass": true,
+      "evidence": "ownership.yaml:103-110 grants nodetasks.corpus-receipt only; keep NodeAgent origins"
+    },
+    {
+      "id": "three-missing-consumers",
+      "pass": true,
+      "evidence": "NodeKit ownership consumer entries and repo-check.mjs:235-245; PR1 nodekit.yaml only lists nodeplatform.repo-contract"
+    },
+    {
+      "id": "migration-copy-correction",
+      "pass": true,
+      "evidence": "NodeKit docs/DECISIONS.md:36-44 distinguishes frozen duplicates from authoritative migration sources; four unchanged provenance signatures"
+    },
+    {
+      "id": "path-read-cause",
+      "pass": true,
+      "evidence": "validate-catalog.mjs:39-41 appends a problem; 168-179 continues to existsSync/readFile; prefix does not establish normalized or physical containment"
+    },
+    {
+      "id": "receipt-and-doctor-limits",
+      "pass": true,
+      "evidence": "doctor checks Node/files/narrow text; validator hashes 18 content inputs and indexed sources, schema is hashed not executed; check-receipt compares serialized bytes"
+    },
+    {
+      "id": "first-use-is-real-user-job",
+      "pass": true,
+      "evidence": "Streamlit native saved-view controls, task detail/provenance, bundle/filtered downloads and deterministic local answer are present; actual downloads/reopen and real pixels remain required"
+    },
+    {
+      "id": "minimal-owner-scope",
+      "pass": true,
+      "evidence": "Seven non-UI paths plus conditional validator path and bounded evidence; no catalog/vendor/schema/package/lock/app/UI rewrite"
+    },
+    {
+      "id": "environment-isolation-amendment-required",
+      "pass": true,
+      "evidence": "Actual apps/nodetasks_streamlit.py:379 reads NODETASKS_CATALOG; 422 initializes endpoint from NODEAGENT_ENDPOINT; 567 invokes endpoint for submitted chat"
+    },
+    {
+      "id": "baseline-first-no-false-promotion",
+      "pass": true,
+      "evidence": "Unchanged first run and expected NodeKit failure preserved; no write-receipt regeneration to erase a failure; all product/visual/human grades remain null"
+    }
+  ],
+  "amendments": [
+    {
+      "id": "CHILD-ENVIRONMENT",
+      "before": "Any app launch or local question",
+      "requirement": "Build an explicit child environment that excludes NODEAGENT_ENDPOINT and fixes NODETASKS_CATALOG to the owned exported public catalog (or excludes it so the source default applies). Do not read, print or copy existing values. Do not alter parent/global environment. Assert the visible endpoint field is empty before chat. Block non-loopback application egress in the proof, while separately allowing normal recorded dependency installation."
+    },
+    {
+      "id": "OWNED-SENTINEL",
+      "before": "Adversarial fixture execution",
+      "requirement": "Keep every fixture and sentinel beneath one newly owned retained scratch root. Put a benign deterministic sentinel outside fixture/upstream/noderoom but inside that root. Do not point to any real external/private file. Verify absolute resolved target before creating any file/link. Do not overwrite an existing destination or use recursive copy/move/delete of user paths."
+    },
+    {
+      "id": "READ-ORACLE",
+      "before": "Declaring containment repaired",
+      "requirement": "Observe the actual delegated file read of the harmless sentinel in the unchanged validator, then require zero reads for the forbidden target after repair. Exit 1 alone is insufficient because failed assertions currently continue. Keep stale-receipt mismatch separate from the path cause. Include traversal, a blocked public-source name, and a supported known symlink/reparse target; retain platform inability as untested, not pass."
+    },
+    {
+      "id": "CONTAINMENT-SEAM",
+      "before": "Conditional validator implementation",
+      "requirement": "Validate the indexed path once before exists/read: expected canonical relative path under upstream/noderoom, no traversal/absolute/drive/UNC/backslash or alternate-stream escape, preserve existing blocked-name rule, reject an invalid entry immediately, and verify a regular physical target contained within the owned subtree. Handle parent links/reparse points, not just the final filename. Use existing Node filesystem/path APIs without a new framework or dependency. Do not claim concurrent hostile filesystem race protection from a lexical/realpath check; freeze inputs and reject source movement."
+    },
+    {
+      "id": "PROOF-IDENTITY",
+      "before": "Accepting final first-use output",
+      "requirement": "Bind exact PR1 export archive, every extracted Git blob, actual Node/isolated Python dependency versions and exact NodeKit launcher/registry input set. Keep dependency/runtime directories outside the scanned corpus. Preserve original receipt bytes and failed probes; use fresh fixture copies and restore only those owned copies. Bind the intended saved view, selected task IDs, top-N projection, reopened JSON bytes and local answer citations. Predeclare finite burst/sustained budgets. Source/code identity is not rendered equivalence; no UI edits without a new actual labelled before boundary."
+    }
+  ],
+  "allowedScope": [
+    "nodekit.yaml",
+    "docs/UPSTREAM_PROVENANCE.md",
+    "README.md",
+    "docs/NODEAGENT_BRIDGE.md",
+    "test/corpus-validation.test.mjs",
+    "HANDOFF.md",
+    "scripts/verify-first-use.mjs"
+  ],
+  "conditionalOwner": [
+    "scripts/validate-catalog.mjs"
+  ],
+  "readOnlyActions": {
+    "primaryGitBlobReads": true,
+    "sourceEdits": 0,
+    "indexEdits": 0,
+    "refEdits": 0,
+    "fetches": 0,
+    "exports": 0,
+    "installs": 0,
+    "applicationCommands": 0,
+    "browserRuns": 0,
+    "providerCalls": 0
+  },
+  "limits": [
+    "Static confirmation is not a program or rendered-UI replay.",
+    "The parent packet static arithmetic was byte-bound; this judge did not redundantly recompute all 9,155 task projections or 1,236 corpus hashes.",
+    "The source-export consumer and recorded dependency set do not exist yet. No execution identity is invented.",
+    "Original NodeTasks PR1 and PR2 remain intact; no wholesale branch merge approved.",
+    "AGENTS.md and AGENTS.override.md are absent from exact PR1 (read-only Git exit128 preserved in commands); the supplied user/global instructions apply.",
+    "The shared NodeKit executable and transitive checker inputs must be bound at execution; five registry/checker equalities alone do not certify an unrecorded launcher.",
+    "Endpoint-mode failure fallback prose is not certified by this no-provider first-use plan; do not imply endpoint integration was exercised.",
+    "No deployed/full-product/official-score/human acceptance claim or new grades."
+  ],
+  "grades": null,
+  "implementationApproved": false,
+  "nextAction": "Root may create the retained exact PR1 source export and run the unchanged baseline under the explicit environment/sentinel constraints; conditional validator edits only after the named harmless read failure is observed and frozen.",
+  "artifacts": {
+    "manifest": "C:\\Users\\hshum\\.codex\\worktrees\\5dba\\nodebench-ai\\docs\\plans\\portfolio-recovery-20260904\\E6h-nodetasks-pr1-plan-judge\\manifest.json",
+    "sha256": "31295278ba67c0004935b9e217e3677c81ab6e8055236a242bf3fa63cbf38596",
+    "files": 12
+  }
+}

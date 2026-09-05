@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-09-05T17:06:35.730343+00:00",
+  "finishedAt": "2026-09-05T17:06:36.593145+00:00",
+  "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+  "argv": [
+    "C:/nvm4w/nodejs/npm.cmd",
+    "run",
+    "check"
+  ],
+  "timeoutSeconds": 180,
+  "timedOut": false,
+  "exitCode": 1,
+  "seconds": 0.859000000054948,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "current-check-01.log"
+}
