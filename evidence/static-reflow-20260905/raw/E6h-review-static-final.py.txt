@@ -1,0 +1,60 @@
+from pathlib import Path
+import json,hashlib,subprocess,datetime,os
+P=Path(__file__).resolve().parent;O=P/'E6h-nodetasks-static-final-judge'
+R=Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905')
+W=P/'E6h-nodetasks-static-browser-01';F=P/'E6h_NODETASKS_STATIC_REFLOW_FREEZE.json'
+def sha(b):return hashlib.sha256(b).hexdigest()
+def read(p):return json.loads(p.read_text('utf-8-sig'))
+checks=[]
+def check(n,c,d=None):
+ checks.append({'name':n,'passed':bool(c),'detail':d})
+ if not c:raise AssertionError(n)
+env=dict(os.environ,GIT_OPTIONAL_LOCKS='0')
+def git(name,args):
+ q=subprocess.run(['git',*args],cwd=R,env=env,capture_output=True,timeout=60)
+ (O/(name+'.stdout')).write_bytes(q.stdout);(O/(name+'.stderr')).write_bytes(q.stderr);check('Read-only git command '+name,q.returncode==0);return q.stdout
+j={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checks':checks,'freezeSha256':sha(F.read_bytes())}
+try:
+ freeze=read(F);before=read(P/'E6h-nodetasks-static-reflow-01/source-before.json');owners={x['path']:x for x in freeze['source']};expected={x['path']:x for x in before};expected.update(owners)
+ check('Protected/current count is exact',len(before)==2428 and len(owners)==3 and len(before)-len(owners)==2425)
+ for path,x in expected.items():
+  b=(R/path).read_bytes();check('Full frozen file '+path,len(b)==x['bytes'] and sha(b)==x['sha256'])
+ source_digest=sha(''.join(x['path']+'\t'+x['sha256']+'\n'for x in sorted(freeze['source'],key=lambda x:x['path'])).encode());check('Source digest exact',source_digest==freeze['sourceDigest'])
+ prepared=read(P/'E6h_NODETASKS_PREPARED_UI_FREEZE.json')
+ for x in prepared['effectiveFiles']:check('Accepted prepared file remains exact '+x['path'],sha((R/x['path']).read_bytes())==x['sha256'])
+ for x in freeze['artifacts']:
+  b=(P/x['path']).read_bytes();check('Frozen raw artifact '+x['path'],len(b)==x['bytes'] and sha(b)==x['sha256'])
+ check('Frozen raw aggregate exact',sha(json.dumps(freeze['artifacts'],sort_keys=True,separators=(',',':')).encode())==freeze['artifactDigest'])
+ report=read(W/'report.json');check('Actual matrix is passed with no errors/egress/geometry failure',report['status']=='PASS' and report['errors']==[] and report['externalRequests']==[] and report['failures']==[])
+ check('All exact viewport pairs', [x['viewport']for x in report['actions']]==[[320,800],[360,800],[390,844],[768,1024],[1024,768],[1440,960],[1920,1080]])
+ check('Actual before/after result arrays byte-identical',(W/'search-before.json').read_bytes()==(W/'search-after.json').read_bytes())
+ fingerprints=read(W/'search-after.json');check('Thirty observed action comparisons',len(fingerprints)==len(report['comparisons'])==30)
+ for a,b in zip(fingerprints,report['comparisons'],strict=True):check('Action result identity '+a['action'],a['action']==b['action'] and a['summary']==b['summary'] and len(a['ids'])==b['results'] and a['textSha256']==b['textSha256'])
+ check('37 actual capture bindings',len(report['captures'])==37)
+ for cap in report['captures']:
+  data=read(W/(cap['name']+'.json'));check('Actual screenshot hash '+cap['name'],sha((W/(cap['name']+'.png')).read_bytes())==cap['sha256'])
+  check('Capture actual DOM correspondence '+cap['name'],data['viewport']==cap['viewport']and data['overflow']==cap['overflow']and len(data['outsideText'])==cap['outsideText']and data['resultIds']==cap['resultIds'])
+  if '-before-'not in cap['name']:check('Required geometry '+cap['name'],data['overflow']==0 and data['outsideText']==[])
+ for a in report['actions']:
+  w=a['viewport'][0];fonts=read(W/f'{w}-text200-fonts.json');check('Every computed font doubled '+str(w),len(fonts)==a['fontChecks']and all(x['after']==x['before']*2 for x in fonts))
+  normal=read(W/f'{w}-after-selected.json');recovered=read(W/f'{w}-recovered-200.json');empty=read(W/f'{w}-empty.json');text200=read(W/f'{w}-text200-result.json')
+  check('Selected/zero/200 recovery exact '+str(w),len(normal['resultIds'])==1 and empty['resultIds']==[] and len(recovered['resultIds'])==200 and normal['resultTexts']==text200['resultTexts'])
+ check('Actual desktop normal pixels identical',(W/'1440-before-selected.png').read_bytes()==(W/'1440-after-selected.png').read_bytes())
+ check('Actual desktop labelled pixels identical',(W/'1440-before-selected-3px.png').read_bytes()==(W/'1440-after-selected-3px.png').read_bytes())
+ check('Normal local command/log are actual and successful',freeze['check']['exitCode']==0 and sha((P/'E6h-nodetasks-static-check-01/normal-check.log').read_bytes())==freeze['check']['logSha256'])
+ log=(P/'E6h-nodetasks-static-check-01/normal-check.log').read_text('utf-8');check('Normal check ran doctor, allfive scenarios and readonly proof','# tests 5' in log and '# fail 0' in log and '> npm run doctor && npm test && npm run proof' in log)
+ tail=read(O/'native-end-02/report.json');check('Independent native End two cells passed',tail['status']=='PASS_TWO_NATIVE_REFERENCE_TAIL_CELLS' and tail['sourceUnchanged']and tail['runtimeClosed']and not tail['errors']and not tail['externalRequests'])
+ for cell in tail['cells']:
+  w=cell['viewport'][0];data=read(O/'native-end-02'/f'{w}-native-end.json');check('Independent actual tail pixels '+str(w),sha((O/'native-end-02'/f'{w}-native-end.png').read_bytes())==cell['pngSha256'])
+  check('Native trusted End and entire two refs visible '+str(w),len(data['events'])==1 and data['events'][0]['trusted']and data['events'][0]['target']=='BODY'and all(r['x']>=-1 and r['right']<=w+1 and r['y']>=-1 and r['bottom']<=cell['viewport'][1]+1 for ref in data['refs']for r in ref['rects']))
+ guards=read(P/'E6h-nodetasks-static-reflow-01/git-before.json')
+ for name,args in {'head':['rev-parse','HEAD'],'refs':['show-ref'],'index':['ls-files','--stage','-z']}.items():check('Full final Git guard '+name,sha(git(name+'-final',args))==guards[name])
+ # Preserve exact external reproduction helpers as additional independent metadata, never as claims of an earlier runtime self-hash.
+ helpers=[]
+ for name in ['E6h-verify-static-reflow.mjs','E6h-implement-static-reflow.py','E6h-check-static-reflow.py','E6h-static-native-end-supplement.mjs']:
+  b=(P/name).read_bytes();(O/(name+'.inert.txt')).write_bytes(b);helpers.append({'path':name,'sha256':sha(b),'bytes':len(b),'bindingScope':'Exact bytes read at independent review; root will bind publication separately'})
+ for path,x in expected.items():check('Final full guard '+path,sha((R/path).read_bytes())==x['sha256'])
+ j.update(status='PASS_FROZEN_STATIC_SOURCE_BROWSER_AND_PROTECTED_CUSTODY',source=freeze['source'],sourceDigest=source_digest,rawArtifacts=len(freeze['artifacts']),protectedFiles=2425,preparedFiles=598,normalCheckSeconds=90.5,rawCaptures=37,labelledCaptures=4,actionComparisons=30,independentTailCells=2,sourceAndGitGuardClosed=True,helpers=helpers)
+except Exception as exc:j.update(status='FAIL_STATIC_FINAL_REVIEW',error=repr(exc))
+finally:
+ j['finishedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat();(O/'raw-final-review.json').write_text(json.dumps(j,indent=2)+'\n',encoding='utf-8');print(json.dumps({'status':j['status'],'checks':len(checks),'failed':sum(not c['passed']for c in checks),'error':j.get('error'),'rawArtifacts':j.get('rawArtifacts')}))

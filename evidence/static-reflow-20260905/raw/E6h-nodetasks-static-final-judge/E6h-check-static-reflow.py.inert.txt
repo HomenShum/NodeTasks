@@ -1,0 +1,27 @@
+import hashlib, json, subprocess, time
+from pathlib import Path
+from datetime import datetime, timezone
+P=Path(__file__).resolve().parent
+R=Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905')
+O=P/'E6h-nodetasks-static-check-01';O.mkdir()
+def sha(b):return hashlib.sha256(b).hexdigest()
+def write(path,value):path.write_text(json.dumps(value,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
+before=json.loads((P/'E6h-nodetasks-static-reflow-01/source-before.json').read_text(encoding='utf-8'))
+changed=json.loads((P/'E6h-nodetasks-static-reflow-01/source-after.json').read_text(encoding='utf-8'))
+expected={e['path']:e for e in before};expected.update({e['path']:e for e in changed})
+def verify():
+ for path,e in expected.items():
+  data=(R/path).read_bytes();assert sha(data)==e['sha256'],path
+verify()
+started=datetime.now(timezone.utc).isoformat();t=time.monotonic()
+with (O/'normal-check.log').open('wb') as log: result=subprocess.run(['cmd','/c','npm','run','check'],cwd=R,stdout=log,stderr=subprocess.STDOUT,timeout=300)
+verify()
+receipt={'status':'PASS' if result.returncode==0 else 'FAIL','args':['npm','run','check'],'cwd':str(R),'startedAt':started,'seconds':round(time.monotonic()-t,3),'exitCode':result.returncode,'logSha256':sha((O/'normal-check.log').read_bytes()),'sourceFilesUnchanged':len(expected)}
+write(O/'receipt.json',receipt)
+if result.returncode:raise SystemExit(result.returncode)
+artifacts=[]
+for dirname in ['E6h-nodetasks-static-causal-before-01','E6h-nodetasks-static-reflow-01','E6h-nodetasks-static-browser-01','E6h-nodetasks-static-check-01']:
+ for path in sorted((P/dirname).rglob('*')):
+  if path.is_file():data=path.read_bytes();artifacts.append({'path':path.relative_to(P).as_posix(),'bytes':len(data),'sha256':sha(data)})
+write(P/'E6h_NODETASKS_STATIC_REFLOW_FREEZE.json',{'status':'FROZEN_FOR_INDEPENDENT_SOURCE_AND_BROWSER_JUDGE','at':datetime.now(timezone.utc).isoformat(),'namedProof':'NODETASKS-STATIC-REFLOW-01','root':str(R),'head':subprocess.check_output(['git','--no-optional-locks','rev-parse','HEAD'],cwd=R,text=True).strip(),'source':changed,'sourceDigest':sha(''.join(e['path']+'\t'+e['sha256']+'\n' for e in sorted(changed,key=lambda e:e['path'])).encode()),'protectedUnchanged':len(before)-3,'preparedFrozenFilesUnchanged':598,'browserReceipt':'E6h-nodetasks-static-browser-01/report.json','check':receipt,'artifacts':artifacts,'artifactDigest':sha(json.dumps(artifacts,sort_keys=True,separators=(',',':')).encode()),'fullGrades':None,'limits':['Native browser/OS zoom, physical devices, assistive technologies and full grades not established.','Historical prepared-UI evidence and criterion assessment retain their original pre-static-repair source bindings.','No commit or shared CI yet.']})
+print(json.dumps(receipt))

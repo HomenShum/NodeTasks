@@ -1,0 +1,1325 @@
+{
+  "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nPrepare filtered JSON\n\nPrepared 15 of 15 matching tasks · Rows limit 100\n\nDownload uses this prepared snapshot. After editing filters, prepare again.\n\nkeyboard_arrow_right\n\nPrepared filters\n\nDownload prepared JSON",
+  "state": "notRunning",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+  "rows": "100",
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Searchable tasks9,155",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Searchable tasks",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Searchable tasks",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 98.265625,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Searchable tasks",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 98.265625,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Searchable tasks",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 98.265625,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "9,155",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "9,155",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "9,155",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 80.546875,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Filtered15",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Filtered15",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Filtered",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Filtered",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 44.875,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Filtered",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 44.875,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Filtered",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 44.875,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "15",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "15",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "15",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 35.796875,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Domains5",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Domains5",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Domains",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Domains",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 51.84375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Domains",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 51.84375,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Domains",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 51.84375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "5",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "5",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "5",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 17.90625,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Kinds13",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Kinds13",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Kinds",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Kinds",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 32.859375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Kinds",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 32.859375,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Kinds",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 32.859375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "13",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "13",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "13",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 35.796875,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Cost tiers5",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Cost tiers5",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Cost tiers",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Cost tiers",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 54.484375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Cost tiers",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 54.484375,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Cost tiers",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 54.484375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "5",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "5",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "5",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 17.90625,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Difficultyadvanced62",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Difficultyadvanced62",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 103
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Difficulty",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Difficulty",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 52.453125,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Difficulty",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 52.453125,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Difficulty",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 52.453125,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "advanced",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "advanced",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "advanced",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 145.546875,
+          "height": 48
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "62",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.1875,
+          "height": 27
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricDelta",
+          "text": "62",
+          "color": "rgb(21, 130, 55)",
+          "background": "rgba(33, 195, 84, 0.1)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 40.3125,
+          "height": 23
+        },
+        {
+          "tag": "svg",
+          "testid": "stMetricDeltaIcon-Up",
+          "text": "",
+          "color": "rgb(21, 130, 55)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(21, 130, 55)",
+          "effectiveOpacity": 1,
+          "width": 14.390625,
+          "height": 14.390625
+        },
+        {
+          "tag": "path",
+          "testid": null,
+          "text": "",
+          "color": "rgb(21, 130, 55)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "none",
+          "effectiveOpacity": 1,
+          "width": 14.390625,
+          "height": 14.390625
+        },
+        {
+          "tag": "path",
+          "testid": null,
+          "text": "",
+          "color": "rgb(21, 130, 55)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(21, 130, 55)",
+          "effectiveOpacity": 1,
+          "width": 9.59375,
+          "height": 9.59375
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "62",
+          "color": "rgb(21, 130, 55)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 13.921875,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "62",
+          "color": "rgb(21, 130, 55)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 13.921875,
+          "height": 19
+        }
+      ]
+    },
+    {
+      "text": "Steps13",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Steps13",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Steps",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Steps",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 32.234375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Steps",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 32.234375,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Steps",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 32.234375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "13",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "13",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "13",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 35.796875,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Costexternal-variable",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Costexternal-variable",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Cost",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Cost",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 25.875,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Cost",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 25.875,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Cost",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 25.875,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "external-variable",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "external-variable",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "external-variable",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.484375,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "DomainAgent Runtime & NodeAgent",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "DomainAgent Runtime & NodeAgent",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Domain",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Domain",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 45.984375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Domain",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 45.984375,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Domain",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 45.984375,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "Agent Runtime & NodeAgent",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Agent Runtime & NodeAgent",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Agent Runtime & NodeAgent",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 426.515625,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Kindcurated-live",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Kindcurated-live",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 76
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Kind",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 24
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Kind",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 27,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Kind",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 27,
+          "height": 19
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Kind",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 27,
+          "height": 19
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "curated-live",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 52
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "curated-live",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 253.203125,
+          "height": 48
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "curated-live",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 178.609375,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "text": "Verifier types8",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Verifier types8",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Verifier types",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Verifier types",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Verifier types",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Verifier types",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "8",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "8",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "8",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        }
+      ]
+    },
+    {
+      "text": "Score statuses2",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Score statuses2",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Score statuses",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Score statuses",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Score statuses",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Score statuses",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "2",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "2",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "2",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        }
+      ]
+    },
+    {
+      "text": "Primary suites50",
+      "color": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)",
+      "descendants": [
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Primary suites50",
+          "color": "rgb(49, 51, 63)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "LABEL",
+          "testid": "stMetricLabel",
+          "text": "Primary suites",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": null,
+          "text": "Primary suites",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "Primary suites",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "Primary suites",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMetricValue",
+          "text": "50",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "DIV",
+          "testid": "stMarkdownContainer",
+          "text": "50",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "tag": "P",
+          "testid": null,
+          "text": "50",
+          "color": "rgb(229, 231, 235)",
+          "background": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "effectiveOpacity": 1,
+          "width": 0,
+          "height": 0
+        }
+      ]
+    }
+  ],
+  "gridRows": "16"
+}

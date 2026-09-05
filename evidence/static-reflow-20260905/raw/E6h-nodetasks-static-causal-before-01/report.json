@@ -1,0 +1,427 @@
+{
+  "status": "CAUSAL_PROBE_PASS_SOURCE_UNCHANGED",
+  "base": "http://127.0.0.1:60617",
+  "viewport": [
+    390,
+    844
+  ],
+  "sourceBefore": [
+    {
+      "path": "scripts/build-catalog.mjs",
+      "sha256": "2c097bebb12b397064dff7dc43e8deb61b97d95b00f9bdc024c3ac8d163ab919"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "sha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1"
+    },
+    {
+      "path": "catalog/search-index.js",
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/task-browser.html"
+    },
+    {
+      "method": "GET",
+      "path": "/search-index.js"
+    }
+  ],
+  "errors": [],
+  "captures": [
+    {
+      "name": "before",
+      "scrollX": 18,
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 590,
+      "elements": [
+        {
+          "selector": "BODY",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": -18,
+          "y": 0,
+          "width": 390,
+          "right": 372,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "shell",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": -18,
+          "y": 0,
+          "width": 390,
+          "right": 372,
+          "minWidth": "0px",
+          "gridTemplateColumns": "590.422px",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "ASIDE",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": -18,
+          "y": 0,
+          "width": 590.421875,
+          "right": 572.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "auto"
+        },
+        {
+          "selector": "MAIN",
+          "text": "1 shownOpen locally or serve this folder; no backend needed.\n      nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the No",
+          "x": -18,
+          "y": 430.3125,
+          "width": 590.421875,
+          "right": 572.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "bar",
+          "text": "1 shownOpen locally or serve this folder; no backend needed.",
+          "x": 4,
+          "y": 448.3125,
+          "width": 546.421875,
+          "right": 550.421875,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "result",
+          "text": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regener",
+          "x": 4,
+          "y": 477.3125,
+          "width": 546.421875,
+          "right": 550.421875,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "nodeagent.storyboard.capture.v1",
+          "x": 4,
+          "y": 492.3125,
+          "width": 216.53125,
+          "right": 220.53125,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "x": 4,
+          "y": 622.6875,
+          "width": 546.421875,
+          "right": 550.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+          "x": 4,
+          "y": 647.6875,
+          "width": 546.421875,
+          "right": 550.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        }
+      ],
+      "resultText": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.curated public-node-repo public-node-repo NodeAgent agent engineerhttps://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+    },
+    {
+      "name": "probe",
+      "scrollX": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 390,
+      "elements": [
+        {
+          "selector": "BODY",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "right": 390,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "shell",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "right": 390,
+          "minWidth": "0px",
+          "gridTemplateColumns": "390px",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "ASIDE",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "right": 390,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "auto"
+        },
+        {
+          "selector": "MAIN",
+          "text": "1 shownOpen locally or serve this folder; no backend needed.\n      nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the No",
+          "x": 0,
+          "y": 401.8125,
+          "width": 390,
+          "right": 390,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "bar",
+          "text": "1 shownOpen locally or serve this folder; no backend needed.",
+          "x": 22,
+          "y": 419.8125,
+          "width": 346,
+          "right": 368,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "wrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "result",
+          "text": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regener",
+          "x": 22,
+          "y": 477.8125,
+          "width": 346,
+          "right": 368,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "anywhere",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "nodeagent.storyboard.capture.v1",
+          "x": 22,
+          "y": 492.8125,
+          "width": 216.53125,
+          "right": 238.53125,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "anywhere",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "x": 22,
+          "y": 669.1875,
+          "width": 346,
+          "right": 368,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "anywhere",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+          "x": 22,
+          "y": 708.1875,
+          "width": 346,
+          "right": 368,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "anywhere",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        }
+      ],
+      "resultText": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.curated public-node-repo public-node-repo NodeAgent agent engineerhttps://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+    },
+    {
+      "name": "restored",
+      "scrollX": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 590,
+      "elements": [
+        {
+          "selector": "BODY",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "right": 390,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "shell",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "right": 390,
+          "minWidth": "0px",
+          "gridTemplateColumns": "590.422px",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "ASIDE",
+          "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+          "x": 0,
+          "y": 0,
+          "width": 590.421875,
+          "right": 590.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "auto"
+        },
+        {
+          "selector": "MAIN",
+          "text": "1 shownOpen locally or serve this folder; no backend needed.\n      nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the No",
+          "x": 0,
+          "y": 430.3125,
+          "width": 590.421875,
+          "right": 590.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "bar",
+          "text": "1 shownOpen locally or serve this folder; no backend needed.",
+          "x": 22,
+          "y": 448.3125,
+          "width": 546.421875,
+          "right": 568.421875,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "result",
+          "text": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regener",
+          "x": 22,
+          "y": 477.3125,
+          "width": 546.421875,
+          "right": 568.421875,
+          "minWidth": "0px",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "nodeagent.storyboard.capture.v1",
+          "x": 22,
+          "y": 492.3125,
+          "width": 216.53125,
+          "right": 238.53125,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "x": 22,
+          "y": 622.6875,
+          "width": 546.421875,
+          "right": 568.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        },
+        {
+          "selector": "CODE",
+          "text": "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+          "x": 22,
+          "y": 647.6875,
+          "width": 546.421875,
+          "right": 568.421875,
+          "minWidth": "auto",
+          "gridTemplateColumns": "none",
+          "overflowWrap": "normal",
+          "flexWrap": "nowrap",
+          "overflowX": "visible"
+        }
+      ],
+      "resultText": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.curated public-node-repo public-node-repo NodeAgent agent engineerhttps://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+    }
+  ],
+  "scope": "Read-only current source plus reversible in-browser CSS causal probe; no product file edit, no grade.",
+  "productFilesChanged": 0,
+  "sourceUnchanged": true,
+  "runtimeClosed": true,
+  "finishedAt": "2026-09-05T19:34:17.962Z"
+}

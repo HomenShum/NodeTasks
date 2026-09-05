@@ -1,0 +1,15 @@
+# UI change boundary
+
+Route: http://127.0.0.1:54531/?view=public-node-repo-proofs
+Viewport: 320x800
+Theme: natural default light; no theme override
+Session: fresh local, unsigned, empty endpoint
+Fixture: unchanged public-node-repo-proofs saved view (15 rows)
+
+## CHANGE A · Metric contrast
+
+Current: the metric value/label inherits dark foreground on an explicitly dark card. Expected: readable metric labels and values without changing counts, spacing, theme or task semantics. This card is one instance of the shared metric style.
+
+Out of scope: catalog task IDs/order/score/provenance, ranked-table data, other tabs, local answers, provider behavior, sidebar filter semantics. No UI edit has occurred.
+
+The 3px annotation is temporary DOM-only; exact DOM restoration passed. Source SHA-256: 0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1.

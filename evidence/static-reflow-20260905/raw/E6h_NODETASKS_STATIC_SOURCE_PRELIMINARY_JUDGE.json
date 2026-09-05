@@ -1,0 +1,702 @@
+{
+  "schema": "nodetasks-static-source-preliminary-judge/v1",
+  "at": "2026-09-05T19:50:06.554910+00:00",
+  "scope": "Read-only source/cause/receipt review during root browser proof. No final source/index/ref guard or UI acceptance.",
+  "checks": [
+    {
+      "name": "Named current source matches supplied version scripts/build-catalog.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Named current source matches supplied version catalog/task-browser.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Named current source matches supplied version proof/corpus-receipt.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner scripts/build-catalog.mjs grid-template-columns: 280px 1fr;",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner scripts/build-catalog.mjs main { padding: 18px 22px 48px; }",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner scripts/build-catalog.mjs .bar { display: flex; align-items:",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner scripts/build-catalog.mjs .result { border-top:",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner scripts/build-catalog.mjs .shell { grid-template-columns: 1fr; }",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Exactly five CSS replacements, no other bytes scripts/build-catalog.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner catalog/task-browser.html grid-template-columns: 280px 1fr;",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner catalog/task-browser.html main { padding: 18px 22px 48px; }",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner catalog/task-browser.html .bar { display: flex; align-items:",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner catalog/task-browser.html .result { border-top:",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "One original CSS owner catalog/task-browser.html .shell { grid-template-columns: 1fr; }",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Exactly five CSS replacements, no other bytes catalog/task-browser.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Inline behavior script exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys ",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /officialScoreBoundary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /semanticBoundary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /sourceIndexDrift",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt array length /sourceIndexDrift/samples",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /vendoredSource",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt array length /contentHashes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same receipt object keys /contentHashes/17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Exactly intended receipt delta",
+      "passed": true,
+      "detail": [
+        "/contentHashes/12/bytes",
+        "/contentHashes/12/sha256",
+        "/corpusHash"
+      ]
+    },
+    {
+      "name": "Independent aggregate hash before",
+      "passed": true,
+      "detail": "7aa41b0fec4c32820ce3449a0624558c5ad56e6c0a377a3c958ff4e32f9bc797"
+    },
+    {
+      "name": "Independent aggregate hash after",
+      "passed": true,
+      "detail": "e37ebe1399065a667e725e13edd8978117669ba9c213a90143505e3fda001685"
+    },
+    {
+      "name": "18 generated/schema artifacts compared",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/all-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/all-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/benchmark-proxy-adapters.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/benchmark-proxy-adapters.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/extracted-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/extracted-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/hierarchy.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/hierarchy.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/live-interaction-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/live-interaction-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/provenance-index.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/provenance-index.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/ranked-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/ranked-tasks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/saved-views.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/saved-views.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/search-index.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/search-index.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/search-index.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/search-index.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/source-files.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/source-files.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/tag-index.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/tag-index.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/task-browser.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/task-bundles.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/task-bundles.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/task-families.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/task-families.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current catalog/task-index.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged catalog/task-index.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current schemas/corpus-receipt.schema.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged schemas/corpus-receipt.schema.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual disposable output equals current schemas/node-task.schema.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Other generated bytes unchanged schemas/node-task.schema.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Raw log binding generator",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Raw log binding stale-proof",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Raw log binding validate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual stale failure before intentional validation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Generator uses original snapshot date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Actual three-phase widths reverse",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Full result text preserved through CSS-only probe",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Causal source/runtime preservation reported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same named source after read scripts/build-catalog.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same named source after read catalog/task-browser.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Same named source after read proof/corpus-receipt.json",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "verdict": "NO_SOURCE_OR_RECEIPT_CORRECTNESS_CONCERN_FOUND_UI_PROOF_PENDING",
+  "sourceBindings": [
+    {
+      "path": "scripts/build-catalog.mjs",
+      "bytes": 97011,
+      "sha256": "339938c754f16fe10cde464ba25f8fe5cfb535316593f5fc539f222a562f61ce"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "bytes": 5945,
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "770b1c414b5a677e922845fc4aae88ebb36752683b0e34ade86cbce328a2f0b0"
+    }
+  ],
+  "generatedBindings": [
+    {
+      "path": "catalog/all-tasks.json",
+      "sha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/benchmark-proxy-adapters.json",
+      "sha256": "b3d302adc24ccd0b9d23658aa061af9315b2b61a30223dc9544e91fe41a0a381",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/extracted-tasks.json",
+      "sha256": "e3f207b5f41d99861b8c4d484da9b5d3af7df3eccac579f84ab4d1c7ea72c0c5",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/hierarchy.json",
+      "sha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/live-interaction-tasks.json",
+      "sha256": "a89df15ca6aa2b85799c5d721db27e5e8b4dc160524929e2559e24f4d0f31c1b",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/provenance-index.json",
+      "sha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/ranked-tasks.json",
+      "sha256": "d9d3d85ed8580c4fa9922a4ab0f2161f9cc909c28b89a357ae04e869bd23eb31",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/saved-views.json",
+      "sha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/search-index.js",
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/search-index.jsonl",
+      "sha256": "a287b78bf47a2a031fd60541fa11d2b9c87a50a328fe17d8b86943b14ac5ca29",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/source-files.json",
+      "sha256": "5e5bd59a4df35deb4efc5ca10b8fb80a214aedb7d95e0f6b572bea075557ca5b",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/tag-index.json",
+      "sha256": "0694ab68a71f12e9e2d1881355c8fb95ce8ead076c68ae1382241c58774329bc",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1",
+      "unchanged": false
+    },
+    {
+      "path": "catalog/task-bundles.json",
+      "sha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/task-families.md",
+      "sha256": "20fff77616e86d7d1149533e91caa0b623457db20ed7b25c72207fc46eda7cd6",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/task-index.json",
+      "sha256": "f749cd1a2d6ab4eeba4331ca9c38144800f9779d15acca420b478fa48daefd4c",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/corpus-receipt.schema.json",
+      "sha256": "14be6e5873e23b55de90a8644fcaa1d55170680d54c4c9e90cb43d64b6d943dc",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/node-task.schema.json",
+      "sha256": "a0e45f5f498587625d93720b64f6088bfe45fbbbf65fd02ae59c38ff17e17141",
+      "unchanged": true
+    }
+  ],
+  "receiptDelta": [
+    "/contentHashes/12/bytes",
+    "/contentHashes/12/sha256",
+    "/corpusHash"
+  ],
+  "minimumCorrectnessConcern": null,
+  "findings": [
+    "Five CSS substitutions implement the exact temporary causal probe at the owned generator and generated HTML. Grid tracks no longer insist on long-token intrinsic minimums; main may shrink; result text and summary may wrap.",
+    "No body clipping, text truncation, smaller font, hidden controls, data/search/ranking/escaping, display caps, JS, dependencies or validators were altered.",
+    "Both receipt aggregates independently recompute. Only HTML byte count/hash and aggregate corpusHash changed; all17 other generated/schema outputs match their before hashes and actual disposable/current bytes.",
+    "Actual stale proof exit1 and following normal validate exit0 are raw-log bound. The snapshot generatedAt remains the prior corpus date, not the repair execution time."
+  ],
+  "residual": [
+    "Root actual seven-width/long-content/keyboard/zero/repeated-filter UI proof and normal check remain pending; no approval to commit is supplied here.",
+    "The reported2425 protected/598 prepared files are root custody claims until the later full frozen review. This preliminary review deliberately binds only named source/generated inputs.",
+    "Need actual final pixels and content bounds at320/360/390, text enlargement and wide desktop before upgrading historical reflow observations.",
+    "Existing unlabeled static inputs, all other prepared-UI deductions and incomplete grades remain outside the five-CSS substitution."
+  ],
+  "browserOrTestsRunByJudge": false,
+  "sourceEditsByJudge": false,
+  "pixelsViewed": [
+    {
+      "path": "E6h-nodetasks-static-causal-before-01\\before.png",
+      "sha256": "0ef8bb7af105295a51d8e6e96c4ba165aa2971240fea13c6c09f5968942e5e77"
+    },
+    {
+      "path": "E6h-nodetasks-static-causal-before-01\\probe.png",
+      "sha256": "073fa5c18c8433146719ebbb357a569ae6b4666884faad2c45225709822c4196"
+    },
+    {
+      "path": "E6h-nodetasks-static-causal-before-01\\restored.png",
+      "sha256": "baf3f801ea2c71c90601f9b3fde72124bed20e69cdb7f2ef92d7241f52ecdd41"
+    }
+  ],
+  "rawImplementationArtifacts": [
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\before\\catalog\\task-browser.html",
+      "bytes": 5867,
+      "sha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\before\\proof\\corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\before\\scripts\\build-catalog.mjs",
+      "bytes": 96933,
+      "sha256": "2c097bebb12b397064dff7dc43e8deb61b97d95b00f9bdc024c3ac8d163ab919"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\generated-comparison.json",
+      "bytes": 4478,
+      "sha256": "56b781f3950819157fed107bd6fa3dc75d2359a80f1ef6742d3a949816965dd6"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\generator-copy.json",
+      "bytes": 242823,
+      "sha256": "a03951afa98e8503dd2cd2a6e39fba686a7d31b723b727a3ae6052da373d2e90"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\generator.command.json",
+      "bytes": 323,
+      "sha256": "a71ccd824262f063d1248de5f968ab8c8b4c8c430216f6c0e8e97bf4a9662704"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\generator.log",
+      "bytes": 161,
+      "sha256": "e0fb89deaeac359f5fea21049e8bd1e944d3d9318b999d80a9fcd5544b493707"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\git-before.json",
+      "bytes": 238,
+      "sha256": "1e73d05189bc4487a02efaa746f4021d988cbe5fe34f424845b51e6e0ea0b663"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\receipt-delta.json",
+      "bytes": 498,
+      "sha256": "6ca55a045682d09004d1734e06bdae9a2b50cc1f464af9dde75ab380d344cda6"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\receipt.json",
+      "bytes": 2868,
+      "sha256": "b44ffc0b52908b3a7d7e05448d694442b39025e766e786addfc2103cce43dffd"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\source-after.json",
+      "bytes": 454,
+      "sha256": "ab1afa4f470fd9e78571a24e2d94c0237a2649171f14f2a8a7ae5dc5c0b70549"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\source-before.json",
+      "bytes": 476434,
+      "sha256": "7ede460f41d49b30d90ac5eec1c509240789224b3c06a86c00e58dfb4af56aa5"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\source.diff",
+      "bytes": 6175,
+      "sha256": "016d9c3d6aaa4401a207bf0b67b95badc59220103786a664597931cc3dcf244d"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\stale-proof.command.json",
+      "bytes": 374,
+      "sha256": "a43878ebba38ea5c6326a6077ac5149ead20e67d7806bc6a667152141c0ef278"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\stale-proof.log",
+      "bytes": 137,
+      "sha256": "fca81fdb35643a66aa10ec0b738cbdfbe7e8bb39976570fb0ce959bc7a24daf3"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\validate.command.json",
+      "bytes": 377,
+      "sha256": "39ec287571db920065a4fc229bcb7852e3225acdfb0ccb61107c32b43888712c"
+    },
+    {
+      "path": "E6h-nodetasks-static-reflow-01\\validate.log",
+      "bytes": 4778,
+      "sha256": "7f6eacafee173e0f21f195152945a8414581665354126f9c1c206f9a1ac61a65"
+    }
+  ]
+}

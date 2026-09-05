@@ -1,0 +1,83 @@
+{
+  "schema": "nodetasks-static-reflow-plan-judge/v1",
+  "at": "2026-09-05T18:48:41.469526+00:00",
+  "verdict": "APPROVED_CONDITIONAL_BOUNDED_PLAN",
+  "namedProof": "NODETASKS-STATIC-REFLOW-01",
+  "planSha256": "908ca6fe97c6d1362bc263f6dba6647a8ee831de1fec341c70837051cfef214b",
+  "sourceBaselineCommit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+  "sourceBindings": [
+    {
+      "path": "scripts/build-catalog.mjs",
+      "bytes": 96933,
+      "sha256": "2c097bebb12b397064dff7dc43e8deb61b97d95b00f9bdc024c3ac8d163ab919",
+      "immutableCommit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+      "currentStaticCandidateExact": true
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "bytes": 5867,
+      "sha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1",
+      "immutableCommit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+      "currentStaticCandidateExact": true
+    },
+    {
+      "path": "scripts/validate-catalog.mjs",
+      "bytes": 16919,
+      "sha256": "84c16236957f1c249a85d70ef6ec314a064001117c6846d1e92463fbcfdb070f",
+      "immutableCommit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+      "currentStaticCandidateExact": true
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357",
+      "immutableCommit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+      "currentStaticCandidateExact": true
+    },
+    {
+      "path": "package.json",
+      "bytes": 1048,
+      "sha256": "8a1d9d7e1207c9fe3d1c54521484b6ab8eb7491d24bee3fd2cf45327df4b3f61",
+      "immutableCommit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+      "currentStaticCandidateExact": true
+    },
+    {
+      "path": "catalog/task-index.json",
+      "bytes": 4895,
+      "sha256": "f749cd1a2d6ab4eeba4331ca9c38144800f9779d15acca420b478fa48daefd4c",
+      "immutableCommit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+      "currentStaticCandidateExact": true
+    }
+  ],
+  "checksPassed": 5,
+  "checksTotal": 5,
+  "conditions": [
+    "Close the active Streamlit source/proof guard first. Rebind the final accepted app/proof/HANDOFF/workflow and old552-file packet before any static edit. This review freezes only the unchanged named static inputs, not the active worker checkout.",
+    "Capture and view current native 3px labelled before boundaries and actual long-token/computed-size evidence. Existing 320/390 screenshots are historical. Select CSS from that observation; no body overflow hiding, text truncation, smaller fonts or removal of current result content.",
+    "In an owned disposable exact-source copy use child-only NODETASKS_GENERATED_AT=2026-07-09T02:48:01.246Z and the normal npm run build:catalog from that copy as cwd. The generator writes all16 catalog artifacts. Verify the other15 outputs and both schemas byte-for-byte; preserve and diagnose any mismatch before transferring the intended output. The historical generatedAt labels the corpus snapshot, not the repair execution time.",
+    "Preserve the old receipt, require normal npm run proof to reject the changed HTML as stale, then intentionally run npm run validate. Permit only contentHashes entry catalog/task-browser.html bytes/sha256 and corpusHash to differ. All17 other content entries, counts, semanticBoundary, vendoredSource, status and score boundaries remain exact. Generator bytes are outside this18-content receipt and require separate final source binding.",
+    "Compare complete currently rendered strings and result identities in their original order against before inputs. Existing display policy intentionally limits200 results,8 tags and4 source references; preserve these limits and escaping instead of expanding content. DOM text equality alone cannot prove wrapping or readability; inspect actual pixels and element/document bounds.",
+    "Exercise native search/kind/family/quick-filter inputs, zero/recovery, long real identifiers/references, keyboard, repeated transitions, named width pairs and doubled-text simulation. Preserve desktop layout and original no-backend behavior. No screen-reader, native zoom, physical device, sustained-load or full-grade claim follows from this finite matrix."
+  ],
+  "rootCause": "Source supports intrinsic-width diagnosis: renderTaskBrowserHtml lines1399/1415 use automatic-minimum 1fr tracks; main lacks min-width:0; code/reference tokens lack wrapping; flex summary lacks wrap. Current computed element measurement remains required before the CSS choice.",
+  "allowedOwners": [
+    "scripts/build-catalog.mjs",
+    "catalog/task-browser.html",
+    "proof/corpus-receipt.json",
+    "bounded new proof/evidence and final handoff after active guard closes"
+  ],
+  "expectedReceiptDelta": [
+    "contentHashes[catalog/task-browser.html].bytes",
+    "contentHashes[catalog/task-browser.html].sha256",
+    "corpusHash"
+  ],
+  "generatorReplayExecuted": false,
+  "newBrowserProofExecuted": false,
+  "currentRuntimePassed": null,
+  "fullGrades": null,
+  "historicalPixelEvidence": "Previously viewed actual320/390 selected-result PNGs retained exactly. No new before or after pixel claim.",
+  "guardClosed": "Only named static source inputs and original source export closed. Active Streamlit working files were not judged or frozen.",
+  "artifactManifest": "C:\\Users\\hshum\\.codex\\worktrees\\5dba\\nodebench-ai\\docs\\plans\\portfolio-recovery-20260904\\E6h-nodetasks-static-plan-judge\\artifact-manifest.json",
+  "artifactManifestSha256": "7ed2c57b5a4c074a93aaec0e247ab20d4bd29bb57bdc47d096c7ac844761a53c",
+  "artifactCount": 15
+}

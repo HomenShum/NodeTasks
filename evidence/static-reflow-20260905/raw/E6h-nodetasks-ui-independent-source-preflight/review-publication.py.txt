@@ -1,0 +1,59 @@
+from pathlib import Path
+import json,hashlib,subprocess,os,re,datetime
+P=Path(__file__).resolve().parents[1];O=Path(__file__).resolve().parent
+F=P/'E6h_NODETASKS_PREPARED_UI_FREEZE.json'
+R=Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905')
+Q=R/'evidence/prepared-download-metrics-20260905';W=P/'E6h-nodetasks-prepared-ui-01'
+def read(p):return json.loads(p.read_text('utf-8-sig'))
+def sha(b):return hashlib.sha256(b).hexdigest()
+checks=[]
+def check(name,c,detail=None):
+ checks.append({'name':name,'passed':bool(c),'detail':detail})
+ if not c:raise AssertionError(name)
+env=dict(os.environ,GIT_OPTIONAL_LOCKS='0')
+def run(name,args,stdin=None):
+ result=subprocess.run(args,cwd=R,env=env,input=stdin,capture_output=True,timeout=60)
+ (O/(name+'.stdout')).write_bytes(result.stdout);(O/(name+'.stderr')).write_bytes(result.stderr)
+ return result
+report={'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'freezeSha256':sha(F.read_bytes()),'checks':checks,'scope':'Working and future filtered Git bytes; no staging, refs, source edits or full suite execution.'}
+try:
+ freeze=read(F);manifest=read(Q/'manifest.json');mapping=read(Q/'raw-copy-map.json')
+ check('Expected exact freeze file count',len(freeze['effectiveFiles'])==598)
+ digest=sha(json.dumps(freeze['effectiveFiles'],sort_keys=True,separators=(',',':')).encode())
+ check('Exact effective digest',digest==freeze['effectiveDigest'],digest)
+ for row in freeze['effectiveFiles']:
+  b=(R/row['path']).read_bytes();check('Current frozen bytes '+row['path'],len(b)==row['bytes'] and sha(b)==row['sha256'])
+ filtered=run('future-filtered-git',['git','hash-object','--stdin-paths'],'\n'.join(x['path']for x in freeze['effectiveFiles']).encode()+b'\n')
+ check('Actual Git filter command successful',filtered.returncode==0)
+ blobs=filtered.stdout.decode().splitlines();check('Every future filtered Git blob exact',blobs==[x['gitBlob']for x in freeze['effectiveFiles']])
+ payload_names=[x['path']for x in manifest['files']]
+ actual_names=sorted(x.relative_to(Q).as_posix()for x in Q.rglob('*')if x.is_file() and x.name!='manifest.json')
+ check('Manifest has exact payload set',sorted(payload_names)==actual_names and len(payload_names)==593)
+ for row in manifest['files']:
+  b=(Q/row['path']).read_bytes();check('Manifest raw identity '+row['path'],len(b)==row['bytes'] and sha(b)==row['sha256'] and hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==row['gitBlob'])
+ check('Exact original-copy count',len(mapping['copies'])==587)
+ for row in mapping['copies']:
+  check('Actual operator-copy correspondence '+row['path'],(W/row['source']).read_bytes()==(Q/row['path']).read_bytes())
+ active=[]
+ for path in (Q/'raw').rglob('*'):
+  if path.is_file() and (path.name in ['.gitattributes','.gitignore','AGENTS.md','SKILL.md','package.json'] or path.suffix in ['.py','.mjs','.js','.ts','.tsx','.yml','.yaml','.md','.sh','.ps1']):active.append(path.relative_to(Q).as_posix())
+ check('Historical executable/config/Markdown inputs inert',not active,active)
+ verify=run('portable-verifier',['python','-X','utf8',str(Q/'verify.py'),'--source-root',str(R)])
+ check('Actual documented stdlib verifier',verify.returncode==0)
+ result=json.loads(verify.stdout);check('Source/protected coverage exact',result['portableFiles']==593 and result['sourceFiles']==4 and result['protectedFiles']==1830)
+ links=[]
+ for doc in [R/'HANDOFF.md',Q/'README.md']:
+  for text in re.findall(r'\]\(([^)]+)\)',doc.read_text('utf-8')):
+   if '://' in text or text.startswith('#'):continue
+   target=text.split('#')[0];check('Active authored link '+text,(doc.parent/target).is_file());links.append(text)
+ ignored=run('ignored-exact-paths',['git','check-ignore','--no-index','-z','--stdin'],b'\0'.join(x['path'].encode()for x in freeze['effectiveFiles'])+b'\0')
+ actual_ignored=[x for x in ignored.stdout.decode().split('\0')if x]
+ check('Only named ignored payload count',len(actual_ignored)==22)
+ check('Only packet raw logs require explicit staging',all(x.startswith('evidence/prepared-download-metrics-20260905/raw/') and x.endswith('.log')for x in actual_ignored),actual_ignored)
+ head=run('head-after',['git','rev-parse','HEAD']);check('HEAD unchanged',head.stdout.strip().decode()==freeze['head'])
+ index=run('index-after',['git','ls-files','--stage']);check('Index entry bytes unchanged',index.stdout==(O/'index.stdout').read_bytes())
+ refs=run('refs-after',['git','show-ref']);check('Refs unchanged',refs.stdout==(O/'refs.stdout').read_bytes())
+ report.update(status='PASS_WORKING_PUBLICATION_BYTES',effectiveFiles=598,portablePayloads=593,rawCopies=587,links=len(links),ignoredPaths=actual_ignored,artifactManifestSha256=sha((Q/'manifest.json').read_bytes()),currentDigest=digest)
+except Exception as e:report.update(status='FAILED_PUBLICATION_CHECK',error=repr(e))
+finally:
+ report['finishedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat();(O/'publication-review.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps({'status':report['status'],'checks':len(checks),'failed':sum(not x['passed']for x in checks),'error':report.get('error'),'links':report.get('links')}))

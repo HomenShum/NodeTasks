@@ -1,0 +1,193 @@
+from pathlib import Path
+import datetime, hashlib, json
+
+P = Path(__file__).resolve().parent
+O = P / 'E6h-nodetasks-static-final-judge'
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p): return json.loads(p.read_text(encoding='utf-8'))
+def binding(p): return {'path': p.relative_to(P).as_posix(), 'bytes': p.stat().st_size, 'sha256': sha(p)}
+def write(p, value): p.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+raw = read(O / 'raw-final-review.json')
+freeze = read(P / 'E6h_NODETASKS_STATIC_REFLOW_FREEZE.json')
+prior = P / 'E6h_NODETASKS_CRITERION_ASSESSMENT.json'
+prior_md = P / 'E6h_NODETASKS_CRITERION_ASSESSMENT.md'
+assert sha(prior) == 'f63f57d3400cf448e0ed3ec4adafabcdfb3ce3ca23dd12f53a3e54862022d957'
+assert sha(prior_md) == 'f0faae3c12eb0ee9a99ed6fbcd571e462187acff303290833758efb41b267804'
+assert raw['status'] == 'PASS_FROZEN_STATIC_SOURCE_BROWSER_AND_PROTECTED_CUSTODY'
+assert raw['sourceAndGitGuardClosed'] and all(x['passed'] for x in raw['checks'])
+assert sha(P / 'E6h_NODETASKS_STATIC_REFLOW_FREEZE.json') == raw['freezeSha256']
+now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+evidence_files = set(p for p in O.rglob('*') if p.is_file() and p.name != 'independent-evidence-manifest.json')
+for name in ['E6h-review-static-final.py', 'E6h-review-static-source-preliminary.py',
+             'E6h-static-native-end-supplement.mjs', 'E6h-freeze-static-final-judgment.py',
+             'E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE.md', 'E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE.json']:
+    evidence_files.add(P / name)
+evidence_files.update(p for p in (P / 'E6h-nodetasks-static-independent-source-recon').rglob('*') if p.is_file())
+manifest = {'schema': 'portfolio-independent-static-evidence/v1', 'at': now,
+            'scope': 'Exact independent raw observations, retained failed external recorder, source review and helpers. No self-hashed final judgment.',
+            'files': [binding(p) for p in sorted(evidence_files)]}
+write(O / 'independent-evidence-manifest.json', manifest)
+
+refs = {
+    'freeze': binding(P / 'E6h_NODETASKS_STATIC_REFLOW_FREEZE.json'),
+    'rawReview': binding(O / 'raw-final-review.json'),
+    'independentManifest': binding(O / 'independent-evidence-manifest.json'),
+    'preliminary': binding(P / 'E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE.json'),
+    'causalBefore': binding(P / 'E6h-nodetasks-static-causal-before-01/report.json'),
+    'implementationReceipt': binding(P / 'E6h-nodetasks-static-reflow-01/receipt.json'),
+    'rootBrowser': binding(P / 'E6h-nodetasks-static-browser-01/report.json'),
+    'normalCheckLog': binding(P / 'E6h-nodetasks-static-check-01/normal-check.log'),
+    'independentNativeEnd': binding(O / 'native-end-02/report.json'),
+    'retainedHarnessFailure': binding(O / 'native-end-01/report.json'),
+    'prior44': binding(prior), 'prior44Markdown': binding(prior_md),
+}
+pixels = [
+    'E6h-nodetasks-static-causal-before-01/before.png',
+    'E6h-nodetasks-static-causal-before-01/probe.png',
+    'E6h-nodetasks-static-causal-before-01/restored.png',
+    'E6h-nodetasks-static-browser-01/320-after-selected.png',
+    'E6h-nodetasks-static-browser-01/320-text200-result.png',
+    'E6h-nodetasks-static-browser-01/390-text200-result.png',
+    'E6h-nodetasks-static-browser-01/1440-before-selected-3px.png',
+    'E6h-nodetasks-static-browser-01/1440-after-selected-3px.png',
+    'E6h-nodetasks-static-final-judge/native-end-02/320-native-end.png',
+    'E6h-nodetasks-static-final-judge/native-end-02/390-native-end.png',
+]
+limits = [
+    'This approves the three-owner static layout and corpus receipt slice for publication. Final portable publication, committed blob readback and current shared CI remain separate dependencies.',
+    'The seven-width matrix is local desktop Chromium with emulated CSS viewports. Text200 doubles every computed element font; it is not native browser or operating-system zoom. Physical touch, on-screen keyboard, screen readers, locale combinations and constrained-device performance were not exercised.',
+    'Normal-motion screenshots and reduced-motion doubled-text states do not establish complete motion or accessibility acceptance. Input naming and target-size coverage remain inherited or unmeasured.',
+    'The corpus receipt is content/structure validation, not a signature, official benchmark score, generator attestation or user-experience certificate. No corpus task, provider call or production workflow was executed.',
+    'Streamlit enlarged header clipping, legacy caption contrast, metric ellipsis and other old assessment deductions remain outside this static repair. All eight full dimension scores and final criterion scores remain null.',
+    'The root browser recorder was not included in the initial root artifact freeze. Its current exact bytes and implementation/check helpers are preserved at independent review time; root will separately bind their publication. This is not a fabricated earlier execution-time self-hash.',
+]
+judgment = {
+    'schema': 'portfolio-static-reflow-final-judge/v1', 'at': now,
+    'mode': 'Builder', 'namedProof': 'NODETASKS-STATIC-REFLOW-01',
+    'verdict': 'APPROVED_SCOPED_STATIC_SOURCE_AND_PROOF_FOR_PUBLICATION',
+    'reviewer': {'identity': '/root/provider_ci_closure_judge', 'nonauthorOfProductOwners': True,
+                 'contextReuse': 'Existing independent reviewer reused across prior portfolio tasks; authored only external review and bounded native-End proof helpers for this slice.'},
+    'requestTraceability': 'Re the request to make each repo ready for handoff with visual, responsive and interaction gradings: this closes the demonstrated static search result overflow while preserving evidence and incomplete whole-product grades.',
+    'repo': freeze['root'], 'head': freeze['head'], 'source': freeze['source'], 'sourceDigest': freeze['sourceDigest'],
+    'scope': {'changedOwners': 3, 'protectedFilesUnchanged': 2425, 'preparedUiFilesUnchanged': 598,
+              'fullCurrentFilesBound': 2428, 'rootArtifactBindingsVerified': 155,
+              'headRefsIndexEntriesUnchanged': True, 'sourceAndGitGuardClosed': True,
+              'productEditsByReviewer': 0, 'fullSuiteRerunsByReviewer': 0, 'fullMatrixRerunsByReviewer': 0},
+    'causalFinding': {
+        'persona': 'A developer or agent operator reading a static task result on a phone needs the complete title and source references to choose and inspect the task.',
+        'failure': 'Long reference tokens set the automatic grid-track minimum; the 390px document grew to 590px and hid part of the result horizontally.',
+        'knockout': 'The exact original 390px page measured 590px, the five-rule browser probe measured 390px, and restoring the original CSS returned 590px with identical result text and original HTML bytes.',
+        'correction': ['minmax(0,1fr) for the desktop flexible track', 'main min-width:0', 'status bar flex-wrap:wrap', 'result overflow-wrap:anywhere', 'minmax(0,1fr) for the mobile track'],
+        'semantics': 'Inline search JavaScript and the search index are byte-identical. No clipping, reduced font, truncation, new dependency or runtime policy was introduced.',
+    },
+    'receipt': {
+        'normalDisposableGenerator': 'PASS; only generated task-browser.html differed among 18 outputs; the other 17 output bytes were exact.',
+        'staleReceiptNegative': 'Actual unchanged npm run proof rejected the new HTML with the old receipt before normal validation regenerated the receipt.',
+        'semanticChangedPaths': ['/contentHashes/12/bytes', '/contentHashes/12/sha256', '/corpusHash'],
+        'newCorpusHash': 'e37ebe1399065a667e725e13edd8978117669ba9c213a90143505e3fda001685',
+        'snapshotDate': 'The generator retained the existing 2026-07-09T02:48:01.246Z corpus snapshot date in the disposable process; this is not the repair date.',
+    },
+    'verification': {
+        'automatedIndependentReadChecks': len(raw['checks']), 'failedReadChecks': 0,
+        'normalCommand': 'npm run check', 'normalExitCode': 0, 'normalSeconds': 90.5,
+        'normalScope': 'doctor, all five existing scenario tests, and read-only corpus proof; no unchanged rerun',
+        'rootNativeBeforeAfterActionComparisons': 30, 'rootCaptures': 37, 'additionalLabelled3pxCaptures': 4,
+        'exactViewports': [[320,800],[360,800],[390,844],[768,1024],[1024,768],[1440,960],[1920,1080]],
+        'states': ['one long selected result', 'empty query result', 'clear and recover the 200-result cap', 'computed doubled-text top and result'],
+        'rootAfterOverflowAndOutsideText': 0, 'rootConsoleErrorsAndEgress': 0,
+        'nativeResultSemantics': 'Thirty before/after files and fingerprints preserve ordered IDs, summaries and complete result text, including quick filters, combined filters, zero/hostile-looking/long queries, repeated queries and native keyboard filtering.',
+        'desktopPixelIdentity': '1440 normal selected PNG and its 3px labelled counterpart are each byte-identical before/after.',
+        'independentSupplement': 'Two fresh exact 320x800 and 390x844 current-page cells; actual trusted native End from BODY; both full wrapped reference text ranges fit inside each viewport and are visible in the inspected PNGs; source unchanged, zero console errors or egress, runtime closed.',
+        'independentBrowserVersion': '149.0.7827.55',
+        'pixelFilesActuallyViewed': [binding(P / x) for x in pixels],
+    },
+    'retainedFailures': [{
+        'path': refs['retainedHarnessFailure']['path'],
+        'classification': 'External recorder selector mistake, not product failure',
+        'cause': 'The first supplement searched .result p code but actual generated references are in .result > .row:last-child code; it failed 0 versus 2 before keyboard actions.',
+        'disposition': 'Original recorder, report and correction note retained. Only the external selector/output directory changed; the second bounded replay passed and both runtimes closed.'
+    }],
+    'findings': [], 'limitations': limits,
+    'publicationStatus': 'PENDING_SEPARATE_PORTABLE_BYTE_AND_CLAIM_REVIEW',
+    'sharedIntegrationStatus': 'NOT_RUN_FOR_THIS_UNCOMMITTED_SLICE', 'productionStatus': 'NOT_CLAIMED',
+    'finalDimensionScores': {key: None for key in ['visualScore','designScore','responsiveScore','interactionScore','accessibilityScore','performanceScore','usageScore','alignmentScore']},
+    'evidenceRefs': refs,
+}
+J = P / 'E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.json'
+write(J, judgment)
+(P / 'E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.md').write_text(f'''# NodeTasks static reflow: independent final judgment
+
+Builder. **Approved for scoped publication.** A developer reading a task on a phone can now see its complete source references without horizontal loss. The generator owns the five CSS rules, the emitted HTML reproduces them, and the corpus receipt changes only for that HTML. No product correctness finding remains in this three-owner slice.
+
+**Re your request:** make each repo ready for usage and handoff, including visual, responsive and interaction grading — this review closes the demonstrated static-page overflow and records the remaining coverage separately.
+
+The candidate is HEAD `{freeze['head']}` with source digest `{freeze['sourceDigest']}`. The exact [freeze](E6h_NODETASKS_STATIC_REFLOW_FREEZE.json) and [raw independent checks](E6h-nodetasks-static-final-judge/raw-final-review.json) bind all three owners, 2,425 protected files, all 598 previously approved prepared-UI files and all 155 frozen operator artifacts. HEAD, refs and index entries are unchanged; the source guard is closed. The 5,785 read checks are custody/claim checks, not 5,785 user scenarios.
+
+The upstream cause was the automatic minimum of the flexible grid track, enlarged by long reference tokens. The actual 390px before/probe/restored experiment measured 590→390→590px document width with unchanged result text. `minmax(0,1fr)`, a zero main minimum, status-bar wrapping and result word wrapping fix that owner. Search JavaScript and index bytes remain exact; there is no hidden overflow or truncation. The normal disposable generator changed only one of its 18 outputs. Actual stale-receipt proof failed before normal validation updated only the HTML byte count/hash and aggregate corpus hash.
+
+The unchanged normal `npm run check` passed in 90.5 seconds: doctor, all five existing scenario tests and corpus proof. The root browser proof supplies 30 native before/after result comparisons, 37 captures plus four labelled captures at all seven required viewport pairs, and empty/200-result recovery and doubled computed text. All required after cells have zero horizontal/text overflow or console errors/egress. The normal 1440px selected PNG and labelled counterpart are byte-identical before/after.
+
+I independently used native End on the actual current static page at 320×800 and 390×844 with doubled computed fonts. Both complete reference tails are readable inside the inspected viewport, including the [320px tail](E6h-nodetasks-static-final-judge/native-end-02/320-native-end.png) and [390px tail](E6h-nodetasks-static-final-judge/native-end-02/390-native-end.png). Trusted BODY key events, DOM/text ranges, console and exact source identities are retained. The first external recorder used a wrong selector before any key action; its failure and exact original helper remain intact. The corrected selector replay is separately named and passed. All owned runtime resources closed.
+
+The reviewer did not author these three product files; this existing judge was reused from prior portfolio work. Current helper bytes are copied and hashed in the [independent evidence manifest](E6h-nodetasks-static-final-judge/independent-evidence-manifest.json). The original root freeze omitted the external recorder itself; publication must separately bind its retained bytes. This review does not invent an earlier execution-time self-hash.
+
+The [separate static criterion addendum](E6h_NODETASKS_STATIC_CRITERION_ADDENDUM.md) leaves the original 44-row assessment unchanged. All eight complete dimensions stay null. Streamlit header clipping, legacy captions and metric ellipsis remain held. Emulated viewports and computed doubled fonts do not prove physical touch, native zoom, screen readers, locale coverage or device performance. The unsigned corpus receipt proves content/structure only; it is not a benchmark score or usability certificate. No provider/task execution or production claim is made.
+
+Next: independently verify the concrete portable publication, then normal committed-blob and shared-CI checks. No further full suite or matrix replay is needed for this unchanged source judgment.
+
+Final structured judgment SHA-256: `{sha(J)}`.
+''', encoding='utf-8')
+
+old = read(prior)
+names = {x['id']: x for x in old['criterionRatings']}
+updates = [
+    ('R1', 5, 'OBSERVED_STATIC_SCOPE_ONLY', 'Seven exact static-page viewport pairs preserve all exercised result text with zero horizontal overflow; doubled text and native End preserve complete reference tails.', 'No material reflow defect in the exercised static cases. This does not replace the prior whole-application score or untested platform coverage.'),
+    ('R3', None, 'RESOLVED_STATIC_RESULT_CARD_FACET_ONLY', 'The static result card fits the viewport and preserves full long identifiers/references. The separate Streamlit metric ellipsis and untested panel combinations remain.', 'A complete new panel/table/canvas criterion score would combine surfaces outside this patch; retain null here.'),
+    ('R5', None, 'OBSERVED_COMPUTED_TEXT_AND_LONG_CONTENT_ONLY', 'All computed element fonts doubled at seven pairs with unchanged content. Complete long reference tails were independently inspected at 320 and 390.', 'Native browser/OS zoom and declared locale combinations remain NOT_RUN; do not substitute computed font resizing for those proofs.'),
+    ('A4', None, 'RESOLVED_STATIC_REFLOW_FACET_ONLY', 'The previous static horizontal content loss is closed; native End can expose both complete references without clipping.', 'Target sizes/exceptions, native zoom and broader accessibility coverage are incomplete. Other source header clipping remains outside this patch.'),
+]
+addendum = {
+    'schema': 'portfolio-static-criterion-addendum/v1', 'at': now,
+    'namedProof': 'NODETASKS-STATIC-REFLOW-01', 'assessmentScope': 'Static task browser only, agent evaluated; no whole-product grade refresh',
+    'original44Unchanged': [binding(prior), binding(prior_md)],
+    'profileRevision': old['profileRevision'], 'head': freeze['head'], 'workingSource': freeze['source'],
+    'sourceDigest': freeze['sourceDigest'], 'sourceJudgment': binding(J),
+    'criterionObservations': [{
+        'id': id, 'name': names[id]['name'], 'field': names[id]['field'],
+        'historicalWholeApplicationObservedScore': names[id]['observedScore'],
+        'scopedObservedScore': score, 'finalScore': None, 'status': status,
+        'observation': observation, 'deductionOrMissingEvidence': remaining
+    } for id, score, status, observation, remaining in updates],
+    'numericAnchor': '5 means meets the frozen reference and all exercised cases without a material observed defect, limited here to static R1. Null rows are facet observations, not fabricated N/A or complete criterion scores.',
+    'finalDimensionScores': judgment['finalDimensionScores'], 'overallScore': None, 'overallGrade': None,
+    'unchangedDeductions': ['Streamlit enlarged header clipping', 'legacy caption contrast', 'metric ellipsis', 'other original44 missing platform, human, performance and interaction coverage'],
+    'evidenceRefs': refs,
+}
+A = P / 'E6h_NODETASKS_STATIC_CRITERION_ADDENDUM.json'
+write(A, addendum)
+(P / 'E6h_NODETASKS_STATIC_CRITERION_ADDENDUM.md').write_text(f'''# NodeTasks static reflow: scoped criterion addendum
+
+The repaired static search page preserves result text at all seven exercised widths. Its scoped **R1 observation is 5/5** against the frozen reflow cases. This is a source-bound agent observation, not a complete application grade. The original [44-row assessment](E6h_NODETASKS_CRITERION_ASSESSMENT.json) remains byte-exact; all eight full dimensions and every final score stay null.
+
+| Exact criterion | Current static observation | Score and retained limit |
+| --- | --- | --- |
+| R1 Reflow/content preservation | The old 270/230/200px phone overflow is closed. Seven widths, empty/200-result recovery, computed doubled text and native End preserve complete result/reference text. | Scoped observed 5; complete application final score null. |
+| R3 modal/panel/table/canvas adaptation | Static result cards wrap completely. | No new complete criterion score; Streamlit metric ellipsis and other panel coverage remain. |
+| R5 stability under zoom, long content and declared locales | Computed fonts double exactly; long reference tails remain readable at 320 and 390. | Null; native zoom and locale combinations are NOT_RUN. |
+| A4 text resize/reflow and target size | Static content loss is closed and native End reaches the complete reference tail. | Null; target-size/native-zoom coverage is incomplete, and the separate Streamlit enlarged header remains held. |
+
+The [final source judgment](E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.json) binds the three owners at source digest `{freeze['sourceDigest']}`. The original assessment JSON remains `{sha(prior)}`. These observations do not recalculate its values, erase header/caption/metric deductions or award a readiness label.
+
+See the actual [320px doubled-text tail](E6h-nodetasks-static-final-judge/native-end-02/320-native-end.png), [390px tail](E6h-nodetasks-static-final-judge/native-end-02/390-native-end.png), and [full current matrix](E6h-nodetasks-static-browser-01/report.json). Complete platform, fresh-human, performance and production coverage remains outstanding. No further broad test run was made to produce this addendum.
+
+**Re your request:** include visual, responsive and interaction gradings — the resolved static reflow receives an explicit bounded observation, while missing coverage stays visible rather than being converted into a full score.
+
+Structured addendum SHA-256: `{sha(A)}`.
+''', encoding='utf-8')
+assert sha(prior) == refs['prior44']['sha256'] and sha(prior_md) == refs['prior44Markdown']['sha256']
+print(json.dumps({'verdict': judgment['verdict'], 'sourceGuardClosed': True,
+                  'judgment': binding(J), 'markdown': binding(P / 'E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.md'),
+                  'addendum': binding(A), 'addendumMarkdown': binding(P / 'E6h_NODETASKS_STATIC_CRITERION_ADDENDUM.md'),
+                  'independentManifest': binding(O / 'independent-evidence-manifest.json'),
+                  'independentArtifactCount': len(manifest['files']), 'prior44Unchanged': True}, indent=2))

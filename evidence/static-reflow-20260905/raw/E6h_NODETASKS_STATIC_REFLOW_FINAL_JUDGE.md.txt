@@ -1,0 +1,21 @@
+# NodeTasks static reflow: independent final judgment
+
+Builder. **Approved for scoped publication.** A developer reading a task on a phone can now see its complete source references without horizontal loss. The generator owns the five CSS rules, the emitted HTML reproduces them, and the corpus receipt changes only for that HTML. No product correctness finding remains in this three-owner slice.
+
+**Re your request:** make each repo ready for usage and handoff, including visual, responsive and interaction grading — this review closes the demonstrated static-page overflow and records the remaining coverage separately.
+
+The candidate is HEAD `1e9bf5ebea420f42ec5880238c4db46dc7de19ad` with source digest `a57916b759182033133bd18538caabd26e23f84012e265992779fda6993fa145`. The exact [freeze](E6h_NODETASKS_STATIC_REFLOW_FREEZE.json) and [raw independent checks](E6h-nodetasks-static-final-judge/raw-final-review.json) bind all three owners, 2,425 protected files, all 598 previously approved prepared-UI files and all 155 frozen operator artifacts. HEAD, refs and index entries are unchanged; the source guard is closed. The 5,785 read checks are custody/claim checks, not 5,785 user scenarios.
+
+The upstream cause was the automatic minimum of the flexible grid track, enlarged by long reference tokens. The actual 390px before/probe/restored experiment measured 590→390→590px document width with unchanged result text. `minmax(0,1fr)`, a zero main minimum, status-bar wrapping and result word wrapping fix that owner. Search JavaScript and index bytes remain exact; there is no hidden overflow or truncation. The normal disposable generator changed only one of its 18 outputs. Actual stale-receipt proof failed before normal validation updated only the HTML byte count/hash and aggregate corpus hash.
+
+The unchanged normal `npm run check` passed in 90.5 seconds: doctor, all five existing scenario tests and corpus proof. The root browser proof supplies 30 native before/after result comparisons, 37 captures plus four labelled captures at all seven required viewport pairs, and empty/200-result recovery and doubled computed text. All required after cells have zero horizontal/text overflow or console errors/egress. The normal 1440px selected PNG and labelled counterpart are byte-identical before/after.
+
+I independently used native End on the actual current static page at 320×800 and 390×844 with doubled computed fonts. Both complete reference tails are readable inside the inspected viewport, including the [320px tail](E6h-nodetasks-static-final-judge/native-end-02/320-native-end.png) and [390px tail](E6h-nodetasks-static-final-judge/native-end-02/390-native-end.png). Trusted BODY key events, DOM/text ranges, console and exact source identities are retained. The first external recorder used a wrong selector before any key action; its failure and exact original helper remain intact. The corrected selector replay is separately named and passed. All owned runtime resources closed.
+
+The reviewer did not author these three product files; this existing judge was reused from prior portfolio work. Current helper bytes are copied and hashed in the [independent evidence manifest](E6h-nodetasks-static-final-judge/independent-evidence-manifest.json). The original root freeze omitted the external recorder itself; publication must separately bind its retained bytes. This review does not invent an earlier execution-time self-hash.
+
+The [separate static criterion addendum](E6h_NODETASKS_STATIC_CRITERION_ADDENDUM.md) leaves the original 44-row assessment unchanged. All eight complete dimensions stay null. Streamlit header clipping, legacy captions and metric ellipsis remain held. Emulated viewports and computed doubled fonts do not prove physical touch, native zoom, screen readers, locale coverage or device performance. The unsigned corpus receipt proves content/structure only; it is not a benchmark score or usability certificate. No provider/task execution or production claim is made.
+
+Next: independently verify the concrete portable publication, then normal committed-blob and shared-CI checks. No further full suite or matrix replay is needed for this unchanged source judgment.
+
+Final structured judgment SHA-256: `e209dc3bbbb9e2edca89792a41d753f043f3c762d336493bce3639dfe8ba2e23`.

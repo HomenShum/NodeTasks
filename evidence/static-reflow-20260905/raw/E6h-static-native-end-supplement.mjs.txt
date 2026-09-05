@@ -1,0 +1,43 @@
+import assert from 'node:assert/strict';
+import {createServer} from 'node:http';
+import {createHash} from 'node:crypto';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {dirname,join} from 'node:path';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+const P=dirname(fileURLToPath(import.meta.url));
+const O=join(P,'E6h-nodetasks-static-final-judge','native-end-02');await mkdir(O,{recursive:true});
+const R='D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905';
+const {chromium}=await import(pathToFileURL(join(R,'node_modules/playwright/index.mjs')).href);
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const names=['catalog/task-browser.html','catalog/search-index.js','scripts/build-catalog.mjs','proof/corpus-receipt.json'];
+const files=await Promise.all(names.map(async path=>({path,bytes:await readFile(join(R,path))})));
+const input=files.map(x=>({path:x.path,bytes:x.bytes.length,sha256:sha(x.bytes)}));
+assert.equal(input[0].sha256,'2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1');
+const report={startedAt:new Date().toISOString(),status:'RUNNING',scope:'Only native End and actual final source-reference pixels at320/390 doubled computed text',input,recorderSha256:sha(await readFile(fileURLToPath(import.meta.url))),requests:[],errors:[],externalRequests:[],cells:[]};
+const server=createServer((req,res)=>{report.requests.push({method:req.method,path:req.url});const b=req.url==='/task-browser.html'?files[0].bytes:req.url==='/search-index.js'?files[1].bytes:null;if(req.method!=='GET'||!b){res.writeHead(404);res.end();return;}res.writeHead(200,{'content-type':req.url.endsWith('.js')?'text/javascript; charset=utf-8':'text/html; charset=utf-8'});res.end(b);});
+await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));report.base=`http://127.0.0.1:${server.address().port}`;
+let browser;
+try{
+ browser=await chromium.launch({headless:true});report.browserVersion=browser.version();
+ for(const[width,height]of[[320,800],[390,844]]){
+  const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
+  await context.route('**/*',route=>{if(new URL(route.request().url()).origin===report.base)return route.continue();report.externalRequests.push(route.request().url());return route.abort('blockedbyclient');});
+  const page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});
+  try{
+   await page.goto(report.base+'/task-browser.html');await page.locator('.result').first().waitFor();await page.locator('#query').fill('nodeagent.storyboard.capture.v1');assert.equal(await page.locator('.result').count(),1);
+   const textBefore=await page.locator('.result').innerText();const refsBefore=await page.locator('.result > .row:last-child code').allTextContents();assert.equal(refsBefore.length,2);
+   const fonts=await page.evaluate(()=>{const es=[...document.querySelectorAll('body,body *')].filter(e=>!e.matches('script,style'));const sizes=es.map(e=>parseFloat(getComputedStyle(e).fontSize));es.forEach((e,i)=>e.style.setProperty('font-size',`${sizes[i]*2}px`,'important'));return es.map((e,i)=>({tag:e.tagName,id:e.id,before:sizes[i],after:parseFloat(getComputedStyle(e).fontSize)}));});assert(fonts.every(x=>x.after===x.before*2));
+   await page.locator('h1').click();
+   await page.evaluate(()=>{window.__staticEndEvents=[];document.addEventListener('keydown',e=>{if(e.key==='End')window.__staticEndEvents.push({key:e.key,trusted:e.isTrusted,target:e.target.tagName,active:document.activeElement?.tagName});});});
+   await page.keyboard.press('End');
+   await page.waitForFunction(()=>scrollY+innerHeight>=document.documentElement.scrollHeight-1);
+   const dom=await page.evaluate(()=>{const rs=[...document.querySelectorAll('.result > .row:last-child code')];return{viewport:[innerWidth,innerHeight],scroll:[scrollX,scrollY],scrollHeight:document.documentElement.scrollHeight,overflow:document.documentElement.scrollWidth-innerWidth,events:window.__staticEndEvents,refs:rs.map(el=>{const r=document.createRange();r.selectNodeContents(el);return{text:el.textContent,rects:[...r.getClientRects()].map(x=>({x:x.x,y:x.y,right:x.right,bottom:x.bottom,width:x.width,height:x.height}))};}),result:document.querySelector('.result').innerText,focus:document.activeElement?.tagName};});
+   assert.equal(dom.overflow,0);assert.equal(dom.events.length,1);assert.equal(dom.events[0].trusted,true);assert.equal(dom.events[0].target,'BODY');assert.deepEqual(dom.refs.map(r=>r.text),refsBefore);assert.equal(dom.result,textBefore);
+   for(const ref of dom.refs)for(const rect of ref.rects)assert(rect.x>=-1&&rect.right<=width+1&&rect.y>=-1&&rect.bottom<=height+1);
+   const png=await page.screenshot({path:join(O,width+'-native-end.png')});const html=await page.content();await writeFile(join(O,width+'-native-end.html.txt'),html);await writeFile(join(O,width+'-native-end.json'),JSON.stringify(dom,null,2)+'\n');await writeFile(join(O,width+'-fonts.json'),JSON.stringify(fonts,null,2)+'\n');
+   report.cells.push({viewport:[width,height],status:'PASS',pngSha256:sha(png),htmlSha256:sha(html),fontChecks:fonts.length,nativeEnd:dom.events,refs:dom.refs.map(r=>r.text),sourceTextPreserved:true,allReferenceTextInsideViewport:true});
+  }finally{await context.close();}
+ }
+ assert.deepEqual(report.errors,[]);assert.deepEqual(report.externalRequests,[]);report.status='PASS_TWO_NATIVE_REFERENCE_TAIL_CELLS';
+}catch(e){report.status='FAIL';report.error=e.stack||String(e);process.exitCode=1;}
+finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));report.runtimeClosed=true;report.sourceUnchanged=true;for(const x of input)if(sha(await readFile(join(R,x.path)))!==x.sha256)report.sourceUnchanged=false;report.finishedAt=new Date().toISOString();await writeFile(join(O,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({status:report.status,cells:report.cells.length,error:report.error,sourceUnchanged:report.sourceUnchanged,runtimeClosed:report.runtimeClosed}));}

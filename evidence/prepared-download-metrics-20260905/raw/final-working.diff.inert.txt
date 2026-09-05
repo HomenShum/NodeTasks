@@ -1,0 +1,318 @@
+diff --git a/HANDOFF.md b/HANDOFF.md
+index e9196b1..ea7cc32 100644
+--- a/HANDOFF.md
++++ b/HANDOFF.md
+@@ -2,7 +2,7 @@
+ 
+ Start here, then read [README](README.md) and the [vendored provenance boundary](docs/UPSTREAM_PROVENANCE.md). An evaluator uses NodeTasks to find a task, inspect its sources and scoring limits, download a selected bundle, and decide what environment is required before running anything. The local explorer answers from the catalog; it does not execute the listed tasks or certify their upstream commands.
+ 
+-This is a source-build consumer of PR 1 at `8e9b6495ba3bf716549825d05f48faaefc73dcfb` (tree `47bfab14eec7149a288a0ccd09be857fbfe70c2f`) plus the bounded working repair. The receipt, doctor and first-use proof work without `.git`. The original PR 1/PR 2 branches and primary checkout remain preserved. This candidate awaits independent review; it is not a publication or deployment claim.
++This candidate starts from the reviewed corpus/first-use baseline `1e9bf5ebea420f42ec5880238c4db46dc7de19ad` (tree `94861bf436370aae82b019cc95ad53b848a47019`), built on PR 1. The receipt, doctor and first-use proof also work in a source export without `.git`. The original source export, PR 1/PR 2 branches and primary checkout remain preserved. The current prepared-download, metric-text and finite-CI follow-on awaits independent review; this is not a publication or deployment claim.
+ 
+ ## Fresh local setup
+ 
+@@ -34,7 +34,9 @@ The static `catalog/task-browser.html` is a separate search surface. Open it loc
+ node scripts/verify-first-use.mjs --python ..\nodetasks-venv\Scripts\python.exe --output ..\nodetasks-first-use-proof --port 54532
+ ```
+ 
+-Choose a new output folder and two free consecutive local ports. This finite proof owns and closes its Streamlit and static servers. It tests the public-repository saved view, exact task/source/score boundaries, real downloaded/reopened JSON, Rows-limited top-N output, repeated exports, local answers with task citations, empty results, a zero-count bundle when present, reload, keyboard navigation and 200% root text enlargement at six widths. It preserves console/DOM/pixels, downloaded bytes and exact source hashes. It blocks browser egress and verifies the rendered endpoint is empty. It does not run a benchmark, supplier action, external endpoint or provider.
++Choose a new output folder and two free consecutive local ports. This finite proof owns and closes its Streamlit and static servers. It tests the public-repository saved view, exact task/source/score boundaries, prepared filtered JSON, Rows-limited output, repeated exports, local answers with task citations, empty results, a zero-count bundle when present, reload and keyboard preparation/download. The viewport pairs are 360×800, 390×844, 768×1024, 1024×768, 1440×960 and 1920×1080, plus 320×800 reflow. It also applies and restores 200% computed root text size; that is not native browser zoom or real-device evidence. It preserves console/DOM/pixels, downloaded bytes and exact source hashes, blocks browser egress and verifies the rendered endpoint is empty. It does not run a benchmark, supplier action, external endpoint or provider.
++
++To export the current table, choose filters and a Rows limit, then select **Prepare filtered JSON**. Read the prepared count and expand **Prepared filters** to inspect the exact Search, Persona, Saved view, Domain, Kind, Difficulty, Cost tier, Tag, Sort and Rows used for that file. **Download prepared JSON** always means that prepared snapshot, including when another field has a pending edit. A completed filter rerun removes preparation; prepare again to obtain the new result. Repeated downloads preserve the same bytes. Zero matches produce the existing four-byte empty-array serialization. Saved-bundle downloads remain a separate operation.
+ 
+ The committed storyboard script still expects the old 9,140 count and overwrites tracked media. It is historical and is not the first-use acceptance command. Do not regenerate those assets or the catalog to conceal a failed proof.
+ 
+@@ -50,10 +52,16 @@ The unsigned corpus receipt hashes 18 catalog/schema artifacts and 1,236 indexed
+ 
+ ## Current evidence and limits
+ 
+-Normal `npm run check` and the registered NodeKit repository check pass on this source consumer. The three previously reproduced traversal, blocked-name and parent-junction reads now read zero sentinel files and report `passed: false` plus `sourceIndexValid: false`. The accepted doctor correction, original failures and source bindings are retained with the first-use evidence.
++At the reviewed baseline, normal `npm run check` and the registered NodeKit repository check passed on the source consumer. The three previously reproduced traversal, blocked-name and parent-junction reads then read zero sentinel files and reported `passed: false` plus `sourceIndexValid: false`. The accepted doctor correction, original failures and source bindings remain retained with the first-use evidence.
++
++The historical baseline browser replay used six widths at a 900-pixel height, with 66 captures and 37 downloaded/reopened JSON files. Its keyboard, local-answer, settled export and reload observations remain historical; those width-only cells do not meet the later exact viewport-pair profile.
++
++The current source completed normal `npm run check` with all five scenarios, then the final browser journey completed all seven exact pairs with 93 captures and 59 downloaded/reopened JSON files. This includes actual Enter-triggered downloads, non-default values for every prepared filter, native pending-edit behavior, repeated recovery, and ten local catalog answers. Page errors and browser external requests were empty. The two new snapshot labels use readable native body text; their actual ancestor opacity is checked. Earlier provisional caption rendering and interrupted harness evidence remain retained, not relabelled as current-source passes.
++
++Four baseline native input/download attempts returned 15 old rows after requesting an empty-result filter. The current UI addresses that ambiguity with explicit same-run preparation and visible snapshot context, without a new session history or form. It also sets a readable foreground for the five summary, five task and three provenance metric labels/values. Delta text/icons/colors, card backgrounds and task facts remain unchanged. The [prepared-download evidence](evidence/prepared-download-metrics-20260905/README.md) records the current proof, original failures, source identity and limits.
+ 
+-The final browser replay completed at 320, 390, 768, 1024, 1440 and 1920 pixels with 66 captures and 37 real downloaded/reopened JSON files. All six keyboard paths reached the download action; local answers, repeated exports, no-result recovery and reload passed. Console errors, page errors and browser external requests were empty. The finite actions completed; this is not a visual-quality grade.
++The separate static HTML browser's selected result still overflows at narrow widths; it is outside this repair. Full visual, design, responsive, interaction, accessibility, performance, usage and alignment grades remain unassigned. Real devices, other browser engines, native zoom, assistive technologies, real-human first use, endpoint/provider mode and production remain unverified. Passing finite actions or repairing metric text does not establish a whole-product grade.
+ 
+-The current raw findings remain open: rapid filter/Rows changes followed by download can yield the previous displayed rows while Streamlit is still running. Four separate native input/download attempts reproduced a 15-row file after requesting an empty-result filter; settled-only successful downloads do not erase this behavior. Natural-theme metric cards inherit dark text on a dark background. The separate static HTML browser's selected result overflows by 270 pixels at width 320 and 200 pixels at width 390. No UI source repair is included in this scope. Full visual, responsive, accessibility, performance, provider and production grades remain unassigned, even where the finite consumer actions pass.
++The new [finite CI workflow](.github/workflows/ci.yml) runs on pull requests and pushes to `main`, with read-only contents permission and a ten-minute job limit. It installs Node 22, runs normal `npm ci`, then `npm run check` (doctor, five scenario tests and read-only receipt verification). Official action revisions are pinned to verified Git commits. It does not regenerate the receipt, install the Python UI, run benchmarks or deploy. Actual shared CI execution is pending; a local check does not certify it.
+ 
+-The [portable evidence entry](evidence/corpus-first-use-20260905/README.md) is the review handoff for source/installed identities, commands, before/after read observations, actual exports and unresolved UI findings. The original valid receipt is preserved; use `npm run proof` to check it. Use `npm run validate` only after an intentional reviewed corpus change, never to hide an unexpected failure.
++The [historical corpus evidence](evidence/corpus-first-use-20260905/README.md) preserves baseline source/installed identities, commands, read observations, exports and original UI findings. Its default verifier checks those retained bytes; its optional `--source-root .` comparison is a historical baseline check and is expected to differ for the current app, first-use proof and handoff. The original valid receipt is preserved; use `npm run proof` to check it. Use `npm run validate` only after an intentional reviewed corpus change, never to hide an unexpected failure.
+diff --git a/apps/nodetasks_streamlit.py b/apps/nodetasks_streamlit.py
+index 9d82e11..a37b2c0 100644
+--- a/apps/nodetasks_streamlit.py
++++ b/apps/nodetasks_streamlit.py
+@@ -72,6 +72,10 @@ st.markdown(
+       border-radius: 8px;
+       padding: 10px 12px;
+     }
++    div[data-testid="stMetric"] [data-testid="stMetricLabel"],
++    div[data-testid="stMetric"] [data-testid="stMetricValue"] {
++      color: #e5e7eb;
++    }
+     .nt-chip {
+       display: inline-block;
+       border: 1px solid #2b333c;
+@@ -460,7 +464,26 @@ with tab_search:
+         selected = task_by_id(tasks, selected_id)
+         if selected:
+             render_task_card(selected)
+-    st.download_button("Download filtered JSON", data=shown.to_json(orient="records", indent=2), file_name="nodetasks-filtered.json", mime="application/json")
++    if st.button("Prepare filtered JSON"):
++        prepared_json = shown.to_json(orient="records", indent=2)
++        st.write(f"Prepared {len(shown):,} of {len(ranked):,} matching tasks · Rows limit {limit}")
++        st.write("Download uses this prepared snapshot. After editing filters, prepare again.")
++        with st.expander("Prepared filters"):
++            st.json({
++                "Search": query,
++                "Persona": persona,
++                "Saved view": saved_view,
++                "Domain": domains,
++                "Kind": kinds,
++                "Difficulty": difficulty,
++                "Cost tier": cost_tiers,
++                "Tag contains": tag_query,
++                "Sort": sort_label,
++                "Rows": limit,
++                "Exported rows": len(shown),
++                "Matching tasks": len(ranked),
++            })
++        st.download_button("Download prepared JSON", data=prepared_json, file_name="nodetasks-filtered.json", mime="application/json", on_click="ignore")
+ 
+ with tab_hierarchy:
+     st.subheader("Domain hierarchy")
+diff --git a/scripts/verify-first-use.mjs b/scripts/verify-first-use.mjs
+index ac18a96..295e089 100644
+--- a/scripts/verify-first-use.mjs
++++ b/scripts/verify-first-use.mjs
+@@ -20,6 +20,7 @@ assert.ok(Number.isInteger(port) && port >= 1024 && port <= 65534);
+ const base = `http://127.0.0.1:${port}`;
+ const staticBase = `http://127.0.0.1:${port + 1}`;
+ const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
++const viewports = [[320, 800], [360, 800], [390, 844], [768, 1024], [1024, 768], [1440, 960], [1920, 1080]];
+ const inputNames = ["apps/nodetasks_streamlit.py", "catalog/all-tasks.json", "catalog/saved-views.json", "catalog/task-bundles.json", "catalog/provenance-index.json", "catalog/hierarchy.json", "catalog/task-browser.html", "catalog/search-index.js", "proof/corpus-receipt.json", "scripts/verify-first-use.mjs"];
+ const inputs = await Promise.all(inputNames.map(async (path) => ({ path, sha256: hash(await readFile(join(root, path))) })));
+ const tasks = JSON.parse(await readFile(join(root, "catalog/all-tasks.json"), "utf8")).tasks;
+@@ -28,7 +29,7 @@ const bundles = JSON.parse(await readFile(join(root, "catalog/task-bundles.json"
+ const bundle = bundles.find((value) => value.id === "public-node-repo-proofs");
+ assert.ok(bundle);
+ const zeroBundle = bundles.find((value) => value.taskCount === 0);
+-const report = { schema: "nodetasks-local-first-use/v1", startedAt: new Date().toISOString(), inputs, cells: [], externalRequests: [], errors: [], limits: ["Local catalog mode only; no benchmark/model execution", "Six fixed widths, finite download/chat budgets; no whole-product grade", "200% root text enlargement is browser-only, not native zoom", "Filtered JSON exports the Rows-limited shown table, not every matching row", "Static browser and Streamlit are separate surfaces"] };
++const report = { schema: "nodetasks-local-first-use/v1", startedAt: new Date().toISOString(), inputs, viewports, cells: [], externalRequests: [], errors: [], limits: ["Local catalog mode only; no benchmark/model execution", "Seven exact viewport pairs, finite download/chat budgets; no whole-product grade", "200% root text enlargement is browser-only, not native zoom", "Prepared JSON exports the Rows-limited shown table, not every matching row", "Static browser and Streamlit are separate surfaces; static overflow is an inherited open finding", "Chromium on Windows is not real-device, other-engine or assistive-technology verification"] };
+ const env = { ...process.env, PYTHONDONTWRITEBYTECODE: "1" };
+ delete env.NODEAGENT_ENDPOINT;
+ delete env.NODETASKS_CATALOG;
+@@ -87,9 +88,10 @@ async function sidebar(page, open) {
+     await page.getByTestId("stSidebar").getByTestId("stBaseButton-headerNoPadding").click();
+   }
+ }
+-async function download(page, button, cell, name) {
++async function download(page, button, cell, name, keyboard = false) {
+   const event = page.waitForEvent("download");
+-  await button.click();
++  if (keyboard) await page.keyboard.press("Enter");
++  else await button.click();
+   const item = await event;
+   assert.equal(await item.failure(), null);
+   const path = join(output, `${name}.json`);
+@@ -103,6 +105,52 @@ async function tab(page, name) {
+   const target = page.getByRole("tab", { name, exact: true });
+   await target.scrollIntoViewIfNeeded(); await target.click();
+ }
++async function preparedContext(page) {
++  const detail = page.getByTestId("stExpander").filter({ hasText: "Prepared filters" });
++  if (!(await detail.locator("details").evaluate((element) => element.open))) await detail.locator("summary").click();
++  return detail.getByTestId("stJson").evaluate((element) => Object.fromEntries([...element.querySelectorAll(".object-key")].map((key) => {
++    const row = key.closest(".variable-row, .object-key-val");
++    const value = row.classList.contains("variable-row") ? row.querySelector(".variable-value") : null;
++    return [JSON.parse(key.textContent), value ? JSON.parse(value.textContent) : [...row.querySelectorAll(".string-value")].map((item) => JSON.parse(item.textContent))];
++  })));
++}
++async function prepare(page, cell, expected) {
++  await page.getByRole("button", { name: "Prepare filtered JSON", exact: true }).click();
++  await page.getByRole("button", { name: "Download prepared JSON", exact: true }).waitFor();
++  await page.waitForFunction(() => document.querySelector('[data-testid="stApp"]').getAttribute("data-test-script-state") === "notRunning");
++  const context = await preparedContext(page);
++  assert.deepEqual(context, expected);
++  assert.equal(await page.getByText(`Prepared ${context["Exported rows"].toLocaleString("en-US")} of ${context["Matching tasks"].toLocaleString("en-US")} matching tasks · Rows limit ${context.Rows}`, { exact: true }).count(), 1);
++  assert.equal(await page.getByText("Download uses this prepared snapshot. After editing filters, prepare again.", { exact: true }).count(), 1);
++  const copy = await page.getByText(/^(Prepared [\d,]+ of [\d,]+ matching tasks · Rows limit \d+|Download uses this prepared snapshot\. After editing filters, prepare again\.)$/).evaluateAll((elements) => elements.map((element) => {
++    let opacity = 1;
++    for (let current = element; current; current = current.parentElement) opacity *= Number(getComputedStyle(current).opacity);
++    return { text: element.textContent, color: getComputedStyle(element).color, effectiveOpacity: opacity, fontSize: getComputedStyle(element).fontSize, background: getComputedStyle(document.querySelector('[data-testid="stApp"]')).backgroundColor };
++  }));
++  assert.equal(copy.length, 2);
++  for (const text of copy) {
++    assert.equal(text.color, "rgb(49, 51, 63)"); assert.equal(text.effectiveOpacity, 1); assert.equal(text.background, "rgb(255, 255, 255)");
++  }
++  cell.preparedTextStyles ??= []; cell.preparedTextStyles.push(copy);
++  cell.preparations ??= []; cell.preparations.push(context);
++  await page.getByTestId("stExpander").filter({ hasText: "Prepared filters" }).locator("summary").click();
++  return context;
++}
++async function metricFacts(page) {
++  const facts = await page.getByTestId("stMetric").evaluateAll((elements) => elements.map((element) => ({
++    text: element.textContent,
++    background: getComputedStyle(element).backgroundColor,
++    label: [...element.querySelectorAll('[data-testid="stMetricLabel"], [data-testid="stMetricLabel"] *')].map((child) => ({ text: child.textContent, color: getComputedStyle(child).color })),
++    value: [...element.querySelectorAll('[data-testid="stMetricValue"], [data-testid="stMetricValue"] *')].map((child) => ({ text: child.textContent, color: getComputedStyle(child).color })),
++    delta: [...element.querySelectorAll('[data-testid="stMetricDelta"], [data-testid="stMetricDelta"] *')].map((child) => ({ tag: child.tagName, text: child.textContent, color: getComputedStyle(child).color, background: getComputedStyle(child).backgroundColor, fill: getComputedStyle(child).fill, path: child.getAttribute("d") })),
++  })));
++  assert.equal(facts.length, 13, "Five summary, five task and three provenance metrics");
++  for (const fact of facts) {
++    assert.equal(fact.background, "rgb(15, 20, 25)");
++    for (const text of [...fact.label, ...fact.value]) assert.equal(text.color, "rgb(229, 231, 235)");
++  }
++  return facts;
++}
+ try {
+   await new Promise((done, reject) => { staticServer.once("error", reject); staticServer.listen(port + 1, "127.0.0.1", done); });
+   const deadline = Date.now() + 30_000;
+@@ -113,10 +161,11 @@ try {
+     await new Promise((done) => setTimeout(done, 100));
+   }
+   browser = await chromium.launch({ headless: true });
+-  for (const width of [320, 390, 768, 1024, 1440, 1920]) {
+-    const cell = { width, captures: [], downloads: [], console: [], pageErrors: [] };
++  report.browserVersion = browser.version();
++  for (const [width, height] of viewports) {
++    const cell = { width, height, captures: [], downloads: [], console: [], pageErrors: [] };
+     report.cells.push(cell);
+-    const context = await browser.newContext({ viewport: { width, height: 900 } });
++    const context = await browser.newContext({ viewport: { width, height } });
+     await context.route("**/*", (route) => {
+       const url = new URL(route.request().url());
+       if ([base, staticBase].includes(url.origin) || ["data:", "blob:"].includes(url.protocol)) return route.continue();
+@@ -138,7 +187,12 @@ try {
+       await capture(page, cell, `${width}-empty-endpoint`);
+       if (width < 1024) await sidebar(page, false);
+ 
+-      const filteredButton = page.getByRole("button", { name: "Download filtered JSON", exact: true });
++      const filteredButton = page.getByRole("button", { name: "Download prepared JSON", exact: true });
++      const initialContext = { Search: "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke", Persona: "Any", "Saved view": "public-node-repo-proofs", Domain: [], Kind: [], Difficulty: [], "Cost tier": [], "Tag contains": "public-node-repo", Sort: "Lowest difficulty", Rows: 100, "Exported rows": 15, "Matching tasks": 15 };
++      assert.equal(await filteredButton.count(), 0, "Fresh session requires preparation");
++      cell.metricFacts = await metricFacts(page);
++      await prepare(page, cell, initialContext);
++      await capture(page, cell, `${width}-prepared-initial`);
+       const filtered = await download(page, filteredButton, cell, `${width}-filtered-initial`);
+       assert.equal(filtered.length, 15);
+       for (const row of filtered) {
+@@ -154,11 +208,43 @@ try {
+       cell.transitions = [await committedInput(page, () => page.getByTestId("stSlider").locator('input[type="range"][aria-label="Rows"]').press("Home"), () => document.querySelector('[role="grid"]')?.getAttribute("aria-rowcount") === "11")];
+       await settled(page);
+       if (width < 1024) await sidebar(page, false);
++      assert.equal(await filteredButton.count(), 0, "Completed Rows rerun invalidates the old preparation");
++      await prepare(page, cell, { ...initialContext, Rows: 10, "Exported rows": 10 });
+       const limited = await download(page, filteredButton, cell, `${width}-filtered-top10`);
+       assert.deepEqual(limited, filtered.slice(0, 10));
+       const duplicate = await download(page, filteredButton, cell, `${width}-filtered-repeat`);
+       assert.deepEqual(duplicate, limited);
+       cell.topNAndRepeat = { initial: filtered.length, limited: limited.length, identicalRepeat: true };
++      assert.equal(cell.downloads.at(-1).sha256, cell.downloads.at(-2).sha256);
++      await capture(page, cell, `${width}-prepared-top10`);
++
++      if (width === 1440) {
++        // A real pending text edit: the old CTA can only mean the labelled
++        // snapshot. Do not hold the websocket, force state, or fake a rerun.
++        await sidebar(page, true);
++        const priorContext = await preparedContext(page);
++        assert.deepEqual(priorContext, { ...initialContext, Rows: 10, "Exported rows": 10 });
++        await page.getByRole("textbox", { name: "Search", exact: true }).fill("zz_pending_prepared_snapshot");
++        await capture(page, cell, `${width}-pending-old-preparation`);
++        assert.deepEqual(await download(page, filteredButton, cell, `${width}-pending-download`), limited);
++        await page.waitForFunction(() => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.textContent === "Filtered0"));
++        await page.waitForFunction(() => document.querySelector('[data-testid="stApp"]').getAttribute("data-test-script-state") === "notRunning");
++        assert.equal(await filteredButton.count(), 0);
++        await prepare(page, cell, { ...initialContext, Search: "zz_pending_prepared_snapshot", Rows: 10, "Exported rows": 0, "Matching tasks": 0 });
++        assert.deepEqual(await download(page, filteredButton, cell, `${width}-pending-reprepared-empty`), []);
++        assert.equal(cell.downloads.at(-1).bytes, 4);
++        await sidebar(page, true);
++        await page.getByRole("textbox", { name: "Search", exact: true }).fill(initialContext.Search);
++        await committedInput(page, () => page.getByRole("textbox", { name: "Search", exact: true }).press("Enter"), () => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.textContent === "Filtered15"));
++        assert.equal(await filteredButton.count(), 0);
++        // Three explicit preparations and two immediate downloads each expose
++        // stale/accumulating snapshots without adding application history.
++        for (let repeat = 0; repeat < 3; repeat += 1) {
++          await prepare(page, cell, { ...initialContext, Rows: 10, "Exported rows": 10 });
++          for (let burst = 0; burst < 2; burst += 1) assert.deepEqual(await download(page, filteredButton, cell, `${width}-recovery-${repeat}-${burst}`), limited);
++        }
++        cell.pendingEditAndSustainedRecovery = { oldSnapshotReturned: true, completedRerunInvalidated: true, repeatedPreparations: 3, recoveryDownloads: 6 };
++      }
+ 
+       await tab(page, "Saved views");
+       const downloadedBundle = await download(page, page.getByRole("button", { name: "Download public-node-repo-proofs bundle", exact: true }), cell, `${width}-public-bundle`);
+@@ -191,12 +277,17 @@ try {
+       await settled(page);
+       if (width < 1024) await sidebar(page, false);
+       await tab(page, "Search");
++      assert.equal(await filteredButton.count(), 0);
++      await prepare(page, cell, { ...initialContext, Search: "zz_no_task_20260905_xyz", Rows: 10, "Exported rows": 0, "Matching tasks": 0 });
+       assert.deepEqual(await download(page, filteredButton, cell, `${width}-no-result`), []);
++      assert.equal(cell.downloads.at(-1).bytes, 4, "Preserve the actual pandas empty-array serialization");
+       await capture(page, cell, `${width}-no-result-state`);
+       await tab(page, "NodeAgent");
+       assert.ok((await page.getByText("I could not find matching tasks in the current filter set. Clear filters or broaden the query.", { exact: true }).count()) > 0);
+       await page.reload({ waitUntil: "domcontentloaded" }); await settled(page);
+       assert.equal(await page.getByTestId("stChatMessage").count(), 0);
++      assert.equal(await filteredButton.count(), 0, "Reload does not keep a prepared snapshot");
++      await prepare(page, cell, initialContext);
+       assert.deepEqual(await download(page, filteredButton, cell, `${width}-reloaded`), filtered);
+       cell.reloadRestoresUrlViewAndClearsSessionChat = true;
+ 
+@@ -208,10 +299,20 @@ try {
+         await page.keyboard.press("Tab");
+         const active = await page.evaluate(() => ({ text: document.activeElement?.textContent, label: document.activeElement?.getAttribute("aria-label") }));
+         cell.keyboard.push(active);
+-        if (active.text?.trim() === "Download filtered JSON") break;
++        if (active.text?.trim() === "Prepare filtered JSON") break;
+       }
+-      cell.keyboardReachedDownload = cell.keyboard.at(-1).text?.trim() === "Download filtered JSON";
++      assert.equal(cell.keyboard.at(-1).text?.trim(), "Prepare filtered JSON");
++      await page.keyboard.press("Enter"); await filteredButton.waitFor(); await settled(page);
++      for (let i = 0; i < 8; i += 1) {
++        await page.keyboard.press("Tab");
++        const active = await page.evaluate(() => ({ text: document.activeElement?.textContent, label: document.activeElement?.getAttribute("aria-label") }));
++        cell.keyboard.push(active);
++        if (active.text?.trim() === "Download prepared JSON") break;
++      }
++      cell.keyboardReachedDownload = cell.keyboard.at(-1).text?.trim() === "Download prepared JSON";
++      assert.equal(cell.keyboardReachedDownload, true);
+       await capture(page, cell, `${width}-keyboard`);
++      assert.deepEqual(await download(page, filteredButton, cell, `${width}-keyboard-download`, true), filtered);
+       const html = await page.content();
+       const fontBefore = await page.evaluate(() => getComputedStyle(document.documentElement).fontSize);
+       const rowCountBefore = await page.locator('[role="grid"]').first().getAttribute("aria-rowcount");
+@@ -224,6 +325,19 @@ try {
+       assert.equal(await page.locator('[role="grid"]').first().getAttribute("aria-rowcount"), rowCountBefore);
+       cell.textEnlargement = { fontBefore, fontEnlarged, restoredFont: await page.evaluate(() => getComputedStyle(document.documentElement).fontSize), rowCountPreserved: true, domSerializationChanged: (await page.content()) !== html, limitation: "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim." };
+ 
++      if (width === 1440) {
++        const task = filtered[0];
++        const query = new URLSearchParams({ view: "public-node-repo-proofs", persona: "Product QA", q: task.id, domain: task.domain, kind: task.kind, difficulty: task.difficulty, cost: task.cost_tier, tag: "public-node-repo", sort: "steps" });
++        await page.goto(`${base}/?${query}`, { waitUntil: "domcontentloaded" }); await settled(page);
++        await prepare(page, cell, { ...initialContext, Search: task.id, Persona: "Product QA", Domain: [task.domain], Kind: [task.kind], Difficulty: [task.difficulty], "Cost tier": [task.cost_tier], Sort: "Fewest steps", "Exported rows": 1, "Matching tasks": 1 });
++        const one = await download(page, filteredButton, cell, `${width}-all-filter-context`);
++        assert.equal(one.length, 1);
++        for (const key of ["id", "title", "domain", "kind", "difficulty", "cost_tier", "source_refs", "score_status"]) assert.equal(one[0][key], task[key]);
++        await page.getByText("Prepared filters", { exact: true }).click();
++        await capture(page, cell, `${width}-all-filter-context-state`);
++        cell.nondefaultContextAndReopenedFileAgree = true;
++      }
++
+       await page.goto(staticBase + "/task-browser.html", { waitUntil: "load" });
+       assert.equal(await page.locator("#count").innerText(), "9,155 searchable tasks");
+       await page.locator("#query").fill(filtered[0].id);
+@@ -240,7 +354,7 @@ try {
+     } finally { await context.close(); await writeFile(join(output, "report.json"), JSON.stringify(report, null, 2)); }
+     if (cell.status === "FAILED") break;
+   }
+-  report.status = report.cells.length === 6 && report.cells.every((cell) => cell.status === "OBSERVED") ? "OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS" : "FAILED";
++  report.status = report.cells.length === viewports.length && report.cells.every((cell) => cell.status === "OBSERVED") ? "OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS" : "FAILED";
+ } catch (error) { report.status = "FAILED"; report.errors.push(String(error)); }
+ finally {
+   if (browser) await browser.close();

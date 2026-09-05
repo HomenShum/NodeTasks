@@ -1,0 +1,361 @@
+import assert from "node:assert/strict";
+import { spawn, spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { createWriteStream } from "node:fs";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { createServer } from "node:http";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { chromium } from "playwright";
+
+// Finite local consumer proof. It never invokes task commands or a model endpoint.
+const args = Object.fromEntries(Array.from({ length: (process.argv.length - 2) / 2 }, (_, i) => [process.argv[2 + i * 2], process.argv[3 + i * 2]]));
+assert.ok(args["--python"] && args["--output"], "Use --python <isolated-python> --output <new-folder> [--port <owned-port>]");
+assert.ok(Object.keys(args).every((key) => ["--python", "--output", "--port"].includes(key)));
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const output = resolve(args["--output"]);
+await mkdir(output);
+const port = Number(args["--port"] ?? 54532);
+assert.ok(Number.isInteger(port) && port >= 1024 && port <= 65534);
+const base = `http://127.0.0.1:${port}`;
+const staticBase = `http://127.0.0.1:${port + 1}`;
+const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
+const viewports = [[320, 800], [360, 800], [390, 844], [768, 1024], [1024, 768], [1440, 960], [1920, 1080]];
+const inputNames = ["apps/nodetasks_streamlit.py", "catalog/all-tasks.json", "catalog/saved-views.json", "catalog/task-bundles.json", "catalog/provenance-index.json", "catalog/hierarchy.json", "catalog/task-browser.html", "catalog/search-index.js", "proof/corpus-receipt.json", "scripts/verify-first-use.mjs"];
+const inputs = await Promise.all(inputNames.map(async (path) => ({ path, sha256: hash(await readFile(join(root, path))) })));
+const tasks = JSON.parse(await readFile(join(root, "catalog/all-tasks.json"), "utf8")).tasks;
+const taskById = new Map(tasks.map((task) => [task.id, task]));
+const bundles = JSON.parse(await readFile(join(root, "catalog/task-bundles.json"), "utf8")).bundles;
+const bundle = bundles.find((value) => value.id === "public-node-repo-proofs");
+assert.ok(bundle);
+const zeroBundle = bundles.find((value) => value.taskCount === 0);
+const report = { schema: "nodetasks-local-first-use/v1", startedAt: new Date().toISOString(), inputs, viewports, cells: [], externalRequests: [], errors: [], limits: ["Local catalog mode only; no benchmark/model execution", "Seven exact viewport pairs, finite download/chat budgets; no whole-product grade", "200% root text enlargement is browser-only, not native zoom", "Prepared JSON exports the Rows-limited shown table, not every matching row", "Static browser and Streamlit are separate surfaces; static overflow is an inherited open finding", "Chromium on Windows is not real-device, other-engine or assistive-technology verification"] };
+const env = { ...process.env, PYTHONDONTWRITEBYTECODE: "1" };
+delete env.NODEAGENT_ENDPOINT;
+delete env.NODETASKS_CATALOG;
+const serverLog = createWriteStream(join(output, "streamlit.log"));
+const serverArgs = ["-m", "streamlit", "run", "apps/nodetasks_streamlit.py", "--server.address", "127.0.0.1", "--server.port", String(port), "--server.headless", "true", "--server.fileWatcherType", "none", "--browser.gatherUsageStats", "false"];
+const server = spawn(args["--python"], serverArgs, { cwd: root, env, windowsHide: true, stdio: ["ignore", "pipe", "pipe"] });
+server.stdout.pipe(serverLog); server.stderr.pipe(serverLog);
+const staticFiles = new Map(await Promise.all(["task-browser.html", "search-index.js"].map(async (name) => ["/" + name, await readFile(join(root, "catalog", name))])));
+const staticServer = createServer((request, response) => {
+  const bytes = request.method === "GET" ? staticFiles.get(request.url) : undefined;
+  response.writeHead(bytes ? 200 : 404, { "Content-Type": request.url === "/search-index.js" ? "text/javascript" : "text/html" });
+  response.end(bytes ?? "Not found");
+});
+let browser;
+async function settled(page) {
+  await page.getByText("9,155", { exact: true }).waitFor({ timeout: 30_000 });
+  await page.getByRole("button", { name: "Stop", exact: true }).waitFor({ state: "hidden", timeout: 30_000 });
+  await page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))));
+}
+async function committedInput(page, action, renderedOutcome) {
+  await settled(page);
+  await page.evaluate(() => {
+    const app = document.querySelector('[data-testid="stApp"]');
+    window.__nodetasksObservedRun = { states: [] };
+    const record = window.__nodetasksObservedRun;
+    record.observer = new MutationObserver(() => {
+      const state = app.getAttribute("data-test-script-state");
+      if (record.states.length < 16 && record.states.at(-1) !== state) record.states.push(state);
+    });
+    record.observer.observe(app, { attributes: true, attributeFilter: ["data-test-script-state"] });
+  });
+  try {
+    await action();
+    // Fast cached reruns need not expose a sampled busy frame. Require the actual
+    // updated table/metric, then inspect the exported bytes independently.
+    await page.waitForFunction(renderedOutcome);
+    await page.waitForFunction(() => document.querySelector('[data-testid="stApp"]').getAttribute("data-test-script-state") === "notRunning");
+    await settled(page);
+    return await page.evaluate(() => window.__nodetasksObservedRun.states);
+  } finally {
+    await page.evaluate(() => { window.__nodetasksObservedRun.observer.disconnect(); delete window.__nodetasksObservedRun; });
+  }
+}
+async function capture(page, cell, name) {
+  const png = await page.screenshot({ path: join(output, `${name}.png`), caret: "initial" });
+  const html = await page.content();
+  await writeFile(join(output, `${name}.html`), html);
+  const dom = await page.evaluate(() => ({ url: location.href, body: document.body.innerText, viewport: { width: innerWidth, height: innerHeight }, horizontalOverflow: document.documentElement.scrollWidth - innerWidth, focus: { tag: document.activeElement?.tagName, text: document.activeElement?.textContent?.slice(0, 120), label: document.activeElement?.getAttribute("aria-label") }, metrics: [...document.querySelectorAll('[data-testid="stMetric"]')].map((element) => ({ text: element.textContent, foreground: getComputedStyle(element.querySelector('[data-testid="stMetricValue"]') ?? element).color, background: getComputedStyle(element).backgroundColor })) }));
+  await writeFile(join(output, `${name}.json`), JSON.stringify(dom, null, 2));
+  cell.captures.push({ name, pngSha256: hash(png), htmlSha256: hash(html), horizontalOverflow: dom.horizontalOverflow });
+}
+async function sidebar(page, open) {
+  const expand = page.getByTestId("stExpandSidebarButton");
+  if (open && await expand.isVisible()) await expand.click();
+  if (!open) {
+    await page.getByTestId("stSidebar").getByTestId("stBaseButton-headerNoPadding").click();
+  }
+}
+async function download(page, button, cell, name, keyboard = false) {
+  const event = page.waitForEvent("download");
+  if (keyboard) await page.keyboard.press("Enter");
+  else await button.click();
+  const item = await event;
+  assert.equal(await item.failure(), null);
+  const path = join(output, `${name}.json`);
+  await item.saveAs(path);
+  const bytes = await readFile(path);
+  const payload = JSON.parse(bytes);
+  cell.downloads.push({ name, suggestedFilename: item.suggestedFilename(), sha256: hash(bytes), bytes: bytes.length });
+  return payload;
+}
+async function tab(page, name) {
+  const target = page.getByRole("tab", { name, exact: true });
+  await target.scrollIntoViewIfNeeded(); await target.click();
+}
+async function preparedContext(page) {
+  const detail = page.getByTestId("stExpander").filter({ hasText: "Prepared filters" });
+  if (!(await detail.locator("details").evaluate((element) => element.open))) await detail.locator("summary").click();
+  return detail.getByTestId("stJson").evaluate((element) => Object.fromEntries([...element.querySelectorAll(".object-key")].map((key) => {
+    const row = key.closest(".variable-row, .object-key-val");
+    const value = row.classList.contains("variable-row") ? row.querySelector(".variable-value") : null;
+    return [JSON.parse(key.textContent), value ? JSON.parse(value.textContent) : [...row.querySelectorAll(".string-value")].map((item) => JSON.parse(item.textContent))];
+  })));
+}
+async function prepare(page, cell, expected) {
+  await page.getByRole("button", { name: "Prepare filtered JSON", exact: true }).click();
+  await page.getByRole("button", { name: "Download prepared JSON", exact: true }).waitFor();
+  await page.waitForFunction(() => document.querySelector('[data-testid="stApp"]').getAttribute("data-test-script-state") === "notRunning");
+  const context = await preparedContext(page);
+  assert.deepEqual(context, expected);
+  assert.equal(await page.getByText(`Prepared ${context["Exported rows"].toLocaleString("en-US")} of ${context["Matching tasks"].toLocaleString("en-US")} matching tasks · Rows limit ${context.Rows}`, { exact: true }).count(), 1);
+  assert.equal(await page.getByText("Download uses this prepared snapshot. After editing filters, prepare again.", { exact: true }).count(), 1);
+  cell.preparations ??= []; cell.preparations.push(context);
+  await page.getByTestId("stExpander").filter({ hasText: "Prepared filters" }).locator("summary").click();
+  return context;
+}
+async function metricFacts(page) {
+  const facts = await page.getByTestId("stMetric").evaluateAll((elements) => elements.map((element) => ({
+    text: element.textContent,
+    background: getComputedStyle(element).backgroundColor,
+    label: [...element.querySelectorAll('[data-testid="stMetricLabel"], [data-testid="stMetricLabel"] *')].map((child) => ({ text: child.textContent, color: getComputedStyle(child).color })),
+    value: [...element.querySelectorAll('[data-testid="stMetricValue"], [data-testid="stMetricValue"] *')].map((child) => ({ text: child.textContent, color: getComputedStyle(child).color })),
+    delta: [...element.querySelectorAll('[data-testid="stMetricDelta"], [data-testid="stMetricDelta"] *')].map((child) => ({ tag: child.tagName, text: child.textContent, color: getComputedStyle(child).color, background: getComputedStyle(child).backgroundColor, fill: getComputedStyle(child).fill, path: child.getAttribute("d") })),
+  })));
+  assert.equal(facts.length, 13, "Five summary, five task and three provenance metrics");
+  for (const fact of facts) {
+    assert.equal(fact.background, "rgb(15, 20, 25)");
+    for (const text of [...fact.label, ...fact.value]) assert.equal(text.color, "rgb(229, 231, 235)");
+  }
+  return facts;
+}
+try {
+  await new Promise((done, reject) => { staticServer.once("error", reject); staticServer.listen(port + 1, "127.0.0.1", done); });
+  const deadline = Date.now() + 30_000;
+  while (true) {
+    if (server.exitCode !== null) throw Error(`Owned Streamlit exited ${server.exitCode}`);
+    try { if ((await fetch(base + "/_stcore/health", { signal: AbortSignal.timeout(1000) })).ok) break; } catch {}
+    if (Date.now() >= deadline) throw Error("Owned Streamlit startup deadline");
+    await new Promise((done) => setTimeout(done, 100));
+  }
+  browser = await chromium.launch({ headless: true });
+  report.browserVersion = browser.version();
+  for (const [width, height] of viewports) {
+    const cell = { width, height, captures: [], downloads: [], console: [], pageErrors: [] };
+    report.cells.push(cell);
+    const context = await browser.newContext({ viewport: { width, height } });
+    await context.route("**/*", (route) => {
+      const url = new URL(route.request().url());
+      if ([base, staticBase].includes(url.origin) || ["data:", "blob:"].includes(url.protocol)) return route.continue();
+      report.externalRequests.push({ width, url: url.origin + url.pathname });
+      return route.abort("blockedbyclient");
+    });
+    const page = await context.newPage();
+    page.on("pageerror", (error) => cell.pageErrors.push(error.message));
+    page.on("console", (message) => { if (["error", "warning"].includes(message.type())) cell.console.push({ type: message.type(), text: message.text() }); });
+    try {
+      await page.goto(base + "/?view=public-node-repo-proofs", { waitUntil: "domcontentloaded" });
+      await settled(page); await capture(page, cell, `${width}-entry`);
+      await sidebar(page, true);
+      const endpoint = page.getByRole("textbox", { name: "NodeAgent endpoint", exact: true });
+      await endpoint.scrollIntoViewIfNeeded();
+      assert.equal(await endpoint.inputValue(), "");
+      assert.equal(await endpoint.isVisible(), true);
+      cell.renderedEndpointEmpty = true;
+      await capture(page, cell, `${width}-empty-endpoint`);
+      if (width < 1024) await sidebar(page, false);
+
+      const filteredButton = page.getByRole("button", { name: "Download prepared JSON", exact: true });
+      const initialContext = { Search: "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke", Persona: "Any", "Saved view": "public-node-repo-proofs", Domain: [], Kind: [], Difficulty: [], "Cost tier": [], "Tag contains": "public-node-repo", Sort: "Lowest difficulty", Rows: 100, "Exported rows": 15, "Matching tasks": 15 };
+      assert.equal(await filteredButton.count(), 0, "Fresh session requires preparation");
+      cell.metricFacts = await metricFacts(page);
+      await prepare(page, cell, initialContext);
+      await capture(page, cell, `${width}-prepared-initial`);
+      const filtered = await download(page, filteredButton, cell, `${width}-filtered-initial`);
+      assert.equal(filtered.length, 15);
+      for (const row of filtered) {
+        const source = taskById.get(row.id); assert.ok(source);
+        assert.equal(row.title, source.title);
+        assert.equal(row.score_status, source.provenance.scoreStatus);
+        assert.equal(row.source_refs, source.sourceRefs.slice(0, 4).join(", "));
+      }
+      cell.selectedTask = { id: filtered[0].id, sourceRefs: taskById.get(filtered[0].id).sourceRefs, scoreStatus: filtered[0].score_status };
+      await page.getByText("Source refs and metadata", { exact: true }).click();
+      await capture(page, cell, `${width}-task-provenance`);
+      await sidebar(page, true);
+      cell.transitions = [await committedInput(page, () => page.getByTestId("stSlider").locator('input[type="range"][aria-label="Rows"]').press("Home"), () => document.querySelector('[role="grid"]')?.getAttribute("aria-rowcount") === "11")];
+      await settled(page);
+      if (width < 1024) await sidebar(page, false);
+      assert.equal(await filteredButton.count(), 0, "Completed Rows rerun invalidates the old preparation");
+      await prepare(page, cell, { ...initialContext, Rows: 10, "Exported rows": 10 });
+      const limited = await download(page, filteredButton, cell, `${width}-filtered-top10`);
+      assert.deepEqual(limited, filtered.slice(0, 10));
+      const duplicate = await download(page, filteredButton, cell, `${width}-filtered-repeat`);
+      assert.deepEqual(duplicate, limited);
+      cell.topNAndRepeat = { initial: filtered.length, limited: limited.length, identicalRepeat: true };
+      assert.equal(cell.downloads.at(-1).sha256, cell.downloads.at(-2).sha256);
+      await capture(page, cell, `${width}-prepared-top10`);
+
+      if (width === 1440) {
+        // A real pending text edit: the old CTA can only mean the labelled
+        // snapshot. Do not hold the websocket, force state, or fake a rerun.
+        await sidebar(page, true);
+        const priorContext = await preparedContext(page);
+        assert.deepEqual(priorContext, { ...initialContext, Rows: 10, "Exported rows": 10 });
+        await page.getByRole("textbox", { name: "Search", exact: true }).fill("zz_pending_prepared_snapshot");
+        await capture(page, cell, `${width}-pending-old-preparation`);
+        assert.deepEqual(await download(page, filteredButton, cell, `${width}-pending-download`), limited);
+        await page.waitForFunction(() => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.textContent === "Filtered0"));
+        await page.waitForFunction(() => document.querySelector('[data-testid="stApp"]').getAttribute("data-test-script-state") === "notRunning");
+        assert.equal(await filteredButton.count(), 0);
+        await prepare(page, cell, { ...initialContext, Search: "zz_pending_prepared_snapshot", Rows: 10, "Exported rows": 0, "Matching tasks": 0 });
+        assert.deepEqual(await download(page, filteredButton, cell, `${width}-pending-reprepared-empty`), []);
+        assert.equal(cell.downloads.at(-1).bytes, 4);
+        await sidebar(page, true);
+        await page.getByRole("textbox", { name: "Search", exact: true }).fill(initialContext.Search);
+        await committedInput(page, () => page.getByRole("textbox", { name: "Search", exact: true }).press("Enter"), () => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.textContent === "Filtered15"));
+        assert.equal(await filteredButton.count(), 0);
+        // Three explicit preparations and two immediate downloads each expose
+        // stale/accumulating snapshots without adding application history.
+        for (let repeat = 0; repeat < 3; repeat += 1) {
+          await prepare(page, cell, { ...initialContext, Rows: 10, "Exported rows": 10 });
+          for (let burst = 0; burst < 2; burst += 1) assert.deepEqual(await download(page, filteredButton, cell, `${width}-recovery-${repeat}-${burst}`), limited);
+        }
+        cell.pendingEditAndSustainedRecovery = { oldSnapshotReturned: true, completedRerunInvalidated: true, repeatedPreparations: 3, recoveryDownloads: 6 };
+      }
+
+      await tab(page, "Saved views");
+      const downloadedBundle = await download(page, page.getByRole("button", { name: "Download public-node-repo-proofs bundle", exact: true }), cell, `${width}-public-bundle`);
+      assert.deepEqual(downloadedBundle, bundle);
+      await capture(page, cell, `${width}-bundle`);
+      if (zeroBundle && width === 1440) {
+        const expander = page.getByText(`${zeroBundle.title} (0 tasks)`, { exact: true });
+        await expander.click();
+        assert.deepEqual(await download(page, page.getByRole("button", { name: `Download ${zeroBundle.id} bundle`, exact: true }), cell, `${width}-zero-bundle`), zeroBundle);
+      }
+      await tab(page, "Provenance"); await capture(page, cell, `${width}-score-boundary`);
+      await tab(page, "NodeAgent");
+      const input = page.getByRole("textbox", { name: "Ask about tasks, ranks, costs, domains, or what a persona should run first", exact: true });
+      const prompts = width === 1440 ? ["Which public Node repo task can I inspect?", "Show the source evidence again", "Keep official scores separate", "Recheck the first task"] : ["Which public Node repo task can I inspect?"];
+      for (const [i, question] of prompts.entries()) {
+        await input.fill(question); await input.press("Enter");
+        await page.getByTestId("stChatMessage").nth(i * 2 + 1).waitFor({ timeout: 30_000 });
+        await settled(page);
+        const answer = await page.getByTestId("stChatMessage").nth(i * 2 + 1).innerText();
+        assert.ok(answer.includes("NodeAgent catalog mode found 15 matching task(s)"));
+        assert.ok(answer.includes("Cited task ids:"));
+        for (const row of filtered.slice(0, 5)) assert.ok(answer.includes(row.id));
+        cell.answers ??= []; cell.answers.push({ question, answer });
+      }
+      await capture(page, cell, `${width}-local-answer`);
+      await sidebar(page, true);
+      await page.getByRole("textbox", { name: "Search", exact: true }).fill("zz_no_task_20260905_xyz");
+      cell.transitions.push(await committedInput(page, () => page.getByRole("textbox", { name: "Search", exact: true }).press("Enter"), () => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.querySelector('[data-testid="stMetricLabel"]')?.textContent === "Filtered" && metric.querySelector('[data-testid="stMetricValue"]')?.textContent === "0")));
+      await page.waitForFunction(() => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.querySelector('[data-testid="stMetricLabel"]')?.textContent === "Filtered" && metric.querySelector('[data-testid="stMetricValue"]')?.textContent === "0"));
+      await settled(page);
+      if (width < 1024) await sidebar(page, false);
+      await tab(page, "Search");
+      assert.equal(await filteredButton.count(), 0);
+      await prepare(page, cell, { ...initialContext, Search: "zz_no_task_20260905_xyz", Rows: 10, "Exported rows": 0, "Matching tasks": 0 });
+      assert.deepEqual(await download(page, filteredButton, cell, `${width}-no-result`), []);
+      assert.equal(cell.downloads.at(-1).bytes, 4, "Preserve the actual pandas empty-array serialization");
+      await capture(page, cell, `${width}-no-result-state`);
+      await tab(page, "NodeAgent");
+      assert.ok((await page.getByText("I could not find matching tasks in the current filter set. Clear filters or broaden the query.", { exact: true }).count()) > 0);
+      await page.reload({ waitUntil: "domcontentloaded" }); await settled(page);
+      assert.equal(await page.getByTestId("stChatMessage").count(), 0);
+      assert.equal(await filteredButton.count(), 0, "Reload does not keep a prepared snapshot");
+      await prepare(page, cell, initialContext);
+      assert.deepEqual(await download(page, filteredButton, cell, `${width}-reloaded`), filtered);
+      cell.reloadRestoresUrlViewAndClearsSessionChat = true;
+
+      // Start from the actual Inspect task widget, then traverse using ordinary Tab keys.
+      const inspect = page.getByRole("combobox", { name: "Inspect task", exact: true });
+      await inspect.click(); await inspect.press("Escape");
+      cell.keyboard = [];
+      for (let i = 0; i < 12; i += 1) {
+        await page.keyboard.press("Tab");
+        const active = await page.evaluate(() => ({ text: document.activeElement?.textContent, label: document.activeElement?.getAttribute("aria-label") }));
+        cell.keyboard.push(active);
+        if (active.text?.trim() === "Prepare filtered JSON") break;
+      }
+      assert.equal(cell.keyboard.at(-1).text?.trim(), "Prepare filtered JSON");
+      await page.keyboard.press("Enter"); await filteredButton.waitFor(); await settled(page);
+      for (let i = 0; i < 8; i += 1) {
+        await page.keyboard.press("Tab");
+        const active = await page.evaluate(() => ({ text: document.activeElement?.textContent, label: document.activeElement?.getAttribute("aria-label") }));
+        cell.keyboard.push(active);
+        if (active.text?.trim() === "Download prepared JSON") break;
+      }
+      cell.keyboardReachedDownload = cell.keyboard.at(-1).text?.trim() === "Download prepared JSON";
+      assert.equal(cell.keyboardReachedDownload, true);
+      await capture(page, cell, `${width}-keyboard`);
+      assert.deepEqual(await download(page, filteredButton, cell, `${width}-keyboard-download`, true), filtered);
+      const html = await page.content();
+      const fontBefore = await page.evaluate(() => getComputedStyle(document.documentElement).fontSize);
+      const rowCountBefore = await page.locator('[role="grid"]').first().getAttribute("aria-rowcount");
+      const textStyle = await page.addStyleTag({ content: "html { font-size: 200% !important; }" });
+      await filteredButton.scrollIntoViewIfNeeded();
+      await capture(page, cell, `${width}-text200`);
+      const fontEnlarged = await page.evaluate(() => getComputedStyle(document.documentElement).fontSize);
+      await textStyle.evaluate((element) => element.remove());
+      await page.waitForFunction((font) => getComputedStyle(document.documentElement).fontSize === font, fontBefore);
+      assert.equal(await page.locator('[role="grid"]').first().getAttribute("aria-rowcount"), rowCountBefore);
+      cell.textEnlargement = { fontBefore, fontEnlarged, restoredFont: await page.evaluate(() => getComputedStyle(document.documentElement).fontSize), rowCountPreserved: true, domSerializationChanged: (await page.content()) !== html, limitation: "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim." };
+
+      if (width === 1440) {
+        const task = filtered[0];
+        const query = new URLSearchParams({ view: "public-node-repo-proofs", persona: "Product QA", q: task.id, domain: task.domain, kind: task.kind, difficulty: task.difficulty, cost: task.cost_tier, tag: "public-node-repo", sort: "steps" });
+        await page.goto(`${base}/?${query}`, { waitUntil: "domcontentloaded" }); await settled(page);
+        await prepare(page, cell, { ...initialContext, Search: task.id, Persona: "Product QA", Domain: [task.domain], Kind: [task.kind], Difficulty: [task.difficulty], "Cost tier": [task.cost_tier], Sort: "Fewest steps", "Exported rows": 1, "Matching tasks": 1 });
+        const one = await download(page, filteredButton, cell, `${width}-all-filter-context`);
+        assert.equal(one.length, 1);
+        for (const key of ["id", "title", "domain", "kind", "difficulty", "cost_tier", "source_refs", "score_status"]) assert.equal(one[0][key], task[key]);
+        await page.getByText("Prepared filters", { exact: true }).click();
+        await capture(page, cell, `${width}-all-filter-context-state`);
+        cell.nondefaultContextAndReopenedFileAgree = true;
+      }
+
+      await page.goto(staticBase + "/task-browser.html", { waitUntil: "load" });
+      assert.equal(await page.locator("#count").innerText(), "9,155 searchable tasks");
+      await page.locator("#query").fill(filtered[0].id);
+      assert.equal(await page.locator("#results .result code").first().innerText(), filtered[0].id);
+      await capture(page, cell, `${width}-static-selected`);
+      await page.locator("#query").fill("zz_no_task_20260905_xyz");
+      assert.equal(await page.locator("#summary").innerText(), "0 shown");
+      await capture(page, cell, `${width}-static-no-result`);
+      assert.deepEqual(cell.pageErrors, []);
+      cell.status = "OBSERVED";
+    } catch (error) {
+      cell.status = "FAILED"; cell.error = String(error);
+      await capture(page, cell, `${width}-failure`);
+    } finally { await context.close(); await writeFile(join(output, "report.json"), JSON.stringify(report, null, 2)); }
+    if (cell.status === "FAILED") break;
+  }
+  report.status = report.cells.length === viewports.length && report.cells.every((cell) => cell.status === "OBSERVED") ? "OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS" : "FAILED";
+} catch (error) { report.status = "FAILED"; report.errors.push(String(error)); }
+finally {
+  if (browser) await browser.close();
+  if (server.exitCode === null) spawnSync("taskkill", ["/PID", String(server.pid), "/T", "/F"], { windowsHide: true });
+  await new Promise((done) => server.exitCode !== null ? done() : server.once("exit", done));
+  await new Promise((done) => serverLog.end(done));
+  await new Promise((done) => staticServer.close(done));
+  report.sourceUnchanged = (await Promise.all(inputs.map(async (input) => hash(await readFile(join(root, input.path))) === input.sha256))).every(Boolean);
+  assert.equal(report.sourceUnchanged, true);
+  report.finishedAt = new Date().toISOString();
+  await writeFile(join(output, "report.json"), JSON.stringify(report, null, 2));
+}
+console.log(JSON.stringify({ status: report.status, cells: report.cells.length, output }));
+process.exitCode = report.status === "OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS" ? 0 : 1;

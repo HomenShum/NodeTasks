@@ -1,0 +1,264 @@
+{
+  "viewport": [
+    390,
+    844
+  ],
+  "scroll": [
+    0,
+    0
+  ],
+  "documentWidth": 590,
+  "overflow": 200,
+  "elements": [
+    {
+      "tag": "BODY",
+      "class": "",
+      "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+      "x": 0,
+      "right": 390,
+      "width": 390,
+      "y": 0,
+      "height": 844,
+      "scrollWidth": 590,
+      "clientWidth": 390,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "16px"
+    },
+    {
+      "tag": "DIV",
+      "class": "shell",
+      "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+      "x": 0,
+      "right": 390,
+      "width": 390,
+      "y": 0,
+      "height": 844,
+      "scrollWidth": 590,
+      "clientWidth": 390,
+      "minWidth": "0px",
+      "gridTemplateColumns": "590.422px",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "16px"
+    },
+    {
+      "tag": "ASIDE",
+      "class": "",
+      "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+      "x": 0,
+      "right": 590.421875,
+      "width": 590.421875,
+      "y": 0,
+      "height": 430.3125,
+      "scrollWidth": 589,
+      "clientWidth": 589,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "auto",
+      "fontSize": "16px"
+    },
+    {
+      "tag": "DIV",
+      "class": "meta",
+      "text": "Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks",
+      "x": 18,
+      "right": 571.421875,
+      "width": 553.421875,
+      "y": 48,
+      "height": 36,
+      "scrollWidth": 553,
+      "clientWidth": 553,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "12px"
+    },
+    {
+      "tag": "MAIN",
+      "class": "",
+      "text": "1 shownOpen locally or serve this folder; no backend needed.\n      nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the No",
+      "x": 0,
+      "right": 590.421875,
+      "width": 590.421875,
+      "y": 430.3125,
+      "height": 413.6875,
+      "scrollWidth": 590,
+      "clientWidth": 590,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "16px"
+    },
+    {
+      "tag": "DIV",
+      "class": "bar",
+      "text": "1 shownOpen locally or serve this folder; no backend needed.",
+      "x": 22,
+      "right": 568.421875,
+      "width": 546.421875,
+      "y": 448.3125,
+      "height": 17,
+      "scrollWidth": 546,
+      "clientWidth": 546,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "13px"
+    },
+    {
+      "tag": "ARTICLE",
+      "class": "result",
+      "text": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regener",
+      "x": 22,
+      "right": 568.421875,
+      "width": 546.421875,
+      "y": 477.3125,
+      "height": 216.375,
+      "scrollWidth": 546,
+      "clientWidth": 546,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "16px"
+    },
+    {
+      "tag": "CODE",
+      "class": "",
+      "text": "nodeagent.storyboard.capture.v1",
+      "x": 22,
+      "right": 238.53125,
+      "width": 216.53125,
+      "y": 492.3125,
+      "height": 18,
+      "scrollWidth": 215,
+      "clientWidth": 215,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "12px"
+    },
+    {
+      "tag": "CODE",
+      "class": "",
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+      "x": 22,
+      "right": 568.421875,
+      "width": 546.421875,
+      "y": 622.6875,
+      "height": 18,
+      "scrollWidth": 544,
+      "clientWidth": 544,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "12px"
+    },
+    {
+      "tag": "CODE",
+      "class": "",
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+      "x": 22,
+      "right": 568.421875,
+      "width": 546.421875,
+      "y": 647.6875,
+      "height": 32,
+      "scrollWidth": 544,
+      "clientWidth": 544,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible",
+      "fontSize": "12px"
+    }
+  ],
+  "outsideText": [
+    {
+      "tag": "BUTTON",
+      "text": "trace",
+      "x": 406.921875,
+      "right": 433.609375
+    },
+    {
+      "tag": "BUTTON",
+      "text": "notebook",
+      "x": 459.609375,
+      "right": 509
+    },
+    {
+      "tag": "SPAN",
+      "text": "Open locally or serve this folder; no backend needed.",
+      "x": 263.921875,
+      "right": 568.421875
+    },
+    {
+      "tag": "SPAN",
+      "text": "public-node-repo",
+      "x": 315.1875,
+      "right": 408.75
+    },
+    {
+      "tag": "SPAN",
+      "text": "score 9",
+      "x": 415.75,
+      "right": 453.625
+    },
+    {
+      "tag": "H2",
+      "text": "Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.",
+      "x": 22,
+      "right": 518.8125
+    },
+    {
+      "tag": "P",
+      "text": "Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.",
+      "x": 22,
+      "right": 519.375
+    },
+    {
+      "tag": "SPAN",
+      "text": "agent engineer",
+      "x": 338.453125,
+      "right": 418.609375
+    },
+    {
+      "tag": "CODE",
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+      "x": 28,
+      "right": 562.421875
+    },
+    {
+      "tag": "CODE",
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+      "x": 28,
+      "right": 529.421875
+    }
+  ],
+  "resultTexts": [
+    "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.curated public-node-repo public-node-repo NodeAgent agent engineerhttps://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+  ],
+  "resultIds": [
+    "nodeagent.storyboard.capture.v1"
+  ],
+  "summary": "1 shown",
+  "activeId": "query"
+}

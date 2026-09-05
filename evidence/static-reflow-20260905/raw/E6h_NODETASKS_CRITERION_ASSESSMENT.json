@@ -1,0 +1,890 @@
+{
+  "schema": "repository-criterion-assessment/v1",
+  "at": "2026-09-05T19:44:25.738632+00:00",
+  "repo": "NodeTasks",
+  "canonicalRepo": "https://github.com/HomenShum/NodeTasks",
+  "commit": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+  "workingSourceFreeze": {
+    "path": "E6h_NODETASKS_PREPARED_UI_FREEZE.json",
+    "sha256": "a3bb378df2c3698ac3db2a3b6c0d59c89c878f45d5833e6936dcc54cce0be14a",
+    "candidateDigest": "8c224e91eb179806e2746f2e1220ea9998352a6d2d5e6064f1c2b5e47684f9d3",
+    "source": [
+      {
+        "path": "apps/nodetasks_streamlit.py",
+        "bytes": 28478,
+        "sha256": "e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176",
+        "gitBlob": "a37b2c0d465bc0837e2d4b367c7519db4383bcc3"
+      },
+      {
+        "path": "scripts/verify-first-use.mjs",
+        "bytes": 28551,
+        "sha256": "34ba0d2496b31b7cf793cd33fe1016eb558bf2cb8c30603f005bd4c38f13cf26",
+        "gitBlob": "295e0890892f2354633a4e0653312fe2c03d6220"
+      },
+      {
+        "path": "HANDOFF.md",
+        "bytes": 9948,
+        "sha256": "ff267fa1767bc6dc9c9a74be95bc11e1088e2d3ec94baba1a44c7a6d411ca079",
+        "gitBlob": "ea7cc322d87df3c316dfcab696baaa5abcbc5ae1"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "bytes": 476,
+        "sha256": "c2c1841921cf63d17f683582384970a01ab9e229ef496f911d7421f254facaca",
+        "gitBlob": "5a809657275b48faee2841818effc5f956fb57a1"
+      }
+    ]
+  },
+  "profileRevision": {
+    "path": "REPO_READINESS_STANDARD.md",
+    "sha256": "8b5bb532bf0dfeed7cc4ecd2b425d708fc49048cc05ab4cbeb315fc3534aeff2",
+    "criterionNames": "Copied exactly from current eight-dimension criterion table; IDs added for reference."
+  },
+  "reviewer": "Independent nonauthor portfolio judge; reused reviewer context disclosed in source judgment",
+  "evaluationScope": "AGENT_EVALUATED_ONLY; numeric values are bounded observed criterion ratings, not complete criterion or dimension grades. No mean or letter computed.",
+  "environment": {
+    "os": "Windows x64",
+    "browser": "Chromium149.0.7827.55",
+    "input": "desktop mouse/keyboard with viewport emulation",
+    "mode": "Local catalog; empty optional endpoint; no provider",
+    "dependencyIdentity": "90 named retained runtime bindings; unlocked Python minimums disclosed"
+  },
+  "coverage": {
+    "viewports": [
+      [
+        320,
+        800
+      ],
+      [
+        360,
+        800
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        1024,
+        768
+      ],
+      [
+        1440,
+        960
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "workerCaptures": 93,
+    "workerRealDownloads": 59,
+    "matchedMetricPairs": 28,
+    "independentSettledFullContextAndNativeDownloads": [
+      [
+        390,
+        844
+      ],
+      [
+        1440,
+        960
+      ]
+    ],
+    "text200": "Actual root-font enlargement across seven worker cells; not native zoom",
+    "staticSurface": "Current selected/zero-result snapshots across seven pairs; phone overflow remains",
+    "motion": "NOT_RUN",
+    "humanParticipants": 0
+  },
+  "criterionRatings": [
+    {
+      "id": "V1",
+      "field": "visualScore",
+      "name": "typography",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "mobile_metrics",
+        "prepared_mobile",
+        "provenance"
+      ],
+      "deductionOrMissingEvidence": "Readable repaired text; legacy captions and compact JSON still require closer reading. Typography is usable with repeated small/faint supporting copy.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V2",
+      "field": "visualScore",
+      "name": "spacing/grid",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "entry",
+        "mobile_metrics",
+        "empty_mobile"
+      ],
+      "deductionOrMissingEvidence": "Native spacing is consistent, but stacked summary cards and the fixed-height empty table consume most of a phone viewport before the useful action.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V3",
+      "field": "visualScore",
+      "name": "color/token discipline",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "entry",
+        "provenance",
+        "context390"
+      ],
+      "deductionOrMissingEvidence": "Observed cards, borders, active controls and JSON use a coherent native palette; mixed dark metric cards/light body and syntax colors remain minor visual friction.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V4",
+      "field": "visualScore",
+      "name": "hierarchy",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "mobile_metrics",
+        "entry",
+        "prepared_mobile"
+      ],
+      "deductionOrMissingEvidence": "Prepared action/count is clear once reached. Large summary metrics and task details place the export decision far below the phone entry.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V5",
+      "field": "visualScore",
+      "name": "rendered legibility/contrast",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "metric_dom",
+        "task_metrics",
+        "prepared_mobile",
+        "provenance"
+      ],
+      "deductionOrMissingEvidence": "Metric label/value contrast and new body labels are repaired; legacy captions and the intentionally preserved delta/syntax styling retain legibility deductions. No full contrast pass.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V6",
+      "field": "visualScore",
+      "name": "consistent elevation/icons",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "entry",
+        "prepared_mobile",
+        "context390"
+      ],
+      "deductionOrMissingEvidence": "Observed native cards, chevrons and focus outline behave consistently; the remaining mix of chip and native JSON icon styles is minor polish.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V7",
+      "field": "visualScore",
+      "name": "alignment",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "entry",
+        "context1440",
+        "prepared_mobile"
+      ],
+      "deductionOrMissingEvidence": "The exercised desktop rows, prepared labels and detail align; long metric values still ellipsize and dense nested detail needs scrolling.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V8",
+      "field": "visualScore",
+      "name": "polish of empty/loading/error/populated states",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "empty_mobile",
+        "journey"
+      ],
+      "deductionOrMissingEvidence": "Zero-result count/export is honest, but the large blank table and disabled empty selector require extra scanning. Loading, network-error and timeout polish is not fully observed.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "V9",
+      "field": "visualScore",
+      "name": "purposeful motion and reduced-motion behavior",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "No motion/reduced-motion recording or alternatives audit. Native expander animation was observed only as a capture-timing boundary.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "D1",
+      "field": "designScore",
+      "name": "Clarity of the main action",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "prepared_mobile",
+        "context390",
+        "native_replay"
+      ],
+      "deductionOrMissingEvidence": "Prepare then Download clearly identifies a snapshot; inspecting the exact filter context still uses technical JSON rather than concise plain-language rows.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "D2",
+      "field": "designScore",
+      "name": "navigation/information architecture",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "mobile_metrics",
+        "entry",
+        "journey"
+      ],
+      "deductionOrMissingEvidence": "Sidebar/tabs are operable in the recorded flows, but phone navigation uses horizontal tab scrolling and long vertical travel to the task/export.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "D3",
+      "field": "designScore",
+      "name": "progressive disclosure",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "context390",
+        "context1440",
+        "native_replay"
+      ],
+      "deductionOrMissingEvidence": "Native disclosure keeps full twelve-field context reachable and wrapped at390/1440; the expanded nested JSON adds some reading effort.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "D4",
+      "field": "designScore",
+      "name": "useful information density",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "mobile_metrics",
+        "empty_mobile",
+        "task_metrics"
+      ],
+      "deductionOrMissingEvidence": "Thirteen metric instances and a tall table dominate narrow screens; long task metrics are ellipsized instead of readable in place.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "D5",
+      "field": "designScore",
+      "name": "consistency of component behavior and wording",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "prepared_mobile",
+        "journey"
+      ],
+      "deductionOrMissingEvidence": "Prepared count, matching count, filename and repeated/reprepared wording are consistent in exercised states; saved-bundle and filtered-export paths still use different action sequences.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "R1",
+      "field": "responsiveScore",
+      "name": "Reflow/content preservation",
+      "observedScore": 2,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "static320",
+        "static360",
+        "static390"
+      ],
+      "deductionOrMissingEvidence": "The separate current static search page loses the right side of title/source-reference content:270/230/200px overflow at320/360/390. This is not a necessary two-dimensional table exception.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "R2",
+      "field": "responsiveScore",
+      "name": "reachability of navigation and primary actions",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "keyboard_mobile",
+        "text200_mobile",
+        "journey"
+      ],
+      "deductionOrMissingEvidence": "Core prepared downloads are keyboard-reachable, but phone tabs need horizontal navigation and enlarged framework header controls clip; complete navigation/OS-keyboard reachability remains unverified.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "R3",
+      "field": "responsiveScore",
+      "name": "modal/panel/table/canvas adaptation",
+      "observedScore": 2,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "static390",
+        "task_metrics",
+        "context390"
+      ],
+      "deductionOrMissingEvidence": "Prepared detail wraps and the table can scroll, but static result cards overflow and long metric values remain truncated. Those losses prevent a complete adaptation pass.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "R4",
+      "field": "responsiveScore",
+      "name": "touch and on-screen-keyboard usability",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "No physical touch or on-screen-keyboard session; desktop Chromium viewport emulation cannot supply this criterion.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "R5",
+      "field": "responsiveScore",
+      "name": "stability under zoom, long content and declared locales",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "text200_mobile",
+        "task_metrics",
+        "static320"
+      ],
+      "deductionOrMissingEvidence": "Actual200% root text wraps the prepared button but clips the framework header; long metric text ellipsizes. Native400% zoom and declared locale combinations are not measured.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "I1",
+      "field": "interactionScore",
+      "name": "Working controls and keyboard paths",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "native_replay",
+        "journey",
+        "keyboard_mobile"
+      ],
+      "deductionOrMissingEvidence": "Actual native Tab/Enter preparation/download and recorded filter/bundle/chat controls work. Broad modal/menu, backward-navigation and assistive paths are not all exercised.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "I2",
+      "field": "interactionScore",
+      "name": "immediate honest feedback and durable status",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "prepared_mobile",
+        "empty_mobile",
+        "journey"
+      ],
+      "deductionOrMissingEvidence": "Prepared context/count remains tied to its bytes during pending input and disappears after rerun. Local session reset is disclosed; an unrelated completed rerun also requires preparation again.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "I3",
+      "field": "interactionScore",
+      "name": "validation/error/retry behavior",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [
+        "journey"
+      ],
+      "deductionOrMissingEvidence": "Valid zero results and recovery are observed; no current validation-error/network-failure/timeout/retry journey establishes this full error criterion.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "I4",
+      "field": "interactionScore",
+      "name": "safe cancellation/undo and duplicate-action handling",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "journey",
+        "actual_exports"
+      ],
+      "deductionOrMissingEvidence": "Repeated downloads and three re-preparations preserve exact bytes with no duplicate mutation. The observed catalog job has no cancellation/undo operation; endpoint action behavior is untested.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "I5",
+      "field": "interactionScore",
+      "name": "state continuity through navigation, reload, conflicts and reopening",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "journey",
+        "native_replay"
+      ],
+      "deductionOrMissingEvidence": "URL saved view returns on reload; local chat/prepared state clears honestly, and pending prepared context is preserved until rerun. Back/forward, conflicts and reopening during work remain uncovered.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "A1",
+      "field": "accessibilityScore",
+      "name": "Semantic names/structure",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "native_replay",
+        "journey",
+        "context390"
+      ],
+      "deductionOrMissingEvidence": "Native labelled controls, summary and text fields support the exercised role/name locators. No complete landmark/heading/screen-reader structure audit was performed.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "A2",
+      "field": "accessibilityScore",
+      "name": "keyboard/focus order and modal focus return",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "keyboard_mobile",
+        "native_replay"
+      ],
+      "deductionOrMissingEvidence": "Visible focus and natural Tab/Enter reach the named prepare/download path at tested widths. Complete modal-return and all-widget focus order remains unverified.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "A3",
+      "field": "accessibilityScore",
+      "name": "contrast/non-color cues",
+      "observedScore": 3,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "metric_dom",
+        "prepared_mobile",
+        "task_metrics"
+      ],
+      "deductionOrMissingEvidence": "Repaired metric/body labels include actual opacity/contrast evidence and text alongside delta icons; legacy faint copy and preserved delta/JSON colors prevent a complete contrast verdict.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "A4",
+      "field": "accessibilityScore",
+      "name": "text resize/reflow and target size",
+      "observedScore": 2,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "static320",
+        "static360",
+        "static390",
+        "text200_mobile"
+      ],
+      "deductionOrMissingEvidence": "Current static prose/result references overflow at320; enlarged header clips despite prepared-button wrapping. Target sizes/exceptions and native zoom have not been comprehensively measured.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "A5",
+      "field": "accessibilityScore",
+      "name": "screen-reader announcements and reduced-motion alternatives. Manual checks accompany automated scans",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "No screen reader or reduced-motion alternative verification; no automated or agent claim substitutes for these observations.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "P1",
+      "field": "performanceScore",
+      "name": "Initial usable view",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "No frozen initial-usable-view budget or navigation timing was measured; command duration and eventual visibility are insufficient.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "P2",
+      "field": "performanceScore",
+      "name": "input/scroll responsiveness",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "Finite successful interactions are not an input/scroll latency measurement; no INP or bounded lab response distribution.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "P3",
+      "field": "performanceScore",
+      "name": "layout stability",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "No CLS/layout-stability measurement. Expander settling for a screenshot is not a performance score.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "P4",
+      "field": "performanceScore",
+      "name": "honest long-operation feedback",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "No independently timed long-operation feedback scenario with a frozen budget; the corpus check runs outside the product UI.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "P5",
+      "field": "performanceScore",
+      "name": "behavior with large data and constrained device/network conditions. Record workload and measured budgets separately from reviewer impressions",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "The9155-task workload is real, but constrained device/network and large-data timing/memory budgets are not tested.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "U1",
+      "field": "usageScore",
+      "name": "First-time task comprehension",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [],
+      "deductionOrMissingEvidence": "No first-time human participant. An agent executing a known script cannot grade human comprehension.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "U2",
+      "field": "usageScore",
+      "name": "successful core journey",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "journey",
+        "native_replay"
+      ],
+      "deductionOrMissingEvidence": "Agent-operated select/filter/inspect/prepare/download/reopen completes with actual files. Human first-use, endpoint mode and every advertised upstream workflow remain unobserved.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "U3",
+      "field": "usageScore",
+      "name": "bounded errors/help/rework",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "journey",
+        "empty_mobile"
+      ],
+      "deductionOrMissingEvidence": "The named pending/empty/reprepare loop recovers with explicit snapshot copy; filter reversal and repeated preparation are extra work. Broader runtime-error help is untested.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "U4",
+      "field": "usageScore",
+      "name": "usable export or consumer result",
+      "observedScore": 5,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "actual_exports",
+        "native_replay",
+        "context390",
+        "context1440"
+      ],
+      "deductionOrMissingEvidence": "All exercised current export cases preserve exact fields/counts/source references and repeat bytes; two independent native files match the visible full context. No material observed defect within this frozen local export scope.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "U5",
+      "field": "usageScore",
+      "name": "restart/reopen/handoff without hidden knowledge. Fresh-agent operability is separate from observed fresh-human usability",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "journey",
+        "source_judge",
+        "freeze"
+      ],
+      "deductionOrMissingEvidence": "Reload restores the URL view and documented source/consumer setup is explicit. Python minimum versions remain unlocked and the current proof reuses the retained isolated Python installation.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "L1",
+      "field": "alignmentScore",
+      "name": "Fit to intended user and job",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "entry",
+        "context390",
+        "prepared_mobile"
+      ],
+      "deductionOrMissingEvidence": "The exercised evaluator job finds a task, reads provenance and exports a chosen snapshot. Technical/dense vocabulary and long metric summaries still impose some reading effort.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "L2",
+      "field": "alignmentScore",
+      "name": "coverage of advertised capabilities",
+      "observedScore": null,
+      "finalScore": null,
+      "status": "NOT_RUN",
+      "evidenceRefs": [
+        "source_judge"
+      ],
+      "deductionOrMissingEvidence": "Catalog browsing is observed; advertised upstream task commands, benchmark verifiers, optional endpoint mode and complete persona workflows are not executed.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "L3",
+      "field": "alignmentScore",
+      "name": "truthful limits/status",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "provenance",
+        "journey",
+        "source_judge"
+      ],
+      "deductionOrMissingEvidence": "Visible source/score boundary and local-answer/prepared-snapshot wording agree with observed behavior. The catalog receipt releaseReady term remains narrowly documented and is not a UI/production pass.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "L4",
+      "field": "alignmentScore",
+      "name": "permissions and review authority",
+      "observedScore": 4,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "journey",
+        "native_replay",
+        "source_judge"
+      ],
+      "deductionOrMissingEvidence": "Rendered endpoint is empty and browser egress is absent in local mode; native preparation is explicit. No endpoint authorization, real provider or deployment authority case was exercised.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    },
+    {
+      "id": "L5",
+      "field": "alignmentScore",
+      "name": "source/trace/artifact consistency",
+      "observedScore": 5,
+      "finalScore": null,
+      "status": "PARTIALLY_OBSERVED",
+      "evidenceRefs": [
+        "custody",
+        "actual_exports",
+        "freeze",
+        "source_judge"
+      ],
+      "deductionOrMissingEvidence": "Exact frozen source/manifest/operator copies, unchanged old packet and actual downloaded source identities agree throughout the exercised scope. No material observed custody inconsistency.",
+      "scope": "Current source-bound local Streamlit/static observations only; no complete required platform/state coverage."
+    }
+  ],
+  "visualScore": null,
+  "designScore": null,
+  "responsiveScore": null,
+  "interactionScore": null,
+  "accessibilityScore": null,
+  "performanceScore": null,
+  "usageScore": null,
+  "alignmentScore": null,
+  "barScores": null,
+  "overallScore": null,
+  "overallGrade": null,
+  "confidence": "Direct source/file/pixel observations strong for named local scope; no inference to untested platforms or user populations.",
+  "developerHandoffStatus": "SCOPED_SOURCE_AND_WORKING_PUBLICATION_APPROVED; exact commit/shared CI pending",
+  "userExperienceStatus": "PARTIALLY_OBSERVED_WITH_KNOWN_REFLOW_AND_LEGIBILITY_DEFECTS",
+  "freshHumanUsabilityStatus": "NOT_RUN",
+  "sharedIntegrationStatus": "NOT_RUN_AT_THIS_FREEZE",
+  "productionStatus": "NOT_RUN",
+  "hardGates": [
+    {
+      "gate": "Prepared snapshot/file agreement",
+      "status": "PASS_SCOPED"
+    },
+    {
+      "gate": "Static phone content preservation",
+      "status": "FAILED_OBSERVED",
+      "overflowPx": {
+        "320": 270,
+        "360": 230,
+        "390": 200
+      }
+    },
+    {
+      "gate": "Full platform/state/accessibility/human coverage",
+      "status": "NOT_RUN"
+    },
+    {
+      "gate": "Actual shared CI",
+      "status": "NOT_RUN"
+    }
+  ],
+  "requiredFixes": [
+    {
+      "priority": 1,
+      "id": "NODETASKS-STATIC-REFLOW-01",
+      "criterionIds": [
+        "R1",
+        "R3",
+        "A4"
+      ],
+      "finding": "Static selected result loses title/source-reference content at320/360/390.",
+      "nextSlice": "Use already reviewed static reflow plan: smallest owned grid intrinsic-minimum/wrapping correction in scripts/build-catalog.mjs, generated HTML and intentionally content-bound receipt. Preserve all9155 task semantics/1236 source entries/other generated bytes. No clipping workaround or receipt regeneration to hide drift.",
+      "plan": "E6h_NODETASKS_STATIC_REFLOW_PLAN.md",
+      "beforeEvidence": [
+        "static320",
+        "static360",
+        "static390"
+      ]
+    },
+    {
+      "priority": 2,
+      "id": "NODETASKS-LEGACY-LEGIBILITY",
+      "criterionIds": [
+        "V1",
+        "V5",
+        "A3"
+      ],
+      "finding": "Legacy caption/delta/JSON legibility remains distinct from repaired metric/body labels.",
+      "nextSlice": "Freeze exact rendered foreground/background/opacity and current before pixels before choosing a separate text owner; no blanket descendant recoloring."
+    },
+    {
+      "priority": 2,
+      "id": "NODETASKS-DENSITY-AND-HEADER",
+      "criterionIds": [
+        "D4",
+        "R2",
+        "R5"
+      ],
+      "finding": "Metric values ellipsize; phone metrics consume vertical space;200% framework header clips.",
+      "nextSlice": "Diagnose current owner and support promise before editing; preserve prepared-download functionality and keep the static reflow slice first."
+    }
+  ],
+  "limitations": [
+    "Every complete dimension stays null: required surfaces/states/platforms are not exhausted. Numeric partial ratings never imply the4.5 target is met.",
+    "No N/A criterion was assigned merely because it was untested.",
+    "Current analysis does not modify central grade/register files or reopen the completed source guard.",
+    "Observed static phone failure prevents whole-app responsiveness acceptance even though the prepared-download repair is approved.",
+    "Earlier animation-caught context/provenance frames are retained but not used as stable visual references; settled matched/independent pixels are used instead."
+  ],
+  "evidenceRefs": {
+    "entry": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/1440-entry.png",
+      "sha256": "e7db4e4e6265d4370c7a790d741f5cf86a7275ac61009d44adf92ffa79aef5e3"
+    },
+    "mobile_metrics": {
+      "path": "E6h-nodetasks-prepared-ui-01/after-exact-profile-final/metric-summary-390/before.png",
+      "sha256": "a236e9f78bda6d904318b5b8c100f4fbf6862fd1b2d9f2b64686aa6596692ff6"
+    },
+    "task_metrics": {
+      "path": "E6h-nodetasks-prepared-ui-01/after-exact-profile-final/metric-task-390/before.png",
+      "sha256": "f50bc5a3a2f6a007051bc10df4e0efdb7a74c56d1280f4dca588115ddbdafdb0"
+    },
+    "provenance": {
+      "path": "E6h-nodetasks-prepared-ui-01/after-exact-profile-final/metric-provenance-1440/before.png",
+      "sha256": "a881f4cf254d226034a0eac88fe3126572d71d2497974c2ca032fb081493d6b5"
+    },
+    "metric_dom": {
+      "path": "E6h-nodetasks-prepared-ui-01/metric-comparison-final.json",
+      "sha256": "8990e3089425ea6a8fabd91f0675619b6fc987604fac1a5b307065a1c10aadc8"
+    },
+    "prepared_mobile": {
+      "path": "E6h-nodetasks-prepared-ui-01/after-exact-profile-final/prepared-390/after.png",
+      "sha256": "1f669b4b30b7369b20f510f4f018bd36c789791eb7611209832be010396592bf"
+    },
+    "empty_mobile": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/390-no-result-state.png",
+      "sha256": "e7b24d344ba21aa46e9c7fc4e01d9394e3e8a51c011cb57c922d18b3c3a55a62"
+    },
+    "keyboard_mobile": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/390-keyboard.png",
+      "sha256": "df0debb46b3a8bbbb0e8eb58aaac680730c629e419f08874ddb068d29f345df4"
+    },
+    "text200_mobile": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/390-text200.png",
+      "sha256": "df2c0cc82d88e3991ed1ed8e2e84da90bb4d671b0db1e20be25aa0742befbeea"
+    },
+    "static320": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/320-static-selected.png",
+      "sha256": "2f048690872f1bc4ce3e5fcebee69781937ac09f150ed8ead96cb911ec7989db"
+    },
+    "static360": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/360-static-selected.png",
+      "sha256": "a201d18b13c73fca224d0d4117d57090c9422cfcc34caf4695e86f1780515561"
+    },
+    "static390": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/390-static-selected.png",
+      "sha256": "d35fa834d9d2f3b857cd7e588cab59b74b4747162485ea3cf3ba81cda3790290"
+    },
+    "journey": {
+      "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/report.json",
+      "sha256": "b7ffe41586e2b7c89379696e5a200b2585b972c0676fdc8537b41b9bbe42c984"
+    },
+    "context390": {
+      "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/390-full-detail.png",
+      "sha256": "2695f7375d809cac9a119459290d9de7050a631d33c8b3d621ab12887e353674"
+    },
+    "context1440": {
+      "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/1440-full-detail.png",
+      "sha256": "da2c28bcbc0bc9ac70945ea71b9cc1c73dfd40f22d38f2339d94136818c47feb"
+    },
+    "native_replay": {
+      "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/report.json",
+      "sha256": "893b36c391a46763d3b1ca73b7099f111e7554ac2aec852c623ebc372491ed65"
+    },
+    "actual_exports": {
+      "path": "E6h-nodetasks-ui-independent-source-preflight/raw-proof-review.json",
+      "sha256": "a0b7f8c91ec742ea07885975696d8db7fa5c915e63c4e9be1c94b534fa38c62b"
+    },
+    "custody": {
+      "path": "E6h-nodetasks-ui-independent-source-preflight/publication-review.json",
+      "sha256": "7a31e93d3411871e59a090a592ce4082cd887db61459e120023835d573019a94"
+    },
+    "source_judge": {
+      "path": "E6h_NODETASKS_PREPARED_UI_FINAL_JUDGE.json",
+      "sha256": "a04d2342275e42f4b05f51e7727a14d7ecfa71b7e98b6cbc03224cdd54a8053e"
+    },
+    "freeze": {
+      "path": "E6h_NODETASKS_PREPARED_UI_FREEZE.json",
+      "sha256": "a3bb378df2c3698ac3db2a3b6c0d59c89c878f45d5833e6936dcc54cce0be14a"
+    }
+  }
+}

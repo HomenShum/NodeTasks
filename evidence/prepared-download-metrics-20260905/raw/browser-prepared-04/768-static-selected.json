@@ -1,0 +1,15 @@
+{
+  "url": "http://127.0.0.1:54533/task-browser.html",
+  "body": "NodeTasks\nGenerated 2026-07-09T02:48:01.246Z\n9,155 searchable tasks\n \nAll kinds\nbenchmark-adapter\nbenchmark-family\nbenchmark-target\nbrowser-test-case\ncurated-live\nlocal-proxy-task\nmodel-attempt\nqa-feature\nrubric\nscenario\nsource-reference\nsuite\nunit-test-case\n \nAll families\naccounting\naccounting-live-proofloop\naccounting-suite\naudit-export\nbankertoolbench\nbankertoolbench-full-100\nbenchmark-adapter\nbenchmark-gate\nbenchmark-proxy\nbenchmark-proxy-live\nchat\ncommand-palette\ncommon\ndataset\ndoc\ndoctrine\ne2e\nexternal_adapter\nfinauditing\nfinauditing-prod-proxy-task\nfinch\nfinch-prod-proxy-task\ngraph\ngraph-nodeagent\ninternal\nlive-browser-proof.spec.ts\nmulti-user\nnodeagent\nnoderl\nnoderoom-multi-user\nnoderoom-multi-user-conflict\nnotebook\nnotion\nnotion-live-proofloop\nnotion-suite\nofficial_public\nofficial_subset\nother\nproduct_suite\nproofloop-accounting\nproofloop-notion\nproofloop-suite\nproposal-review\nproximitty\nproximitty-underwriting-pr0\npublic-chat\npublic-node-repo\nqa-production-matrix\nroom-home\nrubric\nrubrics\nscenario\nscenarios\nscript\nspreadsheet\nspreadsheetbench-v1-full-912\nspreadsheetbench-v2-full-321\nstreamlit-nodegraph\nsuites\ntest\ntrace\ntrace-surface\nunit\nupload\nvoice\nworkstreambench\nworkstreambench-prod-proxy-task\nnodeagent\ngraph\nspreadsheetbench\nbankertoolbench\ntrace\nnotebook\nstreamlit\nmodel-attempt\n1 shown\nOpen locally or serve this folder; no backend needed.\nnodeagent.storyboard.capture.v1\ncurated-live\npublic-node-repo\nscore 9\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\ncurated\npublic-node-repo\npublic-node-repo\nNodeAgent\nagent engineer\nhttps://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md\nhttps://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+  "viewport": {
+    "width": 768,
+    "height": 1024
+  },
+  "horizontalOverflow": 0,
+  "focus": {
+    "tag": "INPUT",
+    "text": "",
+    "label": null
+  },
+  "metrics": []
+}

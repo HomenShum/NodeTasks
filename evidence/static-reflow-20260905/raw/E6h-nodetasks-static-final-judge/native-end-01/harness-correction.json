@@ -1,0 +1,10 @@
+{
+  "failure": "Incorrect external-recorder selector .result p code matched no elements; actual source renders reference code in the final .row div.",
+  "applicationFailure": false,
+  "runtimeClosed": true,
+  "sourceUnchanged": true,
+  "originalRecorderSha256": "114a631b6eaa2a6f176f2b7d484afdd7c301ff4f94a9945173f37053f3a7c35d",
+  "correctedSelector": ".result > .row:last-child code",
+  "correctedOutput": "native-end-02",
+  "productEdits": 0
+}

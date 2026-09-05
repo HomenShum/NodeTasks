@@ -1,0 +1,79 @@
+from pathlib import Path
+import json, hashlib, math, ast, subprocess, datetime
+P=Path(__file__).resolve().parents[1]
+O=Path(__file__).resolve().parent
+W=P/'E6h-nodetasks-prepared-ui-01'
+R=Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905')
+checks=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def read(p):return json.loads(p.read_text('utf-8-sig'))
+def check(name,condition,detail=None):
+ checks.append({'name':name,'passed':bool(condition),'detail':detail})
+ if not condition:raise AssertionError(name)
+report={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Independent raw-file/metric/CI/source assessment; no new runtime execution or UI acceptance yet.','checks':checks,'status':'RUNNING'}
+try:
+ run=read(W/'browser-prepared-04/report.json')
+ check('Final finite worker command completed',read(W/'browser-prepared-04.command.json')['exitCode']==0)
+ check('Seven exact complete cells',[[x['width'],x['height']]for x in run['cells']]==[[320,800],[360,800],[390,844],[768,1024],[1024,768],[1440,960],[1920,1080]] and all(x['status']=='OBSERVED'for x in run['cells']))
+ check('Raw report error and egress collections empty',run['errors']==[] and run['externalRequests']==[] and all(x['pageErrors']==[] and x['console']==[]for x in run['cells']))
+ input_bindings=[]
+ for x in run['inputs']:
+  check('Current named run input exact: '+x['path'],sha((R/x['path']).read_bytes())==x['sha256'])
+  input_bindings.append(x)
+ tasks={x['id']:x for x in read(R/'catalog/all-tasks.json')['tasks']}
+ names=set();capture_count=0;download_count=0
+ for cell in run['cells']:
+  width=cell['width']
+  for cap in cell['captures']:
+   name=cap['name'];check('Distinct capture filename: '+name,name not in names);names.add(name)
+   for suffix,key in [('.png','pngSha256'),('.html','htmlSha256')]:check('Actual capture bytes: '+name+suffix,sha((W/'browser-prepared-04'/(name+suffix)).read_bytes())==cap[key])
+   capture_count+=1
+  for d in cell['downloads']:
+   name=d['name'];check('No capture/download overwrite: '+name,name not in names);names.add(name)
+   b=(W/'browser-prepared-04'/(name+'.json')).read_bytes();check('Actual reopened download bytes: '+name,len(b)==d['bytes'] and sha(b)==d['sha256'])
+   rows=json.loads(b)
+   if isinstance(rows,list):
+    for row in rows:
+     src=tasks[row['id']]
+     check('Source identity preserved in '+name+' / '+row['id'],row['title']==src['title'] and row['score_status']==src['provenance']['scoreStatus'] and row['source_refs']==', '.join(src['sourceRefs'][:4]))
+   download_count+=1
+  initial=read(W/'browser-prepared-04'/f'{width}-filtered-initial.json')
+  limited=read(W/'browser-prepared-04'/f'{width}-filtered-top10.json')
+  check(f'{width} Rows limit and repeated file identities',len(initial)==15 and limited==initial[:10] and read(W/'browser-prepared-04'/f'{width}-filtered-repeat.json')==limited)
+  check(f'{width} actual keyboard download',cell['keyboardReachedDownload'] and read(W/'browser-prepared-04'/f'{width}-keyboard-download.json')==initial)
+  empty=(W/'browser-prepared-04'/f'{width}-no-result.json').read_bytes();check(f'{width} unchanged empty serialization',empty==b'[\n\n]')
+  check(f'{width} restored original URL view after reload',read(W/'browser-prepared-04'/f'{width}-reloaded.json')==initial and cell['reloadRestoresUrlViewAndClearsSessionChat'])
+ desktop=next(x for x in run['cells']if x['width']==1440)
+ check('Actual pending download equals prior prepared ten rows',read(W/'browser-prepared-04/1440-pending-download.json')==read(W/'browser-prepared-04/1440-filtered-top10.json'))
+ check('Pending rerun empty output is actual four bytes',(W/'browser-prepared-04/1440-pending-reprepared-empty.json').read_bytes()==b'[\n\n]')
+ check('Every effective filter has a nondefault same-run assertion',desktop['nondefaultContextAndReopenedFileAgree'] and len(desktop['preparations'][-1])==12)
+ before=read(W/'before-exact-profile-02/report.json');after=read(W/'after-exact-profile-final/report.json')
+ pairs=0
+ for bc,ac in zip(before['cells'],after['cells'],strict=True):
+  check('Matched viewport dimensions', (bc['width'],bc['height'])==(ac['width'],ac['height']))
+  for bb,ab in zip(bc['boundaries'],ac['boundaries'],strict=True):
+   check('Same boundary, original DOM restored: '+ab['name'],bb['name']==ab['name'] and bb['domRestored'] and ab['domRestored'])
+   bm=bb['before']['dom']['metrics'];am=ab['before']['dom']['metrics']
+   check('13 shared metrics retained: '+ab['name'],len(bm)==len(am)==13)
+   for old,new in zip(bm,am,strict=True):
+    check('Metric semantics/background preserved: '+ab['name']+' '+old['text'],old['text']==new['text'] and old['background']==new['background']=='rgb(15, 20, 25)')
+    check('Metric foreground causal change: '+ab['name']+' '+old['text'],old['color']=='rgb(49, 51, 63)' and new['color']=='rgb(229, 231, 235)')
+    delta=False
+    for od,nd in zip(old['descendants'],new['descendants'],strict=True):
+     check('Text descendant identity',od['tag']==nd['tag'] and od['text']==nd['text'])
+     if od['testid']=='stMetricDelta':delta=True
+     if delta:check('Delta semantics/styling/geometry preserved',all(od[k]==nd[k]for k in ['color','background','fill','width','height']))
+   for dirn,boundary in [('before-exact-profile-02',bb),('after-exact-profile-final',ab)]:
+    check('Matched actual PNG identity',sha((W/dirn/boundary['name']/'before.png').read_bytes())==boundary['before']['pngSha256'])
+   pairs+=1
+ ast.parse((O/'source/apps/nodetasks_streamlit.py').read_text('utf-8-sig'))
+ syntax=subprocess.run(['node','--check',str(O/'source/scripts/verify-first-use.mjs')],capture_output=True)
+ (O/'node-check.stdout').write_bytes(syntax.stdout);(O/'node-check.stderr').write_bytes(syntax.stderr)
+ check('Preserved source syntax parses',syntax.returncode==0)
+ for name,expected in [('checkout','3d3c42e5aac5ba805825da76410c181273ba90b1'),('setup-node','820762786026740c76f36085b0efc47a31fe5020')]:check('Official action tag exact '+name,read(O/(name+'-official-tag.stdout'))['object']['sha']==expected)
+ report.update(status='PASS_RAW_SOURCE_AND_FILE_CHECKS_PENDING_FINAL_PACKET',captureCount=capture_count,downloadCount=download_count,metricPairs=pairs,inputs=input_bindings,limits=['No independent browser replay yet','All-filter context source/DOM agreement does not prove visual JSON detail readability; current screenshot captured initial expansion frame','Full UI, static overflow, physical devices, screen readers, performance and provider/benchmark scores remain ungraded','Finite three preparations/six recovery downloads and four chat exchanges are not a sustained-load certification','CI workflow reviewed only; shared workflow has not run at a committed candidate yet'])
+except Exception as exc:report.update(status='FAILED_RAW_CHECK',error=repr(exc))
+finally:
+ report['finishedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ (O/'raw-proof-review.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+ print(json.dumps({'status':report['status'],'checks':len(checks),'failed':sum(not x['passed']for x in checks),'error':report.get('error'),'captures':report.get('captureCount'),'downloads':report.get('downloadCount'),'metricPairs':report.get('metricPairs')}))

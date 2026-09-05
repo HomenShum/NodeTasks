@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "name": "nodetasks",
+  "dependencies": {
+    "playwright": {
+      "version": "1.61.1",
+      "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.61.1.tgz",
+      "overridden": false,
+      "dependencies": {
+        "fsevents": {},
+        "playwright-core": {
+          "version": "1.61.1",
+          "resolved": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.61.1.tgz",
+          "overridden": false
+        }
+      }
+    }
+  }
+}

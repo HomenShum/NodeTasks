@@ -1,0 +1,223 @@
+{
+  "url": "http://127.0.0.1:54534/?view=public-node-repo-proofs&persona=Product+QA&q=nodeagent.storyboard.capture.v1&domain=Agent+Runtime+%26+NodeAgent&kind=curated-live&difficulty=advanced&cost=external-variable&tag=public-node-repo&sort=steps",
+  "viewport": {
+    "width": 1440,
+    "height": 960
+  },
+  "body": "1 option available.\nFilters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nDifficulty\n\nadvanced\n\nCost tier\n\nexternal-variable\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n1\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nPrepare filtered JSON\n\nPrepared 1 of 1 matching tasks · Rows limit 100\n\nDownload uses this prepared snapshot. After editing filters, prepare again.\n\nkeyboard_arrow_down\n\nPrepared filters\n\n{\n\"Search\":\"nodeagent.storyboard.capture.v1\"\n\"Persona\":\"Product QA\"\n\"Saved view\":\"public-node-repo-proofs\"\n\"Domain\":[\n0:\"Agent Runtime & NodeAgent\"\n]\n\"Kind\":[\n0:\"curated-live\"\n]\n\"Difficulty\":[\n0:\"advanced\"\n]\n\"Cost tier\":[\n0:\"external-variable\"\n]\n\"Tag contains\":\"public-node-repo\"\n\"Sort\":\"Fewest steps\"\n\"Rows\":100\n\"Exported rows\":1\n\"Matching tasks\":1\n}\n\nDownload prepared JSON",
+  "overflow": 0,
+  "focus": {
+    "tag": "SUMMARY",
+    "text": "keyboard_arrow_downPrepared filters",
+    "outline": "rgb(49, 51, 63) none 3px",
+    "boxShadow": "none"
+  },
+  "details": [
+    {
+      "text": "keyboard_arrow_down\n\nPrepared filters\n\n{\n\"Search\":\"nodeagent.storyboard.capture.v1\"\n\"Persona\":\"Product QA\"\n\"Saved view\":\"public-node-repo-proofs\"\n\"Domain\":[\n0:\"Agent Runtime & NodeAgent\"\n]\n\"Kind\":[\n0:\"curated-live\"\n]\n\"Difficulty\":[\n0:\"advanced\"\n]\n\"Cost tier\":[\n0:\"external-variable\"\n]\n\"Tag contains\":\"public-node-repo\"\n\"Sort\":\"Fewest steps\"\n\"Rows\":100\n\"Exported rows\":1\n\"Matching tasks\":1\n}",
+      "open": true,
+      "box": {
+        "x": 380,
+        "y": 703.5,
+        "width": 980,
+        "height": 661.59375,
+        "top": 703.5,
+        "right": 1360,
+        "bottom": 1365.09375,
+        "left": 380
+      },
+      "json": [
+        {
+          "text": "{\n\"Search\":\"nodeagent.storyboard.capture.v1\"\n\"Persona\":\"Product QA\"\n\"Saved view\":\"public-node-repo-proofs\"\n\"Domain\":[\n0:\"Agent Runtime & NodeAgent\"\n]\n\"Kind\":[\n0:\"curated-live\"\n]\n\"Difficulty\":[\n0:\"advanced\"\n]\n\"Cost tier\":[\n0:\"external-variable\"\n]\n\"Tag contains\":\"public-node-repo\"\n\"Sort\":\"Fewest steps\"\n\"Rows\":100\n\"Exported rows\":1\n\"Matching tasks\":1\n}",
+          "box": {
+            "x": 397,
+            "y": 759.5,
+            "width": 946,
+            "height": 588.59375,
+            "top": 759.5,
+            "right": 1343,
+            "bottom": 1348.09375,
+            "left": 397
+          },
+          "scrollWidth": 946,
+          "clientWidth": 946,
+          "styles": {
+            "whiteSpace": "normal",
+            "overflowX": "auto"
+          },
+          "rows": [
+            {
+              "text": "{\n\"Search\":\"nodeagent.storyboard.capture.v1\"\n\"Persona\":\"Product QA\"\n\"Saved view\":\"public-node-repo-proofs\"\n\"Domain\":[\n0:\"Agent Runtime & NodeAgent\"\n]\n\"Kind\":[\n0:\"curated-live\"\n]\n\"Difficulty\":[\n0:\"advanced\"\n]\n\"Cost tier\":[\n0:\"external-variable\"\n]\n\"Tag contains\":\"public-node-repo\"\n\"Sort\":\"Fewest steps\"\n\"Rows\":100\n\"Exported rows\":1\n\"Matching tasks\":1\n}",
+              "box": {
+                "x": 397,
+                "y": 759.5,
+                "width": 946,
+                "height": 588.59375,
+                "top": 759.5,
+                "right": 1343,
+                "bottom": 1348.09375,
+                "left": 397
+              }
+            },
+            {
+              "text": "\"Search\":\"nodeagent.storyboard.capture.v1\"",
+              "box": {
+                "x": 403,
+                "y": 781.890625,
+                "width": 940,
+                "height": 28.390625,
+                "top": 781.890625,
+                "right": 1343,
+                "bottom": 810.28125,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Persona\":\"Product QA\"",
+              "box": {
+                "x": 403,
+                "y": 810.28125,
+                "width": 940,
+                "height": 28.390625,
+                "top": 810.28125,
+                "right": 1343,
+                "bottom": 838.671875,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Saved view\":\"public-node-repo-proofs\"",
+              "box": {
+                "x": 403,
+                "y": 838.671875,
+                "width": 940,
+                "height": 28.390625,
+                "top": 838.671875,
+                "right": 1343,
+                "bottom": 867.0625,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Domain\":[\n0:\"Agent Runtime & NodeAgent\"\n]",
+              "box": {
+                "x": 403,
+                "y": 867.0625,
+                "width": 940,
+                "height": 79.171875,
+                "top": 867.0625,
+                "right": 1343,
+                "bottom": 946.234375,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Kind\":[\n0:\"curated-live\"\n]",
+              "box": {
+                "x": 403,
+                "y": 946.234375,
+                "width": 940,
+                "height": 79.171875,
+                "top": 946.234375,
+                "right": 1343,
+                "bottom": 1025.40625,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Difficulty\":[\n0:\"advanced\"\n]",
+              "box": {
+                "x": 403,
+                "y": 1025.40625,
+                "width": 940,
+                "height": 79.171875,
+                "top": 1025.40625,
+                "right": 1343,
+                "bottom": 1104.578125,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Cost tier\":[\n0:\"external-variable\"\n]",
+              "box": {
+                "x": 403,
+                "y": 1104.578125,
+                "width": 940,
+                "height": 79.171875,
+                "top": 1104.578125,
+                "right": 1343,
+                "bottom": 1183.75,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Tag contains\":\"public-node-repo\"",
+              "box": {
+                "x": 403,
+                "y": 1183.75,
+                "width": 940,
+                "height": 28.390625,
+                "top": 1183.75,
+                "right": 1343,
+                "bottom": 1212.140625,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Sort\":\"Fewest steps\"",
+              "box": {
+                "x": 403,
+                "y": 1212.140625,
+                "width": 940,
+                "height": 28.390625,
+                "top": 1212.140625,
+                "right": 1343,
+                "bottom": 1240.53125,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Rows\":100",
+              "box": {
+                "x": 403,
+                "y": 1240.53125,
+                "width": 940,
+                "height": 28.390625,
+                "top": 1240.53125,
+                "right": 1343,
+                "bottom": 1268.921875,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Exported rows\":1",
+              "box": {
+                "x": 403,
+                "y": 1268.921875,
+                "width": 940,
+                "height": 28.390625,
+                "top": 1268.921875,
+                "right": 1343,
+                "bottom": 1297.3125,
+                "left": 403
+              }
+            },
+            {
+              "text": "\"Matching tasks\":1",
+              "box": {
+                "x": 403,
+                "y": 1297.3125,
+                "width": 940,
+                "height": 28.390625,
+                "top": 1297.3125,
+                "right": 1343,
+                "bottom": 1325.703125,
+                "left": 403
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

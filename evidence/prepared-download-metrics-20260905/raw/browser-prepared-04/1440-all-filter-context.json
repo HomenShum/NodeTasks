@@ -1,0 +1,33 @@
+[
+  {
+    "id":"nodeagent.storyboard.capture.v1",
+    "title":"Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.",
+    "goal":"Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.",
+    "kind":"curated-live",
+    "family":"public-node-repo",
+    "surface":"NodeAgent",
+    "status":"",
+    "domain":"Agent Runtime & NodeAgent",
+    "subdomain":"public-node-repo",
+    "difficulty":"advanced",
+    "difficulty_score":62,
+    "steps":13,
+    "step_tier":"10+",
+    "cost_tier":"external-variable",
+    "cost_rank":5,
+    "estimated_cost_usd":null,
+    "persona_fit":"agent engineer",
+    "top_tags":"public-node-repo, Agent Runtime & NodeAgent, curated-live, NodeAgent, agent engineer, curated, github.com, HomenShum",
+    "source_refs":"https:\/\/github.com\/HomenShum\/NodeAgent\/blob\/main\/docs\/FEATURE_PROOF_STORYBOARD.md, https:\/\/github.com\/HomenShum\/NodeAgent\/blob\/main\/scripts\/render-walkthrough-media.mjs",
+    "command":"",
+    "curation_summary":"Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. is a curated live in Agent Runtime & NodeAgent \/ public-node-repo. Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.",
+    "why_it_matters":"It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.",
+    "verifier_type":"verifier-receipt",
+    "score_status":"no-official-score-claim",
+    "primary_suite":"public-node-repo",
+    "source_count":2,
+    "sort_score":4062513,
+    "text":"nodeagent.storyboard.capture.v1 curated-live public-node-repo nodeagent regenerate the nodeagent storyboard proof clip and bind it to smoke receipts. regenerate the nodeagent storyboard proof clip and bind it to smoke receipts. regenerate the nodeagent storyboard proof clip and bind it to smoke receipts. is a curated live in agent runtime & nodeagent \/ public-node-repo. regenerate the nodeagent storyboard proof clip and bind it to smoke receipts. it names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock. verifier-receipt no-official-score-claim public-node-repo curated public-node-repo public-node-repo nodeagent agent engineer public-node-repo agent runtime & nodeagent curated-live nodeagent agent engineer curated github.com homenshum {}",
+    "relevance":13
+  }
+]

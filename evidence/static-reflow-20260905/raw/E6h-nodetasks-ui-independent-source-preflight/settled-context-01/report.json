@@ -1,0 +1,227 @@
+{
+  "startedAt": "2026-09-05T19:32:31.493Z",
+  "status": "PASS_TWO_SETTLED_CONTEXT_AND_KEYBOARD_CELLS",
+  "scope": "Two exact viewport cells, current full prepared context and native keyboard download only",
+  "inputs": [
+    {
+      "path": "apps/nodetasks_streamlit.py",
+      "sha256": "e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "sha256": "34ba0d2496b31b7cf793cd33fe1016eb558bf2cb8c30603f005bd4c38f13cf26"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "c2c1841921cf63d17f683582384970a01ab9e229ef496f911d7421f254facaca"
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "ff267fa1767bc6dc9c9a74be95bc11e1088e2d3ec94baba1a44c7a6d411ca079"
+    }
+  ],
+  "expected": {
+    "Search": "nodeagent.storyboard.capture.v1",
+    "Persona": "Product QA",
+    "Saved view": "public-node-repo-proofs",
+    "Domain": [
+      "Agent Runtime & NodeAgent"
+    ],
+    "Kind": [
+      "curated-live"
+    ],
+    "Difficulty": [
+      "advanced"
+    ],
+    "Cost tier": [
+      "external-variable"
+    ],
+    "Tag contains": "public-node-repo",
+    "Sort": "Fewest steps",
+    "Rows": 100,
+    "Exported rows": 1,
+    "Matching tasks": 1
+  },
+  "cells": [
+    {
+      "width": 390,
+      "height": 844,
+      "status": "PASS",
+      "captures": [
+        {
+          "name": "390-context-top",
+          "pngSha256": "e1c923d0594a87126b72ab9b71376cc914210cf87295c07875b31d613087359e",
+          "htmlSha256": "5d08a93af451f546f9ee03e7f1d3b99162ddd3e46fe22ad7af8e824fa97005bd",
+          "domSha256": "46bd75c5922b1865184f5ab44e4597ed6d5a04e9fcbfdc541530540bd8c82477"
+        },
+        {
+          "name": "390-context-bottom",
+          "pngSha256": "a181a38329a8befdae851335504ac9a1013b53918404423db112035d24f1fd58",
+          "htmlSha256": "ef65036a4c5da23ea291eccdccc73570305cf1eec192984f91ced08c38f6ff07",
+          "domSha256": "aefc43ea0033de91fc6596ed77e37813ebc61ee0cc7954e223bcf70903708cbd"
+        },
+        {
+          "name": "390-keyboard-download",
+          "pngSha256": "3b00f8168545a5efd4c93c65da2ac445a34078abded1825496a2996b01b53920",
+          "htmlSha256": "f569ce4924bbb1c9dd0f83816cc568a0fd2e361c729d7b62222854ce81a6224d",
+          "domSha256": "d413b3d70fdbf8ac4f4bedc82259e9607a4e4125eddab0829a99667c7254b443"
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "keyboard": [
+        "",
+        "keyboard_arrow_rightSource refs and metadata",
+        "Prepare filtered JSON",
+        "Download prepared JSON"
+      ],
+      "context": {
+        "Search": "nodeagent.storyboard.capture.v1",
+        "Persona": "Product QA",
+        "Saved view": "public-node-repo-proofs",
+        "Domain": [
+          "Agent Runtime & NodeAgent"
+        ],
+        "Kind": [
+          "curated-live"
+        ],
+        "Difficulty": [
+          "advanced"
+        ],
+        "Cost tier": [
+          "external-variable"
+        ],
+        "Tag contains": "public-node-repo",
+        "Sort": "Fewest steps",
+        "Rows": 100,
+        "Exported rows": 1,
+        "Matching tasks": 1
+      },
+      "fullDetailPngSha256": "2695f7375d809cac9a119459290d9de7050a631d33c8b3d621ab12887e353674",
+      "download": {
+        "name": "nodetasks-filtered.json",
+        "bytes": 2424,
+        "sha256": "5547e7fb903cf8714280db126f5e710efb12c7865635fef2f1c7fe9f46be56b3",
+        "rows": 1
+      }
+    },
+    {
+      "width": 1440,
+      "height": 960,
+      "status": "PASS",
+      "captures": [
+        {
+          "name": "1440-context-top",
+          "pngSha256": "62dbf32fb12591de0c2fb54015f6c716e7ee6790341bf6490202cc18fcdf76c2",
+          "htmlSha256": "e5a31a824e557bbf43e020e8c205addb4a33f3484410c7c40edbfb3ca35271e5",
+          "domSha256": "c93c747f612e6c72a47299da2fef3b6e20f771b2409d5b919fe2973730af65c5"
+        },
+        {
+          "name": "1440-context-bottom",
+          "pngSha256": "fef1bb19bcb6246ddb42ebfc2751339d547aaa2e481b052797199eade794a39a",
+          "htmlSha256": "60c4b023e1b7f691fea1e2cb0f021737492e32e1e7ff4f0b006f5d77ec55866f",
+          "domSha256": "69280c80d89ee5c306c1fdfdc027c612026da011a38fcacbdd4d6c4a740b86f1"
+        },
+        {
+          "name": "1440-keyboard-download",
+          "pngSha256": "257a0e15ac91b4e35678d5e91497a85324e0fafe8b6bf919f280332adbae6ed5",
+          "htmlSha256": "a6b4f68ab6bd24e00403c2323b8e80c8fdfb4d4df49e7837fe7940dc3da9f6aa",
+          "domSha256": "9b6030adfa4ded0c9cb35f7b62e83e02525402fddbebd53f16a102d332b7289d"
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "keyboard": [
+        "",
+        "keyboard_arrow_rightSource refs and metadata",
+        "Prepare filtered JSON",
+        "Download prepared JSON"
+      ],
+      "context": {
+        "Search": "nodeagent.storyboard.capture.v1",
+        "Persona": "Product QA",
+        "Saved view": "public-node-repo-proofs",
+        "Domain": [
+          "Agent Runtime & NodeAgent"
+        ],
+        "Kind": [
+          "curated-live"
+        ],
+        "Difficulty": [
+          "advanced"
+        ],
+        "Cost tier": [
+          "external-variable"
+        ],
+        "Tag contains": "public-node-repo",
+        "Sort": "Fewest steps",
+        "Rows": 100,
+        "Exported rows": 1,
+        "Matching tasks": 1
+      },
+      "fullDetailPngSha256": "da2c28bcbc0bc9ac70945ea71b9cc1c73dfd40f22d38f2339d94136818c47feb",
+      "download": {
+        "name": "nodetasks-filtered.json",
+        "bytes": 2424,
+        "sha256": "5547e7fb903cf8714280db126f5e710efb12c7865635fef2f1c7fe9f46be56b3",
+        "rows": 1
+      }
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "providerCalls": 0,
+  "limits": [
+    "No repeated full matrix",
+    "Computed text200, static overflow and broader device/a11y grades remain from prior evidence only",
+    "Preserve prior animation-caught screenshot; this is a separate settled replay"
+  ],
+  "server": {
+    "pid": 35104,
+    "startedAt": "2026-09-05T19:32:31.506Z",
+    "argv": [
+      "D:/ProjectRecovery/nodetasks-current-consumer-20260905-python/Scripts/python.exe",
+      "-m",
+      "streamlit",
+      "run",
+      "apps/nodetasks_streamlit.py",
+      "--server.address",
+      "127.0.0.1",
+      "--server.port",
+      "54534",
+      "--server.headless",
+      "true",
+      "--server.fileWatcherType",
+      "none",
+      "--browser.gatherUsageStats",
+      "false"
+    ]
+  },
+  "browserVersion": "149.0.7827.55",
+  "cleanup": {
+    "exitCode": 0,
+    "stdout": "SUCCESS: The process with PID 12052 (child process of PID 35104) has been terminated.\r\nSUCCESS: The process with PID 67112 (child process of PID 35104) has been terminated.\r\nSUCCESS: The process with PID 35104 (child process of PID 904) has been terminated.\r\n",
+    "stderr": "",
+    "ownedPidStillActiveBeforeClose": true
+  },
+  "inputsAfter": [
+    {
+      "path": "apps/nodetasks_streamlit.py",
+      "sha256": "e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "sha256": "34ba0d2496b31b7cf793cd33fe1016eb558bf2cb8c30603f005bd4c38f13cf26"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "c2c1841921cf63d17f683582384970a01ab9e229ef496f911d7421f254facaca"
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "ff267fa1767bc6dc9c9a74be95bc11e1088e2d3ec94baba1a44c7a6d411ca079"
+    }
+  ],
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-05T19:32:53.495Z"
+}

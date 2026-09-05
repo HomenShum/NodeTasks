@@ -1,0 +1,37 @@
+{
+  "name": "nodetasks",
+  "version": "0.1.0",
+  "description": "Public task and benchmark proxy corpus extracted from NodeRoom.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HomenShum/NodeTasks.git"
+  },
+  "scripts": {
+    "build:catalog": "node scripts/build-catalog.mjs",
+    "check": "npm run doctor && npm test && npm run proof",
+    "clip:capture": "node scripts/capture-storyboard.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "proof": "node scripts/validate-catalog.mjs --check-receipt",
+    "search": "node scripts/search-tasks.mjs",
+    "streamlit": "python -m streamlit run apps/nodetasks_streamlit.py",
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-catalog.mjs --write-receipt"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "benchmarks",
+    "agent-evals",
+    "browser-tasks",
+    "proofloop",
+    "noderoom",
+    "nodeagent"
+  ],
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

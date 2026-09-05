@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-09-05T19:15:41.399261+00:00",
+  "finishedAt": "2026-09-05T19:15:41.744166+00:00",
+  "cwd": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "evidence/corpus-first-use-20260905/verify.py"
+  ],
+  "timeoutSeconds": 120,
+  "timedOut": false,
+  "exitCode": 0,
+  "seconds": 0.34299999999348074,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "old-packet-custody.log"
+}

@@ -1,0 +1,47 @@
+{
+  "startedAt": "2026-09-05T19:55:42.342Z",
+  "status": "FAIL",
+  "scope": "Only native End and actual final source-reference pixels at320/390 doubled computed text",
+  "input": [
+    {
+      "path": "catalog/task-browser.html",
+      "bytes": 5945,
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "catalog/search-index.js",
+      "bytes": 36080059,
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+    },
+    {
+      "path": "scripts/build-catalog.mjs",
+      "bytes": 97011,
+      "sha256": "339938c754f16fe10cde464ba25f8fe5cfb535316593f5fc539f222a562f61ce"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "770b1c414b5a677e922845fc4aae88ebb36752683b0e34ade86cbce328a2f0b0"
+    }
+  ],
+  "recorderSha256": "114a631b6eaa2a6f176f2b7d484afdd7c301ff4f94a9945173f37053f3a7c35d",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/task-browser.html"
+    },
+    {
+      "method": "GET",
+      "path": "/search-index.js"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "cells": [],
+  "base": "http://127.0.0.1:57234",
+  "browserVersion": "149.0.7827.55",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 2\n\n    at file:///C:/Users/hshum/.codex/worktrees/5dba/nodebench-ai/docs/plans/portfolio-recovery-20260904/E6h-static-native-end-supplement.mjs:28:142",
+  "runtimeClosed": true,
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-05T19:55:43.298Z"
+}

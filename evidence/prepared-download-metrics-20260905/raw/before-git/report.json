@@ -1,0 +1,783 @@
+{
+  "startedAt": "2026-09-05T18:29:31.513Z",
+  "sourceSha256": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1",
+  "base": "http://127.0.0.1:54531",
+  "cells": [
+    {
+      "width": 390,
+      "boundaries": [
+        {
+          "name": "metric-summary-390",
+          "label": "CHANGE A · Metric contrast",
+          "box": {
+            "x": 16,
+            "y": 184.765625,
+            "width": 358,
+            "height": 98
+          },
+          "before": {
+            "pngSha256": "f305c43c97f014ea7ef0727c3a88e44eb8bc0d71746a3a79adbb89c28d3f23f3",
+            "htmlSha256": "175a0353698f9330762b24ab3a3968c21599ef0789aaa38fdc6322abe1307771",
+            "dom": {
+              "body": "keyboard_double_arrow_left\nFilters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nkeyboard_double_arrow_right\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+              "state": "notRunning",
+              "viewport": {
+                "width": 390,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ],
+              "gridRows": "16"
+            }
+          },
+          "annotatedSha256": "2c26fe2c3da232b67f967ab123200ae5de6dcc441af5a3bf0495cb482aeefd87",
+          "domRestored": true
+        },
+        {
+          "name": "metric-task-390",
+          "label": "CHANGE A · Task metric contrast",
+          "box": {
+            "x": 16,
+            "y": 387.53125,
+            "width": 358,
+            "height": 125
+          },
+          "before": {
+            "pngSha256": "40952771a080757135a137e3abfce532622f68877df994cbc61098df4e6eb5f8",
+            "htmlSha256": "b0d73c3d08237cdc3096c6a46171023c5af3056f3191688901ffd10f2472925d",
+            "dom": {
+              "body": "keyboard_double_arrow_left\nFilters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nkeyboard_double_arrow_right\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+              "state": "notRunning",
+              "viewport": {
+                "width": 390,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ],
+              "gridRows": "16"
+            }
+          },
+          "annotatedSha256": "ea5e45061fd6d3df29ce5f128c6fa6e7a521298edc4a12e027811990d3a85506",
+          "domRestored": true
+        },
+        {
+          "name": "download-ready-390",
+          "label": "CHANGE B · Filtered JSON export",
+          "box": {
+            "x": 16,
+            "y": 700.03125,
+            "width": 165.84375,
+            "height": 40
+          },
+          "before": {
+            "pngSha256": "dfe8c35f54e40b8a82abc3fba8878883b9ff8b1115b8d03e5f302f35f1d4e8e5",
+            "htmlSha256": "b0d73c3d08237cdc3096c6a46171023c5af3056f3191688901ffd10f2472925d",
+            "dom": {
+              "body": "keyboard_double_arrow_left\nFilters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nkeyboard_double_arrow_right\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+              "state": "notRunning",
+              "viewport": {
+                "width": 390,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ],
+              "gridRows": "16"
+            }
+          },
+          "annotatedSha256": "9bf5569efb7dd51765c5f078b67579f2b71be2cef4a6afc9f396c0ef9a460bf5",
+          "domRestored": true
+        },
+        {
+          "name": "metric-provenance-390",
+          "label": "CHANGE A · Provenance metric contrast",
+          "box": {
+            "x": 16,
+            "y": 641.734375,
+            "width": 358,
+            "height": 98
+          },
+          "before": {
+            "pngSha256": "97ed17985494582c5217234dc6f60eee56a3edeed4934a21d4b42dc31def6a88",
+            "htmlSha256": "cde44064fefa67290fe85595cfd4d8ca39c53cb2644580e7c9296050dc0ed52e",
+            "dom": {
+              "body": "keyboard_double_arrow_left\nFilters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nkeyboard_double_arrow_right\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nProvenance and score boundaries\n\nEvery task keeps product-path proof separate from official semantic benchmark scoring.\n\nVerifier types\n\n8\n\nScore statuses\n\n2\n\nPrimary suites\n\n50\n\nVerifier types\n\nScore statuses\n\nSample tasks by verifier\n\nkeyboard_arrow_right\n\nsource-reference (25 samples)\n\nkeyboard_arrow_right\n\nrubric-scenario (25 samples)\n\nkeyboard_arrow_right\n\ndeterministic-test (25 samples)\n\nkeyboard_arrow_right\n\nverifier-receipt (25 samples)\n\nkeyboard_arrow_right\n\nbrowser-proof (25 samples)\n\nkeyboard_arrow_right\n\nproxy-adapter-contract (6 samples)\n\nkeyboard_arrow_right\n\ncatalog-derived (15 samples)\n\nkeyboard_arrow_right\n\nmodel-proxy-receipt (25 samples)",
+              "state": "notRunning",
+              "viewport": {
+                "width": 390,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ]
+            }
+          },
+          "annotatedSha256": "058e045d171a9a7087d68bbcac56a45cc63ca1d170f7355825616adb628599b1",
+          "domRestored": true
+        }
+      ],
+      "attempts": [],
+      "errors": [],
+      "endpointEmpty": true
+    },
+    {
+      "width": 1440,
+      "boundaries": [
+        {
+          "name": "metric-summary-1440",
+          "label": "CHANGE A · Metric contrast",
+          "box": {
+            "x": 380,
+            "y": 162.375,
+            "width": 183.1875,
+            "height": 98
+          },
+          "before": {
+            "pngSha256": "cc60f025a57e7c11433be0bbdf4f51b5d3ef4d0832c77121e68295dd4f544b41",
+            "htmlSha256": "91450b4103906ea20252297da943c3deccf3027475e895d4f27ce8e057af14eb",
+            "dom": {
+              "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+              "state": "notRunning",
+              "viewport": {
+                "width": 1440,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ],
+              "gridRows": "16"
+            }
+          },
+          "annotatedSha256": "84ee188f2e8ce89bd359736b1e2342e0b1e913fb6617f66cd0e5b34fc54bc02d",
+          "domRestored": true
+        },
+        {
+          "name": "metric-task-1440",
+          "label": "CHANGE A · Task metric contrast",
+          "box": {
+            "x": 380,
+            "y": 387.953125,
+            "width": 183.1875,
+            "height": 125
+          },
+          "before": {
+            "pngSha256": "d6337a37e598fe2b3345da65bdeb9c39ac2961420273a7961075b2b8f82f99d5",
+            "htmlSha256": "91450b4103906ea20252297da943c3deccf3027475e895d4f27ce8e057af14eb",
+            "dom": {
+              "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+              "state": "notRunning",
+              "viewport": {
+                "width": 1440,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ],
+              "gridRows": "16"
+            }
+          },
+          "annotatedSha256": "51394b2eb6e19fdd6c1636b5078074e3d4a0c96e80bedfe4cb739fdccf676339",
+          "domRestored": true
+        },
+        {
+          "name": "download-ready-1440",
+          "label": "CHANGE B · Filtered JSON export",
+          "box": {
+            "x": 380,
+            "y": 793.3125,
+            "width": 165.84375,
+            "height": 40
+          },
+          "before": {
+            "pngSha256": "d6337a37e598fe2b3345da65bdeb9c39ac2961420273a7961075b2b8f82f99d5",
+            "htmlSha256": "91450b4103906ea20252297da943c3deccf3027475e895d4f27ce8e057af14eb",
+            "dom": {
+              "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_right\n\nSource refs and metadata\n\nDownload filtered JSON",
+              "state": "notRunning",
+              "viewport": {
+                "width": 1440,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ],
+              "gridRows": "16"
+            }
+          },
+          "annotatedSha256": "e36dde1348a883a7c9382557f8974dd0abdae1d03c285850cac36f9db4cd6dac",
+          "domRestored": true
+        },
+        {
+          "name": "metric-provenance-1440",
+          "label": "CHANGE A · Provenance metric contrast",
+          "box": {
+            "x": 380,
+            "y": 432.359375,
+            "width": 316,
+            "height": 98
+          },
+          "before": {
+            "pngSha256": "cb0c58d450b4d207e0f27f9b8a4325685e0ab633a824afb4ca1a12e848bba66f",
+            "htmlSha256": "46467f4d02c3b324ea157b9773e3476e6f64cce9be376092746e41e273f0991b",
+            "dom": {
+              "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nProvenance and score boundaries\n\nEvery task keeps product-path proof separate from official semantic benchmark scoring.\n\nVerifier types\n\n8\n\nScore statuses\n\n2\n\nPrimary suites\n\n50\n\nVerifier types\n\nScore statuses\n\nSample tasks by verifier\n\nkeyboard_arrow_right\n\nsource-reference (25 samples)\n\nkeyboard_arrow_right\n\nrubric-scenario (25 samples)\n\nkeyboard_arrow_right\n\ndeterministic-test (25 samples)\n\nkeyboard_arrow_right\n\nverifier-receipt (25 samples)\n\nkeyboard_arrow_right\n\nbrowser-proof (25 samples)\n\nkeyboard_arrow_right\n\nproxy-adapter-contract (6 samples)\n\nkeyboard_arrow_right\n\ncatalog-derived (15 samples)\n\nkeyboard_arrow_right\n\nmodel-proxy-receipt (25 samples)",
+              "state": "notRunning",
+              "viewport": {
+                "width": 1440,
+                "height": 900
+              },
+              "search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+              "rows": "100",
+              "metrics": [
+                {
+                  "text": "Searchable tasks9,155",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Filtered15",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Domains5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kinds13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Cost tiers5",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Difficultyadvanced62",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Steps13",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Costexternal-variable",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "DomainAgent Runtime & NodeAgent",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Kindcurated-live",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Verifier types8",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Score statuses2",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                },
+                {
+                  "text": "Primary suites50",
+                  "color": "rgb(49, 51, 63)",
+                  "background": "rgb(15, 20, 25)"
+                }
+              ]
+            }
+          },
+          "annotatedSha256": "a414bdb728391df96d832d688c546dabeefc25cbe46931c102c2b1c47931e625",
+          "domRestored": true
+        }
+      ],
+      "attempts": [],
+      "errors": [],
+      "endpointEmpty": true
+    }
+  ],
+  "externalRequests": [],
+  "limits": [
+    "No application source changes",
+    "Native unheld events; no forced app busy state",
+    "Pending-rerun defect also preserved in first-use runs 02 and 03",
+    "No UI grade or provider call"
+  ],
+  "status": "OBSERVED_FINDINGS_BEFORE_ONLY",
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-05T18:29:47.971Z"
+}

@@ -1,0 +1,114 @@
+{
+  "viewport": [
+    320,
+    800
+  ],
+  "scroll": [
+    0,
+    1119
+  ],
+  "scrollHeight": 1919,
+  "overflow": 0,
+  "events": [
+    {
+      "key": "End",
+      "trusted": true,
+      "target": "BODY",
+      "active": "BODY"
+    }
+  ],
+  "refs": [
+    {
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+      "rects": [
+        {
+          "x": 28,
+          "y": 444.953125,
+          "right": 291.90625,
+          "bottom": 472.953125,
+          "width": 263.90625,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 472.953125,
+          "right": 291.90625,
+          "bottom": 500.953125,
+          "width": 263.90625,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 500.953125,
+          "right": 291.90625,
+          "bottom": 528.953125,
+          "width": 263.90625,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 528.953125,
+          "right": 291.90625,
+          "bottom": 556.953125,
+          "width": 263.90625,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 556.953125,
+          "right": 41.203125,
+          "bottom": 584.953125,
+          "width": 13.203125,
+          "height": 28
+        }
+      ]
+    },
+    {
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+      "rects": [
+        {
+          "x": 28,
+          "y": 595.953125,
+          "right": 291.90625,
+          "bottom": 623.953125,
+          "width": 263.90625,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 623.953125,
+          "right": 291.90625,
+          "bottom": 651.953125,
+          "width": 263.90625,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 651.953125,
+          "right": 291.90625,
+          "bottom": 679.953125,
+          "width": 263.90625,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 679.953125,
+          "right": 239.125,
+          "bottom": 707.953125,
+          "width": 211.125,
+          "height": 28
+        },
+        {
+          "x": 28,
+          "y": 707.953125,
+          "right": 146.765625,
+          "bottom": 735.953125,
+          "width": 118.765625,
+          "height": 28
+        }
+      ]
+    }
+  ],
+  "result": "nodeagent.storyboard.capture.v1\ncurated-live\npublic-node-repo\nscore 9\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\ncurated\npublic-node-repo\npublic-node-repo\nNodeAgent\nagent engineer\nhttps://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md\nhttps://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+  "focus": "BODY"
+}

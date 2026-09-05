@@ -1,0 +1,159 @@
+{
+  "at": "2026-09-05T19:25:26.177153+00:00",
+  "scope": "Early frozen three non-HANDOFF owners only; worker browser/full packet remains independently active. No runtime/test execution.",
+  "bindings": [
+    {
+      "path": "apps/nodetasks_streamlit.py",
+      "bytes": 28478,
+      "sha256": "e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "bytes": 28551,
+      "sha256": "34ba0d2496b31b7cf793cd33fe1016eb558bf2cb8c30603f005bd4c38f13cf26"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 476,
+      "sha256": "c2c1841921cf63d17f683582384970a01ab9e229ef496f911d7421f254facaca"
+    }
+  ],
+  "sourceUnchanged": true,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD",
+        "HEAD^{tree}"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "b75756198852b78be8ae9c071d823b2edd13e3438d3ffa90d50daa09df251e7a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "ls-files",
+        "--stage"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "d720a6c296f3c0d2fc5d88b09621817602388acd2c0d34c2df366c8d1576c88f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "show-ref"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "fa005b9fda4ceaa08666efaffb8fbd782ed1b00b9d57398373d2ac52001d1efc",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--text",
+        "--",
+        "apps/nodetasks_streamlit.py"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "ec5d716fa4702490a9ac02b106465d66cde0c0dff75369a59dff442e6e2b8864",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--text",
+        "--",
+        "scripts/verify-first-use.mjs"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "cbc214d58b9af736bae55e0a0f234f2d6dad310ccaa803097229271e0e070263",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "HEAD:package.json"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "8a1d9d7e1207c9fe3d1c54521484b6ab8eb7491d24bee3fd2cf45327df4b3f61",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/actions/checkout/git/ref/tags/v7.0.1"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "2d93602db4d23c52722ac2e83e9553fa46d84b00dd83ed8557f32b39278fe62e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/actions/checkout/commits/3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "--jq",
+        "{sha: .sha, html_url: .html_url, tree: .commit.tree.sha, message: .commit.message}"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "f434fb05c98ce20258d629696b3b03346bc6b82e754833b3a345493598a7a235",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/actions/checkout/contents/action.yml?ref=3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "-H",
+        "Accept: application/vnd.github.raw+json"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "d59219cb79590abdb877deaa14e3b65a00c05318bf5a6f3b989b9162b5d08c35",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/actions/setup-node/git/ref/tags/v7.0.0"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "fc488ff26d551871dc3665335b9b568767294bbb9cfb9c84bbb646e349716dae",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/actions/setup-node/commits/820762786026740c76f36085b0efc47a31fe5020",
+        "--jq",
+        "{sha: .sha, html_url: .html_url, tree: .commit.tree.sha, message: .commit.message}"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "b1579c6ca7c31eee868e079131b4e9f1ac5ec493962b15711a6ba1023f54b245",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/actions/setup-node/contents/action.yml?ref=820762786026740c76f36085b0efc47a31fe5020",
+        "-H",
+        "Accept: application/vnd.github.raw+json"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "5d765941ab5d8bef27f08e81b0b041cdb2df2050ea0261dc925d157a2bafbd2b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "handoffMutableExcluded": true,
+  "runtimeLaunched": false,
+  "sourceEdited": false
+}

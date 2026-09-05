@@ -1,0 +1,14 @@
+{
+  "args": [
+    "cmd",
+    "/c",
+    "npm",
+    "run",
+    "build:catalog"
+  ],
+  "cwd": "D:\\ProjectRecovery\\nodetasks-static-generator-20260905",
+  "startedAt": "2026-09-05T19:44:37.992692+00:00",
+  "seconds": 2.328,
+  "exitCode": 0,
+  "logSha256": "e0fb89deaeac359f5fea21049e8bd1e944d3d9318b999d80a9fcd5544b493707"
+}

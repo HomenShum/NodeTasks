@@ -1,0 +1,81 @@
+{
+  "url": "http://127.0.0.1:54532/?view=public-node-repo-proofs",
+  "body": "keyboard_double_arrow_left\nFilters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n10\n\n10\n\n500\n\nNodeAgent endpoint\n\nkeyboard_double_arrow_right\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nSaved views and shareable bundles\nkeyboard_arrow_right\n\nFirst hour onboarding (60 tasks)\n\nkeyboard_arrow_right\n\nCheapest SpreadsheetBench model attempts (60 tasks)\n\nkeyboard_arrow_right\n\nBrowser proof surfaces (60 tasks)\n\nkeyboard_arrow_right\n\nFinance and evidence work (60 tasks)\n\nkeyboard_arrow_right\n\nProofLoop governance gates (0 tasks)\n\nkeyboard_arrow_right\n\nNodeAgent runtime spine (60 tasks)\n\nkeyboard_arrow_down\n\nPublic Node repo proofs (15 tasks)\n\nCross-repo proof tasks for NodeAgent, NodeMem, NodeTrace, NodeRL, NodeSEO, and NodeGraph integrations.\n\nPersona: Repo maintainer | estimated steps: 177 | max difficulty score: 64\n\nDownload public-node-repo-proofs bundle\n\nkeyboard_arrow_right\n\nCollaboration interiors (60 tasks)\n\nkeyboard_arrow_right\n\nOfficial score boundaries (60 tasks)",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "horizontalOverflow": 0,
+  "focus": {
+    "tag": "BUTTON",
+    "text": "Download public-node-repo-proofs bundle",
+    "label": ""
+  },
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Filtered15",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Domains5",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kinds13",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Cost tiers5",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Difficultyadvanced62",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Steps13",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Costexternal-variable",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "DomainAgent Runtime & NodeAgent",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kindcurated-live",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Verifier types8",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Score statuses2",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Primary suites50",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    }
+  ]
+}

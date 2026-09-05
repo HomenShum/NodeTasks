@@ -1,0 +1,547 @@
+{
+  "at": "2026-09-05T19:35:41.087186+00:00",
+  "namedInstalledBindings": [
+    {
+      "path": "consumer/node_modules/.package-lock.json",
+      "bytes": 1116,
+      "sha256": "2f4d1c4718de47e62ba46a590404c3ecda4087cab7f9f4a531d4cd7f21844ec1",
+      "matches": true
+    },
+    {
+      "path": "consumer/node_modules/playwright/package.json",
+      "bytes": 1559,
+      "sha256": "6b840268612656f0639fb7d68782e8353bdf11518589d30ddf66f283c2670ed5",
+      "matches": true
+    },
+    {
+      "path": "consumer/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "759e376f995bf39edd4810d699b99469bab1d7428b6fbc78d41912f367df7ba9",
+      "matches": true
+    },
+    {
+      "path": "consumer/node_modules/playwright-core/browsers.json",
+      "bytes": 1939,
+      "sha256": "ee39bc924bc3d1bd895626c2910f1292d109bbfeeb5abd113acb45e1951cc942",
+      "matches": true
+    },
+    {
+      "path": "consumer/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3352341,
+      "sha256": "6be5c2ea035554e9b184b1dbc7aa5e7f1fb428dd1b5c202022858dcfae9bee27",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/altair-6.2.2.dist-info/METADATA",
+      "bytes": 11411,
+      "sha256": "4af0d735cad80918c30f505c74829644abbdce781e38634c396d03d79b7bf154",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/altair-6.2.2.dist-info/RECORD",
+      "bytes": 8801,
+      "sha256": "7a6779ca1d3cbe64c6007e882f23381782234013dd20a1eaaf97dbde169132ad",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/anyio-4.15.1.dist-info/METADATA",
+      "bytes": 4733,
+      "sha256": "043aecb571af7189e8a6c528f5d8e32545f1b2cdfaaf761d51e6d5b67ea3ca81",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/anyio-4.15.1.dist-info/RECORD",
+      "bytes": 6796,
+      "sha256": "b0bf832444c3e07a552f27b779db650c6e3a23c1e6a5bf2fd670ab04da6475ba",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/attrs-26.1.0.dist-info/METADATA",
+      "bytes": 8754,
+      "sha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/attrs-26.1.0.dist-info/RECORD",
+      "bytes": 3556,
+      "sha256": "8f04447f4570c82492a9e989da7bae92bb7242e3996cea3a21602ed09c73295b",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/certifi-2026.7.22.dist-info/METADATA",
+      "bytes": 2474,
+      "sha256": "ef5af1638fbb23676ac3c5777dfcfc2cd9c348fe4172ed5ba3d277655b248090",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/certifi-2026.7.22.dist-info/RECORD",
+      "bytes": 1301,
+      "sha256": "f2d513bb7e6ba764c2a8ffdbbb04ce7c81c3b1829b94243fbc97151268c0dc68",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/charset_normalizer-3.5.1.dist-info/METADATA",
+      "bytes": 46746,
+      "sha256": "f00192aad9979ce50bdab2bfd471ad0705aee5a33f4bf6d27c1bd24417c873e5",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/charset_normalizer-3.5.1.dist-info/RECORD",
+      "bytes": 2769,
+      "sha256": "dd3360439dff23ac95524326f2e5f1f1e55c0c38db01c8f19ca89a62405298e2",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/click-8.5.0.dist-info/METADATA",
+      "bytes": 2567,
+      "sha256": "e87bce0bd194de70dfb8e708e0a6b0483009f25611804eaf87bfeb63e6c20501",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/click-8.5.0.dist-info/RECORD",
+      "bytes": 2533,
+      "sha256": "4a422099194046f68c30cc3d7ef8eea6f91185842623182989406a652fe69272",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/h11-0.16.0.dist-info/METADATA",
+      "bytes": 8348,
+      "sha256": "28f326098ac09fcba79b8f180f96087c841fe2456215cb7b872a9c7d5cd19d64",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/h11-0.16.0.dist-info/RECORD",
+      "bytes": 1830,
+      "sha256": "8e391456f4e0da0be0a48c231c89bcdf4f4ac33237f03a9b247b3fc2458f1983",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/httptools-0.8.0.dist-info/METADATA",
+      "bytes": 3663,
+      "sha256": "e2b04429eb51dcdaf38f3c02a66317e58234793143ee1eadc9b81988210400e6",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/httptools-0.8.0.dist-info/RECORD",
+      "bytes": 2305,
+      "sha256": "12172e185d9ad94ced6e202a385fa19bfbd478c78edd957c5a29c9d4acf54923",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/idna-3.19.dist-info/METADATA",
+      "bytes": 9160,
+      "sha256": "4d113161aca8582e8d28fddf3ea50f19b607209c2b3e4364379a163454680084",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/idna-3.19.dist-info/RECORD",
+      "bytes": 1793,
+      "sha256": "870ab9ff3f1165cb239b2eea1a1e1beab397bf43fbbf0838659850a09216c2dd",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/itsdangerous-2.2.0.dist-info/METADATA",
+      "bytes": 1924,
+      "sha256": "d2b934fb56708a1b94e439f0255c0f5a8108e3258ec827b18a1dc9c991db9611",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/itsdangerous-2.2.0.dist-info/RECORD",
+      "bytes": 1549,
+      "sha256": "9ee7e75ca7316b09619ab574c2efebb52c0837ef8f26feeb03040b8e9ee09f9b",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/jinja2-3.1.6.dist-info/METADATA",
+      "bytes": 2871,
+      "sha256": "68c5548fb67c4132a13898d9b31ec50c6bea2abdd915d921f214355c3a6499c8",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/jinja2-3.1.6.dist-info/RECORD",
+      "bytes": 3619,
+      "sha256": "1cdb905163b71bcd3528f9d0f46aafd59670242cdbd0ed1a34de3e96dab0cf3b",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/jsonschema-4.26.0.dist-info/METADATA",
+      "bytes": 7592,
+      "sha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/jsonschema-4.26.0.dist-info/RECORD",
+      "bytes": 6331,
+      "sha256": "76fedc9f13f4f685ca29bb7b757e0cab237cf256cfdb806524627b912210c861",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/jsonschema_specifications-2025.9.1.dist-info/METADATA",
+      "bytes": 2907,
+      "sha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/jsonschema_specifications-2025.9.1.dist-info/RECORD",
+      "bytes": 3656,
+      "sha256": "e88bc3e0b770b2666c2708d825f388a23763fd2075f55db0c6f22e611619a199",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/markupsafe-3.0.3.dist-info/METADATA",
+      "bytes": 2764,
+      "sha256": "f0ae5dbb09d50fb5f7632c3d53f0220995ef76019e5892e0a545740136a4e3cb",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/markupsafe-3.0.3.dist-info/RECORD",
+      "bytes": 1104,
+      "sha256": "eb598202c7791f6f9f1778b16223ebf50d15472be64260d47c93e9cbb5590740",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/narwhals-2.25.0.dist-info/METADATA",
+      "bytes": 15200,
+      "sha256": "7fd4dedd283bf242b7d04fff6979e25ba9d98da1d3ee3703001908dc8f854a1b",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/narwhals-2.25.0.dist-info/RECORD",
+      "bytes": 23283,
+      "sha256": "a7637a6a16988003b727b69e4c5c14e58a4980a339d00357f89982eb71a9c0f9",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/numpy-2.4.6.dist-info/METADATA",
+      "bytes": 6608,
+      "sha256": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/numpy-2.4.6.dist-info/RECORD",
+      "bytes": 129259,
+      "sha256": "c972c27b032d897ad7d64454d292e67d75d94257476a189084e6be858f64113d",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/packaging-26.3.dist-info/METADATA",
+      "bytes": 3544,
+      "sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/packaging-26.3.dist-info/RECORD",
+      "bytes": 3581,
+      "sha256": "d809e069eb5ed0248f046e18502bd4ccd13a417d8e1112079952ddf4433a213d",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pandas-3.0.5.dist-info/METADATA",
+      "bytes": 19728,
+      "sha256": "d0b10219e9d6ede31e61b4e08566428e760edf133c7e0ff73b85280be986ce8d",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pandas-3.0.5.dist-info/RECORD",
+      "bytes": 249415,
+      "sha256": "0a1d5e187292c45e7a4e8c81496531061c5eccc4b641fbfc594d8abd11f5c644",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pillow-12.3.0.dist-info/METADATA",
+      "bytes": 9273,
+      "sha256": "2c4378001803cfac65809a50722d46e0da4ce8061e717f103e5d52734bab30f5",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pillow-12.3.0.dist-info/RECORD",
+      "bytes": 14246,
+      "sha256": "978411d06f037f36a4fa57c239f59a7a787147614f04935564431bf4805d414b",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pip-23.2.1.dist-info/METADATA",
+      "bytes": 4239,
+      "sha256": "c873cb42fb03d5be9ffb37424163226d95dbb008ecf3ce893128770b4a314614",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pip-23.2.1.dist-info/RECORD",
+      "bytes": 77283,
+      "sha256": "d64628c503422cb9289e68563165d90343701c7a96835e1b8486320ef255a277",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/protobuf-7.36.1.dist-info/METADATA",
+      "bytes": 595,
+      "sha256": "947ed3f132e70411555388d7fcd36712fdd60c8db6345001fb23bb56a2c6cab7",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/protobuf-7.36.1.dist-info/RECORD",
+      "bytes": 9548,
+      "sha256": "cb24dfcc6169434d8d3ed8f500dbc1878fd3d29d4a9e4bb5b0b09eba5955f5c6",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pyarrow-25.0.1.dist-info/METADATA",
+      "bytes": 3031,
+      "sha256": "12ed8d0988a6f7153fec923ee47b7fc1d6134463a86b1b89fa36f24c250163ff",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pyarrow-25.0.1.dist-info/RECORD",
+      "bytes": 78480,
+      "sha256": "fb609eb96c242698f23c25bb21ead61e4d3b626e581e7b26147e236534e9e519",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pydeck-0.9.3.dist-info/METADATA",
+      "bytes": 4218,
+      "sha256": "c906606245b896f48f560a2175dc6ade991447f8e545dec8539678e1134eb71d",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pydeck-0.9.3.dist-info/RECORD",
+      "bytes": 6064,
+      "sha256": "e405a34b48473a9b8c3fbd6b24fabe06e6bdc5af2e8312f76d43139ecabcb818",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/python_dateutil-2.9.0.post0.dist-info/METADATA",
+      "bytes": 8354,
+      "sha256": "a9d436da322be808332f98d88325998e87cb693a678a9969feb4cfad729a6e93",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/python_dateutil-2.9.0.post0.dist-info/RECORD",
+      "bytes": 3125,
+      "sha256": "2d07914d24c0e9ff27be7ab8be3924c0b036ccf24d7df1a50db22e10a8263e22",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/python_multipart-0.0.32.dist-info/METADATA",
+      "bytes": 2131,
+      "sha256": "e9d399d7dea5eddf0e4d24b5c24687a82e7e50bf2c2b30f8f8a06a64d887dd86",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/python_multipart-0.0.32.dist-info/RECORD",
+      "bytes": 1623,
+      "sha256": "fc74879502d9db86d9ddd83d4d561f74d05f11a744b439f758006e9b51dbfb4b",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/referencing-0.37.0.dist-info/METADATA",
+      "bytes": 2845,
+      "sha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/referencing-0.37.0.dist-info/RECORD",
+      "bytes": 2439,
+      "sha256": "00a5ab6b92938790602eb3a65dcde1cfb8327e51c56620f33c0e4ea96dc3da56",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/requests-2.34.2.dist-info/METADATA",
+      "bytes": 4806,
+      "sha256": "8c384ba3e979480faae2859d3c5e6c1276dd2c3616e322e124d52c8cfc556f27",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/requests-2.34.2.dist-info/RECORD",
+      "bytes": 3063,
+      "sha256": "95f5b02ec24d1187982de368c0f5cafc8006fb2c409d624fc7140a184c6040a8",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/rpds_py-2026.6.3.dist-info/METADATA",
+      "bytes": 4215,
+      "sha256": "e9deba3569d39352c663fd09d01d53a649c8ab2c28de1c37e80b3e2beaf84926",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/rpds_py-2026.6.3.dist-info/RECORD",
+      "bytes": 873,
+      "sha256": "9614a22ce3fce7f68821eede572c9945b923d6286e08e8a7a86a1ab5cf933ba3",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/setuptools-65.5.0.dist-info/METADATA",
+      "bytes": 6301,
+      "sha256": "80c7a3b78ea0dff1f57855ee795e7d33842a0827aa1ef4ee17ec97172a80c892",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/setuptools-65.5.0.dist-info/RECORD",
+      "bytes": 37694,
+      "sha256": "bfb77a968e06417bd37023bf1a2d7f1aae9d8e74231665d6699d5bb82bdbd7b0",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/six-1.17.0.dist-info/METADATA",
+      "bytes": 1658,
+      "sha256": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/six-1.17.0.dist-info/RECORD",
+      "bytes": 561,
+      "sha256": "6eca8f3767a4e15a8317acec57d36e1248342e307b4a20bebbbfa713befaa539",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/starlette-1.6.0.dist-info/METADATA",
+      "bytes": 6370,
+      "sha256": "43f6240f976044f4cf9a573506d96d895391094717c55682700c931d5cd3c5a2",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/starlette-1.6.0.dist-info/RECORD",
+      "bytes": 5340,
+      "sha256": "8c02754c16ad730dc7b90c69df8f8656bd81d5e70c0bfc4bd9011f27f6a69651",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/streamlit-1.63.0.dist-info/METADATA",
+      "bytes": 10271,
+      "sha256": "e2eec0ffc9c26e1d2380fb813478c7bfa53dfd0bf0b433fa53b920a9f73ab79d",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/streamlit-1.63.0.dist-info/RECORD",
+      "bytes": 119902,
+      "sha256": "de52f09d95b74c27aa50311dc6d5fcd9a159a865e80a65bbee957ca91802002d",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/toml-0.10.2.dist-info/METADATA",
+      "bytes": 7142,
+      "sha256": "9ff624b29bc48a177f4172c8659e74595485cf7ad9fe4ee340ff8e535594a566",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/toml-0.10.2.dist-info/RECORD",
+      "bytes": 1042,
+      "sha256": "101d03a04a3e90ec940942b4a8b5ae4966769e1571d9c372f7b5cf2e24aa65cb",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/typing_extensions-4.16.0.dist-info/METADATA",
+      "bytes": 3310,
+      "sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/typing_extensions-4.16.0.dist-info/RECORD",
+      "bytes": 580,
+      "sha256": "61d86db5843e537a7a8d095771289016a5bbfe26fdeace2b655dd0c7503f042a",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/tzdata-2026.3.dist-info/METADATA",
+      "bytes": 1358,
+      "sha256": "511c019df477939fe7f4c38e32ad74a570c4ebb05b13fd2fffd0f0f2dbe6f7b1",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/tzdata-2026.3.dist-info/RECORD",
+      "bytes": 56831,
+      "sha256": "bf7145abc571ef499d924629727b54f13bce83b49254b9613f2d1037bfbafd08",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/urllib3-2.7.0.dist-info/METADATA",
+      "bytes": 6852,
+      "sha256": "66147856d30bbb6bed01c6ce3326d0f48d84ed5f286ac177633a1486b82eace5",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/urllib3-2.7.0.dist-info/RECORD",
+      "bytes": 5527,
+      "sha256": "d92c5987f028a48aeca052e467c437707187f4289d98c9b891805e945aa6216e",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/uvicorn-0.52.4.dist-info/METADATA",
+      "bytes": 6589,
+      "sha256": "6cea83c70e4f2746374ca19af72a52406aa706ad8735b11d72fbd5fd82f7cbff",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/uvicorn-0.52.4.dist-info/RECORD",
+      "bytes": 6676,
+      "sha256": "d7e0e2ea73f574ac65eb2f0132271fe96fd191552116a1300c5ceec6b5c3f709",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/watchdog-6.0.0.dist-info/METADATA",
+      "bytes": 44292,
+      "sha256": "ecfde023047e7761dce06d4488abcede89e398399961a052f2fccb39b001e279",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/watchdog-6.0.0.dist-info/RECORD",
+      "bytes": 4491,
+      "sha256": "b9bf018e729c4731d4cb33055493d8d80fdcf9905e40eb3c149032cbe33ef9c0",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/websockets-16.1.1.dist-info/METADATA",
+      "bytes": 6980,
+      "sha256": "eeb0f8d5064cf8d1d16af09fe5447c2b7d0475a65525f8978f8839405951d1df",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/websockets-16.1.1.dist-info/RECORD",
+      "bytes": 7649,
+      "sha256": "90a2a507738177524c420338d63cee6d7e20a2a09d4b966db0dbd2ef74ef0b9d",
+      "matches": true
+    },
+    {
+      "path": "python/Scripts/python.exe",
+      "bytes": 270616,
+      "sha256": "5fec912cd3c47c125754cfbcb9b21ce0b415f860cfa8e2a3b98ceb9cd73bd30f",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/streamlit/runtime/scriptrunner/script_runner.py",
+      "bytes": 42996,
+      "sha256": "67aaec5e1c2a95a52547acf8a923db4257c5f7e617f8b4528376c06454416977",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/streamlit/elements/widgets/button.py",
+      "bytes": 75649,
+      "sha256": "103db6a282f5277b35c1a5100cbdbe00489c5a1cc5add97099a47f693af7401a",
+      "matches": true
+    },
+    {
+      "path": "python/Lib/site-packages/pandas/__init__.py",
+      "bytes": 8534,
+      "sha256": "384f08537ab666fc8252604ad72d26499c5110cdab70e2257e715ed0113104a7",
+      "matches": true
+    },
+    {
+      "path": "runtime/node.exe",
+      "bytes": 87074816,
+      "sha256": "ae1a50511be58e987483fdbc12125407443926d2d394669ade2352776e920dd3",
+      "matches": true
+    },
+    {
+      "path": "runtime/chrome.exe",
+      "bytes": 4059648,
+      "sha256": "b798f9e53a98d29eb7f36f8c409f905d3184780a04d2bcb56989067194784bd1",
+      "matches": true
+    },
+    {
+      "path": "runtime/chrome-headless-shell.exe",
+      "bytes": 203034112,
+      "sha256": "28016df6864d302434c9231e1f9f1a8a7ecc512cb2fe3faabb2a36130b96bcf1",
+      "matches": true
+    }
+  ],
+  "passed": true,
+  "limit": "Named runtime inputs, not a complete installation or whole-environment snapshot."
+}

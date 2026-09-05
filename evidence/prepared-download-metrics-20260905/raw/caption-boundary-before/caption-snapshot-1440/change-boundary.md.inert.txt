@@ -1,0 +1,15 @@
+# UI change boundary
+
+Route: http://127.0.0.1:54531/?view=public-node-repo-proofs
+Viewport: 1440x960
+Theme: natural default light; no theme override
+Session: fresh local, unsigned, empty endpoint
+Fixture: unchanged public-node-repo-proofs saved view (15 rows)
+
+## CHANGE B · Snapshot instruction readability
+
+Provisional native caption applies opacity0.6 to14px text on white. Use the existing native body-text component for this newly added instruction only. No global caption/style change.
+
+Out of scope: catalog task IDs/order/score/provenance, ranked-table data, other tabs, local answers, provider behavior, sidebar filter semantics. No UI edit has occurred.
+
+The 3px annotation is temporary DOM-only; exact DOM restoration passed. Source SHA-256: fcd547e4c6514765fee4273d165f59cb41dc0e6c592babce5de6757857189ac4.

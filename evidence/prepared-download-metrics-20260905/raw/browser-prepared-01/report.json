@@ -1,0 +1,5665 @@
+{
+  "schema": "nodetasks-local-first-use/v1",
+  "startedAt": "2026-09-05T18:43:29.362Z",
+  "inputs": [
+    {
+      "path": "apps/nodetasks_streamlit.py",
+      "sha256": "fcd547e4c6514765fee4273d165f59cb41dc0e6c592babce5de6757857189ac4"
+    },
+    {
+      "path": "catalog/all-tasks.json",
+      "sha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e"
+    },
+    {
+      "path": "catalog/saved-views.json",
+      "sha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14"
+    },
+    {
+      "path": "catalog/task-bundles.json",
+      "sha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b"
+    },
+    {
+      "path": "catalog/provenance-index.json",
+      "sha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2"
+    },
+    {
+      "path": "catalog/hierarchy.json",
+      "sha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "sha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1"
+    },
+    {
+      "path": "catalog/search-index.js",
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "sha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "sha256": "340b0db6c38fc4d215e451c7d4b3b7de4a6753be70e81c11de0aa37ac778f381"
+    }
+  ],
+  "viewports": [
+    [
+      320,
+      800
+    ],
+    [
+      360,
+      800
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      1440,
+      960
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "cells": [
+    {
+      "width": 320,
+      "height": 800,
+      "captures": [
+        {
+          "name": "320-entry",
+          "pngSha256": "ea92d7f852a70e6614a029b04f736cc84b011c89c8f6b8cbbbb25908473f1caa",
+          "htmlSha256": "829d52bd9e3424c20ec574fc1fe1a4dd64abf5b28b96effea8d18a415502d792",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-empty-endpoint",
+          "pngSha256": "f690c92543254dee7631886c1823aad91e91c42dbe4da36e092ae74a5436f368",
+          "htmlSha256": "34c89c3b59cc7ea4ce98746479cc5324f64d2c2876ca8442b92b3713d614ce2e",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-prepared-initial",
+          "pngSha256": "82df6e9e2c27f93581dfe7f1222a3c220f8b58422d67fd442855d9b284abced4",
+          "htmlSha256": "a3409217a0c4d1d0296fe658be353a38df6cef07d4e397a7bff0e7cbadc8235c",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-task-provenance",
+          "pngSha256": "2f3b4abd30769b0a3208961fcde38f0dcb12ab19e43764e9738478f10a23f5a9",
+          "htmlSha256": "3bd70a33b6bd19a408e3d3e656aa926f66526391d6907c96f953f92760fe6f7b",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-prepared-top10",
+          "pngSha256": "204f30abcd420198f2ba76174c7aea1ae1b4e297f6c37ff8cd4d2b7bf63d60a1",
+          "htmlSha256": "3bf1fdd4baf45b0703ef4214b0194fb8976d16e528c4ff21226d850b102c588c",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-bundle",
+          "pngSha256": "7c84c8a41c42daeb647f32bd758076b9d19429a09b4b832fd9e067414441b6db",
+          "htmlSha256": "ce6906042e39450203d9f57d980e0f9cdf4901f325970de65cbb4b04114a7dbe",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-score-boundary",
+          "pngSha256": "d895d99735d35c04028156b4a68b1c79fe720c854da1cdea710f60f3fe173895",
+          "htmlSha256": "b7f59a9825700170b4be61e538110d71aff33a4d744ebae6cbe34ed585bacbaf",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-local-answer",
+          "pngSha256": "b9f8aa1b70c3d896b1250d9aa8c47a4e454db22332eaf6ca1110be7232b38682",
+          "htmlSha256": "0eb337952e08e9323c19188b26dfdc4c15c67ef82447ff08b79005e8453f21b4",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-no-result-state",
+          "pngSha256": "efbbbdd076ededc49f18e367032ff1507133b1e9c551afd09f451e42cb70c5e8",
+          "htmlSha256": "030e564f250e4e178d44c1c266014d5e7a2ab901d52063ca31812fa51f31f884",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-keyboard",
+          "pngSha256": "cfec20784c5ad4ab199ccc4408841c246a9b914a2b13fe59a6d7dcbf3cfd31b2",
+          "htmlSha256": "be1e8ba6d5c1b0cb886d84f45924d17d0e5b11dd4131cd382f3db707174ff3b1",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-text200",
+          "pngSha256": "872eb47747662ac9f6b6e59a7a5a16aa1f471959ca0b3953b6d0ea7e5b62d094",
+          "htmlSha256": "d0bc44e6e02bb62c2a6cc16be8807cd635b7fea605caba98719b16589238ba92",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "320-static-selected",
+          "pngSha256": "2f048690872f1bc4ce3e5fcebee69781937ac09f150ed8ead96cb911ec7989db",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 270
+        },
+        {
+          "name": "320-static-no-result",
+          "pngSha256": "32714d3b073732bdbc3c8b3c5d9c292fb783abbf5d3766878e1362ebb243494b",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "320-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "320-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "320-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "320-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "320-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "320-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "metricFacts": [
+        {
+          "text": "Searchable tasks9,155",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Filtered15",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Domains5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kinds13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Cost tiers5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Difficultyadvanced62",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": [
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(33, 195, 84, 0.1)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": null
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "none",
+              "path": "M0 0h24v24H0V0z"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            },
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "P",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            }
+          ]
+        },
+        {
+          "text": "Steps13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Costexternal-variable",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "DomainAgent Runtime & NodeAgent",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kindcurated-live",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Verifier types8",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Score statuses2",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Primary suites50",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        }
+      ],
+      "preparations": [
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_no_task_20260905_xyz",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        }
+      ],
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Prepare filtered JSON",
+          "label": ""
+        },
+        {
+          "text": "keyboard_arrow_rightPrepared filters",
+          "label": null
+        },
+        {
+          "text": "Download prepared JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "captures": [
+        {
+          "name": "360-entry",
+          "pngSha256": "be3084b874d7d629b6517b4f5cd4c1914e26b9ba7be48b10e78d756259d40345",
+          "htmlSha256": "b92712afdff86ac82641e6077da64b51a7272516bf61ed9842077b898cefe85b",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-empty-endpoint",
+          "pngSha256": "66870781b44af28cba2cb916da4e1d2ade004484d3928c43b680ebd9c922e022",
+          "htmlSha256": "0f518c928bb5bbe37cc72f6ca39a827f89b7cb5a8dde3bdfcdf8c7e37e0e4d23",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-prepared-initial",
+          "pngSha256": "85e82b6c561f88bc38da0c5c6f1780d82e45bcea209b01aeacfb41810c789bac",
+          "htmlSha256": "6ac21dea63eb5e079f2b6551a163b2ef5f300c13ae3c2aa6a2eed0e5db49837e",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-task-provenance",
+          "pngSha256": "f0254a755fd04c3f676fe900f287a193171c0be4997d1ee9f416361a6079d5d4",
+          "htmlSha256": "ec7567fdc43ff643180bfafd0c706db5fc2c6086cc861680a44c6bc256b840b4",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-prepared-top10",
+          "pngSha256": "a0a70787df2371fb4ee4923d4dee6b55f43d4fb0ff245bea748eaffd2fc804af",
+          "htmlSha256": "ad5180068d8c5ce4ccd4aeafd4c67f6050a848df74deee3143aa060f6789744b",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-bundle",
+          "pngSha256": "81b94ed1d1aefb68b6eceb893e7c9b8d2de64d4d937dac4cc6852b940333dd90",
+          "htmlSha256": "a9d70b81ad6ac89bf1723dd73212ddd525eb31db7cce490b1c5cfd46f4b0c9fd",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-score-boundary",
+          "pngSha256": "1f996ba6ad2e4ba24de717bc559391860e0dfd1550d687f353f0f7ad0e9b4d38",
+          "htmlSha256": "ac1c6db4edd4590c901358d0d749700431ba14446e3d4cb4f2a4527fcfe07504",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-local-answer",
+          "pngSha256": "b288b2f109d77663f27d1f730e78f952641519cf4d2669bf4b3b960787eab8b9",
+          "htmlSha256": "3e8aa8f851e6304ac0444fe4557ce89be94375ac273f3b0b66ca4fd43bb0dd22",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-no-result-state",
+          "pngSha256": "8931219f76a313d9f3057c5f5bb796ba4336cd78349cefd47202ac96e0ed7453",
+          "htmlSha256": "d547747d8ea995e4ed065d1f0f59153b3dfacdb1dcb080740dfa2070ddd84dee",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-keyboard",
+          "pngSha256": "84fbd453371a2c76f2e60e8908c396103c24953d773c56fe68a3964ea6294a97",
+          "htmlSha256": "81e850a7712cbc25187a7f1ab8b2c6df7ce97b42de51d125f602df2a8b992c64",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-text200",
+          "pngSha256": "0ad90ea8a8f96775406cc8e116db6fe53b52bd9d59227948663ed215effa9299",
+          "htmlSha256": "9e7a592e419f2363e8e6b2c4447c6958f0aff60b4b9fce788df24b019243ae48",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "360-static-selected",
+          "pngSha256": "a201d18b13c73fca224d0d4117d57090c9422cfcc34caf4695e86f1780515561",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 230
+        },
+        {
+          "name": "360-static-no-result",
+          "pngSha256": "a693ff37504218d7ae237f3ccfea3f0557a860decf4cb14701b5c554ecadb273",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "360-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "360-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "360-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "360-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "360-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "360-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "metricFacts": [
+        {
+          "text": "Searchable tasks9,155",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Filtered15",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Domains5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kinds13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Cost tiers5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Difficultyadvanced62",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": [
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(33, 195, 84, 0.1)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": null
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "none",
+              "path": "M0 0h24v24H0V0z"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            },
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "P",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            }
+          ]
+        },
+        {
+          "text": "Steps13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Costexternal-variable",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "DomainAgent Runtime & NodeAgent",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kindcurated-live",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Verifier types8",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Score statuses2",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Primary suites50",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        }
+      ],
+      "preparations": [
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_no_task_20260905_xyz",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        }
+      ],
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Prepare filtered JSON",
+          "label": ""
+        },
+        {
+          "text": "keyboard_arrow_rightPrepared filters",
+          "label": null
+        },
+        {
+          "text": "Download prepared JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "captures": [
+        {
+          "name": "390-entry",
+          "pngSha256": "3157461dd900978860f4650ddab8a1c522f78ad5245ac92b8b7d021068d2b4ae",
+          "htmlSha256": "75ac656c0b4e3bf2a54675486b5b25de0146add96e7aff2af1b2e13ff6e0c6ca",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-empty-endpoint",
+          "pngSha256": "e0bc576e717d35b57e597cfddceca8a5f21edf7a975bcbf2979ced069844d1ac",
+          "htmlSha256": "7d7843ee938e9189c75b82a778f7d0c16d9aec6ad0d396e9c8c9e6135cdcb58b",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-prepared-initial",
+          "pngSha256": "b38eeeea4bd66946f039bdc2fa4879eea171d454c5358eea3ead1128c08fd208",
+          "htmlSha256": "974d07cf1214a038d1227dfa9804d03cad8052285c1a6fa4988c5de4fcdbbc86",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-task-provenance",
+          "pngSha256": "7f0a74e42e92d1867d9e73ab3bc361700e101b146ff1313900ce20c0cbcd9241",
+          "htmlSha256": "2b0d1c3b5034d219b6df3ab7e08b6a21e085862a76b5e2e17b8b7a70b57353ab",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-prepared-top10",
+          "pngSha256": "ac7bb978f36bd02ab4f7f4d8fca38043bdc85481f5d44a1bc99136730fd37e11",
+          "htmlSha256": "9d9485c31cfdba7803236c0cd00ccc3d31c0a3651ae64513a1eab00e1013c6f1",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-bundle",
+          "pngSha256": "a465ecef5ca86f20829f4a38982d3ff3cf0af75e14722c11feb4723c43497ab1",
+          "htmlSha256": "6caf544a094a278d2999035240e75a62afaac91a2d52618477400890e57664cb",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-score-boundary",
+          "pngSha256": "57089fb5e69e8cfbd9602a571984457254cbda25c777c16052c47d5aba00ef6d",
+          "htmlSha256": "2351d512fd1c013a837a9641ff9e8be16968b7163c5aa7a165a6ffb955c226e0",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-local-answer",
+          "pngSha256": "ea8455d94671aafbfe4957be6c063bf7d20298172fed3723c75fba6bf4d9a684",
+          "htmlSha256": "365c426a32135bfc6989a90968b6adecbae36d5ce38e77ebc3deb649ac6d2e58",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-no-result-state",
+          "pngSha256": "7deb2d3bac72615b354f6fbba4d3f37ced1859be2054cc75aa9686408e461df2",
+          "htmlSha256": "3d760d0b469222a99a0b11ad7445281f0fdd975efc55dcf15274594284c8539a",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-keyboard",
+          "pngSha256": "3d6a0c1fc927e0ad9e0ca763fd75b31faf7b3cbb85179e744fea4255812c3a2d",
+          "htmlSha256": "a8063f6bacc0f81f761f3b4e0990f22f56a72b8b3ccafd1f0879c5c284cbf6d5",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-text200",
+          "pngSha256": "b832976a79eb8586f41c23aacf5f3f1f21c33ed7ce85c129ddce3f925f0eed1c",
+          "htmlSha256": "973f33f562f79b83229e54fba95732a02dd8a72ba099c33d2f527885ad00ced6",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "390-static-selected",
+          "pngSha256": "d35fa834d9d2f3b857cd7e588cab59b74b4747162485ea3cf3ba81cda3790290",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 200
+        },
+        {
+          "name": "390-static-no-result",
+          "pngSha256": "6747226a16e556bca381185913e214fb305c08e6f9dfef6c7986f592885a4fc9",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "390-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "390-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "390-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "390-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "390-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "390-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "metricFacts": [
+        {
+          "text": "Searchable tasks9,155",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Filtered15",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Domains5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kinds13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Cost tiers5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Difficultyadvanced62",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": [
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(33, 195, 84, 0.1)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": null
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "none",
+              "path": "M0 0h24v24H0V0z"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            },
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "P",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            }
+          ]
+        },
+        {
+          "text": "Steps13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Costexternal-variable",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "DomainAgent Runtime & NodeAgent",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kindcurated-live",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Verifier types8",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Score statuses2",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Primary suites50",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        }
+      ],
+      "preparations": [
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_no_task_20260905_xyz",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        }
+      ],
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Prepare filtered JSON",
+          "label": ""
+        },
+        {
+          "text": "keyboard_arrow_rightPrepared filters",
+          "label": null
+        },
+        {
+          "text": "Download prepared JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "captures": [
+        {
+          "name": "768-entry",
+          "pngSha256": "e86712a2688028f1b823e1b33515b5c7c85207c18fbb94b2ea1036f114c28e93",
+          "htmlSha256": "2d0c579a1a6cacac844876b3d68850ef89ecfeaf6d03825a4b5c23e43e7cbf71",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-empty-endpoint",
+          "pngSha256": "f9c32d0bfbec9f1e65908af810af2841854066edfbd181daf5cec620f4ff464e",
+          "htmlSha256": "5036f4cf6c78f54aaaed807b028900dc75cb6f70024f4608b7bc1fe6810b01f5",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-prepared-initial",
+          "pngSha256": "c9b97f9b11341c896840c252dedb35acb04b1f6eef9d250ed723031cfa08a884",
+          "htmlSha256": "505174fc998f7bb92485f2d108e339622808ba821bad3a412fa5cf2b4e30ac4a",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-task-provenance",
+          "pngSha256": "27b0dbdc67d56bae6083c2aa3c3a5109a5d7ffa8b31a9a638b8a5daf42c9b244",
+          "htmlSha256": "b7484533dcd063a9cca101cdfb3d9faa657ed007bab3a71e13544f0f32dd4f62",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-prepared-top10",
+          "pngSha256": "7d858b02649ed294c7b99b8e639f241772191a652fbcdc7f118b3f3c99789b1e",
+          "htmlSha256": "323dd8de19ecf40b0c7418059be0eef41666f8ea48f0c3d194f9623f6f033822",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-bundle",
+          "pngSha256": "9168ea48711b79cd143c43b782996ff734720daa022f81c292e7b4c489a199e2",
+          "htmlSha256": "be4c26f05cc405affc714906147f36d393248f78b32033b5d893228857abf918",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-score-boundary",
+          "pngSha256": "68e6926ff8fcbb292ec456642e318ec9ebfcb30621c39624597b76f9b02b5cce",
+          "htmlSha256": "b719005ab5b7c060aa102da28d58ad393414169144d7e8cebbce61e98d2743bd",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-local-answer",
+          "pngSha256": "5978449c57856141df1854ab26229719cce6812b342d1a6052785cf0748a8204",
+          "htmlSha256": "07d6ea06e1780e850bbd77d6bf0a663708b0840987761eb5382621659f52c5e1",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-no-result-state",
+          "pngSha256": "add72c0afcb82c4de84d8d1788d8e08b9b04249acb5f8d1dc71c2b166ae0d78f",
+          "htmlSha256": "3aa1dc28ca262b7542744a57f7409ca39faaa607591b49893897a82b5d0c2528",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-keyboard",
+          "pngSha256": "ee3ad2ac8c2077f61a98b404f2a809b3243a0b96e82d3504c7fc68ba97c347e7",
+          "htmlSha256": "9ed81cd335955686c1f82f2144d83b47fc1d835e01b72406241407001e72a3be",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-text200",
+          "pngSha256": "19ff69b1606e2ad30d7d8ca59295cc79db09efa95be56b3767ff7e28de20a29e",
+          "htmlSha256": "ad1ee2ca0f61111f2664b928eeb1bfc7a7021bb3928786f8b71c85f30f5e5532",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-static-selected",
+          "pngSha256": "f7ce325f794ecd8acb947f115255c639569952bef2ac9e591ea396669b55e326",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "768-static-no-result",
+          "pngSha256": "90444816dda46f1136dc4d85daf4d549a9046b89035d0a34863059ab0a43d514",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "768-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "768-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "768-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "768-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "768-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "768-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "metricFacts": [
+        {
+          "text": "Searchable tasks9,155",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Filtered15",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Domains5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kinds13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Cost tiers5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Difficultyadvanced62",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": [
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(33, 195, 84, 0.1)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": null
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "none",
+              "path": "M0 0h24v24H0V0z"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            },
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "P",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            }
+          ]
+        },
+        {
+          "text": "Steps13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Costexternal-variable",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "DomainAgent Runtime & NodeAgent",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kindcurated-live",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Verifier types8",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Score statuses2",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Primary suites50",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        }
+      ],
+      "preparations": [
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_no_task_20260905_xyz",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        }
+      ],
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Prepare filtered JSON",
+          "label": ""
+        },
+        {
+          "text": "keyboard_arrow_rightPrepared filters",
+          "label": null
+        },
+        {
+          "text": "Download prepared JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "captures": [
+        {
+          "name": "1024-entry",
+          "pngSha256": "a94818dda60df34da2d0cbd85074099abdb243f6e9f3c61503c45d13049223b2",
+          "htmlSha256": "700cd5a1981ec9d3d63f0f9f03db62a8c603fb3c2ef7f108238f4c6392a27dd1",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-empty-endpoint",
+          "pngSha256": "ca892ba7a02372c5ab5b1e9931e42ca692c5a8a6a0d7cdd7f370b52366ffeaf1",
+          "htmlSha256": "700cd5a1981ec9d3d63f0f9f03db62a8c603fb3c2ef7f108238f4c6392a27dd1",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-prepared-initial",
+          "pngSha256": "714f20147157617f04c6f3d74b8b69e8270824dacfdf74e817a915874199763f",
+          "htmlSha256": "62d5a7d68248d06d23342b0000e0da5e8f75c90ca8fd336c71e0554ef795bc6f",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-task-provenance",
+          "pngSha256": "8fa008d0a698daf563da98bef4edba2010d5be47903c7fbc149179b9a35ec64a",
+          "htmlSha256": "49f1b7bf4e81982de226ffa1cc0677894d3e9b3144f477b466935356bac88482",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-prepared-top10",
+          "pngSha256": "494e97b6625fbbc6624c912f4c80192335ca36af42cce57080420b5f03360709",
+          "htmlSha256": "e5279cbc309cdff8a66e65449cf6eddbb958757d24b6c79ab8044cfb45e0e862",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-bundle",
+          "pngSha256": "89a7c7d48310c6f73e0bee57cabdbffe4be012740e7c8dfc24344066bdb02faf",
+          "htmlSha256": "54e83ba58f4a5047fc778ed04b8c9231bf6638e17190055b42ed006a65f09377",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-score-boundary",
+          "pngSha256": "fca172d30150a3f0b2af84da9093221ac27ec74f5af66a877215c18ef4636479",
+          "htmlSha256": "6df7a79ab37d22baf62454eb2179623cf7c874b16011e315eaa4575d4232a055",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-local-answer",
+          "pngSha256": "05d0f58d95383ba7467f1ab18e04a0304fc46bd4afc3cdfe6905f48aac9a82fe",
+          "htmlSha256": "63694fe3448d878d16a12f2435a41ac7fea064dc429a6d570cf0c23dd7a3a95b",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-no-result-state",
+          "pngSha256": "5122ef03153bb653322a363060973d1541b4659a3812b7a6323556f5b9948899",
+          "htmlSha256": "fe4f5bf19d1126e904e4ed8031f966fe397bd95683ecb35d8a50fec81821bb03",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-keyboard",
+          "pngSha256": "24bbb0b09f1df28809df16d7687709d6dfceca18bafbaaf38d42643acbac71ab",
+          "htmlSha256": "92b622b2bdea9a90e356ace350bc9f3ff3c4fd4ee813c9b4b7fe093dfa96e5a7",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-text200",
+          "pngSha256": "07b5ab165ec86d218750ab8f9490cc50306a3a042158949345abe49736ef26e6",
+          "htmlSha256": "b92c37fecc3d02d51921665e77a619784c470da64cf891c728c37749e3059811",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-static-selected",
+          "pngSha256": "9f02b2451cba243d34e3c94c6480bf28fb85336da631a79f3e67c87eb0c74236",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1024-static-no-result",
+          "pngSha256": "6e176bfae68a07909ece8b4f70f401d2a964f3d7b08f178980c4e60bd257b4d9",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "1024-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "1024-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1024-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1024-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "1024-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "1024-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "metricFacts": [
+        {
+          "text": "Searchable tasks9,155",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Filtered15",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Domains5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kinds13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Cost tiers5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Difficultyadvanced62",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": [
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(33, 195, 84, 0.1)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": null
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "none",
+              "path": "M0 0h24v24H0V0z"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            },
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "P",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            }
+          ]
+        },
+        {
+          "text": "Steps13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Costexternal-variable",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "DomainAgent Runtime & NodeAgent",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kindcurated-live",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Verifier types8",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Score statuses2",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Primary suites50",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        }
+      ],
+      "preparations": [
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_no_task_20260905_xyz",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        }
+      ],
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Prepare filtered JSON",
+          "label": ""
+        },
+        {
+          "text": "keyboard_arrow_rightPrepared filters",
+          "label": null
+        },
+        {
+          "text": "Download prepared JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    },
+    {
+      "width": 1440,
+      "height": 960,
+      "captures": [
+        {
+          "name": "1440-entry",
+          "pngSha256": "4231d2259746133ad22d8d34ee24f4bb90344b3c5fbf1b66385d66e96b78f436",
+          "htmlSha256": "a62f6742e246f0ec5d6699e4531866bc72762377918e75c7aa86ea229748d779",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-empty-endpoint",
+          "pngSha256": "c9d730313c77c6dbd2abca6d39fa069de583e6e0e034299bd9f53ed564602397",
+          "htmlSha256": "a62f6742e246f0ec5d6699e4531866bc72762377918e75c7aa86ea229748d779",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-prepared-initial",
+          "pngSha256": "2bb9a55c8a16b6f49db52329f6b5c2e13ae6de9a3e7e2dadb90e20f1d11fcefe",
+          "htmlSha256": "430a6dfea087799dd9b04794bf8f918ed8f31d7061cb5e2f083bb1dc8c251c08",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-task-provenance",
+          "pngSha256": "a0623a7bebb015f7cb43974cdf4fe6aa3e985e566f539be072e03f9c76901b4c",
+          "htmlSha256": "9a37bb56d0a62e453f71f91302ab40fbf74073219adfcdac41f8a3028b04d424",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-prepared-top10",
+          "pngSha256": "c2b9ad509bb7fe8cbeb76fc21c5b0441b8449d9db2e54601a972926c00d037bc",
+          "htmlSha256": "4f8392f8dc671e5706b36940f43e4b27dc7dccafa91d100c645f4db031ea3f31",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-pending-old-preparation",
+          "pngSha256": "4f37d3a46e574e4c4fcbf87e16f61663e0089a0eab382d9bcffada75f6c6c360",
+          "htmlSha256": "8af013e574f31542d59458622584bda382965089c89215e988979f473385f89d",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-bundle",
+          "pngSha256": "eaba2a614436846923f507eb3b9e31cc390b25a77723cc64bda85bcc63abf7b7",
+          "htmlSha256": "a28d1b7cc806ca1cd0e5684236e0caf5dfdfaf4318e60debdaad2a6eadd0e64a",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-score-boundary",
+          "pngSha256": "a2c265564e96a15d8b70edcfa763f77027f190e7db0c20cb669656929b4e2f4e",
+          "htmlSha256": "53e72c3888e9f8626bdbd53dadab0d91d9c137cb4d43b87c2bdd0994aae4a112",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-local-answer",
+          "pngSha256": "4d8525c41c309caa12f0505d4d7f1971c511b86ab5274446dfb0a688fbdd533f",
+          "htmlSha256": "93849bf07cdc9269b47bbb74cdac8ed565fe37b9a42b960420bac8944f2d351a",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-no-result-state",
+          "pngSha256": "01a5011431cc16521daf325ec851dcc592395b212b834e5f219395b5ffbc9cd0",
+          "htmlSha256": "df88f85325d3e4d96024b907e6c0cae74b1d31ae1c99cd6e4fae5d082c0cf8be",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-keyboard",
+          "pngSha256": "908378155e8f0b621f1de8d174046dcfb4e35894b747e884de261fea2c3bc487",
+          "htmlSha256": "e6d1010ad1429b12f5210fee4cc778c3ef42d102bf1971fb2ad5b23e3ccae5ab",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-text200",
+          "pngSha256": "86a5b78d892ca30342dd5aaf60b886cd415181b06a0278fe6f964826676257b0",
+          "htmlSha256": "802d045acc5409b191690c6a6ceeda49f1ee9c0565c2c7948a482bb0448cc42f",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-static-selected",
+          "pngSha256": "6ae0b3bc40a4a4f3f8fe710a33fc0f68232f514b2cceae0ed503ea5e209cef34",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1440-static-no-result",
+          "pngSha256": "7b8d323777153c223d897d725046e68510d189f7b16af4f1b0707215f476ea49",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "1440-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "1440-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-pending-download",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-pending-reprepared-empty",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "1440-recovery-0-0",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-recovery-0-1",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-recovery-1-0",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-recovery-1-1",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-recovery-2-0",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-recovery-2-1",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1440-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "1440-zero-bundle",
+          "suggestedFilename": "proofloop-governance-gates.json",
+          "sha256": "a311ca99d9ece631d777b8aa1e5ebb0af7c54ffa17b2356f7c8f58f4805cc633",
+          "bytes": 464
+        },
+        {
+          "name": "1440-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "1440-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "metricFacts": [
+        {
+          "text": "Searchable tasks9,155",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Filtered15",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Domains5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kinds13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Cost tiers5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Difficultyadvanced62",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": [
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(33, 195, 84, 0.1)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": null
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "none",
+              "path": "M0 0h24v24H0V0z"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            },
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "P",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            }
+          ]
+        },
+        {
+          "text": "Steps13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Costexternal-variable",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "DomainAgent Runtime & NodeAgent",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kindcurated-live",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Verifier types8",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Score statuses2",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Primary suites50",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        }
+      ],
+      "preparations": [
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_pending_prepared_snapshot",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_no_task_20260905_xyz",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        }
+      ],
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "pendingEditAndSustainedRecovery": {
+        "oldSnapshotReturned": true,
+        "completedRerunInvalidated": true,
+        "repeatedPreparations": 3,
+        "recoveryDownloads": 6
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        },
+        {
+          "question": "Show the source evidence again",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        },
+        {
+          "question": "Keep official scores separate",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        },
+        {
+          "question": "Recheck the first task",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Prepare filtered JSON",
+          "label": ""
+        },
+        {
+          "text": "keyboard_arrow_rightPrepared filters",
+          "label": null
+        },
+        {
+          "text": "Download prepared JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "captures": [
+        {
+          "name": "1920-entry",
+          "pngSha256": "13c6abb2f939ea3e12238e4afd027e67d31bffaf8998eed13f4d914f562fb03a",
+          "htmlSha256": "d8ac5b18bb4b402acccdf5257f8fcc66c89f3e11965946aa90520e5dd7c63587",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-empty-endpoint",
+          "pngSha256": "13c6abb2f939ea3e12238e4afd027e67d31bffaf8998eed13f4d914f562fb03a",
+          "htmlSha256": "d8ac5b18bb4b402acccdf5257f8fcc66c89f3e11965946aa90520e5dd7c63587",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-prepared-initial",
+          "pngSha256": "cf26acbb8080040e2055fe9ed8c5fa1054cd2db0c4dbee4f6fc37a48e481ed72",
+          "htmlSha256": "ec56dd7364e811092976f6227ef18022479cb88dc85bace5c76df0c72cd9f78e",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-task-provenance",
+          "pngSha256": "3a39136f41eb9a39a88f2b91925af57e6626d9cadf1788423b97df9a9e486f5c",
+          "htmlSha256": "22ee9807bc60216dac0a19b83bcf0cef475060a870794325181236fd5de05c0e",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-prepared-top10",
+          "pngSha256": "3c7493868a3403c9131ddbbd3a98f6bfe56aa2a6b31798fd0e62f2160c2af99d",
+          "htmlSha256": "cdf3c1deb2f9a7ae43921f342def491167da56fbcac77158356af0a2dc9ba4db",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-bundle",
+          "pngSha256": "26d2a9d1285a57aef2e591d44156a31052cd010a26072d7cd6e37b5caafb5617",
+          "htmlSha256": "e0d50812700595adb8b66a482d3d60b3143f9b9ea3fc1ca305068cb2016f48db",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-score-boundary",
+          "pngSha256": "d9da6e5acb3d4294273bfa67493de43642a97b44731579f28e9ae9e740367e81",
+          "htmlSha256": "82df6db6c62abe0b5f43cda3dc0c4056e0805052a4af950abe184ef18aac6a11",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-local-answer",
+          "pngSha256": "9a6a6699cad4b6f7eb705eeeb4975bd5d49e101b69d50869f34aec36acb35a5a",
+          "htmlSha256": "48421108e73546fb67b2490bee7762f9e214802b0756692501104656e25cd496",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-no-result-state",
+          "pngSha256": "ad2f9880c5021fc01b7b6815ada13b7b23dc7fc824e9fb7b941995954c9e3e2c",
+          "htmlSha256": "b6435b38549e91c96c9f64b4679a794dc1deced486708d761e9a6c2b3d612f40",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-keyboard",
+          "pngSha256": "d3f819cf69f621e80a32d40be91b9cb5bbeecc4c4b5ee00b81495c24dc950a94",
+          "htmlSha256": "1e93250220e1824eeb83585c0e49487ebed64aaae0b6fc8fae895271f5d3bc83",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-text200",
+          "pngSha256": "25bbab7bf52087a620aebabdc1e2efbde83cfa53db3e324113db6729309e8460",
+          "htmlSha256": "bb8820cd8b97c36fcdf095105d242240d9db6f8c397d846b5e452832d01df0e0",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-static-selected",
+          "pngSha256": "3fc2f07cb77570d93b279ff17f678c11eacfedfeb46296de2d30526e667df321",
+          "htmlSha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80",
+          "horizontalOverflow": 0
+        },
+        {
+          "name": "1920-static-no-result",
+          "pngSha256": "5d1b981fa3375dbc47c9cc2639991e788ac7da8be2060c959d90467e672a1eea",
+          "htmlSha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b",
+          "horizontalOverflow": 0
+        }
+      ],
+      "downloads": [
+        {
+          "name": "1920-filtered-initial",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        },
+        {
+          "name": "1920-filtered-top10",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1920-filtered-repeat",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "09d214d39afc3ae827596de0ea51f1ed6677a5a2166d64a9e0d985ec84bea1f0",
+          "bytes": 24854
+        },
+        {
+          "name": "1920-public-bundle",
+          "suggestedFilename": "public-node-repo-proofs.json",
+          "sha256": "a309b8d56a9bdf320e7bf3297972f826cc00794c580ab9a566e41ad064c1ab8e",
+          "bytes": 11729
+        },
+        {
+          "name": "1920-no-result",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+          "bytes": 4
+        },
+        {
+          "name": "1920-reloaded",
+          "suggestedFilename": "nodetasks-filtered.json",
+          "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+          "bytes": 36765
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "renderedEndpointEmpty": true,
+      "metricFacts": [
+        {
+          "text": "Searchable tasks9,155",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Searchable tasks",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "9,155",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Filtered15",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Filtered",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "15",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Domains5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domains",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kinds13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kinds",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Cost tiers5",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost tiers",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "5",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Difficultyadvanced62",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Difficulty",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "advanced",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": [
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(33, 195, 84, 0.1)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": null
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "none",
+              "path": "M0 0h24v24H0V0z"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(21, 130, 55)",
+              "path": "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            },
+            {
+              "tag": "DIV",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            },
+            {
+              "tag": "P",
+              "text": "62",
+              "color": "rgb(21, 130, 55)",
+              "background": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "path": null
+            }
+          ]
+        },
+        {
+          "text": "Steps13",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Steps",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "13",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Costexternal-variable",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Cost",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "external-variable",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "DomainAgent Runtime & NodeAgent",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Domain",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Agent Runtime & NodeAgent",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Kindcurated-live",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Kind",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "curated-live",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Verifier types8",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Verifier types",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "8",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Score statuses2",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Score statuses",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "2",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        },
+        {
+          "text": "Primary suites50",
+          "background": "rgb(15, 20, 25)",
+          "label": [
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "Primary suites",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "value": [
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            },
+            {
+              "text": "50",
+              "color": "rgb(229, 231, 235)"
+            }
+          ],
+          "delta": []
+        }
+      ],
+      "preparations": [
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 10,
+          "Matching tasks": 15
+        },
+        {
+          "Search": "zz_no_task_20260905_xyz",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 10,
+          "Exported rows": 0,
+          "Matching tasks": 0
+        },
+        {
+          "Search": "NodeAgent NodeMem NodeTrace NodeRL NodeSEO NodeGraph storyboard proof capture smoke",
+          "Persona": "Any",
+          "Saved view": "public-node-repo-proofs",
+          "Domain": [],
+          "Kind": [],
+          "Difficulty": [],
+          "Cost tier": [],
+          "Tag contains": "public-node-repo",
+          "Sort": "Lowest difficulty",
+          "Rows": 100,
+          "Exported rows": 15,
+          "Matching tasks": 15
+        }
+      ],
+      "selectedTask": {
+        "id": "nodeagent.storyboard.capture.v1",
+        "sourceRefs": [
+          "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+          "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+        ],
+        "scoreStatus": "no-official-score-claim"
+      },
+      "transitions": [
+        [
+          "running",
+          "notRunning"
+        ],
+        [
+          "running",
+          "notRunning"
+        ]
+      ],
+      "topNAndRepeat": {
+        "initial": 15,
+        "limited": 10,
+        "identicalRepeat": true
+      },
+      "answers": [
+        {
+          "question": "Which public Node repo task can I inspect?",
+          "answer": "smart_toy\n\nNodeAgent catalog mode found 15 matching task(s) for Any.\n\nBest ranked match: nodeagent.storyboard.capture.v1 - Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. Domain: Agent Runtime & NodeAgent > public-node-repo; difficulty advanced (62); 13 estimated steps; cost tier external-variable. Provenance: verifier-receipt; score status no-official-score-claim; primary suite public-node-repo.\n\nLowest-cost starting point: nodeagent.storyboard.capture.v1 (external-variable). Easiest starting point: nodeagent.storyboard.capture.v1 (advanced, 13 steps).\n\nDominant domains: Agent Runtime & NodeAgent (5), Audit, Risk & Compliance (2), Collaboration & Room UX (1) Difficulty mix: advanced (6), expert (2)\n\nRecommended next action: Open nodeagent.storyboard.capture.v1, inspect its source refs, then run or adapt the listed command only if the required environment is available.\n\nCited task ids:\n\nnodeagent.storyboard.capture.v1 - https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\nnodetrace.capture-plan.smoke.v1 - https://github.com/HomenShum/NodeTrace/blob/main/scripts/capture-plan-smoke.mjs, https://github.com/HomenShum/NodeTrace/blob/main/scripts/mcp-smoke.mjs\nnodetrace.storyboard.capture.v1 - https://github.com/HomenShum/NodeTrace/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeTrace/blob/main/scripts/render-walkthrough-media.mjs\nnodemem.storyboard.receipt.v1 - https://github.com/HomenShum/NodeMem/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeMem/blob/main/scripts/capture-storyboard.mjs\nnodeseo.storyboard.audit.v1 - https://github.com/HomenShum/NodeSEO/blob/main/docs/FEATURE_PROOF_STORYBOARD.md, https://github.com/HomenShum/NodeSEO/blob/main/src/audit-static.ts"
+        }
+      ],
+      "reloadRestoresUrlViewAndClearsSessionChat": true,
+      "keyboard": [
+        {
+          "text": "",
+          "label": "Link to heading"
+        },
+        {
+          "text": "keyboard_arrow_rightSource refs and metadata",
+          "label": null
+        },
+        {
+          "text": "Prepare filtered JSON",
+          "label": ""
+        },
+        {
+          "text": "keyboard_arrow_rightPrepared filters",
+          "label": null
+        },
+        {
+          "text": "Download prepared JSON",
+          "label": ""
+        }
+      ],
+      "keyboardReachedDownload": true,
+      "textEnlargement": {
+        "fontBefore": "16px",
+        "fontEnlarged": "32px",
+        "restoredFont": "16px",
+        "rowCountPreserved": true,
+        "domSerializationChanged": true,
+        "limitation": "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim."
+      },
+      "status": "OBSERVED"
+    }
+  ],
+  "externalRequests": [],
+  "errors": [],
+  "limits": [
+    "Local catalog mode only; no benchmark/model execution",
+    "Seven exact viewport pairs, finite download/chat budgets; no whole-product grade",
+    "200% root text enlargement is browser-only, not native zoom",
+    "Prepared JSON exports the Rows-limited shown table, not every matching row",
+    "Static browser and Streamlit are separate surfaces; static overflow is an inherited open finding",
+    "Chromium on Windows is not real-device, other-engine or assistive-technology verification"
+  ],
+  "browserVersion": "149.0.7827.55",
+  "status": "OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS",
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-05T18:51:49.429Z"
+}

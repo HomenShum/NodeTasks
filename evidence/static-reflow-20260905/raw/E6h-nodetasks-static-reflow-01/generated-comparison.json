@@ -1,0 +1,110 @@
+[
+  {
+    "path": "catalog/all-tasks.json",
+    "beforeSha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e",
+    "afterSha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/benchmark-proxy-adapters.json",
+    "beforeSha256": "b3d302adc24ccd0b9d23658aa061af9315b2b61a30223dc9544e91fe41a0a381",
+    "afterSha256": "b3d302adc24ccd0b9d23658aa061af9315b2b61a30223dc9544e91fe41a0a381",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/extracted-tasks.json",
+    "beforeSha256": "e3f207b5f41d99861b8c4d484da9b5d3af7df3eccac579f84ab4d1c7ea72c0c5",
+    "afterSha256": "e3f207b5f41d99861b8c4d484da9b5d3af7df3eccac579f84ab4d1c7ea72c0c5",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/hierarchy.json",
+    "beforeSha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8",
+    "afterSha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/live-interaction-tasks.json",
+    "beforeSha256": "a89df15ca6aa2b85799c5d721db27e5e8b4dc160524929e2559e24f4d0f31c1b",
+    "afterSha256": "a89df15ca6aa2b85799c5d721db27e5e8b4dc160524929e2559e24f4d0f31c1b",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/provenance-index.json",
+    "beforeSha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2",
+    "afterSha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/ranked-tasks.json",
+    "beforeSha256": "d9d3d85ed8580c4fa9922a4ab0f2161f9cc909c28b89a357ae04e869bd23eb31",
+    "afterSha256": "d9d3d85ed8580c4fa9922a4ab0f2161f9cc909c28b89a357ae04e869bd23eb31",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/saved-views.json",
+    "beforeSha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14",
+    "afterSha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/search-index.js",
+    "beforeSha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100",
+    "afterSha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/search-index.jsonl",
+    "beforeSha256": "a287b78bf47a2a031fd60541fa11d2b9c87a50a328fe17d8b86943b14ac5ca29",
+    "afterSha256": "a287b78bf47a2a031fd60541fa11d2b9c87a50a328fe17d8b86943b14ac5ca29",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/source-files.json",
+    "beforeSha256": "5e5bd59a4df35deb4efc5ca10b8fb80a214aedb7d95e0f6b572bea075557ca5b",
+    "afterSha256": "5e5bd59a4df35deb4efc5ca10b8fb80a214aedb7d95e0f6b572bea075557ca5b",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/tag-index.json",
+    "beforeSha256": "0694ab68a71f12e9e2d1881355c8fb95ce8ead076c68ae1382241c58774329bc",
+    "afterSha256": "0694ab68a71f12e9e2d1881355c8fb95ce8ead076c68ae1382241c58774329bc",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/task-browser.html",
+    "beforeSha256": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1",
+    "afterSha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1",
+    "unchanged": false
+  },
+  {
+    "path": "catalog/task-bundles.json",
+    "beforeSha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b",
+    "afterSha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/task-families.md",
+    "beforeSha256": "20fff77616e86d7d1149533e91caa0b623457db20ed7b25c72207fc46eda7cd6",
+    "afterSha256": "20fff77616e86d7d1149533e91caa0b623457db20ed7b25c72207fc46eda7cd6",
+    "unchanged": true
+  },
+  {
+    "path": "catalog/task-index.json",
+    "beforeSha256": "f749cd1a2d6ab4eeba4331ca9c38144800f9779d15acca420b478fa48daefd4c",
+    "afterSha256": "f749cd1a2d6ab4eeba4331ca9c38144800f9779d15acca420b478fa48daefd4c",
+    "unchanged": true
+  },
+  {
+    "path": "schemas/corpus-receipt.schema.json",
+    "beforeSha256": "14be6e5873e23b55de90a8644fcaa1d55170680d54c4c9e90cb43d64b6d943dc",
+    "afterSha256": "14be6e5873e23b55de90a8644fcaa1d55170680d54c4c9e90cb43d64b6d943dc",
+    "unchanged": true
+  },
+  {
+    "path": "schemas/node-task.schema.json",
+    "beforeSha256": "a0e45f5f498587625d93720b64f6088bfe45fbbbf65fd02ae59c38ff17e17141",
+    "afterSha256": "a0e45f5f498587625d93720b64f6088bfe45fbbbf65fd02ae59c38ff17e17141",
+    "unchanged": true
+  }
+]

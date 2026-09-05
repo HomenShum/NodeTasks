@@ -1,0 +1,112 @@
+{
+  "checkedAt": "2026-09-05T18:45:29.088836+00:00",
+  "rows": [
+    {
+      "repo": "actions/checkout",
+      "tag": "v7.0.1",
+      "commit": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "tree": "150e70ecad5ebf06a559a01ea3a56d9a3236d2b1",
+      "actionBlob": "5b0524f730db83f9513c18ab31a6c086c7239076",
+      "actionSha256": "d59219cb79590abdb877deaa14e3b65a00c05318bf5a6f3b989b9162b5d08c35",
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/actions/checkout/git/ref/tags/v7.0.1"
+          ],
+          "exit": 0,
+          "output": "actions-checkout-ref.json",
+          "sha256": "2d93602db4d23c52722ac2e83e9553fa46d84b00dd83ed8557f32b39278fe62e"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-optional-locks",
+            "ls-remote",
+            "https://github.com/actions/checkout.git",
+            "refs/tags/v7.0.1",
+            "refs/tags/v7.0.1^{}"
+          ],
+          "exit": 0,
+          "output": "actions-checkout-ls-remote.txt",
+          "sha256": "2d8fdb355284b46d28d241d088eeae29a3dfecd24f0704c402a551bdb86a70e6"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/actions/checkout/commits/3d3c42e5aac5ba805825da76410c181273ba90b1"
+          ],
+          "exit": 0,
+          "output": "actions-checkout-commit.json",
+          "sha256": "8fd72eb8d6e4adddb14f05d0c396367bf41c14c8271a8062f215ac1ac223937a"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/actions/checkout/contents/action.yml?ref=3d3c42e5aac5ba805825da76410c181273ba90b1"
+          ],
+          "exit": 0,
+          "output": "actions-checkout-action-api.json",
+          "sha256": "1ced2fb572a4b6bfa105cbde320ba30cee35cc6e224d7f54f5a8aedc3bddd3c3"
+        }
+      ]
+    },
+    {
+      "repo": "actions/setup-node",
+      "tag": "v7.0.0",
+      "commit": "820762786026740c76f36085b0efc47a31fe5020",
+      "tree": "4f38aef065c511c96d6edd0fba7eeab3bf3da0fc",
+      "actionBlob": "dc1cefd59528621f6952ef3309bb6c551925b330",
+      "actionSha256": "5d765941ab5d8bef27f08e81b0b041cdb2df2050ea0261dc925d157a2bafbd2b",
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/actions/setup-node/git/ref/tags/v7.0.0"
+          ],
+          "exit": 0,
+          "output": "actions-setup-node-ref.json",
+          "sha256": "fc488ff26d551871dc3665335b9b568767294bbb9cfb9c84bbb646e349716dae"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-optional-locks",
+            "ls-remote",
+            "https://github.com/actions/setup-node.git",
+            "refs/tags/v7.0.0",
+            "refs/tags/v7.0.0^{}"
+          ],
+          "exit": 0,
+          "output": "actions-setup-node-ls-remote.txt",
+          "sha256": "6ca1a8e49f9bf55c094388857cc23e31903e0c1e001a4c1a4619131eb7af62ed"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/actions/setup-node/commits/820762786026740c76f36085b0efc47a31fe5020"
+          ],
+          "exit": 0,
+          "output": "actions-setup-node-commit.json",
+          "sha256": "d8bdc919a21b8a86f219857ab25f3b886d28093a088184b08c2be9f61df9f95e"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/actions/setup-node/contents/action.yml?ref=820762786026740c76f36085b0efc47a31fe5020"
+          ],
+          "exit": 0,
+          "output": "actions-setup-node-action-api.json",
+          "sha256": "095bbf9050b9b178fdc36f09f45367eac6404b37b4b2540fa791c29656191f03"
+        }
+      ]
+    }
+  ],
+  "limit": "Primary source identity and action interface reviewed; no GitHub workflow run yet"
+}

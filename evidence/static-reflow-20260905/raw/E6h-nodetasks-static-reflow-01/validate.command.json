@@ -1,0 +1,14 @@
+{
+  "args": [
+    "cmd",
+    "/c",
+    "npm",
+    "run",
+    "validate"
+  ],
+  "cwd": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+  "startedAt": "2026-09-05T19:44:43.561713+00:00",
+  "seconds": 2.797,
+  "exitCode": 0,
+  "logSha256": "7f6eacafee173e0f21f195152945a8414581665354126f9c1c206f9a1ac61a65"
+}

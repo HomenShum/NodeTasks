@@ -1,0 +1,128 @@
+{
+  "scrollX": 0,
+  "viewport": [
+    390,
+    844
+  ],
+  "documentWidth": 390,
+  "elements": [
+    {
+      "selector": "BODY",
+      "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "right": 390,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible"
+    },
+    {
+      "selector": "shell",
+      "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "right": 390,
+      "minWidth": "0px",
+      "gridTemplateColumns": "390px",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible"
+    },
+    {
+      "selector": "ASIDE",
+      "text": "NodeTasks\n      Generated 2026-07-09T02:48:01.246Z9,155 searchable tasks\n      \n      All kindsbenchmark-adapterbenchmark-familybenchmark-targetbrowse",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "right": 390,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "auto"
+    },
+    {
+      "selector": "MAIN",
+      "text": "1 shownOpen locally or serve this folder; no backend needed.\n      nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the No",
+      "x": 0,
+      "y": 401.8125,
+      "width": 390,
+      "right": 390,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "nowrap",
+      "overflowX": "visible"
+    },
+    {
+      "selector": "bar",
+      "text": "1 shownOpen locally or serve this folder; no backend needed.",
+      "x": 22,
+      "y": 419.8125,
+      "width": 346,
+      "right": 368,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "normal",
+      "flexWrap": "wrap",
+      "overflowX": "visible"
+    },
+    {
+      "selector": "result",
+      "text": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regener",
+      "x": 22,
+      "y": 477.8125,
+      "width": 346,
+      "right": 368,
+      "minWidth": "0px",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "anywhere",
+      "flexWrap": "nowrap",
+      "overflowX": "visible"
+    },
+    {
+      "selector": "CODE",
+      "text": "nodeagent.storyboard.capture.v1",
+      "x": 22,
+      "y": 492.8125,
+      "width": 216.53125,
+      "right": 238.53125,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "anywhere",
+      "flexWrap": "nowrap",
+      "overflowX": "visible"
+    },
+    {
+      "selector": "CODE",
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+      "x": 22,
+      "y": 669.1875,
+      "width": 346,
+      "right": 368,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "anywhere",
+      "flexWrap": "nowrap",
+      "overflowX": "visible"
+    },
+    {
+      "selector": "CODE",
+      "text": "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs",
+      "x": 22,
+      "y": 708.1875,
+      "width": 346,
+      "right": 368,
+      "minWidth": "auto",
+      "gridTemplateColumns": "none",
+      "overflowWrap": "anywhere",
+      "flexWrap": "nowrap",
+      "overflowX": "visible"
+    }
+  ],
+  "resultText": "nodeagent.storyboard.capture.v1curated-livepublic-node-reposcore 9Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.curated public-node-repo public-node-repo NodeAgent agent engineerhttps://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+}

@@ -1,0 +1,81 @@
+{
+  "url": "http://127.0.0.1:54532/?view=public-node-repo-proofs",
+  "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n15\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nnodeagent.storyboard.capture.v1\n\nDifficulty\n\nadvanced\n\n62\n\nSteps\n\n13\n\nCost\n\nexternal-variable\n\nDomain\n\nAgent Runtime & NodeAgent\n\nKind\n\ncurated-live\n\nRegenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\n\nWhy it matters: It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\n\nFirst run: Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\n\nTreat this as product-path or catalog proof unless an official verifier receipt is attached.\n\npublic-node-repo Agent Runtime & NodeAgent curated-live NodeAgent agent engineer curated github.com HomenShum\n\nkeyboard_arrow_down\n\nSource refs and metadata\n\n{\n\"sourceRefs\":[\n0:\"https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md\"\n1:\"https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs\"\n]\n\"metadata\":{}\n\"rank\":{\n\"domain\":\"Agent Runtime & NodeAgent\"\n\"subdomain\":\"public-node-repo\"\n\"domainPath\":[\n0:\"Agent Runtime & NodeAgent\"\n1:\"public-node-repo\"\n]\n\"domainRank\":4\n\"estimatedSteps\":13\n\"stepTier\":\"10+\"\n\"costTier\":\"external-variable\"\n\"costRank\":5\n\"estimatedCostUsd\":NULL\n\"costBasis\":\"requires provider, deployment, or external scorer\"\n\"difficultyScore\":62\n\"difficultyTier\":\"advanced\"\n\"difficultyReasons\":[\n0:\"external or production dependency\"\n]\n\"kindRank\":6\n\"topTags\":[\n0:\"public-node-repo\"\n1:\"Agent Runtime & NodeAgent\"\n2:\"curated-live\"\n3:\"NodeAgent\"\n4:\"agent engineer\"\n5:\"curated\"\n6:\"github.com\"\n7:\"HomenShum\"\n]\n\"personaFit\":[\n0:\"agent engineer\"\n]\n\"sortScore\":4062513\n}\n\"curation\":{\n\"summary\":\"Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts. is a curated live in Agent Runtime & NodeAgent / public-node-repo. Regenerate the NodeAgent storyboard proof clip and bind it to smoke receipts.\"\n\"whyItMatters\":\"It names a user-visible workflow that should be tested through the product surface, not by replacing the behavior with a mock.\"\n\"firstRun\":\"Start the relevant demo or production-safe harness, then capture the listed proof artifacts.\"\n\"caution\":\"Budget or provider setup may be required before running this task.\"\n\"scoreBoundary\":\"Treat this as product-path or catalog proof unless an official verifier receipt is attached.\"\n\"recommendedFor\":[\n0:\"agent engineer\"\n]\n\"quality\":\"curated-template-v2\"\n}\n\"provenance\":{\n\"suiteLineage\":[\n0:\"public-node-repo\"\n]\n\"primarySuite\":\"public-node-repo\"\n\"verifierType\":\"verifier-receipt\"\n\"scoreStatus\":\"no-official-score-claim\"\n\"productPathCompletion\":\"requires-run-receipt\"\n\"officialSemanticScore\":\"not-claimed\"\n\"sourceCount\":2\n\"sourceKinds\":[\n0:\"docs\"\n1:\"source\"\n]\n\"receiptExpectations\":[\n0:\"docs/walkthroughs/nodeagent-local-dashboard-walkthrough.gif\"\n1:\"docs/eval/nodeagent-frame-smoke.json\"\n2:\"docs/eval/nodeagent-local-dashboard-scaffold-smoke.json\"\n3:\"scorecard.md\"\n4:\"verifier-receipt.json\"\n5:\"cost-ledger.json\"\n]\n}\n}\n\nPrepare filtered JSON\n\nPrepared 15 of 15 matching tasks · Rows limit 100\n\nDownload uses this prepared snapshot. After editing filters, prepare again.\n\nkeyboard_arrow_right\n\nPrepared filters\n\nDownload prepared JSON",
+  "viewport": {
+    "width": 1024,
+    "height": 768
+  },
+  "horizontalOverflow": 0,
+  "focus": {
+    "tag": "SUMMARY",
+    "text": "keyboard_arrow_downSource refs and metadata",
+    "label": null
+  },
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Filtered15",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Domains5",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kinds13",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Cost tiers5",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Difficultyadvanced62",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Steps13",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Costexternal-variable",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "DomainAgent Runtime & NodeAgent",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kindcurated-live",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Verifier types8",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Score statuses2",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Primary suites50",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    }
+  ]
+}

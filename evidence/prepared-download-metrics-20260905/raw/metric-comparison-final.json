@@ -1,0 +1,325 @@
+{
+  "status": "PASS",
+  "pairs": [
+    {
+      "viewport": [
+        320,
+        800
+      ],
+      "boundary": "metric-summary-320",
+      "beforePngSha256": "fa5d2171797fb46f0971e1c75a64276b653b52392a1b78012d560b3209a3b721",
+      "afterPngSha256": "5021e3549fd45e1811922684af529b77129aab9f7b64bc5da999ba043e3e941b",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        320,
+        800
+      ],
+      "boundary": "metric-task-320",
+      "beforePngSha256": "db18fc8fc45922813679bf1e073dca37606cce0c99a3f2dc06cd914618c7d52b",
+      "afterPngSha256": "cdb99fd3a7e704302029061212f3a04e36d65d20c1ecc00a23aef735a9f99c3a",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        320,
+        800
+      ],
+      "boundary": "download-ready-320",
+      "beforePngSha256": "e825d8caea151b507ed3519d98371a48d666ee06d6a393ccf9656ca4c88a6a5a",
+      "afterPngSha256": "8a5b00d090fa8f1fcc566aa7eaaa8f5534411dd26e7fc667370be362c744e297",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        320,
+        800
+      ],
+      "boundary": "metric-provenance-320",
+      "beforePngSha256": "34e74d791ec9c81d7844e62a1877183ccb9111ebebe4d615a14d9fae030c84c9",
+      "afterPngSha256": "8cc8ff120a70d754cc867b16106b6faff6cad693b32510f165e0b2a12a042544",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "boundary": "metric-summary-360",
+      "beforePngSha256": "44b3c98297c337c85bbb2adaefc520141d9fb5dea552c1e9561c551206e569e7",
+      "afterPngSha256": "c4f7fff7dd4bfc4160243523ad6b0bfd6b05a7406ef67c3a0924f057f269ad76",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "boundary": "metric-task-360",
+      "beforePngSha256": "e0b54c6d4c02d2e91cb9cb3a2dafc3c637adaa2f3eabb1979b9d9b24e1fbc3ed",
+      "afterPngSha256": "1418cdff5a1473b582c754a8fc91b8d9aaf4fd5b2299ffe7b3f0d4b458a3dd34",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "boundary": "download-ready-360",
+      "beforePngSha256": "30ec5715d5606a82eaab343bb09fce1becb38f625e191c15b50829467d7e79d8",
+      "afterPngSha256": "3a4d973fe4c65226877e4fb7b41fd2c91fe18d8d799b137e74fa5ddd38821fa6",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "boundary": "metric-provenance-360",
+      "beforePngSha256": "f87be9ea753317b4fb1619dd12d372e58d33dafd9983b64cd661b006733e5218",
+      "afterPngSha256": "b5e3bcd779bec45c58a1a87e76153d3e9b94ce0e0cbebf96aa70a4a580b035dd",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "boundary": "metric-summary-390",
+      "beforePngSha256": "305283f1ecef4642630b5cb14905b0b1128d4cc399e6cc1bc5ce5a72717d4535",
+      "afterPngSha256": "a236e9f78bda6d904318b5b8c100f4fbf6862fd1b2d9f2b64686aa6596692ff6",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "boundary": "metric-task-390",
+      "beforePngSha256": "1f65d7c0d3543f7eb1e3e194b7cee568ed263dd12d826ed600a9f661edc41705",
+      "afterPngSha256": "f50bc5a3a2f6a007051bc10df4e0efdb7a74c56d1280f4dca588115ddbdafdb0",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "boundary": "download-ready-390",
+      "beforePngSha256": "ca9150c17924c822a1d9f13823051aa74077ea15393df57becb04130188046eb",
+      "afterPngSha256": "13a8293d19cca4be3a0ff287eef0315b691bfe498f519cc5315a278902c31d1d",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "boundary": "metric-provenance-390",
+      "beforePngSha256": "6c07885df2abead72beb98bf94a62152dbe6c0dae04ecc20c62e39adb7dac7c9",
+      "afterPngSha256": "be97a632d0d1607edd7aa6f2e4cc4b5b959077a66fbc3934640d415a2e6c1b8a",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "boundary": "metric-summary-768",
+      "beforePngSha256": "739861266fb15513aef98280e9de2b678c3e0c40d33c568b4b962af1f2f2905f",
+      "afterPngSha256": "08c3b13a47bda12b4522a8e1374d7c2af13d08864dd5ad3eb75fe758d4fe6d9f",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "boundary": "metric-task-768",
+      "beforePngSha256": "23b7cc9d896e74592406808637308b4e99b4d1f09fe262b3ea91b12b21235cc2",
+      "afterPngSha256": "55ebfbd22422760feee44e271a19d700b75d2ac3bbb9c576276baa9705393df4",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "boundary": "download-ready-768",
+      "beforePngSha256": "23b7cc9d896e74592406808637308b4e99b4d1f09fe262b3ea91b12b21235cc2",
+      "afterPngSha256": "55ebfbd22422760feee44e271a19d700b75d2ac3bbb9c576276baa9705393df4",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "boundary": "metric-provenance-768",
+      "beforePngSha256": "0f70da6d7d21d34d3497aae3ff4b446f523d147f76d0add144d9eaf0961d9320",
+      "afterPngSha256": "9cc5068b5a94f5a0badb99fc51598c4e33af1b2316a331ac1fbfd37098552da8",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "boundary": "metric-summary-1024",
+      "beforePngSha256": "481cdfd0ebfcfe9eb5f992a855b6a91c0a28156c2d066ea28e9795e779596fe3",
+      "afterPngSha256": "ca892ba7a02372c5ab5b1e9931e42ca692c5a8a6a0d7cdd7f370b52366ffeaf1",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "boundary": "metric-task-1024",
+      "beforePngSha256": "77cc56a2eb3cc19c8f3ebb94179466084ad3a73d0ac424fda4389211fbd10e31",
+      "afterPngSha256": "ce9b74082b24bf880ec9dd842024163bdb5a35715d2c95c0e845fff8a23ff1c7",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "boundary": "download-ready-1024",
+      "beforePngSha256": "40de954afc3e6b460380f81c85fae5f1cce55be063a52e21855fe1381cb20e49",
+      "afterPngSha256": "b2e6fe76b40b9060f30c3d308a1b5c2fb6b7020e1d524feca031c224f9756010",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "boundary": "metric-provenance-1024",
+      "beforePngSha256": "1553114b07012e1bbb395d13941315a7c440c743b3318ae5b28806a75f2a75ed",
+      "afterPngSha256": "102f031312142b525541dc8362845f28b89914f80ac13068ca7b9ed0f3aacc4c",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1440,
+        960
+      ],
+      "boundary": "metric-summary-1440",
+      "beforePngSha256": "e7765c3b2d233f5b2719ed3beba548c7d740d6516d2788fce99ac941388e693d",
+      "afterPngSha256": "c9d730313c77c6dbd2abca6d39fa069de583e6e0e034299bd9f53ed564602397",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1440,
+        960
+      ],
+      "boundary": "metric-task-1440",
+      "beforePngSha256": "1d69bed3ee6cac414dda4fc69b8f9a811e8ba2088c49336e8c17d64dbe940220",
+      "afterPngSha256": "2823db6a3d97da04743066a89467d2be0b070174af76e921d6f4e0fcdbea3154",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1440,
+        960
+      ],
+      "boundary": "download-ready-1440",
+      "beforePngSha256": "1d69bed3ee6cac414dda4fc69b8f9a811e8ba2088c49336e8c17d64dbe940220",
+      "afterPngSha256": "2823db6a3d97da04743066a89467d2be0b070174af76e921d6f4e0fcdbea3154",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1440,
+        960
+      ],
+      "boundary": "metric-provenance-1440",
+      "beforePngSha256": "e43a94c650adeafb298fc2c4622618745f12bfe2056510b9683a512512c7191a",
+      "afterPngSha256": "a881f4cf254d226034a0eac88fe3126572d71d2497974c2ca032fb081493d6b5",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "boundary": "metric-summary-1920",
+      "beforePngSha256": "596a170d5131cb6750c949e540b7ef327235bf01adc3be980c98c16893f8a268",
+      "afterPngSha256": "68fa48ac5c20ac3ae5c19f896808a22718fc8b7334df7253ec12c595f5635ed8",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "boundary": "metric-task-1920",
+      "beforePngSha256": "ec62c34dbcd2dfeb33d76410f2f135ee21ad29628c7489f058159ab9821dd842",
+      "afterPngSha256": "0cb9bcd025332b03750f47e93d64fd1a5916d26484fd63ff2ff181011129ae8e",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "boundary": "download-ready-1920",
+      "beforePngSha256": "146620f8e34453db4c4df9b6c5c721c226cbc6f7dab5a16218f78c1cdff650da",
+      "afterPngSha256": "db938cc7c2e6d38a7d4a6979565e6c814b97c7b73bb7f47a3284078a36c78654",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "boundary": "metric-provenance-1920",
+      "beforePngSha256": "0a3b9e5052d9b1a58ef5b26fd864b37cccf3d42dd488c17cbe2a830a037dfe97",
+      "afterPngSha256": "e4bebfe94ffa8333779f91c2f0778abeab4f419f757a904780d63573fc26e35f",
+      "metricTextBackgroundDeltaExact": true,
+      "metricCount": 13
+    }
+  ],
+  "beforeSource": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1",
+  "afterSource": "e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176",
+  "metricLabelValueContrastBefore": 1.4773303916671445,
+  "metricLabelValueContrastAfter": 14.951894952605645,
+  "snapshotTextContrastAfter": 12.530577405397876,
+  "snapshotTextContrastProvisional": 3.695805600418627,
+  "metricAndSnapshotEffectiveOpacity": 1,
+  "limits": [
+    "Metric label/value foreground only; exact baseline delta styling preserved, not graded",
+    "Actual screenshots accompany computed comparisons",
+    "No complete visual/accessibility grade"
+  ]
+}
