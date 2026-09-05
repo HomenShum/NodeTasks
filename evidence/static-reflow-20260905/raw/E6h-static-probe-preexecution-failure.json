@@ -1,0 +1,11 @@
+{
+  "status": "HARNESS_MODULE_LOAD_FAILURE_RETAINED",
+  "toolChunk": "25b081",
+  "error": "ERR_UNSUPPORTED_ESM_URL_SCHEME: received protocol d:",
+  "cause": "Windows absolute path passed as a bare dynamic ESM import specifier",
+  "correction": "pathToFileURL(...).href in external recorder only",
+  "beforeOutputDirectoryCreation": true,
+  "productFileEdits": 0,
+  "runtimeStarted": false,
+  "correctedRunReceipt": "E6h-nodetasks-static-causal-before-01/report.json"
+}

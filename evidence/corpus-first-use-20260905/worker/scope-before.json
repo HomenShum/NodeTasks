@@ -1,0 +1,59 @@
+{
+  "at": "2026-09-05T17:01:20.791806+00:00",
+  "root": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+  "baseCommit": "8e9b6495ba3bf716549825d05f48faaefc73dcfb",
+  "actualBaseTree": "47bfab14eec7149a288a0ccd09be857fbfe70c2f",
+  "all1279Unchanged": true,
+  "owned": [
+    {
+      "path": "nodekit.yaml",
+      "sha256": "002d400bf51e114674bbacb6703108ab7bad8007eb465758e077ed8145cb656c",
+      "bytes": 2049
+    },
+    {
+      "path": "docs/UPSTREAM_PROVENANCE.md",
+      "sha256": "a93d62e1d737d868ff87e609b738c808e3cad1d1e1466e33dab8d8d6b74e1dbd",
+      "bytes": 2248
+    },
+    {
+      "path": "README.md",
+      "sha256": "f86007d53e7eb4c6031c83f3c32a11b422e7f8f7b91fda3bcc76990529bf3a07",
+      "bytes": 8395
+    },
+    {
+      "path": "docs/NODEAGENT_BRIDGE.md",
+      "sha256": "f0ec82d3af3f1e2075123f312159ffe1535ea2aff2040a940a80d55bcdae07d2",
+      "bytes": 1847
+    },
+    {
+      "path": "test/corpus-validation.test.mjs",
+      "sha256": "529bb15efe68e218078ba5f8de29272ce5a43000b39c16e54208a5802fe4d642",
+      "bytes": 3303
+    },
+    {
+      "path": "scripts/validate-catalog.mjs",
+      "sha256": "e1e0fd1a57accfa865be7e5cee14c7f5e241dbd6f9e3f420acc0f21d1755cac5",
+      "bytes": 15380
+    },
+    {
+      "path": "HANDOFF.md",
+      "before": "ABSENT"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "before": "ABSENT"
+    }
+  ],
+  "evidenceOwner": "evidence/corpus-first-use-20260905/",
+  "validReceiptSha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357",
+  "constraints": [
+    "No catalog/schema/vendor/package/UI payload changes",
+    "No receipt regeneration",
+    "No provider/benchmark/Office/hook calls",
+    "No hostile concurrent filesystem-swap claim"
+  ],
+  "primaryReferences": [
+    "https://nodejs.org/docs/latest-v22.x/api/fs.html",
+    "https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file"
+  ]
+}

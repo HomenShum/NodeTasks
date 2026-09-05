@@ -1,0 +1,18 @@
+# NodeTasks static reflow: scoped criterion addendum
+
+The repaired static search page preserves result text at all seven exercised widths. Its scoped **R1 observation is 5/5** against the frozen reflow cases. This is a source-bound agent observation, not a complete application grade. The original [44-row assessment](E6h_NODETASKS_CRITERION_ASSESSMENT.json) remains byte-exact; all eight full dimensions and every final score stay null.
+
+| Exact criterion | Current static observation | Score and retained limit |
+| --- | --- | --- |
+| R1 Reflow/content preservation | The old 270/230/200px phone overflow is closed. Seven widths, empty/200-result recovery, computed doubled text and native End preserve complete result/reference text. | Scoped observed 5; complete application final score null. |
+| R3 modal/panel/table/canvas adaptation | Static result cards wrap completely. | No new complete criterion score; Streamlit metric ellipsis and other panel coverage remain. |
+| R5 stability under zoom, long content and declared locales | Computed fonts double exactly; long reference tails remain readable at 320 and 390. | Null; native zoom and locale combinations are NOT_RUN. |
+| A4 text resize/reflow and target size | Static content loss is closed and native End reaches the complete reference tail. | Null; target-size/native-zoom coverage is incomplete, and the separate Streamlit enlarged header remains held. |
+
+The [final source judgment](E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.json) binds the three owners at source digest `a57916b759182033133bd18538caabd26e23f84012e265992779fda6993fa145`. The original assessment JSON remains `f63f57d3400cf448e0ed3ec4adafabcdfb3ce3ca23dd12f53a3e54862022d957`. These observations do not recalculate its values, erase header/caption/metric deductions or award a readiness label.
+
+See the actual [320px doubled-text tail](E6h-nodetasks-static-final-judge/native-end-02/320-native-end.png), [390px tail](E6h-nodetasks-static-final-judge/native-end-02/390-native-end.png), and [full current matrix](E6h-nodetasks-static-browser-01/report.json). Complete platform, fresh-human, performance and production coverage remains outstanding. No further broad test run was made to produce this addendum.
+
+**Re your request:** include visual, responsive and interaction gradings — the resolved static reflow receives an explicit bounded observation, while missing coverage stays visible rather than being converted into a full score.
+
+Structured addendum SHA-256: `7e599ab406bfa9472a558d1d20e1eb68a2dddaa1223eb75f09871f28fe6648b3`.

@@ -1,0 +1,104 @@
+[
+  {
+    "document": "HANDOFF.md",
+    "target": "README.md",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "HANDOFF.md",
+    "target": "docs/UPSTREAM_PROVENANCE.md",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "HANDOFF.md",
+    "target": "evidence/corpus-first-use-20260905/README.md",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "../../HANDOFF.md",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/source-freeze.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/source.diff",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/current-check-02.log",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/nodekit-current-check.log",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "context/E6h-nodetasks-path-baseline-01.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/path-after.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/browser-first-07/report.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "baseline/baseline.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/python-current-freeze.log",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "worker/installed-bindings.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "ui-before-labelled/report.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "ui-before-original/report.json",
+    "exists": true,
+    "actualExists": true
+  },
+  {
+    "document": "evidence/corpus-first-use-20260905/README.md",
+    "target": "context/E6h_NODETASKS_UI_FOLLOWON_PLAN.md.txt",
+    "exists": true,
+    "actualExists": true
+  }
+]

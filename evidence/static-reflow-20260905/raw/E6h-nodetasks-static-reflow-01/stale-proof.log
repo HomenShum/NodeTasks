@@ -1,0 +1,5 @@
+
+> nodetasks@0.1.0 proof
+> node scripts/validate-catalog.mjs --check-receipt
+
+- proof/corpus-receipt.json is stale; run npm run validate

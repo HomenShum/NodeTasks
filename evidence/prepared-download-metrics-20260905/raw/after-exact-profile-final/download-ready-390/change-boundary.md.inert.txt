@@ -1,0 +1,15 @@
+# UI change boundary
+
+Route: http://127.0.0.1:54531/?view=public-node-repo-proofs
+Viewport: 390x844
+Theme: natural default light; no theme override
+Session: fresh local, unsigned, empty endpoint
+Fixture: unchanged public-node-repo-proofs saved view (15 rows)
+
+## CHANGE B · Filtered JSON export — after comparison
+
+Before: one enabled download button held bytes from the previous server run. After: explicit preparation of the current filtered, Rows-limited snapshot before download, with truthful count/context and recovery. A completed snapshot is immutable; any later edit requires preparing again. Do not imply that an earlier file represents pending edits.
+
+Out of scope: catalog task IDs/order/score/provenance, ranked-table data, other tabs, local answers, provider behavior, sidebar filter semantics. This is the repaired source; the original before packet remains immutable. No further UI edit occurred during capture.
+
+The 3px annotation is temporary DOM-only; exact DOM restoration passed. Source SHA-256: e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176.

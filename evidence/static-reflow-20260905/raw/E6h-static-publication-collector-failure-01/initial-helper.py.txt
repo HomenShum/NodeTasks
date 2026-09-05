@@ -1,0 +1,152 @@
+import hashlib,json,re,subprocess,sys
+from pathlib import Path,PurePosixPath
+from datetime import datetime,timezone
+sys.stdout.reconfigure(encoding='utf-8')
+P=Path(__file__).resolve().parent
+R=Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905')
+T=R/'evidence/static-reflow-20260905'
+O=P/'E6h-nodetasks-static-publication-01'
+def sha(data):return hashlib.sha256(data).hexdigest()
+def blob(data):return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+def write(path,value):path.write_text(json.dumps(value,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
+def git(*args,data=None):return subprocess.check_output(['git','--no-optional-locks',*args],cwd=R,input=data)
+assert sha((P/'E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.json').read_bytes())=='e209dc3bbbb9e2edca89792a41d753f043f3c762d336493bce3639dfe8ba2e23'
+prepared=json.loads((P/'E6h_NODETASKS_PREPARED_UI_FREEZE.json').read_text(encoding='utf-8'))
+for e in prepared['effectiveFiles']:assert sha((R/e['path']).read_bytes())==e['sha256'],e['path']
+static=json.loads((P/'E6h_NODETASKS_STATIC_REFLOW_FREEZE.json').read_text(encoding='utf-8'))
+for e in static['source']:assert sha((R/e['path']).read_bytes())==e['sha256'],e['path']
+guards={k:sha(git(*a)) for k,a in {'head':['rev-parse','HEAD'],'refs':['show-ref'],'index':['ls-files','--stage','-z']}.items()}
+O.mkdir();T.mkdir()
+(O/'HANDOFF-before.md.txt').write_bytes((R/'HANDOFF.md').read_bytes())
+raw=set(e['path'] for e in static['artifacts'])
+for manifest in ['E6h-nodetasks-ui-independent-source-preflight/artifact-manifest.json','E6h-nodetasks-static-final-judge/independent-evidence-manifest.json']:
+ d=json.loads((P/manifest).read_text(encoding='utf-8'))
+ for e in d['artifacts']:
+  assert sha((P/e['path']).read_bytes())==e['sha256'],e['path'];raw.add(e['path'])
+ raw.add(manifest)
+for name in ['E6h_NODETASKS_PREPARED_UI_FINAL_JUDGE','E6h_NODETASKS_CRITERION_ASSESSMENT','E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE','E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE','E6h_NODETASKS_STATIC_CRITERION_ADDENDUM']:
+ raw.update([name+'.md',name+'.json'])
+raw.update(['E6h_NODETASKS_STATIC_REFLOW_FREEZE.json','E6h_NODETASKS_STATIC_REFLOW_PLAN.md','E6h_NODETASKS_STATIC_REFLOW_PLAN_JUDGE.json','E6h-verify-static-reflow.mjs','E6h-probe-static-reflow.mjs','E6h-implement-static-reflow.py','E6h-check-static-reflow.py','E6h-static-probe-preexecution-failure.json'])
+mapping=[]
+inert={'.md','.py','.mjs','.js','.ts','.tsx','.yaml','.yml','.html','.toml','.sh','.ps1','.bat','.cmd'}
+for name in sorted(raw):
+ src=P/name;assert src.is_file(),name
+ rel='raw/'+name+('.txt' if src.suffix.lower() in inert else '')
+ dest=T/rel;dest.parent.mkdir(parents=True,exist_ok=True);data=src.read_bytes();dest.write_bytes(data)
+ mapping.append({'path':rel,'operatorPath':name,'bytes':len(data),'sha256':sha(data),'gitBlob':blob(data)})
+write(T/'raw-copy-map.json',mapping)
+(T/'.gitattributes').write_text('** -text\n',encoding='utf-8',newline='\n')
+# Reuse the proven assertions with repository-relative inputs, explicit fresh output and owned cleanup.
+(R/'scripts/verify-static-reflow.mjs').write_bytes((P/'E6h-verify-static-reflow-portable.mjs').read_bytes())
+handoff=(R/'HANDOFF.md').read_text(encoding='utf-8')
+old='The current prepared-download, metric-text and finite-CI follow-on awaits independent review; this is not a publication or deployment claim.'
+new='The prepared-download/metric/finite-CI follow-on and the separate static reflow have independent source and UI evidence approval. Their portable supplement is under final publication review; committed-head shared CI remains pending.'
+assert old in handoff;handoff=handoff.replace(old,new)
+old='The normal valid receipt remains byte-for-byte unchanged.'
+new='That path-boundary repair preserved the original valid receipt. The later reviewed static reflow intentionally changes only the generated HTML byte count/hash and derived corpus hash; all task, source and score-boundary fields remain identical.'
+assert old in handoff;handoff=handoff.replace(old,new)
+old="The separate static HTML browser's selected result still overflows at narrow widths; it is outside this repair."
+new="The separate static HTML search page now wraps complete task identifiers and source references at all seven tested viewport pairs. Its existing generator owns five CSS clauses; 30 actual before/after search result comparisons remain exact. The ordinary generator changes only HTML among 18 catalog/schema artifacts. The old receipt fails as stale before intentional validation changes its HTML byte count/hash and aggregate corpus hash. Normal npm run check passes with all five scenarios. Independent native End captures show both complete source-reference tails with doubled computed fonts at 320 and 390; the static R1 observation is 5/5 within that scope. Read the [static repair and independent prepared-context supplement](evidence/static-reflow-20260905/README.md)."
+assert old in handoff;handoff=handoff.replace(old,new)
+old='The original valid receipt is preserved; use `npm run proof` to check it.'
+new='The original valid receipt is preserved in the static supplement; `npm run proof` checks the current intentional receipt. The prepared-download packet is also a historical source snapshot: its default verifier still verifies its exact portable bytes, while `--source-root .` now correctly differs for the later handoff/static owners. The new supplement verifier checks the current combined source and protected files.'
+assert old in handoff;handoff=handoff.replace(old,new)
+handoff+='''
+
+## Repeat the static reflow proof
+
+After npm ci and Chromium installation, choose a new output directory:
+
+```powershell
+node scripts/verify-static-reflow.mjs ..\\nodetasks-static-proof
+python evidence/static-reflow-20260905/verify.py --source-root .
+```
+
+The recorder serves the committed public HTML/search index on one owned random loopback port. It compares native searches/filters/quick buttons and repeated/keyboard results with the retained pre-repair HTML, then captures all seven viewport pairs, empty/200-result recovery and simultaneous doubling of each computed element font. It rejects horizontal document/text overflow, records DOM/pixels/errors, blocks browser egress and closes its browser/server. It does not execute the listed tasks, call a provider, alter the corpus or measure native browser zoom. The independent End-tail evidence is a separate retained check, not an action this recorder claims to perform.
+
+The original [44-criterion assessment](evidence/static-reflow-20260905/raw/E6h_NODETASKS_CRITERION_ASSESSMENT.md.txt) contains 33 bounded observations and 11 NOT_RUN at its prepared-UI source freeze. The [static addendum](evidence/static-reflow-20260905/raw/E6h_NODETASKS_STATIC_CRITERION_ADDENDUM.md.txt) supersedes only the demonstrated static overflow. Legacy caption contrast, Streamlit metric ellipsis and enlarged header clipping remain explicit. All full dimension scores remain null.
+'''
+(R/'HANDOFF.md').write_text(handoff,encoding='utf-8',newline='\n')
+readme='''# Readable static task search and independent prepared-file proof
+
+A developer opening the static search page on a phone needs the whole task identifier and source references. Long tokens previously forced the grid wider than the viewport. Five CSS clauses at the existing catalog generator let its grid, summary and result text wrap. Search ranking, escaping, the 200-result limit, eight tags and four references remain unchanged.
+
+Read [the handoff](../../HANDOFF.md) for installation and the reusable static/browser commands. This packet supplements the unchanged earlier corpus and prepared-download packets. It does not replace their original failures or source identities.
+
+## Verified scope
+
+- [Final independent static judgment](raw/E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.md.txt): three source owners, 2,425 protected files and all 598 prepared-UI files exact at that review.
+- [Native matrix](raw/E6h-nodetasks-static-browser-01/report.json): 30 before/after search-result comparisons, 37 captures plus four labelled copies; seven exact viewport pairs, empty/200 recovery and doubled computed fonts. Normal 1440 selected pixels are byte-identical before/after.
+- [320 reference tail](raw/E6h-nodetasks-static-final-judge/native-end-02/320-native-end.png) and [390 reference tail](raw/E6h-nodetasks-static-final-judge/native-end-02/390-native-end.png): independent trusted End actions show the complete final source strings. The first recorder's wrong selector and separate corrected run are retained.
+- [Causal probe](raw/E6h-nodetasks-static-causal-before-01/report.json): current390px document overflow changes200→0→200 when only the CSS probe is added/removed, with exact result text.
+- [Generator/receipt delta](raw/E6h-nodetasks-static-reflow-01/receipt.json): all other17generated artifacts exact; real stale proof exits1 before ordinary validation changes only HTMLbytes/hash and corpusHash. The unchanged normal [check](raw/E6h-nodetasks-static-check-01/normal-check.log) passes in90.5seconds.
+- [Prepared UI final judgment](raw/E6h_NODETASKS_PREPARED_UI_FINAL_JUDGE.md.txt) and [settled details](raw/E6h-nodetasks-ui-independent-source-preflight/settled-context-01/report.json): independent390/1440 native preparation/download produces two exact one-row files; all12nondefault filter fields are visibly expanded. This closes the earlier worker animation-caught screenshot gap without relabelling that frame.
+
+The original [44 criteria](raw/E6h_NODETASKS_CRITERION_ASSESSMENT.md.txt) have33bounded observations and11NOT_RUN at the pre-static source. The [static addendum](raw/E6h_NODETASKS_STATIC_CRITERION_ADDENDUM.md.txt) gives staticR1 observed5/5 only. All full dimensions stay null; Streamlit header/caption/ellipsis, real devices, native zoom, assistive technology, human use, performance and provider/production coverage remain open. Corpus releaseReady describes deterministic content validation, not application or benchmark readiness.
+
+## Verify and reproduce
+
+```powershell
+python evidence/static-reflow-20260905/verify.py
+python evidence/static-reflow-20260905/verify.py --source-root .
+node scripts/verify-static-reflow.mjs ..\\nodetasks-static-proof
+```
+
+The standard-library verifier checks exact manifest payloads, and optionally current source plus unchanged protected files without Git metadata. The current reusable recorder derives paths from this checkout; it retains the original proven assertions while adapting source/output paths and closing the server even if browser startup fails. Its runtime receipt is appended separately after that portable entrypoint is checked.
+
+[Raw-copy map](raw-copy-map.json) maps unchanged operator evidence to portable paths. Historical code/config/Markdown/HTML is inert text, and raw bytes are protected from Git newline conversion. Absolute operator paths within historical receipts are provenance, not paths a recipient must possess. Some historical receipt references point to earlier unchanged packets or operator manifests; use the map and manifests to locate retained evidence. This packet does not claim every file on the operator's machine was copied. No environment file, credential, private database or browser profile is included.
+
+Current product source approval is separate from this publication review and actual shared CI. No deployment or whole-product certificate is asserted.
+'''
+(T/'README.md').write_text(readme,encoding='utf-8',newline='\n')
+verifier='''import argparse, hashlib, json
+from pathlib import Path, PurePosixPath
+
+parser=argparse.ArgumentParser(description="Verify the portable static reflow supplement and optional current source")
+parser.add_argument("--source-root",type=Path)
+args=parser.parse_args()
+root=Path(__file__).resolve().parent
+manifest_path=root/"manifest.json"
+assert manifest_path.stat().st_size<4*1024*1024,"oversized manifest"
+manifest=json.loads(manifest_path.read_text(encoding="utf-8"))
+def check(base,entry):
+    rel=PurePosixPath(entry["path"])
+    assert not rel.is_absolute() and ".." not in rel.parts and "\\\\" not in entry["path"] and ":" not in entry["path"],entry["path"]
+    path=base.joinpath(*rel.parts)
+    assert path.resolve().is_relative_to(base.resolve()),entry["path"]
+    assert path.is_file() and path.stat().st_size==entry["bytes"],entry["path"]
+    assert hashlib.sha256(path.read_bytes()).hexdigest()==entry["sha256"],entry["path"]
+assert len(manifest["files"])<2000
+for entry in manifest["files"]:check(root,entry)
+if args.source_root:
+    for entry in manifest["source"]+manifest["protected"]:check(args.source_root,entry)
+print(json.dumps({"status":"PASS","payloads":len(manifest["files"]),"source":len(manifest["source"]) if args.source_root else "NOT_REQUESTED","protected":len(manifest["protected"]) if args.source_root else "NOT_REQUESTED","scope":"Exact retained bytes only; not rerun runtime proof or a readiness grade"}))
+'''
+(T/'verify.py').write_text(verifier,encoding='utf-8',newline='\n')
+owners=['apps/nodetasks_streamlit.py','scripts/verify-first-use.mjs','.github/workflows/ci.yml','scripts/build-catalog.mjs','catalog/task-browser.html','proof/corpus-receipt.json','scripts/verify-static-reflow.mjs','HANDOFF.md']
+def binding(path):
+ data=(R/path).read_bytes();return {'path':path,'bytes':len(data),'sha256':sha(data),'gitBlob':blob(data)}
+current=[binding(path) for path in owners]
+before=json.loads((P/'E6h-nodetasks-static-reflow-01/source-before.json').read_text(encoding='utf-8'))
+protected=[]
+for e in before:
+ if e['path'] in owners:continue
+ assert sha((R/e['path']).read_bytes())==e['sha256'],e['path'];protected.append(e)
+payloads=[]
+for path in sorted(T.rglob('*')):
+ if path.is_file():
+  data=path.read_bytes();payloads.append({'path':path.relative_to(T).as_posix(),'bytes':len(data),'sha256':sha(data),'gitBlob':blob(data)})
+write(T/'manifest.json',{'schema':'nodetasks.static-reflow-publication/v1','at':datetime.now(timezone.utc).isoformat(),'files':payloads,'source':current,'protected':protected,'rawCopies':len(mapping),'sourceProofScope':'Two separately approved source freezes plus current handoff/portable recorder under publication review','sharedCi':'NOT_RUN','fullGrades':None})
+effective={e['path']:binding(e['path']) for e in prepared['effectiveFiles']}
+effective.update({e['path']:e for e in current})
+for path in sorted(T.rglob('*')):
+ if path.is_file():rel=path.relative_to(R).as_posix();effective[rel]=binding(rel)
+rows=sorted(effective.values(),key=lambda e:e['path'])
+filtered=git('hash-object','--stdin-paths',data=''.join(e['path']+'\n' for e in rows).encode()).decode().splitlines()
+assert len(filtered)==len(rows)
+for e,h in zip(rows,filtered):assert h==e['gitBlob'],e['path']
+for key,args in {'head':['rev-parse','HEAD'],'refs':['show-ref'],'index':['ls-files','--stage','-z']}.items():assert sha(git(*args))==guards[key],key
+for args,name in [(['python',str(T/'verify.py')],'portable'),(['python',str(T/'verify.py'),'--source-root',str(R)],'portable-source')]:
+ result=subprocess.run(args,cwd=R,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);(O/(name+'.log')).write_bytes(result.stdout);assert result.returncode==0,result.stdout
+write(O/'receipt.json',{'status':'PORTABLE_PACKET_PREPARED_SOURCE_EXACT','at':datetime.now(timezone.utc).isoformat(),'root':str(R),'packet':str(T),'rawCopies':len(mapping),'payloads':len(payloads),'protectedUnchanged':len(protected),'effectiveFiles':rows,'source':current,'gitGuardsUnchanged':guards,'futureGitBlobChecks':len(rows),'portableRecorderRuntime':'NOT_RUN','independentPublicationJudge':'PENDING'})
+print(json.dumps({'status':'PORTABLE_PACKET_PREPARED_SOURCE_EXACT','rawCopies':len(mapping),'payloads':len(payloads),'effectiveFiles':len(rows),'protected':len(protected),'packet':str(T)}))

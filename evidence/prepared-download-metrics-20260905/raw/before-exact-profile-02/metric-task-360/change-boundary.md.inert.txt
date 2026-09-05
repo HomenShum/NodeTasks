@@ -1,0 +1,15 @@
+# UI change boundary
+
+Route: http://127.0.0.1:54531/?view=public-node-repo-proofs
+Viewport: 360x800
+Theme: natural default light; no theme override
+Session: fresh local, unsigned, empty endpoint
+Fixture: unchanged public-node-repo-proofs saved view (15 rows)
+
+## CHANGE A · Task metric contrast
+
+Current: task-detail metrics share the same dark-on-dark style. Expected: the same scoped metric foreground repair also keeps task-detail values readable; no changed facts.
+
+Out of scope: catalog task IDs/order/score/provenance, ranked-table data, other tabs, local answers, provider behavior, sidebar filter semantics. No UI edit has occurred.
+
+The 3px annotation is temporary DOM-only; exact DOM restoration passed. Source SHA-256: 0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1.

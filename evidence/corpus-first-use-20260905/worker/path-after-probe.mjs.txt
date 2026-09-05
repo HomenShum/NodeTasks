@@ -1,0 +1,65 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import fsp from 'node:fs/promises';
+import { syncBuiltinESMExports } from 'node:module';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { createHash } from 'node:crypto';
+
+const source='D:/ProjectRecovery/nodetasks-current-consumer-20260905';
+const fixture=path.resolve('D:/ProjectRecovery/nodetasks-path-fixture-20260905');
+const out=path.dirname(fileURLToPath(import.meta.url));
+const parentPacket=path.dirname(out);
+const reportPath=path.join(out,'path-after.json');
+assert(fs.existsSync(fixture));assert(!fs.existsSync(reportPath));
+const hash=b=>createHash('sha256').update(b).digest('hex');
+const exportReceipt=JSON.parse(fs.readFileSync(path.join(parentPacket,'E6h-nodetasks-source-export-01/source-export.json'),'utf8'));
+const indexPath=path.join(fixture,'catalog/source-files.json');
+const originalIndex=fs.readFileSync(indexPath);
+const sentinel=Buffer.from('Owned harmless corpus boundary probe. No credentials.\n');
+const sentinels={
+  traversal:path.join(fixture,'fixture-sentinel.txt'),
+  blockedName:path.join(fixture,'upstream/noderoom/secret-fixture.txt'),
+  parentLink:path.join(fixture,'owned-probe-dir/regular.txt'),
+};
+for(const destination of Object.values(sentinels)){
+  assert(path.resolve(destination).startsWith(fixture+path.sep));
+  assert(fs.readFileSync(destination).equals(sentinel));
+}
+const link=path.join(fixture,'upstream/noderoom/linked-parent');
+const linkSupported=fs.lstatSync(link).isSymbolicLink(),linkError=null;
+assert(linkSupported);assert.equal(fs.realpathSync(link).toLowerCase(),path.join(fixture,'owned-probe-dir').toLowerCase());
+const originalRead=fsp.readFile;let observed=[];
+fsp.readFile=async function(file,...args){
+  const name=path.resolve(file instanceof URL?fileURLToPath(file):String(file));
+  let actual=name;
+  if(name.startsWith(fixture+path.sep) && fs.existsSync(name))actual=fs.realpathSync(name);
+  if(Object.values(sentinels).some(p=>p.toLowerCase()===actual.toLowerCase())){
+    observed.push({requested:path.relative(fixture,name).split(path.sep).join('/'),actual:path.relative(fixture,actual).split(path.sep).join('/')});
+  }
+  return originalRead.call(this,file,...args);
+};
+syncBuiltinESMExports();
+const {validateCatalog}=await import(pathToFileURL(path.join(source,'scripts/validate-catalog.mjs')).href);
+const cases=[['traversal','upstream/noderoom/../../fixture-sentinel.txt'],['blockedName','upstream/noderoom/secret-fixture.txt']];
+if(linkSupported)cases.push(['parentLink','upstream/noderoom/linked-parent/regular.txt']);
+const results=[];
+try{
+  for(const [label,relative] of cases){
+    const index=JSON.parse(originalIndex);index.files[0]={...index.files[0],path:relative,bytes:sentinel.length,sha256:hash(sentinel)};
+    fs.writeFileSync(indexPath,JSON.stringify(index,null,2)+'\n'); observed=[];
+    const result=await validateCatalog(fixture);
+    results.push({label,indexedPath:relative,actualSentinelReads:observed.length,reads:observed,problems:result.problems,catalogPassed:result.receipt.passed,sourceIndexValid:result.receipt.sourceIndexValid});
+    assert.equal(observed.length,0,label+' repaired boundary must prevent the actual read');
+    assert.equal(result.receipt.passed,false);assert.equal(result.receipt.sourceIndexValid,false);
+  }
+}finally{
+  fs.writeFileSync(indexPath,originalIndex);fsp.readFile=originalRead;syncBuiltinESMExports();
+}
+const owned=new Set(['nodekit.yaml','docs/UPSTREAM_PROVENANCE.md','README.md','docs/NODEAGENT_BRIDGE.md','test/corpus-validation.test.mjs','scripts/validate-catalog.mjs','scripts/doctor.mjs']);
+const protectedBindings=exportReceipt.bindings.filter(e=>!owned.has(e.path));
+const unchanged=protectedBindings.every(e=>hash(fs.readFileSync(path.join(source,e.path)))===e.sha256);
+assert(unchanged);assert(fs.readFileSync(indexPath).equals(originalIndex));
+const report={at:new Date().toISOString(),status:'FORBIDDEN_READS_PREVENTED_ON_REPAIRED_VALIDATOR',source,fixture,validatorSha256:hash(fs.readFileSync(path.join(source,'scripts/validate-catalog.mjs'))),results,parentJunctionSupported:linkSupported,parentJunctionError:linkError,protectedSourceUnchanged:unchanged,protectedSourceFiles:protectedBindings.length,fixtureIndexRestored:true,scope:'The three retained known harmless sentinels were replayed against the current validator. Original fixture index restored exactly; sentinel/link bytes remain unchanged. No outside/private file was read. The wrapper calls the original filesystem read unchanged; exit status is not used as a proxy for read safety. No hostile concurrent filesystem-swap guarantee.'};
+fs.writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({status:report.status,cases:results.map(({label,actualSentinelReads,catalogPassed})=>({label,actualSentinelReads,catalogPassed})),parentJunctionSupported:linkSupported,protectedSourceUnchanged:unchanged,protectedSourceFiles:protectedBindings.length}));

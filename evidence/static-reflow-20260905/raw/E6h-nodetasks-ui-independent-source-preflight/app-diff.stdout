@@ -1,0 +1,43 @@
+diff --git a/apps/nodetasks_streamlit.py b/apps/nodetasks_streamlit.py
+index 9d82e11..a37b2c0 100644
+--- a/apps/nodetasks_streamlit.py
++++ b/apps/nodetasks_streamlit.py
+@@ -72,6 +72,10 @@ st.markdown(
+       border-radius: 8px;
+       padding: 10px 12px;
+     }
++    div[data-testid="stMetric"] [data-testid="stMetricLabel"],
++    div[data-testid="stMetric"] [data-testid="stMetricValue"] {
++      color: #e5e7eb;
++    }
+     .nt-chip {
+       display: inline-block;
+       border: 1px solid #2b333c;
+@@ -460,7 +464,26 @@ with tab_search:
+         selected = task_by_id(tasks, selected_id)
+         if selected:
+             render_task_card(selected)
+-    st.download_button("Download filtered JSON", data=shown.to_json(orient="records", indent=2), file_name="nodetasks-filtered.json", mime="application/json")
++    if st.button("Prepare filtered JSON"):
++        prepared_json = shown.to_json(orient="records", indent=2)
++        st.write(f"Prepared {len(shown):,} of {len(ranked):,} matching tasks · Rows limit {limit}")
++        st.write("Download uses this prepared snapshot. After editing filters, prepare again.")
++        with st.expander("Prepared filters"):
++            st.json({
++                "Search": query,
++                "Persona": persona,
++                "Saved view": saved_view,
++                "Domain": domains,
++                "Kind": kinds,
++                "Difficulty": difficulty,
++                "Cost tier": cost_tiers,
++                "Tag contains": tag_query,
++                "Sort": sort_label,
++                "Rows": limit,
++                "Exported rows": len(shown),
++                "Matching tasks": len(ranked),
++            })
++        st.download_button("Download prepared JSON", data=prepared_json, file_name="nodetasks-filtered.json", mime="application/json", on_click="ignore")
+ 
+ with tab_hierarchy:
+     st.subheader("Domain hierarchy")

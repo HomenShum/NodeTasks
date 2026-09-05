@@ -1,0 +1,19 @@
+# NodeTasks unchanged baseline judgment
+
+Mode: Builder. **Baseline accepted; the expected NodeKit failure stays failed.** A new developer can install this exact source export, run the existing doctor/tests/corpus proof and search five public task records without Git metadata. This is the finite CLI baseline, not the completed user workflow.
+
+**Re your request:** prepare repositories for usable developer/user handoff through planner-worker-judge. This independently verifies the preserved NodeTasks source export and actual initial commands without repeating them.
+
+17/17 bounded evidence checks pass. Exact PR1 commit `8e9b6495ba3bf716549825d05f48faaefc73dcfb` has actual tree `47bfab14eec7149a288a0ccd09be857fbfe70c2f`. The 12,182,115-byte archive SHA-256 `bdfd468b591583546358d198d3b456f6acd3419f1dcfa93d1204af11c1cdc453` contains 1,279 regular source files: every raw archive/export payload matches its actual committed Git blob. No Git metadata, personal configuration or environment file was exported. The original PR2 primary guards remain unchanged.
+
+The original export receipt incorrectly called the requested commit identifier a tree. The raw API response and receipt remain preserved; the [tree addendum](E6h-nodetasks-source-export-01/actual-git-tree-addendum.json) correctly binds the immutable commit object's tree. This was a metadata correction only.
+
+Actual normal logs show `npm ci`, doctor, two existing tests, proof and saved-view search PASS. Independent arithmetic matches all 18 receipt content hashes, 1,236 indexed sources, source byte total, vendored aggregate, semantic-boundary hash and corpus hash. Original receipt SHA-256 `cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357` remains the baseline binding. The proof hashes schemas; it does not run a JSON Schema validator.
+
+**Actual NodeKit conformance exits 1** for exactly the three omitted NodeAgent consumers. All 1,098 launcher/source/schema/registry/runtime-package inputs match. `src/cli-main.mjs` chooses its own package root as the registry and the explicit exported path as the repository, so the caller directory does not accidentally select an unrelated registry. The successful local corpus receipt does not excuse these three ownership errors.
+
+The Python installation completed normally and recorded Streamlit 1.63.0, pandas 3.0.5 and resolved dependencies in a sibling virtual environment. The executed runner removes endpoint/catalog overrides from the child environment by name. No application launched; rendered endpoint emptiness and real local-only interaction still require the planned browser proof.
+
+The source and receipt checks describe the preserved unchanged baseline observed before the subsequently authorized repair. They do not certify that changing candidate or future path/sentinel/browser proof. Existing upstream-origin, official-score and full-grade limitations remain open. No installs, tests, provider/browser/Office actions, source/index/ref edits or fetches were performed by this reviewer.
+
+[Structured judgment](E6h_NODETASKS_BASELINE_JUDGE.json), [raw bindings and checks](E6h-nodetasks-baseline-judge/manifest.json), [baseline logs](E6h-nodetasks-baseline-01/baseline.json), and [approved plan review](E6h_NODETASKS_PR1_PLAN_JUDGE.md). Manifest SHA-256 `c0c58bf0330dfb2af6be96ffc472216d0e5a2941f8743aac292ba114905f255a`.

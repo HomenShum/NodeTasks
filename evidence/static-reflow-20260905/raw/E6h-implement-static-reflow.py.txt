@@ -1,0 +1,105 @@
+import hashlib, json, os, shutil, subprocess, time
+from datetime import datetime, timezone
+from pathlib import Path
+
+P = Path(__file__).resolve().parent
+R = Path('D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905')
+O = P / 'E6h-nodetasks-static-reflow-01'
+T = Path('D:/ProjectRecovery/nodetasks-static-generator-20260905')
+O.mkdir(); T.mkdir()
+def sha(b): return hashlib.sha256(b).hexdigest()
+def write(path, value): path.write_text(json.dumps(value, indent=2, ensure_ascii=False)+'\n', encoding='utf-8', newline='\n')
+def git(*args): return subprocess.check_output(['git','--no-optional-locks',*args],cwd=R)
+def row(path):
+    b=(R/path).read_bytes(); return {'path':path,'bytes':len(b),'sha256':sha(b)}
+freeze=json.loads((P/'E6h_NODETASKS_PREPARED_UI_FREEZE.json').read_text(encoding='utf-8'))
+for entry in freeze['effectiveFiles']:
+    assert row(entry['path'])['sha256']==entry['sha256'], entry['path']
+paths=set(git('ls-files','-z','--cached','--others','--exclude-standard').decode().split('\0'))-{''}
+paths.update(e['path'] for e in freeze['effectiveFiles'])
+before=[row(p) for p in sorted(paths)]
+write(O/'source-before.json',before)
+guards={k:sha(git(*v)) for k,v in {'head':['rev-parse','HEAD'],'refs':['show-ref'],'index':['ls-files','--stage','-z']}.items()}
+write(O/'git-before.json',guards)
+owners=['scripts/build-catalog.mjs','catalog/task-browser.html','proof/corpus-receipt.json']
+for path in owners:
+    dest=O/'before'/path; dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes((R/path).read_bytes())
+expected=json.loads((P/'E6h_NODETASKS_STATIC_REFLOW_PLAN_JUDGE.json').read_text(encoding='utf-8'))['sourceBindings']
+for e in expected: assert sha((R/e['path']).read_bytes())==e['sha256'],e['path']
+# Copy only current source files needed by the ordinary catalog generator; no historical evidence/runtime.
+copied=[]
+for path in sorted(paths):
+    if path.startswith('evidence/'): continue
+    dest=T/path; dest.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(R/path,dest)
+    assert sha(dest.read_bytes())==sha((R/path).read_bytes()),path
+    copied.append(row(path))
+write(O/'generator-copy.json',{'root':str(T),'source':copied})
+changes=[
+    (b'grid-template-columns: 280px 1fr;',b'grid-template-columns: 280px minmax(0, 1fr);'),
+    (b'main { padding: 18px 22px 48px; }',b'main { min-width: 0; padding: 18px 22px 48px; }'),
+    (b'.bar { display: flex; align-items:',b'.bar { display: flex; flex-wrap: wrap; align-items:'),
+    (b'.result { border-top:',b'.result { overflow-wrap: anywhere; border-top:'),
+    (b'.shell { grid-template-columns: 1fr; }',b'.shell { grid-template-columns: minmax(0, 1fr); }'),
+]
+original=(R/owners[0]).read_bytes(); modified=original
+for old,new in changes:
+    assert modified.count(old)==1,old
+    modified=modified.replace(old,new)
+(T/owners[0]).write_bytes(modified)
+env=os.environ.copy()
+removed=[k for k in env if k.startswith(('NODETASKS_','CONVEX_','OPENAI_','ANTHROPIC_','GEMINI_','VITE_'))]
+for k in removed: env.pop(k)
+env['NODETASKS_GENERATED_AT']='2026-07-09T02:48:01.246Z'
+commands=[]
+def run(name,args,cwd,expected_exit=0):
+    started=datetime.now(timezone.utc).isoformat(); t=time.monotonic()
+    with (O/(name+'.log')).open('wb') as log:
+        result=subprocess.run(args,cwd=cwd,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=300)
+    receipt={'args':args,'cwd':str(cwd),'startedAt':started,'seconds':round(time.monotonic()-t,3),'exitCode':result.returncode,'logSha256':sha((O/(name+'.log')).read_bytes())}
+    commands.append(receipt);write(O/(name+'.command.json'),receipt)
+    assert result.returncode==expected_exit,(name,result.returncode)
+    return (O/(name+'.log')).read_text(encoding='utf-8',errors='replace')
+run('generator',['cmd','/c','npm','run','build:catalog'],T)
+generated=[]
+for path in sorted(paths):
+    if not path.startswith(('catalog/','schemas/')): continue
+    old=(R/path).read_bytes(); new=(T/path).read_bytes()
+    generated.append({'path':path,'beforeSha256':sha(old),'afterSha256':sha(new),'unchanged':old==new})
+    if path!='catalog/task-browser.html': assert old==new,path
+assert len(generated)==18,len(generated)
+write(O/'generated-comparison.json',generated)
+html=(T/'catalog/task-browser.html').read_bytes()
+expected_html=(R/'catalog/task-browser.html').read_bytes()
+for old,new in changes:
+    assert expected_html.count(old)==1,old
+    expected_html=expected_html.replace(old,new)
+assert html==expected_html,'Generator output is not the five expected CSS replacements'
+# Only transfer the verified generator and generated HTML; preserve old receipt until stale-proof observation.
+(R/owners[0]).write_bytes(modified); (R/owners[1]).write_bytes(html)
+stale=run('stale-proof',['cmd','/c','npm','run','proof'],R,1)
+assert 'stale' in stale.lower(),stale
+run('validate',['cmd','/c','npm','run','validate'],R)
+old_receipt=json.loads((O/'before'/owners[2]).read_text(encoding='utf-8'))
+new_receipt=json.loads((R/owners[2]).read_text(encoding='utf-8'))
+diffs=[]
+def differences(a,b,path=''):
+    if isinstance(a,dict) and isinstance(b,dict):
+        assert set(a)==set(b),path
+        for k in a: differences(a[k],b[k],path+'/'+k)
+    elif isinstance(a,list) and isinstance(b,list):
+        assert len(a)==len(b),path
+        for i,(x,y) in enumerate(zip(a,b)): differences(x,y,path+'/'+str(i))
+    elif a!=b: diffs.append({'path':path,'before':a,'after':b})
+differences(old_receipt,new_receipt)
+idx=next(i for i,e in enumerate(old_receipt['contentHashes']) if e['path']=='catalog/task-browser.html')
+assert {d['path'] for d in diffs}=={'/corpusHash',f'/contentHashes/{idx}/bytes',f'/contentHashes/{idx}/sha256'},diffs
+write(O/'receipt-delta.json',diffs)
+for e in before:
+    if e['path'] not in owners: assert row(e['path'])==e,e['path']
+for k,v in {'head':['rev-parse','HEAD'],'refs':['show-ref'],'index':['ls-files','--stage','-z']}.items(): assert sha(git(*v))==guards[k],k
+after=[row(p) for p in owners]
+write(O/'source-after.json',after)
+(O/'source.diff').write_bytes(git('diff','--',*owners))
+write(O/'receipt.json',{'status':'THREE_OWNER_CAUSAL_REFLOW_APPLIED','at':datetime.now(timezone.utc).isoformat(),'root':str(R),'owners':after,'protectedUnchanged':len(before)-3,'frozenPreparedFilesUnchanged':len(freeze['effectiveFiles']),'generatorArtifactsCompared':len(generated),'onlyGeneratedChange':'catalog/task-browser.html','receiptDelta':diffs,'childEnvironmentNamesRemoved':removed,'commands':commands,'gitGuardsUnchanged':True,'namedProof':'NODETASKS-STATIC-REFLOW-01','browserAfter':'NOT_RUN','normalCheck':'NOT_RUN'})
+write(P/'E6h-static-probe-preexecution-failure.json',{'status':'HARNESS_MODULE_LOAD_FAILURE_RETAINED','toolChunk':'25b081','error':'ERR_UNSUPPORTED_ESM_URL_SCHEME: received protocol d:','cause':'Windows absolute path passed as a bare dynamic ESM import specifier','correction':'pathToFileURL(...).href in external recorder only','beforeOutputDirectoryCreation':True,'productFileEdits':0,'runtimeStarted':False,'correctedRunReceipt':'E6h-nodetasks-static-causal-before-01/report.json'})
+print(json.dumps({'status':'THREE_OWNER_CAUSAL_REFLOW_APPLIED','owners':after,'protected':len(before)-3,'out':str(O)}))

@@ -1,0 +1,261 @@
+
+> nodetasks@0.1.0 check
+> npm run doctor && npm test && npm run proof
+
+
+> nodetasks@0.1.0 doctor
+> node scripts/doctor.mjs
+
+{
+  "schemaVersion": "nodetasks.doctor/v1",
+  "passed": true,
+  "externalAccountsRequired": 0,
+  "checks": [
+    {
+      "id": "node-version",
+      "passed": true,
+      "detail": "22.22.2"
+    },
+    {
+      "id": "required:catalog/all-tasks.json",
+      "passed": true,
+      "detail": "catalog/all-tasks.json"
+    },
+    {
+      "id": "required:catalog/source-files.json",
+      "passed": true,
+      "detail": "catalog/source-files.json"
+    },
+    {
+      "id": "required:catalog/task-index.json",
+      "passed": true,
+      "detail": "catalog/task-index.json"
+    },
+    {
+      "id": "required:docs/UPSTREAM_PROVENANCE.md",
+      "passed": true,
+      "detail": "docs/UPSTREAM_PROVENANCE.md"
+    },
+    {
+      "id": "required:proof/corpus-receipt.json",
+      "passed": true,
+      "detail": "proof/corpus-receipt.json"
+    },
+    {
+      "id": "required:schemas/corpus-receipt.schema.json",
+      "passed": true,
+      "detail": "schemas/corpus-receipt.schema.json"
+    },
+    {
+      "id": "required:scripts/validate-catalog.mjs",
+      "passed": true,
+      "detail": "scripts/validate-catalog.mjs"
+    },
+    {
+      "id": "flat-nodekit-manifest",
+      "passed": true,
+      "detail": "nodekit.repo/v1"
+    },
+    {
+      "id": "no-product-agent-manifest",
+      "passed": true,
+      "detail": "nodeagent.yaml must remain absent"
+    },
+    {
+      "id": "corpus-receipt-only-ownership",
+      "passed": true,
+      "detail": "NodeTasks owns its corpus receipt; vendored runtime contracts remain provenance only"
+    }
+  ]
+}
+
+> nodetasks@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: catalog validation reproduces the committed corpus receipt
+ok 1 - catalog validation reproduces the committed corpus receipt
+  ---
+  duration_ms: 2301.8352
+  type: 'test'
+  ...
+# Subtest: NodeKit registration stays corpus-only
+ok 2 - NodeKit registration stays corpus-only
+  ---
+  duration_ms: 1.1077
+  type: 'test'
+  ...
+# Subtest: a maintainer rejects unsafe source entries before reading any owned sentinel
+ok 3 - a maintainer rejects unsafe source entries before reading any owned sentinel
+  ---
+  duration_ms: 26347.5519
+  type: 'test'
+  ...
+# Parent link/junction created and tested
+# Subtest: a new developer's actual doctor accepts registered consumers but rejects added or replaced NodeAgent ownership
+ok 4 - a new developer's actual doctor accepts registered consumers but rejects added or replaced NodeAgent ownership
+  ---
+  duration_ms: 1855.7728
+  type: 'test'
+  ...
+# Subtest: a reviewer preserves the good receipt through stale, malformed and drifting inputs, then concurrent and sustained reads
+ok 5 - a reviewer preserves the good receipt through stale, malformed and drifting inputs, then concurrent and sustained reads
+  ---
+  duration_ms: 55320.1892
+  type: 'test'
+  ...
+# 4 concurrent +3 later frozen reads; controlled pre-read drift rejected. No hostile filesystem-swap guarantee.
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 85965.6973
+
+> nodetasks@0.1.0 proof
+> node scripts/validate-catalog.mjs --check-receipt
+
+{
+  "schemaVersion": "nodetasks.corpus-receipt/v1",
+  "repository": "HomenShum/NodeTasks",
+  "status": "valid",
+  "catalogValid": true,
+  "sourceIndexValid": true,
+  "passed": true,
+  "releaseReady": true,
+  "hashAlgorithm": "sha256",
+  "counts": {
+    "searchableTasks": 9155,
+    "liveInteractionTasks": 58,
+    "extractedTasks": 9097,
+    "rankedTasks": 9155,
+    "searchRecords": 9155,
+    "benchmarkProxyAdapters": 4,
+    "externalLocalProxyTasks": 3,
+    "sourceFiles": 1236,
+    "sourceBytes": 22806452,
+    "savedViews": 9,
+    "taskBundles": 9,
+    "tags": 2428,
+    "sourceIndexContentMismatches": 0
+  },
+  "officialScoreBoundary": {
+    "officialScoreClaim": false,
+    "tasksClaimingOfficialScore": 0,
+    "adaptersClaimingOfficialScore": 0,
+    "localProxyTasksClaimingOfficialScore": 0,
+    "officialSemanticScoreStatus": "not-claimed",
+    "productPathCompletionIsOfficialScore": false,
+    "statement": "This receipt validates corpus structure and content only. It is not an official benchmark score or leaderboard result."
+  },
+  "semanticBoundary": {
+    "definition": "sha256(JSON.stringify(tasks.map(({id,officialScoreClaim,provenance}) => ({id,officialScoreClaim,provenance})))) in catalog order",
+    "sha256": "c6f046baeb7cd5fa6bac7ea0695922696e23e66aaa7c52a3ccc03daf4f3a35b3"
+  },
+  "sourceIndexDrift": {
+    "mismatchCount": 0,
+    "sampleLimit": 10,
+    "samples": []
+  },
+  "vendoredSource": {
+    "root": "upstream/noderoom",
+    "aggregateFormat": "sha256(JSON.stringify([{path,bytes,sha256},...])) with records sorted by path",
+    "sha256": "94839ea9e778123334bd97bd30aa34e1b5e49ba06ae07dd2a2b09772653a801b"
+  },
+  "contentHashes": [
+    {
+      "path": "catalog/all-tasks.json",
+      "bytes": 38692903,
+      "sha256": "ed7ca09b5b0c8df86a5e48e09fe58e39ef23a186ca36ffd8c1aeffee8206a35e"
+    },
+    {
+      "path": "catalog/benchmark-proxy-adapters.json",
+      "bytes": 7337,
+      "sha256": "b3d302adc24ccd0b9d23658aa061af9315b2b61a30223dc9544e91fe41a0a381"
+    },
+    {
+      "path": "catalog/extracted-tasks.json",
+      "bytes": 14047684,
+      "sha256": "e3f207b5f41d99861b8c4d484da9b5d3af7df3eccac579f84ab4d1c7ea72c0c5"
+    },
+    {
+      "path": "catalog/hierarchy.json",
+      "bytes": 2684539,
+      "sha256": "048cc36310aaae55c42e9ef2f690b33af6fe02d6ef083094c7518fb48928c5b8"
+    },
+    {
+      "path": "catalog/live-interaction-tasks.json",
+      "bytes": 56070,
+      "sha256": "a89df15ca6aa2b85799c5d721db27e5e8b4dc160524929e2559e24f4d0f31c1b"
+    },
+    {
+      "path": "catalog/provenance-index.json",
+      "bytes": 136984,
+      "sha256": "823fcddc5ab8454385a41c96fd39869c47225dbf5ebe160b7a70fcb174c395e2"
+    },
+    {
+      "path": "catalog/ranked-tasks.json",
+      "bytes": 38692906,
+      "sha256": "d9d3d85ed8580c4fa9922a4ab0f2161f9cc909c28b89a357ae04e869bd23eb31"
+    },
+    {
+      "path": "catalog/saved-views.json",
+      "bytes": 205906,
+      "sha256": "4f445b5d53c420d48f84edf60dba2395e9d40f718e896b8d5e38eaf58079fc14"
+    },
+    {
+      "path": "catalog/search-index.js",
+      "bytes": 36080059,
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+    },
+    {
+      "path": "catalog/search-index.jsonl",
+      "bytes": 36080024,
+      "sha256": "a287b78bf47a2a031fd60541fa11d2b9c87a50a328fe17d8b86943b14ac5ca29"
+    },
+    {
+      "path": "catalog/source-files.json",
+      "bytes": 292951,
+      "sha256": "5e5bd59a4df35deb4efc5ca10b8fb80a214aedb7d95e0f6b572bea075557ca5b"
+    },
+    {
+      "path": "catalog/tag-index.json",
+      "bytes": 3101651,
+      "sha256": "0694ab68a71f12e9e2d1881355c8fb95ce8ead076c68ae1382241c58774329bc"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "bytes": 5945,
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "catalog/task-bundles.json",
+      "bytes": 368880,
+      "sha256": "df9322b65798fe6f611cf9352a2346f9ecdef3bb36da487f271eae1aa90a3e6b"
+    },
+    {
+      "path": "catalog/task-families.md",
+      "bytes": 8788,
+      "sha256": "20fff77616e86d7d1149533e91caa0b623457db20ed7b25c72207fc46eda7cd6"
+    },
+    {
+      "path": "catalog/task-index.json",
+      "bytes": 4895,
+      "sha256": "f749cd1a2d6ab4eeba4331ca9c38144800f9779d15acca420b478fa48daefd4c"
+    },
+    {
+      "path": "schemas/corpus-receipt.schema.json",
+      "bytes": 5754,
+      "sha256": "14be6e5873e23b55de90a8644fcaa1d55170680d54c4c9e90cb43d64b6d943dc"
+    },
+    {
+      "path": "schemas/node-task.schema.json",
+      "bytes": 2898,
+      "sha256": "a0e45f5f498587625d93720b64f6088bfe45fbbbf65fd02ae59c38ff17e17141"
+    }
+  ],
+  "corpusHash": "e37ebe1399065a667e725e13edd8978117669ba9c213a90143505e3fda001685"
+}

@@ -1,0 +1,9 @@
+{
+  "at": "2026-09-05T17:10:05.153342+00:00",
+  "acceptedBy": "parent/root in current session",
+  "path": "scripts/doctor.mjs",
+  "beforeSha256": "3a80253dd78638f9a7ac3732f4fc32b9b2dcec547dce13c03b354fa25a185d3d",
+  "cause": "Negative canonicalFor regex crosses into consumes and falsely rejects required NodeAgent consumers. Positive existing regex already admits exactly one independent corpus receipt owner.",
+  "delta": "Remove only redundant negative conjunct; preserve positive check, other checks, and add actual doctor CLI added/replaced ownership rejection.",
+  "failure": "current-check-01.log"
+}

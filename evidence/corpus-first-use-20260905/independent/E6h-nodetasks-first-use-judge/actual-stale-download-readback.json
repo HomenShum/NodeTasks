@@ -1,0 +1,46 @@
+[
+  {
+    "width": 390,
+    "attempt": 1,
+    "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+    "actualDownloadedRows": 15,
+    "expectedSettledRows": 0,
+    "observedStateAtDownload": "running",
+    "settledState": "notRunning",
+    "searchAtDownload": "zz_no_task_20260905_xyz",
+    "eventualFilteredZero": true
+  },
+  {
+    "width": 390,
+    "attempt": 2,
+    "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+    "actualDownloadedRows": 15,
+    "expectedSettledRows": 0,
+    "observedStateAtDownload": "running",
+    "settledState": "notRunning",
+    "searchAtDownload": "zz_no_task_20260905_xyz",
+    "eventualFilteredZero": true
+  },
+  {
+    "width": 1440,
+    "attempt": 1,
+    "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+    "actualDownloadedRows": 15,
+    "expectedSettledRows": 0,
+    "observedStateAtDownload": "running",
+    "settledState": "notRunning",
+    "searchAtDownload": "zz_no_task_20260905_xyz",
+    "eventualFilteredZero": true
+  },
+  {
+    "width": 1440,
+    "attempt": 2,
+    "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d",
+    "actualDownloadedRows": 15,
+    "expectedSettledRows": 0,
+    "observedStateAtDownload": "running",
+    "settledState": "notRunning",
+    "searchAtDownload": "zz_no_task_20260905_xyz",
+    "eventualFilteredZero": true
+  }
+]

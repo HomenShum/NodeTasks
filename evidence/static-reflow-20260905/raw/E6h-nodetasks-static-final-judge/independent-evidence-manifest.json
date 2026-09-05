@@ -1,0 +1,167 @@
+{
+  "schema": "portfolio-independent-static-evidence/v1",
+  "at": "2026-09-05T20:07:24.601073+00:00",
+  "scope": "Exact independent raw observations, retained failed external recorder, source review and helpers. No self-hashed final judgment.",
+  "files": [
+    {
+      "path": "E6h-freeze-static-final-judgment.py",
+      "bytes": 20951,
+      "sha256": "ff1a8e5f0b0df4d146874b88366aa324ed20e1662f557b33775d41159e98341f"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/E6h-check-static-reflow.py.inert.txt",
+      "bytes": 2855,
+      "sha256": "e0717d4126c338c36c594746e0835899c04b5099104b10c3ee1d8149625d1151"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/E6h-implement-static-reflow.py.inert.txt",
+      "bytes": 7226,
+      "sha256": "6079706cbe28a4f2f4b0f1c15daf7045cef0b20ec463fb54cc487930da34e455"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/E6h-static-native-end-supplement.mjs.inert.txt",
+      "bytes": 6245,
+      "sha256": "53408e41c49fc55d4b87e41570c18683ef55dfb61db8e77847ff973a65e52e1b"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/E6h-verify-static-reflow.mjs.inert.txt",
+      "bytes": 11891,
+      "sha256": "b104eef1ceb56e36547dc9407f3e3af7a3c76786d825ee5071f6c1d443fbe8fb"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/head-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/head-final.stdout",
+      "bytes": 41,
+      "sha256": "f57060502492bd5dc5dd7289d2f35411153573f24fee91fd24f39961b2ca4f52"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/index-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/index-final.stdout",
+      "bytes": 208506,
+      "sha256": "1a2445bd0e3219bec855e9b243cdbcd340484df219e881991a9964252c1b19f3"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-01/harness-correction.json",
+      "bytes": 457,
+      "sha256": "ee6ad5353d97aef2574d63d843cf8846814fe02e76423fd49eb65a698fe3200b"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-01/recorder-original.mjs.inert.txt",
+      "bytes": 6170,
+      "sha256": "114a631b6eaa2a6f176f2b7d484afdd7c301ff4f94a9945173f37053f3a7c35d"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-01/report.json",
+      "bytes": 1549,
+      "sha256": "6a6b2806a6cf44c805fce47a80d56faf732a7e87db22f4b4726d0f08c3fa19d6"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/320-fonts.json",
+      "bytes": 9562,
+      "sha256": "284d58b5d1712a8866f738ca4e37d6c3066113eb8cfab421fbb2b538fd130912"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/320-native-end.html.txt",
+      "bytes": 15570,
+      "sha256": "eb26b31e0bdb741bfb77d1368d17e7dca7e485024e2768f358078f96cf50a13a"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/320-native-end.json",
+      "bytes": 2859,
+      "sha256": "f2daa7a9c918c6f402e3eed132b8b2c2dfb03e1a6b1e295938a9979ddf8e9f25"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/320-native-end.png",
+      "bytes": 58409,
+      "sha256": "5e4a4e002c3df5959073735a4da25d84574d97e878f7fd9fde35f856930915e6"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/390-fonts.json",
+      "bytes": 9562,
+      "sha256": "284d58b5d1712a8866f738ca4e37d6c3066113eb8cfab421fbb2b538fd130912"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/390-native-end.html.txt",
+      "bytes": 15570,
+      "sha256": "eb26b31e0bdb741bfb77d1368d17e7dca7e485024e2768f358078f96cf50a13a"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/390-native-end.json",
+      "bytes": 2479,
+      "sha256": "77d49245bb31b8e018f1a2dc0871719470f29d4940074cce3424e7287e3fedac"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/390-native-end.png",
+      "bytes": 73940,
+      "sha256": "2f28c72ef6ab3248c041e42aeaf36bc68512dec572d56f32e9e8d1b2fe2b5b51"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/report.json",
+      "bytes": 2959,
+      "sha256": "25f76f5817b1767d8be3f364f3834041da87140ea6267623044a95408bd61739"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/raw-final-review.json",
+      "bytes": 983666,
+      "sha256": "8f47190bc94ba8b6c720bfd3630273d759f317e8d5099785b440724be6ac82b7"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/refs-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "E6h-nodetasks-static-final-judge/refs-final.stdout",
+      "bytes": 491,
+      "sha256": "fa005b9fda4ceaa08666efaffb8fbd782ed1b00b9d57398373d2ac52001d1efc"
+    },
+    {
+      "path": "E6h-nodetasks-static-independent-source-recon/source/catalog/task-browser.html",
+      "bytes": 5945,
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "E6h-nodetasks-static-independent-source-recon/source/proof/corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "770b1c414b5a677e922845fc4aae88ebb36752683b0e34ade86cbce328a2f0b0"
+    },
+    {
+      "path": "E6h-nodetasks-static-independent-source-recon/source/scripts/build-catalog.mjs",
+      "bytes": 97011,
+      "sha256": "339938c754f16fe10cde464ba25f8fe5cfb535316593f5fc539f222a562f61ce"
+    },
+    {
+      "path": "E6h-review-static-final.py",
+      "bytes": 7288,
+      "sha256": "4c2b5bd96c6def5744fbf8ca824f32e44b326cc9411b8d1c6801f1971dffa53c"
+    },
+    {
+      "path": "E6h-review-static-source-preliminary.py",
+      "bytes": 9412,
+      "sha256": "371b4f466c44f4cf8cc68d56e8863c7241bb08c9000b5dbc08ecfc05aa0419c5"
+    },
+    {
+      "path": "E6h-static-native-end-supplement.mjs",
+      "bytes": 6245,
+      "sha256": "53408e41c49fc55d4b87e41570c18683ef55dfb61db8e77847ff973a65e52e1b"
+    },
+    {
+      "path": "E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE.json",
+      "bytes": 22017,
+      "sha256": "c22b50831ad5121f22e3c2a8bc24a145ceb8d6cecf7695e433df2d4373347b17"
+    },
+    {
+      "path": "E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE.md",
+      "bytes": 1837,
+      "sha256": "68144afc3ed2c3190ed3ad9333ba664315d6d284d7318ffa3960cb1976092740"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "schema": "portfolio-static-criterion-addendum/v1",
+  "at": "2026-09-05T20:07:24.601073+00:00",
+  "namedProof": "NODETASKS-STATIC-REFLOW-01",
+  "assessmentScope": "Static task browser only, agent evaluated; no whole-product grade refresh",
+  "original44Unchanged": [
+    {
+      "path": "E6h_NODETASKS_CRITERION_ASSESSMENT.json",
+      "bytes": 38565,
+      "sha256": "f63f57d3400cf448e0ed3ec4adafabcdfb3ce3ca23dd12f53a3e54862022d957"
+    },
+    {
+      "path": "E6h_NODETASKS_CRITERION_ASSESSMENT.md",
+      "bytes": 11825,
+      "sha256": "f0faae3c12eb0ee9a99ed6fbcd571e462187acff303290833758efb41b267804"
+    }
+  ],
+  "profileRevision": {
+    "path": "REPO_READINESS_STANDARD.md",
+    "sha256": "8b5bb532bf0dfeed7cc4ecd2b425d708fc49048cc05ab4cbeb315fc3534aeff2",
+    "criterionNames": "Copied exactly from current eight-dimension criterion table; IDs added for reference."
+  },
+  "head": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+  "workingSource": [
+    {
+      "path": "scripts/build-catalog.mjs",
+      "bytes": 97011,
+      "sha256": "339938c754f16fe10cde464ba25f8fe5cfb535316593f5fc539f222a562f61ce"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "bytes": 5945,
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "770b1c414b5a677e922845fc4aae88ebb36752683b0e34ade86cbce328a2f0b0"
+    }
+  ],
+  "sourceDigest": "a57916b759182033133bd18538caabd26e23f84012e265992779fda6993fa145",
+  "sourceJudgment": {
+    "path": "E6h_NODETASKS_STATIC_REFLOW_FINAL_JUDGE.json",
+    "bytes": 12546,
+    "sha256": "e209dc3bbbb9e2edca89792a41d753f043f3c762d336493bce3639dfe8ba2e23"
+  },
+  "criterionObservations": [
+    {
+      "id": "R1",
+      "name": "Reflow/content preservation",
+      "field": "responsiveScore",
+      "historicalWholeApplicationObservedScore": 2,
+      "scopedObservedScore": 5,
+      "finalScore": null,
+      "status": "OBSERVED_STATIC_SCOPE_ONLY",
+      "observation": "Seven exact static-page viewport pairs preserve all exercised result text with zero horizontal overflow; doubled text and native End preserve complete reference tails.",
+      "deductionOrMissingEvidence": "No material reflow defect in the exercised static cases. This does not replace the prior whole-application score or untested platform coverage."
+    },
+    {
+      "id": "R3",
+      "name": "modal/panel/table/canvas adaptation",
+      "field": "responsiveScore",
+      "historicalWholeApplicationObservedScore": 2,
+      "scopedObservedScore": null,
+      "finalScore": null,
+      "status": "RESOLVED_STATIC_RESULT_CARD_FACET_ONLY",
+      "observation": "The static result card fits the viewport and preserves full long identifiers/references. The separate Streamlit metric ellipsis and untested panel combinations remain.",
+      "deductionOrMissingEvidence": "A complete new panel/table/canvas criterion score would combine surfaces outside this patch; retain null here."
+    },
+    {
+      "id": "R5",
+      "name": "stability under zoom, long content and declared locales",
+      "field": "responsiveScore",
+      "historicalWholeApplicationObservedScore": 3,
+      "scopedObservedScore": null,
+      "finalScore": null,
+      "status": "OBSERVED_COMPUTED_TEXT_AND_LONG_CONTENT_ONLY",
+      "observation": "All computed element fonts doubled at seven pairs with unchanged content. Complete long reference tails were independently inspected at 320 and 390.",
+      "deductionOrMissingEvidence": "Native browser/OS zoom and declared locale combinations remain NOT_RUN; do not substitute computed font resizing for those proofs."
+    },
+    {
+      "id": "A4",
+      "name": "text resize/reflow and target size",
+      "field": "accessibilityScore",
+      "historicalWholeApplicationObservedScore": 2,
+      "scopedObservedScore": null,
+      "finalScore": null,
+      "status": "RESOLVED_STATIC_REFLOW_FACET_ONLY",
+      "observation": "The previous static horizontal content loss is closed; native End can expose both complete references without clipping.",
+      "deductionOrMissingEvidence": "Target sizes/exceptions, native zoom and broader accessibility coverage are incomplete. Other source header clipping remains outside this patch."
+    }
+  ],
+  "numericAnchor": "5 means meets the frozen reference and all exercised cases without a material observed defect, limited here to static R1. Null rows are facet observations, not fabricated N/A or complete criterion scores.",
+  "finalDimensionScores": {
+    "visualScore": null,
+    "designScore": null,
+    "responsiveScore": null,
+    "interactionScore": null,
+    "accessibilityScore": null,
+    "performanceScore": null,
+    "usageScore": null,
+    "alignmentScore": null
+  },
+  "overallScore": null,
+  "overallGrade": null,
+  "unchangedDeductions": [
+    "Streamlit enlarged header clipping",
+    "legacy caption contrast",
+    "metric ellipsis",
+    "other original44 missing platform, human, performance and interaction coverage"
+  ],
+  "evidenceRefs": {
+    "freeze": {
+      "path": "E6h_NODETASKS_STATIC_REFLOW_FREEZE.json",
+      "bytes": 31127,
+      "sha256": "19084165bcc735cb628d27312e4c76ce5c8b28023e3e8446687fe47b5d9421e8"
+    },
+    "rawReview": {
+      "path": "E6h-nodetasks-static-final-judge/raw-final-review.json",
+      "bytes": 983666,
+      "sha256": "8f47190bc94ba8b6c720bfd3630273d759f317e8d5099785b440724be6ac82b7"
+    },
+    "independentManifest": {
+      "path": "E6h-nodetasks-static-final-judge/independent-evidence-manifest.json",
+      "bytes": 6653,
+      "sha256": "675399c594200c39c6adb27bdd029a6daba8a0ec09ee5910d2cd9429fc891d00"
+    },
+    "preliminary": {
+      "path": "E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE.json",
+      "bytes": 22017,
+      "sha256": "c22b50831ad5121f22e3c2a8bc24a145ceb8d6cecf7695e433df2d4373347b17"
+    },
+    "causalBefore": {
+      "path": "E6h-nodetasks-static-causal-before-01/report.json",
+      "bytes": 15218,
+      "sha256": "5832bb10de21e31179c714fed354d46427c5ec2f415b2f5cb5f83371f9e68f25"
+    },
+    "implementationReceipt": {
+      "path": "E6h-nodetasks-static-reflow-01/receipt.json",
+      "bytes": 2868,
+      "sha256": "b44ffc0b52908b3a7d7e05448d694442b39025e766e786addfc2103cce43dffd"
+    },
+    "rootBrowser": {
+      "path": "E6h-nodetasks-static-browser-01/report.json",
+      "bytes": 129030,
+      "sha256": "cd942c8b5ffc455f9aa840f9a183715e0c667e95519433c688fe9750a791a73c"
+    },
+    "normalCheckLog": {
+      "path": "E6h-nodetasks-static-check-01/normal-check.log",
+      "bytes": 7930,
+      "sha256": "f409a559961697e1166910f4b261e2fde2cedf484112830d12aba9ce86bd59d7"
+    },
+    "independentNativeEnd": {
+      "path": "E6h-nodetasks-static-final-judge/native-end-02/report.json",
+      "bytes": 2959,
+      "sha256": "25f76f5817b1767d8be3f364f3834041da87140ea6267623044a95408bd61739"
+    },
+    "retainedHarnessFailure": {
+      "path": "E6h-nodetasks-static-final-judge/native-end-01/report.json",
+      "bytes": 1549,
+      "sha256": "6a6b2806a6cf44c805fce47a80d56faf732a7e87db22f4b4726d0f08c3fa19d6"
+    },
+    "prior44": {
+      "path": "E6h_NODETASKS_CRITERION_ASSESSMENT.json",
+      "bytes": 38565,
+      "sha256": "f63f57d3400cf448e0ed3ec4adafabcdfb3ce3ca23dd12f53a3e54862022d957"
+    },
+    "prior44Markdown": {
+      "path": "E6h_NODETASKS_CRITERION_ASSESSMENT.md",
+      "bytes": 11825,
+      "sha256": "f0faae3c12eb0ee9a99ed6fbcd571e462187acff303290833758efb41b267804"
+    }
+  }
+}

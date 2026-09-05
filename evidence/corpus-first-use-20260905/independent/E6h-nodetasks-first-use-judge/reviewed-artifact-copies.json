@@ -1,0 +1,232 @@
+{
+  "raw": [
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\HANDOFF.md",
+      "path": "source-current/HANDOFF.md.txt",
+      "bytes": 7384,
+      "sha256": "90c19f104dac52e88de98ff1139bf350618b51672c29fa674fcbda979858285f"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\README.md",
+      "path": "source-current/README.md.txt",
+      "bytes": 8603,
+      "sha256": "2c66ee5032254a401a2d4f167e5432b2f9ea68e665bf4e7baf9f5be572c93c19"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\docs\\NODEAGENT_BRIDGE.md",
+      "path": "source-current/docs/NODEAGENT_BRIDGE.md.txt",
+      "bytes": 1896,
+      "sha256": "4ed2cefb09e7c15f00567cbe378686c48b90cb73b8c026e5a01d90e89dff3b50"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\docs\\UPSTREAM_PROVENANCE.md",
+      "path": "source-current/docs/UPSTREAM_PROVENANCE.md.txt",
+      "bytes": 2224,
+      "sha256": "659ae44958b7d3e035c3fc08fc3ec337c1d507113c739dd798eb79a3290adbb3"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\nodekit.yaml",
+      "path": "source-current/nodekit.yaml.txt",
+      "bytes": 2121,
+      "sha256": "eaef8b41f51259a51f945f56e60ba8abbcba0481952aaf953dc8e9eb725a5fbb"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\scripts\\doctor.mjs",
+      "path": "source-current/scripts/doctor.mjs.txt",
+      "bytes": 1647,
+      "sha256": "ef42ed0c416a076341c40484c45bc9ccb8ec636bf39ca3b574efd74bd1fb0502"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\scripts\\validate-catalog.mjs",
+      "path": "source-current/scripts/validate-catalog.mjs.txt",
+      "bytes": 16919,
+      "sha256": "84c16236957f1c249a85d70ef6ec314a064001117c6846d1e92463fbcfdb070f"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\scripts\\verify-first-use.mjs",
+      "path": "source-current/scripts/verify-first-use.mjs.txt",
+      "bytes": 18564,
+      "sha256": "e7c5501d102d5714fae074fa6d27009e4afd90f167140777e8f3156e3150f5a1"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\test\\corpus-validation.test.mjs",
+      "path": "source-current/test/corpus-validation.test.mjs.txt",
+      "bytes": 12235,
+      "sha256": "a1735400159f538afdd1e1a8c34956a3e909c7f059570d67bcf0272d9f838799"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\current-check-01.log",
+      "path": "reviewed-raw/worker/current-check-01.log",
+      "bytes": 1668,
+      "sha256": "e130e5d05cc72371264ae4913cec8376c0fd6911b041a7bfabdbb0f67f300720"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\current-check-02.log",
+      "path": "reviewed-raw/worker/current-check-02.log",
+      "bytes": 7930,
+      "sha256": "6bf60bf5c5fe463689cf68fcf4a4342aca1e0364126f4f10736d6c7df058952b"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\nodekit-current-check.log",
+      "path": "reviewed-raw/worker/nodekit-current-check.log",
+      "bytes": 1798,
+      "sha256": "00f08a407d1929f2efbd31fd79fa26805fc3612ff39f0462b491b0bae5d81cd6"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\nodekit-current-check.command.json",
+      "path": "reviewed-raw/worker/nodekit-current-check.command.json",
+      "bytes": 698,
+      "sha256": "5278a07f8121736ce4b79a9f2904abb7fea05ce731f1e953d9e06fa6972c21d6"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\doctor-owner-addendum.json",
+      "path": "reviewed-raw/worker/doctor-owner-addendum.json",
+      "bytes": 616,
+      "sha256": "77e8c138e8e1ddf460383f66c6ed9c9cecea1068a1592cc694f769973d5ed3e2"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\path-after.json",
+      "path": "reviewed-raw/worker/path-after.json",
+      "bytes": 1976,
+      "sha256": "c7b9eee2b44b4c66b89fbc31c522ec281de059734b0c587c384628cbcfe5266a"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\path-after-probe.mjs",
+      "path": "reviewed-raw/worker/path-after-probe.mjs.txt",
+      "bytes": 5020,
+      "sha256": "ff1f8671f05f2ffae591a71e9a2ea492dfc1db31bb6106b4ab47c1829504a6df"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\run-command.py",
+      "path": "reviewed-raw/worker/run-command.py.txt",
+      "bytes": 1476,
+      "sha256": "340fc666674b188e5c39e286fd2076bf705d1c7a71c6c46f224d3d0433bcaeee"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\report.json",
+      "path": "reviewed-raw/worker/browser-first-07/report.json",
+      "bytes": 56553,
+      "sha256": "52b356fa8b02224a9c1ba805392a3e95acdff0b826d2eafac00fc6894b724cda"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07.command.json",
+      "path": "reviewed-raw/worker/browser-first-07.command.json",
+      "bytes": 809,
+      "sha256": "4fd07d09b3d37f7efa6a3d815433cd189f9e003b9b75fac344ce0f4b65b75f9b"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\installed-bindings.json",
+      "path": "reviewed-raw/worker/installed-bindings.json",
+      "bytes": 23503,
+      "sha256": "5ad51d5194210ce0e1c77fc80c33398b47d86a758fc292e614a4eb0fbc3f6425"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\nodekit-current-input-guard.json",
+      "path": "reviewed-raw/worker/nodekit-current-input-guard.json",
+      "bytes": 156,
+      "sha256": "42e7f7edcf6e5d57929e28975040a4c9fe9f2adf017b7fa8937bf1a0f6bd60d0"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\README.md",
+      "path": "reviewed-raw/README.md.txt",
+      "bytes": 2963,
+      "sha256": "263938446383a9e26ec510b5128834d074e586569de8a6ee37805cef07b72294"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\ui-before-original\\native-pending-390-1\\download.json",
+      "path": "stale-downloads/390-1.json",
+      "bytes": 36765,
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\ui-before-original\\native-pending-390-2\\download.json",
+      "path": "stale-downloads/390-2.json",
+      "bytes": 36765,
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\ui-before-original\\native-pending-1440-1\\download.json",
+      "path": "stale-downloads/1440-1.json",
+      "bytes": 36765,
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d"
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\ui-before-original\\native-pending-1440-2\\download.json",
+      "path": "stale-downloads/1440-2.json",
+      "bytes": 36765,
+      "sha256": "22aee78f3609cf19701b77884c99ddb97a3b47bbee7c653deeb339dbf2fc134d"
+    }
+  ],
+  "viewed": [
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\390-task-provenance.png",
+      "path": "viewed/worker/browser-first-07/390-task-provenance.png",
+      "bytes": 67515,
+      "sha256": "daa8f596d3aac677ad23f3943e59e8130af15ce145937ea6ffe3e9ed2c6e1a72",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\1440-local-answer.png",
+      "path": "viewed/worker/browser-first-07/1440-local-answer.png",
+      "bytes": 187191,
+      "sha256": "bec6f564758e920959d6a5bde379fa5dd25a87efc80cea64a31a4de44d5a0c09",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\320-static-selected.png",
+      "path": "viewed/worker/browser-first-07/320-static-selected.png",
+      "bytes": 27067,
+      "sha256": "d94acab7ca2e165e472d24b39c780c464b3000b97df78d903c746ea64ac8698b",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\390-text200.png",
+      "path": "viewed/worker/browser-first-07/390-text200.png",
+      "bytes": 30862,
+      "sha256": "905dd18fc47218f7dcca15e45b985b82fe6b898c7ed983c9a447e42d77c75edd",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\1440-entry.png",
+      "path": "viewed/worker/browser-first-07/1440-entry.png",
+      "bytes": 151882,
+      "sha256": "a0ccc46c3b49288b3239d959ba17af293ac7cc94ff23001bb3221f62f50aa231",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\390-static-selected.png",
+      "path": "viewed/worker/browser-first-07/390-static-selected.png",
+      "bytes": 30579,
+      "sha256": "2f3fab59602424dab0d2c30c375ef34dc60ed8a3fbacd2564cdc42a40556a8f7",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\390-no-result-state.png",
+      "path": "viewed/worker/browser-first-07/390-no-result-state.png",
+      "bytes": 17052,
+      "sha256": "27c838fac11707872c57e3dc9213ebf1edd980db04841237d3a6eb432e1be813",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\worker\\browser-first-07\\390-keyboard.png",
+      "path": "viewed/worker/browser-first-07/390-keyboard.png",
+      "bytes": 58558,
+      "sha256": "550ef489dba39286ed9a878a7af21457bfcf503fc22c90a9672af00913602101",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\ui-before-original\\native-pending-1440-1\\after-click.png",
+      "path": "viewed/ui-before-original/native-pending-1440-1/after-click.png",
+      "bytes": 122093,
+      "sha256": "132210cb1f6bc9ca84c92bfed928a8269e21139ba0da466ccc899c74dd4a9562",
+      "inspectedActualPixels": true
+    },
+    {
+      "source": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\evidence\\corpus-first-use-20260905\\ui-before-original\\native-pending-1440-1\\settled.png",
+      "path": "viewed/ui-before-original/native-pending-1440-1/settled.png",
+      "bytes": 45504,
+      "sha256": "44099d4571b93978e0f8ba9fbbc4e3e7748a3b6a91fd40a46df7de4bb37b3a5a",
+      "inspectedActualPixels": true
+    }
+  ]
+}

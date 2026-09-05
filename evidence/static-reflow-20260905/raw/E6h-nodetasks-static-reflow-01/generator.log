@@ -1,0 +1,5 @@
+
+> nodetasks@0.1.0 build:catalog
+> node scripts/build-catalog.mjs
+
+NodeTasks catalog: 9155 searchable tasks (58 curated, 9097 extracted), 4 adapters, 1236 files

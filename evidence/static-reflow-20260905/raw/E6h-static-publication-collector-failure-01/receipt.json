@@ -1,0 +1,9 @@
+{
+  "status": "EXTERNAL_PUBLICATION_COLLECTOR_FAILURE",
+  "error": "KeyError: artifacts",
+  "toolChunk": "75e2a4",
+  "stage": "manifest schema read before raw copy or product edits",
+  "repositoryProductFilesChanged": 0,
+  "createdEmptyPacketDirectory": true,
+  "originalHelperPreserved": true
+}

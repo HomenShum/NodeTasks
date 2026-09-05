@@ -1,0 +1,158 @@
+[
+  {
+    "label": "node-version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 0.062000000034458935,
+    "log": "node-version.log"
+  },
+  {
+    "label": "npm-version",
+    "command": [
+      "npm",
+      "--version"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 0.34399999992456287,
+    "log": "npm-version.log"
+  },
+  {
+    "label": "npm-ci",
+    "command": [
+      "npm",
+      "ci"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 7.625,
+    "log": "npm-ci.log"
+  },
+  {
+    "label": "doctor",
+    "command": [
+      "npm",
+      "run",
+      "doctor"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 0.48400000005494803,
+    "log": "doctor.log"
+  },
+  {
+    "label": "test",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 2.437999999965541,
+    "log": "test.log"
+  },
+  {
+    "label": "proof",
+    "command": [
+      "npm",
+      "run",
+      "proof"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 2.327999999979511,
+    "log": "proof.log"
+  },
+  {
+    "label": "search",
+    "command": [
+      "npm",
+      "run",
+      "search",
+      "--",
+      "--view",
+      "public-node-repo-proofs",
+      "--limit",
+      "5"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 0.609000000054948,
+    "log": "search.log"
+  },
+  {
+    "label": "nodekit-repo-check",
+    "command": [
+      "node",
+      "D:\\VSCode Projects\\node-platform\\.worktrees\\project-consolidation-20260904\\src\\cli.mjs",
+      "repo",
+      "check",
+      "--repo-root",
+      "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "--json"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 1,
+    "seconds": 0.890999999945052,
+    "log": "nodekit-repo-check.log"
+  },
+  {
+    "label": "create-python-environment",
+    "command": [
+      "python",
+      "-m",
+      "venv",
+      "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 18.953000000095926,
+    "log": "create-python-environment.log"
+  },
+  {
+    "label": "python-version",
+    "command": [
+      "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python\\Scripts\\python.exe",
+      "--version"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 0.045999999972991645,
+    "log": "python-version.log"
+  },
+  {
+    "label": "python-requirements",
+    "command": [
+      "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "--index-url",
+      "https://pypi.org/simple",
+      "-r",
+      "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\requirements.txt"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 90.43800000008196,
+    "log": "python-requirements.log"
+  },
+  {
+    "label": "python-installed-freeze",
+    "command": [
+      "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "freeze",
+      "--all"
+    ],
+    "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "exitCode": 0,
+    "seconds": 0.5619999999180436,
+    "log": "python-installed-freeze.log"
+  }
+]

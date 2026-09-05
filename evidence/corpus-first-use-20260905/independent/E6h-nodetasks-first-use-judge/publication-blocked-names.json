@@ -1,0 +1,798 @@
+{
+  "blocked": true,
+  "count": 158,
+  "paths": [
+    {
+      "path": "context/E6h-nodetasks-ui-findings-before-label-correction.mjs",
+      "suggestedPath": "context/E6h-nodetasks-ui-findings-before-label-correction.mjs.txt",
+      "sha256": "fc1eb4525be371ba53770109b30a9a8b401caaf913169245dbd30c924ff447ef"
+    },
+    {
+      "path": "context/E6h-nodetasks-ui-findings-before.mjs",
+      "suggestedPath": "context/E6h-nodetasks-ui-findings-before.mjs.txt",
+      "sha256": "e385a435544ca243ce643ab48dea38342c7ed8dcb5dbd07fae546c7a95be5ed6"
+    },
+    {
+      "path": "ui-before-labelled/download-ready-1440/after-overlay.html",
+      "suggestedPath": "ui-before-labelled/download-ready-1440/after-overlay.html.txt",
+      "sha256": "dbc881112383dc397acc4c0cbc3b1fbdd3f5869b7f90d98735c2ce887d8e3c5c"
+    },
+    {
+      "path": "ui-before-labelled/download-ready-1440/before.html",
+      "suggestedPath": "ui-before-labelled/download-ready-1440/before.html.txt",
+      "sha256": "dbc881112383dc397acc4c0cbc3b1fbdd3f5869b7f90d98735c2ce887d8e3c5c"
+    },
+    {
+      "path": "ui-before-labelled/download-ready-390/after-overlay.html",
+      "suggestedPath": "ui-before-labelled/download-ready-390/after-overlay.html.txt",
+      "sha256": "0d6846b25003df645288271ea7458147daa611a7337c0f3e7a16568461341b08"
+    },
+    {
+      "path": "ui-before-labelled/download-ready-390/before.html",
+      "suggestedPath": "ui-before-labelled/download-ready-390/before.html.txt",
+      "sha256": "0d6846b25003df645288271ea7458147daa611a7337c0f3e7a16568461341b08"
+    },
+    {
+      "path": "ui-before-labelled/metric-summary-1440/after-overlay.html",
+      "suggestedPath": "ui-before-labelled/metric-summary-1440/after-overlay.html.txt",
+      "sha256": "dbc881112383dc397acc4c0cbc3b1fbdd3f5869b7f90d98735c2ce887d8e3c5c"
+    },
+    {
+      "path": "ui-before-labelled/metric-summary-1440/before.html",
+      "suggestedPath": "ui-before-labelled/metric-summary-1440/before.html.txt",
+      "sha256": "dbc881112383dc397acc4c0cbc3b1fbdd3f5869b7f90d98735c2ce887d8e3c5c"
+    },
+    {
+      "path": "ui-before-labelled/metric-summary-390/after-overlay.html",
+      "suggestedPath": "ui-before-labelled/metric-summary-390/after-overlay.html.txt",
+      "sha256": "dfe37a86906c259b370aae6e425227a5af9df19511e2889051d628585f8f28f1"
+    },
+    {
+      "path": "ui-before-labelled/metric-summary-390/before.html",
+      "suggestedPath": "ui-before-labelled/metric-summary-390/before.html.txt",
+      "sha256": "dfe37a86906c259b370aae6e425227a5af9df19511e2889051d628585f8f28f1"
+    },
+    {
+      "path": "ui-before-labelled/metric-task-1440/after-overlay.html",
+      "suggestedPath": "ui-before-labelled/metric-task-1440/after-overlay.html.txt",
+      "sha256": "dbc881112383dc397acc4c0cbc3b1fbdd3f5869b7f90d98735c2ce887d8e3c5c"
+    },
+    {
+      "path": "ui-before-labelled/metric-task-1440/before.html",
+      "suggestedPath": "ui-before-labelled/metric-task-1440/before.html.txt",
+      "sha256": "dbc881112383dc397acc4c0cbc3b1fbdd3f5869b7f90d98735c2ce887d8e3c5c"
+    },
+    {
+      "path": "ui-before-labelled/metric-task-390/after-overlay.html",
+      "suggestedPath": "ui-before-labelled/metric-task-390/after-overlay.html.txt",
+      "sha256": "0d6846b25003df645288271ea7458147daa611a7337c0f3e7a16568461341b08"
+    },
+    {
+      "path": "ui-before-labelled/metric-task-390/before.html",
+      "suggestedPath": "ui-before-labelled/metric-task-390/before.html.txt",
+      "sha256": "0d6846b25003df645288271ea7458147daa611a7337c0f3e7a16568461341b08"
+    },
+    {
+      "path": "ui-before-original/download-ready-1440/after-overlay.html",
+      "suggestedPath": "ui-before-original/download-ready-1440/after-overlay.html.txt",
+      "sha256": "c289591bf4d51dc1f9e5a6856f6a4e66f4844a0403daec73a91765efee928135"
+    },
+    {
+      "path": "ui-before-original/download-ready-1440/before.html",
+      "suggestedPath": "ui-before-original/download-ready-1440/before.html.txt",
+      "sha256": "c289591bf4d51dc1f9e5a6856f6a4e66f4844a0403daec73a91765efee928135"
+    },
+    {
+      "path": "ui-before-original/download-ready-390/after-overlay.html",
+      "suggestedPath": "ui-before-original/download-ready-390/after-overlay.html.txt",
+      "sha256": "6ad56f333a6be0de74e604a09595f49cf03177f6cfe9d4fc6db16bddaf8209b6"
+    },
+    {
+      "path": "ui-before-original/download-ready-390/before.html",
+      "suggestedPath": "ui-before-original/download-ready-390/before.html.txt",
+      "sha256": "6ad56f333a6be0de74e604a09595f49cf03177f6cfe9d4fc6db16bddaf8209b6"
+    },
+    {
+      "path": "ui-before-original/metric-summary-1440/after-overlay.html",
+      "suggestedPath": "ui-before-original/metric-summary-1440/after-overlay.html.txt",
+      "sha256": "c289591bf4d51dc1f9e5a6856f6a4e66f4844a0403daec73a91765efee928135"
+    },
+    {
+      "path": "ui-before-original/metric-summary-1440/before.html",
+      "suggestedPath": "ui-before-original/metric-summary-1440/before.html.txt",
+      "sha256": "c289591bf4d51dc1f9e5a6856f6a4e66f4844a0403daec73a91765efee928135"
+    },
+    {
+      "path": "ui-before-original/metric-summary-390/after-overlay.html",
+      "suggestedPath": "ui-before-original/metric-summary-390/after-overlay.html.txt",
+      "sha256": "50566148e9eebfe5b616b7d4fa0c86ff6e2a7c183f46eb29b8f877abe8f54f47"
+    },
+    {
+      "path": "ui-before-original/metric-summary-390/before.html",
+      "suggestedPath": "ui-before-original/metric-summary-390/before.html.txt",
+      "sha256": "50566148e9eebfe5b616b7d4fa0c86ff6e2a7c183f46eb29b8f877abe8f54f47"
+    },
+    {
+      "path": "ui-before-original/metric-task-1440/after-overlay.html",
+      "suggestedPath": "ui-before-original/metric-task-1440/after-overlay.html.txt",
+      "sha256": "c289591bf4d51dc1f9e5a6856f6a4e66f4844a0403daec73a91765efee928135"
+    },
+    {
+      "path": "ui-before-original/metric-task-1440/before.html",
+      "suggestedPath": "ui-before-original/metric-task-1440/before.html.txt",
+      "sha256": "c289591bf4d51dc1f9e5a6856f6a4e66f4844a0403daec73a91765efee928135"
+    },
+    {
+      "path": "ui-before-original/metric-task-390/after-overlay.html",
+      "suggestedPath": "ui-before-original/metric-task-390/after-overlay.html.txt",
+      "sha256": "6ad56f333a6be0de74e604a09595f49cf03177f6cfe9d4fc6db16bddaf8209b6"
+    },
+    {
+      "path": "ui-before-original/metric-task-390/before.html",
+      "suggestedPath": "ui-before-original/metric-task-390/before.html.txt",
+      "sha256": "6ad56f333a6be0de74e604a09595f49cf03177f6cfe9d4fc6db16bddaf8209b6"
+    },
+    {
+      "path": "ui-before-original/native-pending-1440-1/after-click.html",
+      "suggestedPath": "ui-before-original/native-pending-1440-1/after-click.html.txt",
+      "sha256": "01abed12b141225c65d27bbaf419ab259c09d9aa926ab1acb46e9e8e43505a90"
+    },
+    {
+      "path": "ui-before-original/native-pending-1440-1/settled.html",
+      "suggestedPath": "ui-before-original/native-pending-1440-1/settled.html.txt",
+      "sha256": "fb851381f7964525eb3909fc713fc2277b9c22ddb23eeac7b5f0621840ed76b2"
+    },
+    {
+      "path": "ui-before-original/native-pending-1440-2/after-click.html",
+      "suggestedPath": "ui-before-original/native-pending-1440-2/after-click.html.txt",
+      "sha256": "fe2b2d285357accb79e0d18b126e1b7220b389beb204864f1e62644cc7499641"
+    },
+    {
+      "path": "ui-before-original/native-pending-1440-2/settled.html",
+      "suggestedPath": "ui-before-original/native-pending-1440-2/settled.html.txt",
+      "sha256": "9557d44dd55cad7574e993621d2f8ed902be691af2c1e75dac72b23022493ac6"
+    },
+    {
+      "path": "ui-before-original/native-pending-390-1/after-click.html",
+      "suggestedPath": "ui-before-original/native-pending-390-1/after-click.html.txt",
+      "sha256": "e631e8070f530d577abd1363a1521e7f1a3ba519ce7236b632751d93df64d0fb"
+    },
+    {
+      "path": "ui-before-original/native-pending-390-1/settled.html",
+      "suggestedPath": "ui-before-original/native-pending-390-1/settled.html.txt",
+      "sha256": "48f816eda1ec10292efaa035bbfaccd0bfd7e3d9b047691587e2955a91f9e704"
+    },
+    {
+      "path": "ui-before-original/native-pending-390-2/after-click.html",
+      "suggestedPath": "ui-before-original/native-pending-390-2/after-click.html.txt",
+      "sha256": "2e0558936d6d61b8dab92869385d81df2cfcf3fa65bebab7c57dd20ad2ceddfc"
+    },
+    {
+      "path": "ui-before-original/native-pending-390-2/settled.html",
+      "suggestedPath": "ui-before-original/native-pending-390-2/settled.html.txt",
+      "sha256": "9ef49e07315bb37caac5a41d09aef7ecfc7375c06da17c23aa7e7a17e8b807dd"
+    },
+    {
+      "path": "worker/browser-first-01/320-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-01/320-empty-endpoint.html.txt",
+      "sha256": "a14a3c6788427d569d1d34fe4f7263be73b096a5d1e168d8cdf1e00c9bb2d99d"
+    },
+    {
+      "path": "worker/browser-first-01/320-entry.html",
+      "suggestedPath": "worker/browser-first-01/320-entry.html.txt",
+      "sha256": "bcb2c60c06bff00c9d54a21953347cd49b6e2c789d9e849bba02bea650fcbc72"
+    },
+    {
+      "path": "worker/browser-first-01/320-failure.html",
+      "suggestedPath": "worker/browser-first-01/320-failure.html.txt",
+      "sha256": "dc1408b23b2492a85dea17c9b6428e0649d50d79d296f6fae1b8c4dd290b02c8"
+    },
+    {
+      "path": "worker/browser-first-01/320-task-provenance.html",
+      "suggestedPath": "worker/browser-first-01/320-task-provenance.html.txt",
+      "sha256": "f196ce832d83928d3ef12079e7c176d58ddf22fdcb8ab84bd7da56271627a2b3"
+    },
+    {
+      "path": "worker/browser-first-02/320-bundle.html",
+      "suggestedPath": "worker/browser-first-02/320-bundle.html.txt",
+      "sha256": "c0f05fe52fbff8db10cefd8fa09e084bc248d2777f8a24c0a274e3ed76a25efd"
+    },
+    {
+      "path": "worker/browser-first-02/320-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-02/320-empty-endpoint.html.txt",
+      "sha256": "aae301494ead74dcb20810b6540753eb79bc0a640c1b9aa877c977b795ff169c"
+    },
+    {
+      "path": "worker/browser-first-02/320-entry.html",
+      "suggestedPath": "worker/browser-first-02/320-entry.html.txt",
+      "sha256": "ba64629acf776ca196b6a8240ea89280f665e7a7918a449ce1bdc36e00142465"
+    },
+    {
+      "path": "worker/browser-first-02/320-failure.html",
+      "suggestedPath": "worker/browser-first-02/320-failure.html.txt",
+      "sha256": "f13d304859870af9891555ea473579e1a5e8a2e67e61e1d930cdf78ee6dc45c5"
+    },
+    {
+      "path": "worker/browser-first-02/320-local-answer.html",
+      "suggestedPath": "worker/browser-first-02/320-local-answer.html.txt",
+      "sha256": "65d5edb15fd4cf4fa436b166721558c7942ccfec627133e15d9461c509e90be2"
+    },
+    {
+      "path": "worker/browser-first-02/320-score-boundary.html",
+      "suggestedPath": "worker/browser-first-02/320-score-boundary.html.txt",
+      "sha256": "6047e0db4a5ff399f93e821bbcc781c4ed83207cc67fcc55fb8ba2ff9b471ffd"
+    },
+    {
+      "path": "worker/browser-first-02/320-task-provenance.html",
+      "suggestedPath": "worker/browser-first-02/320-task-provenance.html.txt",
+      "sha256": "a5cf8ddb768f6a96a2cbbe93937b87db1dfbedb538ee14cebc754c94ab527514"
+    },
+    {
+      "path": "worker/browser-first-03/320-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-03/320-empty-endpoint.html.txt",
+      "sha256": "5243e1199e140472c21b0105a7ce1cdea0e906656d38dfefff00fff199f5368d"
+    },
+    {
+      "path": "worker/browser-first-03/320-entry.html",
+      "suggestedPath": "worker/browser-first-03/320-entry.html.txt",
+      "sha256": "f9e440c47a8cd8bd93ff217d607e1aee03f558cc624d858f85b4208a0f46e613"
+    },
+    {
+      "path": "worker/browser-first-03/320-failure.html",
+      "suggestedPath": "worker/browser-first-03/320-failure.html.txt",
+      "sha256": "5eb4e1d6a046a00c44e4a197e4c2102e23c27ed9c1738d51b4f36984b000052e"
+    },
+    {
+      "path": "worker/browser-first-03/320-task-provenance.html",
+      "suggestedPath": "worker/browser-first-03/320-task-provenance.html.txt",
+      "sha256": "aa2496abb92ce5a981c3fdf332e7523d2fb610b959492ece02f1654481d422a1"
+    },
+    {
+      "path": "worker/browser-first-04/320-bundle.html",
+      "suggestedPath": "worker/browser-first-04/320-bundle.html.txt",
+      "sha256": "310de55ff07e9d86a740f6c4ce6f00989d5c526b4ce4240c7a2dfe8bc3165a38"
+    },
+    {
+      "path": "worker/browser-first-04/320-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-04/320-empty-endpoint.html.txt",
+      "sha256": "c7c1dd1f2b7f8db36618674f6d0568dfa429bf6c0c2cf35fa1d4dc1bb533ee12"
+    },
+    {
+      "path": "worker/browser-first-04/320-entry.html",
+      "suggestedPath": "worker/browser-first-04/320-entry.html.txt",
+      "sha256": "ce24b1ba42b7006879491fd597f9e83b36865b5666168d4c7c8b6200bdda6cb8"
+    },
+    {
+      "path": "worker/browser-first-04/320-failure.html",
+      "suggestedPath": "worker/browser-first-04/320-failure.html.txt",
+      "sha256": "f1128d3cbeb0d4bf8338ecd9b24a2e7a121753fa696efbb57e379c8588acc60c"
+    },
+    {
+      "path": "worker/browser-first-04/320-keyboard.html",
+      "suggestedPath": "worker/browser-first-04/320-keyboard.html.txt",
+      "sha256": "6250a2de9e641e46300b5e130805c052ceddf7bd0b2c3c7a4c46b6c83c5dde3a"
+    },
+    {
+      "path": "worker/browser-first-04/320-local-answer.html",
+      "suggestedPath": "worker/browser-first-04/320-local-answer.html.txt",
+      "sha256": "ec0639a6a8bbb5438cfc9c2778df652498eac2ca9d28b59ae7de238d54cf2ffd"
+    },
+    {
+      "path": "worker/browser-first-04/320-no-result-state.html",
+      "suggestedPath": "worker/browser-first-04/320-no-result-state.html.txt",
+      "sha256": "30a315a31252db1417bebbc7aa7adbfa675dd343f2503411468155c3f2a448ef"
+    },
+    {
+      "path": "worker/browser-first-04/320-score-boundary.html",
+      "suggestedPath": "worker/browser-first-04/320-score-boundary.html.txt",
+      "sha256": "60241a3743e7cfe3b63cd0c994a41509892697c912436451a1d65ea998ffaf69"
+    },
+    {
+      "path": "worker/browser-first-04/320-task-provenance.html",
+      "suggestedPath": "worker/browser-first-04/320-task-provenance.html.txt",
+      "sha256": "37325293afce32422d8761427dedb5fa596be2e6409ef68d5c19ef59c24d6fe7"
+    },
+    {
+      "path": "worker/browser-first-04/320-text200.html",
+      "suggestedPath": "worker/browser-first-04/320-text200.html.txt",
+      "sha256": "4b1146f231d3551bc9fe05d92a3fad0b651c8cc7b824807fe39c1f2127e98ed5"
+    },
+    {
+      "path": "worker/browser-first-05/320-bundle.html",
+      "suggestedPath": "worker/browser-first-05/320-bundle.html.txt",
+      "sha256": "52dde36d4eb719f5df2722cb9b4ed7db27eb2345c2ff043b5b1d852fbd145c80"
+    },
+    {
+      "path": "worker/browser-first-05/320-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-05/320-empty-endpoint.html.txt",
+      "sha256": "857b85f6ebd412e8c6410a164127bb57347c7391db8abba45e086f029aae9bff"
+    },
+    {
+      "path": "worker/browser-first-05/320-entry.html",
+      "suggestedPath": "worker/browser-first-05/320-entry.html.txt",
+      "sha256": "c086b69c742c442307d0ceb7e5aa7a3259f756d0003048734109a16fd03096cb"
+    },
+    {
+      "path": "worker/browser-first-05/320-failure.html",
+      "suggestedPath": "worker/browser-first-05/320-failure.html.txt",
+      "sha256": "58ad1e5a29c4e3c31f807317656afde0c876326c036d4b848bb75775acb39c58"
+    },
+    {
+      "path": "worker/browser-first-05/320-keyboard.html",
+      "suggestedPath": "worker/browser-first-05/320-keyboard.html.txt",
+      "sha256": "47265d178cf81a52786cb8b10ed01e0b4606822b48af5ecc0141cc5825d6baf3"
+    },
+    {
+      "path": "worker/browser-first-05/320-local-answer.html",
+      "suggestedPath": "worker/browser-first-05/320-local-answer.html.txt",
+      "sha256": "c43197e4cb9ad0871b1c95dcaa9ef49e87973912c32530dd73c2b52c5322e3a2"
+    },
+    {
+      "path": "worker/browser-first-05/320-no-result-state.html",
+      "suggestedPath": "worker/browser-first-05/320-no-result-state.html.txt",
+      "sha256": "08af6e4dbb2a799a264347a752374aafd6a76f0f4d711f5a76248a3e9906c9da"
+    },
+    {
+      "path": "worker/browser-first-05/320-score-boundary.html",
+      "suggestedPath": "worker/browser-first-05/320-score-boundary.html.txt",
+      "sha256": "6c456d858164ce73e9c7e750081e325cbf02928fea124f3859001d7cde0b072d"
+    },
+    {
+      "path": "worker/browser-first-05/320-task-provenance.html",
+      "suggestedPath": "worker/browser-first-05/320-task-provenance.html.txt",
+      "sha256": "162e2c4ad4cf398ae2a250633d497d4f942ce5dd2e54abb57409c2679d7c4505"
+    },
+    {
+      "path": "worker/browser-first-06/320-bundle.html",
+      "suggestedPath": "worker/browser-first-06/320-bundle.html.txt",
+      "sha256": "07f9844547eca2875778fcb31c020c4a6cc0911b51b3e7b2d4e3c1780a1320ba"
+    },
+    {
+      "path": "worker/browser-first-06/320-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-06/320-empty-endpoint.html.txt",
+      "sha256": "f2a226969c14489907427e72d7611ac3958be608615e009fb978bd2d12df1822"
+    },
+    {
+      "path": "worker/browser-first-06/320-entry.html",
+      "suggestedPath": "worker/browser-first-06/320-entry.html.txt",
+      "sha256": "fd866ae72d22e772aeeb6e65d165dfeee19fd0f2f0352129b9a4d235bc73080f"
+    },
+    {
+      "path": "worker/browser-first-06/320-keyboard.html",
+      "suggestedPath": "worker/browser-first-06/320-keyboard.html.txt",
+      "sha256": "fca00599be9861ede8ef755fb085cb37ee1f6e9c781371baabad5ce9cc4640e8"
+    },
+    {
+      "path": "worker/browser-first-06/320-local-answer.html",
+      "suggestedPath": "worker/browser-first-06/320-local-answer.html.txt",
+      "sha256": "49283bf6fb31d9dd07b64401f1e17646f947da499014456105b60deca6622fbe"
+    },
+    {
+      "path": "worker/browser-first-06/320-no-result-state.html",
+      "suggestedPath": "worker/browser-first-06/320-no-result-state.html.txt",
+      "sha256": "074f7db29edf5a2116013ffe463808864e8a4b5edc0341474983f9f72c1d2927"
+    },
+    {
+      "path": "worker/browser-first-06/320-score-boundary.html",
+      "suggestedPath": "worker/browser-first-06/320-score-boundary.html.txt",
+      "sha256": "6f371b9fa55e252d2e55f9ff2dfda305b11f49ce9b2bfbaad8c07fec6d746cd1"
+    },
+    {
+      "path": "worker/browser-first-06/320-static-no-result.html",
+      "suggestedPath": "worker/browser-first-06/320-static-no-result.html.txt",
+      "sha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b"
+    },
+    {
+      "path": "worker/browser-first-06/320-static-selected.html",
+      "suggestedPath": "worker/browser-first-06/320-static-selected.html.txt",
+      "sha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80"
+    },
+    {
+      "path": "worker/browser-first-06/320-task-provenance.html",
+      "suggestedPath": "worker/browser-first-06/320-task-provenance.html.txt",
+      "sha256": "957ccc0679b4e9144ab861265d475b42ee6354df62d35cec60a2e03bafa82bad"
+    },
+    {
+      "path": "worker/browser-first-06/320-text200.html",
+      "suggestedPath": "worker/browser-first-06/320-text200.html.txt",
+      "sha256": "4b081f157ec57e3ff88fd6e316ebb05225b9ba1c6c19b215dcf78636ef4888b5"
+    },
+    {
+      "path": "worker/browser-first-06/390-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-06/390-empty-endpoint.html.txt",
+      "sha256": "e22191fe26b9ecd28a46b305494b8c249e684620f75598f3217da669c312b7f2"
+    },
+    {
+      "path": "worker/browser-first-06/390-entry.html",
+      "suggestedPath": "worker/browser-first-06/390-entry.html.txt",
+      "sha256": "a3fb24f591aa8d1303a5c38f9c2b8df21f54fca30cda2b80d0be501fffbfb6c0"
+    },
+    {
+      "path": "worker/browser-first-06/390-failure.html",
+      "suggestedPath": "worker/browser-first-06/390-failure.html.txt",
+      "sha256": "07f875cfa85fbccf65900ede7be27379bd999ae88287f84ac4e4550cc1415d43"
+    },
+    {
+      "path": "worker/browser-first-06/390-task-provenance.html",
+      "suggestedPath": "worker/browser-first-06/390-task-provenance.html.txt",
+      "sha256": "c0723af64dbb9481bab0ffd6ed29d6e60cdb64d2d8a70f945de821309c2bbdce"
+    },
+    {
+      "path": "worker/browser-first-07/1024-bundle.html",
+      "suggestedPath": "worker/browser-first-07/1024-bundle.html.txt",
+      "sha256": "e872a756493d79eefc300f59e7d4d0ae2a5db851b86d37c8fc7c33d550e225c5"
+    },
+    {
+      "path": "worker/browser-first-07/1024-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-07/1024-empty-endpoint.html.txt",
+      "sha256": "1152e072a2c21efb2e926d36f45fa26f57f8d48736d16175f6cf11c7b83d381f"
+    },
+    {
+      "path": "worker/browser-first-07/1024-entry.html",
+      "suggestedPath": "worker/browser-first-07/1024-entry.html.txt",
+      "sha256": "1152e072a2c21efb2e926d36f45fa26f57f8d48736d16175f6cf11c7b83d381f"
+    },
+    {
+      "path": "worker/browser-first-07/1024-keyboard.html",
+      "suggestedPath": "worker/browser-first-07/1024-keyboard.html.txt",
+      "sha256": "fdb880bc6a29fa5e629b284a5eb66d2020adef68eceb09e74acdeccab77b39a9"
+    },
+    {
+      "path": "worker/browser-first-07/1024-local-answer.html",
+      "suggestedPath": "worker/browser-first-07/1024-local-answer.html.txt",
+      "sha256": "cc58e5ef4a14b054ec142ebdc77a14b6b7cea3983a91429db8347adc305e17ea"
+    },
+    {
+      "path": "worker/browser-first-07/1024-no-result-state.html",
+      "suggestedPath": "worker/browser-first-07/1024-no-result-state.html.txt",
+      "sha256": "bd06f47a55f62b994862805ba88cb7d04a7ef6e4cf29a8698d424324bdc86226"
+    },
+    {
+      "path": "worker/browser-first-07/1024-score-boundary.html",
+      "suggestedPath": "worker/browser-first-07/1024-score-boundary.html.txt",
+      "sha256": "800ad86a56c86a6a299176a56a526d796a86f1a61edda23bc2ff277f63bbfafb"
+    },
+    {
+      "path": "worker/browser-first-07/1024-static-no-result.html",
+      "suggestedPath": "worker/browser-first-07/1024-static-no-result.html.txt",
+      "sha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b"
+    },
+    {
+      "path": "worker/browser-first-07/1024-static-selected.html",
+      "suggestedPath": "worker/browser-first-07/1024-static-selected.html.txt",
+      "sha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80"
+    },
+    {
+      "path": "worker/browser-first-07/1024-task-provenance.html",
+      "suggestedPath": "worker/browser-first-07/1024-task-provenance.html.txt",
+      "sha256": "153beecccf02f249f4eb8b3b128e6799c9b22e803263e01696bbf9cb1db5b4cc"
+    },
+    {
+      "path": "worker/browser-first-07/1024-text200.html",
+      "suggestedPath": "worker/browser-first-07/1024-text200.html.txt",
+      "sha256": "ca952935673b5cac3800ec202c1221ab6f8553101eb191b5b36333fafec87077"
+    },
+    {
+      "path": "worker/browser-first-07/1440-bundle.html",
+      "suggestedPath": "worker/browser-first-07/1440-bundle.html.txt",
+      "sha256": "b7f01d272078a817812bf383ace1a7fd5b7769aa2a674fad1891c2882abd7f59"
+    },
+    {
+      "path": "worker/browser-first-07/1440-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-07/1440-empty-endpoint.html.txt",
+      "sha256": "138bfdd89e00b831183dddf38cfd6b226bdbca7e2c134e26565b1f3d33eaa0f0"
+    },
+    {
+      "path": "worker/browser-first-07/1440-entry.html",
+      "suggestedPath": "worker/browser-first-07/1440-entry.html.txt",
+      "sha256": "138bfdd89e00b831183dddf38cfd6b226bdbca7e2c134e26565b1f3d33eaa0f0"
+    },
+    {
+      "path": "worker/browser-first-07/1440-keyboard.html",
+      "suggestedPath": "worker/browser-first-07/1440-keyboard.html.txt",
+      "sha256": "55d028c016549f177953a9386783f8a7937b49fe240ea391dd91a6f7719b67a7"
+    },
+    {
+      "path": "worker/browser-first-07/1440-local-answer.html",
+      "suggestedPath": "worker/browser-first-07/1440-local-answer.html.txt",
+      "sha256": "ebe4a0d3016fbdba1c76e8e98b1a001ce2a3c3030f6fbe1c662c1c9559fce0c9"
+    },
+    {
+      "path": "worker/browser-first-07/1440-no-result-state.html",
+      "suggestedPath": "worker/browser-first-07/1440-no-result-state.html.txt",
+      "sha256": "7f9892874c7132a2570466b56c6a1020682d45045df3f3d5d113a9637016a001"
+    },
+    {
+      "path": "worker/browser-first-07/1440-score-boundary.html",
+      "suggestedPath": "worker/browser-first-07/1440-score-boundary.html.txt",
+      "sha256": "05c600da04854a9b82e67204f731b1e7b07552fdbd13e6101e537a8ff46e6f9a"
+    },
+    {
+      "path": "worker/browser-first-07/1440-static-no-result.html",
+      "suggestedPath": "worker/browser-first-07/1440-static-no-result.html.txt",
+      "sha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b"
+    },
+    {
+      "path": "worker/browser-first-07/1440-static-selected.html",
+      "suggestedPath": "worker/browser-first-07/1440-static-selected.html.txt",
+      "sha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80"
+    },
+    {
+      "path": "worker/browser-first-07/1440-task-provenance.html",
+      "suggestedPath": "worker/browser-first-07/1440-task-provenance.html.txt",
+      "sha256": "d281cdadf744794f28a0996a90bee0006133eee56feb38c4b3856fc939bdf312"
+    },
+    {
+      "path": "worker/browser-first-07/1440-text200.html",
+      "suggestedPath": "worker/browser-first-07/1440-text200.html.txt",
+      "sha256": "0c4647f8c961dc1a459ae1c73ab9fc3bfe4dcbb1830d39c965b80ca3273498c2"
+    },
+    {
+      "path": "worker/browser-first-07/1920-bundle.html",
+      "suggestedPath": "worker/browser-first-07/1920-bundle.html.txt",
+      "sha256": "c7f4344b26ce7a898a8c15f5a29b27c2c6e06c654aa534b1f77b536ed608ada7"
+    },
+    {
+      "path": "worker/browser-first-07/1920-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-07/1920-empty-endpoint.html.txt",
+      "sha256": "ba77a1408f272744b2686fe1ca8c395c962076d71e3dd3aae6304c226f0e138d"
+    },
+    {
+      "path": "worker/browser-first-07/1920-entry.html",
+      "suggestedPath": "worker/browser-first-07/1920-entry.html.txt",
+      "sha256": "ba77a1408f272744b2686fe1ca8c395c962076d71e3dd3aae6304c226f0e138d"
+    },
+    {
+      "path": "worker/browser-first-07/1920-keyboard.html",
+      "suggestedPath": "worker/browser-first-07/1920-keyboard.html.txt",
+      "sha256": "c09758b444444d660abf5a9ec2281054d51614202dee15f532d0b154cb49dbfd"
+    },
+    {
+      "path": "worker/browser-first-07/1920-local-answer.html",
+      "suggestedPath": "worker/browser-first-07/1920-local-answer.html.txt",
+      "sha256": "629f833ecd426a4c8fa5bd76a1aebc42313dc21f1585a32fbeece8da7611487f"
+    },
+    {
+      "path": "worker/browser-first-07/1920-no-result-state.html",
+      "suggestedPath": "worker/browser-first-07/1920-no-result-state.html.txt",
+      "sha256": "5f74c8c7dc00a6e547e369e3a18d0b5f5113b6dc183e9be436f7338f7a9bedb0"
+    },
+    {
+      "path": "worker/browser-first-07/1920-score-boundary.html",
+      "suggestedPath": "worker/browser-first-07/1920-score-boundary.html.txt",
+      "sha256": "9ec92ab1fbbf0c091cbf387b2319a51b80fdc4154ae3e5221fabce490f82dee8"
+    },
+    {
+      "path": "worker/browser-first-07/1920-static-no-result.html",
+      "suggestedPath": "worker/browser-first-07/1920-static-no-result.html.txt",
+      "sha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b"
+    },
+    {
+      "path": "worker/browser-first-07/1920-static-selected.html",
+      "suggestedPath": "worker/browser-first-07/1920-static-selected.html.txt",
+      "sha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80"
+    },
+    {
+      "path": "worker/browser-first-07/1920-task-provenance.html",
+      "suggestedPath": "worker/browser-first-07/1920-task-provenance.html.txt",
+      "sha256": "5584a98ffa16d93a9d2f0768cefc80d5f7ff334ece94b95d108a91e6d5bb2a5a"
+    },
+    {
+      "path": "worker/browser-first-07/1920-text200.html",
+      "suggestedPath": "worker/browser-first-07/1920-text200.html.txt",
+      "sha256": "2ce234c9c0e56fae34f07f6222ca1266d91b924f3759bc7c51fd08cb4439f6b8"
+    },
+    {
+      "path": "worker/browser-first-07/320-bundle.html",
+      "suggestedPath": "worker/browser-first-07/320-bundle.html.txt",
+      "sha256": "148b2247c4b99a1be677b197bc1a3bb50526ae398746b0a621b4fb8808153bac"
+    },
+    {
+      "path": "worker/browser-first-07/320-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-07/320-empty-endpoint.html.txt",
+      "sha256": "22bf27987239cd235ad761a25e6297f17fa69c0107add72602d4c8bd12fd1db1"
+    },
+    {
+      "path": "worker/browser-first-07/320-entry.html",
+      "suggestedPath": "worker/browser-first-07/320-entry.html.txt",
+      "sha256": "1d036d7c3c1eb0edb3aa074c4c2d8912cea9960b9ae955d2aec5799f2520ff1f"
+    },
+    {
+      "path": "worker/browser-first-07/320-keyboard.html",
+      "suggestedPath": "worker/browser-first-07/320-keyboard.html.txt",
+      "sha256": "374d9117e30fb981920f4ff450d0a0cb741b1c5c0bd16b54c63cf4e2f815fa7a"
+    },
+    {
+      "path": "worker/browser-first-07/320-local-answer.html",
+      "suggestedPath": "worker/browser-first-07/320-local-answer.html.txt",
+      "sha256": "b49388a8de9a553eb327af6804049c0508283f799e7cd0dd6c2c686dc534b00f"
+    },
+    {
+      "path": "worker/browser-first-07/320-no-result-state.html",
+      "suggestedPath": "worker/browser-first-07/320-no-result-state.html.txt",
+      "sha256": "5bcfab06cc707d78d832830da81b98eb1f4f4d11279a0d490bdb91cebbc670e5"
+    },
+    {
+      "path": "worker/browser-first-07/320-score-boundary.html",
+      "suggestedPath": "worker/browser-first-07/320-score-boundary.html.txt",
+      "sha256": "66f182668f56ddec543d4cd506a6f0fc1f31134ba14f58285c0eb188e225002c"
+    },
+    {
+      "path": "worker/browser-first-07/320-static-no-result.html",
+      "suggestedPath": "worker/browser-first-07/320-static-no-result.html.txt",
+      "sha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b"
+    },
+    {
+      "path": "worker/browser-first-07/320-static-selected.html",
+      "suggestedPath": "worker/browser-first-07/320-static-selected.html.txt",
+      "sha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80"
+    },
+    {
+      "path": "worker/browser-first-07/320-task-provenance.html",
+      "suggestedPath": "worker/browser-first-07/320-task-provenance.html.txt",
+      "sha256": "1f59d67a838f5ed6ab7db9a237d0678f3bb8475776dc1985c74ab4121f4feca5"
+    },
+    {
+      "path": "worker/browser-first-07/320-text200.html",
+      "suggestedPath": "worker/browser-first-07/320-text200.html.txt",
+      "sha256": "4f8af00845731cabfe15b9ce726449d6cde338f8dd58497757e0d15fab4c5cca"
+    },
+    {
+      "path": "worker/browser-first-07/390-bundle.html",
+      "suggestedPath": "worker/browser-first-07/390-bundle.html.txt",
+      "sha256": "98c6157e0b6d2e3cc40a03e4deb4f8ee524f3a2bd5ce9bb5448f821a999e4773"
+    },
+    {
+      "path": "worker/browser-first-07/390-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-07/390-empty-endpoint.html.txt",
+      "sha256": "02e2a3afc1cabd671404f08a78e012cf99ed72abefaff680558fd4f4fd89ef6a"
+    },
+    {
+      "path": "worker/browser-first-07/390-entry.html",
+      "suggestedPath": "worker/browser-first-07/390-entry.html.txt",
+      "sha256": "bb0134532667d64983fd89ad94a8df4729f72f66b7d1b0ae2e67d0559be1b40c"
+    },
+    {
+      "path": "worker/browser-first-07/390-keyboard.html",
+      "suggestedPath": "worker/browser-first-07/390-keyboard.html.txt",
+      "sha256": "7b1ce56d8df4f897523dd3f90ff473233999476710c2af7f49594046b5d13cbe"
+    },
+    {
+      "path": "worker/browser-first-07/390-local-answer.html",
+      "suggestedPath": "worker/browser-first-07/390-local-answer.html.txt",
+      "sha256": "9e691a2095a43dd0d7afd75beb96d712d4f6d8d3195e62fcc8b4d57d75673b44"
+    },
+    {
+      "path": "worker/browser-first-07/390-no-result-state.html",
+      "suggestedPath": "worker/browser-first-07/390-no-result-state.html.txt",
+      "sha256": "ceef54bbd5111ff8217f8cbd92552ff6ca8ce5c4b7ee7f6e05abec67d8ed239d"
+    },
+    {
+      "path": "worker/browser-first-07/390-score-boundary.html",
+      "suggestedPath": "worker/browser-first-07/390-score-boundary.html.txt",
+      "sha256": "ef2521550947b7acb8b3d6b1075592875cbcef3cf42268d394a02460d2886ccd"
+    },
+    {
+      "path": "worker/browser-first-07/390-static-no-result.html",
+      "suggestedPath": "worker/browser-first-07/390-static-no-result.html.txt",
+      "sha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b"
+    },
+    {
+      "path": "worker/browser-first-07/390-static-selected.html",
+      "suggestedPath": "worker/browser-first-07/390-static-selected.html.txt",
+      "sha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80"
+    },
+    {
+      "path": "worker/browser-first-07/390-task-provenance.html",
+      "suggestedPath": "worker/browser-first-07/390-task-provenance.html.txt",
+      "sha256": "00a11a21024775f0b8e035fcc432faf88f53e9704a76d7d4b9ab86d40765b8e7"
+    },
+    {
+      "path": "worker/browser-first-07/390-text200.html",
+      "suggestedPath": "worker/browser-first-07/390-text200.html.txt",
+      "sha256": "5ca1b45639ef4d13bb5d3fea6bba5a852d1504defefc6ae9928a45cda58f382d"
+    },
+    {
+      "path": "worker/browser-first-07/768-bundle.html",
+      "suggestedPath": "worker/browser-first-07/768-bundle.html.txt",
+      "sha256": "d1d92439e8f91010804a05d714ce79748493747f177225cbfb8e111da32cf128"
+    },
+    {
+      "path": "worker/browser-first-07/768-empty-endpoint.html",
+      "suggestedPath": "worker/browser-first-07/768-empty-endpoint.html.txt",
+      "sha256": "2440e5d8edb00ca834f080c28c20f25581fda587e6df9b70c9b8ccfab604a3c4"
+    },
+    {
+      "path": "worker/browser-first-07/768-entry.html",
+      "suggestedPath": "worker/browser-first-07/768-entry.html.txt",
+      "sha256": "63041731e0ecd2ff2b1481641f370f90e8b50de1f7136730f8189caf99d94e0a"
+    },
+    {
+      "path": "worker/browser-first-07/768-keyboard.html",
+      "suggestedPath": "worker/browser-first-07/768-keyboard.html.txt",
+      "sha256": "306a39c0ae1b46581a039773110f8c5fefce4b66686ad3b526979e0ccd27610b"
+    },
+    {
+      "path": "worker/browser-first-07/768-local-answer.html",
+      "suggestedPath": "worker/browser-first-07/768-local-answer.html.txt",
+      "sha256": "5ab4c4a889245d527dfbb6e68e259a3b62d3760d8e7b73e20cb95d5ebea6cb5d"
+    },
+    {
+      "path": "worker/browser-first-07/768-no-result-state.html",
+      "suggestedPath": "worker/browser-first-07/768-no-result-state.html.txt",
+      "sha256": "e6c73c8735920195c157006a43530265a8b7d2d71429d9a182c99cb1096efbe3"
+    },
+    {
+      "path": "worker/browser-first-07/768-score-boundary.html",
+      "suggestedPath": "worker/browser-first-07/768-score-boundary.html.txt",
+      "sha256": "100836116c4bb3ac108027b8ab4d7a23b011cf49bc50a0eb764da6273a387a5d"
+    },
+    {
+      "path": "worker/browser-first-07/768-static-no-result.html",
+      "suggestedPath": "worker/browser-first-07/768-static-no-result.html.txt",
+      "sha256": "ecdbde8c4de5aff82237190484c434c5f33ee0063b283e9cb842458730c4336b"
+    },
+    {
+      "path": "worker/browser-first-07/768-static-selected.html",
+      "suggestedPath": "worker/browser-first-07/768-static-selected.html.txt",
+      "sha256": "5c6e8eaabdfcea7930a61f245d542148520fa425079aca391ede32188c6bca80"
+    },
+    {
+      "path": "worker/browser-first-07/768-task-provenance.html",
+      "suggestedPath": "worker/browser-first-07/768-task-provenance.html.txt",
+      "sha256": "0197297bddfa04ec9ea2c60420ace486097ace845efa3fba77fe2b149f0c2cab"
+    },
+    {
+      "path": "worker/browser-first-07/768-text200.html",
+      "suggestedPath": "worker/browser-first-07/768-text200.html.txt",
+      "sha256": "6ed22b2d958ac0e31632134e7344b3c6884cce026e26350920b974148cb3fd2c"
+    },
+    {
+      "path": "worker/entry-observation/entry-1440.html",
+      "suggestedPath": "worker/entry-observation/entry-1440.html.txt",
+      "sha256": "19877da29bd14609a2b581bbfcb5a361349336b3fb4e011c7c1f740c73f037da"
+    },
+    {
+      "path": "worker/entry-observation/entry-390.html",
+      "suggestedPath": "worker/entry-observation/entry-390.html.txt",
+      "sha256": "12ba76ec3d159da87d7e187e2e86f966b985c4fbf848fcf1572cbcffde86e5f3"
+    },
+    {
+      "path": "worker/observe-entry.mjs",
+      "suggestedPath": "worker/observe-entry.mjs.txt",
+      "sha256": "e75478ea98b4b3e74b8fc7a34c55134572af5983982dbbef97dd3b987ef43856"
+    },
+    {
+      "path": "worker/path-after-probe.mjs",
+      "suggestedPath": "worker/path-after-probe.mjs.txt",
+      "sha256": "ff1f8671f05f2ffae591a71e9a2ea492dfc1db31bb6106b4ab47c1829504a6df"
+    },
+    {
+      "path": "worker/run-command.py",
+      "suggestedPath": "worker/run-command.py.txt",
+      "sha256": "340fc666674b188e5c39e286fd2076bf705d1c7a71c6c46f224d3d0433bcaeee"
+    },
+    {
+      "path": "worker/source-before/nodekit.yaml",
+      "suggestedPath": "worker/source-before/nodekit.yaml.txt",
+      "sha256": "002d400bf51e114674bbacb6703108ab7bad8007eb465758e077ed8145cb656c"
+    },
+    {
+      "path": "worker/source-before/scripts/doctor.mjs",
+      "suggestedPath": "worker/source-before/scripts/doctor.mjs.txt",
+      "sha256": "3a80253dd78638f9a7ac3732f4fc32b9b2dcec547dce13c03b354fa25a185d3d"
+    },
+    {
+      "path": "worker/source-before/scripts/validate-catalog.mjs",
+      "suggestedPath": "worker/source-before/scripts/validate-catalog.mjs.txt",
+      "sha256": "e1e0fd1a57accfa865be7e5cee14c7f5e241dbd6f9e3f420acc0f21d1755cac5"
+    },
+    {
+      "path": "worker/source-before/test/corpus-validation.test.mjs",
+      "suggestedPath": "worker/source-before/test/corpus-validation.test.mjs.txt",
+      "sha256": "529bb15efe68e218078ba5f8de29272ce5a43000b39c16e54208a5802fe4d642"
+    }
+  ],
+  "currentTestExclusion": "node --test test/*.test.mjs",
+  "reason": "Historical evidence must not be discoverable as tests, imported as source, interpreted as configuration or opened as an executable page. Preserve original bytes under inert filenames. The packet root .gitattributes remains intentionally active."
+}

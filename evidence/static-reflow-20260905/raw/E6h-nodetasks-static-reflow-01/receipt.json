@@ -1,0 +1,92 @@
+{
+  "status": "THREE_OWNER_CAUSAL_REFLOW_APPLIED",
+  "at": "2026-09-05T19:44:46.850680+00:00",
+  "root": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+  "owners": [
+    {
+      "path": "scripts/build-catalog.mjs",
+      "bytes": 97011,
+      "sha256": "339938c754f16fe10cde464ba25f8fe5cfb535316593f5fc539f222a562f61ce"
+    },
+    {
+      "path": "catalog/task-browser.html",
+      "bytes": 5945,
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "770b1c414b5a677e922845fc4aae88ebb36752683b0e34ade86cbce328a2f0b0"
+    }
+  ],
+  "protectedUnchanged": 2425,
+  "frozenPreparedFilesUnchanged": 598,
+  "generatorArtifactsCompared": 18,
+  "onlyGeneratedChange": "catalog/task-browser.html",
+  "receiptDelta": [
+    {
+      "path": "/contentHashes/12/bytes",
+      "before": 5867,
+      "after": 5945
+    },
+    {
+      "path": "/contentHashes/12/sha256",
+      "before": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1",
+      "after": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "/corpusHash",
+      "before": "7aa41b0fec4c32820ce3449a0624558c5ad56e6c0a377a3c958ff4e32f9bc797",
+      "after": "e37ebe1399065a667e725e13edd8978117669ba9c213a90143505e3fda001685"
+    }
+  ],
+  "childEnvironmentNamesRemoved": [],
+  "commands": [
+    {
+      "args": [
+        "cmd",
+        "/c",
+        "npm",
+        "run",
+        "build:catalog"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-static-generator-20260905",
+      "startedAt": "2026-09-05T19:44:37.992692+00:00",
+      "seconds": 2.328,
+      "exitCode": 0,
+      "logSha256": "e0fb89deaeac359f5fea21049e8bd1e944d3d9318b999d80a9fcd5544b493707"
+    },
+    {
+      "args": [
+        "cmd",
+        "/c",
+        "npm",
+        "run",
+        "proof"
+      ],
+      "cwd": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+      "startedAt": "2026-09-05T19:44:40.625767+00:00",
+      "seconds": 2.922,
+      "exitCode": 1,
+      "logSha256": "fca81fdb35643a66aa10ec0b738cbdfbe7e8bb39976570fb0ce959bc7a24daf3"
+    },
+    {
+      "args": [
+        "cmd",
+        "/c",
+        "npm",
+        "run",
+        "validate"
+      ],
+      "cwd": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+      "startedAt": "2026-09-05T19:44:43.561713+00:00",
+      "seconds": 2.797,
+      "exitCode": 0,
+      "logSha256": "7f6eacafee173e0f21f195152945a8414581665354126f9c1c206f9a1ac61a65"
+    }
+  ],
+  "gitGuardsUnchanged": true,
+  "namedProof": "NODETASKS-STATIC-REFLOW-01",
+  "browserAfter": "NOT_RUN",
+  "normalCheck": "NOT_RUN"
+}

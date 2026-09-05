@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-09-05T17:14:12.990Z",
+  "base": "http://127.0.0.1:54531",
+  "args": [
+    "-m",
+    "streamlit",
+    "run",
+    "apps/nodetasks_streamlit.py",
+    "--server.address",
+    "127.0.0.1",
+    "--server.port",
+    "54531",
+    "--server.headless",
+    "true",
+    "--server.fileWatcherType",
+    "none",
+    "--browser.gatherUsageStats",
+    "false"
+  ],
+  "cells": [
+    {
+      "width": 1440,
+      "errors": [],
+      "external": []
+    },
+    {
+      "width": 390,
+      "errors": [],
+      "external": []
+    }
+  ],
+  "sourceSha256": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1",
+  "status": "OBSERVED",
+  "finishedAt": "2026-09-05T17:14:28.878Z"
+}

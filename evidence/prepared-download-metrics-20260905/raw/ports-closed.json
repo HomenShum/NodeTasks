@@ -1,0 +1,11 @@
+{
+  "at": "2026-09-05T19:26:54.8587342Z",
+  "ownedPorts": [
+    54531,
+    54532,
+    54533
+  ],
+  "listeners": [],
+  "status": "CLOSED",
+  "scope": "All awaited browser and server sessions completed; only owned proof ports checked; original user processes untouched"
+}

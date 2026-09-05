@@ -1,0 +1,678 @@
+{
+  "schemaVersion": "portfolio-review-plan/v1",
+  "proof": "NODETASKS-PR1-REVIEW-01",
+  "status": "READ_ONLY_REVIEW_COMPLETE_CONSUMER_PENDING_PARENT_AUTHORIZATION",
+  "generatedAt": "2026-09-05T16:05:40.350357+00:00",
+  "requestTrace": "Review exact preserved PR1 and current canonical NodeKit ownership requirements before authorizing a real source consumer.",
+  "subjects": {
+    "NodeTasksPR1": "8e9b6495ba3bf716549825d05f48faaefc73dcfb",
+    "NodeTasksMain": "6d4feacac8ca6287e0ffe406088ac46180d24fee",
+    "NodeTasksPrimaryPR2": "0a8ba3b7bb0fc8d295166362a4fd64f136ed9030",
+    "NodeKitCanonical": "a2d2e8ce36cc3e87a6a8133469dd55d8b7580588",
+    "NodeKitReviewedCandidate": "8cec22e4e554d6c93ca87ff2e72ea39ba39f4b85",
+    "NodeKitRelevantRegistryFilesEqual": {
+      "ownership.yaml": true,
+      "repositories.yaml": true,
+      "architecture.yaml": true,
+      "schemas/nodekit.schema.json": true,
+      "src/lib/repo-check.mjs": true
+    }
+  },
+  "changedPathCount": 18,
+  "uiEquivalence": {
+    "ownedBlobs": 7,
+    "allEqual": true,
+    "renderedProof": false,
+    "dataCaveat": "29 changed search text projections; both browser arrays equal respective JSONL indices."
+  },
+  "receiptArithmetic": {
+    "scope": "Independent static Git-blob arithmetic only, not execution of doctor/proof/tests.",
+    "sourceFiles": 1236,
+    "indexedSourceMismatches": [],
+    "actualVendoredFileCount": 1236,
+    "unindexedVendoredPaths": [],
+    "nonRegularModes": [],
+    "nonCanonicalIndexedPaths": [],
+    "contentHashes": [
+      {
+        "path": "catalog/all-tasks.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/benchmark-proxy-adapters.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/extracted-tasks.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/hierarchy.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/live-interaction-tasks.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/provenance-index.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/ranked-tasks.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/saved-views.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/search-index.js",
+        "matches": true
+      },
+      {
+        "path": "catalog/search-index.jsonl",
+        "matches": true
+      },
+      {
+        "path": "catalog/source-files.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/tag-index.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/task-browser.html",
+        "matches": true
+      },
+      {
+        "path": "catalog/task-bundles.json",
+        "matches": true
+      },
+      {
+        "path": "catalog/task-families.md",
+        "matches": true
+      },
+      {
+        "path": "catalog/task-index.json",
+        "matches": true
+      },
+      {
+        "path": "schemas/corpus-receipt.schema.json",
+        "matches": true
+      },
+      {
+        "path": "schemas/node-task.schema.json",
+        "matches": true
+      }
+    ],
+    "vendoredAggregateMatches": true,
+    "semanticBoundaryMatches": true,
+    "corpusHashMatches": true,
+    "receiptClaims": {
+      "status": "valid",
+      "passed": true,
+      "releaseReady": true,
+      "catalogValid": true,
+      "sourceIndexValid": true,
+      "counts": {
+        "searchableTasks": 9155,
+        "liveInteractionTasks": 58,
+        "extractedTasks": 9097,
+        "rankedTasks": 9155,
+        "searchRecords": 9155,
+        "benchmarkProxyAdapters": 4,
+        "externalLocalProxyTasks": 3,
+        "sourceFiles": 1236,
+        "sourceBytes": 22806452,
+        "savedViews": 9,
+        "taskBundles": 9,
+        "tags": 2428,
+        "sourceIndexContentMismatches": 0
+      }
+    },
+    "schemaValidationExecuted": false,
+    "cliExecuted": false
+  },
+  "protectedTaskFields": {
+    "protectedTaskIdentityOrderScoreProvenanceEqual": true,
+    "searchIndexCounts": [
+      9155,
+      9155
+    ],
+    "searchIndexIdentityOrderEqual": true,
+    "changedSearchRecords": [
+      {
+        "id": "source.src-nodeagent-skills-finance-creditratios-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.tests-creditratios-test-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.0-computes-the-5-cs-ratios-a-credit-committee-underwrites",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.1-passes-the-dscr-1-25x-covenant-with-stated-headroom",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.10-reads-leverage-down-as-improving-deleveraging-via-higherisbetter-false",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.11-carries-an-insufficient-data-period-instead-of-dropping-it-and-still-trends-the-rest",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.12-a-single-computable-period-is-indeterminate-a-trend-is-never-guessed-from-one-point",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.2-foots-the-ebitda-add-back-build-to-the-stated-normalized-total-tight-tolerance",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.3-missing-debt-service-insufficient-data-naming-the-field-not-a-silent-0-or-infinity",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.4-zero-debt-service-insufficient-data-not-infinity-no-debt-is-a-fact-not-infinite-coverage",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.5-a-covenant-on-an-uncomputable-ratio-is-itself-insufficient-data-no-false-pass",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.6-negative-ebitda-leverage-is-insufficient-data-a-negative-multiple-is-nonsense-not-a-fabricated-number",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.7-an-add-back-build-that-does-not-tie-to-the-stated-total-is-caught-by-footing",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.8-covenant-breach-reports-negative-headroom-breach-depth-deterministically",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "testcase.tests-creditratios-test-ts.9-classifies-dscr-trend-as-improving-when-coverage-rises-year-over-year",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.convex-agentstepjournal-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.convex-agentstepjournalclient-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.convex-agentsteps-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.src-nodeagent-core-journal-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.convex-embeddingrunner-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.convex-embeddings-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.convex-notebookgraph-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.docs-source-texts-noderl-loop-engineering-source-txt",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.scripts-qa-matrix-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.src-eval-architecturebudget-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.src-eval-convexboundarypolicy-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.src-eval-evaltrustpolicy-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.src-eval-improvementartifacts-ts",
+        "changedFields": [
+          "text"
+        ]
+      },
+      {
+        "id": "source.convex-locks-ts",
+        "changedFields": [
+          "text"
+        ]
+      }
+    ],
+    "searchJsPrefix": "window.NODETASKS_SEARCH_INDEX = [{\"id\":\"source.convex-spreadsheetindexlib-ts\",\"kind\":\"sour"
+  },
+  "feasibility": {
+    "sourceExportWithoutGit": "YES_BY_SOURCE_INSPECTION_NOT_YET_EXECUTED",
+    "doctorRoot": "import.meta.url directory",
+    "proofRoot": "process.cwd; npm invokes from package root",
+    "requirements": [
+      "Node>=20 declared; use existing Node22 for actual Windows proof",
+      "No Git commands or third-party dependencies in doctor/validator/tests",
+      "Existing locked Playwright for browser proof",
+      "Python isolated environment with current lower-bound requirements for Streamlit"
+    ],
+    "sourceIdentity": "Bind exact export archive and extracted blobs separately; receipt has no commit identity."
+  },
+  "ownership": {
+    "canonicalFor": [
+      "nodetasks.corpus-receipt"
+    ],
+    "requiredConsumes": [
+      "nodeplatform.repo-contract",
+      "nodeagent.agent-run",
+      "nodeagent.provider-pi",
+      "nodeagent.trace-workpaper"
+    ],
+    "PR1MissingConsumes": [
+      "nodeagent.agent-run",
+      "nodeagent.provider-pi",
+      "nodeagent.trace-workpaper"
+    ],
+    "expectedCheckerErrors": [
+      "consumes omits registered concept nodeagent.agent-run",
+      "consumes omits registered concept nodeagent.provider-pi",
+      "consumes omits registered concept nodeagent.trace-workpaper"
+    ],
+    "checkerExecuted": false,
+    "frozenCopies": "Change four signature modes migration-source to migration-copy, retaining NodeAgent origins; no ownership registry mutation."
+  },
+  "findings": [
+    {
+      "id": "CURRENT-REGISTRY-CONSUMERS",
+      "severity": "BLOCKS_NODEKIT_INTEGRATION",
+      "confidence": "STATIC_CONFIRMED",
+      "scope": [
+        "nodekit.yaml"
+      ],
+      "description": "PR1 omits three required consumed concepts; current main and reviewed candidate checker agree."
+    },
+    {
+      "id": "PROVENANCE-OWNERSHIP-LANGUAGE",
+      "severity": "HANDOFF_CORRECTION_REQUIRED",
+      "confidence": "STATIC_CONFIRMED",
+      "scope": [
+        "nodekit.yaml",
+        "docs/UPSTREAM_PROVENANCE.md",
+        "test/corpus-validation.test.mjs"
+      ],
+      "description": "Independent corpus receipt is canonically owned; frozen upstream copies are not authoritative migration sources. Current empty-canonicalFor prose is stale."
+    },
+    {
+      "id": "SOURCE-READ-CONTAINMENT",
+      "severity": "REPRODUCE_BEFORE_UNTRUSTED_FIXTURE_ACCEPTANCE",
+      "confidence": "STATIC_REACHABLE_NOT_EXECUTED",
+      "scope": [
+        "scripts/validate-catalog.mjs",
+        "test/corpus-validation.test.mjs"
+      ],
+      "description": "Prefix assertion neither normalizes paths nor stops reads; traversal and followed links can escape intended subtree. Exact current tree has no such paths. Probe only a harmless sentinel, then validate once before reading; no secrets."
+    },
+    {
+      "id": "STARTUP-INSTRUCTIONS",
+      "severity": "HANDOFF_CORRECTION_REQUIRED",
+      "confidence": "STATIC_CONFIRMED",
+      "scope": [
+        "README.md",
+        "docs/NODEAGENT_BRIDGE.md",
+        "HANDOFF.md"
+      ],
+      "description": "Port8502 examples require an explicit owned port; unconfigured default is8501. Preserve stale9140 storyboard limitation rather than regenerate media."
+    }
+  ],
+  "validationFailureModes": [
+    {
+      "case": "unknown/conflicting flags",
+      "sourceResult": "exit2"
+    },
+    {
+      "case": "logical catalog error",
+      "sourceResult": "exit1; no success receipt output"
+    },
+    {
+      "case": "missing/stale committed receipt",
+      "sourceResult": "exit1; no write"
+    },
+    {
+      "case": "changed indexed source bytes",
+      "sourceResult": "sourceIndexValid false, passed false; exit1; exact receipt comparison also fails"
+    },
+    {
+      "case": "malformed JSON/missing file/invalid shape",
+      "sourceResult": "uncaught rejection may print stack and nonzero; no structured failure receipt guaranteed"
+    },
+    {
+      "case": "schema semantics",
+      "sourceResult": "schema bytes hashed, no JSON Schema engine invoked"
+    },
+    {
+      "case": "concurrent writer",
+      "sourceResult": "no atomic snapshot guarantee; proof harness must freeze/hash inputs before/after and reject change"
+    }
+  ],
+  "plan": {
+    "name": "NODETASKS-CORPUS-FIRST-USE-01",
+    "destinationProposal": "D:/ProjectRecovery/nodetasks-current-consumer-20260905",
+    "source": "Exact PR1 first, unchanged baseline before any correction",
+    "normalCommands": [
+      "npm ci",
+      "npm run doctor",
+      "npm test",
+      "npm run proof",
+      "nodekit repo check --repo-root <consumer> --json",
+      "<isolated-python> -m pip install -r requirements.txt",
+      "<isolated-python> -m streamlit run apps/nodetasks_streamlit.py --server.address 127.0.0.1 --server.port <owned-port> --server.headless true --server.fileWatcherType none --browser.gatherUsageStats false"
+    ],
+    "nodekitCommandRequirement": "Use already reviewed executable/registry identity, not original dirty checkout; record exact launcher before execution.",
+    "nonUIOwnersAfterAcceptance": [
+      "nodekit.yaml",
+      "docs/UPSTREAM_PROVENANCE.md",
+      "README.md",
+      "docs/NODEAGENT_BRIDGE.md",
+      "test/corpus-validation.test.mjs",
+      "HANDOFF.md",
+      "scripts/verify-first-use.mjs"
+    ],
+    "conditionalOwnerAfterActualFailure": [
+      "scripts/validate-catalog.mjs"
+    ],
+    "evidenceOwner": "evidence/corpus-first-use-20260905/",
+    "noPlannedChanges": [
+      "package.json",
+      "package-lock.json",
+      "requirements.txt",
+      "schemas/*",
+      "catalog/*",
+      "upstream/*",
+      "apps/nodetasks_streamlit.py",
+      "assets/*",
+      "NodeKit registry"
+    ],
+    "firstUse": "Evaluator searches public-repo saved view, inspects task/source/score boundary, downloads/reopens exact bundle and checks deterministic local answer task citations.",
+    "proofAngles": [
+      "actual unchanged doctor/test/proof",
+      "current NodeKit before/after ownership check",
+      "controlled stale/missing/tampered/malformed/traversal/link fixtures",
+      "real download/reopen",
+      "no-results and zero-count view",
+      "top-N projection disclosure",
+      "burst and sustained sessions",
+      "reload",
+      "six widths320/390/768/1024/1440/1920",
+      "keyboard and200% text"
+    ],
+    "providerCalls": false,
+    "UIEditsRequireNewBoundary": true,
+    "consumerCreated": false
+  },
+  "limits": [
+    "Static review does not certify CLI, schema validation, UI or installed dependencies.",
+    "Receipt is unsigned corpus integrity, not origin authentication, runtime certification or official score.",
+    "No complete shared CI exists in current NodeTasks source.",
+    "NodeRoom/NodeSlide integration remains parent-owned and untouched."
+  ],
+  "sourceGuards": {
+    "before": {
+      "head": "20797dc23ed3b44ea65355441c774cf7ca2da32e17ebb6c9d3b91eb263e650d6",
+      "refs": "6eaf413e01a067ad01d1f2b8079aafbb4525496abd7e95050ce1a164607e55c5",
+      "index": "a48a2a4577c67134f8c7b68da92a11afa43f59cdaa0b848a41223c4b6c2c31bf",
+      "status": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "worktrees": "b8ff4d572220fefefc4d2425f3bc9b9262ba6eddc9911cb7da04b0df70d565e4"
+    },
+    "after": {
+      "head": "20797dc23ed3b44ea65355441c774cf7ca2da32e17ebb6c9d3b91eb263e650d6",
+      "refs": "6eaf413e01a067ad01d1f2b8079aafbb4525496abd7e95050ce1a164607e55c5",
+      "index": "a48a2a4577c67134f8c7b68da92a11afa43f59cdaa0b848a41223c4b6c2c31bf",
+      "status": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "worktrees": "b8ff4d572220fefefc4d2425f3bc9b9262ba6eddc9911cb7da04b0df70d565e4"
+    },
+    "unchanged": true,
+    "primaryFilesEdited": 0,
+    "installs": 0,
+    "exports": 0,
+    "applicationCommands": 0,
+    "fetches": 0
+  },
+  "gradeStatus": "OPEN_NOT_RUN",
+  "grades": {
+    "technical": null,
+    "visual": null,
+    "responsive": null,
+    "interaction": null,
+    "handoff": null
+  },
+  "markdown": {
+    "path": "E6h_NODETASKS_PR1_REVIEW_PLAN.md",
+    "sha256": "3a8396e64a0143c18980ef81d3abfa4fdc69dffbd24ef122e9dfe9bf2c8aead9"
+  },
+  "artifacts": [
+    {
+      "path": "E6h-nodetasks-pr1-review/catalog-projection-delta.json",
+      "bytes": 8176,
+      "sha256": "525ebd96974e367ae709caf3431b6302bfc14d203bed95b52a8adc86c4c7cccb"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/changed-paths.json",
+      "bytes": 4697,
+      "sha256": "29304cfc8a8f17f2b05be44180fad3c694f948e053cb0627bf281dd665993368"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/commands.json",
+      "bytes": 13296,
+      "sha256": "8ef1efea8404a57340f65ea2764ea0663a2532ac7e478e81cfd956830f7665df"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/main-package-lock.json.txt",
+      "bytes": 1752,
+      "sha256": "1e1bb199b3f88f428a5a4f353462946be1a5917a3975bd241783ebfeeecdc301"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/main-package.json.txt",
+      "bytes": 783,
+      "sha256": "1f776c02494943920208853d627651f18835845190576300abd8a3d40a34b138"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/main-README.md.txt",
+      "bytes": 6324,
+      "sha256": "1d8412db94e8ecbde7ee625afbeaca4a3dda57b0c3079ff54c392cd82dbd6439"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/main-scripts__validate-catalog.mjs.txt",
+      "bytes": 7213,
+      "sha256": "b7c02a6edd5c9ba05854e503d45ebbb531afd71833599f8dbccbdb8fb1ea9c48"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-AGENTS.md.txt",
+      "bytes": 498,
+      "sha256": "93019e750ddb2b05e18222484517f1098abea238bf3aa9dfe31b39c590dd9264"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-architecture.yaml.txt",
+      "bytes": 1054,
+      "sha256": "b296e69339d61414e4c5255ea07f085ce4b81383781304b5260bd6183995344c"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-bindings.json",
+      "bytes": 1432,
+      "sha256": "b8b55e6970fb6feb9167fb22edfe5ebd8ffc89d234a3f5712deaef623b3ddd16"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-docs__DECISIONS.md.txt",
+      "bytes": 3568,
+      "sha256": "19e13fb44818c6b4355dcc367457aee2c7373cc8145241ff24012845908fc8ba"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-ownership.yaml.txt",
+      "bytes": 8777,
+      "sha256": "1cd4ef627131ca14e90832bd8310e8ce0194fb2cc44678c8ff03275495fd21fd"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-plugins__nodekit__skills__nodekit-launch__SKILL.md.txt",
+      "bytes": 9049,
+      "sha256": "cc3c065319f9950e7ff07bc717ee7d7b24ffca88d557fa647ad24e0e6630b569"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-remote-main.txt",
+      "bytes": 103,
+      "sha256": "3ded00d5ca455b39c02da2606156e9941a58cd31a4f38bf585a160917e55a747"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-repositories.yaml.txt",
+      "bytes": 3846,
+      "sha256": "70ce9212ebd45312eb14d03e2170c19f9a488cf8d267fa7ff266ec65f8213ab2"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-schemas__nodekit.schema.json.txt",
+      "bytes": 6346,
+      "sha256": "b617bc7cf37cabfb740e2d3d1bf2ea0fffc1f8de81a5b9b4e46fde29c9f08dec"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/nodekit-src__lib__repo-check.mjs.txt",
+      "bytes": 17967,
+      "sha256": "1638542cbf38230f02048206597cce895d43bd107507112f7d08f7c04e2c5ee0"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-docs__UPSTREAM_PROVENANCE.md.txt",
+      "bytes": 2248,
+      "sha256": "a93d62e1d737d868ff87e609b738c808e3cad1d1e1466e33dab8d8d6b74e1dbd"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-nodekit.yaml.txt",
+      "bytes": 2049,
+      "sha256": "002d400bf51e114674bbacb6703108ab7bad8007eb465758e077ed8145cb656c"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-package-lock.json.txt",
+      "bytes": 1803,
+      "sha256": "bb754f33487b335d6155a1268cfcef7322ae8c2994db0b25c328fa39fba5a47a"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-package.json.txt",
+      "bytes": 1048,
+      "sha256": "8a1d9d7e1207c9fe3d1c54521484b6ab8eb7491d24bee3fd2cf45327df4b3f61"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-README.md.txt",
+      "bytes": 8395,
+      "sha256": "f86007d53e7eb4c6031c83f3c32a11b422e7f8f7b91fda3bcc76990529bf3a07"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-scripts__doctor.mjs.txt",
+      "bytes": 1717,
+      "sha256": "3a80253dd78638f9a7ac3732f4fc32b9b2dcec547dce13c03b354fa25a185d3d"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-scripts__validate-catalog.mjs.txt",
+      "bytes": 15380,
+      "sha256": "e1e0fd1a57accfa865be7e5cee14c7f5e241dbd6f9e3f420acc0f21d1755cac5"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/pr1-test__corpus-validation.test.mjs.txt",
+      "bytes": 3303,
+      "sha256": "529bb15efe68e218078ba5f8de29272ce5a43000b39c16e54208a5802fe4d642"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/protected-task-and-search-review.json",
+      "bytes": 4585,
+      "sha256": "cf6f034e7f665bc2f54600fa2fe891f19bbb843be4464d09970e8decfef1e38f"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/receipt-git-blob-review.json",
+      "bytes": 2459,
+      "sha256": "145c84a65331ac569cb3f0193b0087280a2c9cc8cc1e505fee9bb96d4332eb72"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/search-script-binding.json",
+      "bytes": 211,
+      "sha256": "8781ffcdf0521c7185a7a9b8d6924eb708ecfaceeeb3cbf2d57ee14589568bc8"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/source-guards.json",
+      "bytes": 979,
+      "sha256": "64c06b7a4a5b090ce5e8665479e16a22527cc4aea5808849aa567f3293fbd036"
+    },
+    {
+      "path": "E6h-nodetasks-pr1-review/ui-source-equivalence.json",
+      "bytes": 1563,
+      "sha256": "c16f13afaf17856132c39249f629d4501e46b51373413510236d6b1a987beff4"
+    }
+  ]
+}

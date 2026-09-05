@@ -1,0 +1,78 @@
+{
+  "schema": "nodetasks-ui-followon-plan/v1",
+  "status": "PROPOSED_NOT_IMPLEMENTED",
+  "currentSourceSha256": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1",
+  "currentConsumerSourceDigest": "ca8eb92aafca9646c2125de074f49c32d887f1c2437c4ca93ab670560b725680",
+  "currentReceiptUnchanged": true,
+  "beforeBoundaries": [
+    {
+      "path": "E6h-nodetasks-ui-findings-before-label-correction/metric-summary-390/change-boundary.png",
+      "bytes": 32777,
+      "sha256": "2c26fe2c3da232b67f967ab123200ae5de6dcc441af5a3bf0495cb482aeefd87",
+      "gitBlobSha1": "4f2c5dc1a1c59d54292c5ae2f3bdb310d3ab5e7f"
+    },
+    {
+      "path": "E6h-nodetasks-ui-findings-before-label-correction/metric-task-390/change-boundary.png",
+      "bytes": 54254,
+      "sha256": "ea5e45061fd6d3df29ce5f128c6fa6e7a521298edc4a12e027811990d3a85506",
+      "gitBlobSha1": "43dc9a1f6eecfd57b4af772124f210508f375111"
+    },
+    {
+      "path": "E6h-nodetasks-ui-findings-before-label-correction/download-ready-390/change-boundary.png",
+      "bytes": 58820,
+      "sha256": "9bf5569efb7dd51765c5f078b67579f2b71be2cef4a6afc9f396c0ef9a460bf5",
+      "gitBlobSha1": "7560de1eb696fa69df910efed3ae115a6b5ea382"
+    },
+    {
+      "path": "E6h-nodetasks-ui-findings-before-label-correction/metric-summary-1440/change-boundary.png",
+      "bytes": 152815,
+      "sha256": "84ee188f2e8ce89bd359736b1e2342e0b1e913fb6617f66cd0e5b34fc54bc02d",
+      "gitBlobSha1": "6f37e494bee65907f29871d96e4d5ae106cd891d"
+    },
+    {
+      "path": "E6h-nodetasks-ui-findings-before-label-correction/metric-task-1440/change-boundary.png",
+      "bytes": 133778,
+      "sha256": "51394b2eb6e19fdd6c1636b5078074e3d4a0c96e80bedfe4cb739fdccf676339",
+      "gitBlobSha1": "f50268771e4f37d5ac319e7eddbaee33542c2d85"
+    },
+    {
+      "path": "E6h-nodetasks-ui-findings-before-label-correction/download-ready-1440/change-boundary.png",
+      "bytes": 133558,
+      "sha256": "e36dde1348a883a7c9382557f8974dd0abdae1d03c285850cac36f9db4cd6dac",
+      "gitBlobSha1": "6aa15ca9293511afe42129bbbe5291855db32303"
+    }
+  ],
+  "viewedAllSix": true,
+  "owners": [
+    "apps/nodetasks_streamlit.py",
+    "scripts/verify-first-use.mjs",
+    "HANDOFF.md",
+    "new bounded proof/evidence only"
+  ],
+  "changes": [
+    {
+      "id": "A",
+      "cause": "Explicit dark stMetric background with inherited dark natural-light-theme foreground; affects summary and selected task metrics.",
+      "minimum": "Set readable foreground on existing metric label/value owners; preserve backgrounds, dimensions, counts, delta semantics and theme."
+    },
+    {
+      "id": "B",
+      "cause": "st.download_button receives prepared shown.to_json bytes before the next filter rerun; pending native input changes race the download. Four unheld attempts returned old15 rows for eventual0.",
+      "minimum": "Use the existing Streamlit prepare-button pattern at the filtered export owner: prepare current shown snapshot after submitted inputs, display its actual count and filter/Rows context, then a clearly labelled Download prepared JSON with on_click=ignore. Any later completed filter rerun removes preparation; a file obtained during a pending edit remains explicitly the previously prepared snapshot, never labelled as those pending inputs. No new API/session platform."
+    }
+  ],
+  "proof": [
+    "Native blur-to-prepare, rapid Rows/search changes, burst repeated prepare/download, exact JSON roundtrip and snapshot context",
+    "Empty results, repeated filtering/reload and sustained local answers with original IDs/order/score refs",
+    "Six widths, keyboard and200% text, readable computed contrast plus actual pixels for summary/task metric instances",
+    "Current observed failures remain historical; no claim that on_click=ignore alone closes pending-input races"
+  ],
+  "holds": [
+    "No implementation until parent reviews current before/source plan",
+    "Static catalog/task-browser.html selected-result phone overflow remains separate; no catalog regeneration",
+    "Provider/benchmark/production/full grades not certified"
+  ],
+  "references": [
+    "https://docs.streamlit.io/develop/api-reference/widgets/st.download_button"
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "schema": "nodetasks-prepared-ui-final-judge/v1",
+  "at": "2026-09-05T19:38:04.469277+00:00",
+  "mode": "Builder / independent nonauthor implementation and publication judge",
+  "reviewerContext": "Reused portfolio judge; no authorship of NodeTasks repair. Source/proof authored by another worker; this review independently reads source, original evidence, official action pins, actual files and rendered pixels.",
+  "verdict": "APPROVED_SCOPED_SOURCE_AND_WORKING_PUBLICATION_FOR_NORMAL_COMMIT",
+  "request": "Make each repository usable and handoff-ready, including visual, responsive and interaction standards. This closes prepared downloads and metric-text repair only.",
+  "candidate": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+  "head": "1e9bf5ebea420f42ec5880238c4db46dc7de19ad",
+  "source": [
+    {
+      "path": "apps/nodetasks_streamlit.py",
+      "bytes": 28478,
+      "sha256": "e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176",
+      "gitBlob": "a37b2c0d465bc0837e2d4b367c7519db4383bcc3"
+    },
+    {
+      "path": "scripts/verify-first-use.mjs",
+      "bytes": 28551,
+      "sha256": "34ba0d2496b31b7cf793cd33fe1016eb558bf2cb8c30603f005bd4c38f13cf26",
+      "gitBlob": "295e0890892f2354633a4e0653312fe2c03d6220"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 9948,
+      "sha256": "ff267fa1767bc6dc9c9a74be95bc11e1088e2d3ec94baba1a44c7a6d411ca079",
+      "gitBlob": "ea7cc322d87df3c316dfcab696baaa5abcbc5ae1"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 476,
+      "sha256": "c2c1841921cf63d17f683582384970a01ab9e229ef496f911d7421f254facaca",
+      "gitBlob": "5a809657275b48faee2841818effc5f956fb57a1"
+    }
+  ],
+  "freezeSha256": "a3bb378df2c3698ac3db2a3b6c0d59c89c878f45d5833e6936dcc54cce0be14a",
+  "candidateDigest": "8c224e91eb179806e2746f2e1220ea9998352a6d2d5e6064f1c2b5e47684f9d3",
+  "effectiveFiles": 598,
+  "packetManifestSha256": "be69ec6a543c70d789db68f5d5d47f1dea481d42e9f57513aad97ab57288c429",
+  "sourceAndPacketGuardClosed": true,
+  "sourceEditsByJudge": false,
+  "stagingOrRefWritesByJudge": false,
+  "sharedCi": "NOT_RUN; workflow reviewed only, actual committed-head run remains required",
+  "observed": {
+    "workerExactViewports": [
+      [
+        320,
+        800
+      ],
+      [
+        360,
+        800
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        1024,
+        768
+      ],
+      [
+        1440,
+        960
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "rawCaptureFilesChecked": 93,
+    "rawActualDownloadsChecked": 59,
+    "metricPairsChecked": 28,
+    "namedInstalledRuntimeBindingsChecked": 90,
+    "independentNativeViewports": [
+      [
+        390,
+        844
+      ],
+      [
+        1440,
+        960
+      ]
+    ],
+    "independentActualDownloads": 2,
+    "independentContextFields": 12,
+    "independentErrors": [],
+    "independentExternalRequests": [],
+    "actualPngsViewed": [
+      {
+        "path": "E6h-nodetasks-prepared-ui-01/before-exact-profile-02/metric-summary-390/change-boundary.png",
+        "sha256": "649637fa897d59d1c02cd0da6b3258e929e0e0c8cb492a8292417aef9600e0d4"
+      },
+      {
+        "path": "E6h-nodetasks-prepared-ui-01/after-exact-profile-final/metric-summary-390/before.png",
+        "sha256": "a236e9f78bda6d904318b5b8c100f4fbf6862fd1b2d9f2b64686aa6596692ff6"
+      },
+      {
+        "path": "E6h-nodetasks-prepared-ui-01/after-exact-profile-final/metric-task-390/before.png",
+        "sha256": "f50bc5a3a2f6a007051bc10df4e0efdb7a74c56d1280f4dca588115ddbdafdb0"
+      },
+      {
+        "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/390-keyboard.png",
+        "sha256": "df0debb46b3a8bbbb0e8eb58aaac680730c629e419f08874ddb068d29f345df4"
+      },
+      {
+        "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/390-text200.png",
+        "sha256": "df2c0cc82d88e3991ed1ed8e2e84da90bb4d671b0db1e20be25aa0742befbeea"
+      },
+      {
+        "path": "E6h-nodetasks-prepared-ui-01/browser-prepared-04/1440-all-filter-context-state.png",
+        "sha256": "36a8c40577807bc4fcffe6e140c58884cfcd1eb5809bf3cb9ce6818fcca544da"
+      },
+      {
+        "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/390-full-detail.png",
+        "sha256": "2695f7375d809cac9a119459290d9de7050a631d33c8b3d621ab12887e353674"
+      },
+      {
+        "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/390-context-top.png",
+        "sha256": "e1c923d0594a87126b72ab9b71376cc914210cf87295c07875b31d613087359e"
+      },
+      {
+        "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/390-keyboard-download.png",
+        "sha256": "3b00f8168545a5efd4c93c65da2ac445a34078abded1825496a2996b01b53920"
+      },
+      {
+        "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/1440-full-detail.png",
+        "sha256": "da2c28bcbc0bc9ac70945ea71b9cc1c73dfd40f22d38f2339d94136818c47feb"
+      },
+      {
+        "path": "E6h-nodetasks-ui-independent-source-preflight/settled-context-01/1440-keyboard-download.png",
+        "sha256": "257a0e15ac91b4e35678d5e91497a85324e0fafe8b6bf919f280332adbae6ed5"
+      }
+    ],
+    "normalLocalCheck": {
+      "receipt": "E6h-nodetasks-prepared-ui-01/normal-final-check.command.json",
+      "exitCode": 0,
+      "seconds": 124.312,
+      "scope": "doctor, five corpus scenarios, read-only receipt verification; no Python/browser/benchmark execution in CI command"
+    }
+  },
+  "causalReview": [
+    "Original old-row download ambiguity is addressed at the existing serialization owner: native Prepare computes literal shown.to_json bytes and complete filter context in the same Python run. Pending input may still retrieve the explicitly labelled earlier snapshot; later rerun removes it. No new session history or competing state owner.",
+    "Reopened files independently preserve original source/title/score/source-ref fields, Rows slicing and exact four-byte empty serialization. Two new nondefault current-context files agree with all twelve visible fields at 390/1440.",
+    "Metric selector changes only label/value foreground; all 28 matched raw comparisons preserve text, dark backgrounds and delta descendant styling/geometry. Actual pixels show the before dark-on-dark failure and after readable labels/values.",
+    "The two provisional low-opacity caption labels were corrected to native body text after an actual observed contrast failure, with the old run retained. Current raw styles include ancestor opacity, not just foreground.",
+    "The finite CI workflow uses exact official checkout v7.0.1/setup-node v7.0.0 commits, contents:read, persist-credentials:false, Node 22, npm ci then npm run check and a ten-minute job limit. No secrets/provider/deploy/receipt regeneration/dispatch or policy alteration."
+  ],
+  "publication": {
+    "rawCopiesExact": 587,
+    "portablePayloads": 593,
+    "packetFilesIncludingManifest": 594,
+    "futureGitFilteredBlobsExact": 598,
+    "protectedSourceFilesExact": 1830,
+    "priorPacketFilesPreserved": 552,
+    "authoredLinksValid": 24,
+    "ignoredNamedLogsRequiringExplicitStaging": [
+      "evidence/prepared-download-metrics-20260905/raw/after-exact-profile-final/server.log",
+      "evidence/prepared-download-metrics-20260905/raw/after-inspect-01.log",
+      "evidence/prepared-download-metrics-20260905/raw/before-exact-profile-02/server.log",
+      "evidence/prepared-download-metrics-20260905/raw/before-exact-profile-02.log",
+      "evidence/prepared-download-metrics-20260905/raw/before-exact-profile.log",
+      "evidence/prepared-download-metrics-20260905/raw/before-git.log",
+      "evidence/prepared-download-metrics-20260905/raw/browser-prepared-01.log",
+      "evidence/prepared-download-metrics-20260905/raw/browser-prepared-02.log",
+      "evidence/prepared-download-metrics-20260905/raw/browser-prepared-03.log",
+      "evidence/prepared-download-metrics-20260905/raw/browser-prepared-04/streamlit.log",
+      "evidence/prepared-download-metrics-20260905/raw/browser-prepared-04.log",
+      "evidence/prepared-download-metrics-20260905/raw/caption-boundary-before/server.log",
+      "evidence/prepared-download-metrics-20260905/raw/caption-boundary-before.log",
+      "evidence/prepared-download-metrics-20260905/raw/context-probe-01.log",
+      "evidence/prepared-download-metrics-20260905/raw/matched-after.log",
+      "evidence/prepared-download-metrics-20260905/raw/matched-final-after.log",
+      "evidence/prepared-download-metrics-20260905/raw/normal-check.log",
+      "evidence/prepared-download-metrics-20260905/raw/normal-final-check.log",
+      "evidence/prepared-download-metrics-20260905/raw/npm-ci.log",
+      "evidence/prepared-download-metrics-20260905/raw/npm-installed-tree.log",
+      "evidence/prepared-download-metrics-20260905/raw/old-packet-custody.log",
+      "evidence/prepared-download-metrics-20260905/raw/python-installed-freeze.log"
+    ],
+    "historicalCodeMarkdownAndConfigInert": true,
+    "stdlibVerifierExecuted": true,
+    "indexAndRefsUnchanged": true
+  },
+  "retainedFailures": [
+    "Original four pending-filter old-row failures remain historical.",
+    "First before-annotation DOM restoration failure and corrected quiet-DOM recorder remain separate.",
+    "Interrupted second proof and prevented prospective output-name collision remain retained, with no overwritten download.",
+    "Provisional low-opacity snapshot captions remain a real prior source readability failure.",
+    "The final all-filter-context screenshot caught initial expansion before JSON painted. Its original remains unchanged; independent settled 390/1440 evidence now resolves actual detail visibility without relabelling that frame."
+  ],
+  "limits": [
+    "Approval concerns source and working publication; root must stage exactly the frozen list, check actual committed blobs, and use ordinary shared CI before integration.",
+    "Independent full twelve-field visual detail proof covers390/1440 normal text; existing seven-cell evidence captures200% root text separately. No whole detail readability claim for every viewport/text combination.",
+    "The native JSON syntax coloring, legacy caption contrast, metric ellipsis, enlarged header clipping and static phone overflow remain separate deductions. Source fixes do not certify the whole interface.",
+    "Three repeated preparations/six recovery downloads and four repeated catalog questions are finite repetition, not a sustained-load or performance certification.",
+    "No real-device, other-engine, assistive-technology, human first-use, endpoint/provider, benchmark execution or production proof. All eight complete dimensions and overall grade remain null.",
+    "No independent rerun of the full ten-minute browser journey or full npm check was necessary after immutable raw checks and the bounded two-cell replay."
+  ],
+  "fullDimensions": null,
+  "overallGrade": null,
+  "nextAction": "Root may perform exact frozen staging/commit and normal shared CI; separate 44-criterion observation assessment follows without holding this source guard.",
+  "evidenceManifest": {
+    "path": "E6h-nodetasks-ui-independent-source-preflight/artifact-manifest.json",
+    "sha256": "b844f3e2a483b06161b736de40b9e38f9430d2e0553f1f73d6208142667fac93",
+    "artifacts": 73
+  }
+}

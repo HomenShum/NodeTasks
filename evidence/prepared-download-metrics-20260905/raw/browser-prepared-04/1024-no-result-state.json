@@ -1,0 +1,56 @@
+{
+  "url": "http://127.0.0.1:54532/?view=public-node-repo-proofs",
+  "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n10\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n0\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nPrepare filtered JSON\n\nPrepared 0 of 0 matching tasks · Rows limit 10\n\nDownload uses this prepared snapshot. After editing filters, prepare again.\n\nkeyboard_arrow_right\n\nPrepared filters\n\nDownload prepared JSON",
+  "viewport": {
+    "width": 1024,
+    "height": 768
+  },
+  "horizontalOverflow": 0,
+  "focus": {
+    "tag": "BUTTON",
+    "text": "Download prepared JSON",
+    "label": ""
+  },
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Filtered0",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Domains5",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kinds13",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Cost tiers5",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Verifier types8",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Score statuses2",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Primary suites50",
+      "foreground": "rgb(229, 231, 235)",
+      "background": "rgb(15, 20, 25)"
+    }
+  ]
+}

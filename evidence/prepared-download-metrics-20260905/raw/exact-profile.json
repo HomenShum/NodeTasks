@@ -1,0 +1,54 @@
+{
+  "name": "NODETASKS-PREPARED-DOWNLOAD-AND-METRIC-01",
+  "source": "0462dbe8b0c6f80b861ae251b92500693c2ce1fceb6c8b1bf7b1e1f7b5cb35f1",
+  "viewports": [
+    [
+      320,
+      800
+    ],
+    [
+      360,
+      800
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      1440,
+      960
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "scope": "Local Streamlit natural default theme, Chromium on Windows; summary/task/provenance metrics and native prepared download interaction. Local static browser observed separately, not repaired.",
+  "states": [
+    "entry",
+    "prepared",
+    "pending edit with old preparation",
+    "rerun invalidation",
+    "zero result",
+    "repeat",
+    "reprepare",
+    "reload",
+    "keyboard",
+    "200 percent root text"
+  ],
+  "limits": [
+    "Browser viewport emulation, not real device",
+    "200 percent computed root font, not native zoom",
+    "No provider, benchmark, full UI grade or performance claim",
+    "Old width-only 900px height evidence remains historical"
+  ],
+  "beforeHarnessSha256": "e747da9fdc24712d7108034b47d20feb06fc1b02936312cf837ed5fbb69ea610"
+}

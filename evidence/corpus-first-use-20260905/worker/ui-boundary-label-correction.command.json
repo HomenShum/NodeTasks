@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-09-05T17:48:21.545069+00:00",
+  "finishedAt": "2026-09-05T17:48:21.611016+00:00",
+  "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+  "argv": [
+    "C:/nvm4w/nodejs/node.exe",
+    "C:/Users/hshum/.codex/worktrees/5dba/nodebench-ai/docs/plans/portfolio-recovery-20260904/E6h-nodetasks-ui-findings-before-label-correction.mjs"
+  ],
+  "timeoutSeconds": 120,
+  "timedOut": false,
+  "exitCode": 1,
+  "seconds": 0.06299999996554106,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "ui-boundary-label-correction.log"
+}

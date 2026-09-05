@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-09-05T19:06:46.436874+00:00",
+  "finishedAt": "2026-09-05T19:08:27.732706+00:00",
+  "cwd": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+  "argv": [
+    "C:/nvm4w/nodejs/npm.cmd",
+    "run",
+    "check"
+  ],
+  "timeoutSeconds": 300,
+  "timedOut": false,
+  "exitCode": 0,
+  "seconds": 101.29700000002049,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "normal-check.log"
+}

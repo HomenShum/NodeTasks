@@ -1,0 +1,5 @@
+{
+  "initialRead": "One combined raw read included the 1272-row source inventory and was truncated; subsequent named readbacks and exact hashing cover the inputs. No content was sanitized.",
+  "failedCheck": "The first archive comparison omitted the mode key carried by original export bindings. All1279 path/content hashes matched; equality failed due to record shape. Initial script, report and log are retained. Corrected comparison derives 100644/100755 from tar modes and all26 checks pass.",
+  "noProductReruns": true
+}

@@ -1,0 +1,43 @@
+--- before-text
+
++++ style-removed
+
+@@ -177,2 +177,3 @@
+
+ <div role="log" aria-live="assertive" aria-relevant="additions">
++<div>15 options available.</div>
+ </div>
+@@ -477,3 +478,3 @@
+
+ </div>
+-<div data-testid="stSliderThumbValue" class="st-emotion-cache-152mi7 efbyxod4" style="left: -0.734375px;">
++<div data-testid="stSliderThumbValue" class="st-emotion-cache-152mi7 efbyxod4" style="left: -1.46875px;">
+ <div data-testid="stMarkdownContainer" class="st-emotion-cache-1c0mdbn ewutnf10">
+@@ -555,3 +556,3 @@
+
+ <div class="st-emotion-cache-scp8yw e1yxiy6j6">
+-<div class="stStatusWidget st-emotion-cache-19or5k2 e192nn06 StatusWidget-appear StatusWidget-appear-active" data-testid="stStatusWidget">
++<div class="stStatusWidget st-emotion-cache-19or5k2 e192nn06 StatusWidget-appear-done StatusWidget-enter-done" data-testid="stStatusWidget">
+ </div>
+@@ -877,3 +878,3 @@
+
+ </div>
+-<div data-testid="stDataFrameResizable" style="position: relative; user-select: auto; border: 1px solid rgba(49, 51, 63, 0.1); border-radius: 0.5rem; width: 288px; height: 460px; max-width: 288px; max-height: 562px; min-width: 52px; min-height: 72px; box-sizing: border-box; flex-shrink: 0;">
++<div data-testid="stDataFrameResizable" style="position: relative; user-select: auto; border: 1px solid rgba(49, 51, 63, 0.1); border-radius: 0.5rem; width: 256px; height: 460px; max-width: 256px; max-height: 562px; min-width: 52px; min-height: 72px; box-sizing: border-box; flex-shrink: 0;">
+ <div class="stDataFrameGlideDataEditor gdg-wmyidgi" style="--wmyidgi-0: 2273px; --wmyidgi-1: 560px; --gdg-accent-color: #ff4b4b; --gdg-accent-fg: #ffffff; --gdg-accent-light: rgba(255, 75, 75, 0.1); --gdg-text-dark: #31333F; --gdg-text-medium: rgba(49, 51, 63, 0.8); --gdg-text-light: rgba(49, 51, 63, 0.4); --gdg-text-bubble: rgba(49, 51, 63, 0.6); --gdg-bg-icon-header: rgba(49, 51, 63, 0.6); --gdg-fg-icon-header: #ffffff; --gdg-text-header: rgba(49, 51, 63, 0.6); --gdg-text-group-header: rgba(49, 51, 63, 0.6); --gdg-bg-group-header: rgba(248, 249, 251, 1); --gdg-bg-group-header-hovered: #eef1f5; --gdg-text-header-selected: #ffffff; --gdg-bg-cell: #ffffff; --gdg-bg-cell-medium: #ffffff; --gdg-bg-header: rgba(248, 249, 251, 1); --gdg-bg-header-has-focus: #eef1f5; --gdg-bg-header-hovered: #eef1f5; --gdg-bg-bubble: #f0f2f6; --gdg-bg-bubble-selected: hsla(220, 25%, 100%, 1); --gdg-bubble-height: 20px; --gdg-bubble-padding: 8px; --gdg-bubble-margin: 4px; --gdg-bg-search-result: rgba(255, 75, 75, 0.1); --gdg-border-color: rgba(49, 51, 63, 0.1); --gdg-horizontal-border-color: rgba(49, 51, 63, 0.1); --gdg-drilldown-border: rgba(151, 166, 195, 0.25); --gdg-link-color: #0054a3; --gdg-cell-horizontal-padding: 8px; --gdg-cell-vertical-padding: 3px; --gdg-header-font-style: 400 14px; --gdg-base-font-style: 400 14px; --gdg-marker-font-style: 9px; --gdg-font-family: &quot;Source Sans&quot;, sans-serif; --gdg-editor-font-size: 0.875rem; --gdg-checkbox-max-size: 16px; --gdg-resize-indicator-color: #ff4b4b;">
+@@ -882,3 +883,3 @@
+
+ <div class="dvn-underlay">
+-<canvas data-testid="data-grid-canvas" tabindex="0" width="286" height="458" style="contain: strict; display: block; cursor: default; width: 286px; height: 458px;">
++<canvas data-testid="data-grid-canvas" tabindex="0" width="254" height="458" style="contain: strict; display: block; cursor: default; width: 254px; height: 458px;">
+ <table role="grid" aria-rowcount="16" aria-multiselectable="true" aria-colcount="13">
+@@ -966,6 +967,6 @@
+
+ </canvas>
+-<canvas width="286" height="36" style="position: absolute; top: 0px; left: 0px; width: 286px; height: 36px;">
++<canvas width="254" height="36" style="position: absolute; top: 0px; left: 0px; width: 254px; height: 36px;">
+ </canvas>
+ </div>
+-<div draggable="false" class="dvn-scroller stDataFrameGlideDataEditor" style="width: 286px; height: 458px;">
++<div draggable="false" class="dvn-scroller stDataFrameGlideDataEditor" style="width: 254px; height: 458px;">
+ <div class="dvn-scroll-inner dvn-hidden">

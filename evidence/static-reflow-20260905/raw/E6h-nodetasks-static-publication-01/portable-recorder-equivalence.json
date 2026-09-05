@@ -1,0 +1,7 @@
+{
+  "status": "CORE_BROWSER_SCENARIOS_BYTE_IDENTICAL",
+  "coreSha256": "06be0a3a948f7db82b26fd7d8464fcc9b662078a8f1fb7e8dae235221093b91c",
+  "scope": "All goto/selection/observation/capture/fingerprint functions exact; setup path and startup-cleanup adapters reviewed separately",
+  "externalRecorderSha256": "b104eef1ceb56e36547dc9407f3e3af7a3c76786d825ee5071f6c1d443fbe8fb",
+  "portableRecorderSha256": "848c60c90d6e9be19bddf02fad4f0ddf6294078b668022680c8e083b6d619f03"
+}

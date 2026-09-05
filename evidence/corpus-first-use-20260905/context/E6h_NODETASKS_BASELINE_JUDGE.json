@@ -1,0 +1,384 @@
+{
+  "schema": "portfolio-baseline-judge/v1",
+  "at": "2026-09-05T16:46:31.017965+00:00",
+  "mode": "Builder",
+  "verdict": "UNCHANGED_BASELINE_ACCEPTED_WITH_EXPECTED_NODEKIT_FAILURE_PRESERVED",
+  "requestTrace": "Make repositories usable and ready for developer/user handoff through planner-worker-judge; verify exact NodeTasks source-export and first finite baseline without repeating execution.",
+  "sourceCommit": "8e9b6495ba3bf716549825d05f48faaefc73dcfb",
+  "actualGitTree": "47bfab14eec7149a288a0ccd09be857fbfe70c2f",
+  "sourceExport": {
+    "root": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+    "archiveSha256": "bdfd468b591583546358d198d3b456f6acd3419f1dcfa93d1204af11c1cdc453",
+    "archiveBytes": 12182115,
+    "files": 1279,
+    "allActualGitBlobsAndArchiveAndExportEqual": true
+  },
+  "checksPassed": 17,
+  "checks": [
+    {
+      "id": "exact_commit_file_inventory",
+      "passed": true,
+      "evidence": "Immutable Git ls-tree exact PR1"
+    },
+    {
+      "id": "all_1279_exported_files_equal_actual_committed_blobs",
+      "passed": true,
+      "evidence": "actual-source-bindings.json"
+    },
+    {
+      "id": "export_is_source_only_no_git_or_personal_state",
+      "passed": true,
+      "evidence": "Exact source inventory only; intentionally excludes generated node_modules from this assertion"
+    },
+    {
+      "id": "archive_hash_length",
+      "passed": true,
+      "evidence": "Retained raw archive"
+    },
+    {
+      "id": "archive_no_links_or_special_files",
+      "passed": true,
+      "evidence": "Raw tar member types, no extraction by judge"
+    },
+    {
+      "id": "archive_regular_file_count",
+      "passed": true,
+      "evidence": "Actual raw tar inventory"
+    },
+    {
+      "id": "all_1279_archive_payloads_equal_export_and_git",
+      "passed": true,
+      "evidence": "archive-bindings.json"
+    },
+    {
+      "id": "all_1098_nodekit_launcher_registry_dependency_inputs_exact",
+      "passed": true,
+      "evidence": "nodekit-input-verification.json"
+    },
+    {
+      "id": "caller_directory_and_registry_resolution",
+      "passed": true,
+      "evidence": "NodeKit default registry derives from launcher package root K; explicit --repo-root targets source export R"
+    },
+    {
+      "id": "normal_npm_doctor_tests_proof_search_pass",
+      "passed": true,
+      "evidence": "Actual normal raw logs, no replay"
+    },
+    {
+      "id": "exact_expected_nodekit_failure_preserved",
+      "passed": true,
+      "evidence": "Checker actually executes schema, catalog/signature/consumer contract and fails the expected 3 consumers"
+    },
+    {
+      "id": "proof_output_equal_unchanged_original_receipt",
+      "passed": true,
+      "evidence": "Original receipt byte binding plus actual stdout structure"
+    },
+    {
+      "id": "independent_receipt_arithmetic_exact",
+      "passed": true,
+      "evidence": "Independent finite arithmetic only; schema file still not executed as schema validator"
+    },
+    {
+      "id": "child_endpoint_catalog_isolation_source",
+      "passed": true,
+      "evidence": "Source removes matching variable names before child launch; no existing values inspected by judge; future rendered empty endpoint remains unrun"
+    },
+    {
+      "id": "python_install_completed_normal_requirements",
+      "passed": true,
+      "evidence": "Install finished before review; resolved versions recorded, requirements unchanged; no app activation or full dependency certificate"
+    },
+    {
+      "id": "original_primary_pr2_guards_unchanged",
+      "passed": true,
+      "evidence": "Read-only no-optional-locks original primary guards"
+    },
+    {
+      "id": "actual_git_tree_addendum_correct_and_original_preserved",
+      "passed": true,
+      "evidence": "Immutable commit API tree matches independently read Git tree; original erroneous tree label and original API response retained"
+    }
+  ],
+  "normalCommands": [
+    {
+      "label": "node-version",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 0.062000000034458935,
+      "log": "node-version.log"
+    },
+    {
+      "label": "npm-version",
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 0.34399999992456287,
+      "log": "npm-version.log"
+    },
+    {
+      "label": "npm-ci",
+      "command": [
+        "npm",
+        "ci"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 7.625,
+      "log": "npm-ci.log"
+    },
+    {
+      "label": "doctor",
+      "command": [
+        "npm",
+        "run",
+        "doctor"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 0.48400000005494803,
+      "log": "doctor.log"
+    },
+    {
+      "label": "test",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 2.437999999965541,
+      "log": "test.log"
+    },
+    {
+      "label": "proof",
+      "command": [
+        "npm",
+        "run",
+        "proof"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 2.327999999979511,
+      "log": "proof.log"
+    },
+    {
+      "label": "search",
+      "command": [
+        "npm",
+        "run",
+        "search",
+        "--",
+        "--view",
+        "public-node-repo-proofs",
+        "--limit",
+        "5"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 0.609000000054948,
+      "log": "search.log"
+    },
+    {
+      "label": "nodekit-repo-check",
+      "command": [
+        "node",
+        "D:\\VSCode Projects\\node-platform\\.worktrees\\project-consolidation-20260904\\src\\cli.mjs",
+        "repo",
+        "check",
+        "--repo-root",
+        "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+        "--json"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 1,
+      "seconds": 0.890999999945052,
+      "log": "nodekit-repo-check.log"
+    },
+    {
+      "label": "create-python-environment",
+      "command": [
+        "python",
+        "-m",
+        "venv",
+        "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 18.953000000095926,
+      "log": "create-python-environment.log"
+    },
+    {
+      "label": "python-version",
+      "command": [
+        "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python\\Scripts\\python.exe",
+        "--version"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 0.045999999972991645,
+      "log": "python-version.log"
+    },
+    {
+      "label": "python-requirements",
+      "command": [
+        "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--index-url",
+        "https://pypi.org/simple",
+        "-r",
+        "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905\\requirements.txt"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 90.43800000008196,
+      "log": "python-requirements.log"
+    },
+    {
+      "label": "python-installed-freeze",
+      "command": [
+        "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905-python\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "freeze",
+        "--all"
+      ],
+      "cwd": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+      "exitCode": 0,
+      "seconds": 0.5619999999180436,
+      "log": "python-installed-freeze.log"
+    }
+  ],
+  "nodekit": {
+    "launcherCommit": "8cec22e4e554d6c93ca87ff2e72ea39ba39f4b85",
+    "registryEquivalentTo": "a2d2e8ce36cc3e87a6a8133469dd55d8b7580588",
+    "boundInputs": 1098,
+    "allHashesExact": true,
+    "registryRootResolution": "Launcher src/cli-main.mjs packageRoot, not caller process.cwd",
+    "repoRootResolution": "Explicit exported consumer --repo-root",
+    "expectedExit": 1,
+    "actualExit": 1,
+    "errors": [
+      "consumes omits registered concept nodeagent.agent-run",
+      "consumes omits registered concept nodeagent.provider-pi",
+      "consumes omits registered concept nodeagent.trace-workpaper"
+    ],
+    "passed": false
+  },
+  "receipt": {
+    "sha256": "cd7e51db25c893fdb7d3c03a8f90fa58f6a75286cfc5bf81cb933569c7a06357",
+    "arithmetic": {
+      "contentHashes": [
+        {
+          "path": "catalog/all-tasks.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/benchmark-proxy-adapters.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/extracted-tasks.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/hierarchy.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/live-interaction-tasks.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/provenance-index.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/ranked-tasks.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/saved-views.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/search-index.js",
+          "exact": true
+        },
+        {
+          "path": "catalog/search-index.jsonl",
+          "exact": true
+        },
+        {
+          "path": "catalog/source-files.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/tag-index.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/task-browser.html",
+          "exact": true
+        },
+        {
+          "path": "catalog/task-bundles.json",
+          "exact": true
+        },
+        {
+          "path": "catalog/task-families.md",
+          "exact": true
+        },
+        {
+          "path": "catalog/task-index.json",
+          "exact": true
+        },
+        {
+          "path": "schemas/corpus-receipt.schema.json",
+          "exact": true
+        },
+        {
+          "path": "schemas/node-task.schema.json",
+          "exact": true
+        }
+      ],
+      "sourceFiles": 1236,
+      "sourceBytes": 22806452,
+      "vendoredAggregate": "94839ea9e778123334bd97bd30aa34e1b5e49ba06ae07dd2a2b09772653a801b",
+      "semanticBoundary": "c6f046baeb7cd5fa6bac7ea0695922696e23e66aaa7c52a3ccc03daf4f3a35b3",
+      "corpusHash": "7aa41b0fec4c32820ce3449a0624558c5ad56e6c0a377a3c958ff4e32f9bc797"
+    },
+    "schemaValidatorExecuted": false
+  },
+  "pythonInstall": "PASS_COMPLETED_NORMAL_REQUIREMENTS",
+  "runtimeStarted": false,
+  "providerCallsByJudge": 0,
+  "limitations": [
+    "This review accepts the preserved unchanged PR1 baseline, not the path implementation root subsequently began in the export. Current changing source must receive a new frozen independent judgment.",
+    "NodeKit conformance actually fails exactly three missing consumers. Successful doctor and corpus proof do not override that failure.",
+    "The source-export receipt incorrectly labelled the commit identifier as a tree. Raw evidence remains unchanged and actual-git-tree-addendum.json explicitly binds tree 47bfab14eec7149a288a0ccd09be857fbfe70c2f. No re-export or test replay was needed.",
+    "Child environment isolation is verified from the executed runner source: matching endpoint/catalog variable names are removed before subprocess invocation. Existing values were not inspected by this judge. No application was started, so an empty rendered endpoint and blocked runtime egress are not yet observed.",
+    "Python install finished normally during this review and records Streamlit1.63.0/pandas3.0.5 plus all resolved versions. No full Python environment or Node binary supply-chain certificate is asserted. The separate Python environment is outside the corpus.",
+    "Doctor/tests/proof/search are a finite CLI baseline. No browser pixels, actual bundle download/reopen, local chat, endpoint integration, adversarial path rejection, benchmark execution, full grades or human acceptance are certified here.",
+    "Corpus receipt binds 18 content hashes, 1,236 indexed source files, semantic boundary and aggregate; schemas are hashed but not executed by this proof. Unsigned receipt does not authenticate missing historical upstream origin.",
+    "Original primary guards compare serialized index entries, not raw index-file bytes. No source/index/ref mutations, fetches, installs, tests, app/browser, provider or Office calls were performed by this reviewer."
+  ],
+  "grades": null,
+  "humanAcceptance": null,
+  "nextAction": "Proceed with separately frozen, already approved metadata/path repair and real first-use proof. Preserve this baseline and expected conformance failure; no additional baseline replay needed.",
+  "artifacts": {
+    "manifest": "C:\\Users\\hshum\\.codex\\worktrees\\5dba\\nodebench-ai\\docs\\plans\\portfolio-recovery-20260904\\E6h-nodetasks-baseline-judge\\manifest.json",
+    "sha256": "c0c58bf0330dfb2af6be96ffc472216d0e5a2941f8743aac292ba114905f255a",
+    "files": 14
+  }
+}

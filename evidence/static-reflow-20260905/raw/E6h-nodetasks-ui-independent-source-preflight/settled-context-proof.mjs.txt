@@ -1,0 +1,79 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {spawn,spawnSync} from 'node:child_process';
+import {createRequire} from 'node:module';
+import {resolve,join,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+
+const O=dirname(fileURLToPath(import.meta.url));
+const P=dirname(O);
+const R='D:/VSCode Projects/cafecorner_nodebench/nodebench_ai4/.portfolio-worktrees/nodetasks-corpus-readiness-20260905';
+const V='D:/ProjectRecovery/nodetasks-current-consumer-20260905-python/Scripts/python.exe';
+const output=join(O,'settled-context-01');await mkdir(output);
+const {chromium}=createRequire(join(R,'package.json'))('playwright');
+const hash=b=>createHash('sha256').update(b).digest('hex');
+const sourceNames=['apps/nodetasks_streamlit.py','scripts/verify-first-use.mjs','.github/workflows/ci.yml','HANDOFF.md'];
+const inputs=await Promise.all(sourceNames.map(async path=>({path,sha256:hash(await readFile(join(R,path)))})));
+assert.equal(inputs[0].sha256,'e6ee2dd6119fbce6aa3c0925bbcf70f3e57fcb81dd3b76b3bd16cfb8c31fa176');
+const base='http://127.0.0.1:54534';
+const row=JSON.parse(await readFile(join(P,'E6h-nodetasks-prepared-ui-01/browser-prepared-04/1440-all-filter-context.json'),'utf8'))[0];
+const query=new URLSearchParams({view:'public-node-repo-proofs',persona:'Product QA',q:row.id,domain:row.domain,kind:row.kind,difficulty:row.difficulty,cost:row.cost_tier,tag:'public-node-repo',sort:'steps'});
+const expected={Search:row.id,Persona:'Product QA','Saved view':'public-node-repo-proofs',Domain:[row.domain],Kind:[row.kind],Difficulty:[row.difficulty],'Cost tier':[row.cost_tier],'Tag contains':'public-node-repo',Sort:'Fewest steps',Rows:100,'Exported rows':1,'Matching tasks':1};
+const report={startedAt:new Date().toISOString(),status:'RUNNING',scope:'Two exact viewport cells, current full prepared context and native keyboard download only',inputs,expected,cells:[],errors:[],externalRequests:[],providerCalls:0,limits:['No repeated full matrix','Computed text200, static overflow and broader device/a11y grades remain from prior evidence only','Preserve prior animation-caught screenshot; this is a separate settled replay']};
+const env={...process.env,PYTHONDONTWRITEBYTECODE:'1'};
+for(const key of Object.keys(env)) if(/^(NODEAGENT_ENDPOINT|NODETASKS_CATALOG|OPENAI_API_KEY|ANTHROPIC_API_KEY|GEMINI_API_KEY|GOOGLE_API_KEY)$/.test(key))delete env[key];
+const serverArgs=['-m','streamlit','run','apps/nodetasks_streamlit.py','--server.address','127.0.0.1','--server.port','54534','--server.headless','true','--server.fileWatcherType','none','--browser.gatherUsageStats','false'];
+const server=spawn(V,serverArgs,{cwd:R,env,windowsHide:true,stdio:['ignore','pipe','pipe']});
+report.server={pid:server.pid,startedAt:new Date().toISOString(),argv:[V,...serverArgs]};
+let log='',browser;
+server.stdout.on('data',b=>log+=b.toString());server.stderr.on('data',b=>log+=b.toString());
+async function settled(page){await page.waitForFunction(()=>document.querySelector('[data-testid="stApp"]')?.getAttribute('data-test-script-state')==='notRunning');await page.getByText('9,155',{exact:true}).waitFor();}
+async function capture(page,cell,name){
+ const png=await page.screenshot({path:join(output,name+'.png')});const html=await page.content();await writeFile(join(output,name+'.html'),html);
+ const dom=await page.evaluate(()=>({url:location.href,viewport:{width:innerWidth,height:innerHeight},body:document.body.innerText,overflow:document.documentElement.scrollWidth-innerWidth,focus:{tag:document.activeElement?.tagName,text:document.activeElement?.textContent,outline:getComputedStyle(document.activeElement).outline,boxShadow:getComputedStyle(document.activeElement).boxShadow},details:[...document.querySelectorAll('[data-testid="stExpander"]')].filter(e=>e.textContent.includes('Prepared filters')).map(e=>({text:e.innerText,open:e.querySelector('details')?.open,box:e.getBoundingClientRect().toJSON(),json:[...e.querySelectorAll('[data-testid="stJson"]')].map(j=>({text:j.innerText,box:j.getBoundingClientRect().toJSON(),scrollWidth:j.scrollWidth,clientWidth:j.clientWidth,styles:{whiteSpace:getComputedStyle(j).whiteSpace,overflowX:getComputedStyle(j).overflowX},rows:[...j.querySelectorAll('.variable-row,.object-key-val')].filter(r=>r.querySelector('.object-key')).map(r=>({text:r.innerText,box:r.getBoundingClientRect().toJSON()}))}))}))}));
+ await writeFile(join(output,name+'.json'),JSON.stringify(dom,null,2));cell.captures.push({name,pngSha256:hash(png),htmlSha256:hash(html),domSha256:hash(JSON.stringify(dom,null,2))});return dom;
+}
+try{
+ const until=Date.now()+30000;
+ while(true){assert.equal(server.exitCode,null,'Owned server failed before readiness');try{if((await fetch(base+'/_stcore/health',{signal:AbortSignal.timeout(1000)})).ok)break;}catch{}if(Date.now()>until)throw Error('Owned server startup deadline');await new Promise(r=>setTimeout(r,100));}
+ browser=await chromium.launch({headless:true});report.browserVersion=browser.version();
+ for(const [width,height]of[[390,844],[1440,960]]){
+  const cell={width,height,status:'RUNNING',captures:[],console:[],pageErrors:[]};report.cells.push(cell);
+  const context=await browser.newContext({viewport:{width,height}});
+  await context.route('**/*',route=>{const u=new URL(route.request().url());if(u.origin===base||['data:','blob:'].includes(u.protocol))return route.continue();report.externalRequests.push(u.origin+u.pathname);return route.abort('blockedbyclient');});
+  const page=await context.newPage();page.setDefaultTimeout(30000);page.on('console',m=>{if(['warning','error'].includes(m.type()))cell.console.push({type:m.type(),text:m.text()});});page.on('pageerror',e=>cell.pageErrors.push(String(e)));
+  try{
+   await page.goto(base+'/?'+query,{waitUntil:'domcontentloaded'});await settled(page);
+   if(width<1024&&await page.getByTestId('stSidebar').isVisible())await page.getByTestId('stSidebar').getByTestId('stBaseButton-headerNoPadding').click();
+   const inspect=page.getByRole('combobox',{name:'Inspect task',exact:true});await inspect.click();await inspect.press('Escape');
+   cell.keyboard=[];
+   for(let i=0;i<15;i++){await page.keyboard.press('Tab');const text=await page.evaluate(()=>document.activeElement?.textContent?.trim());cell.keyboard.push(text);if(text==='Prepare filtered JSON')break;}
+   assert.equal(cell.keyboard.at(-1),'Prepare filtered JSON');await page.keyboard.press('Enter');
+   const button=page.getByRole('button',{name:'Download prepared JSON',exact:true});await button.waitFor();await settled(page);
+   const detail=page.getByTestId('stExpander').filter({hasText:'Prepared filters'});const summary=detail.locator('summary');await summary.click();
+   const json=detail.getByTestId('stJson');await json.waitFor({state:'visible'});
+   const actual=await json.evaluate(element=>Object.fromEntries([...element.querySelectorAll('.object-key')].map(key=>{const row=key.closest('.variable-row, .object-key-val');const v=row.classList.contains('variable-row')?row.querySelector('.variable-value'):null;return[JSON.parse(key.textContent),v?JSON.parse(v.textContent):[...row.querySelectorAll('.string-value')].map(s=>JSON.parse(s.textContent))];})));
+   assert.deepEqual(actual,expected);cell.context=actual;
+   await page.waitForFunction(()=>{const d=[...document.querySelectorAll('[data-testid="stExpander"]')].find(e=>e.textContent.includes('Prepared filters'));const rect=d.querySelector('[data-testid="stJson"]').getBoundingClientRect();const key=[rect.width,rect.height,d.getBoundingClientRect().height].join(':');const now=performance.now();if(window.__ntContextStable?.key!==key)window.__ntContextStable={key,since:now};return rect.height>100&&now-window.__ntContextStable.since>=350;},{},{timeout:5000});
+   await summary.scrollIntoViewIfNeeded();await capture(page,cell,width+'-context-top');
+   const detailPng=await detail.screenshot({path:join(output,width+'-full-detail.png')});cell.fullDetailPngSha256=hash(detailPng);
+   await json.locator('.object-key').last().scrollIntoViewIfNeeded();await capture(page,cell,width+'-context-bottom');
+   // Click the native summary to close, then use Tab to reach Download. No forced focus.
+   await summary.click();
+   for(let i=0;i<8;i++){await page.keyboard.press('Tab');const text=await page.evaluate(()=>document.activeElement?.textContent?.trim());cell.keyboard.push(text);if(text==='Download prepared JSON')break;}
+   assert.equal(cell.keyboard.at(-1),'Download prepared JSON');await capture(page,cell,width+'-keyboard-download');
+   const event=page.waitForEvent('download');await page.keyboard.press('Enter');const download=await event;assert.equal(await download.failure(),null);const destination=join(output,width+'-actual-download.json');await download.saveAs(destination);const bytes=await readFile(destination);const rows=JSON.parse(bytes);assert.equal(rows.length,1);for(const key of ['id','title','domain','kind','difficulty','cost_tier','source_refs','score_status'])assert.equal(rows[0][key],row[key]);
+   cell.download={name:download.suggestedFilename(),bytes:bytes.length,sha256:hash(bytes),rows:rows.length};assert.deepEqual(cell.console,[]);assert.deepEqual(cell.pageErrors,[]);cell.status='PASS';
+  }catch(e){cell.status='FAIL';cell.error=String(e);await capture(page,cell,width+'-failure');throw e;}finally{await context.close();await writeFile(join(output,'report.json'),JSON.stringify(report,null,2));}
+ }
+ assert.deepEqual(report.externalRequests,[]);report.status='PASS_TWO_SETTLED_CONTEXT_AND_KEYBOARD_CELLS';
+}catch(e){report.status='FAIL';report.errors.push(String(e));}
+finally{
+ if(browser)await browser.close();
+ if(server.exitCode===null){const close=spawnSync('taskkill',['/PID',String(server.pid),'/T','/F'],{windowsHide:true,encoding:'utf8'});report.cleanup={exitCode:close.status,stdout:close.stdout,stderr:close.stderr,ownedPidStillActiveBeforeClose:true};}
+ await new Promise(done=>server.exitCode!==null?done():server.once('exit',done));
+ await writeFile(join(output,'streamlit.log'),log);
+ report.inputsAfter=await Promise.all(sourceNames.map(async path=>({path,sha256:hash(await readFile(join(R,path)))})));report.sourceUnchanged=JSON.stringify(inputs)===JSON.stringify(report.inputsAfter);report.finishedAt=new Date().toISOString();await writeFile(join(output,'report.json'),JSON.stringify(report,null,2));
+}
+console.log(JSON.stringify({status:report.status,cells:report.cells.length,errors:report.errors,sourceUnchanged:report.sourceUnchanged,output}));process.exitCode=report.status.startsWith('PASS')&&report.sourceUnchanged?0:1;

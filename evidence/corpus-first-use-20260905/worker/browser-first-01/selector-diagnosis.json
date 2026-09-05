@@ -1,0 +1,5 @@
+{
+  "sourceSha256": "921b1779175e3a590a259d612605f0db43d1c61455990ed9f7549b24fa897694",
+  "failure": "getByRole slider exact name Rows did not resolve. Actual saved DOM has native range input aria-label Rows plus aria-labelledby self/group; input is clipped for keyboard access.",
+  "repair": "Target that actual stSlider range input by its observed aria-label and issue Home. No app/DOM change; preserve original failed output."
+}

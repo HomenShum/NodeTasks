@@ -1,0 +1,11 @@
+**Builder — no source or receipt correctness concern found; final UI proof is pending.**
+
+**Re your request:** repair the current static phone reflow without disturbing the accepted prepared-download work — the five CSS substitutions address the observed cause directly. Long tokens forced the grid's automatic minimum wider than the phone. Zero-minimum tracks, a shrinkable main, wrapped result tokens and a wrapped summary remove that constraint while preserving the content.
+
+I viewed the actual 390px before/probe/restored captures: document width 590→390→590, with identical result text. I independently compared the current generator and HTML to their preserved originals: exactly five substitutions and no other bytes. Inline JavaScript, search/ranking, escaping, result/tag/reference limits and font sizes are unchanged; no overflow hiding was added.
+
+The old receipt really fails normal proof as stale before the intentional validator run. I recomputed both aggregate hashes, checked the exact three-field receipt delta, and compared actual disposable/current bytes for all 18 generated/schema artifacts. Only the HTML changes; all 17 others retain their original hashes. The generator uses the original corpus timestamp. The receipt still binds corpus content, not the generator or full UI readiness.
+
+Named source reads matched the supplied three hashes before and after this inspection. No whole-tree/index/ref guard, browser launch, test rerun, source edit or commit occurred. Final acceptance awaits root's frozen interaction/pixel/normal-check packet; the reported 2,425 protected files and 598 prepared files will be independently checked then. Existing unrelated labels, legibility and full-grade gaps remain held.
+
+[Structured preliminary review](E6h_NODETASKS_STATIC_SOURCE_PRELIMINARY_JUDGE.json).

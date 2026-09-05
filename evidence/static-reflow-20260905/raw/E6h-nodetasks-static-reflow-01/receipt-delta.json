@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/contentHashes/12/bytes",
+    "before": 5867,
+    "after": 5945
+  },
+  {
+    "path": "/contentHashes/12/sha256",
+    "before": "328d756c5cd6003b8ba7df503b03716d3c49f71f83301f8a1f702ad5c4aec4c1",
+    "after": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+  },
+  {
+    "path": "/corpusHash",
+    "before": "7aa41b0fec4c32820ce3449a0624558c5ad56e6c0a377a3c958ff4e32f9bc797",
+    "after": "e37ebe1399065a667e725e13edd8978117669ba9c213a90143505e3fda001685"
+  }
+]

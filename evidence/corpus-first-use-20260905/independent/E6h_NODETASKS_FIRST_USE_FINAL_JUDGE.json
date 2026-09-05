@@ -1,0 +1,89 @@
+{
+  "schema": "nodetasks-first-use-independent-judge/v1",
+  "at": "2026-09-05T18:11:30.169014+00:00",
+  "mode": "Builder / independent nonauthor judge",
+  "sourceVerdict": "APPROVED_SCOPED_SOURCE_AND_OBSERVED_LOCAL_CONSUMER",
+  "publicationVerdict": "BLOCKED_INERT_HISTORICAL_FILENAMES",
+  "fullProductVerdict": "NOT_CERTIFIED_UI_FINDINGS_OPEN",
+  "reviewerContextReuse": "Reviewer reused context from independent plan/baseline and other portfolio reviews; did not implement this source or proof. No fresh reviewer context was available.",
+  "root": "D:\\ProjectRecovery\\nodetasks-current-consumer-20260905",
+  "sourceCommit": "8e9b6495ba3bf716549825d05f48faaefc73dcfb",
+  "sourceTree": "47bfab14eec7149a288a0ccd09be857fbfe70c2f",
+  "noGit": true,
+  "candidateSourceDigest": "ca8eb92aafca9646c2125de074f49c32d887f1c2437c4ca93ab670560b725680",
+  "receiptSha256": "d6b4056ec5739b6191f2bc3639c62a3cdffc3bac591bca923f473a0fc4486470",
+  "sourceFreezeSha256": "479dc26bd3dd5a0f99b1ce9ec3da251fcc190fb1a38e7d08c5e94ad6c9fbae89",
+  "portableManifestSha256": "893b22e30380a7f990c4c9c7f42b7037fd742e31bbb0bb7307d1e258cbd31a68",
+  "checked": {
+    "namedRawChecks": 26,
+    "passed": 26,
+    "authored": 9,
+    "changedOriginal": 7,
+    "protectedOriginal": 1272,
+    "originalArchiveEntries": 1279,
+    "payloads": 625,
+    "rawCopies": 623,
+    "selectedInstalledBindings": 90,
+    "nodekitLauncherBindings": 1098,
+    "reopenedSettledDownloads": 37,
+    "reopenedStaleDownloads": 4,
+    "capturedPNGBindings": 66,
+    "actualPNGsViewed": 10,
+    "localAnswersRead": 9,
+    "currentLinks": 17
+  },
+  "sourceFindings": [],
+  "publicationBlockers": [
+    {
+      "id": "E6H-PUB-01",
+      "count": 158,
+      "breakdown": {
+        "historicalMjs": 7,
+        "historicalPython": 1,
+        "historicalHtml": 149,
+        "historicalNodekitYaml": 1
+      },
+      "evidence": "publication-blocked-names.json",
+      "minimumRepair": "Preserve original packet/freeze and all bytes; suffix these historical files .txt; update copy map, manifest, current links/readme only. Keep actual packet .gitattributes. Refreeze then bounded byte/link check; no runtime rerun needed."
+    }
+  ],
+  "gitPublicationLimits": [
+    "No .git/index/commit exists in exported consumer. Nine authored files are LF and packet * -text is present. Future staging must prove raw Git-filter equality and include ignored raw logs explicitly; this judgment does not certify a hypothetical index.",
+    "Exact original PR1 archive and primary PR2 HEAD/refs/serialized index/status/worktrees remain preserved. No history rewrite or merge approval inferred."
+  ],
+  "observedUiHolds": [
+    "Four native pending-update exports contain15 prior rows for eventual0; source unchanged and settled-only proof does not repair or erase this.",
+    "Actual metric cards have dark foreground on dark background; selected text also ellipsizes.",
+    "Actual static selected-result phone page clips horizontally; DOM overflow270px at320,200px at390.",
+    "200% root text retains download focus/action and row count but does not prove native zoom, readable whole-page content or exact DOM restoration.",
+    "Representative provenance JSON appears pale on white; no contrast measurement or additional UI fix is certified."
+  ],
+  "freshConsumerLimits": [
+    "Observed Windows Node22.22.2 / Streamlit1.63.0 / pandas3.0.5 and selected Chromium149.0.7827.55 identities; requirements are minimum versions, not a Python lock.",
+    "Automated proof requires new folder and two owned loopback ports, separate Chromium provisioning, explicit isolated Python. Cleanup uses Windows taskkill; no Linux/macOS process-lifecycle proof.",
+    "Local child endpoint/catalog overrides removed; actual rendered endpoint empty and browser egress blocked. No provider, upstream task/benchmark, production or official score execution.",
+    "Doctor is a local shape check; actual source-bound NodeKit CLI verifies registered ownership separately.",
+    "Validator guards indexed source content reads; frozen inputs required, no atomic hostile-filesystem-swap guarantee. Original unsigned receipt certifies catalog/content only, not UI, executable schemas, installed packages or official scores."
+  ],
+  "runtimeReplayByJudge": false,
+  "fullGrades": null,
+  "artifactManifest": "C:\\Users\\hshum\\.codex\\worktrees\\5dba\\nodebench-ai\\docs\\plans\\portfolio-recovery-20260904\\E6h-nodetasks-first-use-judge\\artifact-manifest.json",
+  "artifactManifestSha256": "ceaaf78fef55005f51c95c10880572ff54b85a3b353caa347c746e03e7250342",
+  "artifactCount": 68,
+  "closingGuards": {
+    "source": {
+      "count": 9,
+      "allRawExact": true
+    },
+    "protected": {
+      "count": 1272,
+      "allRawExact": true
+    },
+    "portable": {
+      "count": 625,
+      "allRawExact": true
+    }
+  },
+  "sourceFreezeClosed": true,
+  "nextAction": "Root may perform only the named inert-publication correction after preserving old packet. UI follow-on remains separately unimplemented."
+}

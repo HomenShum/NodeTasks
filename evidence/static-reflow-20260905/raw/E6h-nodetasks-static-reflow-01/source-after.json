@@ -1,0 +1,17 @@
+[
+  {
+    "path": "scripts/build-catalog.mjs",
+    "bytes": 97011,
+    "sha256": "339938c754f16fe10cde464ba25f8fe5cfb535316593f5fc539f222a562f61ce"
+  },
+  {
+    "path": "catalog/task-browser.html",
+    "bytes": 5945,
+    "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+  },
+  {
+    "path": "proof/corpus-receipt.json",
+    "bytes": 4697,
+    "sha256": "770b1c414b5a677e922845fc4aae88ebb36752683b0e34ade86cbce328a2f0b0"
+  }
+]

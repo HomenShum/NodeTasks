@@ -1,0 +1,742 @@
+--- before/README.md
++++ candidate/README.md
+@@ -71,9 +71,11 @@
+ 
+ ## Runnability Note
+ 
++Start a fresh developer or evaluator session with [HANDOFF.md](HANDOFF.md), including the isolated local setup, finite first-use proof and current limitations.
++
+ This repository preserves the benchmark/task corpus and the source support those files reference. Live production tasks still require an actual NodeRoom deployment, provider credentials, and any upstream benchmark datasets or official scorers that are intentionally not vendored here.
+ 
+-The vendored tree is provenance and a migration source only. It does not transfer ownership of NodeRoom or NodeAgent contracts to NodeTasks. See [`docs/UPSTREAM_PROVENANCE.md`](docs/UPSTREAM_PROVENANCE.md) for the enforced boundary and the known missing upstream revision.
++The vendored tree is provenance and a migration copy only. It does not transfer ownership of NodeRoom or NodeAgent contracts to NodeTasks. See [`docs/UPSTREAM_PROVENANCE.md`](docs/UPSTREAM_PROVENANCE.md) for the enforced boundary and the known missing upstream revision.
+ 
+ ## Deterministic corpus proof
+ 
+@@ -133,7 +135,7 @@
+ 
+ ```bash
+ pip install -r requirements.txt
+-npm run streamlit
++npm run streamlit -- --server.address 127.0.0.1 --server.port 8502
+ ```
+ 
+ The Streamlit app supports:
+--- before/docs/NODEAGENT_BRIDGE.md
++++ candidate/docs/NODEAGENT_BRIDGE.md
+@@ -55,7 +55,7 @@
+ ## Local Smoke
+ 
+ ```bash
+-npm run streamlit
++npm run streamlit -- --server.address 127.0.0.1 --server.port 8502
+ ```
+ 
+ Then open:
+--- before/docs/UPSTREAM_PROVENANCE.md
++++ candidate/docs/UPSTREAM_PROVENANCE.md
+@@ -1,6 +1,6 @@
+ # Vendored NodeRoom provenance boundary
+ 
+-`upstream/noderoom/` is a read-only migration source for the NodeTasks corpus. It preserves the source files referenced by task, adapter, rubric, and proof metadata. It is not a NodeTasks product runtime, package boundary, or claim that NodeTasks owns NodeRoom or NodeAgent contracts.
++`upstream/noderoom/` is a read-only migration copy for the NodeTasks corpus. It preserves the source files referenced by task, adapter, rubric, and proof metadata. It is not a NodeTasks product runtime, package boundary, or claim that NodeTasks owns NodeRoom or NodeAgent contracts.
+ 
+ The exact upstream NodeRoom commit was not recorded when the snapshot was created. This repository does not invent that missing revision. `catalog/source-files.json` preserves the historical per-file metadata. `npm run proof` independently hashes the current vendored files into a deterministic aggregate and records how many historical metadata entries differ, so existing drift remains visible without silently rebuilding the generated catalog.
+ 
+@@ -8,8 +8,8 @@
+ 
+ ## Ownership rules
+ 
+-- `canonicalFor` must remain empty in `nodekit.yaml` unless NodeTasks later introduces a genuinely independent, reviewed contract outside the vendored snapshot.
+-- Contract signatures found below `upstream/noderoom/` must be classified as `migration-source`, with their existing Node Platform owner named as the origin.
++- `canonicalFor` owns only the independent `nodetasks.corpus-receipt` contract. The three registered NodeAgent concepts are consumed, not owned.
++- Contract signatures found below `upstream/noderoom/` must be classified as `migration-copy`, with their existing NodeAgent owner named as the origin.
+ - Do not add `nodeagent.yaml`: NodeTasks is a deterministic evaluation corpus, not a product-agent application.
+ - Do not add new runtime implementations, provider adapters, or shared-contract ownership claims under `upstream/noderoom/`.
+ - A future resnapshot must be a dedicated migration that records the upstream revision, rebuilds the catalog, regenerates the corpus receipt, and reviews the resulting provenance delta.
+--- before/nodekit.yaml
++++ candidate/nodekit.yaml
+@@ -10,6 +10,9 @@
+ 
+ consumes:
+   - nodeplatform.repo-contract
++  - nodeagent.agent-run
++  - nodeagent.provider-pi
++  - nodeagent.trace-workpaper
+ 
+ commands:
+   doctor: { script: doctor, mode: finite }
+@@ -34,25 +37,25 @@
+   - concept: nodeagent.agent-run
+     signature: agent-run-result
+     path: upstream/noderoom/src/eval/proofloopAgentAdapters.ts
+-    mode: migration-source
++    mode: migration-copy
+     origin: nodeagent.agent-run
+     reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+   - concept: nodeagent.provider-pi
+     signature: agent-model-adapter
+     path: upstream/noderoom/src/nodeagent/models/piAiAdapter.ts
+-    mode: migration-source
++    mode: migration-copy
+     origin: nodeagent.provider-pi
+     reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+   - concept: nodeagent.trace-workpaper
+     signature: trace-schema
+     path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+-    mode: migration-source
++    mode: migration-copy
+     origin: nodeagent.trace-workpaper
+     reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+   - concept: nodeagent.trace-workpaper
+     signature: trace-tool-receipt
+     path: upstream/noderoom/src/nodeagent/traces/traceTypes.ts
+-    mode: migration-source
++    mode: migration-copy
+     origin: nodeagent.trace-workpaper
+     reason: Vendored NodeRoom snapshot retained only as task provenance, not as a NodeTasks runtime or ownership claim.
+ 
+--- before/scripts/doctor.mjs
++++ candidate/scripts/doctor.mjs
+@@ -39,8 +39,7 @@
+   {
+     id: "corpus-receipt-only-ownership",
+     passed:
+-      /^canonicalFor:\s*\r?\n\s+-\s+nodetasks\.corpus-receipt\s*\r?\n\s*\r?\nconsumes:/m.test(manifest) &&
+-      !/^canonicalFor:[\s\S]*?^\s+-\s+nodeagent\./m.test(manifest),
++      /^canonicalFor:\s*\r?\n\s+-\s+nodetasks\.corpus-receipt\s*\r?\n\s*\r?\nconsumes:/m.test(manifest),
+     detail: "NodeTasks owns its corpus receipt; vendored runtime contracts remain provenance only",
+   },
+ ];
+--- before/scripts/validate-catalog.mjs
++++ candidate/scripts/validate-catalog.mjs
+@@ -1,7 +1,7 @@
+ import { createHash } from "node:crypto";
+ import { existsSync } from "node:fs";
+-import { mkdir, readFile, writeFile } from "node:fs/promises";
+-import { dirname, join, resolve } from "node:path";
++import { lstat, mkdir, readFile, realpath, writeFile } from "node:fs/promises";
++import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
+ import { fileURLToPath } from "node:url";
+ 
+ export const RECEIPT_PATH = "proof/corpus-receipt.json";
+@@ -34,6 +34,7 @@
+ ].sort();
+ 
+ export async function validateCatalog(root = process.cwd()) {
++  root = await realpath(root);
+   const problems = [];
+   const contentHashes = new Map();
+   const assert = (condition, message) => {
+@@ -153,11 +154,11 @@
+   }
+ 
+   const blockedPatterns = [
+-    /\.env(?!\.example$)/,
+-    /node_modules\//,
+-    /\.proofloop\//,
+-    /test-results\//,
+-    /\.log$/,
++    /\.env(?!\.example$)/i,
++    /node_modules\//i,
++    /\.proofloop\//i,
++    /test-results\//i,
++    /\.log$/i,
+     /secret/i,
+   ];
+   const sourcePaths = new Set();
+@@ -165,18 +166,49 @@
+   const vendoredSourceRecords = [];
+   let verifiedSourceBytes = 0;
+   let sourceIndexContentMismatches = 0;
++  let sourcePathsValid = true;
+   for (const file of sources.files) {
+-    assert(typeof file.path === "string" && file.path.startsWith("upstream/noderoom/"), `source is vendored NodeRoom provenance: ${file.path}`);
+-    assert(!sourcePaths.has(file.path), `source path unique: ${file.path}`);
+-    sourcePaths.add(file.path);
+-    for (const pattern of blockedPatterns) {
+-      assert(!pattern.test(file.path), `source path is public-safe: ${file.path}`);
+-    }
+-    if (!existsSync(join(root, file.path))) {
+-      assert(false, `source file exists: ${file.path}`);
++    const publicPath = typeof file.path === "string"
++      && file.path.startsWith("upstream/noderoom/")
++      && file.path.split("/").every((part) => part.length > 0
++        && !/[\\:\x00-\x1f<>"|?*]/.test(part) && !/[. ]$/.test(part)
++        && !/^(con|prn|aux|nul|com[1-9¹²³]|lpt[1-9¹²³])(?:\.|$)/i.test(part))
++      && !blockedPatterns.some((pattern) => pattern.test(file.path));
++    const key = process.platform === "win32" ? file.path?.toLowerCase?.() : file.path;
++    const unique = !sourcePaths.has(key);
++    assert(publicPath, `source path is canonical public vendored provenance: ${file.path}`);
++    assert(unique, `source path unique: ${file.path}`);
++    sourcePaths.add(key);
++    if (!publicPath || !unique) {
++      sourcePathsValid = false;
+       continue;
+     }
+-    const bytes = await readFile(join(root, file.path));
++    let bytes;
++    try {
++      // Validate each parent before following it; a prefix check alone follows junctions.
++      let cursor = root;
++      const parts = file.path.split("/");
++      for (const [index, part] of parts.entries()) {
++        cursor = join(cursor, part);
++        const stat = await lstat(cursor);
++        if (stat.isSymbolicLink() || !(index === parts.length - 1 ? stat.isFile() : stat.isDirectory())) {
++          throw new Error("link or nonregular source path");
++        }
++      }
++      const physicalPath = await realpath(cursor);
++      const within = relative(join(root, "upstream/noderoom"), physicalPath);
++      if (!within || within === ".." || within.startsWith(`..${sep}`) || isAbsolute(within)) {
++        throw new Error("source leaves physical provenance root");
++      }
++      if (relative(root, physicalPath).split(sep).join("/") !== file.path) {
++        throw new Error("source path is not its canonical filesystem spelling");
++      }
++      bytes = await readFile(physicalPath);
++    } catch (error) {
++      sourcePathsValid = false;
++      assert(false, `source file is a contained regular file: ${file.path} (${error.code ?? error.message})`);
++      continue;
++    }
+     verifiedSourceBytes += bytes.byteLength;
+     const actualHash = sha256(bytes);
+     vendoredSourceRecords.push({ path: file.path, bytes: bytes.byteLength, sha256: actualHash });
+@@ -233,7 +265,7 @@
+     ))),
+   };
+   const catalogValid = problems.length === 0;
+-  const sourceIndexValid = sourceIndexContentMismatches === 0;
++  const sourceIndexValid = sourcePathsValid && sourceIndexContentMismatches === 0;
+   const passed = catalogValid && sourceIndexValid;
+   const core = {
+     schemaVersion: RECEIPT_SCHEMA_VERSION,
+--- before/test/corpus-validation.test.mjs
++++ candidate/test/corpus-validation.test.mjs
+@@ -1,7 +1,13 @@
+ import assert from "node:assert/strict";
+-import { existsSync } from "node:fs";
+-import { readFile } from "node:fs/promises";
+-import { resolve } from "node:path";
++import { existsSync, realpathSync } from "node:fs";
++import fs from "node:fs/promises";
++import { cp, mkdir, mkdtemp, readFile, rename, rm, symlink, writeFile } from "node:fs/promises";
++import { syncBuiltinESMExports } from "node:module";
++import { execFile } from "node:child_process";
++import { createHash } from "node:crypto";
++import { tmpdir } from "node:os";
++import { dirname, join, resolve, sep } from "node:path";
++import { promisify } from "node:util";
+ import test from "node:test";
+ import { fileURLToPath } from "node:url";
+ import {
+@@ -68,14 +74,179 @@
+     manifest,
+     /^canonicalFor:\s*\r?\n\s+-\s+nodetasks\.corpus-receipt\s*\r?\n\s*\r?\nconsumes:/m,
+   );
+-  assert.doesNotMatch(
+-    manifest,
+-    /^canonicalFor:[\s\S]*?^\s+-\s+nodeagent\./m,
+-  );
+   assert.equal(existsSync(resolve(root, "nodeagent.yaml")), false);
+ 
+   const declarationModes = [...manifest.matchAll(/^\s+mode:\s*(\S+)\s*$/gm)]
+     .map((match) => match[1]);
+   assert.ok(declarationModes.length > 0);
+-  assert.ok(declarationModes.every((mode) => mode === "migration-source"));
+-});
++  assert.equal(declarationModes.length, 4);
++  assert.ok(declarationModes.every((mode) => mode === "migration-copy"));
++  const consumes = manifest.split("consumes:\n")[1].split("\n\n")[0];
++  assert.deepEqual(consumes.trim().split("\n").map((line) => line.trim()), [
++    "- nodeplatform.repo-contract", "- nodeagent.agent-run",
++    "- nodeagent.provider-pi", "- nodeagent.trace-workpaper",
++  ]);
++});
++
++async function corpusFixture(t) {
++  const parent = await fs.realpath(tmpdir());
++  const fixture = await mkdtemp(join(parent, "nodetasks-corpus-review-"));
++  for (const name of ["catalog", "schemas", "proof", "upstream"]) {
++    await cp(join(root, name), join(fixture, name), { recursive: true });
++  }
++  t.after(async () => {
++    // Remove only this newly created fixture, with a verified physical parent.
++    assert.equal(dirname(await fs.realpath(fixture)), parent);
++    assert.ok(fixture.startsWith(join(parent, "nodetasks-corpus-review-")));
++    await rm(fixture, { recursive: true });
++  });
++  return fixture;
++}
++
++test("a maintainer rejects unsafe source entries before reading any owned sentinel", async (t) => {
++  const fixture = await corpusFixture(t);
++  const indexPath = join(fixture, "catalog/source-files.json");
++  const originalIndex = await readFile(indexPath);
++  const sentinel = Buffer.from("Harmless maintainer boundary fixture.\n");
++  const owned = [join(fixture, "fixture-sentinel.txt"), join(fixture, "upstream/noderoom/secret-fixture.txt"), join(fixture, "owned-probe/regular.txt")];
++  for (const file of owned) {
++    assert.ok(resolve(file).startsWith(fixture + sep));
++    await mkdir(dirname(file), { recursive: true });
++    await writeFile(file, sentinel, { flag: "wx" });
++  }
++  const unsafe = [
++    "upstream/noderoom/../../fixture-sentinel.txt",
++    "upstream/noderoom/secret-fixture.txt",
++    "upstream/noderoom/SECRET-fixture.txt",
++    "upstream/noderoom/./fixture.txt",
++    "upstream/noderoom//fixture.txt",
++    "upstream/noderoom/..\\..\\fixture-sentinel.txt",
++    "C:/fixture-sentinel.txt", "//localhost/fixture-sentinel.txt",
++    "upstream/noderoom/file.txt:stream", "upstream/noderoom/file.txt.",
++    "upstream/noderoom/file.txt ", "upstream/noderoom/NUL.txt",
++    "upstream/noderoom/COM¹", "upstream/noderoom/src",
++    "upstream/noderoom/missing-file.txt", null,
++  ];
++  const link = join(fixture, "upstream/noderoom/linked-parent");
++  try {
++    await symlink(join(fixture, "owned-probe"), link, process.platform === "win32" ? "junction" : "dir");
++    unsafe.push("upstream/noderoom/linked-parent/regular.txt");
++    t.diagnostic("Parent link/junction created and tested");
++  } catch (error) {
++    if (!["EPERM", "EACCES", "ENOSYS"].includes(error.code)) throw error;
++    t.diagnostic(`Parent link creation unavailable: ${error.code}; this case is untested`);
++  }
++  const index = JSON.parse(originalIndex);
++  for (const [i, path] of unsafe.entries()) {
++    index.files[i] = { ...index.files[i], path, bytes: sentinel.length, sha256: createHash("sha256").update(sentinel).digest("hex") };
++  }
++  await writeFile(indexPath, JSON.stringify(index));
++  const originalRead = fs.readFile;
++  const reads = [];
++  fs.readFile = async (file, ...args) => {
++    const requested = file instanceof URL ? fileURLToPath(file) : String(file);
++    const actual = existsSync(requested) ? realpathSync(requested) : resolve(requested);
++    if (owned.some((name) => name.toLowerCase() === actual.toLowerCase())) reads.push(actual);
++    return originalRead(file, ...args);
++  };
++  syncBuiltinESMExports();
++  try {
++    const { problems, receipt } = await validateCatalog(fixture);
++    assert.deepEqual(reads, [], "failed status alone cannot certify no forbidden read");
++    assert.ok(problems.length >= unsafe.length);
++    assert.equal(receipt.passed, false);
++    assert.equal(receipt.sourceIndexValid, false);
++    assert.equal(receipt.status, "catalog-invalid");
++  } finally {
++    fs.readFile = originalRead;
++    syncBuiltinESMExports();
++    await writeFile(indexPath, originalIndex);
++  }
++  assert.equal((await validateCatalog(fixture)).receipt.passed, true, "restored public index recovers without changing the receipt");
++});
++
++test("a new developer's actual doctor accepts registered consumers but rejects added or replaced NodeAgent ownership", async (t) => {
++  const fixture = await corpusFixture(t);
++  await mkdir(join(fixture, "scripts"));
++  await mkdir(join(fixture, "docs"));
++  for (const name of ["scripts/doctor.mjs", "scripts/validate-catalog.mjs", "docs/UPSTREAM_PROVENANCE.md", "nodekit.yaml"]) {
++    await cp(join(root, name), join(fixture, name));
++  }
++  const manifestPath = join(fixture, "nodekit.yaml");
++  const original = await readFile(manifestPath, "utf8");
++  const run = promisify(execFile);
++  const doctor = () => run(process.execPath, [join(fixture, "scripts/doctor.mjs")], { cwd: fixture, timeout: 10_000, windowsHide: true });
++  assert.equal(JSON.parse((await doctor()).stdout).passed, true);
++  for (const value of [
++    original.replace("  - nodetasks.corpus-receipt", "  - nodetasks.corpus-receipt\n  - nodeagent.agent-run"),
++    original.replace("  - nodetasks.corpus-receipt", "  - nodeagent.agent-run"),
++  ]) {
++    await writeFile(manifestPath, value);
++    await assert.rejects(doctor, (error) => {
++      const result = JSON.parse(error.stdout);
++      return error.code === 1 && !result.passed
++        && result.checks.find((check) => check.id === "corpus-receipt-only-ownership").passed === false;
++    });
++  }
++  await writeFile(manifestPath, original);
++  assert.equal(JSON.parse((await doctor()).stdout).passed, true);
++});
++
++test("a reviewer preserves the good receipt through stale, malformed and drifting inputs, then concurrent and sustained reads", async (t) => {
++  const fixture = await corpusFixture(t);
++  const receiptPath = join(fixture, RECEIPT_PATH);
++  const goodReceipt = await readFile(receiptPath);
++  const run = promisify(execFile);
++  const proof = () => run(process.execPath, [join(root, "scripts/validate-catalog.mjs"), "--check-receipt"], { cwd: fixture, timeout: 30_000, maxBuffer: 2_000_000, windowsHide: true });
++  await rename(receiptPath, receiptPath + ".held");
++  await assert.rejects(proof, (error) => error.code === 1 && /is missing/.test(error.stderr));
++  await rename(receiptPath + ".held", receiptPath);
++  await writeFile(receiptPath, Buffer.concat([goodReceipt, Buffer.from(" ")]));
++  await assert.rejects(proof, (error) => error.code === 1 && /is stale/.test(error.stderr));
++  await writeFile(receiptPath, goodReceipt);
++
++  const catalogPath = join(fixture, "catalog/all-tasks.json");
++  const catalog = await readFile(catalogPath);
++  try {
++    await writeFile(catalogPath, "{ malformed");
++    await assert.rejects(proof, (error) => error.code === 1 && /SyntaxError/.test(error.stderr));
++    const duplicate = JSON.parse(catalog);
++    duplicate.tasks[1].id = duplicate.tasks[0].id;
++    await writeFile(catalogPath, JSON.stringify(duplicate));
++    await assert.rejects(proof, (error) => error.code === 1 && /task id unique/.test(error.stderr));
++  } finally { await writeFile(catalogPath, catalog); }
++
++  const sources = JSON.parse(await readFile(join(fixture, "catalog/source-files.json"), "utf8"));
++  const sourcePath = join(fixture, sources.files[0].path);
++  const source = await readFile(sourcePath);
++  const originalRead = fs.readFile;
++  let changedAtRead = false;
++  fs.readFile = async (file, ...args) => {
++    if (resolve(String(file)) === sourcePath && !changedAtRead) {
++      changedAtRead = true;
++      await writeFile(sourcePath, Buffer.concat([source, Buffer.from("\ncontrolled review drift\n")]));
++    }
++    return originalRead(file, ...args);
++  };
++  syncBuiltinESMExports();
++  try {
++    const { receipt } = await validateCatalog(fixture);
++    assert.equal(changedAtRead, true);
++    assert.equal(receipt.sourceIndexValid, false);
++    assert.equal(receipt.passed, false);
++    assert.equal(receipt.sourceIndexDrift.mismatchCount, 1);
++  } finally { fs.readFile = originalRead; syncBuiltinESMExports(); }
++  await assert.rejects(proof, (error) => error.code === 1);
++  await writeFile(sourcePath, source);
++
++  const concurrent = await Promise.all(Array.from({ length: 4 }, () => validateCatalog(fixture)));
++  for (const result of concurrent) assert.equal(serializeReceipt(result.receipt), goodReceipt.toString("utf8"));
++  for (let later = 0; later < 3; later += 1) {
++    assert.equal(serializeReceipt((await validateCatalog(fixture)).receipt), goodReceipt.toString("utf8"));
++  }
++  await proof();
++  assert.deepEqual(await readFile(receiptPath), goodReceipt);
++  assert.deepEqual(await readFile(catalogPath), catalog);
++  assert.deepEqual(await readFile(sourcePath), source);
++  t.diagnostic("4 concurrent +3 later frozen reads; controlled pre-read drift rejected. No hostile filesystem-swap guarantee.");
++});
+--- before/HANDOFF.md
++++ candidate/HANDOFF.md
+@@ -0,0 +1,59 @@
++# NodeTasks developer and evaluator handoff
++
++Start here, then read [README](README.md) and the [vendored provenance boundary](docs/UPSTREAM_PROVENANCE.md). An evaluator uses NodeTasks to find a task, inspect its sources and scoring limits, download a selected bundle, and decide what environment is required before running anything. The local explorer answers from the catalog; it does not execute the listed tasks or certify their upstream commands.
++
++This is a source-build consumer of PR 1 at `8e9b6495ba3bf716549825d05f48faaefc73dcfb` (tree `47bfab14eec7149a288a0ccd09be857fbfe70c2f`) plus the bounded working repair. The receipt, doctor and first-use proof work without `.git`. The original PR 1/PR 2 branches and primary checkout remain preserved. This candidate awaits independent review; it is not a publication or deployment claim.
++
++## Fresh local setup
++
++Use Node 22 and Python in a dedicated environment beside the source directory. In a fresh checkout:
++
++```powershell
++npm ci
++npm run check
++python -m venv ..\nodetasks-venv
++..\nodetasks-venv\Scripts\python.exe -m pip install -r requirements.txt
++npx playwright install chromium
++```
++
++The Python requirements specify minimum versions, not a lock. The retained consumer installed Streamlit 1.63.0 and pandas 3.0.5; its evidence records the full resolved versions. Do not copy personal environment files or configure a model endpoint for this local journey. Chromium requires the separate install above; `npm ci` alone does not install a browser. Linux may additionally need `npx playwright install --with-deps chromium` when system-package installation is permitted.
++
++For an interactive explorer, run the isolated Python with an explicit port:
++
++```powershell
++..\nodetasks-venv\Scripts\python.exe -m streamlit run apps/nodetasks_streamlit.py --server.address 127.0.0.1 --server.port 8502 --server.headless true --server.fileWatcherType none --browser.gatherUsageStats false
++```
++
++Open `http://127.0.0.1:8502/?view=public-node-repo-proofs`. Before asking a question, expand Filters and verify **NodeAgent endpoint** is empty. The manual command inherits the caller's environment; the automated proof below removes `NODEAGENT_ENDPOINT` and `NODETASKS_CATALOG` from its own child environment without changing the caller. Endpoint-mode behavior is not certified by this local proof.
++
++The static `catalog/task-browser.html` is a separate search surface. Open it locally or serve that folder. Its results are capped at 200 and it has no model endpoint.
++
++## Named first-use proof
++
++```powershell
++node scripts/verify-first-use.mjs --python ..\nodetasks-venv\Scripts\python.exe --output ..\nodetasks-first-use-proof --port 54532
++```
++
++Choose a new output folder and two free consecutive local ports. This finite proof owns and closes its Streamlit and static servers. It tests the public-repository saved view, exact task/source/score boundaries, real downloaded/reopened JSON, Rows-limited top-N output, repeated exports, local answers with task citations, empty results, a zero-count bundle when present, reload, keyboard navigation and 200% root text enlargement at six widths. It preserves console/DOM/pixels, downloaded bytes and exact source hashes. It blocks browser egress and verifies the rendered endpoint is empty. It does not run a benchmark, supplier action, external endpoint or provider.
++
++The committed storyboard script still expects the old 9,140 count and overwrites tracked media. It is historical and is not the first-use acceptance command. Do not regenerate those assets or the catalog to conceal a failed proof.
++
++## Corpus and ownership boundary
++
++The current source repair stops invalid indexed paths before reading file contents. Paths must be canonical public relative names under `upstream/noderoom`; every parent is checked without following links, and the leaf must be a physically contained regular file with canonical filesystem spelling. This includes Windows aliases, device names and alternate-stream syntax. A rejected path or failed source read makes `sourceIndexValid` false. The normal valid receipt remains byte-for-byte unchanged.
++
++The scenarios preserve a good receipt through missing/stale receipts, malformed and duplicate tasks, controlled source-byte drift, four concurrent and three later frozen reads, then recovery. This is not an atomic filesystem snapshot or protection against a hostile concurrent filesystem swap. Keep proof inputs frozen and retain any drift rather than regenerating a clean-looking receipt.
++
++NodeTasks owns only `nodetasks.corpus-receipt`. It consumes the repository contract and three registered NodeAgent concepts; four frozen signatures are `migration-copy` with their original NodeAgent owners. Doctor's positive ownership check still requires exactly the one independent corpus owner. The redundant negative regex that accidentally crossed into `consumes` was removed; actual CLI scenarios reject added or replaced NodeAgent ownership.
++
++The unsigned corpus receipt hashes 18 catalog/schema artifacts and 1,236 indexed source files, with a protected semantic-boundary hash. It does not bind the UI, producer implementation, installed dependencies or Git identity, and it does not execute a JSON Schema validator. `releaseReady: true` means the deterministic corpus validation passed. It does not mean the app, upstream tasks or an official benchmark score are ready. The original upstream NodeRoom revision remains unknown and is not invented.
++
++## Current evidence and limits
++
++Normal `npm run check` and the registered NodeKit repository check pass on this source consumer. The three previously reproduced traversal, blocked-name and parent-junction reads now read zero sentinel files and report `passed: false` plus `sourceIndexValid: false`. The accepted doctor correction, original failures and source bindings are retained with the first-use evidence.
++
++The final browser replay completed at 320, 390, 768, 1024, 1440 and 1920 pixels with 66 captures and 37 real downloaded/reopened JSON files. All six keyboard paths reached the download action; local answers, repeated exports, no-result recovery and reload passed. Console errors, page errors and browser external requests were empty. The finite actions completed; this is not a visual-quality grade.
++
++The current raw findings remain open: rapid filter/Rows changes followed by download can yield the previous displayed rows while Streamlit is still running. Four separate native input/download attempts reproduced a 15-row file after requesting an empty-result filter; settled-only successful downloads do not erase this behavior. Natural-theme metric cards inherit dark text on a dark background. The separate static HTML browser's selected result overflows by 270 pixels at width 320 and 200 pixels at width 390. No UI source repair is included in this scope. Full visual, responsive, accessibility, performance, provider and production grades remain unassigned, even where the finite consumer actions pass.
++
++The [portable evidence entry](evidence/corpus-first-use-20260905/README.md) is the review handoff for source/installed identities, commands, before/after read observations, actual exports and unresolved UI findings. The original valid receipt is preserved; use `npm run proof` to check it. Use `npm run validate` only after an intentional reviewed corpus change, never to hide an unexpected failure.
+--- before/scripts/verify-first-use.mjs
++++ candidate/scripts/verify-first-use.mjs
+@@ -0,0 +1,257 @@
++import assert from "node:assert/strict";
++import { spawn, spawnSync } from "node:child_process";
++import { createHash } from "node:crypto";
++import { createWriteStream } from "node:fs";
++import { mkdir, readFile, writeFile } from "node:fs/promises";
++import { createServer } from "node:http";
++import { dirname, join, resolve } from "node:path";
++import { fileURLToPath } from "node:url";
++import { chromium } from "playwright";
++
++// Finite local consumer proof. It never invokes task commands or a model endpoint.
++const args = Object.fromEntries(Array.from({ length: (process.argv.length - 2) / 2 }, (_, i) => [process.argv[2 + i * 2], process.argv[3 + i * 2]]));
++assert.ok(args["--python"] && args["--output"], "Use --python <isolated-python> --output <new-folder> [--port <owned-port>]");
++assert.ok(Object.keys(args).every((key) => ["--python", "--output", "--port"].includes(key)));
++const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
++const output = resolve(args["--output"]);
++await mkdir(output);
++const port = Number(args["--port"] ?? 54532);
++assert.ok(Number.isInteger(port) && port >= 1024 && port <= 65534);
++const base = `http://127.0.0.1:${port}`;
++const staticBase = `http://127.0.0.1:${port + 1}`;
++const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
++const inputNames = ["apps/nodetasks_streamlit.py", "catalog/all-tasks.json", "catalog/saved-views.json", "catalog/task-bundles.json", "catalog/provenance-index.json", "catalog/hierarchy.json", "catalog/task-browser.html", "catalog/search-index.js", "proof/corpus-receipt.json", "scripts/verify-first-use.mjs"];
++const inputs = await Promise.all(inputNames.map(async (path) => ({ path, sha256: hash(await readFile(join(root, path))) })));
++const tasks = JSON.parse(await readFile(join(root, "catalog/all-tasks.json"), "utf8")).tasks;
++const taskById = new Map(tasks.map((task) => [task.id, task]));
++const bundles = JSON.parse(await readFile(join(root, "catalog/task-bundles.json"), "utf8")).bundles;
++const bundle = bundles.find((value) => value.id === "public-node-repo-proofs");
++assert.ok(bundle);
++const zeroBundle = bundles.find((value) => value.taskCount === 0);
++const report = { schema: "nodetasks-local-first-use/v1", startedAt: new Date().toISOString(), inputs, cells: [], externalRequests: [], errors: [], limits: ["Local catalog mode only; no benchmark/model execution", "Six fixed widths, finite download/chat budgets; no whole-product grade", "200% root text enlargement is browser-only, not native zoom", "Filtered JSON exports the Rows-limited shown table, not every matching row", "Static browser and Streamlit are separate surfaces"] };
++const env = { ...process.env, PYTHONDONTWRITEBYTECODE: "1" };
++delete env.NODEAGENT_ENDPOINT;
++delete env.NODETASKS_CATALOG;
++const serverLog = createWriteStream(join(output, "streamlit.log"));
++const serverArgs = ["-m", "streamlit", "run", "apps/nodetasks_streamlit.py", "--server.address", "127.0.0.1", "--server.port", String(port), "--server.headless", "true", "--server.fileWatcherType", "none", "--browser.gatherUsageStats", "false"];
++const server = spawn(args["--python"], serverArgs, { cwd: root, env, windowsHide: true, stdio: ["ignore", "pipe", "pipe"] });
++server.stdout.pipe(serverLog); server.stderr.pipe(serverLog);
++const staticFiles = new Map(await Promise.all(["task-browser.html", "search-index.js"].map(async (name) => ["/" + name, await readFile(join(root, "catalog", name))])));
++const staticServer = createServer((request, response) => {
++  const bytes = request.method === "GET" ? staticFiles.get(request.url) : undefined;
++  response.writeHead(bytes ? 200 : 404, { "Content-Type": request.url === "/search-index.js" ? "text/javascript" : "text/html" });
++  response.end(bytes ?? "Not found");
++});
++let browser;
++async function settled(page) {
++  await page.getByText("9,155", { exact: true }).waitFor({ timeout: 30_000 });
++  await page.getByRole("button", { name: "Stop", exact: true }).waitFor({ state: "hidden", timeout: 30_000 });
++  await page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))));
++}
++async function committedInput(page, action, renderedOutcome) {
++  await settled(page);
++  await page.evaluate(() => {
++    const app = document.querySelector('[data-testid="stApp"]');
++    window.__nodetasksObservedRun = { states: [] };
++    const record = window.__nodetasksObservedRun;
++    record.observer = new MutationObserver(() => {
++      const state = app.getAttribute("data-test-script-state");
++      if (record.states.length < 16 && record.states.at(-1) !== state) record.states.push(state);
++    });
++    record.observer.observe(app, { attributes: true, attributeFilter: ["data-test-script-state"] });
++  });
++  try {
++    await action();
++    // Fast cached reruns need not expose a sampled busy frame. Require the actual
++    // updated table/metric, then inspect the exported bytes independently.
++    await page.waitForFunction(renderedOutcome);
++    await page.waitForFunction(() => document.querySelector('[data-testid="stApp"]').getAttribute("data-test-script-state") === "notRunning");
++    await settled(page);
++    return await page.evaluate(() => window.__nodetasksObservedRun.states);
++  } finally {
++    await page.evaluate(() => { window.__nodetasksObservedRun.observer.disconnect(); delete window.__nodetasksObservedRun; });
++  }
++}
++async function capture(page, cell, name) {
++  const png = await page.screenshot({ path: join(output, `${name}.png`), caret: "initial" });
++  const html = await page.content();
++  await writeFile(join(output, `${name}.html`), html);
++  const dom = await page.evaluate(() => ({ url: location.href, body: document.body.innerText, viewport: { width: innerWidth, height: innerHeight }, horizontalOverflow: document.documentElement.scrollWidth - innerWidth, focus: { tag: document.activeElement?.tagName, text: document.activeElement?.textContent?.slice(0, 120), label: document.activeElement?.getAttribute("aria-label") }, metrics: [...document.querySelectorAll('[data-testid="stMetric"]')].map((element) => ({ text: element.textContent, foreground: getComputedStyle(element.querySelector('[data-testid="stMetricValue"]') ?? element).color, background: getComputedStyle(element).backgroundColor })) }));
++  await writeFile(join(output, `${name}.json`), JSON.stringify(dom, null, 2));
++  cell.captures.push({ name, pngSha256: hash(png), htmlSha256: hash(html), horizontalOverflow: dom.horizontalOverflow });
++}
++async function sidebar(page, open) {
++  const expand = page.getByTestId("stExpandSidebarButton");
++  if (open && await expand.isVisible()) await expand.click();
++  if (!open) {
++    await page.getByTestId("stSidebar").getByTestId("stBaseButton-headerNoPadding").click();
++  }
++}
++async function download(page, button, cell, name) {
++  const event = page.waitForEvent("download");
++  await button.click();
++  const item = await event;
++  assert.equal(await item.failure(), null);
++  const path = join(output, `${name}.json`);
++  await item.saveAs(path);
++  const bytes = await readFile(path);
++  const payload = JSON.parse(bytes);
++  cell.downloads.push({ name, suggestedFilename: item.suggestedFilename(), sha256: hash(bytes), bytes: bytes.length });
++  return payload;
++}
++async function tab(page, name) {
++  const target = page.getByRole("tab", { name, exact: true });
++  await target.scrollIntoViewIfNeeded(); await target.click();
++}
++try {
++  await new Promise((done, reject) => { staticServer.once("error", reject); staticServer.listen(port + 1, "127.0.0.1", done); });
++  const deadline = Date.now() + 30_000;
++  while (true) {
++    if (server.exitCode !== null) throw Error(`Owned Streamlit exited ${server.exitCode}`);
++    try { if ((await fetch(base + "/_stcore/health", { signal: AbortSignal.timeout(1000) })).ok) break; } catch {}
++    if (Date.now() >= deadline) throw Error("Owned Streamlit startup deadline");
++    await new Promise((done) => setTimeout(done, 100));
++  }
++  browser = await chromium.launch({ headless: true });
++  for (const width of [320, 390, 768, 1024, 1440, 1920]) {
++    const cell = { width, captures: [], downloads: [], console: [], pageErrors: [] };
++    report.cells.push(cell);
++    const context = await browser.newContext({ viewport: { width, height: 900 } });
++    await context.route("**/*", (route) => {
++      const url = new URL(route.request().url());
++      if ([base, staticBase].includes(url.origin) || ["data:", "blob:"].includes(url.protocol)) return route.continue();
++      report.externalRequests.push({ width, url: url.origin + url.pathname });
++      return route.abort("blockedbyclient");
++    });
++    const page = await context.newPage();
++    page.on("pageerror", (error) => cell.pageErrors.push(error.message));
++    page.on("console", (message) => { if (["error", "warning"].includes(message.type())) cell.console.push({ type: message.type(), text: message.text() }); });
++    try {
++      await page.goto(base + "/?view=public-node-repo-proofs", { waitUntil: "domcontentloaded" });
++      await settled(page); await capture(page, cell, `${width}-entry`);
++      await sidebar(page, true);
++      const endpoint = page.getByRole("textbox", { name: "NodeAgent endpoint", exact: true });
++      await endpoint.scrollIntoViewIfNeeded();
++      assert.equal(await endpoint.inputValue(), "");
++      assert.equal(await endpoint.isVisible(), true);
++      cell.renderedEndpointEmpty = true;
++      await capture(page, cell, `${width}-empty-endpoint`);
++      if (width < 1024) await sidebar(page, false);
++
++      const filteredButton = page.getByRole("button", { name: "Download filtered JSON", exact: true });
++      const filtered = await download(page, filteredButton, cell, `${width}-filtered-initial`);
++      assert.equal(filtered.length, 15);
++      for (const row of filtered) {
++        const source = taskById.get(row.id); assert.ok(source);
++        assert.equal(row.title, source.title);
++        assert.equal(row.score_status, source.provenance.scoreStatus);
++        assert.equal(row.source_refs, source.sourceRefs.slice(0, 4).join(", "));
++      }
++      cell.selectedTask = { id: filtered[0].id, sourceRefs: taskById.get(filtered[0].id).sourceRefs, scoreStatus: filtered[0].score_status };
++      await page.getByText("Source refs and metadata", { exact: true }).click();
++      await capture(page, cell, `${width}-task-provenance`);
++      await sidebar(page, true);
++      cell.transitions = [await committedInput(page, () => page.getByTestId("stSlider").locator('input[type="range"][aria-label="Rows"]').press("Home"), () => document.querySelector('[role="grid"]')?.getAttribute("aria-rowcount") === "11")];
++      await settled(page);
++      if (width < 1024) await sidebar(page, false);
++      const limited = await download(page, filteredButton, cell, `${width}-filtered-top10`);
++      assert.deepEqual(limited, filtered.slice(0, 10));
++      const duplicate = await download(page, filteredButton, cell, `${width}-filtered-repeat`);
++      assert.deepEqual(duplicate, limited);
++      cell.topNAndRepeat = { initial: filtered.length, limited: limited.length, identicalRepeat: true };
++
++      await tab(page, "Saved views");
++      const downloadedBundle = await download(page, page.getByRole("button", { name: "Download public-node-repo-proofs bundle", exact: true }), cell, `${width}-public-bundle`);
++      assert.deepEqual(downloadedBundle, bundle);
++      await capture(page, cell, `${width}-bundle`);
++      if (zeroBundle && width === 1440) {
++        const expander = page.getByText(`${zeroBundle.title} (0 tasks)`, { exact: true });
++        await expander.click();
++        assert.deepEqual(await download(page, page.getByRole("button", { name: `Download ${zeroBundle.id} bundle`, exact: true }), cell, `${width}-zero-bundle`), zeroBundle);
++      }
++      await tab(page, "Provenance"); await capture(page, cell, `${width}-score-boundary`);
++      await tab(page, "NodeAgent");
++      const input = page.getByRole("textbox", { name: "Ask about tasks, ranks, costs, domains, or what a persona should run first", exact: true });
++      const prompts = width === 1440 ? ["Which public Node repo task can I inspect?", "Show the source evidence again", "Keep official scores separate", "Recheck the first task"] : ["Which public Node repo task can I inspect?"];
++      for (const [i, question] of prompts.entries()) {
++        await input.fill(question); await input.press("Enter");
++        await page.getByTestId("stChatMessage").nth(i * 2 + 1).waitFor({ timeout: 30_000 });
++        await settled(page);
++        const answer = await page.getByTestId("stChatMessage").nth(i * 2 + 1).innerText();
++        assert.ok(answer.includes("NodeAgent catalog mode found 15 matching task(s)"));
++        assert.ok(answer.includes("Cited task ids:"));
++        for (const row of filtered.slice(0, 5)) assert.ok(answer.includes(row.id));
++        cell.answers ??= []; cell.answers.push({ question, answer });
++      }
++      await capture(page, cell, `${width}-local-answer`);
++      await sidebar(page, true);
++      await page.getByRole("textbox", { name: "Search", exact: true }).fill("zz_no_task_20260905_xyz");
++      cell.transitions.push(await committedInput(page, () => page.getByRole("textbox", { name: "Search", exact: true }).press("Enter"), () => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.querySelector('[data-testid="stMetricLabel"]')?.textContent === "Filtered" && metric.querySelector('[data-testid="stMetricValue"]')?.textContent === "0")));
++      await page.waitForFunction(() => [...document.querySelectorAll('[data-testid="stMetric"]')].some((metric) => metric.querySelector('[data-testid="stMetricLabel"]')?.textContent === "Filtered" && metric.querySelector('[data-testid="stMetricValue"]')?.textContent === "0"));
++      await settled(page);
++      if (width < 1024) await sidebar(page, false);
++      await tab(page, "Search");
++      assert.deepEqual(await download(page, filteredButton, cell, `${width}-no-result`), []);
++      await capture(page, cell, `${width}-no-result-state`);
++      await tab(page, "NodeAgent");
++      assert.ok((await page.getByText("I could not find matching tasks in the current filter set. Clear filters or broaden the query.", { exact: true }).count()) > 0);
++      await page.reload({ waitUntil: "domcontentloaded" }); await settled(page);
++      assert.equal(await page.getByTestId("stChatMessage").count(), 0);
++      assert.deepEqual(await download(page, filteredButton, cell, `${width}-reloaded`), filtered);
++      cell.reloadRestoresUrlViewAndClearsSessionChat = true;
++
++      // Start from the actual Inspect task widget, then traverse using ordinary Tab keys.
++      const inspect = page.getByRole("combobox", { name: "Inspect task", exact: true });
++      await inspect.click(); await inspect.press("Escape");
++      cell.keyboard = [];
++      for (let i = 0; i < 12; i += 1) {
++        await page.keyboard.press("Tab");
++        const active = await page.evaluate(() => ({ text: document.activeElement?.textContent, label: document.activeElement?.getAttribute("aria-label") }));
++        cell.keyboard.push(active);
++        if (active.text?.trim() === "Download filtered JSON") break;
++      }
++      cell.keyboardReachedDownload = cell.keyboard.at(-1).text?.trim() === "Download filtered JSON";
++      await capture(page, cell, `${width}-keyboard`);
++      const html = await page.content();
++      const fontBefore = await page.evaluate(() => getComputedStyle(document.documentElement).fontSize);
++      const rowCountBefore = await page.locator('[role="grid"]').first().getAttribute("aria-rowcount");
++      const textStyle = await page.addStyleTag({ content: "html { font-size: 200% !important; }" });
++      await filteredButton.scrollIntoViewIfNeeded();
++      await capture(page, cell, `${width}-text200`);
++      const fontEnlarged = await page.evaluate(() => getComputedStyle(document.documentElement).fontSize);
++      await textStyle.evaluate((element) => element.remove());
++      await page.waitForFunction((font) => getComputedStyle(document.documentElement).fontSize === font, fontBefore);
++      assert.equal(await page.locator('[role="grid"]').first().getAttribute("aria-rowcount"), rowCountBefore);
++      cell.textEnlargement = { fontBefore, fontEnlarged, restoredFont: await page.evaluate(() => getComputedStyle(document.documentElement).fontSize), rowCountPreserved: true, domSerializationChanged: (await page.content()) !== html, limitation: "Streamlit legitimately recalculates canvas/slider layout and live-region attributes; no byte-exact DOM restoration claim." };
++
++      await page.goto(staticBase + "/task-browser.html", { waitUntil: "load" });
++      assert.equal(await page.locator("#count").innerText(), "9,155 searchable tasks");
++      await page.locator("#query").fill(filtered[0].id);
++      assert.equal(await page.locator("#results .result code").first().innerText(), filtered[0].id);
++      await capture(page, cell, `${width}-static-selected`);
++      await page.locator("#query").fill("zz_no_task_20260905_xyz");
++      assert.equal(await page.locator("#summary").innerText(), "0 shown");
++      await capture(page, cell, `${width}-static-no-result`);
++      assert.deepEqual(cell.pageErrors, []);
++      cell.status = "OBSERVED";
++    } catch (error) {
++      cell.status = "FAILED"; cell.error = String(error);
++      await capture(page, cell, `${width}-failure`);
++    } finally { await context.close(); await writeFile(join(output, "report.json"), JSON.stringify(report, null, 2)); }
++    if (cell.status === "FAILED") break;
++  }
++  report.status = report.cells.length === 6 && report.cells.every((cell) => cell.status === "OBSERVED") ? "OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS" : "FAILED";
++} catch (error) { report.status = "FAILED"; report.errors.push(String(error)); }
++finally {
++  if (browser) await browser.close();
++  if (server.exitCode === null) spawnSync("taskkill", ["/PID", String(server.pid), "/T", "/F"], { windowsHide: true });
++  await new Promise((done) => server.exitCode !== null ? done() : server.once("exit", done));
++  await new Promise((done) => serverLog.end(done));
++  await new Promise((done) => staticServer.close(done));
++  report.sourceUnchanged = (await Promise.all(inputs.map(async (input) => hash(await readFile(join(root, input.path))) === input.sha256))).every(Boolean);
++  assert.equal(report.sourceUnchanged, true);
++  report.finishedAt = new Date().toISOString();
++  await writeFile(join(output, "report.json"), JSON.stringify(report, null, 2));
++}
++console.log(JSON.stringify({ status: report.status, cells: report.cells.length, output }));
++process.exitCode = report.status === "OBSERVED_COMPLETE_WITH_UNGRADED_VISUALS" ? 0 : 1;

@@ -1,0 +1,83 @@
+{
+  "checks": [
+    {
+      "detail": "nodekit.repo/v1",
+      "id": "manifest-schema",
+      "passed": true
+    },
+    {
+      "detail": "NodeTasks",
+      "id": "catalog-entry",
+      "passed": true
+    },
+    {
+      "detail": "preview",
+      "id": "lifecycle",
+      "passed": true
+    },
+    {
+      "detail": "active",
+      "id": "support",
+      "passed": true
+    },
+    {
+      "detail": "doctor",
+      "id": "command:doctor",
+      "passed": true
+    },
+    {
+      "detail": "check",
+      "id": "command:check",
+      "passed": true
+    },
+    {
+      "detail": "proof",
+      "id": "command:proof",
+      "passed": true
+    },
+    {
+      "detail": "4/4 classified",
+      "id": "contract-declarations",
+      "passed": true
+    },
+    {
+      "detail": "0/0 excepted",
+      "id": "source-rules",
+      "passed": true
+    }
+  ],
+  "contractFindings": [
+    {
+      "concept": "nodeagent.agent-run",
+      "declared": true,
+      "line": 25,
+      "path": "upstream/noderoom/src/eval/proofloopAgentAdapters.ts",
+      "signature": "agent-run-result"
+    },
+    {
+      "concept": "nodeagent.provider-pi",
+      "declared": true,
+      "line": 7,
+      "path": "upstream/noderoom/src/nodeagent/models/piAiAdapter.ts",
+      "signature": "agent-model-adapter"
+    },
+    {
+      "concept": "nodeagent.trace-workpaper",
+      "declared": true,
+      "line": 1,
+      "path": "upstream/noderoom/src/nodeagent/traces/traceTypes.ts",
+      "signature": "trace-schema"
+    },
+    {
+      "concept": "nodeagent.trace-workpaper",
+      "declared": true,
+      "line": 80,
+      "path": "upstream/noderoom/src/nodeagent/traces/traceTypes.ts",
+      "signature": "trace-tool-receipt"
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "repository": "HomenShum/NodeTasks",
+  "sourceFindings": []
+}

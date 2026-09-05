@@ -1,0 +1,53 @@
+{
+  "body": "Filters\n\nPersona\n\nSaved view\n\nSearch\n\nSort\n\nDomain\n\nKind\n\nDifficulty\n\nCost tier\n\nTag contains\n\nRows\n\n100\n\n10\n\n500\n\nNodeAgent endpoint\n\nDeploy\nNodeTasks\n\nSearch, rank, and ask NodeAgent about NodeRoom benchmark tasks.\n\nSearchable tasks\n\n9,155\n\nFiltered\n\n0\n\nDomains\n\n5\n\nKinds\n\n13\n\nCost tiers\n\n5\n\nSearch\n\nHierarchy\n\nSaved views\n\nProvenance\n\nNodeAgent\n\nPersona tests\n\nRanked task table\n\nInspect task\n\nDownload filtered JSON",
+  "state": "notRunning",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "search": "zz_no_task_20260905_xyz",
+  "rows": "100",
+  "metrics": [
+    {
+      "text": "Searchable tasks9,155",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Filtered0",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Domains5",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Kinds13",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Cost tiers5",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Verifier types8",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Score statuses2",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    },
+    {
+      "text": "Primary suites50",
+      "color": "rgb(49, 51, 63)",
+      "background": "rgb(15, 20, 25)"
+    }
+  ],
+  "gridRows": "2"
+}

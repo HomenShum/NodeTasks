@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-09-05T18:35:50.866983+00:00",
+  "finishedAt": "2026-09-05T18:35:59.906837+00:00",
+  "cwd": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+  "argv": [
+    "C:/nvm4w/nodejs/node.exe",
+    "C:/Users/hshum/.codex/worktrees/5dba/nodebench-ai/docs/plans/portfolio-recovery-20260904/E6h-nodetasks-prepared-ui-01/capture-before-exact-profile.mjs"
+  ],
+  "timeoutSeconds": 180,
+  "timedOut": false,
+  "exitCode": 1,
+  "seconds": 9.03200000000652,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "before-exact-profile.log"
+}

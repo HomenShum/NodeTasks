@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-09-05T19:04:42.614548+00:00",
+  "finishedAt": "2026-09-05T19:06:05.871643+00:00",
+  "cwd": "D:\\VSCode Projects\\cafecorner_nodebench\\nodebench_ai4\\.portfolio-worktrees\\nodetasks-corpus-readiness-20260905",
+  "argv": [
+    "C:/nvm4w/nodejs/node.exe",
+    "C:/Users/hshum/.codex/worktrees/5dba/nodebench-ai/docs/plans/portfolio-recovery-20260904/E6h-nodetasks-prepared-ui-01/capture-matched-after.mjs"
+  ],
+  "timeoutSeconds": 180,
+  "timedOut": false,
+  "exitCode": 0,
+  "seconds": 83.26500000001397,
+  "environment": "Remove endpoint/catalog/provider overrides by name from child only; no values inspected",
+  "log": "matched-after.log"
+}

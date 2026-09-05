@@ -1,0 +1,103 @@
+{
+  "startedAt": "2026-09-05T19:56:24.552Z",
+  "status": "PASS_TWO_NATIVE_REFERENCE_TAIL_CELLS",
+  "scope": "Only native End and actual final source-reference pixels at320/390 doubled computed text",
+  "input": [
+    {
+      "path": "catalog/task-browser.html",
+      "bytes": 5945,
+      "sha256": "2147ffb5c2e074c75d2a4774986795231442a39eabf401c4fae2a5a39778f4d1"
+    },
+    {
+      "path": "catalog/search-index.js",
+      "bytes": 36080059,
+      "sha256": "a69396c4e74da1c59189759b8c8fe2ca0d277f7c2271d3919542141b6a97d100"
+    },
+    {
+      "path": "scripts/build-catalog.mjs",
+      "bytes": 97011,
+      "sha256": "339938c754f16fe10cde464ba25f8fe5cfb535316593f5fc539f222a562f61ce"
+    },
+    {
+      "path": "proof/corpus-receipt.json",
+      "bytes": 4697,
+      "sha256": "770b1c414b5a677e922845fc4aae88ebb36752683b0e34ade86cbce328a2f0b0"
+    }
+  ],
+  "recorderSha256": "53408e41c49fc55d4b87e41570c18683ef55dfb61db8e77847ff973a65e52e1b",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/task-browser.html"
+    },
+    {
+      "method": "GET",
+      "path": "/search-index.js"
+    },
+    {
+      "method": "GET",
+      "path": "/task-browser.html"
+    },
+    {
+      "method": "GET",
+      "path": "/search-index.js"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "cells": [
+    {
+      "viewport": [
+        320,
+        800
+      ],
+      "status": "PASS",
+      "pngSha256": "5e4a4e002c3df5959073735a4da25d84574d97e878f7fd9fde35f856930915e6",
+      "htmlSha256": "eb26b31e0bdb741bfb77d1368d17e7dca7e485024e2768f358078f96cf50a13a",
+      "fontChecks": 123,
+      "nativeEnd": [
+        {
+          "key": "End",
+          "trusted": true,
+          "target": "BODY",
+          "active": "BODY"
+        }
+      ],
+      "refs": [
+        "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+      ],
+      "sourceTextPreserved": true,
+      "allReferenceTextInsideViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "PASS",
+      "pngSha256": "2f28c72ef6ab3248c041e42aeaf36bc68512dec572d56f32e9e8d1b2fe2b5b51",
+      "htmlSha256": "eb26b31e0bdb741bfb77d1368d17e7dca7e485024e2768f358078f96cf50a13a",
+      "fontChecks": 123,
+      "nativeEnd": [
+        {
+          "key": "End",
+          "trusted": true,
+          "target": "BODY",
+          "active": "BODY"
+        }
+      ],
+      "refs": [
+        "https://github.com/HomenShum/NodeAgent/blob/main/docs/FEATURE_PROOF_STORYBOARD.md",
+        "https://github.com/HomenShum/NodeAgent/blob/main/scripts/render-walkthrough-media.mjs"
+      ],
+      "sourceTextPreserved": true,
+      "allReferenceTextInsideViewport": true
+    }
+  ],
+  "base": "http://127.0.0.1:50649",
+  "browserVersion": "149.0.7827.55",
+  "runtimeClosed": true,
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-05T19:56:26.433Z"
+}
