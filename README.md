@@ -11,6 +11,8 @@
 <p align="center"><a href="HANDOFF.md">Handoff</a> · <a href="https://homenshum.github.io/">All&nbsp;projects</a></p>
 <!-- brand:end -->
 
+# NodeTasks
+
 NodeTasks is a public task corpus and benchmark-proxy adapter bundle extracted from NodeRoom. It is meant to make live browser tasks, benchmark proxy adapters, proof receipts, rubrics, benchmark-suite scaffolds, and source-backed test tasks discoverable outside the main application repo.
 
 Start with [HANDOFF.md](HANDOFF.md) for isolated setup, finite first-use proof and current limits.
