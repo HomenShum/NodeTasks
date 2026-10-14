@@ -3,14 +3,14 @@ from __future__ import annotations
 import json
 import os
 import textwrap
-import urllib.error
-import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
 import streamlit as st
+
+from nodeagent_bridge import MAX_PROMPT_CHARS, call_nodeagent
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -258,37 +258,6 @@ def task_by_id(tasks: list[dict[str, Any]], task_id: str) -> dict[str, Any] | No
         if task.get("id") == task_id:
             return task
     return None
-
-
-def call_nodeagent(endpoint: str, question: str, context: list[dict[str, Any]], persona: str, view: str) -> str | None:
-    if not endpoint:
-        return None
-    body = json.dumps(
-        {
-            "schema": "nodetasks-nodeagent-bridge-v1",
-            "mode": "catalog_qa",
-            "question": question,
-            "message": question,
-            "persona": persona,
-            "savedView": view,
-            "catalogContext": context,
-            "context": context,
-            "responseContract": {
-                "answerField": "answer",
-                "mustCiteTaskIds": True,
-                "mustPreserveScoreBoundary": True,
-            },
-        }
-    ).encode("utf-8")
-    request = urllib.request.Request(endpoint, data=body, headers={"Content-Type": "application/json"}, method="POST")
-    try:
-        with urllib.request.urlopen(request, timeout=20) as response:
-            payload = json.loads(response.read().decode("utf-8"))
-    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
-        return f"NodeAgent endpoint was configured but did not return a usable response: {exc}"
-    if isinstance(payload.get("message"), dict):
-        return payload["message"].get("content")
-    return payload.get("answer") or payload.get("text") or payload.get("finalText") or json.dumps(payload, indent=2)
 
 
 def local_nodeagent_answer(question: str, rows: pd.DataFrame, persona: str) -> str:
@@ -558,7 +527,7 @@ with tab_provenance:
 
 with tab_agent:
     st.subheader("Ask NodeAgent")
-    st.caption("Uses NODEAGENT_ENDPOINT when configured; otherwise answers deterministically from the ranked catalog.")
+    st.caption("Uses the configured endpoint, with cited local recovery on failure. Keeps the latest 50 completed question/answer pairs in this session.")
     with st.expander("Bridge contract", expanded=False):
         st.code(
             json.dumps(
@@ -580,16 +549,23 @@ with tab_agent:
         st.markdown(local_nodeagent_answer(ask_preview, ranked, persona))
     if "chat" not in st.session_state:
         st.session_state.chat = []
-    prompt = st.chat_input("Ask about tasks, ranks, costs, domains, or what a persona should run first")
+    prompt = st.chat_input("Ask about tasks, ranks, costs, domains, or what a persona should run first", max_chars=MAX_PROMPT_CHARS)
     for message in st.session_state.chat:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-    if prompt:
-        st.session_state.chat.append({"role": "user", "content": prompt})
-        context = shown.head(12).to_dict(orient="records")
+    if prompt and len(prompt) > MAX_PROMPT_CHARS:
+        st.warning("Keep the question within 4,096 characters. It was not added to chat or sent to the endpoint.")
+    elif prompt:
+        context = json.loads(shown.head(12).to_json(orient="records", double_precision=15))
         external = call_nodeagent(endpoint, prompt, context, persona, saved_view)
-        answer = external or local_nodeagent_answer(prompt, ranked, persona)
-        st.session_state.chat.append({"role": "assistant", "content": answer})
+        answer = external.answer or local_nodeagent_answer(prompt, ranked, persona)
+        if external.error:
+            answer = f"**NodeAgent endpoint failed; using local catalog mode.** {external.error}\n\n{answer}"
+        st.session_state.chat.extend([
+            {"role": "user", "content": prompt},
+            {"role": "assistant", "content": answer},
+        ])
+        st.session_state.chat = st.session_state.chat[-100:]
         st.rerun()
 
 with tab_personas:
