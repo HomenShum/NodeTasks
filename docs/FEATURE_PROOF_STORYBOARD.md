@@ -52,6 +52,6 @@ Search -> Saved views -> Provenance -> NodeAgent
 ```bash
 npm run build:catalog
 npm run validate
-python -m py_compile apps\nodetasks_streamlit.py
+python -m py_compile apps/nodetasks_streamlit.py
 npm run clip:capture
 ```

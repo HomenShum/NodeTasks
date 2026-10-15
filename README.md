@@ -179,7 +179,7 @@ npm run build:catalog
 npm run search -- nodeagent graph --limit 5
 npm run validate
 npm run check
-python -m py_compile apps\nodetasks_streamlit.py
+python -m py_compile apps/nodetasks_streamlit.py
 npm run clip:capture
 ```
 
